@@ -1,0 +1,32 @@
+Name: Winter Cereals Growth and Harvest - Spain
+Description: Evolution of harvested parcels
+Story: https://pathtomarkdownfile
+Image: https://pathtoimagefile
+# Explore: "[Run algorithm in EDC Browser](https://browser.eurodatacube.com/?zoom=4&lat=74.70645&lng=-45.84855&fromTime=1970-01-01T00%3A00%3A00.000Z&toTime=2021-10-22T14%3A36%3A31.329Z&algorithm=e8-indicator)"
+# GeographicalCoverage: Calculated from data
+# TemporalAvailability: Calculated from data
+UpdateFrequency: On-demand
+# Attributes: could be extracted from geodb but we would not have descriptions
+ProducedResults:
+# Should we have an inputs section for other available collections?
+# Missions here is really a list of used inputs for the algorithm
+Missions:
+  - Sentinel-1
+  - Sentinel-2
+  - Landsat-8
+License: "[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)."
+Attribution: "Contains modified Copernicus Sentinel data (year) processed by Sentinel Hub"
+Contact: Contact point
+Provider: "Rapid Action for Citizens with Earth Observation"
+ManagedBy: "Rapid Action for Citizens with Earth Observation"
+Tags:
+  - COVID-19 effects
+  - harvest
+Resources:
+  - Group: geoDB Resources
+    EndPoint: https://geodb.brockmann-consult.de
+    Name: geoDB
+    Database: eodash
+    CollectionId: E10a6
+
+
