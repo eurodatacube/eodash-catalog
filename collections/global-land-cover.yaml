@@ -1,0 +1,273 @@
+Name: Global Land Cover
+OpenEOPID: GLOBAL_LAND_COVER
+Description: |
+  Global Land Cover products at 100 m resolution are delivered annually by the 
+  [global component of the Copernicus Land Service](https://land.copernicus.eu/global/products/lc). 
+  The most recent collection 3 (version 3.0.1) of 100 m Land Cover products for the years 2015 - 2019 were generated from 
+  the PROBA-V 100 m and 300 m satellite observations and several other ancillary datasets with global coverage. 
+  These Land Cover products provide a main discrete land cover classification map according to UN-FAO Land Cover Classification System [LCCS](https://land.copernicus.eu/global/products/lc). 
+  Additional continuous fractional layers for all basic land cover classes which give the percentage of
+  a 100 m pixel that is filled with a specific land cover class, are also included in the Land Cover products to
+  provide more detailed information on each land cover class.
+AdditionalInfoExternal:
+    Title: Additional info
+    Path: global-land-cover/README.MD
+Image: global-land-cover/global-land-cover.png
+EDCBrowser: https://browser.eurodatacube.com/?zoom=10&lat=41.9&lng=12.5&collectionId=global-land-cover&layerId=Discrete%20Classification%20Map&type=sentinel-hub-edc&fromTime=2018-12-31T00%3A00%3A00.000Z&toTime=2019-12-31T00%3A00%3A00.000Z       
+EOBrowser: https://apps.sentinel-hub.com/eo-browser/?zoom=10&lat=41.9&lng=12.5&themeId=DEFAULT-THEME&visualizationUrl=https%3A%2F%2Fcreodias.sentinel-hub.com%2Fogc%2Fwms%2F968dcdec-a419-4894-bba2-0b21670b8a22&datasetId=COPERNICUS_GLOBAL_LAND_COVER&fromTime=2019-01-01T00%3A00%3A00.000Z&toTime=2019-01-01T23%3A59%3A59.999Z&layerId=DISCRETE-CLASSIFICATION-MAP
+Resolution: 100m
+GeographicalCoverage: Global coverage of land surface area with longitude from 180°W to 180°E and latitude from 78.25°N to 60°S.
+TemporalAvailability: 2015-01-01 - 2019-01-01
+UpdateFrequency: Annually
+BandInformation: 
+  Table:
+      Columns:
+        - Name: Name
+          Title: Name
+        - Name: Description
+          Title: Description
+      Rows:
+        - Name: Discrete_Classification_map
+          Description: main discrete land cover classification according to FAO LCCS scheme
+        - Name: Discrete_Classification_proba
+          Description: Classification probability, a quality indicator for the discrete classification
+        - Name: Forest_Type_layer
+          Description: Forest type for all pixels where tree cover fraction is bigger than 1 %
+        - Name: Bare_CoverFraction_layer
+          Description: Fractional cover (%) for the bare and sparse vegetation class
+        - Name: Crops_CoverFraction_layer
+          Description: Fractional cover (%) for the cropland class
+        - Name: Grass_CoverFraction_layer
+          Description: Fractional cover (%) for the herbaceous vegetation class
+        - Name: MossLichen_CoverFraction_layer
+          Description: Fractional cover (%) for the moss & lichen class
+        - Name: Shrub_CoverFraction_layer
+          Description: Fractional cover (%) for the shrubland class
+        - Name: Snow_CoverFraction_layer
+          Description: Fractional cover (%) for the snow & ice class
+        - Name: Tree_CoverFraction_layer
+          Description: Fractional cover (%) for the forest class
+        - Name: BuiltUp_CoverFraction_layer
+          Description: Fractional cover (%) for the built-up class
+        - Name: PermanentWater_CoverFraction_layer
+          Description: Fractional cover (%) for the permanent inland water bodies class
+        - Name: SeasonalWater_CoverFraction_layer
+          Description: Fractional cover (%) for the seasonal inland water bodies class
+        - Name: DataDensityIndicator
+          Description: Data density indicator showing quality of the EO input data (0 = bad, 100 = perfect data)
+        - Name: Change_Confidence_layer
+          Description: Quality layer regarding the change detection of the current mapped year to the previous mapped year.
+Contact: https://forum.sentinel-hub.com/c/euro-data-cube/25
+Provider: "[European Commission Joint Research Centre (JRC)](https://land.copernicus.eu/global/about)"
+ManagedBy: "[Sentinel Hub](https://www.sentinel-hub.com/)"
+Tags:
+  - copernicus services
+  - sentinel hub
+  - xcube
+  - raster
+  - systematic
+  - machine learning
+  - land cover
+  - CLMS
+  - derived data
+  - open data
+License: free and open access policy as defined in the European Union’s Copernicus regulation ([details](https://land.copernicus.eu/global/about))
+LicenseType: proprietary
+LicenseUrl: https://land.copernicus.eu/global/about
+Resources:
+  - Group: Sentinel Hub Resources
+    EndPoint: https://creodias.sentinel-hub.com
+    Name: Sentinel Hub
+    Role: processor
+    Type: byoc-f0a97620-0e88-4c1f-a1ac-bb388fabdf2c
+    CollectionId: f0a97620-0e88-4c1f-a1ac-bb388fabdf2c
+    Primary: true
+  - Group: xcube Resources
+    DatasetName: CUSTOM
+    CollectionId: f0a97620-0e88-4c1f-a1ac-bb388fabdf2c
+WMTS:
+  - href: https://creodias.sentinel-hub.com/ogc/wmts/0325f8d4-3e2c-421e-ad10-d0cb1b45d5b2
+    layer_id: DISCRETE-CLASSIFICATION-MAP
+    dimensions: 
+      warnings: true
+Configurations:
+  - href: "https://docs.sentinel-hub.com/api/latest/api/process/"
+    rel: "about"
+    type: "text/html"
+    title: "Details about running Evalscripts"
+  - href: "https://custom-scripts.sentinel-hub.com/copernicus_services/global-land-cover/global_land_cover/script.js"
+    rel: "processing-expression"
+    type: "application/javascript"
+    title: "Evalscript to generate Discrete Classification Map imagery"
+    sentinelhub:layer_name: "Discrete Classification Map"
+    sentinelhub:mosaicking_order: "mostRecent"
+    sentinelhub:upsampling: "BICUBIC"
+DocumentationLinks:
+  - href: "https://collections.eurodatacube.com/global-land-cover/readme.html#band-information"
+    rel: "about"
+    type: "text/html"
+    title: "Nomenclature mapping - band values Global Land Cover labels"
+Extent:
+  spatial:
+    bbox:
+      -
+        - -180
+        - -60
+        - 180
+        - 78.25
+  temporal:
+    interval:
+      -
+        - '2015-01-01T00:00:00Z'
+        - '2019-01-01T00:00:00Z'
+CubeDimensions:
+  x:
+    type: spatial
+    axis: x
+    extent:
+      - -180
+      - 180
+    reference_system: 4326
+  y:
+    type: spatial
+    axis: y
+    extent:
+      - -60
+      - 78.25
+    reference_system: 4326
+  t:
+    type: temporal
+    extent:
+      - '2015-01-01T00:00:00Z'
+      - '2019-01-01T00:00:00Z'
+    step: P1Y
+  bands:
+    type: bands
+    values:
+      - Discrete_Classification_map
+      - Discrete_Classification_proba
+      - Forest_Type_layer
+      - Bare_CoverFraction_layer
+      - Crops_CoverFraction_layer
+      - Grass_CoverFraction_layer
+      - MossLichen_CoverFraction_layer
+      - Shrub_CoverFraction_layer
+      - Snow_CoverFraction_layer
+      - Tree_CoverFraction_layer
+      - BuiltUp_CoverFraction_layer
+      - PermanentWater_CoverFraction_layer
+      - SeasonalWater_CoverFraction_layer
+      - DataDensityIndicator
+      - Change_Confidence_layer
+      - dataMask
+Summaries:
+  raster:bands:
+    - description: main discrete land cover classification according to FAO LCCS scheme
+      name: Discrete_Classification_map
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Classification probability, a quality indicator for the discrete classification
+      name: Discrete_Classification_proba
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Forest type for all pixels where tree cover fraction is bigger than 1 %
+      name: Forest_Type_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the bare and sparse vegetation class
+      name: Bare_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the cropland class
+      name: Crops_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the herbaceous vegetation class
+      name: Grass_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the moss & lichen class
+      name: MossLichen_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the shrubland class
+      name: Shrub_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the snow & ice class
+      name: Snow_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the forest class
+      name: Tree_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the built-up class
+      name: BuiltUp_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the permanent inland water bodies class
+      name: PermanentWater_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Fractional cover (%) for the seasonal inland water bodies class
+      name: SeasonalWater_CoverFraction_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Data density indicator showing quality of the EO input data (0 = bad, 100 = perfect data)
+      name: DataDensityIndicator
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: Quality layer regarding the change detection of the current mapped year to the previous mapped year.
+      name: Change_Confidence_layer
+      openeo:gsd:
+        value:
+        - 0.000925925925926
+        - 0.000925925925926
+        unit: °
+    - description: The mask of data/no data pixels.
+      name: dataMask
+RegistryEntryAdded: "2021-03-20"
+RegistryEntryLastModified: "2022-07-25"

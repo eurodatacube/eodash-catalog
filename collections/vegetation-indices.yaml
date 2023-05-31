@@ -1,0 +1,421 @@
+Name: Vegetation Indices, Daily
+OpenEOPID: VEGETATION_INDICES
+Description: |
+  Vegetation Indices (VI) product is part of the Copernicus Land Monitoring Service (CLMS), pan-European High Resolution Vegetation Phenology and Productivity [(HR-VPP)](https://land.copernicus.eu/pan-european/biophysical-parameters/high-resolution-vegetation-phenology-and-productivity) product suite.
+  The product is comprised of 4 raw Vegetation Indices; (1) Normalized Difference Vegetation Index (NDVI), (2) Leaf Area Index (LAI),
+  (3) Fraction of Absorbed Photosynthetically Active Radiation (FAPAR) and (4) Plant Phenology Index (PPI) generated near real-time (NRT) from Sentinel-2 satellite observations.
+  The raw Vegetation Indices are provided on a daily basis at 10m resolution from October 2016 onwards. Therefore, VI products are available over the EEA39 region for the respective observation day
+  based on 5-day revisit period of Sentinel-2. The VIs are accompanied by a related QFLAG2 band that flags clouds, shadows, snow, open water and other areas where the VI retrieval is less reliable.
+  More information about raw vegetation indices is outlined in the [product user manual](https://land.copernicus.eu/user-corner/technical-library/product-user-manual-of-vegetation-indices/)
+AdditionalInfoExternal:
+    Title: Additional info
+    Path: vegetation-indices/README.MD
+EDCBrowser: https://browser.eurodatacube.com/?zoom=10&lat=41.9&lng=12.5&collectionId=vegetation-indices&layerId=FAPAR&type=sentinel-hub-edc&fromTime=2020-08-03T00%3A00%3A00.000Z&toTime=2020-08-03T23%3A59%3A59.999Z
+EOBrowser: https://apps.sentinel-hub.com/eo-browser/?zoom=10&lat=41.9&lng=12.5&themeId=DEFAULT-THEME&visualizationUrl=https://creodias.sentinel-hub.com/ogc/wms/6cb658da-86d0-4cad-8245-d772c350482a&datasetId=COPERNICUS_HR_VPP_VEGETATION_INDICES&fromTime=2020-08-03T00:00:00.000Z&toTime=2020-08-03T23:59:59.999Z&layerId=FAPAR-VISUALIZATION
+Image: vegetation-indices/thumbnail.png
+Resolution: 10m
+GeographicalCoverage: Europe (Lat; 26N 72N Lon; -25W 45E)
+TemporalAvailability: 2016-10-01 - ongoing
+UpdateFrequency: Daily
+BandInformation:
+  Table:
+      Columns:
+        - Name: Name
+          Title: Name
+        - Name: Description
+          Title: Description
+        - Name: Unit
+          Title: Unit
+        - Name: Sentinel Hub Units
+          Title: Sentinel Hub Units
+        - Name: Digital Range
+          Title: Digital Range
+        - Name: No data
+          Title: No data
+      Rows:
+        - Name: PPI
+          Description: Plant Phenology Index
+          Unit: Dimensionless
+          Sentinel Hub Units: DN
+          Digital Range: 0 to 3 (physical value), 0 to 30000 (DN)
+          No data: 32768
+        - Name: NDVI
+          Description: Normalized Difference Vegetation Index
+          Unit: Dimensionless
+          Sentinel Hub Units: DN
+          Digital Range: -1 to 1 (physical value), -10000 to 10000 (DN)
+          No data: 32768
+        - Name: FAPAR
+          Description: Fraction of Absorbed Photosynthetically Active Radiation
+          Unit: Dimensionless
+          Sentinel Hub Units: DN
+          Digital Range: 0 to 1 (physical value), 0 to 10000 (DN)
+          No data: 32768
+        - Name: LAI
+          Description: Leaf Area Index
+          Unit: M2/ M2
+          Sentinel Hub Units: DN
+          Digital Range: 0 to 8 (physical value), 0 to 10000 (DN)
+          No data: 32768
+        - Name: QFLAG2
+          Description: Quality Flag
+          Unit: Dimensionless
+          Sentinel Hub Units: DN
+          Digital Range: 1 to 32768; Additional info <a href="https://collections.eurodatacube.com/vegetation-indices/readme.html">here</a>.
+          No data: 65535
+Contact: "[Copernicus Land Monitoring Service Contact](https://land.copernicus.eu/contact)"
+Provider: "[European Environment Agency](https://www.eea.europa.eu/)"
+ManagedBy: "[Sentinel Hub](https://www.sentinel-hub.com/)"
+Tags:
+  - copernicus services
+  - vegetation
+  - agriculture
+  - Plant phenology index
+  - CLMS
+  - phenology
+  - derived data
+  - open data
+License: Freely and openly accessible according to the Copernicus data and information policy. ([Read more](https://land.copernicus.eu/terms-of-use)).
+LicenseType: proprietary
+LicenseUrl: https://land.copernicus.eu/terms-of-use
+Resources:
+  - Group: Sentinel Hub Resources
+  - EndPoint: https://creodias.sentinel-hub.com
+    Name: Sentinel Hub
+    Role: processor
+    Type: byoc-472c0398-430d-4157-a62d-603363d7a4e8
+    CollectionId: 472c0398-430d-4157-a62d-603363d7a4e8
+    Notes: Europe since October 2016
+    Primary: true
+  - Group: xcube Resources
+    DatasetName: CUSTOM
+    CollectionId: 472c0398-430d-4157-a62d-603363d7a4e8
+CustomScripts:
+    Title: Collection of Copernicus services data custom scripts
+    URL: https://custom-scripts.sentinel-hub.com/#copernicus_services
+WMTS:
+  - href: https://creodias.sentinel-hub.com/ogc/wmts/5213318a-9567-403d-b4c3-066d413d7efe
+    layer_id: LAI
+    dimensions:
+      warnings: true
+Configurations:
+  - href: "https://docs.sentinel-hub.com/api/latest/api/process/"
+    rel: "about"
+    type: "text/html"
+    title: "Details about running Evalscripts"
+  - href: "https://custom-scripts.sentinel-hub.com/copernicus_services/hrvpp/vi-lai/script.js"
+    rel: "processing-expression"
+    type: "application/javascript"
+    title: "Evalscript to generate LAI imagery"
+    sentinelhub:layer_name: "LAI"
+    sentinelhub:mosaicking_order: "mostRecent"
+    sentinelhub:upsampling: "BICUBIC"
+  - href: "https://custom-scripts.sentinel-hub.com/copernicus_services/hrvpp/vi-ppi/script.js"
+    rel: "processing-expression"
+    type: "application/javascript"
+    title: "Evalscript to generate PPI imagery"
+    sentinelhub:layer_name: "PPI"
+    sentinelhub:mosaicking_order: "mostRecent"
+    sentinelhub:upsampling: "BICUBIC"
+  - href: "https://custom-scripts.sentinel-hub.com/copernicus_services/hrvpp/vi-ndvi/script.js"
+    rel: "processing-expression"
+    type: "application/javascript"
+    title: "Evalscript to generate NDVI imagery"
+    sentinelhub:layer_name: "NDVI"
+    sentinelhub:mosaicking_order: "mostRecent"
+    sentinelhub:upsampling: "BICUBIC"
+  - href: "https://custom-scripts.sentinel-hub.com/copernicus_services/hrvpp/vi-fapar/script.js"
+    rel: "processing-expression"
+    type: "application/javascript"
+    title: "Evalscript to generate FAPAR imagery"
+    sentinelhub:layer_name: "FAPAR"
+    sentinelhub:mosaicking_order: "mostRecent"
+    sentinelhub:upsampling: "BICUBIC"
+Extent:
+  spatial:
+    bbox:
+      -
+        - -25
+        - 26
+        - 45
+        - 72
+  temporal:
+    interval:
+      -
+        - '2016-10-01T09:20:22Z'
+        - null
+CubeDimensions:
+  x:
+    type: spatial
+    axis: x
+    extent:
+      - -25
+      - 45
+    reference_system:
+      $schema: https://proj.org/schemas/v0.4/projjson.schema.json
+      type: GeodeticCRS
+      name: AUTO 42001 (Universal Transverse Mercator)
+      datum:
+        type: GeodeticReferenceFrame
+        name: World Geodetic System 1984
+        ellipsoid:
+          name: WGS 84
+          semi_major_axis: 6378137
+          inverse_flattening: 298.257223563
+      coordinate_system:
+        subtype: ellipsoidal
+        axis:
+          - name: Geodetic latitude
+            abbreviation: Lat
+            direction: north
+            unit: degree
+          - name: Geodetic longitude
+            abbreviation: Lon
+            direction: east
+            unit: degree
+      area: World
+      bbox:
+        south_latitude: -90
+        west_longitude: -180
+        north_latitude: 90
+        east_longitude: 180
+      id:
+        authority: OGC
+        version: "1.3"
+        code: Auto42001
+  y:
+    type: spatial
+    axis: y
+    extent:
+      - 26
+      - 72
+    reference_system:
+      $schema: https://proj.org/schemas/v0.4/projjson.schema.json
+      type: GeodeticCRS
+      name: AUTO 42001 (Universal Transverse Mercator)
+      datum:
+        type: GeodeticReferenceFrame
+        name: World Geodetic System 1984
+        ellipsoid:
+          name: WGS 84
+          semi_major_axis: 6378137
+          inverse_flattening: 298.257223563
+      coordinate_system:
+        subtype: ellipsoidal
+        axis:
+          - name: Geodetic latitude
+            abbreviation: Lat
+            direction: north
+            unit: degree
+          - name: Geodetic longitude
+            abbreviation: Lon
+            direction: east
+            unit: degree
+      area: World
+      bbox:
+        south_latitude: -90
+        west_longitude: -180
+        north_latitude: 90
+        east_longitude: 180
+      id:
+        authority: OGC
+        version: "1.3"
+        code: Auto42001
+  t:
+    type: temporal
+    extent:
+      - '2016-10-01T09:20:22Z'
+      - null
+    step: P5D
+  bands:
+    type: bands
+    values:
+      - LAI
+      - PPI
+      - NDVI
+      - FAPAR
+      - QFLAG2
+      - dataMask
+Summaries:
+  raster:bands:
+    - description: Leaf Area Index
+      name: LAI
+      openeo:gsd:
+        value:
+          - 10
+          - 10
+        unit: m
+    - description: Plant Phenology Index
+      name: PPI
+      openeo:gsd:
+        value:
+          - 10
+          - 10
+        unit: m
+    - description: Normalized Difference Vegetation Index
+      name: NDVI
+      openeo:gsd:
+        value:
+          - 10
+          - 10
+        unit: m
+    - description: Fraction of Absorbed Photosynthetically Active Radiation
+      name: FAPAR
+      openeo:gsd:
+        value:
+          - 10
+          - 10
+        unit: m
+    - description: Quality Flag
+      name: QFLAG2
+      openeo:gsd:
+        value:
+          - 10
+          - 10
+        unit: m
+    - description: The mask of data/no data pixels.
+      name: dataMask
+CRS:
+  - "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+  - "http://www.opengis.net/def/crs/EPSG/0/2154"
+  - "http://www.opengis.net/def/crs/EPSG/0/2180"
+  - "http://www.opengis.net/def/crs/EPSG/0/2193"
+  - "http://www.opengis.net/def/crs/EPSG/0/3003"
+  - "http://www.opengis.net/def/crs/EPSG/0/3004"
+  - "http://www.opengis.net/def/crs/EPSG/0/3031"
+  - "http://www.opengis.net/def/crs/EPSG/0/3035"
+  - "http://www.opengis.net/def/crs/EPSG/0/4326"
+  - "http://www.opengis.net/def/crs/EPSG/0/4346"
+  - "http://www.opengis.net/def/crs/EPSG/0/4416"
+  - "http://www.opengis.net/def/crs/EPSG/0/4765"
+  - "http://www.opengis.net/def/crs/EPSG/0/4794"
+  - "http://www.opengis.net/def/crs/EPSG/0/4844"
+  - "http://www.opengis.net/def/crs/EPSG/0/4857"
+  - "http://www.opengis.net/def/crs/EPSG/0/3912"
+  - "http://www.opengis.net/def/crs/EPSG/0/3995"
+  - "http://www.opengis.net/def/crs/EPSG/0/4026"
+  - "http://www.opengis.net/def/crs/EPSG/0/5514"
+  - "http://www.opengis.net/def/crs/EPSG/0/28992"
+  - "http://www.opengis.net/def/crs/EPSG/0/32601"
+  - "http://www.opengis.net/def/crs/EPSG/0/32602"
+  - "http://www.opengis.net/def/crs/EPSG/0/32603"
+  - "http://www.opengis.net/def/crs/EPSG/0/32604"
+  - "http://www.opengis.net/def/crs/EPSG/0/32605"
+  - "http://www.opengis.net/def/crs/EPSG/0/32606"
+  - "http://www.opengis.net/def/crs/EPSG/0/32607"
+  - "http://www.opengis.net/def/crs/EPSG/0/32608"
+  - "http://www.opengis.net/def/crs/EPSG/0/32609"
+  - "http://www.opengis.net/def/crs/EPSG/0/32610"
+  - "http://www.opengis.net/def/crs/EPSG/0/32611"
+  - "http://www.opengis.net/def/crs/EPSG/0/32612"
+  - "http://www.opengis.net/def/crs/EPSG/0/32613"
+  - "http://www.opengis.net/def/crs/EPSG/0/32614"
+  - "http://www.opengis.net/def/crs/EPSG/0/32615"
+  - "http://www.opengis.net/def/crs/EPSG/0/32616"
+  - "http://www.opengis.net/def/crs/EPSG/0/32617"
+  - "http://www.opengis.net/def/crs/EPSG/0/32618"
+  - "http://www.opengis.net/def/crs/EPSG/0/32619"
+  - "http://www.opengis.net/def/crs/EPSG/0/32620"
+  - "http://www.opengis.net/def/crs/EPSG/0/32621"
+  - "http://www.opengis.net/def/crs/EPSG/0/32622"
+  - "http://www.opengis.net/def/crs/EPSG/0/32623"
+  - "http://www.opengis.net/def/crs/EPSG/0/32624"
+  - "http://www.opengis.net/def/crs/EPSG/0/32625"
+  - "http://www.opengis.net/def/crs/EPSG/0/32626"
+  - "http://www.opengis.net/def/crs/EPSG/0/32627"
+  - "http://www.opengis.net/def/crs/EPSG/0/32628"
+  - "http://www.opengis.net/def/crs/EPSG/0/32629"
+  - "http://www.opengis.net/def/crs/EPSG/0/32630"
+  - "http://www.opengis.net/def/crs/EPSG/0/32631"
+  - "http://www.opengis.net/def/crs/EPSG/0/32632"
+  - "http://www.opengis.net/def/crs/EPSG/0/32633"
+  - "http://www.opengis.net/def/crs/EPSG/0/32634"
+  - "http://www.opengis.net/def/crs/EPSG/0/32635"
+  - "http://www.opengis.net/def/crs/EPSG/0/32636"
+  - "http://www.opengis.net/def/crs/EPSG/0/32637"
+  - "http://www.opengis.net/def/crs/EPSG/0/32638"
+  - "http://www.opengis.net/def/crs/EPSG/0/32639"
+  - "http://www.opengis.net/def/crs/EPSG/0/32640"
+  - "http://www.opengis.net/def/crs/EPSG/0/32641"
+  - "http://www.opengis.net/def/crs/EPSG/0/32642"
+  - "http://www.opengis.net/def/crs/EPSG/0/32643"
+  - "http://www.opengis.net/def/crs/EPSG/0/32644"
+  - "http://www.opengis.net/def/crs/EPSG/0/32645"
+  - "http://www.opengis.net/def/crs/EPSG/0/32646"
+  - "http://www.opengis.net/def/crs/EPSG/0/32647"
+  - "http://www.opengis.net/def/crs/EPSG/0/32648"
+  - "http://www.opengis.net/def/crs/EPSG/0/32649"
+  - "http://www.opengis.net/def/crs/EPSG/0/32650"
+  - "http://www.opengis.net/def/crs/EPSG/0/32651"
+  - "http://www.opengis.net/def/crs/EPSG/0/32652"
+  - "http://www.opengis.net/def/crs/EPSG/0/32653"
+  - "http://www.opengis.net/def/crs/EPSG/0/32654"
+  - "http://www.opengis.net/def/crs/EPSG/0/32655"
+  - "http://www.opengis.net/def/crs/EPSG/0/32656"
+  - "http://www.opengis.net/def/crs/EPSG/0/32657"
+  - "http://www.opengis.net/def/crs/EPSG/0/32658"
+  - "http://www.opengis.net/def/crs/EPSG/0/32659"
+  - "http://www.opengis.net/def/crs/EPSG/0/32660"
+  - "http://www.opengis.net/def/crs/EPSG/0/32701"
+  - "http://www.opengis.net/def/crs/EPSG/0/32702"
+  - "http://www.opengis.net/def/crs/EPSG/0/32703"
+  - "http://www.opengis.net/def/crs/EPSG/0/32704"
+  - "http://www.opengis.net/def/crs/EPSG/0/32705"
+  - "http://www.opengis.net/def/crs/EPSG/0/32706"
+  - "http://www.opengis.net/def/crs/EPSG/0/32707"
+  - "http://www.opengis.net/def/crs/EPSG/0/32708"
+  - "http://www.opengis.net/def/crs/EPSG/0/32709"
+  - "http://www.opengis.net/def/crs/EPSG/0/32710"
+  - "http://www.opengis.net/def/crs/EPSG/0/32711"
+  - "http://www.opengis.net/def/crs/EPSG/0/32712"
+  - "http://www.opengis.net/def/crs/EPSG/0/32713"
+  - "http://www.opengis.net/def/crs/EPSG/0/32714"
+  - "http://www.opengis.net/def/crs/EPSG/0/32715"
+  - "http://www.opengis.net/def/crs/EPSG/0/32716"
+  - "http://www.opengis.net/def/crs/EPSG/0/32717"
+  - "http://www.opengis.net/def/crs/EPSG/0/32718"
+  - "http://www.opengis.net/def/crs/EPSG/0/32719"
+  - "http://www.opengis.net/def/crs/EPSG/0/32720"
+  - "http://www.opengis.net/def/crs/EPSG/0/32721"
+  - "http://www.opengis.net/def/crs/EPSG/0/32722"
+  - "http://www.opengis.net/def/crs/EPSG/0/32723"
+  - "http://www.opengis.net/def/crs/EPSG/0/32724"
+  - "http://www.opengis.net/def/crs/EPSG/0/32725"
+  - "http://www.opengis.net/def/crs/EPSG/0/32726"
+  - "http://www.opengis.net/def/crs/EPSG/0/32727"
+  - "http://www.opengis.net/def/crs/EPSG/0/32728"
+  - "http://www.opengis.net/def/crs/EPSG/0/32729"
+  - "http://www.opengis.net/def/crs/EPSG/0/32730"
+  - "http://www.opengis.net/def/crs/EPSG/0/32731"
+  - "http://www.opengis.net/def/crs/EPSG/0/32732"
+  - "http://www.opengis.net/def/crs/EPSG/0/32733"
+  - "http://www.opengis.net/def/crs/EPSG/0/32734"
+  - "http://www.opengis.net/def/crs/EPSG/0/32735"
+  - "http://www.opengis.net/def/crs/EPSG/0/32736"
+  - "http://www.opengis.net/def/crs/EPSG/0/32737"
+  - "http://www.opengis.net/def/crs/EPSG/0/32738"
+  - "http://www.opengis.net/def/crs/EPSG/0/32739"
+  - "http://www.opengis.net/def/crs/EPSG/0/32740"
+  - "http://www.opengis.net/def/crs/EPSG/0/32741"
+  - "http://www.opengis.net/def/crs/EPSG/0/32742"
+  - "http://www.opengis.net/def/crs/EPSG/0/32743"
+  - "http://www.opengis.net/def/crs/EPSG/0/32744"
+  - "http://www.opengis.net/def/crs/EPSG/0/32745"
+  - "http://www.opengis.net/def/crs/EPSG/0/32746"
+  - "http://www.opengis.net/def/crs/EPSG/0/32746"
+  - "http://www.opengis.net/def/crs/EPSG/0/32748"
+  - "http://www.opengis.net/def/crs/EPSG/0/32749"
+  - "http://www.opengis.net/def/crs/EPSG/0/32750"
+  - "http://www.opengis.net/def/crs/EPSG/0/32751"
+  - "http://www.opengis.net/def/crs/EPSG/0/32752"
+  - "http://www.opengis.net/def/crs/EPSG/0/32753"
+  - "http://www.opengis.net/def/crs/EPSG/0/32754"
+  - "http://www.opengis.net/def/crs/EPSG/0/32755"
+  - "http://www.opengis.net/def/crs/EPSG/0/32756"
+  - "http://www.opengis.net/def/crs/EPSG/0/32757"
+  - "http://www.opengis.net/def/crs/EPSG/0/32758"
+  - "http://www.opengis.net/def/crs/EPSG/0/32759"
+  - "http://www.opengis.net/def/crs/EPSG/0/32760"
+  - "http://www.opengis.net/def/crs/SR-ORG/0/98739"
+RegistryEntryAdded: '2021-10-14'
+RegistryEntryLastModified: "2023-02-13"

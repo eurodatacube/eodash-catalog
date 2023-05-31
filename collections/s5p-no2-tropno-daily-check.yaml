@@ -1,0 +1,80 @@
+Name: S5P-NO2-tropno-daily-check
+OpenEOPID: SENTINEL_5P_NO2_T14D_AVERAGE
+Description: The data comes from the Copernicus Sentinel-5P satellite and shows the averaged nitrogen dioxide concentrations across the globe – using a 14-day moving average. Concentrations of short-lived pollutants, such as nitrogen dioxide, are indicators of changes in economic slowdowns and are comparable to changes in emissions. Using a 14 day average eliminates some effects which are caused by short term weather changes and cloud cover. The average gives an overview over the whole time period and therefore reflects trends better than shorter time periods.
+AdditionalInfoExternal:
+    Title: Additional info
+    Path: s5p-no2-tropno-daily-check/README.MD
+Image: s5p-no2-tropno-daily-check/s5p-no2-tropno-daily-check.png
+EDCBrowser: https://browser.eurodatacube.com/?zoom=5&lat=50.44351&lng=-5.75684&collectionId=s5p-no2-tropno-daily-check&layerId=NO2&type=sentinel-hub-edc&fromTime=2021-03-08T09%3A44%3A48.897Z&toTime=2022-03-08T09%3A44%3A48.897Z
+Resolution: 3.5 x 5.5 Km (across x along track)
+GeographicalCoverage: -180.0, -90.0, 180.0, 90.0
+TemporalAvailability: 2018-04-30 - ongoing
+UpdateFrequency: Weekly
+BandInformation: tropno2
+Contact: "[ESA EO Support Helpdesk](EOSupport@copernicus.esa.int)"
+Provider: "[ESA](http://www.esa.int/)"
+ManagedBy: "[ESA](http://www.esa.int/)"
+Tags:
+    - open data
+    - sentinel hub
+    - raster
+    - race challenges
+License: Full, open and free access
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Role: processor
+   Type: byoc-972e67a7-2ca8-4bf6-964a-11fe772e3ac2
+   CollectionId: 972e67a7-2ca8-4bf6-964a-11fe772e3ac2
+   Primary: true
+Configurations:
+  - href: "https://docs.sentinel-hub.com/api/latest/api/process/"
+    rel: "about"
+    type: "text/html"
+    title: "Details about running Evalscripts"
+  - href: "https://raw.githubusercontent.com/eurodatacube/public-collections/main/collections/s5p-no2-tropno-daily-check/script.js"
+    rel: "processing-expression"
+    type: "application/javascript"
+    title: "Evalscript to generate NO2 imagery"
+    sentinelhub:layer_name: "NO2"
+    sentinelhub:mosaicking_order: "mostRecent"
+    sentinelhub:upsampling: "BICUBIC"
+Extent:
+  spatial:
+    bbox:
+      -
+        - -180
+        - -90
+        - 180
+        - 90
+  temporal:
+    interval:
+      -
+        - '2018-04-30T00:00:00Z'
+        - null
+CubeDimensions:
+  x:
+    type: spatial
+    axis: x
+    extent:
+      - -180
+      - 180
+  y:
+    type: spatial
+    axis: y
+    extent:
+      - -90
+      - 90
+  t:
+    type: temporal
+    extent:
+      - '2018-04-30T00:00:00Z'
+      - null
+    step: P7D
+  bands:
+    type: bands
+    values:
+      - tropno2
+RegistryEntryAdded: "2021-05-07"
+RegistryEntryLastModified: "2022-07-19"
