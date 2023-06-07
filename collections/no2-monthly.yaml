@@ -1,0 +1,21 @@
+Name: NO2 Monthly
+Description: NO2 values
+Story: https://pathtomarkdownfile
+Image: https://pathtoimagefile
+Missions:
+  - Sentinel-1
+License: "[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)."
+Attribution: ""
+Contact: Contact point
+Provider: "NASA"
+ManagedBy: "NASA"
+Tags:
+  - NASA
+  - air quality
+Resources:
+  - Group: VEDA Resources
+    EndPoint: https://staging-stac.delta-backend.com
+    Name: VEDA
+    CollectionId: no2-monthly
+
+

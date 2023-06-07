@@ -1,0 +1,160 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "OMI_trno2_0.10x0.10_202206_Col3_V4.nc",
+  "properties": {
+    "proj:bbox": [
+      -180.0,
+      -90.0,
+      180.0,
+      90.0
+    ],
+    "proj:epsg": 4326.0,
+    "proj:shape": [
+      1800.0,
+      3600.0
+    ],
+    "end_datetime": "2022-06-30T00:00:00",
+    "proj:geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -180.0,
+            -90.0
+          ],
+          [
+            180.0,
+            -90.0
+          ],
+          [
+            180.0,
+            90.0
+          ],
+          [
+            -180.0,
+            90.0
+          ],
+          [
+            -180.0,
+            -90.0
+          ]
+        ]
+      ]
+    },
+    "proj:transform": [
+      0.1,
+      0.0,
+      -180.0,
+      0.0,
+      -0.1,
+      90.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "start_datetime": "2022-06-01T00:00:00",
+    "datetime": null
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -180,
+          -90
+        ],
+        [
+          180,
+          -90
+        ],
+        [
+          180,
+          90
+        ],
+        [
+          -180,
+          90
+        ],
+        [
+          -180,
+          -90
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "RACE"
+    },
+    {
+      "rel": "collection",
+      "href": "../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "cog_default": {
+      "href": "s3://veda-data-store-staging/no2-monthly/OMI_trno2_0.10x0.10_202206_Col3_V4.nc.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "Default COG Layer",
+      "description": "Cloud optimized default layer to display on map",
+      "raster:bands": [
+        {
+          "scale": 1.0,
+          "nodata": -1.2676506002282294e+30,
+          "offset": 0.0,
+          "sampling": "area",
+          "data_type": "float32",
+          "histogram": {
+            "max": 15968342661660672,
+            "min": -1884534475849728.0,
+            "count": 11.0,
+            "buckets": [
+              12816.0,
+              370319.0,
+              9225.0,
+              1427.0,
+              594.0,
+              101.0,
+              20.0,
+              14.0,
+              7.0,
+              5.0
+            ]
+          },
+          "statistics": {
+            "mean": 436298503033020.4,
+            "stddev": 570631667878734.1,
+            "maximum": 15968342661660672,
+            "minimum": -1884534475849728.0,
+            "valid_percent": 75.250244140625
+          }
+        }
+      ],
+      "roles": [
+        "data",
+        "layer"
+      ]
+    }
+  },
+  "bbox": [
+    -180.0,
+    -90.0,
+    180.0,
+    90.0
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json"
+  ],
+  "collection": "no2-monthly"
+}

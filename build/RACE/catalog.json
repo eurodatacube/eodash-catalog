@@ -1,0 +1,25 @@
+{
+  "type": "Catalog",
+  "id": "RACE",
+  "stac_version": "1.0.0",
+  "description": "Rapid Action for Citizens with Earth Observation",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "RACE"
+    },
+    {
+      "rel": "child",
+      "href": "./no2-monthly/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "https://race.esa.int/catalog/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "title": "RACE"
+}

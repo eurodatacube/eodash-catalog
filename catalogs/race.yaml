@@ -1,2 +1,8 @@
+id: "RACE"
+title: "RACE"
+description: "Rapid Action for Citizens with Earth Observation"
+endpoint: "https://race.esa.int/catalog/"
 collections:
-  -E10a6
+  - no2-monthly
+#  - E10a6
+#  - sentinel-1-grd
