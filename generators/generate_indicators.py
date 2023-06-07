@@ -8,6 +8,8 @@ from harvester.endpoint import create_stacapi_endpoint
 from harvester.model import ResourceConfig, ResourceType, STACAPIConfig, QueryConfig, TimeConfig
 from pystac_client import Client
 
+from sh_endpoint import get_SH_token
+
 from pystac import (
     Item,
     # Asset,
@@ -70,12 +72,26 @@ def process_collection_file(file_path, catalog):
                     raise ValueError("Type of Resource is not supported")
 
 def handle_SH_endpoint(endpoint, catalog):
-    print(endpoint)
+    token = get_SH_token()
+    headers = {"Authorization": "Bearer %s"%token}
+    endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
+    endpoint["CollectionId"] = endpoint["Type"]
+    process_STACAPI_Endpoint(
+        endpoint=endpoint,
+        catalog=catalog,
+        headers=headers,
+    )
 
 def handle_GeoDB_endpoint(endpoint, catalog):
     print(endpoint)
 
 def handle_VEDA_endpoint(endpoint, catalog):
+    process_STACAPI_Endpoint(
+        endpoint=endpoint,
+        catalog=catalog,
+    )
+
+def process_STACAPI_Endpoint(endpoint, catalog, headers={}):
     spatial_extent = SpatialExtent([
         [-180.0, -90.0, 180.0, 90.0],
     ])
@@ -90,7 +106,7 @@ def handle_VEDA_endpoint(endpoint, catalog):
     if collection not in catalog.get_all_collections():
         catalog.add_child(collection)
 
-    api = Client.open(endpoint["EndPoint"])
+    api = Client.open(endpoint["EndPoint"], headers=headers)
     bbox = "-180,-90,180,90"
     if "bbox" in endpoint:
         bbox = endpoint["bbox"]
@@ -111,24 +127,6 @@ def process_catalogs(folder_path):
         if os.path.isfile(file_path):
             process_catalog_file(file_path)
 
-def get_STACAPI_endpoint(endpoint, collection):
-    rc = ResourceConfig(
-        type=ResourceType.STACAPI,
-        stacapi=STACAPIConfig(
-            url=endpoint,
-            query=QueryConfig(
-                collection=collection,
-                time=TimeConfig(
-                    begin="1970-01-01T00:00:00Z",
-                    end="3000-01-01T00:00:00Z" ,
-                ),
-                bbox="-180,-90,180,90",
-            ),
-        ),
-    )
-    return create_stacapi_endpoint(rc)
-
-# process_stacapi("https://staging-stac.delta-backend.com/", "no2-monthly")
 
 folder_path = "../catalogs/"
 process_catalogs(folder_path)

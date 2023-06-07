@@ -16,6 +16,11 @@
       "type": "application/json"
     },
     {
+      "rel": "child",
+      "href": "./byoc-efb2b070-39d6-4cfc-842f-57f8f54f22a0/collection.json",
+      "type": "application/json"
+    },
+    {
       "rel": "self",
       "href": "https://race.esa.int/catalog/catalog.json",
       "type": "application/json"

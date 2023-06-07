@@ -1,0 +1,110 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "da31d65d-6878-427d-931e-cb899025ac79",
+  "properties": {
+    "datetime": "2020-05-15T00:00:00Z",
+    "proj:epsg": 84,
+    "proj:bbox": [
+      -18.16152763,
+      27.693670044054727,
+      4.321512517968259,
+      43.79152679
+    ],
+    "proj:geometry": {
+      "type": "Polygon",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:OGC::CRS84"
+        }
+      },
+      "coordinates": [
+        [
+          [
+            -18.16152763,
+            27.693670044054727
+          ],
+          [
+            4.321512517968259,
+            27.693670044054727
+          ],
+          [
+            4.321512517968259,
+            43.79152679
+          ],
+          [
+            -18.16152763,
+            43.79152679
+          ],
+          [
+            -18.16152763,
+            27.693670044054727
+          ]
+        ]
+      ]
+    }
+  },
+  "geometry": {
+    "type": "Polygon",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:OGC::CRS84"
+      }
+    },
+    "coordinates": [
+      [
+        [
+          -18.16152763,
+          27.693670044054727
+        ],
+        [
+          4.321512517968259,
+          27.693670044054727
+        ],
+        [
+          4.321512517968259,
+          43.79152679
+        ],
+        [
+          -18.16152763,
+          43.79152679
+        ],
+        [
+          -18.16152763,
+          27.693670044054727
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "RACE"
+    },
+    {
+      "rel": "collection",
+      "href": "../../collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../collection.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {},
+  "bbox": [
+    -18.16152763,
+    27.693670044054727,
+    4.321512517968259,
+    43.79152679
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+  ],
+  "collection": "byoc-efb2b070-39d6-4cfc-842f-57f8f54f22a0"
+}
