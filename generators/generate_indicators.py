@@ -55,6 +55,14 @@ def process_catalog_file(file_path):
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
         catalog.normalize_hrefs(data["endpoint"], strategy=strategy)
+
+        # go over links to "bubble up" the information we want
+        for link in catalog.get_links():
+            target = link.target
+            if isinstance(target, Collection):
+                link.extra_fields["description"] = target.description
+                link.extra_fields["title"] = target.title
+
         catalog.save(dest_href="../build/%s"%data["id"])
 
 def process_collection_file(file_path, catalog):
@@ -103,6 +111,7 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
 
     collection = Collection(
         id=endpoint["CollectionId"],
+        title=data["Title"],
         description=data["Description"],
         extent=extent
     )
@@ -121,12 +130,20 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     )
     for item in results.items_as_dicts():
         collection.add_item(Item.from_dict(item))
-    
+        
     collection.update_extent_from_items()
+
+    # go over links to "bubble up" the information we want
+    for link in collection.get_links():
+        target = link.target
+        if isinstance(target, Item):
+            link.extra_fields["datetime"] = target.get_datetime().isoformat()[:-6] + 'Z'
+    
     # replace SH identifier with catalog identifier
     collection.id = data["Name"]
     # Add metadata information
-    collection.license = data["License"]
+    # collection.license = data["License"]
+    # TODO: need to review check against SPDX License identifier
     if "Story" in data:
         collection.add_asset(
             "metadata",

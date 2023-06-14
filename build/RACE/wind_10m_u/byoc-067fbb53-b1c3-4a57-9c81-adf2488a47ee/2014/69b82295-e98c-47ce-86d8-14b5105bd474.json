@@ -88,12 +88,14 @@
     {
       "rel": "collection",
       "href": "../../collection.json",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Wind U Field (C3S)"
     },
     {
       "rel": "parent",
       "href": "../../collection.json",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Wind U Field (C3S)"
     }
   ],
   "assets": {},

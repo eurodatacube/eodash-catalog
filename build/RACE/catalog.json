@@ -13,7 +13,9 @@
     {
       "rel": "child",
       "href": "./wind_10m_u/collection.json",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Wind U Field (C3S)",
+      "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field"
     },
     {
       "rel": "self",
