@@ -4,8 +4,6 @@ Indicator generator to harvest information from endpoints and generate catalog
 
 """
 
-from harvester.endpoint import create_stacapi_endpoint
-from harvester.model import ResourceConfig, ResourceType, STACAPIConfig, QueryConfig, TimeConfig
 from pystac_client import Client
 
 from sh_endpoint import get_SH_token
@@ -24,18 +22,7 @@ from pystac import (
 )
 from pystac.layout import TemplateLayoutStrategy
 
-from vs_common.stac import (
-    # create_item,
-    # get_item,
-    # get_or_create_catalog,
-    get_or_create_collection,
-    Item,
-    # Asset,
-)
-
-
 import os
-from pathlib import Path
 from datetime import datetime
 import yaml
 from yaml.loader import SafeLoader
@@ -55,14 +42,6 @@ def process_catalog_file(file_path):
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
         catalog.normalize_hrefs(data["endpoint"], strategy=strategy)
-
-        # go over links to "bubble up" the information we want
-        for link in catalog.get_links():
-            target = link.target
-            if isinstance(target, Collection):
-                link.extra_fields["description"] = target.description
-                link.extra_fields["title"] = target.title
-
         catalog.save(dest_href="../build/%s"%data["id"])
 
 def process_collection_file(file_path, catalog):
@@ -116,7 +95,10 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         extent=extent
     )
     if collection not in catalog.get_all_collections():
-        catalog.add_child(collection)
+        link = catalog.add_child(collection)
+        # bubble fields we want to have up to collection link
+        link.extra_fields["description"] = collection.description
+        link.extra_fields["title"] = collection.title
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     bbox = "-180,-90,180,90"
@@ -129,15 +111,12 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         datetime=['1970-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
     )
     for item in results.items_as_dicts():
-        collection.add_item(Item.from_dict(item))
+        item = Item.from_dict(item)
+        link = collection.add_item(item)
+        # bubble up information we want to the link
+        link.extra_fields["datetime"] = item.get_datetime().isoformat()[:-6] + 'Z'
         
     collection.update_extent_from_items()
-
-    # go over links to "bubble up" the information we want
-    for link in collection.get_links():
-        target = link.target
-        if isinstance(target, Item):
-            link.extra_fields["datetime"] = target.get_datetime().isoformat()[:-6] + 'Z'
     
     # replace SH identifier with catalog identifier
     collection.id = data["Name"]

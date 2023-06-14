@@ -13,6 +13,4 @@ python-dateutil<3
 swiftspec==0.0.2
 mergedeep
 structlog<22.0
-pystac<1.8
-vs-common @ git+https://gitlab.eox.at/vs/vs-common.git@0.5.0
-harvester @ git+https://gitlab.eox.at/vs/vs.git@harvester-update-stacapi#egg=harvester&subdirectory=harvester
+pystac @ git+https://github.com/stac-utils/pystac@7f1c2b944b65f0c7633ade922abba37cb7feb4bb
