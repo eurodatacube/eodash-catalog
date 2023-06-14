@@ -44,19 +44,6 @@ Configurations:
     sentinelhub:layer_name: "Wind U-component"
     sentinelhub:mosaicking_order: "mostRecent"
     sentinelhub:upsampling: "BICUBIC"
-Extent:
-  spatial:
-    bbox:
-      -
-        - -179.999755859375
-        - -90.12489004526765
-        - 179.99977453631897
-        - 90.125
-  temporal:
-    interval:
-      -
-        - '2019-01-01T00:00:00Z'
-        - '2022-04-01T00:00:00Z'
 CubeDimensions:
   x:
     type: spatial

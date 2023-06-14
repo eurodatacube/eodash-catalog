@@ -18,6 +18,13 @@
       "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field"
     },
     {
+      "rel": "child",
+      "href": "./wind_10m_v/collection.json",
+      "type": "application/json",
+      "title": "Wind V Field (C3S)",
+      "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field"
+    },
+    {
       "rel": "self",
       "href": "https://race.esa.int/catalog/catalog.json",
       "type": "application/json"
