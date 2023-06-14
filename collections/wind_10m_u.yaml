@@ -1,10 +1,11 @@
-Name: Wind_10m_u
+Name: wind_10m_u
 OpenEOPID: ERA5_WIND_U
 Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field 
 AdditionalInfoExternal:
     Title: Additional info
     Path: wind_10m_u/README.MD
 Image: wind_10m_u/wind_10m_u.png
+Story: ../stories/CDS.md
 EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_u&layerId=Wind%20U-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
 Resolution: 0.25° x 0.25°
 GeographicalCoverage: -179.999755859375, -90.12489004526765, 179.99977453631897, 90.125

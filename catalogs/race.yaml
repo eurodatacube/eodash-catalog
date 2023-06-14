@@ -3,7 +3,9 @@ title: "RACE"
 description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://race.esa.int/catalog/"
 collections:
-  - no2-monthly
-  - e12c_motorway
-#  - E10a6
-#  - sentinel-1-grd
+  - wind_10m_u
+  # - no2-monthly
+  # - e12c_motorway
+  # - e12d_primary_corrected
+  # - E10a6
+  # - sentinel-1-grd

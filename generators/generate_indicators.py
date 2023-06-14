@@ -12,7 +12,7 @@ from sh_endpoint import get_SH_token
 
 from pystac import (
     Item,
-    # Asset,
+    Asset,
     Catalog,
     # StacIO,
     CatalogType,
@@ -20,6 +20,7 @@ from pystac import (
     Extent,
     SpatialExtent,
     TemporalExtent,
+    MediaType,
 )
 from pystac.layout import TemplateLayoutStrategy
 
@@ -63,35 +64,37 @@ def process_collection_file(file_path, catalog):
         for resource in data["Resources"]:
             if "EndPoint" in resource:
                 if resource["Name"] == "Sentinel Hub":
-                    handle_SH_endpoint(resource, catalog)
+                    handle_SH_endpoint(resource, data, catalog)
                 elif resource["Name"] == "GeoDB":
-                    handle_GeoDB_endpoint(resource, catalog)
+                    handle_GeoDB_endpoint(resource, data, catalog)
                 elif resource["Name"] == "VEDA":
-                    handle_VEDA_endpoint(resource, catalog)
+                    handle_VEDA_endpoint(resource, data, catalog)
                 else:
                     raise ValueError("Type of Resource is not supported")
 
-def handle_SH_endpoint(endpoint, catalog):
+def handle_SH_endpoint(endpoint, data, catalog):
     token = get_SH_token()
     headers = {"Authorization": "Bearer %s"%token}
     endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
     endpoint["CollectionId"] = endpoint["Type"]
     process_STACAPI_Endpoint(
         endpoint=endpoint,
+        data=data,
         catalog=catalog,
         headers=headers,
     )
 
-def handle_GeoDB_endpoint(endpoint, catalog):
+def handle_GeoDB_endpoint(endpoint, data, catalog):
     print(endpoint)
 
-def handle_VEDA_endpoint(endpoint, catalog):
+def handle_VEDA_endpoint(endpoint, data, catalog):
     process_STACAPI_Endpoint(
         endpoint=endpoint,
+        data=data,
         catalog=catalog,
     )
 
-def process_STACAPI_Endpoint(endpoint, catalog, headers={}):
+def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     spatial_extent = SpatialExtent([
         [-180.0, -90.0, 180.0, 90.0],
     ])
@@ -100,7 +103,7 @@ def process_STACAPI_Endpoint(endpoint, catalog, headers={}):
 
     collection = Collection(
         id=endpoint["CollectionId"],
-        description="Sample",
+        description=data["Description"],
         extent=extent
     )
     if collection not in catalog.get_all_collections():
@@ -120,6 +123,19 @@ def process_STACAPI_Endpoint(endpoint, catalog, headers={}):
         collection.add_item(Item.from_dict(item))
     
     collection.update_extent_from_items()
+    # replace SH identifier with catalog identifier
+    collection.id = data["Name"]
+    # Add metadata information
+    collection.license = data["License"]
+    if "Story" in data:
+        collection.add_asset(
+            "metadata",
+            Asset(
+                href=data["Story"],
+                media_type=MediaType.TEXT,
+                roles=["metadata"],
+            ),
+        )
 
 def process_catalogs(folder_path):
     for file_name in os.listdir(folder_path):

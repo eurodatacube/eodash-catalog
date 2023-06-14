@@ -12,12 +12,7 @@
     },
     {
       "rel": "child",
-      "href": "./no2-monthly/collection.json",
-      "type": "application/json"
-    },
-    {
-      "rel": "child",
-      "href": "./byoc-efb2b070-39d6-4cfc-842f-57f8f54f22a0/collection.json",
+      "href": "./wind_10m_u/collection.json",
       "type": "application/json"
     },
     {
