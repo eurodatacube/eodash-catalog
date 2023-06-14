@@ -3220,8 +3220,8 @@
   "license": "Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))\n",
   "assets": {
     "metadata": {
-      "href": "../stories/CDS.md",
-      "type": "text/plain",
+      "href": "../../../stories/CDS.md",
+      "type": "text/markdown",
       "roles": [
         "metadata"
       ]

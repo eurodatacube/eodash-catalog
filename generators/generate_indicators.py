@@ -131,8 +131,8 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         collection.add_asset(
             "metadata",
             Asset(
-                href=data["Story"],
-                media_type=MediaType.TEXT,
+                href="../../%s"%data["Story"],
+                media_type="text/markdown",
                 roles=["metadata"],
             ),
         )
