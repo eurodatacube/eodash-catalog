@@ -15,14 +15,20 @@
       "href": "./wind_10m_u/collection.json",
       "type": "application/json",
       "title": "Wind U Field (C3S)",
-      "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field"
+      "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field",
+      "code": "CDS3",
+      "themes": "air",
+      "tags": "copernicus services,C3S,open data,sentinel hub,raster,race challenges"
     },
     {
       "rel": "child",
       "href": "./wind_10m_v/collection.json",
       "type": "application/json",
       "title": "Wind V Field (C3S)",
-      "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field"
+      "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field",
+      "code": "CDS4",
+      "themes": "air",
+      "tags": "copernicus services,C3S,open data,sentinel hub,raster,race challenges"
     },
     {
       "rel": "self",

@@ -99,6 +99,9 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         # bubble fields we want to have up to collection link
         link.extra_fields["description"] = collection.description
         link.extra_fields["title"] = collection.title
+        link.extra_fields["code"] = data["EodashIdentifier"]
+        link.extra_fields["themes"] = ",".join(data["Themes"])
+        link.extra_fields["tags"] = ",".join(data["Tags"])
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     bbox = "-180,-90,180,90"
@@ -130,6 +133,15 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
                 href="../../%s"%data["Story"],
                 media_type="text/markdown",
                 roles=["metadata"],
+            ),
+        )
+    if "Image" in data:
+        collection.add_asset(
+            "thumbnail",
+            Asset(
+                href="../../assets/%s"%data["Image"],
+                media_type="image/png",
+                roles=["thumbnail"],
             ),
         )
 

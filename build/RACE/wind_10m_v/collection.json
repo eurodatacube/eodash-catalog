@@ -3854,5 +3854,21 @@
       ]
     }
   },
-  "license": "proprietary"
+  "license": "proprietary",
+  "assets": {
+    "metadata": {
+      "href": "../../../stories/CDS.md",
+      "type": "text/markdown",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "thumbnail": {
+      "href": "../../assets/wind_10m_v/wind_10m_v.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

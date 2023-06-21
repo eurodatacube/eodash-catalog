@@ -3862,6 +3862,13 @@
       "roles": [
         "metadata"
       ]
+    },
+    "thumbnail": {
+      "href": "../../assets/wind_10m_u/wind_10m_u.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
     }
   }
 }
