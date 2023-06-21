@@ -3864,7 +3864,7 @@
       ]
     },
     "thumbnail": {
-      "href": "../../assets/wind_10m_v/wind_10m_v.png",
+      "href": "../../../assets/wind_10m_v/wind_10m_v.png",
       "type": "image/png",
       "roles": [
         "thumbnail"

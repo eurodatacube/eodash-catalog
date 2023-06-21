@@ -139,7 +139,7 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         collection.add_asset(
             "thumbnail",
             Asset(
-                href="../../assets/%s"%data["Image"],
+                href="../../../assets/%s"%data["Image"],
                 media_type="image/png",
                 roles=["thumbnail"],
             ),
