@@ -1,23 +1,10 @@
 Name: wind_10m_u
 Title: Wind U Field (C3S)
 EodashIdentifier: CDS3
+Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field 
+Story: ../stories/CDS.md
 Themes:
     - air
-OpenEOPID: ERA5_WIND_U
-Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field 
-AdditionalInfoExternal:
-    Title: Additional info
-    Path: wind_10m_u/README.MD
-Image: wind_10m_u/wind_10m_u.png
-Story: ../stories/CDS.md
-EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_u&layerId=Wind%20U-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
-Resolution: 0.25° x 0.25°
-GeographicalCoverage: -179.999755859375, -90.12489004526765, 179.99977453631897, 90.125
-TemporalAvailability: 2019-01-01 - 2022-04-01
-BandInformation: windu10m
-Contact: "[COPERNICUS SUPPORT](copernicus-support@ecmwf.int)"
-Provider: "[COPERNICUS](https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)"
-ManagedBy: "[ESA](http://www.esa.int/)"
 Tags:
     - copernicus services
     - C3S
@@ -25,6 +12,14 @@ Tags:
     - sentinel hub
     - raster
     - race challenges
+Satellite:
+    - METEOSAT
+Sensor:
+    - SEVIRI
+Agency:
+    - EUMETSAT
+    - ESA
+Provider: "[COPERNICUS](https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)"
 License: |
  Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
 Resources:
@@ -35,6 +30,16 @@ Resources:
    Type: byoc-067fbb53-b1c3-4a57-9c81-adf2488a47ee
    CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
    Primary: True
+OpenEOPID: ERA5_WIND_U
+AdditionalInfoExternal:
+    Title: Additional info
+    Path: wind_10m_u/README.MD
+Image: wind_10m_u/wind_10m_u.png
+EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_u&layerId=Wind%20U-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
+Resolution: 0.25° x 0.25°
+BandInformation: windu10m
+Contact: "[COPERNICUS SUPPORT](copernicus-support@ecmwf.int)"
+ManagedBy: "[ESA](http://www.esa.int/)"
 Configurations:
   - href: "https://docs.sentinel-hub.com/api/latest/api/process/"
     rel: "about"

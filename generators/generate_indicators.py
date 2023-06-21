@@ -97,11 +97,15 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     if collection not in catalog.get_all_collections():
         link = catalog.add_child(collection)
         # bubble fields we want to have up to collection link
+        link.extra_fields["type"] = endpoint["Name"]
         link.extra_fields["description"] = collection.description
         link.extra_fields["title"] = collection.title
         link.extra_fields["code"] = data["EodashIdentifier"]
         link.extra_fields["themes"] = ",".join(data["Themes"])
         link.extra_fields["tags"] = ",".join(data["Tags"])
+        link.extra_fields["satellite"] = ",".join(data["Satellite"])
+        link.extra_fields["sensor"] = ",".join(data["Sensor"])
+        link.extra_fields["agency"] = ",".join(data["Agency"])
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     bbox = "-180,-90,180,90"
