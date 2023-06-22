@@ -3,6 +3,7 @@ title: "RACE"
 description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://race.esa.int/catalog/"
 collections:
+  - vessel_density_all
   - wind_10m_u
   - wind_10m_v
   # - no2-monthly

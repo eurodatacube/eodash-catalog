@@ -133,10 +133,14 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         link.extra_fields["title"] = collection.title
         link.extra_fields["code"] = data["EodashIdentifier"]
         link.extra_fields["themes"] = ",".join(data["Themes"])
-        link.extra_fields["tags"] = ",".join(data["Tags"])
-        link.extra_fields["satellite"] = ",".join(data["Satellite"])
-        link.extra_fields["sensor"] = ",".join(data["Sensor"])
-        link.extra_fields["agency"] = ",".join(data["Agency"])
+        if "tags" in data:
+            link.extra_fields["tags"] = ",".join(data["Tags"])
+        if "satellite" in data:
+            link.extra_fields["satellite"] = ",".join(data["Satellite"])
+        if "sensor" in data:
+            link.extra_fields["sensor"] = ",".join(data["Sensor"])
+        if "agency" in data:
+            link.extra_fields["agency"] = ",".join(data["Agency"])
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     bbox = "-180,-90,180,90"

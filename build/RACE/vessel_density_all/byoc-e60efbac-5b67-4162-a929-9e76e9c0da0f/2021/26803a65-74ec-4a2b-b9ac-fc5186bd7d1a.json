@@ -1,0 +1,112 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "26803a65-74ec-4a2b-b9ac-fc5186bd7d1a",
+  "properties": {
+    "datetime": "2021-07-01T00:00:00Z",
+    "proj:epsg": 3035,
+    "proj:bbox": [
+      4299999.5947,
+      3799999.9998,
+      4399999.5947,
+      3899999.9998
+    ],
+    "proj:geometry": {
+      "type": "Polygon",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::3035"
+        }
+      },
+      "coordinates": [
+        [
+          [
+            4299999.594699002,
+            3799999.9996019956
+          ],
+          [
+            4399999.594703757,
+            3799999.999601938
+          ],
+          [
+            4399999.594703665,
+            3899999.999613125
+          ],
+          [
+            4299999.594699026,
+            3899999.999613173
+          ],
+          [
+            4299999.594699002,
+            3799999.9996019956
+          ]
+        ]
+      ]
+    }
+  },
+  "geometry": {
+    "type": "Polygon",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:OGC::CRS84"
+      }
+    },
+    "coordinates": [
+      [
+        [
+          9.652020993644577,
+          57.30188711373405
+        ],
+        [
+          11.308900160337457,
+          57.29585358199726
+        ],
+        [
+          11.341241779361695,
+          58.194785822689
+        ],
+        [
+          9.643420447114655,
+          58.20098888696654
+        ],
+        [
+          9.652020993644577,
+          57.30188711373405
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "RACE"
+    },
+    {
+      "rel": "collection",
+      "href": "../../collection.json",
+      "type": "application/json",
+      "title": "Vessel density"
+    },
+    {
+      "rel": "parent",
+      "href": "../../collection.json",
+      "type": "application/json",
+      "title": "Vessel density"
+    }
+  ],
+  "assets": {},
+  "bbox": [
+    9.643420447114655,
+    57.29585358199726,
+    11.341241779361695,
+    58.20098888696654
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+  ],
+  "collection": "byoc-e60efbac-5b67-4162-a929-9e76e9c0da0f"
+}

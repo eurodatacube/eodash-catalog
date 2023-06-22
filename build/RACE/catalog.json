@@ -12,17 +12,23 @@
     },
     {
       "rel": "child",
+      "href": "./vessel_density_all/collection.json",
+      "type": "application/json",
+      "title": "Vessel density",
+      "endpointtype": "Sentinel Hub",
+      "description": "Vessel density description",
+      "code": "E13o",
+      "themes": "ocean"
+    },
+    {
+      "rel": "child",
       "href": "./wind_10m_u/collection.json",
       "type": "application/json",
       "title": "Wind U Field (C3S)",
       "endpointtype": "Sentinel Hub",
       "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field",
       "code": "CDS3",
-      "themes": "air",
-      "tags": "copernicus services,C3S,open data,sentinel hub,raster,race challenges",
-      "satellite": "METEOSAT",
-      "sensor": "SEVIRI",
-      "agency": "EUMETSAT,ESA"
+      "themes": "air"
     },
     {
       "rel": "child",
@@ -32,11 +38,7 @@
       "endpointtype": "Sentinel Hub",
       "description": "Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field",
       "code": "CDS4",
-      "themes": "air",
-      "tags": "copernicus services,C3S,open data,sentinel hub,raster,race challenges",
-      "satellite": "METEOSAT",
-      "sensor": "SEVIRI",
-      "agency": "EUMETSAT,ESA"
+      "themes": "air"
     },
     {
       "rel": "self",
