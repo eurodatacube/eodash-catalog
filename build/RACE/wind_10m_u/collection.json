@@ -17,9 +17,6 @@
       "title": "wind_10m_u",
       "wms:layers": [
         "AWS_VIS_WIND_U_10M"
-      ],
-      "wms:styles": [
-        "default"
       ]
     },
     {

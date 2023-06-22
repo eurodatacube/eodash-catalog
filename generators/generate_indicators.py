@@ -85,15 +85,17 @@ def handle_VEDA_endpoint(endpoint, data, catalog):
 def addVisualizationInfo(collection: Collection, data, endpoint):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
+        instanceId = os.getenv("SH_INSTANCE_ID")
+        if "InstanceId" in endpoint:
+            instanceId = endpoint["InstanceId"]
         collection.add_link(
             Link(
                 rel="wms",
-                target="https://services.sentinel-hub.com/ogc/wms/%s"%(os.getenv('SH_INSTANCE_ID')),
+                target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
                 media_type="text/xml",
                 title=data["Name"],
                 extra_fields={
                     "wms:layers": [endpoint["LayerId"]],
-                    "wms:styles": ["default"],
                 },
             )
         )

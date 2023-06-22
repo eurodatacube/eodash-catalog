@@ -30,6 +30,7 @@ Resources:
    Type: byoc-3043d07f-3c20-410c-9a87-7da720942ab8
    CollectionId: 3043d07f-3c20-410c-9a87-7da720942ab8
    LayerId: AWS_VIS_WIND_V_10M
+   # InstanceId: <InstanceId>
    Primary: true
 OpenEOPID: ERA5_WIND_V
 AdditionalInfoExternal:
