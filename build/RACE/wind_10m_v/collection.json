@@ -11,6 +11,18 @@
       "title": "RACE"
     },
     {
+      "rel": "wms",
+      "href": "https://services.sentinel-hub.com/ogc/wms/0635c213-17a1-48ee-aef7-9d1731695a54",
+      "type": "text/xml",
+      "title": "wind_10m_v",
+      "wms:layers": [
+        "AWS_VIS_WIND_V_10M"
+      ],
+      "wms:styles": [
+        "default"
+      ]
+    },
+    {
       "rel": "item",
       "href": "./byoc-3043d07f-3c20-410c-9a87-7da720942ab8/2022/1ec88442-7a87-4875-824b-1d4739f01a8f.json",
       "type": "application/json",
@@ -3832,6 +3844,9 @@
       "type": "application/json",
       "title": "RACE"
     }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json"
   ],
   "title": "Wind V Field (C3S)",
   "extent": {

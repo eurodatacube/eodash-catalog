@@ -13,4 +13,4 @@ python-dateutil<3
 swiftspec==0.0.2
 mergedeep
 structlog<22.0
-pystac @ git+https://github.com/stac-utils/pystac@7f1c2b944b65f0c7633ade922abba37cb7feb4bb
+pystac[validation] @ git+https://github.com/stac-utils/pystac@d88fba846eed5f94bdd0344cfda2a6ae87b2d51a

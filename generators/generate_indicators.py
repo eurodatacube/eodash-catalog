@@ -12,6 +12,7 @@ from pystac import (
     Item,
     Asset,
     Catalog,
+    Link,
     # StacIO,
     CatalogType,
     Collection,
@@ -81,6 +82,28 @@ def handle_VEDA_endpoint(endpoint, data, catalog):
         catalog=catalog,
     )
 
+def addVisualizationInfo(collection: Collection, data, endpoint):
+    # add extension reference
+    if endpoint["Name"] == "Sentinel Hub":
+        collection.add_link(
+            Link(
+                rel="wms",
+                target="https://services.sentinel-hub.com/ogc/wms/%s"%(os.getenv('SH_INSTANCE_ID')),
+                media_type="text/xml",
+                title=data["Name"],
+                extra_fields={
+                    "wms:layers": [endpoint["LayerId"]],
+                    "wms:styles": ["default"],
+                },
+            )
+        )
+    # elif resource["Name"] == "GeoDB":
+    #     pass
+    # elif resource["Name"] == "VEDA":
+    #     pass
+    else:
+        pass
+
 def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     spatial_extent = SpatialExtent([
         [-180.0, -90.0, 180.0, 90.0],
@@ -92,8 +115,14 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         id=endpoint["CollectionId"],
         title=data["Title"],
         description=data["Description"],
+        stac_extensions=[
+            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+        ],
         extent=extent
     )
+
+    addVisualizationInfo(collection, data, endpoint)
+
     if collection not in catalog.get_all_collections():
         link = catalog.add_child(collection)
         # bubble fields we want to have up to collection link
@@ -148,6 +177,12 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
                 roles=["thumbnail"],
             ),
         )
+
+    # validate collection after creation
+    try:
+        print(collection.validate())
+    except Exception as e:
+        print("Issue validationg collection: %s"%e)
 
 def process_catalogs(folder_path):
     for file_name in os.listdir(folder_path):
