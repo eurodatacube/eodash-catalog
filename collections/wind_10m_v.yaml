@@ -1,6 +1,38 @@
-Name: Wind_10m_v
-OpenEOPID: ERA5_WIND_V
+Name: wind_10m_v
+Title: Wind V Field (C3S)
+EodashIdentifier: CDS4
 Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field
+Story: ../stories/CDS.md
+Themes:
+    - air
+Tags:
+    - copernicus services
+    - C3S
+    - open data
+    - sentinel hub
+    - raster
+    - race challenges
+Satellite:
+    - METEOSAT
+Sensor:
+    - SEVIRI
+Agency:
+    - EUMETSAT
+    - ESA
+Provider: "[COPERNICUS](https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)"
+License: |
+ Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Role: processor
+   Type: byoc-3043d07f-3c20-410c-9a87-7da720942ab8
+   CollectionId: 3043d07f-3c20-410c-9a87-7da720942ab8
+   LayerId: AWS_VIS_WIND_V_10M
+   # InstanceId: <InstanceId>
+   Primary: true
+OpenEOPID: ERA5_WIND_V
 AdditionalInfoExternal:
     Title: Additional info
     Path: wind_10m_v/README.MD
@@ -11,25 +43,7 @@ GeographicalCoverage: -179.999755859375, -90.12489004526765, 179.99977453631897,
 TemporalAvailability: 2019-01-01 - 2022-04-01
 BandInformation: windv10m
 Contact: "[COPERNICUS SUPPORT](copernicus-support@ecmwf.int)"
-Provider: "[COPERNICUS](https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)"
 ManagedBy: "[ESA](http://www.esa.int/)"
-Tags:
-    - copernicus services
-    - C3S
-    - open data
-    - sentinel hub
-    - raster
-    - race challenges
-License: |
- Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
-Resources:
- - Group: Sentinel Hub Resources
- - EndPoint: https://services.sentinel-hub.com
-   Name: Sentinel Hub
-   Role: processor
-   Type: byoc-3043d07f-3c20-410c-9a87-7da720942ab8
-   CollectionId: 3043d07f-3c20-410c-9a87-7da720942ab8
-   Primary: true
 Configurations:
   - href: "https://docs.sentinel-hub.com/api/latest/api/process/"
     rel: "about"
@@ -42,19 +56,6 @@ Configurations:
     sentinelhub:layer_name: "Wind V-component"
     sentinelhub:mosaicking_order: "mostRecent"
     sentinelhub:upsampling: "BICUBIC"
-Extent:
-  spatial:
-    bbox:
-      -
-        - -179.999755859375
-        - -90.12489004526765
-        - 179.99977453631897
-        - 90.125
-  temporal:
-    interval:
-      -
-        - '2019-01-01T00:00:00Z'
-        - '2022-04-01T00:00:00Z'
 CubeDimensions:
   x:
     type: spatial

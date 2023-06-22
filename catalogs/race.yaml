@@ -1,0 +1,12 @@
+id: "RACE"
+title: "RACE"
+description: "Rapid Action for Citizens with Earth Observation"
+endpoint: "https://race.esa.int/catalog/"
+collections:
+  - wind_10m_u
+  - wind_10m_v
+  # - no2-monthly
+  # - e12c_motorway
+  # - e12d_primary_corrected
+  # - E10a6
+  # - sentinel-1-grd

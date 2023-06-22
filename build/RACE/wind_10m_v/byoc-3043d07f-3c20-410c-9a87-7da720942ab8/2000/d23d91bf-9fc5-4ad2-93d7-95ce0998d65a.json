@@ -1,0 +1,112 @@
+{
+  "type": "Feature",
+  "stac_version": "1.0.0",
+  "id": "d23d91bf-9fc5-4ad2-93d7-95ce0998d65a",
+  "properties": {
+    "datetime": "2000-06-01T00:00:00Z",
+    "proj:epsg": 84,
+    "proj:bbox": [
+      -179.999755859375,
+      -90.12489004526765,
+      179.99977453631897,
+      90.125
+    ],
+    "proj:geometry": {
+      "type": "Polygon",
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:OGC::CRS84"
+        }
+      },
+      "coordinates": [
+        [
+          [
+            -179.999755859375,
+            -90.12489004526765
+          ],
+          [
+            179.99977453631897,
+            -90.12489004526765
+          ],
+          [
+            179.99977453631897,
+            90.125
+          ],
+          [
+            -179.999755859375,
+            90.125
+          ],
+          [
+            -179.999755859375,
+            -90.12489004526765
+          ]
+        ]
+      ]
+    }
+  },
+  "geometry": {
+    "type": "Polygon",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:OGC::CRS84"
+      }
+    },
+    "coordinates": [
+      [
+        [
+          -179.999755859375,
+          -90.12489004526765
+        ],
+        [
+          179.99977453631897,
+          -90.12489004526765
+        ],
+        [
+          179.99977453631897,
+          90.125
+        ],
+        [
+          -179.999755859375,
+          90.125
+        ],
+        [
+          -179.999755859375,
+          -90.12489004526765
+        ]
+      ]
+    ]
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "RACE"
+    },
+    {
+      "rel": "collection",
+      "href": "../../collection.json",
+      "type": "application/json",
+      "title": "Wind V Field (C3S)"
+    },
+    {
+      "rel": "parent",
+      "href": "../../collection.json",
+      "type": "application/json",
+      "title": "Wind V Field (C3S)"
+    }
+  ],
+  "assets": {},
+  "bbox": [
+    -179.999755859375,
+    -90.12489004526765,
+    179.99977453631897,
+    90.125
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
+  ],
+  "collection": "byoc-3043d07f-3c20-410c-9a87-7da720942ab8"
+}
