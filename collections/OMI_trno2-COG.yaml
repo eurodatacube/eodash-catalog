@@ -1,0 +1,12 @@
+Name: OMI_trno2-COG
+Title: Nitrogen Dioxide (Yearly)
+EodashIdentifier: N9
+Description: Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura
+Themes:
+    - atmosphere
+Resources:
+ - EndPoint: https://staging-stac.delta-backend.com/
+   Type: cog
+   Name: VEDA
+   CollectionId: OMI_trno2-COG
+   Colormap: {"1": [120, 120, 120, 255],"2": [130, 65, 0, 255],"3": [66, 207, 56, 255],"4": [245, 239, 0, 255],"5": [241, 89, 32, 255],"6": [168, 0, 0, 255],"7": [0, 143, 201, 255]}

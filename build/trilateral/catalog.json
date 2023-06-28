@@ -1,0 +1,30 @@
+{
+  "type": "Catalog",
+  "id": "trilateral",
+  "stac_version": "1.0.0",
+  "description": "A Tri-Agency Dashboard by NASA, ESA, JAXA",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "Earth Observing Dashboard"
+    },
+    {
+      "rel": "child",
+      "href": "./OMI_trno2-COG/collection.json",
+      "type": "application/json",
+      "title": "Nitrogen Dioxide (Yearly)",
+      "endpointtype": "VEDA",
+      "description": "Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura",
+      "code": "N9",
+      "themes": "atmosphere"
+    },
+    {
+      "rel": "self",
+      "href": "https://eodashboard.org/catalog/catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "title": "Earth Observing Dashboard"
+}
