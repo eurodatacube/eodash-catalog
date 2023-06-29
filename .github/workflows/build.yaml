@@ -52,6 +52,7 @@ jobs:
         with:
           # Upload build folder
           path: 'build'
+          path: 'assets'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
