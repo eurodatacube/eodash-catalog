@@ -185,10 +185,12 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         )
 
     # validate collection after creation
+    '''
     try:
         print(collection.validate())
     except Exception as e:
         print("Issue validationg collection: %s"%e)
+    '''
 
 def process_catalogs(folder_path):
     for file_name in os.listdir(folder_path):
