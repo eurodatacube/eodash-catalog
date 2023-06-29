@@ -47,13 +47,13 @@ jobs:
         run: |
           cd generators/
           python generate_indicators.py
+          cd ..
+          cp -r assets build/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload build folder
-          path: |
-            'build'
-            'assets'
+          path: 'build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
