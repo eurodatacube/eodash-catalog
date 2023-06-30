@@ -27,6 +27,7 @@ import os
 from datetime import datetime
 import yaml
 from yaml.loader import SafeLoader
+import urllib.parse
 
 def process_catalog_file(file_path):
     print("Processing catalog:", file_path)
@@ -64,7 +65,7 @@ def handle_SH_endpoint(endpoint, data, catalog):
     token = get_SH_token()
     headers = {"Authorization": "Bearer %s"%token}
     endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
-    endpoint["CollectionId"] = endpoint["Type"]
+    endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"] 
     process_STACAPI_Endpoint(
         endpoint=endpoint,
         data=data,
@@ -82,13 +83,13 @@ def handle_VEDA_endpoint(endpoint, data, catalog):
         catalog=catalog,
     )
 
-def addVisualizationInfo(collection: Collection, data, endpoint):
+def addVisualizationInfo(stac_object:Collection | Item, data, endpoint, file_url=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
             instanceId = endpoint["InstanceId"]
-        collection.add_link(
+        stac_object.add_link(
             Link(
                 rel="wms",
                 target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
@@ -101,10 +102,49 @@ def addVisualizationInfo(collection: Collection, data, endpoint):
         )
     # elif resource["Name"] == "GeoDB":
     #     pass
-    # elif resource["Name"] == "VEDA":
-    #     pass
-    else:
+    elif endpoint["Name"] == "VEDA":
+        if endpoint["Type"] == "cog":
+            
+            bidx = ""
+            if "Bidx" in endpoint:
+               bidx = "&bidx=%s"%(endpoint["Bidx"])
+            
+            colormap = ""
+            if "Colormap" in endpoint:
+               colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
+
+            colormap_name = ""
+            if "ColormapName" in endpoint:
+               colormap_name = "&colormap_name=%s"%(endpoint["ColormapName"])
+
+            rescale = ""
+            if "Rescale" in endpoint:
+               rescale = "&rescale=%s"%(endpoint["Rescale"])
+            
+            if file_url:
+                file_url = "url=%s&"%(file_url)
+            else:
+                file_url = ""
+
+            target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+                file_url,
+                bidx,
+                colormap,
+                colormap_name,
+                rescale,
+            )
+
+            stac_object.add_link(
+            Link(
+                rel="xyz",
+                target=target_url,
+                media_type="image/png",
+                title=data["Name"],
+            )
+        )
         pass
+    else:
+        print("Visualization endpoint not supported")
 
 def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     spatial_extent = SpatialExtent([
@@ -146,17 +186,24 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     bbox = "-180,-90,180,90"
     if "bbox" in endpoint:
         bbox = endpoint["bbox"]
-
     results = api.search(
         collections=[endpoint["CollectionId"]],
         bbox=bbox,
         datetime=['1970-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
     )
-    for item in results.items_as_dicts():
-        item = Item.from_dict(item)
+    for item in results.items():
+        # Check if we can create visualization link
+        if "cog_default" in item.assets:
+            addVisualizationInfo(item, data, endpoint, item.assets["cog_default"].href)
         link = collection.add_item(item)
         # bubble up information we want to the link
-        link.extra_fields["datetime"] = item.get_datetime().isoformat()[:-6] + 'Z'
+        item_datetime = item.get_datetime()
+        # it is possible for datetime to be null, if it is start and end datetime have to exist
+        if item_datetime:
+            link.extra_fields["datetime"] = item_datetime.isoformat()[:-6] + 'Z'
+        else:
+            link.extra_fields["start_datetime"] = item.properties["start_datetime"]
+            link.extra_fields["end_datetime"] = item.properties["end_datetime"]
         
     collection.update_extent_from_items()
     

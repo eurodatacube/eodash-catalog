@@ -1,0 +1,6 @@
+id: "trilateral"
+title: "Earth Observing Dashboard"
+description: "A Tri-Agency Dashboard by NASA, ESA, JAXA"
+endpoint: "https://eodashboard.org/catalog/"
+collections:
+  - OMI_trno2-COG
