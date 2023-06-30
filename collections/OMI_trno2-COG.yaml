@@ -9,8 +9,9 @@ Resources:
    Type: cog
    Name: VEDA
    CollectionId: OMI_trno2-COG
-   Colormap: {"1": [120, 120, 120, 255],"2": [130, 65, 0, 255],"3": [66, 207, 56, 255],"4": [245, 239, 0, 255],"5": [241, 89, 32, 255],"6": [168, 0, 0, 255],"7": [0, 143, 201, 255]}
+   # TODO: There seems to be some issues with the colormap encoding
+   # Colormap: {"1": [120, 120, 120, 255],"2": [130, 65, 0, 255],"3": [66, 207, 56, 255],"4": [245, 239, 0, 255],"5": [241, 89, 32, 255],"6": [168, 0, 0, 255],"7": [0, 143, 201, 255]}
    # Complete colormap or colormap name can be defined
-   # ColormapName: rdbu_r
-   # Rescale: [-0.000001, 0.000001]
-   # Bidx: 1
+   ColormapName: reds
+   Rescale: [0,37e14]
+   Bidx: 1
