@@ -119,7 +119,7 @@ def addVisualizationInfo(stac_object:Collection | Item, data, endpoint, file_url
 
             rescale = ""
             if "Rescale" in endpoint:
-               rescale = "&rescale=%s"%(endpoint["Rescale"])
+               rescale = "&rescale=%s,%s"%(endpoint["Rescale"][0], endpoint["Rescale"][1])
             
             if file_url:
                 file_url = "url=%s&"%(file_url)
