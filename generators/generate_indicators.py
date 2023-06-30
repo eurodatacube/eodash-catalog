@@ -195,6 +195,7 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
         # Check if we can create visualization link
         if "cog_default" in item.assets:
             addVisualizationInfo(item, data, endpoint, item.assets["cog_default"].href)
+            link.extra_fields["cog_href"] = item.assets["cog_default"].href
         link = collection.add_item(item)
         # bubble up information we want to the link
         item_datetime = item.get_datetime()
