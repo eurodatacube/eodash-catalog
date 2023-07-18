@@ -4,9 +4,19 @@ Indicator generator to harvest information from endpoints and generate catalog
 
 """
 
+import requests
+import json
 from pystac_client import Client
+import os
+from datetime import datetime
+import yaml
+from yaml.loader import SafeLoader
+import urllib.parse
+from itertools import groupby
+from operator import itemgetter
 
 from sh_endpoint import get_SH_token
+from utils import create_geojson_point
 
 from pystac import (
     Item,
@@ -23,11 +33,6 @@ from pystac import (
 )
 from pystac.layout import TemplateLayoutStrategy
 
-import os
-from datetime import datetime
-import yaml
-from yaml.loader import SafeLoader
-import urllib.parse
 
 def process_catalog_file(file_path):
     print("Processing catalog:", file_path)
@@ -73,8 +78,81 @@ def handle_SH_endpoint(endpoint, data, catalog):
         headers=headers,
     )
 
+def create_collection(endpoint, data, catalog):
+    spatial_extent = SpatialExtent([
+        [-180.0, -90.0, 180.0, 90.0],
+    ])
+    temporal_extent = TemporalExtent([[datetime.now()]])
+    extent = Extent(spatial=spatial_extent, temporal=temporal_extent)
+
+    collection = Collection(
+        id=endpoint["CollectionId"],
+        title=data["Title"],
+        description=data["Description"],
+        stac_extensions=[
+            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+        ],
+        extent=extent
+    )
+
+    if collection not in catalog.get_all_collections():
+        link = catalog.add_child(collection)
+        # bubble fields we want to have up to collection link
+        link.extra_fields["endpointtype"] = endpoint["Name"]
+        link.extra_fields["description"] = collection.description
+        link.extra_fields["title"] = collection.title
+        link.extra_fields["code"] = data["EodashIdentifier"]
+        link.extra_fields["themes"] = ",".join(data["Themes"])
+        if "tags" in data:
+            link.extra_fields["tags"] = ",".join(data["Tags"])
+        if "satellite" in data:
+            link.extra_fields["satellite"] = ",".join(data["Satellite"])
+        if "sensor" in data:
+            link.extra_fields["sensor"] = ",".join(data["Sensor"])
+        if "agency" in data:
+            link.extra_fields["agency"] = ",".join(data["Agency"])
+
+    return collection
+
 def handle_GeoDB_endpoint(endpoint, data, catalog):
-    print(endpoint)
+    
+    collection = create_collection(endpoint, data, catalog)
+    select = "?select=aoi,country,city,time"
+    url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
+    response = json.loads(requests.get(url).text)
+
+    # Sort locations by key
+    sorted_locations = sorted(response, key = itemgetter('aoi'))
+    for key, value in groupby(sorted_locations, key = itemgetter('aoi')):
+        # Finding min and max values for date
+        values = [v for v in value]
+        times = [datetime.fromisoformat(t["time"]) for t in values]
+        unique_values = list({v["aoi"]:v for v in values}.values())[0]
+        country = unique_values["country"]
+        city = unique_values["city"]
+        min_date = min(times)
+        max_date = max(times)
+        [lon, lat] = [float(x) for x in key.split(",")]
+        # create item for unique locations
+        buff = 0.01
+        bbox = [lon-buff, lat-buff,lon+buff,lat+buff]
+        item = Item(
+            id = key,
+            bbox=bbox,
+            properties={},
+            geometry = create_geojson_point(lon, lat),
+            datetime = None,
+            start_datetime = min_date,
+            end_datetime = max_date
+        )
+        link = collection.add_item(item)
+        # bubble up information we want to the link
+        link.extra_fields["identifier"] = key
+        link.extra_fields["country"] = country
+        link.extra_fields["city"] = city
+        
+    collection.update_extent_from_items()
+        
 
 def handle_VEDA_endpoint(endpoint, data, catalog):
     process_STACAPI_Endpoint(
@@ -147,40 +225,8 @@ def addVisualizationInfo(stac_object:Collection | Item, data, endpoint, file_url
         print("Visualization endpoint not supported")
 
 def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
-    spatial_extent = SpatialExtent([
-        [-180.0, -90.0, 180.0, 90.0],
-    ])
-    temporal_extent = TemporalExtent([[datetime.now()]])
-    extent = Extent(spatial=spatial_extent, temporal=temporal_extent)
-
-    collection = Collection(
-        id=endpoint["CollectionId"],
-        title=data["Title"],
-        description=data["Description"],
-        stac_extensions=[
-            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-        ],
-        extent=extent
-    )
-
+    collection = create_collection(endpoint, data, catalog)
     addVisualizationInfo(collection, data, endpoint)
-
-    if collection not in catalog.get_all_collections():
-        link = catalog.add_child(collection)
-        # bubble fields we want to have up to collection link
-        link.extra_fields["endpointtype"] = endpoint["Name"]
-        link.extra_fields["description"] = collection.description
-        link.extra_fields["title"] = collection.title
-        link.extra_fields["code"] = data["EodashIdentifier"]
-        link.extra_fields["themes"] = ",".join(data["Themes"])
-        if "tags" in data:
-            link.extra_fields["tags"] = ",".join(data["Tags"])
-        if "satellite" in data:
-            link.extra_fields["satellite"] = ",".join(data["Satellite"])
-        if "sensor" in data:
-            link.extra_fields["sensor"] = ",".join(data["Sensor"])
-        if "agency" in data:
-            link.extra_fields["agency"] = ",".join(data["Agency"])
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     bbox = "-180,-90,180,90"
@@ -237,7 +283,7 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     try:
         print(collection.validate())
     except Exception as e:
-        print("Issue validationg collection: %s"%e)
+        print("Issue validation collection: %s"%e)
     '''
 
 def process_catalogs(folder_path):

@@ -1,0 +1,11 @@
+Name: metal_density
+Title: Metal density
+EodashIdentifier: E5
+Description: metal density in open warehouses produced by a steel mill
+Themes:
+    - ocean
+Resources:
+ - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+   Name: GeoDB
+   Database: eodash
+   CollectionId: E5
