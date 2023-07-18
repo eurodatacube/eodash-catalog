@@ -1,7 +1,7 @@
 Name: metal_density
 Title: Metal density
 EodashIdentifier: E5
-Description: metal density in open warehouses produced by a steel mill
+Description: Metal density monitoring in open warehouses produced of steel mills from SAR (Synthetic Aperture Radar) backscatter signals based on Sentinel-1 data
 Themes:
     - ocean
 Resources:
