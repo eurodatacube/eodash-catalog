@@ -94,29 +94,31 @@ def create_collection(endpoint, data, catalog):
         ],
         extent=extent
     )
-
-    if collection not in catalog.get_all_collections():
-        link = catalog.add_child(collection)
-        # bubble fields we want to have up to collection link
-        link.extra_fields["endpointtype"] = endpoint["Name"]
-        link.extra_fields["description"] = collection.description
-        link.extra_fields["title"] = collection.title
-        link.extra_fields["code"] = data["EodashIdentifier"]
-        link.extra_fields["themes"] = ",".join(data["Themes"])
-        if "tags" in data:
-            link.extra_fields["tags"] = ",".join(data["Tags"])
-        if "satellite" in data:
-            link.extra_fields["satellite"] = ",".join(data["Satellite"])
-        if "sensor" in data:
-            link.extra_fields["sensor"] = ",".join(data["Sensor"])
-        if "agency" in data:
-            link.extra_fields["agency"] = ",".join(data["Agency"])
-
     return collection
+
+def add_to_catalog(collection, catalog, endpoint, data):
+    link = catalog.add_child(collection)
+    # bubble fields we want to have up to collection link
+    link.extra_fields["endpointtype"] = endpoint["Name"]
+    link.extra_fields["description"] = collection.description
+    link.extra_fields["title"] = collection.title
+    link.extra_fields["code"] = data["EodashIdentifier"]
+    link.extra_fields["themes"] = ",".join(data["Themes"])
+    if "tags" in data:
+        link.extra_fields["tags"] = ",".join(data["Tags"])
+    if "satellite" in data:
+        link.extra_fields["satellite"] = ",".join(data["Satellite"])
+    if "sensor" in data:
+        link.extra_fields["sensor"] = ",".join(data["Sensor"])
+    if "agency" in data:
+        link.extra_fields["agency"] = ",".join(data["Agency"])
+    return link
+
 
 def handle_GeoDB_endpoint(endpoint, data, catalog):
     
     collection = create_collection(endpoint, data, catalog)
+    link = add_to_catalog(collection, catalog, endpoint, data)
     select = "?select=aoi,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     response = json.loads(requests.get(url).text)
@@ -132,12 +134,12 @@ def handle_GeoDB_endpoint(endpoint, data, catalog):
         city = unique_values["city"]
         min_date = min(times)
         max_date = max(times)
-        [lon, lat] = [float(x) for x in key.split(",")]
+        [lat, lon] = [float(x) for x in key.split(",")]
         # create item for unique locations
         buff = 0.01
         bbox = [lon-buff, lat-buff,lon+buff,lat+buff]
         item = Item(
-            id = key,
+            id = city,
             bbox=bbox,
             properties={},
             geometry = create_geojson_point(lon, lat),
@@ -226,6 +228,7 @@ def addVisualizationInfo(stac_object:Collection | Item, data, endpoint, file_url
 
 def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     collection = create_collection(endpoint, data, catalog)
+    link = add_to_catalog(collection, catalog, endpoint, data)
     addVisualizationInfo(collection, data, endpoint)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
