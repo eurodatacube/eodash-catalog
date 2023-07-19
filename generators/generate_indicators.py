@@ -119,22 +119,23 @@ def handle_GeoDB_endpoint(endpoint, data, catalog):
     
     collection = create_collection(endpoint, data, catalog)
     link = add_to_catalog(collection, catalog, endpoint, data)
-    select = "?select=aoi,country,city,time"
+    select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     response = json.loads(requests.get(url).text)
 
     # Sort locations by key
-    sorted_locations = sorted(response, key = itemgetter('aoi'))
-    for key, value in groupby(sorted_locations, key = itemgetter('aoi')):
+    sorted_locations = sorted(response, key = itemgetter('aoi_id'))
+    for key, value in groupby(sorted_locations, key = itemgetter('aoi_id')):
         # Finding min and max values for date
         values = [v for v in value]
         times = [datetime.fromisoformat(t["time"]) for t in values]
-        unique_values = list({v["aoi"]:v for v in values}.values())[0]
+        unique_values = list({v["aoi_id"]:v for v in values}.values())[0]
         country = unique_values["country"]
         city = unique_values["city"]
         min_date = min(times)
         max_date = max(times)
-        [lat, lon] = [float(x) for x in key.split(",")]
+        latlon = unique_values["aoi"]
+        [lat, lon] = [float(x) for x in latlon.split(",")]
         # create item for unique locations
         buff = 0.01
         bbox = [lon-buff, lat-buff,lon+buff,lat+buff]
@@ -149,7 +150,8 @@ def handle_GeoDB_endpoint(endpoint, data, catalog):
         )
         link = collection.add_item(item)
         # bubble up information we want to the link
-        link.extra_fields["identifier"] = key
+        link.extra_fields["id"] = key 
+        link.extra_fields["latlng"] = latlon
         link.extra_fields["country"] = country
         link.extra_fields["city"] = city
         
