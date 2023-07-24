@@ -155,6 +155,7 @@ def handle_GeoDB_endpoint(endpoint, data, catalog):
         link.extra_fields["country"] = country
         link.extra_fields["city"] = city
         
+    add_collection_metadata(collection, data)
     collection.update_extent_from_items()
         
 
@@ -261,6 +262,17 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     
     # replace SH identifier with catalog identifier
     collection.id = data["Name"]
+    add_collection_metadata(collection, data)
+
+    # validate collection after creation
+    '''
+    try:
+        print(collection.validate())
+    except Exception as e:
+        print("Issue validation collection: %s"%e)
+    '''
+
+def add_collection_metadata(collection, data):
     # Add metadata information
     # collection.license = data["License"]
     # TODO: need to review check against SPDX License identifier
@@ -282,15 +294,6 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
                 roles=["thumbnail"],
             ),
         )
-
-    # validate collection after creation
-    '''
-    try:
-        print(collection.validate())
-    except Exception as e:
-        print("Issue validation collection: %s"%e)
-    '''
-
 def process_catalogs(folder_path):
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
