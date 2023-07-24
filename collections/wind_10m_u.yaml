@@ -2,7 +2,7 @@ Name: wind_10m_u
 Title: Wind U Field (C3S)
 EodashIdentifier: CDS3
 Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field 
-Story: ../stories/CDS.md
+Story: wind_10m_u/CDS.md
 Themes:
     - air
 Tags:

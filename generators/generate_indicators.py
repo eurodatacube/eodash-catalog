@@ -266,9 +266,9 @@ def process_STACAPI_Endpoint(endpoint, data, catalog, headers={}):
     # TODO: need to review check against SPDX License identifier
     if "Story" in data:
         collection.add_asset(
-            "metadata",
+            "story",
             Asset(
-                href="../../%s"%data["Story"],
+                href="../../assets/%s"%data["Story"],
                 media_type="text/markdown",
                 roles=["metadata"],
             ),
