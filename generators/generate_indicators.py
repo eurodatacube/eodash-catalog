@@ -104,13 +104,13 @@ def add_to_catalog(collection, catalog, endpoint, data):
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["themes"] = ",".join(data["Themes"])
-    if "tags" in data:
+    if "Tags" in data:
         link.extra_fields["tags"] = ",".join(data["Tags"])
-    if "satellite" in data:
+    if "Satellite" in data:
         link.extra_fields["satellite"] = ",".join(data["Satellite"])
-    if "sensor" in data:
+    if "Sensor" in data:
         link.extra_fields["sensor"] = ",".join(data["Sensor"])
-    if "agency" in data:
+    if "Agency" in data:
         link.extra_fields["agency"] = ",".join(data["Agency"])
     return link
 
