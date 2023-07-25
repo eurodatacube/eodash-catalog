@@ -1,8 +1,8 @@
-Name: metal_density
-Title: Metal density
-EodashIdentifier: E5
-Description: Metal density monitoring in open warehouses produced of steel mills from SAR (Synthetic Aperture Radar) backscatter signals based on Sentinel-1 data
-Story: E5/E5.md
+Name: shipment_oil
+Title: Shipment of oil
+EodashIdentifier: E2_S2
+Description: Ships detected at specific piers in Sentinel-2 data
+Story: E2_S2/E2_S2.md
 Themes:
     - economy
 Tags:
@@ -17,4 +17,4 @@ Resources:
  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
    Name: GeoDB
    Database: eodash
-   CollectionId: E5
+   CollectionId: E2_S2
