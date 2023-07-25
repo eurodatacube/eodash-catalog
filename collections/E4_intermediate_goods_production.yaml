@@ -1,0 +1,20 @@
+Name: intermediate_goods_production
+Title: Intermediate goods production
+EodashIdentifier: E4
+Description: Assessment of intermediate goods production sites (steel mills/other metal production, cement production, chemicals/plastics production).
+Story: E4/E4.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+ - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+   Name: GeoDB
+   Database: eodash
+   CollectionId: E4
