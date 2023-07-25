@@ -1,5 +1,5 @@
 Name: vessel_density_timeseries
-Title: Vessel Density based on Copernicus Sentinel-1
+Title: Vessel Density
 EodashIdentifier: E1b
 Description: Vessel Density based on Copernicus Sentinel-1
 Story: E1b/E1b.md
@@ -8,7 +8,7 @@ Themes:
 Tags:
     - placeholder
 Satellite:
-    - placeholder
+    - Sentinel-1
 Sensor:
     - placeholder
 Agency:

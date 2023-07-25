@@ -1,5 +1,5 @@
 Name: ships_detected_s2
-Title: Ships detected in Sentinel-2 data
+Title: Ships detections
 EodashIdentifier: E200
 Description: Ships detected in Sentinel-2 data
 Story: E200/E200.md
@@ -8,7 +8,7 @@ Themes:
 Tags:
     - placeholder
 Satellite:
-    - placeholder
+    - Sentinel-2
 Sensor:
     - placeholder
 Agency:
