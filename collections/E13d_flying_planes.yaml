@@ -1,5 +1,5 @@
 Name: flying_planes
-Title: Flying planes detected on Sentinel-2 data
+Title: Flying planes detections
 EodashIdentifier: E13d
 Description: Flying planes detected on Sentinel-2 data
 Story: E13d/E13d.md
@@ -8,7 +8,7 @@ Themes:
 Tags:
     - placeholder
 Satellite:
-    - placeholder
+    - Sentinel-2
 Sensor:
     - placeholder
 Agency:

@@ -1,5 +1,5 @@
 Name: parked_planes
-Title: Parked planes detected on Sentinel-2 data
+Title: Parked plane detections
 EodashIdentifier: E13b
 Description: Parked planes detected on Sentinel-2 data
 Story: E13b/E13b.md
@@ -8,7 +8,7 @@ Themes:
 Tags:
     - placeholder
 Satellite:
-    - placeholder
+    - Sentinel-2
 Sensor:
     - placeholder
 Agency:

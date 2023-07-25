@@ -1,7 +1,7 @@
 Name: regional_water_quality_timeseries
-Title: Flying planes detected on Sentinel-2 data
+Title: Regional water quality time series
 EodashIdentifier: N3
-Description: Flying planes detected on Sentinel-2 data
+Description: Regional water quality time series
 Story: N3/N3.md
 Themes:
     - water
