@@ -1,0 +1,25 @@
+Name: cruises_impact
+Title: Cruises impact
+EodashIdentifier: E12b
+Description: Cruises impact description
+Story: E12b_cruises_impact/E12b.md
+Themes:
+    - industry
+Tags:
+    - placeholder
+Satellite:
+    - ICEYE
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Type: byoc
+   CollectionId: c5a44d46-0032-4c86-81b0-933ed573c64e
+   LayerId: AWS_ICEYE-E12B
+Image: E12b_cruises_impact/E12b.png

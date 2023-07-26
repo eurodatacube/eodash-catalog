@@ -1,0 +1,25 @@
+Name: oil_storage_volume
+Title: Oil storage volume
+EodashIdentifier: E3
+Description: Oil Storage Volume as observed by ICEYE
+Story: E3_oil_storage_volume/E3.md
+Themes:
+    - industry
+Tags:
+    - placeholder
+Satellite:
+    - ICEYE
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Type: byoc
+   CollectionId: c47fa011-e9cd-4076-9b2f-68a93d757e58
+   LayerId: AWS_ICEYE-E3
+Image: E3_oil_storage_volume/N3a2.png

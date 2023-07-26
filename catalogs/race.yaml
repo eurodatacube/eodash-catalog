@@ -4,9 +4,17 @@ description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/"
 collections:
-  - vessel_density_all
-  - wind_10m_u
-  - wind_10m_v
+  - N3a2_chl_concentration
+  - E3_oil_storage_volume
+  - E11_shopping_center_volume
+  - E11a_parking_lot_volume
+  - E12b_cruises_impact
+  - E13b_airport_throughput
+  - E13o_vessel_density_all
+  - CDS1_temperature
+  - CDS2_relative_humidity
+  - CDS3_wind_10m_u
+  - CDS4_wind_10m_v
   - E1_S2_shipment_metallic_ores
   - E1a_S2_shipment_non_metallic_ores
   - E1b_vessel_density_timeseries
@@ -15,7 +23,7 @@ collections:
   - E5_metal_density
   - E10a6_harvested_parcels_evolution
   - E11_shopping_center_activity
-  - E12b_border_crossing_vehicles
+  - E12b_border_crossing_vehicles_timeseries
   - E13b_parked_planes
   - E13d_flying_planes
   - E200_ships_detected

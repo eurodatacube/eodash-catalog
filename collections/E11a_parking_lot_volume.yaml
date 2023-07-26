@@ -1,0 +1,25 @@
+Name: parking_lot_volume
+Title: Parking lot volume
+EodashIdentifier: E11a
+Description: Parking lot volume description
+Story: E11a_parking_lot_volume/E11a.md
+Themes:
+    - industry
+Tags:
+    - placeholder
+Satellite:
+    - ICEYE
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Type: byoc
+   CollectionId: a9ae7d6a-70c8-4575-854a-1a8f0cb33317
+   LayerId: AWS_ICEYE-E11A
+Image: E11a_parking_lot_volume/E11a.png
