@@ -1,0 +1,25 @@
+Name: chl_concentration
+Title: Chlorophyll-a concentration
+EodashIdentifier: N3a2
+Description: Chlorophyll-a concentration description
+Story: N3a2_chl_concentration/N3a2.md
+Themes:
+    - water
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Type: byoc
+   CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
+   LayerId: AWS_N3_CUSTOM
+Image: N3a2_chl_concentration/N3a2.png

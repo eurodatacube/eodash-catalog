@@ -1,0 +1,25 @@
+Name: airport_throughput
+Title: Airport throughput
+EodashIdentifier: E13b_airport_throughput
+Description: Throughput at principal hub airports
+Story: E13b_airport_throughput/E13b.md
+Themes:
+    - industry
+Tags:
+    - placeholder
+Satellite:
+    - ICEYE
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Type: byoc
+   CollectionId: 4a537983-1c61-4c6e-9c85-7b3972b7b596
+   LayerId: AWS_ICEYE-E13B
+Image: E13b_airport_throughput/E13b.png

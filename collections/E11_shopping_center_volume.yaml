@@ -1,0 +1,25 @@
+Name: shopping_center_volume
+Title: Shopping center volume
+EodashIdentifier: E11
+Description: Shopping center volume description
+Story: E11_shopping_center_volume/E11.md
+Themes:
+    - industry
+Tags:
+    - placeholder
+Satellite:
+    - ICEYE
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+ - Group: Sentinel Hub Resources
+ - EndPoint: https://services.sentinel-hub.com
+   Name: Sentinel Hub
+   Type: byoc
+   CollectionId: 0771d000-92ca-4f7d-9788-b56ca0411cf7
+   LayerId: AWS_ICEYE-E11
+Image: E11_shopping_center_volume/E11.png

@@ -3,10 +3,10 @@ Title: Vessel density
 EodashIdentifier: E13o
 Description: Vessel density description
 Themes:
-    - ocean
+    - water
 Resources:
  - EndPoint: https://services.sentinel-hub.com
    Name: Sentinel Hub
    Type: byoc
-   CollectionId: e60efbac-5b67-4162-a929-9e76e9c0da0f
+   CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12
    LayerId: AWS_VIS_VESSELDENSITY_ALL

@@ -1,6 +1,6 @@
 
-Name: border_crossing_vehicles
-Title: Border crossing vehicles
+Name: border_crossing_vehicles_timeseries
+Title: Border crossing vehicles time series
 EodashIdentifier: E12b
 Description: Volume of highway occupancy from Sentinel-1 data
 Story: E12b/E12b.md
