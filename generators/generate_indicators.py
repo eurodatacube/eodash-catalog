@@ -60,7 +60,8 @@ def process_collection_file(config, file_path, catalog):
                 if resource["Name"] == "Sentinel Hub":
                     handle_SH_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "GeoDB":
-                    handle_GeoDB_endpoint(config, resource, data, catalog)
+                    collection = handle_GeoDB_endpoint(config, resource, data, catalog)
+                    add_to_catalog(collection, catalog, resource, data)
                 elif resource["Name"] == "VEDA":
                     handle_VEDA_endpoint(config, resource, data, catalog)
                 else:
@@ -70,16 +71,44 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     token = get_SH_token()
     headers = {"Authorization": "Bearer %s"%token}
     endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
-    endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"] 
-    process_STACAPI_Endpoint(
-        config=config,
-        endpoint=endpoint,
-        data=data,
-        catalog=catalog,
-        headers=headers,
-    )
+    endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"]
+    # Check if we have Locations in config, if yes we divide the collection
+    # into multiple colelctions based on their area
+    if "Locations" in data:
+        root_collection = create_collection(data["Name"], data)
+        for location in data["Locations"]:
+            collection = process_STACAPI_Endpoint(
+                config=config,
+                endpoint=endpoint,
+                data=data,
+                catalog=catalog,
+                headers=headers,
+                bbox=",".join(map(str,location["Bbox"])),
+                root_collection=root_collection,
+            )
+            # Update identifier to use location as well as title
+            collection.id = location["Identifier"]
+            collection.title = location["Name"],
+            # See if description should be overwritten
+            if "Description" in location:
+                collection.description = location["Description"]
+            # TODO: should we remove all assets from sub colections?
+            root_collection.add_child(collection)
+        root_collection.update_extent_from_items()
+        # Add bbox extents from children
+        for c_child in root_collection.get_children():
+            root_collection.extent.spatial.bboxes.append(c_child.extent.spatial.bboxes[0])
+    else:
+        root_collection = process_STACAPI_Endpoint(
+            config=config,
+            endpoint=endpoint,
+            data=data,
+            catalog=catalog,
+            headers=headers,
+        )
+    add_to_catalog(root_collection, catalog, endpoint, data)
 
-def create_collection(endpoint, data, catalog):
+def create_collection(collection_id, data):
     spatial_extent = SpatialExtent([
         [-180.0, -90.0, 180.0, 90.0],
     ])
@@ -87,7 +116,7 @@ def create_collection(endpoint, data, catalog):
     extent = Extent(spatial=spatial_extent, temporal=temporal_extent)
 
     collection = Collection(
-        id=endpoint["CollectionId"],
+        id=collection_id,
         title=data["Title"],
         description=data["Description"],
         stac_extensions=[
@@ -116,10 +145,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
     return link
 
 
-def handle_GeoDB_endpoint(config, endpoint, data, catalog):
-    
-    collection = create_collection(endpoint, data, catalog)
-    link = add_to_catalog(collection, catalog, endpoint, data)
+def handle_GeoDB_endpoint(config, endpoint, data):
+    collection = create_collection(endpoint["CollectionId"], data)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     response = json.loads(requests.get(url).text)
@@ -158,7 +185,8 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         
     add_collection_information(config, collection, data)
     collection.update_extent_from_items()
-        
+    return collection
+
 
 def handle_VEDA_endpoint(config, endpoint, data, catalog):
     process_STACAPI_Endpoint(
@@ -168,7 +196,7 @@ def handle_VEDA_endpoint(config, endpoint, data, catalog):
         catalog=catalog,
     )
 
-def addVisualizationInfo(stac_object:Collection | Item, data, endpoint, file_url=None):
+def add_visualization_info(stac_object, data, endpoint, file_url=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
         instanceId = os.getenv("SH_INSTANCE_ID")
@@ -231,15 +259,13 @@ def addVisualizationInfo(stac_object:Collection | Item, data, endpoint, file_url
     else:
         print("Visualization endpoint not supported")
 
-def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}):
-    collection = create_collection(endpoint, data, catalog)
-    link = add_to_catalog(collection, catalog, endpoint, data)
-    addVisualizationInfo(collection, data, endpoint)
+def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=None, root_collection=None):
+    collection = create_collection(endpoint["CollectionId"], data)
+    add_visualization_info(collection, data, endpoint)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
-    bbox = "-180,-90,180,90"
-    if "bbox" in endpoint:
-        bbox = endpoint["bbox"]
+    if bbox == None:
+        bbox = "-180,-90,180,90"
     results = api.search(
         collections=[endpoint["CollectionId"]],
         bbox=bbox,
@@ -248,9 +274,13 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}):
     for item in results.items():
         # Check if we can create visualization link
         if "cog_default" in item.assets:
-            addVisualizationInfo(item, data, endpoint, item.assets["cog_default"].href)
+            add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
             link.extra_fields["cog_href"] = item.assets["cog_default"].href
         link = collection.add_item(item)
+        # If a root collection exists we point back to it from the item
+        if root_collection != None:
+            item.set_collection(root_collection)
+
         # bubble up information we want to the link
         item_datetime = item.get_datetime()
         # it is possible for datetime to be null, if it is start and end datetime have to exist
@@ -273,6 +303,7 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}):
     except Exception as e:
         print("Issue validation collection: %s"%e)
     '''
+    return collection
 
 def add_collection_information(config, collection, data):
     # Add metadata information
