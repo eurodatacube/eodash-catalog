@@ -15,6 +15,22 @@ Agency:
     - ESA
 Provider: placeholder
 License: MIT
+Locations:
+  - Identifier: NorthAdriatic
+    Name: North Adriatic
+    Description: Chlorophyll-a concentration in North Adriatic
+    Point: [13.02978, 45.19752]
+    Bbox: [11.6, 46, 15, 44]
+  - Identifier: RhoneDelta
+    Name: Rhone Delta
+    Description: Chlorophyll-a concentration in Rhone Delta
+    Point: [4.94, 43.4]
+    Bbox: [4, 44, 6, 42.8]
+  - Identifier: Barcelona
+    Name: Barcelona
+    Description: Chlorophyll-a concentration in Barcelona
+    Point: [1.769, 40.985]
+    Bbox: [0, 42, 3, 40]
 Resources:
  - Group: Sentinel Hub Resources
  - EndPoint: https://services.sentinel-hub.com
@@ -22,4 +38,4 @@ Resources:
    Type: byoc
    CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
    LayerId: AWS_N3_CUSTOM
-Image: N3a2_chl_concentration/N3a2.png
+#Image: N3a2_chl_concentration/N3a2.png
