@@ -60,7 +60,7 @@ def process_collection_file(config, file_path, catalog):
                 if resource["Name"] == "Sentinel Hub":
                     handle_SH_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "GeoDB":
-                    collection = handle_GeoDB_endpoint(config, resource, data, catalog)
+                    collection = handle_GeoDB_endpoint(config, resource, data)
                     add_to_catalog(collection, catalog, resource, data)
                 elif resource["Name"] == "VEDA":
                     handle_VEDA_endpoint(config, resource, data, catalog)
@@ -93,11 +93,18 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
             if "Description" in location:
                 collection.description = location["Description"]
             # TODO: should we remove all assets from sub colections?
-            root_collection.add_child(collection)
+            link = root_collection.add_child(collection)
+            latlong = "%s,%s"%(location["Point"][1], location["Point"][0])
+            # Add extra properties we need
+            link.extra_fields["id"] = location["Identifier"]
+            link.extra_fields["latlng"] = latlong
+            link.extra_fields["name"] = location["Name"]
         root_collection.update_extent_from_items()
         # Add bbox extents from children
         for c_child in root_collection.get_children():
-            root_collection.extent.spatial.bboxes.append(c_child.extent.spatial.bboxes[0])
+            root_collection.extent.spatial.bboxes.append(
+                c_child.extent.spatial.bboxes[0]
+            )
     else:
         root_collection = process_STACAPI_Endpoint(
             config=config,
@@ -134,6 +141,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["themes"] = ",".join(data["Themes"])
+    if "Locations" in data:
+        link.extra_fields["locations"] = True
     if "Tags" in data:
         link.extra_fields["tags"] = ",".join(data["Tags"])
     if "Satellite" in data:
@@ -272,11 +281,11 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
         datetime=['1970-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
     )
     for item in results.items():
+        link = collection.add_item(item)
         # Check if we can create visualization link
         if "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
             link.extra_fields["cog_href"] = item.assets["cog_default"].href
-        link = collection.add_item(item)
         # If a root collection exists we point back to it from the item
         if root_collection != None:
             item.set_collection(root_collection)
