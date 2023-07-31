@@ -4,7 +4,7 @@ EodashIdentifier: E13b_airport_throughput
 Description: Throughput at principal hub airports
 Story: E13b_airport_throughput/E13b.md
 Themes:
-    - industry
+    - economy
 Tags:
     - placeholder
 Satellite:
