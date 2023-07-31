@@ -9,7 +9,6 @@ collections:
   - E11_shopping_center_volume
   - E11a_parking_lot_volume
   - E12b_cruises_impact
-  - E13b_airport_throughput
   - E13o_vessel_density_all
   - CDS1_temperature
   - CDS2_relative_humidity
@@ -24,6 +23,7 @@ collections:
   - E10a6_harvested_parcels_evolution
   - E11_shopping_center_activity
   - E12b_border_crossing_vehicles_timeseries
+  #- E13b_airport_throughput
   - E13b_parked_planes
   - E13d_flying_planes
   - E200_ships_detected

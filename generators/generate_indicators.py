@@ -17,7 +17,6 @@ from operator import itemgetter
 
 from sh_endpoint import get_SH_token
 from utils import create_geojson_point
-
 from pystac import (
     Item,
     Asset,
@@ -29,7 +28,8 @@ from pystac import (
     Extent,
     SpatialExtent,
     TemporalExtent,
-    MediaType,
+    # MediaType,
+    Summaries
 )
 from pystac.layout import TemplateLayoutStrategy
 
@@ -73,7 +73,7 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
     endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"]
     # Check if we have Locations in config, if yes we divide the collection
-    # into multiple colelctions based on their area
+    # into multiple collections based on their area
     if "Locations" in data:
         root_collection = create_collection(data["Name"], data)
         for location in data["Locations"]:
@@ -92,12 +92,12 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
             # See if description should be overwritten
             if "Description" in location:
                 collection.description = location["Description"]
-            # TODO: should we remove all assets from sub colections?
+            # TODO: should we remove all assets from sub collections?
             link = root_collection.add_child(collection)
-            latlong = "%s,%s"%(location["Point"][1], location["Point"][0])
+            latlng = "%s,%s"%(location["Point"][1], location["Point"][0])
             # Add extra properties we need
             link.extra_fields["id"] = location["Identifier"]
-            link.extra_fields["latlng"] = latlong
+            link.extra_fields["latlng"] = latlng
             link.extra_fields["name"] = location["Name"]
         root_collection.update_extent_from_items()
         # Add bbox extents from children
@@ -141,6 +141,10 @@ def add_to_catalog(collection, catalog, endpoint, data):
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["themes"] = ",".join(data["Themes"])
+    # Check for summaries and bubble up info
+    if collection.summaries.lists:
+        for sum in collection.summaries.lists:
+            link.extra_fields[sum] = collection.summaries.lists[sum]
     if "Locations" in data:
         link.extra_fields["locations"] = True
     if "Tags" in data:
@@ -162,6 +166,8 @@ def handle_GeoDB_endpoint(config, endpoint, data):
 
     # Sort locations by key
     sorted_locations = sorted(response, key = itemgetter('aoi_id'))
+    cities = []
+    countries = []
     for key, value in groupby(sorted_locations, key = itemgetter('aoi_id')):
         # Finding min and max values for date
         values = [v for v in value]
@@ -169,6 +175,10 @@ def handle_GeoDB_endpoint(config, endpoint, data):
         unique_values = list({v["aoi_id"]:v for v in values}.values())[0]
         country = unique_values["country"]
         city = unique_values["city"]
+        if country not in countries:
+            countries.append(country)
+        if city not in cities:
+            cities.append(city)
         min_date = min(times)
         max_date = max(times)
         latlon = unique_values["aoi"]
@@ -193,7 +203,12 @@ def handle_GeoDB_endpoint(config, endpoint, data):
         link.extra_fields["city"] = city
         
     add_collection_information(config, collection, data)
-    collection.update_extent_from_items()
+
+    collection.update_extent_from_items()    
+    collection.summaries = Summaries({
+        "cities": cities,
+        "countries": countries,
+    })
     return collection
 
 
