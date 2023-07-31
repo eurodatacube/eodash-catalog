@@ -1,14 +1,14 @@
 Name: city_no2
 Title: City level NO2 (S5p)
 EodashIdentifier: N1
-Description: NO2 detected at cities based on Sentinel5-p data
+Description: NO2 detected at cities based on Sentinel-5P data
 Story: N1/N1.md
 Themes:
     - air
 Tags:
     - placeholder
 Satellite:
-    - Sentinel5-p
+    - Sentinel-5P
 Sensor:
     - placeholder
 Agency:
