@@ -1,0 +1,22 @@
+Name: averaged_PM10
+Title: Particulate matter 10µm
+EodashIdentifier: N1b
+Description: Particulate matter 10µm
+Story: N1b_averaged_PM10/N1b.md
+Themes:
+  - air
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - CAMS
+  - ECMWF
+Resources:
+  - EndPoint: https://eccharts.ecmwf.int/wms/?token=public
+    Name: WMS
+    Type: Time
+    LayerId: composition_europe_pm10_analysis_surface
+    Styles: [sh_GreensTransparent40_surface_concentration]

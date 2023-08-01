@@ -1,11 +1,14 @@
 
 import json
 import re
+from functools import reduce
 from duration import Duration
 from decimal import Decimal
 from datetime import datetime, timedelta
 from typing import Iterator
 from six import string_types
+from owslib.wms import WebMapService
+from dateutil import parser
 
 ISO8601_PERIOD_REGEX = re.compile(
     r"^(?P<sign>[+-])?"
@@ -37,6 +40,41 @@ def create_geojson_point(lon, lat):
     }
 
     return feature_collection
+
+def retrieveExtentFromWMS(capabilties_url, layer):
+    times = []
+    wms = None
+    try:
+        wms = WebMapService(capabilties_url, version='1.1.1')
+        if layer in list(wms.contents) and wms[layer].timepositions != None:
+            for tp in wms[layer].timepositions:
+                tp_def = tp.split("/")
+                if len(tp_def)>1:
+                    dates = interval(
+                        parser.parse(tp_def[0]),
+                        parser.parse(tp_def[1]),
+                        parse_duration(tp_def[2])
+                    )
+                    times += [x.strftime('%Y-%m-%dT%H:%M:%SZ') for x in dates]
+                else:
+                    times.append(tp)
+            times = [time.replace('\n','').strip() for time in times]
+            # get unique times
+            times = reduce(lambda re, x: re+[x] if x not in re else re, times, [])
+    except Exception as e:
+        print("Issue extracting information from WMS capabilities")
+        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+        message = template.format(type(e).__name__, e.args)
+        print (message)
+
+    bbox = [-180,-90,180,90]
+    if wms and wms[layer].boundingBoxWGS84:
+        bbox = [float(x) for x in wms[layer].boundingBoxWGS84]
+
+    return {
+        "spatial": bbox,
+        "temporal": times,
+    }
 
 def interval(start: datetime, stop: datetime, delta: timedelta) -> Iterator[datetime]:
     while start <= stop:

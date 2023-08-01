@@ -1,0 +1,21 @@
+Name: ocean_colour_plankton_mediterranean
+Title: Ocean colour plankton - Mediterranean
+EodashIdentifier: N3c
+Description: Ocean colour plankton description
+Story: N3c_ocean_colour_plankton_mediterranean/N3c.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - CMEMS
+Resources:
+  - EndPoint: https://my.cmems-du.eu/thredds/wms/cmems_obs-oc_med_bgc-plankton_my_l4-multi-1km_P1M
+    Name: WMS
+    Type: Time
+    LayerId: CHL
+    Styles: [boxfill%2Frainbow]
