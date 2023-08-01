@@ -1,0 +1,25 @@
+Name: CH4
+Title: Methane
+EodashIdentifier: N1_CH4
+Description: Daily Methane
+Story: N1_CH4/N1.md
+Themes:
+    - air
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-5P
+Sensor:
+    - TROPOMI
+Agency:
+    - NASA
+Provider: placeholder
+License: MIT
+Resources:
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 0ecb4a55-5ce2-4525-bdcb-a333d37d46ef
+      LayerId: AWS_CH4_WEEKLY
+Image: N1_CH4/N1.png

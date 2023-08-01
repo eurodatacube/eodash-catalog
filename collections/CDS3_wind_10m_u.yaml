@@ -1,40 +1,40 @@
 Name: wind_10m_u
 Title: Wind U Field
 EodashIdentifier: CDS3
-Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field 
+Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field
 Story: wind_10m_u/CDS.md
 Themes:
-    - air
+  - air
 Tags:
-    - copernicus services
-    - C3S
-    - open data
-    - sentinel hub
-    - raster
-    - race challenges
+  - copernicus services
+  - C3S
+  - open data
+  - sentinel hub
+  - raster
+  - race challenges
 Satellite:
-    - METEOSAT
+  - METEOSAT
 Sensor:
-    - SEVIRI
+  - SEVIRI
 Agency:
-    - EUMETSAT
-    - ESA
+  - EUMETSAT
+  - ESA
 Provider: "[COPERNICUS](https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)"
 License: |
- Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
+  Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
 Resources:
- - Group: Sentinel Hub Resources
- - EndPoint: https://services.sentinel-hub.com
-   Name: Sentinel Hub
-   Role: processor
-   Type: byoc
-   CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
-   LayerId: AWS_VIS_WIND_U_10M
-   Primary: True
+  - Group: Sentinel Hub Resources
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Role: processor
+    Type: byoc
+    CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
+    LayerId: AWS_VIS_WIND_U_10M
+    Primary: True
 OpenEOPID: ERA5_WIND_U
 AdditionalInfoExternal:
-    Title: Additional info
-    Path: wind_10m_u/README.MD
+  Title: Additional info
+  Path: wind_10m_u/README.MD
 Image: wind_10m_u/wind_10m_u.png
 EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_u&layerId=Wind%20U-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
 Resolution: 0.25° x 0.25°
@@ -69,8 +69,8 @@ CubeDimensions:
   t:
     type: temporal
     extent:
-      - '2019-01-01T00:00:00Z'
-      - '2022-04-01T00:00:00Z'
+      - "2019-01-01T00:00:00Z"
+      - "2022-04-01T00:00:00Z"
   bands:
     type: bands
     values:

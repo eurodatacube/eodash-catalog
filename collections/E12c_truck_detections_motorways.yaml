@@ -1,0 +1,25 @@
+Name: truck_detections_motorways
+Title: Truck detections motorways
+EodashIdentifier: E12c
+Description: Truck detections on motorways description
+Story: E12c_truck_detections_motorways/E12c.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-2
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider: placeholder
+License: MIT
+Resources:
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 34fbfb05-c3e5-4885-9840-830ee85dddd4
+      LayerId: VIS_TRUCK_DETECTION_MOTORWAYS_NEW
+Image: E12c_truck_detections_motorways/E12c.png

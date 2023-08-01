@@ -1,4 +1,3 @@
-
 Name: border_crossing_vehicles_timeseries
 Title: Border crossing vehicles time series
 EodashIdentifier: E12b
@@ -15,7 +14,7 @@ Sensor:
 Agency:
     - ESA
 Resources:
- - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-   Name: GeoDB
-   Database: eodash
-   CollectionId: E12b
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: E12b
