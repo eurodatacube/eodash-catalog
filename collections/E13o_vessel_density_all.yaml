@@ -2,11 +2,20 @@ Name: vessel_density_all
 Title: Vessel density
 EodashIdentifier: E13o
 Description: Vessel density description
+Story: E13o_vessel_density_cargo/E13o.md
 Themes:
-    - water
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel-2
+Sensor:
+  - placeholder
+Agency:
+  - ESA
 Resources:
- - EndPoint: https://services.sentinel-hub.com
-   Name: Sentinel Hub
-   Type: byoc
-   CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12
-   LayerId: AWS_VIS_VESSELDENSITY_ALL
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12
+    LayerId: AWS_VIS_VESSELDENSITY_ALL

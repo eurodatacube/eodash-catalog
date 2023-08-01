@@ -1,0 +1,21 @@
+Name: vessel_density_tanker
+Title: Vessel density for tanker
+EodashIdentifier: E13q
+Description: Vessel density for tanker description
+Story: E13q_vessel_density_cargo/E13q.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel-2
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12 # using vessel density all id (should be updated to correct id)
+    LayerId: AWS_VIS_VESSELDENSITY_TANKER

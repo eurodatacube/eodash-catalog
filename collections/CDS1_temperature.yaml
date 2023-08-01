@@ -16,10 +16,10 @@ Agency:
 Provider: placeholder
 License: MIT
 Resources:
- - Group: Sentinel Hub Resources
- - EndPoint: https://services.sentinel-hub.com
-   Name: Sentinel Hub
-   Type: byoc
-   CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
-   LayerId: AWS_VIS_2MTEMPERATURE
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
+      LayerId: AWS_VIS_2MTEMPERATURE
 Image: CDS1_temperature/CDS1.png

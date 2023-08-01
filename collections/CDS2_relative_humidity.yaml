@@ -16,10 +16,10 @@ Agency:
 Provider: placeholder
 License: MIT
 Resources:
- - Group: Sentinel Hub Resources
- - EndPoint: https://services.sentinel-hub.com
-   Name: Sentinel Hub
-   Type: byoc
-   CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
-   LayerId: AWS_VIS_RELHUMIDITY1000HPA
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
+      LayerId: AWS_VIS_RELHUMIDITY1000HPA
 Image: CDS2_relative_humidity/CDS2.png
