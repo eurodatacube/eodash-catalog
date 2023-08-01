@@ -14,9 +14,15 @@ from yaml.loader import SafeLoader
 import urllib.parse
 from itertools import groupby
 from operator import itemgetter
-
+from dateutil import parser
 from sh_endpoint import get_SH_token
-from utils import create_geojson_point
+from functools import reduce
+from utils import (
+    create_geojson_point,
+    parse_duration,
+    interval,
+)
+from owslib.wms import WebMapService
 from pystac import (
     Item,
     Asset,
@@ -64,8 +70,62 @@ def process_collection_file(config, file_path, catalog):
                     add_to_catalog(collection, catalog, resource, data)
                 elif resource["Name"] == "VEDA":
                     handle_VEDA_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "WMS":
+                    handle_WMS_endpoint(config, resource, data, catalog)
                 else:
                     raise ValueError("Type of Resource is not supported")
+
+def handle_WMS_endpoint(config, endpoint, data, catalog):
+    if endpoint["Type"] == "Time":
+        layer = endpoint["LayerId"]
+        capabilties_url = endpoint["EndPoint"]
+        times = []
+        try:
+            wms = WebMapService(capabilties_url, version='1.1.1')
+            if layer in list(wms.contents):
+                for tp in wms[layer].timepositions:
+                    tp_def = tp.split("/")
+                    if len(tp_def)>1:
+                        dates = interval(
+                            parser.parse(tp_def[0]),
+                            parser.parse(tp_def[1]),
+                            parse_duration(tp_def[2])
+                        )
+                        times += [x.strftime('%Y-%m-%dT%H:%M:%SZ') for x in dates]
+                    else:
+                        times.append(tp)
+                times = [time.replace('\n','').strip() for time in times]
+                # get unique times
+                times = reduce(lambda re, x: re+[x] if x not in re else re, times, [])
+                # print(times_f)
+        except Exception as e:
+            print("Issue extracting information from WMS capabilities")
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(e).__name__, e.args)
+            print (message)
+        if len(times) > 0:
+            # Create an item per time to allow visualization in stac clients
+            collection = create_collection(data["Name"], data)
+            bbox = [-180,-90,180,90]
+            if wms[layer].boundingBoxWGS84:
+                bbox = [float(x) for x in wms[layer].boundingBoxWGS84]
+            for t in times:
+                item = Item(
+                    id = t,
+                    bbox=bbox,
+                    properties={},
+                    geometry = None,
+                    datetime = parser.isoparse(t),
+                )
+                add_visualization_info(item, data, endpoint, time=t, styles=endpoint["Styles"])
+                link = collection.add_item(item)
+                link.extra_fields["datetime"] = t
+            collection.update_extent_from_items()
+            add_visualization_info(collection, data, endpoint, styles=endpoint["Styles"])
+            add_to_catalog(collection, catalog, endpoint, data)
+    else:
+        # TODO: Implement
+        print("Currently not supported")
 
 def handle_SH_endpoint(config, endpoint, data, catalog):
     token = get_SH_token()
@@ -220,7 +280,7 @@ def handle_VEDA_endpoint(config, endpoint, data, catalog):
         catalog=catalog,
     )
 
-def add_visualization_info(stac_object, data, endpoint, file_url=None):
+def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
         instanceId = os.getenv("SH_INSTANCE_ID")
@@ -239,6 +299,26 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None):
         )
     # elif resource["Name"] == "GeoDB":
     #     pass
+    elif endpoint["Name"] == "WMS":
+        if endpoint["Type"] == "Time":
+            extra_fields={
+                "wms:layers": [endpoint["LayerId"]]
+            }
+            if time != None:
+                extra_fields["wms:dimensions"] = {
+                    "TIME": time,
+                }
+            if styles != None:
+                extra_fields["wms:styles"] = styles
+            stac_object.add_link(
+            Link(
+                rel="wms",
+                target=endpoint["EndPoint"],
+                media_type="text/xml",
+                title=data["Name"],
+                extra_fields=extra_fields,
+            )
+        )
     elif endpoint["Name"] == "VEDA":
         if endpoint["Type"] == "cog":
             

@@ -21,7 +21,7 @@ collections:
   - E13o_vessel_density_all
   - E13p_vessel_density_cargo
   - E13q_vessel_density_tanker
-  - E13q_vessel_density_other
+  - E13r_vessel_density_others
   - CDS1_temperature
   - CDS2_relative_humidity
   - CDS3_wind_10m_u
@@ -40,4 +40,5 @@ collections:
   - E13d_flying_planes
   - E200_ships_detected
   - N1_city_no2
+  - N1b_air_quality_NO2
   - N3_regional_water_quality_timeseries
