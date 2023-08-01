@@ -117,11 +117,11 @@ def handle_WMS_endpoint(config, endpoint, data, catalog):
                     geometry = None,
                     datetime = parser.isoparse(t),
                 )
-                add_visualization_info(item, data, endpoint, time=t)
+                add_visualization_info(item, data, endpoint, time=t, styles=endpoint["Styles"])
                 link = collection.add_item(item)
                 link.extra_fields["datetime"] = t
             collection.update_extent_from_items()
-            add_visualization_info(collection, data, endpoint)
+            add_visualization_info(collection, data, endpoint, styles=endpoint["Styles"])
             add_to_catalog(collection, catalog, endpoint, data)
     else:
         # TODO: Implement
@@ -280,7 +280,7 @@ def handle_VEDA_endpoint(config, endpoint, data, catalog):
         catalog=catalog,
     )
 
-def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None):
+def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
         instanceId = os.getenv("SH_INSTANCE_ID")
@@ -308,6 +308,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 extra_fields["wms:dimensions"] = {
                     "TIME": time,
                 }
+            if styles != None:
+                extra_fields["wms:styles"] = styles
             stac_object.add_link(
             Link(
                 rel="wms",

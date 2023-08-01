@@ -4,7 +4,7 @@ EodashIdentifier: N1b
 Description: Nitrogen dioxide daily average description
 Story: N1b_averaged_NO2/N1b.md
 Themes:
-  - water
+  - air
 Tags:
   - placeholder
 Satellite:
@@ -18,3 +18,4 @@ Resources:
     Name: WMS
     Type: Time
     LayerId: composition_europe_no2_analysis_surface
+    Styles: [sh_OrangesTransparent40_surface_concentration]
