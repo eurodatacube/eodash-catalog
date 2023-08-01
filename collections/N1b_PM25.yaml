@@ -1,0 +1,22 @@
+Name: averaged_PM25
+Title: Particulate matter 2.5µm
+EodashIdentifier: N1b
+Description: Particulate matter 2.5µm
+Story: N1b_averaged_PM25/N1b.md
+Themes:
+  - air
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - CAMS
+  - ECMWF
+Resources:
+  - EndPoint: https://eccharts.ecmwf.int/wms/?token=public
+    Name: WMS
+    Type: Time
+    LayerId: composition_europe_pm2p5_analysis_surface
+    Styles: [sh_PurplesTransparent40_surface_concentration]

@@ -4,41 +4,48 @@ description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/"
 collections:
-  - N3a2_chl_concentration
-  - N3a2_sea_surface_temperature
-  - N3a2_total_suspended_matter
-  - NASAPopulation
-  - N1_SO2
-  - N1_CO
-  - N1_NO2
-  - N1_CH4
-  - E12c_truck_detections_motorways
-  - E12c_truck_detections_primary_roads
-  - E3_oil_storage_volume
-  - E11_shopping_center_volume
-  - E11a_parking_lot_volume
-  - E12b_cruises_impact
-  - E13o_vessel_density_all
-  - E13p_vessel_density_cargo
-  - E13q_vessel_density_tanker
-  - E13r_vessel_density_others
   - CDS1_temperature
   - CDS2_relative_humidity
   - CDS3_wind_10m_u
   - CDS4_wind_10m_v
   - E1_S2_shipment_metallic_ores
-  - E1a_S2_shipment_non_metallic_ores
-  - E1b_vessel_density_timeseries
-  - E2_S2_shipment_oil
-  - E4_intermediate_goods_production
-  - E5_metal_density
   - E10a6_harvested_parcels_evolution
   - E11_shopping_center_activity
+  - E11_shopping_center_volume
+  - E11a_parking_lot_volume
   - E12b_border_crossing_vehicles_timeseries
+  - E12b_cruises_impact
+  - E12c_truck_detections_motorways
+  - E12c_truck_detections_primary_roads
   - E13b_airport_throughput
   - E13b_parked_planes
   - E13d_flying_planes
+  - E13o_vessel_density_all
+  - E13p_vessel_density_cargo
+  - E13q_vessel_density_tanker
+  - E13r_vessel_density_others
+  - E1a_S2_shipment_non_metallic_ores
+  - E1b_vessel_density_timeseries
+  - E2_S2_shipment_oil
   - E200_ships_detected
+  - E3_oil_storage_volume
+  - E4_intermediate_goods_production
+  - E5_metal_density
+  - N1_CH4
   - N1_city_no2
+  - N1_CO
+  - N1_NO2
+  - N1_SO2
   - N1b_air_quality_NO2
+  - N1b_O3
+  - N1b_PM10
+  - N1b_PM25
   - N3_regional_water_quality_timeseries
+  - N3a2_chl_concentration
+  - N3a2_sea_surface_temperature
+  - N3a2_total_suspended_matter
+  - N3c_ocean_colour_plankton_atlantic
+  - N3c_ocean_colour_plankton_black_sea
+  - N3c_ocean_colour_plankton_mediterranean
+  - NASAPopulation
+  - WSF_world_settlement_footprint

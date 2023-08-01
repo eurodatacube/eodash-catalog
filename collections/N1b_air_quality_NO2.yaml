@@ -8,11 +8,12 @@ Themes:
 Tags:
   - placeholder
 Satellite:
-  - Sentinel-2
+  - placeholder
 Sensor:
   - placeholder
 Agency:
   - CAMS
+  - ECMWF
 Resources:
   - EndPoint: https://eccharts.ecmwf.int/wms/?token=public&
     Name: WMS

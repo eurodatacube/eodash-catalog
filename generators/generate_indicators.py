@@ -16,13 +16,10 @@ from itertools import groupby
 from operator import itemgetter
 from dateutil import parser
 from sh_endpoint import get_SH_token
-from functools import reduce
 from utils import (
     create_geojson_point,
-    parse_duration,
-    interval,
+    retrieveExtentFromWMS,
 )
-from owslib.wms import WebMapService
 from pystac import (
     Item,
     Asset,
@@ -76,52 +73,33 @@ def process_collection_file(config, file_path, catalog):
                     raise ValueError("Type of Resource is not supported")
 
 def handle_WMS_endpoint(config, endpoint, data, catalog):
-    if endpoint["Type"] == "Time":
-        layer = endpoint["LayerId"]
-        capabilties_url = endpoint["EndPoint"]
+    if endpoint["Type"] == "Time" or endpoint["Type"] == "OverwriteTimes":
+
         times = []
-        try:
-            wms = WebMapService(capabilties_url, version='1.1.1')
-            if layer in list(wms.contents):
-                for tp in wms[layer].timepositions:
-                    tp_def = tp.split("/")
-                    if len(tp_def)>1:
-                        dates = interval(
-                            parser.parse(tp_def[0]),
-                            parser.parse(tp_def[1]),
-                            parse_duration(tp_def[2])
-                        )
-                        times += [x.strftime('%Y-%m-%dT%H:%M:%SZ') for x in dates]
-                    else:
-                        times.append(tp)
-                times = [time.replace('\n','').strip() for time in times]
-                # get unique times
-                times = reduce(lambda re, x: re+[x] if x not in re else re, times, [])
-                # print(times_f)
-        except Exception as e:
-            print("Issue extracting information from WMS capabilities")
-            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-            message = template.format(type(e).__name__, e.args)
-            print (message)
+        extent = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
+        if endpoint["Type"] == "OverwriteTimes":
+            times = endpoint["Times"]
+        else:
+            times = extent["temporal"]
         if len(times) > 0:
             # Create an item per time to allow visualization in stac clients
+            styles = None
+            if hasattr(endpoint, "Styles"):
+                styles = endpoint["Styles"]
             collection = create_collection(data["Name"], data)
-            bbox = [-180,-90,180,90]
-            if wms[layer].boundingBoxWGS84:
-                bbox = [float(x) for x in wms[layer].boundingBoxWGS84]
             for t in times:
                 item = Item(
                     id = t,
-                    bbox=bbox,
+                    bbox=extent["spatial"],
                     properties={},
                     geometry = None,
                     datetime = parser.isoparse(t),
                 )
-                add_visualization_info(item, data, endpoint, time=t, styles=endpoint["Styles"])
+                add_visualization_info(item, data, endpoint, time=t, styles=styles)
                 link = collection.add_item(item)
                 link.extra_fields["datetime"] = t
             collection.update_extent_from_items()
-            add_visualization_info(collection, data, endpoint, styles=endpoint["Styles"])
+            add_visualization_info(collection, data, endpoint, styles=styles)
             add_to_catalog(collection, catalog, endpoint, data)
     else:
         # TODO: Implement
@@ -300,7 +278,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
     # elif resource["Name"] == "GeoDB":
     #     pass
     elif endpoint["Name"] == "WMS":
-        if endpoint["Type"] == "Time":
+        if endpoint["Type"] == "Time" or endpoint["Type"] == "OverwriteTimes":
             extra_fields={
                 "wms:layers": [endpoint["LayerId"]]
             }

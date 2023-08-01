@@ -1,0 +1,21 @@
+Name: ocean_colour_plankton_black_sea
+Title: Ocean colour plankton - Black Sea
+EodashIdentifier: N3c
+Description: Ocean colour plankton description
+Story: N3c_ocean_colour_plankton_black_sea/N3c.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - CMEMS
+Resources:
+  - EndPoint: https://my.cmems-du.eu/thredds/wms/cmems_obs-oc_blk_bgc-plankton_my_l4-multi-1km_P1M
+    Name: WMS
+    Type: Time
+    LayerId: CHL
+    Styles: [boxfill%2Frainbow]
