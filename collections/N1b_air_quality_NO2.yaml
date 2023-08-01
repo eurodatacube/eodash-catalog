@@ -1,0 +1,20 @@
+Name: averaged_NO2
+Title: Nitrogen dioxide daily average
+EodashIdentifier: N1b
+Description: Nitrogen dioxide daily average description
+Story: N1b_averaged_NO2/N1b.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel-2
+Sensor:
+  - placeholder
+Agency:
+  - CAMS
+Resources:
+  - EndPoint: https://eccharts.ecmwf.int/wms/?token=public&
+    Name: WMS
+    Type: Time
+    LayerId: composition_europe_no2_analysis_surface

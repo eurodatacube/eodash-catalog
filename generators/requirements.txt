@@ -13,4 +13,5 @@ python-dateutil<3
 swiftspec==0.0.2
 mergedeep
 structlog<22.0
+OWSLib<0.29.3
 pystac[validation] @ git+https://github.com/stac-utils/pystac@5b6622c945536128c35fa3595e7cfa9f16552b71
