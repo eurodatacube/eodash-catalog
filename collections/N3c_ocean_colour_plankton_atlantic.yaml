@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: CHL
     Styles: [boxfill%2Frainbow]
+Legend: N3c_ocean_colour_plankton/cm_legend.png

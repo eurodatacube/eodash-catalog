@@ -2,7 +2,7 @@ id: "RACE"
 title: "RACE"
 description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
-assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
   - CDS1_temperature
   - CDS2_relative_humidity
@@ -36,7 +36,7 @@ collections:
   - N1_CO
   - N1_NO2
   - N1_SO2
-  - N1b_air_quality_NO2
+  - N1b_NO2
   - N1b_O3
   - N1b_PM10
   - N1b_PM25

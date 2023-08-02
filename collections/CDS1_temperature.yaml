@@ -23,3 +23,4 @@ Resources:
       CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
       LayerId: AWS_VIS_2MTEMPERATURE
 Image: CDS1_temperature/CDS1.png
+Legend: CDS1_temperature/cm_legend.png

@@ -2,7 +2,7 @@ Name: averaged_NO2
 Title: Nitrogen dioxide daily average
 EodashIdentifier: N1b
 Description: Nitrogen dioxide daily average description
-Story: N1b_averaged_NO2/N1b.md
+Story: N1b_NO2/N1b.md
 Themes:
   - air
 Tags:
@@ -20,3 +20,4 @@ Resources:
     Type: Time
     LayerId: composition_europe_no2_analysis_surface
     Styles: [sh_OrangesTransparent40_surface_concentration]
+Legend: N1b_NO2/cm_legend.png
