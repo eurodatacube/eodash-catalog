@@ -20,3 +20,4 @@ Resources:
     Type: Time
     LayerId: composition_europe_o3_analysis_surface
     Styles: [sh_OrangesTransparent240_surface_concentration]
+Legend: N1b_O3/cm_legend.png

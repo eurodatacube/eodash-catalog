@@ -392,6 +392,15 @@ def add_collection_information(config, collection, data):
     # collection.license = data["License"]
     # TODO: need to review check against SPDX License identifier
 
+    if "Legend" in data:
+        collection.add_asset(
+            "legend",
+            Asset(
+                href="%s/%s"%(config["assets_endpoint"], data["Legend"]),
+                media_type="image/png",
+                roles=["metadata"],
+            ),
+        )
     if "Story" in data:
         collection.add_asset(
             "story",
@@ -410,6 +419,20 @@ def add_collection_information(config, collection, data):
                 roles=["thumbnail"],
             ),
         )
+    
+    # Add extra fields to collection if available
+    if "Themes" in data:
+        collection.extra_fields["themes"] = ",".join(data["Themes"])
+    if "Tags" in data:
+        collection.extra_fields["tags"] = ",".join(data["Tags"])
+    if "Satellite" in data:
+        collection.extra_fields["satellite"] = ",".join(data["Satellite"])
+    if "Sensor" in data:
+        collection.extra_fields["sensor"] = ",".join(data["Sensor"])
+    if "Agency" in data:
+        collection.extra_fields["agency"] = ",".join(data["Agency"])
+
+
 def process_catalogs(folder_path):
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
