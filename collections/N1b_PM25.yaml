@@ -20,3 +20,4 @@ Resources:
     Type: Time
     LayerId: composition_europe_pm2p5_analysis_surface
     Styles: [sh_PurplesTransparent40_surface_concentration]
+Legend: N1b_PM25/cm_legend.png

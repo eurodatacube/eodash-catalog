@@ -20,3 +20,4 @@ Resources:
     Type: Time
     LayerId: composition_europe_pm10_analysis_surface
     Styles: [sh_GreensTransparent40_surface_concentration]
+Legend: N1b_PM10/cm_legend.png

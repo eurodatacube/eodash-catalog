@@ -44,3 +44,4 @@ Resources:
     CollectionId: 92780d01-126f-4827-80f8-4e561dd8e228
     LayerId: AWS_VIS_SST_MAPS
 #Image: N3a2_sea_surface_temperature/N3a2.png
+Legend: N3a2_sea_surface_temperature/cm_legend.png

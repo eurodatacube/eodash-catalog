@@ -35,6 +35,7 @@ from pystac import (
     Summaries
 )
 from pystac.layout import TemplateLayoutStrategy
+import spdx_lookup as lookup
 
 
 def process_catalog_file(file_path):
@@ -416,8 +417,26 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
 
 def add_collection_information(config, collection, data):
     # Add metadata information
-    # collection.license = data["License"]
-    # TODO: need to review check against SPDX License identifier
+    # Check license identifier
+    if "License" in data:
+        license = lookup.by_id(data["License"])
+        if license is not None:
+            collection.license = license.id
+            if license.sources:
+                # add links to licenses
+                for source in license.sources:
+                    collection.links.append(Link(
+                        rel="license",
+                        target=source,
+                        media_type="text/html",
+                    ))
+        else:
+            # fallback to proprietary
+            print("Warning: License could not be parsed, falling back to proprietary")
+            collection.license = "proprietary"
+    else:
+        print("Warning: No license was provided, falling back to proprietary")
+
     if "Subtitle" in data:
         collection.extra_fields["subtitle"] = data["Subtitle"]
     if "Story" in data:
@@ -438,6 +457,20 @@ def add_collection_information(config, collection, data):
                 roles=["thumbnail"],
             ),
         )
+    
+    # Add extra fields to collection if available
+    if "Themes" in data:
+        collection.extra_fields["themes"] = ",".join(data["Themes"])
+    if "Tags" in data:
+        collection.extra_fields["tags"] = ",".join(data["Tags"])
+    if "Satellite" in data:
+        collection.extra_fields["satellite"] = ",".join(data["Satellite"])
+    if "Sensor" in data:
+        collection.extra_fields["sensor"] = ",".join(data["Sensor"])
+    if "Agency" in data:
+        collection.extra_fields["agency"] = ",".join(data["Agency"])
+
+
 def process_catalogs(folder_path):
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)

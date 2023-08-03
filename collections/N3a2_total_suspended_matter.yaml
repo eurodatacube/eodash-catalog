@@ -44,3 +44,4 @@ Resources:
     CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
     LayerId: AWS_N3_CUSTOM_TSMNN
 #Image: N3a2_total_suspended_matter/N3a2.png
+Legend: N3a2_total_suspended_matter/cm_legend.png

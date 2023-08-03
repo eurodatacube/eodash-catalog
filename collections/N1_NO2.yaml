@@ -23,3 +23,4 @@ Resources:
       CollectionId: 972e67a7-2ca8-4bf6-964a-11fe772e3ac2
       LayerId: AWS_NO2-VISUALISATION
 Image: N1_NO2/N1.png
+Legend: N1_NO2/cm_legend.png

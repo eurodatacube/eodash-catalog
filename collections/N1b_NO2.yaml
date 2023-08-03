@@ -20,3 +20,4 @@ Resources:
     Type: Time
     LayerId: composition_europe_no2_analysis_surface
     Styles: [sh_OrangesTransparent40_surface_concentration]
+Legend: N1b_NO2/cm_legend.png

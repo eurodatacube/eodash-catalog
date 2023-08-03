@@ -36,7 +36,7 @@ collections:
   - N1_CO
   - N1_NO2
   - N1_SO2
-  - N1b_air_quality_NO2
+  - N1b_NO2
   - N1b_O3
   - N1b_PM10
   - N1b_PM25

@@ -44,3 +44,4 @@ Resources:
     CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
     LayerId: AWS_N3_CUSTOM
 #Image: N3a2_chl_concentration/N3a2.png
+Legend: N3a2_chl_concentration/cm_legend.png
