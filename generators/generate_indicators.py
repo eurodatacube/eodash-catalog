@@ -418,7 +418,8 @@ def add_collection_information(config, collection, data):
     # Add metadata information
     # collection.license = data["License"]
     # TODO: need to review check against SPDX License identifier
-
+    if "Subtitle" in data:
+        collection.extra_fields["subtitle"] = data["Subtitle"]
     if "Story" in data:
         collection.add_asset(
             "story",
