@@ -1,8 +1,8 @@
 Name: regional_water_quality_timeseries
 Title: Regional water quality time series
 EodashIdentifier: N3
-Description: Regional water quality time series
-Story: N3/N3.md
+Subtitle: Regional water quality time series
+Description: N3/N3.md
 Themes:
     - water
 Tags:

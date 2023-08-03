@@ -1,8 +1,8 @@
 Name: cruises_impact
 Title: Cruises impact
 EodashIdentifier: E12b
-Description: Cruises impact description
-Story: E12b_cruises_impact/E12b.md
+Subtitle: Cruises impact description
+Description: E12b_cruises_impact/E12b.md
 Themes:
     - economy
 Tags:
@@ -19,7 +19,7 @@ Locations:
     - Identifier: UK9
       Country: GB
       Name: Weymouth
-      Description: Impact on cruises
+      Subtitle: Impact on cruises
       Point: [-2.37, 50.604]
       Bbox: [-180,-90,180,90]
 Resources:

@@ -1,8 +1,8 @@
 Name: truck_detections_primary_roads
 Title: Truck detections primary roads
 EodashIdentifier: E12c
-Description: Truck detections on primary roads description
-Story: E12c_truck_detections_primary_roads/E12c.md
+Subtitle: Truck detections on primary roads description
+Description: E12c_truck_detections_primary_roads/E12c.md
 Themes:
     - economy
 Tags:

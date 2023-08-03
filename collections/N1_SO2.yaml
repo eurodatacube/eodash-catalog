@@ -1,8 +1,8 @@
 Name: so2_daily
 Title: Sulfur dioxide
 EodashIdentifier: N1_SO2
-Description: Global daily SO2
-Story: N1_SO2/N1.md
+Subtitle: Global daily SO2
+Description: N1_SO2/N1.md
 Themes:
     - air
 Tags:

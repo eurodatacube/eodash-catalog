@@ -1,8 +1,8 @@
 Name: shipment_non_metallic_ores
 Title: Shipment of non-metallic ores
 EodashIdentifier: E1a_S2
-Description: Ships detected at specific piers in Sentinel-2 data
-Story: E1a_S2/E1a_S2.md
+Subtitle: Ships detected at specific piers in Sentinel-2 data
+Description: E1a_S2/E1a_S2.md
 Themes:
     - economy
 Tags:

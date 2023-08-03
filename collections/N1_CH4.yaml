@@ -1,8 +1,8 @@
 Name: CH4
 Title: Methane
 EodashIdentifier: N1_CH4
-Description: Daily Methane
-Story: N1_CH4/N1.md
+Subtitle: Daily Methane
+Description: N1_CH4/N1.md
 Themes:
     - air
 Tags:

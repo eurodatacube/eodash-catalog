@@ -1,8 +1,8 @@
 Name: shopping_center_activity
 Title: Activity at shopping centers
 EodashIdentifier: E11
-Description: Occupancy of customer parking
-Story: E11/E11.md
+Subtitle: Occupancy of customer parking
+Description: E11/E11.md
 Themes:
     - economy
 Tags:

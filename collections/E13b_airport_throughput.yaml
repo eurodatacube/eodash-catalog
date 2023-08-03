@@ -1,8 +1,8 @@
 Name: airport_throughput
 Title: Airport throughput
 EodashIdentifier: E13b_airport_throughput
-Description: Throughput at principal hub airports
-Story: E13b_airport_throughput/E13b.md
+Subtitle: Throughput at principal hub airports
+Description: E13b_airport_throughput/E13b.md
 Themes:
     - economy
 Tags:
@@ -18,12 +18,12 @@ License: MIT
 Locations:
     - Identifier: DE18
       Name: Frankfurt am Main
-      Description: Detected planes at Frankfurt am Main
+      Subtitle: Detected planes at Frankfurt am Main
       Point: [8.525, 50.043]
       Bbox: [8.4, 50, 8.8, 50.1]
     - Identifier: ES17
       Name: Teruel
-      Description: Detected planes at Teruel
+      Subtitle: Detected planes at Teruel
       Point: [-1.23, 40.413]
       Bbox: [-1.3, 40.2, -1.2, 40.4]
 Resources:

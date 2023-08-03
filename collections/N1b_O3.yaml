@@ -1,8 +1,8 @@
 Name: averaged_O3
 Title: Ozone
 EodashIdentifier: N1b
-Description: Ozone description
-Story: N1b_averaged_O3/N1b.md
+Subtitle: Ozone description
+Description: N1b_averaged_O3/N1b.md
 Themes:
   - air
 Tags:

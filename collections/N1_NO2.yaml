@@ -1,8 +1,8 @@
 Name: NO2_daily
 Title: Nitrogen dioxide
 EodashIdentifier: N1_NO2
-Description: Daily Nitrogen Dioxide
-Story: N1_NO2/N1.md
+Subtitle: Daily Nitrogen Dioxide
+Description: N1_NO2/N1.md
 Themes:
     - air
 Tags:

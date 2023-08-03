@@ -1,8 +1,8 @@
 Name: chl_concentration
 Title: Chlorophyll-a concentration
 EodashIdentifier: N3a2
-Description: Chlorophyll-a concentration description
-Story: N3a2_chl_concentration/N3a2.md
+Subtitle: Chlorophyll-a concentration description
+Description: N3a2_chl_concentration/N3a2.md
 Themes:
   - water
 Tags:
@@ -18,22 +18,22 @@ License: MIT
 Locations:
   - Identifier: NorthAdriatic
     Name: North Adriatic
-    Description: Chlorophyll-a concentration in North Adriatic
+    Subtitle: Chlorophyll-a concentration in North Adriatic
     Point: [13.02978, 45.19752]
     Bbox: [11.6, 46, 15, 44]
   - Identifier: RhoneDelta
     Name: Rhone Delta
-    Description: Chlorophyll-a concentration in Rhone Delta
+    Subtitle: Chlorophyll-a concentration in Rhone Delta
     Point: [4.94, 43.4]
     Bbox: [4, 44, 6, 42.8]
   - Identifier: Barcelona
     Name: Barcelona
-    Description: Chlorophyll-a concentration in Barcelona
+    Subtitle: Chlorophyll-a concentration in Barcelona
     Point: [1.769, 40.985]
     Bbox: [0, 42, 3, 40]
   - Identifier: DanubeDelta
     Name: Danube Delta
-    Description: Chlorophyll-a concentration in Danube Delta
+    Subtitle: Chlorophyll-a concentration in Danube Delta
     Point: [29.9, 45.05]
     Bbox: [28.5, 46, 31, 44]
 Resources:

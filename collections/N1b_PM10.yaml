@@ -1,8 +1,8 @@
 Name: averaged_PM10
 Title: Particulate matter 10µm
 EodashIdentifier: N1b
-Description: Particulate matter 10µm
-Story: N1b_averaged_PM10/N1b.md
+Subtitle: Particulate matter 10µm
+Description: N1b_averaged_PM10/N1b.md
 Themes:
   - air
 Tags:

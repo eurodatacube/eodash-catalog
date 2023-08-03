@@ -1,8 +1,8 @@
 Name: oil_storage_volume
 Title: Oil storage volume
 EodashIdentifier: E3
-Description: Oil Storage Volume as observed by ICEYE
-Story: E3_oil_storage_volume/E3.md
+Subtitle: Oil Storage Volume as observed by ICEYE
+Description: E3_oil_storage_volume/E3.md
 Themes:
     - economy
 Tags:

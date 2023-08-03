@@ -1,8 +1,8 @@
 Name: world_settlement_footprint
 Title: World settlement footprint
 EodashIdentifier: WSF
-Description: World settlement footprint description
-Story: WSF_world_settlement_footprint/WSF.md
+Subtitle: World settlement footprint description
+Description: WSF_world_settlement_footprint/WSF.md
 Themes:
   - economy
 Tags:

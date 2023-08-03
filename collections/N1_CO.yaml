@@ -1,8 +1,8 @@
 Name: CO_3_daily
 Title: Carbon monoxide
 EodashIdentifier: N1_CO
-Description: Global 3-daily Carbon monoxide
-Story: N1_CO/N1.md
+Subtitle: Global 3-daily Carbon monoxide
+Description: N1_CO/N1.md
 Themes:
     - air
 Tags:

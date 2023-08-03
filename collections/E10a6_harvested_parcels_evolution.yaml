@@ -1,8 +1,8 @@
 Name: harvested_parcels_evolution
 Title: Harvested parcels
 EodashIdentifier: E10a6
-Description: Evolution of harvested parcels in percentage
-Story: E10a6/E10a6.md
+Subtitle: Evolution of harvested parcels in percentage
+Description: E10a6/E10a6.md
 Themes:
     - agriculture
 Tags:

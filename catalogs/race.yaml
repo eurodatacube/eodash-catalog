@@ -2,7 +2,7 @@ id: "RACE"
 title: "RACE"
 description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
-assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
   - CDS1_temperature
   - CDS2_relative_humidity
