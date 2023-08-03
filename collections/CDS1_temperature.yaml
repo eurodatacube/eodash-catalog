@@ -1,8 +1,8 @@
 Name: temperature
 Title: Global temperature
 EodashIdentifier: CDS1_temperature
-Description: Global temperature description
-Story: CDS1_temperature/CDS1.md
+Subtitle: Global temperature description
+Description: CDS1_temperature/CDS1.md
 Themes:
     - air
 Tags:

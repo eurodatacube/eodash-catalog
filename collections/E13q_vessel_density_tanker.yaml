@@ -1,8 +1,8 @@
 Name: vessel_density_tanker
 Title: Vessel density for tanker
 EodashIdentifier: E13q
-Description: Vessel density for tanker description
-Story: E13q_vessel_density_cargo/E13q.md
+Subtitle: Vessel density for tanker description
+Description: E13q_vessel_density_cargo/E13q.md
 Themes:
   - water
 Tags:

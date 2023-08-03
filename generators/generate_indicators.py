@@ -87,7 +87,7 @@ def handle_WMS_endpoint(config, endpoint, data, catalog):
             styles = None
             if hasattr(endpoint, "Styles"):
                 styles = endpoint["Styles"]
-            collection = create_collection(data["Name"], data)
+            collection = create_collection(data["Name"], data, config)
             for t in times:
                 item = Item(
                     id = t,
@@ -114,7 +114,7 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     # Check if we have Locations in config, if yes we divide the collection
     # into multiple collections based on their area
     if "Locations" in data:
-        root_collection = create_collection(data["Name"], data)
+        root_collection = create_collection(data["Name"], data, config)
         for location in data["Locations"]:
             collection = process_STACAPI_Endpoint(
                 config=config,
@@ -154,17 +154,44 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
         )
     add_to_catalog(root_collection, catalog, endpoint, data)
 
-def create_collection(collection_id, data):
+def create_collection(collection_id, data, config):
     spatial_extent = SpatialExtent([
         [-180.0, -90.0, 180.0, 90.0],
     ])
     temporal_extent = TemporalExtent([[datetime.now()]])
     extent = Extent(spatial=spatial_extent, temporal=temporal_extent)
 
+    # Check if description is link to markdown file
+    if "Description" in data:
+        description = data["Description"]
+        if description.endswith((".md", ".MD")):
+            if description.startswith(("http")):
+                # if full absolut path is defined
+                response = requests.get(description)
+                if response.status_code == 200:
+                    description = response.text
+                elif "Subtitle" in data:
+                    print("Warning: Markdown file could not be fetched")
+                    description = data["Subtitle"]
+            else:
+                # relative path to assets was given
+                response = requests.get(
+                    "%s/%s"%(config["assets_endpoint"], description)
+                )
+                if response.status_code == 200:
+                    description = response.text
+                elif "Subtitle" in data:
+                    print("Warning: Markdown file could not be fetched")
+                    description = data["Subtitle"]
+    elif "Subtitle" in data:
+        # Try to use at least subtitle to fill some information
+        description = data["Subtitle"]
+
+
     collection = Collection(
         id=collection_id,
         title=data["Title"],
-        description=data["Description"],
+        description=description,
         stac_extensions=[
             "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
         ],
@@ -198,7 +225,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 
 def handle_GeoDB_endpoint(config, endpoint, data):
-    collection = create_collection(endpoint["CollectionId"], data)
+    collection = create_collection(endpoint["CollectionId"], data, config)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     response = json.loads(requests.get(url).text)
@@ -343,7 +370,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         print("Visualization endpoint not supported")
 
 def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=None, root_collection=None):
-    collection = create_collection(endpoint["CollectionId"], data)
+    collection = create_collection(endpoint["CollectionId"], data, config)
     add_visualization_info(collection, data, endpoint)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
@@ -392,7 +419,6 @@ def add_collection_information(config, collection, data):
     # Add metadata information
     # Check license identifier
     if "License" in data:
-        print(data["License"])
         license = lookup.by_id(data["License"])
         if license is not None:
             collection.license = license.id
@@ -411,15 +437,8 @@ def add_collection_information(config, collection, data):
     else:
         print("Warning: No license was provided, falling back to proprietary")
 
-    if "Legend" in data:
-        collection.add_asset(
-            "legend",
-            Asset(
-                href="%s/%s"%(config["assets_endpoint"], data["Legend"]),
-                media_type="image/png",
-                roles=["metadata"],
-            ),
-        )
+    if "Subtitle" in data:
+        collection.extra_fields["subtitle"] = data["Subtitle"]
     if "Story" in data:
         collection.add_asset(
             "story",

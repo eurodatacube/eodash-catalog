@@ -1,8 +1,8 @@
 Name: vessel_density_all
 Title: Vessel density
 EodashIdentifier: E13o
-Description: Vessel density description
-Story: E13o_vessel_density_cargo/E13o.md
+Subtitle: Vessel density description
+Description: E13o_vessel_density_cargo/E13o.md
 Themes:
   - water
 Tags:

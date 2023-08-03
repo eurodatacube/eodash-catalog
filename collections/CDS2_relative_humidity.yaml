@@ -1,8 +1,8 @@
 Name: relative_humidity
 Title: Relative humidity
 EodashIdentifier: CDS2_relative_humidity
-Description: Global relative humidity
-Story: CDS2_relative_humidity/CDS2.md
+Subtitle: Global relative humidity
+Description: CDS2_relative_humidity/CDS2.md
 Themes:
     - air
 Tags:

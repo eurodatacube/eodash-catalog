@@ -1,8 +1,8 @@
 Name: shopping_center_volume
 Title: Parked car volume
 EodashIdentifier: E11
-Description: Shopping center volume description
-Story: E11_shopping_center_volume/E11.md
+Subtitle: Shopping center volume description
+Description: E11_shopping_center_volume/E11.md
 Themes:
     - economy
 Tags:
@@ -19,7 +19,7 @@ Locations:
     - Identifier: FR16
       Country: FR
       Name: Disneyland Paris
-      Description: Volume of activity at parking lot at Disneyland Paris
+      Subtitle: Volume of activity at parking lot at Disneyland Paris
       Point: [2.78, 48.87]
       Bbox: [-180,-90,180,90]
 Resources:

@@ -1,8 +1,9 @@
 Name: wind_10m_v
 Title: Wind V Field
 EodashIdentifier: CDS4
-Description: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field
-Story: wind_10m_u/CDS.md
+Subtitle: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field
+Description: CDS4_wind_10m_v/README.MD
+Story: CDS3_wind_10m_u/CDS.md
 Themes:
   - air
 Tags:
@@ -34,7 +35,8 @@ Resources:
 OpenEOPID: ERA5_WIND_V
 AdditionalInfoExternal:
   Title: Additional info
-  Path: wind_10m_v/README.MD
+  Path: CDS4_wind_10m_v/README.MD
+Image: CDS4_wind_10m_v/wind_10m_v.png
 EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_v&layerId=Wind%20V-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
 Resolution: 0.25° x 0.25°
 GeographicalCoverage: -179.999755859375, -90.12489004526765, 179.99977453631897, 90.125
@@ -78,5 +80,3 @@ CubeDimensions:
       - windv10m
 RegistryEntryAdded: "2021-05-07"
 RegistryEntryLastModified: "2022-07-21"
-Image: CDS4_wind_10m_v/wind_10m_v.png
-Legend: CDS3_wind_10m_u/cm_legend.png

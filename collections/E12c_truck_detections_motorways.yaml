@@ -1,8 +1,8 @@
 Name: truck_detections_motorways
 Title: Truck detections motorways
 EodashIdentifier: E12c
-Description: Truck detections on motorways description
-Story: E12c_truck_detections_motorways/E12c.md
+Subtitle: Truck detections on motorways description
+Description: E12c_truck_detections_motorways/E12c.md
 Themes:
     - economy
 Tags:

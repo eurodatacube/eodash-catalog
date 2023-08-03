@@ -1,8 +1,8 @@
 Name: vessel_density_cargo
 Title: Vessel density for cargo
 EodashIdentifier: E13p
-Description: Vessel density for cargo description
-Story: E13p_vessel_density_cargo/E13p.md
+Subtitle: Vessel density for cargo description
+Description: E13p_vessel_density_cargo/E13p.md
 Themes:
   - water
 Tags:

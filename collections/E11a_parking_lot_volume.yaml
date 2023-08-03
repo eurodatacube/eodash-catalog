@@ -1,8 +1,8 @@
 Name: parking_lot_volume
 Title: Parking lot volume
 EodashIdentifier: E11a
-Description: Parking lot volume description
-Story: E11a_parking_lot_volume/E11a.md
+Subtitle: Parking lot volume description
+Description: E11a_parking_lot_volume/E11a.md
 Themes:
     - economy
 Tags:
@@ -19,7 +19,7 @@ Locations:
     - Identifier: PL7
       Country: PL
       Name: Warsaw
-      Description: Volume of activity at parking lot at Warsaw
+      Subtitle: Volume of activity at parking lot at Warsaw
       Point: [21.045, 52.244]
       Bbox: [-180,-90,180,90]
 Resources:
