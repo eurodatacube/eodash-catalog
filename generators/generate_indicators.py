@@ -279,12 +279,13 @@ def handle_GeoDB_endpoint(config, endpoint, data):
 
 
 def handle_VEDA_endpoint(config, endpoint, data, catalog):
-    process_STACAPI_Endpoint(
+    collection = process_STACAPI_Endpoint(
         config=config,
         endpoint=endpoint,
         data=data,
         catalog=catalog,
     )
+    add_to_catalog(collection, catalog, endpoint, data)
 
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
