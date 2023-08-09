@@ -203,7 +203,10 @@ def add_to_catalog(collection, catalog, endpoint, data):
     link = catalog.add_child(collection)
     # bubble fields we want to have up to collection link
     link.extra_fields["endpointtype"] = endpoint["Name"]
-    link.extra_fields["description"] = collection.description
+    # Disabling bubbling up of description as now it is considered to be
+    # used as markdown loading would increase the catalog size unnecessarily
+    # link.extra_fields["description"] = collection.description
+    link.extra_fields["subtitle"] = data["Subtitle"]
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["themes"] = ",".join(data["Themes"])
