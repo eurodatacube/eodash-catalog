@@ -1,6 +1,6 @@
 Name: NO2
 Title: Nitrogen dioxide daily average
-EodashIdentifier: N1b
+EodashIdentifier: N1b # Leaving original N1b without NO2 identifier to support older scheme
 Subtitle: Nitrogen dioxide daily average description
 Description: N1b_NO2/N1_CAMS.md
 Themes:
@@ -20,4 +20,5 @@ Resources:
     Type: Time
     LayerId: composition_europe_no2_analysis_surface
     Styles: [sh_OrangesTransparent40_surface_concentration]
+    # OverwriteBBox: "45 72 -25 30"
 Legend: N1b_NO2/cm_legend.png

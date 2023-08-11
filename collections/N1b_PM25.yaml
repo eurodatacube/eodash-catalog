@@ -1,6 +1,6 @@
 Name: PM25
 Title: Particulate matter 2.5µm
-EodashIdentifier: N1b
+EodashIdentifier: N1b_PM25
 Subtitle: Particulate matter 2.5µm
 Description: N1b_PM25/N1_CAMS.md
 Themes:

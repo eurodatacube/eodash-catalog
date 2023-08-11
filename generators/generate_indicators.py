@@ -101,6 +101,7 @@ def handle_WMS_endpoint(config, endpoint, data, catalog):
                 link.extra_fields["datetime"] = t
             collection.update_extent_from_items()
             add_visualization_info(collection, data, endpoint, styles=styles)
+            add_collection_information(config, collection, data)
             add_to_catalog(collection, catalog, endpoint, data)
     else:
         # TODO: Implement
@@ -443,6 +444,15 @@ def add_collection_information(config, collection, data):
 
     if "Subtitle" in data:
         collection.extra_fields["subtitle"] = data["Subtitle"]
+    if "Legend" in data:
+        collection.add_asset(
+            "legend",
+            Asset(
+                href="%s/%s"%(config["assets_endpoint"], data["Legend"]),
+                media_type="image/png",
+                roles=["thumbnail"],
+            ),
+        )
     if "Story" in data:
         collection.add_asset(
             "story",
