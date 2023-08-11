@@ -1,8 +1,8 @@
-Name: ships_detected_s2
+Name: ships_detected
 Title: Ships detections
 EodashIdentifier: E200
 Subtitle: Ships detected in Sentinel-2 data
-Description: E200/E200.md
+Description: E200_ships_detected/E200.md
 Themes:
     - economy
 Tags:

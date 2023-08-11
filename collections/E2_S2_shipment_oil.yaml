@@ -2,7 +2,7 @@ Name: shipment_oil
 Title: Shipment of oil
 EodashIdentifier: E2_S2
 Subtitle: Ships detected at piers
-Description: E2_S2/E2_S2.md
+Description: E2_S2_shipment_oil/E2.md
 Themes:
     - economy
 Tags:

@@ -2,6 +2,7 @@ Name: OMI_trno2-COG
 Title: Nitrogen Dioxide (Yearly)
 EodashIdentifier: N9
 Subtitle: Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura
+Description: OMI_trno2-COG/N9.md
 Themes:
   - atmosphere
 Resources:

@@ -1,8 +1,8 @@
-Name: vessel_density_other
+Name: vessel_density_others
 Title: Vessel density for non tanker or cargo
 EodashIdentifier: E13q
 Subtitle: Vessel density for non tanker or cargo vessels
-Description: E13q_vessel_density_cargo/E13q.md
+Description: E13r_vessel_density_others/E13o.md
 Themes:
   - water
 Tags:

@@ -2,7 +2,7 @@ Name: vessel_density_timeseries
 Title: Vessel density time series
 EodashIdentifier: E1b
 Subtitle: Vessel Density based on Copernicus Sentinel-1
-Description: E1b/E1b.md
+Description: E1b_vessel_density_timeseries/E1b.md
 Themes:
     - economy
 Tags:

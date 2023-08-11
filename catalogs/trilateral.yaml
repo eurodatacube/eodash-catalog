@@ -2,6 +2,6 @@ id: "trilateral"
 title: "Earth Observing Dashboard"
 description: "A Tri-Agency Dashboard by NASA, ESA, JAXA"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/trilateral/"
-assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
   - OMI_trno2-COG

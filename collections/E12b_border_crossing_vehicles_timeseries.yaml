@@ -2,7 +2,7 @@ Name: border_crossing_vehicles_timeseries
 Title: Border crossing vehicles time series
 EodashIdentifier: E12b
 Subtitle: Volume of highway occupancy from Sentinel-1 data
-Description: E12b/E12b.md
+Description: E12b_border_crossing_vehicles_timeseries/E12b.md
 Themes:
     - economy
 Tags:

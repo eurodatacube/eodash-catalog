@@ -2,7 +2,7 @@ Name: ocean_colour_plankton_mediterranean
 Title: Ocean colour plankton - Mediterranean
 EodashIdentifier: N3c
 Subtitle: Ocean colour plankton description
-Description: N3c_ocean_colour_plankton_mediterranean/N3c.md
+Description: N3c_ocean_colour_plankton/N3c.md
 Themes:
   - water
 Tags:
