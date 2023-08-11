@@ -2,7 +2,7 @@ Name: airport_throughput
 Title: Airport throughput
 EodashIdentifier: E13b_airport_throughput
 Subtitle: Throughput at principal hub airports
-Description: E13b_airport_throughput/E13b.md
+Description: E13b_airport_throughput/E13b_PLES.md
 Themes:
     - economy
 Tags:

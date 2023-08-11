@@ -2,7 +2,7 @@ Name: parked_planes
 Title: Parked plane detections
 EodashIdentifier: E13b
 Subtitle: Parked planes detected on Sentinel-2 data
-Description: E13b/E13b.md
+Description: E13b_parked_planes/E13b_PLES.md
 Themes:
     - economy
 Tags:

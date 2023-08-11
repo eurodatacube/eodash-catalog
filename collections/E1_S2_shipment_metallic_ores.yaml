@@ -2,7 +2,7 @@ Name: shipment_metallic_ores
 Title: Shipment of metallic ores
 EodashIdentifier: E1_S2
 Subtitle: Ships detected at specific piers in Sentinel-2 data
-Description: E1_S2/E1_S2.md
+Description: E1_S2_shipment_metallic_ores/E1.md
 Themes:
     - economy
 Tags:

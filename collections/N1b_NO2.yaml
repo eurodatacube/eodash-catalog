@@ -1,8 +1,8 @@
-Name: averaged_NO2
+Name: NO2
 Title: Nitrogen dioxide daily average
 EodashIdentifier: N1b
 Subtitle: Nitrogen dioxide daily average description
-Description: N1b_averaged_NO2/N1b.md
+Description: N1b_NO2/N1_CAMS.md
 Themes:
   - air
 Tags:

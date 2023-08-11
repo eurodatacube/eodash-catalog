@@ -1,8 +1,8 @@
-Name: averaged_PM25
+Name: PM25
 Title: Particulate matter 2.5µm
 EodashIdentifier: N1b
 Subtitle: Particulate matter 2.5µm
-Description: N1b_averaged_PM25/N1b.md
+Description: N1b_PM25/N1_CAMS.md
 Themes:
   - air
 Tags:

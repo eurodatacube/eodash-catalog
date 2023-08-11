@@ -2,7 +2,7 @@ Name: flying_planes
 Title: Flying planes detections
 EodashIdentifier: E13d
 Subtitle: Flying planes detected on Sentinel-2 data
-Description: E13d/E13d.md
+Description: E13d_flying_planes/E13d.md
 Themes:
     - economy
 Tags:

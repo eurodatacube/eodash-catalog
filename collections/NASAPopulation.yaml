@@ -2,7 +2,7 @@ Name: population_density
 Title: Population density
 EodashIdentifier: NASAPopulation
 Subtitle: Population density 2020
-Description: NASAPopulation/W6.md
+Description: NASAPopulation/NASAPopulation.md
 Themes:
     - economy
 Tags:
