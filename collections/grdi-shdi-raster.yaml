@@ -1,0 +1,25 @@
+Name: grdi-shdi-raster
+Title: GRDI SHDI Constituent Raster
+EodashIdentifier: GRDI3
+Subtitle: GRDI SHDI Constituent Raster
+Description: grdi-shdi-raster/GRDI3.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - MODIS
+Agency:
+  - NASA
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: grdi-shdi-raster
+    ColormapName: viridis
+    Rescale: [0.0,100.0]
+    Bidx: 1
+Legend: grdi-v1-built/cm_legend.png
+Image: grdi-shdi-raster/preview.png

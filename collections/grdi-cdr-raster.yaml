@@ -1,0 +1,25 @@
+Name: grdi-cdr-raster
+Title: GRDI CDR Constituent Raster
+EodashIdentifier: GRDI8
+Subtitle: GRDI CDR Constituent Raster
+Description: grdi-cdr-raster/GRDI8.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - MODIS
+Agency:
+  - NASA
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: grdi-cdr-raster
+    ColormapName: viridis
+    Rescale: [0.0,100.0]
+    Bidx: 1
+Legend: grdi-v1-built/cm_legend.png
+Image: grdi-cdr-raster/preview.png

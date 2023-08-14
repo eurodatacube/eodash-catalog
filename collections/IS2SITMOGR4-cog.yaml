@@ -1,0 +1,24 @@
+Name: IS2SITMOGR4-cog
+Title: Sea Ice Thickness (ICESat-2)
+EodashIdentifier: N2
+Subtitle: Sea Ice Thickness (ICESat-2)
+Description: IS2SITMOGR4-cog/N2.md
+Themes:
+  - atmosphere
+Tags:
+  - placeholder
+Satellite:
+  - ICESat-2
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Legend: IS2SITMOGR4-cog/cm_legend.png
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: IS2SITMOGR4-cog
+    ColormapName: plasma
+    Rescale: [0.0,4.0]
+    Bidx: 1

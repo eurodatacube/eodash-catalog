@@ -1,0 +1,24 @@
+Name: co2-diff
+Title: Difference of Carbon Dioxide
+EodashIdentifier: N2
+Subtitle: Difference of Carbon Dioxide [ppm]
+Description: co2-diff/N2.md
+Themes:
+  - atmosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Legend: co2-diff/cm_legend.png
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: co2-diff
+    ColormapName: rdbu_r
+    Rescale: [-0.000001,0.000001]
+    Bidx: 1

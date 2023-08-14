@@ -1,0 +1,24 @@
+Name: no2-monthly-diff
+Title: Nitrogen Dioxide (Monthly difference)
+EodashIdentifier: N1_NO2_monthly_diff
+Subtitle: Monthly difference of Nitrogen Dioxide (NO2) from NASA [10^15 molecules/cm²]
+Description: OMI_trno2-COG/N9.md
+Themes:
+  - atmosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Legend: no2-monthly-diff/cm_legend.png
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: no2-monthly-diff
+    ColormapName: rdbu_r
+    Rescale: [-3e15,3e15]
+    Bidx: 1
