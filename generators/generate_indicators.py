@@ -174,6 +174,9 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
             catalog=catalog,
             headers=headers,
         )
+    if "Services" in data:
+        add_example_info(root_collection, data, endpoint, config)
+
     add_to_catalog(root_collection, catalog, endpoint, data)
 
 def create_collection(collection_id, data, config):
@@ -216,6 +219,7 @@ def create_collection(collection_id, data, config):
         description=description,
         stac_extensions=[
             "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+            "https://stac-extensions.github.io/example-links/v0.0.1/schema.json"
         ],
         extent=extent
     )
@@ -312,23 +316,39 @@ def handle_VEDA_endpoint(config, endpoint, data, catalog):
     )
     add_to_catalog(collection, catalog, endpoint, data)
 
+def add_example_info(stac_object, data, endpoint, config):
+    if "Services" in data:
+        for service in data["Services"]:
+            if service["Name"] == "Statistical API":
+                stac_object.add_link(
+                    Link(
+                        rel="example",
+                        target="%s/%s"%(config["assets_endpoint"], service["Script"]),
+                        title="evalscript",
+                        media_type="application/javascript",
+                        extra_fields={
+                            "example:language": "JavaScript",
+                            "dataId": "%s-%s"%(service["Type"], service["CollectionId"]),
+                        },
+                    )
+                )
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
             instanceId = endpoint["InstanceId"]
-        # stac_object.add_link(
-        #     Link(
-        #         rel="wms",
-        #         target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
-        #         media_type="text/xml",
-        #         title=data["Name"],
-        #         extra_fields={
-        #             "wms:layers": [endpoint["LayerId"]],
-        #         },
-        #     )
-        # )
+        stac_object.add_link(
+            Link(
+                rel="wms",
+                target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
+                media_type="text/xml",
+                title=data["Name"],
+                extra_fields={
+                    "wms:layers": [endpoint["LayerId"]],
+                },
+            )
+        )
     # elif resource["Name"] == "GeoDB":
     #     pass
     elif endpoint["Name"] == "WMS":
