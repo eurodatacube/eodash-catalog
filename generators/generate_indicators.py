@@ -37,16 +37,16 @@ from pystac import (
 from pystac.layout import TemplateLayoutStrategy
 from pystac.validation import validate_all
 import spdx_lookup as lookup
-
 import argparse
-parser = argparse.ArgumentParser(
+
+argparser = argparse.ArgumentParser(
     prog='STAC generator and harvester',
     description='''
         This library goes over configured endpoints extracting as much information
         as possible and generating a STAC catalog with the information''',
 )
 
-parser.add_argument("-vd", action="store_true", help="if flag set validation will be run on generated catalogs")
+argparser.add_argument("-vd", action="store_true", help="if flag set validation will be run on generated catalogs")
 
 def process_catalog_file(file_path, options):
     print("Processing catalog:", file_path)
@@ -423,13 +423,8 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
         if item_datetime:
             link.extra_fields["datetime"] = item_datetime.isoformat()[:-6] + 'Z'
         else:
-            start = datetime.fromisoformat(item.properties["start_datetime"]).isoformat() + 'Z'
-            end = datetime.fromisoformat(item.properties["end_datetime"]).isoformat() + 'Z'
-            # make sure times follow the expected isoformat and contain Z at the end 
-            item.properties["start_datetime"] = start
-            item.properties["end_datetime"] = end
-            link.extra_fields["start_datetime"] = start
-            link.extra_fields["end_datetime"] = end
+            link.extra_fields["start_datetime"] = item.properties["start_datetime"]
+            link.extra_fields["end_datetime"] = item.properties["end_datetime"]
         
     collection.update_extent_from_items()
     
@@ -510,6 +505,6 @@ def process_catalogs(folder_path, options):
         if os.path.isfile(file_path):
             process_catalog_file(file_path, options)
 
-options = parser.parse_args()
+options = argparser.parse_args()
 folder_path = "../catalogs/"
 process_catalogs(folder_path, options)
