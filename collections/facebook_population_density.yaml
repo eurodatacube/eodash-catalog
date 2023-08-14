@@ -1,0 +1,24 @@
+Name: facebook_population_density
+Title: Population Density (Meta)
+EodashIdentifier: FB
+Subtitle: Monthly difference of Nitrogen Dioxide (NO2) from NASA [10^15 molecules/cm²]
+Description: facebook_population_density/N9.md
+Themes:
+  - atmosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Legend: facebook_population_density/cm_legend.png
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: facebook_population_density
+    ColormapName: ylorrd
+    Rescale: [0,70]
+    Bidx: 1

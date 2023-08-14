@@ -1,0 +1,24 @@
+Name: no2-monthly
+Title: Nitrogen Dioxide (Monthly)
+EodashIdentifier: N1_NO2_monthly
+Subtitle: Monthly Nitrogen Dioxide (NO2) from NASA
+Description: OMI_trno2-COG/N9.md
+Themes:
+  - atmosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Legend: no2-monthly/cm_legend.png
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: no2-monthly
+    ColormapName: reds
+    Rescale: [0,108e14]
+    Bidx: 1

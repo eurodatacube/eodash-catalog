@@ -1,0 +1,22 @@
+Name: ocean_primary_productivity
+Title: Ocean Primary Productivity (BICEP)
+EodashIdentifier: NPP
+Subtitle: Ocean Primary Productivity (BICEP) Subtitle
+Description: NPP_ocean_primary_productivity/NPP.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: zarr
+    CollectionId: a216afca-8a65-4072-87a5-8ed7aa21e08a
+    LayerId: BICEP_NPP_VIS_PP2
+# Legend: NPP_ocean_primary_productivity/cm_legend.png
