@@ -82,6 +82,9 @@ def handle_WMS_endpoint(config, endpoint, data, catalog):
             times = endpoint["Times"]
         else:
             times = extent["temporal"]
+        if "OverwriteBBox" in endpoint:
+            extent["spatial"] = endpoint["OverwriteBBox"]
+        
         if len(times) > 0:
             # Create an item per time to allow visualization in stac clients
             styles = None

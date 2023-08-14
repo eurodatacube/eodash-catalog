@@ -20,4 +20,5 @@ Resources:
     Type: Time
     LayerId: composition_europe_o3_analysis_surface
     Styles: [sh_OrangesTransparent240_surface_concentration]
+    OverwriteBBox: [45, 72, -25, 30] # WMS layer description provides incorrect BBox
 Legend: N1b_O3/cm_legend.png

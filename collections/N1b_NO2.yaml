@@ -20,5 +20,5 @@ Resources:
     Type: Time
     LayerId: composition_europe_no2_analysis_surface
     Styles: [sh_OrangesTransparent40_surface_concentration]
-    # OverwriteBBox: "45 72 -25 30"
+    OverwriteBBox: [45, 72, -25, 30] # WMS layer description provides incorrect BBox
 Legend: N1b_NO2/cm_legend.png
