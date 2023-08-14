@@ -15,4 +15,4 @@ mergedeep
 structlog<22.0
 OWSLib<0.29.3
 spdx-lookup<=0.3.3
-pystac[validation] @ git+https://github.com/stac-utils/pystac@5b6622c945536128c35fa3595e7cfa9f16552b71
+pystac[validation]<=1.8.3
