@@ -35,10 +35,20 @@ from pystac import (
     Summaries
 )
 from pystac.layout import TemplateLayoutStrategy
+from pystac.validation import validate_all
 import spdx_lookup as lookup
 
+import argparse
+parser = argparse.ArgumentParser(
+    prog='STAC generator and harvester',
+    description='''
+        This library goes over configured endpoints extracting as much information
+        as possible and generating a STAC catalog with the information''',
+)
 
-def process_catalog_file(file_path):
+parser.add_argument("-vd", action="store_true", help="if flag set validation will be run on generated catalogs")
+
+def process_catalog_file(file_path, options):
     print("Processing catalog:", file_path)
     with open(file_path) as f:
         config = yaml.load(f, Loader=SafeLoader)
@@ -54,6 +64,14 @@ def process_catalog_file(file_path):
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
         catalog.normalize_hrefs(config["endpoint"], strategy=strategy)
         catalog.save(dest_href="../build/%s"%config["id"])
+        
+        if options.vd:
+            # try to validate catalog if flag was set
+            print("Running validation of catalog %s"%file_path)
+            try:
+                validate_all(catalog.to_dict(), href=config["endpoint"])
+            except Exception as e:
+                print("Issue validation collection: %s"%e)
 
 def process_collection_file(config, file_path, catalog):
     print("Processing collection:", file_path)
@@ -300,17 +318,17 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
             instanceId = endpoint["InstanceId"]
-        stac_object.add_link(
-            Link(
-                rel="wms",
-                target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
-                media_type="text/xml",
-                title=data["Name"],
-                extra_fields={
-                    "wms:layers": [endpoint["LayerId"]],
-                },
-            )
-        )
+        # stac_object.add_link(
+        #     Link(
+        #         rel="wms",
+        #         target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
+        #         media_type="text/xml",
+        #         title=data["Name"],
+        #         extra_fields={
+        #             "wms:layers": [endpoint["LayerId"]],
+        #         },
+        #     )
+        # )
     # elif resource["Name"] == "GeoDB":
     #     pass
     elif endpoint["Name"] == "WMS":
@@ -405,8 +423,13 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
         if item_datetime:
             link.extra_fields["datetime"] = item_datetime.isoformat()[:-6] + 'Z'
         else:
-            link.extra_fields["start_datetime"] = item.properties["start_datetime"]
-            link.extra_fields["end_datetime"] = item.properties["end_datetime"]
+            start = datetime.fromisoformat(item.properties["start_datetime"]).isoformat() + 'Z'
+            end = datetime.fromisoformat(item.properties["end_datetime"]).isoformat() + 'Z'
+            # make sure times follow the expected isoformat and contain Z at the end 
+            item.properties["start_datetime"] = start
+            item.properties["end_datetime"] = end
+            link.extra_fields["start_datetime"] = start
+            link.extra_fields["end_datetime"] = end
         
     collection.update_extent_from_items()
     
@@ -414,13 +437,6 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     collection.id = data["Name"]
     add_collection_information(config, collection, data)
 
-    # validate collection after creation
-    '''
-    try:
-        print(collection.validate())
-    except Exception as e:
-        print("Issue validation collection: %s"%e)
-    '''
     return collection
 
 def add_collection_information(config, collection, data):
@@ -488,12 +504,12 @@ def add_collection_information(config, collection, data):
         collection.extra_fields["agency"] = ",".join(data["Agency"])
 
 
-def process_catalogs(folder_path):
+def process_catalogs(folder_path, options):
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
         if os.path.isfile(file_path):
-            process_catalog_file(file_path)
+            process_catalog_file(file_path, options)
 
-
+options = parser.parse_args()
 folder_path = "../catalogs/"
-process_catalogs(folder_path)
+process_catalogs(folder_path, options)
