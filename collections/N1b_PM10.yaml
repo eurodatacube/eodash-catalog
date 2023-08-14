@@ -20,4 +20,5 @@ Resources:
     Type: Time
     LayerId: composition_europe_pm10_analysis_surface
     Styles: [sh_GreensTransparent40_surface_concentration]
+    OverwriteBBox: [45, 72, -25, 30] # WMS layer description provides incorrect BBox
 Legend: N1b_PM10/cm_legend.png
