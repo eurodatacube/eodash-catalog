@@ -174,9 +174,8 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
             catalog=catalog,
             headers=headers,
         )
-    if "Services" in data:
-        add_example_info(root_collection, data, endpoint, config)
 
+    add_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
 
 def create_collection(collection_id, data, config):
@@ -314,6 +313,7 @@ def handle_VEDA_endpoint(config, endpoint, data, catalog):
         data=data,
         catalog=catalog,
     )
+    add_example_info(collection, data, endpoint, config)
     add_to_catalog(collection, catalog, endpoint, data)
 
 def add_example_info(stac_object, data, endpoint, config):
@@ -329,6 +329,18 @@ def add_example_info(stac_object, data, endpoint, config):
                         extra_fields={
                             "example:language": "JavaScript",
                             "dataId": "%s-%s"%(service["Type"], service["CollectionId"]),
+                        },
+                    )
+                )
+            if service["Name"] == "VEDA Statistics":
+                stac_object.add_link(
+                    Link(
+                        rel="example",
+                        target=service["Endpoint"],
+                        title=service["Name"],
+                        media_type="application/json",
+                        extra_fields={
+                            "example:language": "JSON",
                         },
                     )
                 )

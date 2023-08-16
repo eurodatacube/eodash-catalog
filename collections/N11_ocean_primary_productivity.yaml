@@ -1,0 +1,21 @@
+Name: ocean_primary_productivity
+Title: Ocean Primary Productivity (GCOM-C)
+EodashIdentifier: N11
+Subtitle: Ocean Primary Productivity (GCOM-C)
+Description: N11_ocean_primary_productivity/N11.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - GCOM-C
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: Time
+    LayerId: ONPP-GCOMC-World-Monthly
+Legend: N11_ocean_primary_productivity/cm_legend.png

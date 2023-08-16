@@ -1,0 +1,21 @@
+Name: precipitation
+Title: Precipitation Anomaly
+EodashIdentifier: PRCG
+Subtitle: Precipitation Anomaly
+Description: PRCG_precipitation/PRCG.md
+Themes:
+  - agriculture
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - GSMaP
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: Time
+    LayerId: PRC-GSMaP-World-Monthly
+Legend: PRCG_precipitation/cm_legend.png

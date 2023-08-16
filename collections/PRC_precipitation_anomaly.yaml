@@ -1,0 +1,21 @@
+Name: precipitation_anomaly
+Title: Precipitation Anomaly
+EodashIdentifier: PRC
+Subtitle: Precipitation Anomaly
+Description: PRC_precipitation_anomaly/PRC.md
+Themes:
+  - agriculture
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - GSMaP
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: Time
+    LayerId: PRC-Anomaly-GSMaP-World-Monthly
+Legend: PRC_precipitation_anomaly/cm_legend.png
