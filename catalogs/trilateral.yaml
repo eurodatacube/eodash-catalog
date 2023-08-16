@@ -7,6 +7,7 @@ collections:
   - N1_NO2
   - N1_CH4
   - N1_CO
+  - N1_SO2
   - no2-monthly
   - no2-monthly-diff
   - co2-mean
@@ -25,4 +26,16 @@ collections:
   - grdi-filled-missing-values-count
   - grdi-imr-raster
   - grdi-cdr-raster
+  - OMSO2PCA-COG
+  - SIE_sea_ice_thickness_envisat
+  - SIC_sea_ice_thickness_cryosat
+  - NASAPopulation
+  - WSF_world_settlement_footprint
+  - N12_sea_ice_concentration_arctic
+  - N12_sea_ice_concentration_antarctic
+  - E10e_ndvi
+  - N11_ocean_primary_productivity
+  - SMC_soil_moisture_anomaly
+  - PRC_precipitation_anomaly
+  - PRCG_precipitation
 

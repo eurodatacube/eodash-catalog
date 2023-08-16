@@ -14,6 +14,9 @@ Sensor:
 Agency:
   - NASA
 Legend: no2-monthly/cm_legend.png
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog

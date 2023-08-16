@@ -4,7 +4,7 @@ EodashIdentifier: N2
 Subtitle: Sea Ice Thickness (ICESat-2)
 Description: IS2SITMOGR4-cog/N2.md
 Themes:
-  - atmosphere
+  - cryosphere
 Tags:
   - placeholder
 Satellite:

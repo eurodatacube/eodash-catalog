@@ -4,7 +4,7 @@ EodashIdentifier: NCEO
 Subtitle: Aboveground Biomass subtitle
 Description: nceo_africa_2017/NCEO.md
 Themes:
-  - water
+  - biomass
 Tags:
   - placeholder
 Satellite:

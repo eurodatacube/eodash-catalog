@@ -1,0 +1,21 @@
+Name: soil_moisture_anomaly
+Title: Soil Moisture Anomaly
+EodashIdentifier: SMC
+Subtitle: Soil Moisture Anomaly
+Description: SMC_soil_moisture_anomaly/SMC.md
+Themes:
+  - agriculture
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - GCOM-W
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: Time
+    LayerId: SMC-Anomaly-GCOMW-World-Monthly
+Legend: SMC_soil_moisture_anomaly/cm_legend.png
