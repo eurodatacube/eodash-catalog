@@ -1,0 +1,11 @@
+id: "GTIF"
+title: "Green Transition Information Factory"
+description: "Rapid Action for Citizens with Earth Observation"
+endpoint: "https://eurodatacube.github.io/eodash-catalog/GTIF/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
+collections:
+  # - E12c_truck_detections_motorways
+  # - E12c_truck_detections_primary_roads
+  # - AQ1_aggregated_mobility_data
+  - AQA_health_risk_index
+  
