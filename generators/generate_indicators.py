@@ -473,8 +473,15 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             Link(
                 rel="xyz",
                 target=target_url,
-                media_type="application/json",
+                media_type="application/pbf",
                 title=data["Name"],
+                extra_fields={
+                    "description": data["Title"],
+                    "parameters": endpoint["Parameters"],
+                    "matchKey": endpoint["MatchKey"],
+                    "timeKey": endpoint["TimeKey"],
+                    "source" : endpoint["Source"],
+                }
             )
         )
     else:

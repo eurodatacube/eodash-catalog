@@ -24,7 +24,7 @@ Resources:
     Database: GTIF
     CollectionId: AT_Gemeinden_3857
     TimeKey: time
-    AdminZoneKey: id_3
+    MatchKey: id_3
     Parameters:
       - pm10
       - pm25
