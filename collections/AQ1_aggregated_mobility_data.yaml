@@ -1,0 +1,37 @@
+Name: aggregated_mobility_data
+Title: Correlation explorer
+EodashIdentifier: AQ1
+Subtitle: Aggregated mobility data
+Description: AQ1_aggregated_mobility_data/AQ1.md
+Themes:
+  - economy
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - MODIS
+Agency:
+  - ESA
+Provider:
+  - SISTEMA
+Dates: AQ1_aggregated_mobility_data/dates.json # Allows to bypass retrieval of dates
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/gwc/service/tms/1.0.0/
+    DBEndpoint: https://xcube-geodb.brockmann-consult.de/gtif/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
+    Source: aggregated_trajs_model_satellite_v1
+    Name: GeoDB Vector Tiles
+    Instance: geodb_debd884d-92f9-4979-87b6-eadef1139394
+    Database: GTIF
+    CollectionId: grid_gtif_aggregated_data
+    TimeKey: timestamp
+    AdminZoneKey: satellite_id
+    Parameters:
+      - satellite_id
+      - satellite_values
+      - mean_value
+      - speed
+      - congestion_index
+      - n_trajectories
+      - motorized_count
+      - motorized_share

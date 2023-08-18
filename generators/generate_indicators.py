@@ -88,9 +88,45 @@ def process_collection_file(config, file_path, catalog):
                     handle_VEDA_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "WMS":
                     handle_WMS_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "GeoDB Vector Tiles":
+                    handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
                 else:
                     raise ValueError("Type of Resource is not supported")
 
+def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
+    collection = create_collection(endpoint["CollectionId"], data, config)
+    if "Dates" in data:
+        pass
+    else:
+        select = "?select=%s"%endpoint["TimeKey"]
+        url = endpoint["DBEndpoint"] + endpoint["Database"] + "_%s"%endpoint["Source"] + select
+        response = json.loads(requests.get(url).text)
+        times = set([entry[endpoint["TimeKey"]] for entry in response])
+        if len(times) > 0:
+            # Create an item per time to allow visualization in stac clients
+            styles = None
+            if hasattr(endpoint, "Styles"):
+                styles = endpoint["Styles"]
+            collection = create_collection(data["Name"], data, config)
+            # TODO: For now we create global extent, we should be able to
+            # fetch the extent of the layer
+            for t in times:
+                item = Item(
+                    id = t,
+                    bbox=[-180.0, -90.0, 180.0, 90.0],
+                    properties={},
+                    geometry = None,
+                    datetime = parser.isoparse(t),
+                )
+                # add_visualization_info(item, data, endpoint, time=t, styles=styles)
+                link = collection.add_item(item)
+                link.extra_fields["datetime"] = t
+            collection.update_extent_from_items()
+            add_visualization_info(collection, data, endpoint, styles=styles)
+            add_collection_information(config, collection, data)
+            add_to_catalog(collection, catalog, endpoint, data)
+
+    
 def handle_WMS_endpoint(config, endpoint, data, catalog):
     if endpoint["Type"] == "Time" or endpoint["Type"] == "OverwriteTimes":
 
@@ -424,6 +460,30 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             )
         )
         pass
+    elif endpoint["Name"] == "GeoDB Vector Tiles":
+        #`${geoserverUrl}${config.layerName}@EPSG%3A${projString}@pbf/{z}/{x}/{-y}.pbf`,
+        # 'geodb_debd884d-92f9-4979-87b6-eadef1139394:GTIF_AT_Gemeinden_3857'
+        target_url = "%s%s:%s_%s@EPSG:3857@pbf/{z}/{x}/{-y}.pbf"%(
+            endpoint["EndPoint"],
+            endpoint["Instance"],
+            endpoint["Database"],
+            endpoint["CollectionId"],
+        )
+        stac_object.add_link(
+            Link(
+                rel="xyz",
+                target=target_url,
+                media_type="application/pbf",
+                title=data["Name"],
+                extra_fields={
+                    "description": data["Title"],
+                    "parameters": endpoint["Parameters"],
+                    "matchKey": endpoint["MatchKey"],
+                    "timeKey": endpoint["TimeKey"],
+                    "source" : endpoint["Source"],
+                }
+            )
+        )
     else:
         print("Visualization endpoint not supported")
 
