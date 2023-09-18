@@ -2,7 +2,7 @@
 # catalog when creating merge request to main branch
 
 # Workflow for deploying content to bucket
-name: Deploy static content to s3 bucket
+name: Deploy test static content to s3 bucket
 
 on:
   pull_request_target:
