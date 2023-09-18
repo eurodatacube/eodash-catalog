@@ -1,0 +1,56 @@
+# This is a basic workflow takes care of building and deploying
+# catalog when creating merge request to main branch
+
+# Workflow for deploying content to bucket
+name: Deploy static content to s3 bucket
+
+on:
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - 'main'
+
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "bucket_deploy"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Install dependencies
+        run: |
+          pip install -U pip
+          pip install -r generators/requirements.txt
+      - name: Build
+        env:
+          SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
+          SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
+          SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
+        run: |
+          cd generators/
+          python generate_indicators.py
+      # Upload build to S3
+      - name: sync client s3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete --follow-symlinks'
+        env:
+          SOURCE_DIR: 'build'
+          DEST_DIR: 'catalog/${GITHUB_REF##*/}'
+          AWS_REGION: 'eu-central-1'
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
