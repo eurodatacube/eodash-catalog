@@ -8,23 +8,16 @@ on:
   pull_request:
     types:
       - opened
+      - reopened
       - synchronize
+      - closed
     branches:
       - 'main'
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "bucket_deploy"
-  cancel-in-progress: false
+concurrency: preview-${{ github.ref }}
 
 jobs:
-  deploy:
-    environment:
-      name: test_deploy
+  deploy-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,14 +36,8 @@ jobs:
         run: |
           cd generators/
           python generate_indicators.py
-      # Upload build to S3
-      - name: sync client s3
-        uses: jakejarvis/s3-sync-action@v0.5.1
-        env:
-          SOURCE_DIR: 'build'
-          DEST_DIR: 'catalog/${GITHUB_REF##*/}'
-          AWS_REGION: 'eu-central-1'
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build/
 
