@@ -46,7 +46,7 @@ jobs:
       - name: sync client s3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: --delete --follow-symlinks'
+          args: --delete --follow-symlinks
         env:
           SOURCE_DIR: 'build'
           DEST_DIR: 'catalog/${GITHUB_REF##*/}'
