@@ -8,9 +8,12 @@ on:
   pull_request_target:
     types:
       - opened
+      - synchronize
     branches:
       - 'main'
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -44,7 +47,7 @@ jobs:
       - name: sync client s3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: --delete --follow-symlinks'
+          args: --delete --follow-symlinks
         env:
           SOURCE_DIR: 'build'
           DEST_DIR: 'catalog/${GITHUB_REF##*/}'
