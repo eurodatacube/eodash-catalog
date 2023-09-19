@@ -45,7 +45,7 @@ jobs:
           python generate_indicators.py
       # Upload build to S3 using cp
       - name: Upload folder to bucket
-        uses: a-sync/s3-uploader@v2
+        uses: a-sync/s3-uploader@master
         with:
           args: --recursive
         env:
