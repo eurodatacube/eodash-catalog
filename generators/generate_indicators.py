@@ -3,7 +3,7 @@
 Indicator generator to harvest information from endpoints and generate catalog
 
 """
-
+import time
 import requests
 import json
 from pystac_client import Client
@@ -46,7 +46,17 @@ argparser = argparse.ArgumentParser(
         as possible and generating a STAC catalog with the information''',
 )
 
-argparser.add_argument("-vd", action="store_true", help="if flag set validation will be run on generated catalogs")
+argparser.add_argument("-vd", action="store_true", help="validation flag, if set, validation will be run on generated catalogs")
+argparser.add_argument("-ni", action="store_true", help="no items flag, if set, items will not be saved")
+
+def recursive_save(stac_object, no_items=False):
+    stac_object.save_object()
+    for child in stac_object.get_children():
+        recursive_save(child, no_items)
+    if not no_items:
+        # try to save items if available
+        for item in stac_object.get_items():
+            item.save_object()
 
 def process_catalog_file(file_path, options):
     print("Processing catalog:", file_path)
@@ -62,9 +72,18 @@ def process_catalog_file(file_path, options):
             process_collection_file(config, "../collections/%s.yaml"%(collection), catalog)
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
-        catalog.normalize_hrefs(config["endpoint"], strategy=strategy)
-        catalog.save(dest_href="../build/%s"%config["id"])
+        catalog.normalize_hrefs("../build/%s"%config["id"], strategy=strategy)
         
+        print("Started creation of collection files")
+        start = time.time()
+        if options.ni:
+            recursive_save(catalog, options.ni)
+        else:
+            # For full catalog save with items this still seems to be faster
+            catalog.save(dest_href="../build/%s"%config["id"])
+        end = time.time()
+        print("Time consumed in saving: ", end - start)
+
         if options.vd:
             # try to validate catalog if flag was set
             print("Running validation of catalog %s"%file_path)
