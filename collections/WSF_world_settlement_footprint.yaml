@@ -51,3 +51,6 @@ Resources:
       - "2014"
       - "2015"
     LayerId: WSF_Evolution
+  - EndPoint: https://a.geoservice.dlr.de/eoc/land/wms/
+    Name: WMS
+    LayerId: WSF_2019
