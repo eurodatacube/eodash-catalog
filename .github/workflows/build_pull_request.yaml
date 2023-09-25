@@ -41,7 +41,7 @@ jobs:
         uses: jakejarvis/s3-sync-action@v0.5.1
         env:
           SOURCE_DIR: 'build'
-          DEST_DIR: 'catalog/${GITHUB_REF_NAME}'
+          DEST_DIR: 'catalog/${{ github.event.pull_request.head.ref }}'
           AWS_REGION: 'eu-central-1'
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
