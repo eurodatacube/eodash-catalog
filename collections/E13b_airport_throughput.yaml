@@ -13,7 +13,8 @@ Sensor:
     - placeholder
 Agency:
     - ESA
-Provider: placeholder
+Provider:
+    - Name: placeholder
 License: MIT
 Locations:
     - Identifier: DE18

@@ -32,7 +32,8 @@ from pystac import (
     SpatialExtent,
     TemporalExtent,
     # MediaType,
-    Summaries
+    Summaries,
+    Provider
 )
 from pystac.layout import TemplateLayoutStrategy
 from pystac.validation import validate_all
@@ -252,7 +253,7 @@ def get_or_create_collection(catalog, collection_id, data, config):
                 if response.status_code == 200:
                     description = response.text
                 elif "Subtitle" in data:
-                    print("Warning: Markdown file could not be fetched")
+                    print("WARNING: Markdown file could not be fetched")
                     description = data["Subtitle"]
             else:
                 # relative path to assets was given
@@ -262,7 +263,7 @@ def get_or_create_collection(catalog, collection_id, data, config):
                 if response.status_code == 200:
                     description = response.text
                 elif "Subtitle" in data:
-                    print("Warning: Markdown file could not be fetched")
+                    print("WARNING: Markdown file could not be fetched")
                     description = data["Subtitle"]
     elif "Subtitle" in data:
         # Try to use at least subtitle to fill some information
@@ -275,7 +276,8 @@ def get_or_create_collection(catalog, collection_id, data, config):
         description=description,
         stac_extensions=[
             "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-            "https://stac-extensions.github.io/example-links/v0.0.1/schema.json"
+            "https://stac-extensions.github.io/example-links/v0.0.1/schema.json",
+            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
         ],
         extent=extent
     )
@@ -569,10 +571,30 @@ def add_collection_information(config, collection, data):
                     ))
         else:
             # fallback to proprietary
-            print("Warning: License could not be parsed, falling back to proprietary")
+            print("WARNING: License could not be parsed, falling back to proprietary")
             collection.license = "proprietary"
     else:
-        print("Warning: No license was provided, falling back to proprietary")
+        print("WARNING: No license was provided, falling back to proprietary")
+
+    if "Provider" in data:
+        try:
+            collection.providers = [
+                Provider(
+                    # convert information to lower case
+                    **dict((k.lower(), v.lower()) for k,v in provider.items())
+                ) for provider in data["Provider"]
+            ]
+        except:
+            print("WARNING: Issue creating provider information for collection: %s"%collection.id)
+
+    if "Citation" in data:
+        if "doi" in data["Citation"]:
+            collection.extra_fields["sci:doi"] = data["Citation"]["doi"]
+        if "citation" in data["Citation"]:
+            collection.extra_fields["sci:citation"] = data["Citation"]["citation"]
+        if "publication" in data["Citation"]:
+            collection.extra_fields["sci:publications"] = data["Citation"]["publication"]
+
 
     if "Subtitle" in data:
         collection.extra_fields["subtitle"] = data["Subtitle"]

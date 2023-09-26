@@ -13,7 +13,17 @@ Sensor:
     - placeholder
 Agency:
     - ESA
-Provider: placeholder
+Provider:
+    - Name: placeholder
+      Url: https://example.com
+Citation:
+    citation: This string needs to be added when using the data
+    doi: 10.5061/dryad.s2v81.2
+    publication:
+        - citation: Citation string of publication
+          doi: 10.5061/dryad.s2v81.3
+        - citation: Another string of publication
+          doi: 10.5061/dryad.s2v81.4
 License: MIT
 Resources:
     - Group: Sentinel Hub Resources

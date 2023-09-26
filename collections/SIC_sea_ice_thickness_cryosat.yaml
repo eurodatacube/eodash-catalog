@@ -13,7 +13,8 @@ Sensor:
     - placeholder
 Agency:
     - ESA
-Provider: CCI
+Provider: 
+    - Name: CCI
 License: MIT
 Resources:
     - Group: Sentinel Hub Resources
