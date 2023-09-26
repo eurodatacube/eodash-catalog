@@ -101,7 +101,7 @@ def process_collection_file(config, file_path, catalog):
                 if resource["Name"] == "Sentinel Hub":
                     handle_SH_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "GeoDB":
-                    collection = handle_GeoDB_endpoint(config, resource, data)
+                    collection = handle_GeoDB_endpoint(config, resource, data, catalog)
                     add_to_catalog(collection, catalog, resource, data)
                 elif resource["Name"] == "VEDA":
                     handle_VEDA_endpoint(config, resource, data, catalog)
@@ -113,7 +113,6 @@ def process_collection_file(config, file_path, catalog):
                     raise ValueError("Type of Resource is not supported")
 
 def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
-    collection = create_collection(endpoint["CollectionId"], data, config)
     if "Dates" in data:
         pass
     else:
@@ -126,7 +125,7 @@ def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
             styles = None
             if hasattr(endpoint, "Styles"):
                 styles = endpoint["Styles"]
-            collection = create_collection(data["Name"], data, config)
+            collection = get_or_create_collection(catalog, data["Name"], data, config)
             # TODO: For now we create global extent, we should be able to
             # fetch the extent of the layer
             for t in times:
@@ -147,41 +146,39 @@ def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
 
     
 def handle_WMS_endpoint(config, endpoint, data, catalog):
-    if endpoint["Type"] == "Time" or endpoint["Type"] == "OverwriteTimes":
-
-        times = []
-        extent = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
-        if endpoint["Type"] == "OverwriteTimes":
-            times = endpoint["Times"]
-        else:
-            times = extent["temporal"]
-        if "OverwriteBBox" in endpoint:
-            extent["spatial"] = endpoint["OverwriteBBox"]
-        
-        if len(times) > 0:
-            # Create an item per time to allow visualization in stac clients
-            styles = None
-            if hasattr(endpoint, "Styles"):
-                styles = endpoint["Styles"]
-            collection = create_collection(data["Name"], data, config)
-            for t in times:
-                item = Item(
-                    id = t,
-                    bbox=extent["spatial"],
-                    properties={},
-                    geometry = None,
-                    datetime = parser.isoparse(t),
-                )
-                add_visualization_info(item, data, endpoint, time=t, styles=styles)
-                link = collection.add_item(item)
-                link.extra_fields["datetime"] = t
-            collection.update_extent_from_items()
-            add_visualization_info(collection, data, endpoint, styles=styles)
-            add_collection_information(config, collection, data)
-            add_to_catalog(collection, catalog, endpoint, data)
+    times = []
+    extent = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
+    if "Type" in endpoint and endpoint["Type"] == "OverwriteTimes":
+        times = endpoint["Times"]
     else:
-        # TODO: Implement
-        print("Currently not supported")
+        times = extent["temporal"]
+    if "OverwriteBBox" in endpoint:
+        extent["spatial"] = endpoint["OverwriteBBox"]
+    
+    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    # Create an item per time to allow visualization in stac clients
+    styles = None
+    if hasattr(endpoint, "Styles"):
+        styles = endpoint["Styles"]
+
+    if len(times) > 0:
+        for t in times:
+            item = Item(
+                id = t,
+                bbox=extent["spatial"],
+                properties={},
+                geometry = None,
+                datetime = parser.isoparse(t),
+            )
+            add_visualization_info(item, data, endpoint, time=t, styles=styles)
+            link = collection.add_item(item)
+            link.extra_fields["datetime"] = t
+
+    collection.update_extent_from_items()
+    add_visualization_info(collection, data, endpoint, styles=styles)
+    add_collection_information(config, collection, data)
+    add_to_catalog(collection, catalog, endpoint, data)
+
 
 def handle_SH_endpoint(config, endpoint, data, catalog):
     token = get_SH_token()
@@ -191,7 +188,7 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     # Check if we have Locations in config, if yes we divide the collection
     # into multiple collections based on their area
     if "Locations" in data:
-        root_collection = create_collection(data["Name"], data, config)
+        root_collection = get_or_create_collection(catalog, data["Name"], data, config)
         for location in data["Locations"]:
             collection = process_STACAPI_Endpoint(
                 config=config,
@@ -233,7 +230,12 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     add_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
 
-def create_collection(collection_id, data, config):
+def get_or_create_collection(catalog, collection_id, data, config):
+    # Check if collection already in catalog
+    for collection in catalog.get_collections():
+        if collection.id == collection_id:
+            return collection
+    # If none found create a new one
     spatial_extent = SpatialExtent([
         [-180.0, -90.0, 180.0, 90.0],
     ])
@@ -280,6 +282,12 @@ def create_collection(collection_id, data, config):
     return collection
 
 def add_to_catalog(collection, catalog, endpoint, data):
+    # check if already in catalog, if it is do not re-add it
+    # TODO: probably we should add to the catalog only when creating
+    for cat_coll in catalog.get_collections():
+        if cat_coll.id == collection.id:
+            return
+
     link = catalog.add_child(collection)
     # bubble fields we want to have up to collection link
     link.extra_fields["endpointtype"] = endpoint["Name"]
@@ -307,8 +315,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
     return link
 
 
-def handle_GeoDB_endpoint(config, endpoint, data):
-    collection = create_collection(endpoint["CollectionId"], data, config)
+def handle_GeoDB_endpoint(config, endpoint, data, catalog):
+    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     response = json.loads(requests.get(url).text)
@@ -419,17 +427,16 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
     # elif resource["Name"] == "GeoDB":
     #     pass
     elif endpoint["Name"] == "WMS":
-        if endpoint["Type"] == "Time" or endpoint["Type"] == "OverwriteTimes":
-            extra_fields={
-                "wms:layers": [endpoint["LayerId"]]
+        extra_fields={
+            "wms:layers": [endpoint["LayerId"]]
+        }
+        if time != None:
+            extra_fields["wms:dimensions"] = {
+                "TIME": time,
             }
-            if time != None:
-                extra_fields["wms:dimensions"] = {
-                    "TIME": time,
-                }
-            if styles != None:
-                extra_fields["wms:styles"] = styles
-            stac_object.add_link(
+        if styles != None:
+            extra_fields["wms:styles"] = styles
+        stac_object.add_link(
             Link(
                 rel="wms",
                 target=endpoint["EndPoint"],
@@ -507,7 +514,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         print("Visualization endpoint not supported")
 
 def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=None, root_collection=None):
-    collection = create_collection(endpoint["CollectionId"], data, config)
+    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config)
     add_visualization_info(collection, data, endpoint)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
