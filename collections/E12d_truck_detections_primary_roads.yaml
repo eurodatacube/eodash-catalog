@@ -1,8 +1,8 @@
 Name: truck_detections_primary_roads
 Title: Truck detections primary roads
-EodashIdentifier: E12c
+EodashIdentifier: E12d
 Subtitle: Truck detections on primary roads description
-Description: E12c_truck_detections_primary_roads/E12c.md
+Description: E12d_truck_detections_primary_roads/E12d.md
 Themes:
     - economy
 Tags:
@@ -22,5 +22,5 @@ Resources:
       Type: byoc
       CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
       LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
-Image: E12c_truck_detections_primary_roads/E12c.png
-Legend: E12c_truck_detections_motorways/cm_legend.png
+Image: E12d_truck_detections_primary_roads/E12d.png
+Legend: E12d_truck_detections_motorways/cm_legend.png

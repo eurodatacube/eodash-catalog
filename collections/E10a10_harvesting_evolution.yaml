@@ -1,0 +1,20 @@
+Name: harvesting_evolution
+Title: Harvesting evolution
+EodashIdentifier: E10a10
+Subtitle: Monitoring row crops harvesting with satellite data
+Description: E10a10_harvesting_evolution/E10a10.md
+Themes:
+    - agriculture
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-1
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: E10a10
