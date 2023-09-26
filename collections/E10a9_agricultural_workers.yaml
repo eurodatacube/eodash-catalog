@@ -1,0 +1,21 @@
+Name: agricultural_workers
+Title: Agricultural workers
+EodashIdentifier: E10a9
+Subtitle: The impacts of COVID-19 on the availability of agricultural workers
+Description: E10a9_agricultural_workers/E10a9.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - Pleiades
+    - Sentinel-2
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: E10a9

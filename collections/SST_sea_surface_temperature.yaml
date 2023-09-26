@@ -1,0 +1,22 @@
+Name: sea_surface_temperature
+Title: Sea surface temperature
+EodashIdentifier: SST
+Subtitle: Key ocean monitoring indicator
+Description: SST_sea_surface_temperature/SST.md
+Themes:
+    - water
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-3A
+    - MODIS-Aqua
+    - VIIRS-NPP
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Sea_Surface_Temperature_Timeseries

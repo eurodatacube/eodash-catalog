@@ -1,0 +1,23 @@
+Name: maritime_traffic_combined
+Title: Maritime traffic - combined
+EodashIdentifier: E13n
+Subtitle: Changes in the number of boats in ports
+Description: E13n_maritime_traffic_combined/E13n.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - AIS
+Agency:
+    - ESA
+Provider:
+    - name: e-GEOS
+      description: placeholder
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: E13n

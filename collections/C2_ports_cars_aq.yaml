@@ -1,0 +1,28 @@
+Name: ports_cars_aq
+Title: Ports and cars - impact on ar quality
+EodashIdentifier: C2
+Subtitle: Port Activities, sources of pollution and NO2 levels
+Description: C2_ports_cars_aq/C2.md
+Themes:
+    - economy
+    - air
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-5P
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider:
+    - name: e-GEOS
+      description: placeholder
+    - name: ExpertLab
+      description: placeholder
+    - name: CherryData
+      description: placeholder
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: C2

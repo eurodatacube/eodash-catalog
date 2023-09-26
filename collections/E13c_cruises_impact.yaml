@@ -2,7 +2,7 @@ Name: cruises_impact
 Title: Cruises impact
 EodashIdentifier: E12b
 Subtitle: Cruises impact description
-Description: E12b_cruises_impact/E12b.md
+Description: E13c_cruises_impact/E13c.md
 Themes:
     - economy
 Tags:
@@ -29,4 +29,4 @@ Resources:
       Type: byoc
       CollectionId: c5a44d46-0032-4c86-81b0-933ed573c64e
       LayerId: AWS_ICEYE-E12B
-Image: E12b_cruises_impact/E12b.png
+Image: E13b_cruises_impact/E13b.png

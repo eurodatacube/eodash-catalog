@@ -1,0 +1,25 @@
+Name: agricultural_production_productive_area
+Title: Agricultural production - productive area
+EodashIdentifier: E10a1
+Subtitle: COVID-19 impact on agricultural production in Europe
+Description: E10a1_agricultural_production_productive_area/E10a1.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-2
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider:
+    - name: FAO
+      description: placeholder
+    - name: WFP
+      description: placeholder
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: E10a1_tri
