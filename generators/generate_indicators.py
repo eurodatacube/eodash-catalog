@@ -588,12 +588,16 @@ def add_collection_information(config, collection, data):
             print("WARNING: Issue creating provider information for collection: %s"%collection.id)
 
     if "Citation" in data:
-        if "doi" in data["Citation"]:
-            collection.extra_fields["sci:doi"] = data["Citation"]["doi"]
-        if "citation" in data["Citation"]:
-            collection.extra_fields["sci:citation"] = data["Citation"]["citation"]
-        if "publication" in data["Citation"]:
-            collection.extra_fields["sci:publications"] = data["Citation"]["publication"]
+        if "DOI" in data["Citation"]:
+            collection.extra_fields["sci:doi"] = data["Citation"]["DOI"]
+        if "Citation" in data["Citation"]:
+            collection.extra_fields["sci:citation"] = data["Citation"]["Citation"]
+        if "Publication" in data["Citation"]:
+            collection.extra_fields["sci:publications"] = [
+                # convert keys to lower case
+                dict((k.lower(), v.lower()) for k,v in publication.items())
+                for publication in data["Citation"]["Publication"]
+            ]
 
 
     if "Subtitle" in data:
@@ -630,7 +634,7 @@ def add_collection_information(config, collection, data):
     if "Themes" in data:
         collection.extra_fields["themes"] = ",".join(data["Themes"])
     if "Tags" in data:
-        collection.extra_fields["tags"] = ",".join(data["Tags"])
+        collection.extra_fields["keywords"] = ",".join(data["Tags"])
     if "Satellite" in data:
         collection.extra_fields["satellite"] = ",".join(data["Satellite"])
     if "Sensor" in data:
