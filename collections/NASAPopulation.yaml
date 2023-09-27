@@ -13,7 +13,8 @@ Sensor:
     - placeholder
 Agency:
     - NASA
-Provider: placeholder
+Provider:
+    - Name: placeholder
 License: MIT
 Resources:
     - Group: Sentinel Hub Resources
