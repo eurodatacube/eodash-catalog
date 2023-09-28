@@ -1,0 +1,22 @@
+Name: lake_water_level
+Title: Lake water level
+EodashIdentifier: LWL
+Subtitle: Lake water level
+Description: LWL_lake_water_level/LWL.md
+Themes:
+    - oceans
+Tags:
+    - placeholder
+Satellite:
+    - multiple
+Sensor:
+    - CCI
+Agency:
+    - ESA
+Provider:
+    - Name: PLES
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Lake_water_level_tri_timeseries

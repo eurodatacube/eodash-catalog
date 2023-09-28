@@ -1,7 +1,7 @@
 Name: precipitation
-Title: Precipitation Anomaly
+Title: Precipitation
 EodashIdentifier: PRCG
-Subtitle: Precipitation Anomaly
+Subtitle: Precipitation
 Description: PRCG_precipitation/PRCG.md
 Themes:
   - agriculture

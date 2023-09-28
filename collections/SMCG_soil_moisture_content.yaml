@@ -1,0 +1,21 @@
+Name: soil_moisture_content
+Title: Soil moisture content
+EodashIdentifier: SMCG
+Subtitle: Soil moisture content
+Description: SMCG_soil_moisture_content/SMCG.md
+Themes:
+  - agriculture
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - GCOM-W
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: Time
+    LayerId: SMC-GCOMW-World-Monthly
+Legend: SMCG_soil_moisture_content/cm_legend.png

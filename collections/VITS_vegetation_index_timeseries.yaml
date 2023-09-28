@@ -1,0 +1,21 @@
+Name: vegetation_index_timeseries
+Title: Vegetation index
+EodashIdentifier: VITS
+Subtitle: Vegetation index
+Description: VITS_vegetation_index_timeseries/VITS.md
+Themes:
+    - agriculture
+Tags:
+    - placeholder
+Satellite:
+    - MODIS
+    - Aqua
+Sensor:
+    - Terra
+Agency:
+    - JAXA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: VITS_Vegetation_Index_Timeseries

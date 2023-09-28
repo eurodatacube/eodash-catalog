@@ -1,0 +1,22 @@
+Name: lake_water_extent
+Title: Lake water extent
+EodashIdentifier: LWE
+Subtitle: Lake water extent
+Description: LWE_lake_water_extent/LWE.md
+Themes:
+    - oceans
+Tags:
+    - placeholder
+Satellite:
+    - multiple
+Sensor:
+    - CCI
+Agency:
+    - ESA
+Provider:
+    - Name: PLES
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Lake_water_extent_tri_timeseries

@@ -1,0 +1,20 @@
+Name: soil_moisture_timeseries
+Title: Soil moisture
+EodashIdentifier: SMCTS
+Subtitle: Soil moisture
+Description: SMCTS_soil_moisture_timeseries/SMCTS.md
+Themes:
+    - agriculture
+Tags:
+    - placeholder
+Satellite:
+    - JASMAI
+Sensor:
+    - GCOM
+Agency:
+    - JAXA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: SMCTS_Soil_Moisture_Timeseries

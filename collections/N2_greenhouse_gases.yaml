@@ -1,0 +1,22 @@
+Name: greenhouse_gases
+Title: Greenhouse gases
+EodashIdentifier: N2
+Subtitle: The Impact of the COVID-19 Pandemic on Atmospheric CO2
+Description: N2_greenhouse_gases/N2.md
+Themes:
+    - agriculture
+Tags:
+    - placeholder
+Satellite:
+    - GOSAT_XCO2
+Sensor:
+    - GOSAT
+Agency:
+    - NASA
+    - JAXA
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: N2_tri

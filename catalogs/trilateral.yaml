@@ -15,8 +15,8 @@ collections:
   - OMI_trno2-COG
   - co2-diff 
   - NPP_ocean_primary_productivity
+  - NPPN_net_primary_production
   - IS2SITMOGR4-cog
-  - MO_NPP_npp_vgpm
   - nceo_africa_2017
   - grdi-v1-built
   - grdi-v1-raster
@@ -38,4 +38,23 @@ collections:
   - SMC_soil_moisture_anomaly
   - PRC_precipitation_anomaly
   - PRCG_precipitation
+  - E10a1_agricultural_production_productive_area
+  - E10a2_agricultural_production_area
+  - E10a3_agricultural_production_area_change
+  - E10a6_harvested_parcels_evolution
+  - E10a8_winter_cereals
+  - E10c_rice_planting
+  - N2_greenhouse_gases
+  - VITS_vegetation_index_timeseries
+  - SMCTS_soil_moisture_timeseries
+  - PRCTS_precipitation_timeseries
+  - LWE_lake_water_extent
+  - LWL_lake_water_level
+  - SMCG_soil_moisture_content
+  - E13b_parked_planes
+  - E13b_airport_throughput
+  - E13b_parked_planes
+  - E13c_cruises_impact
+  - SIF_solar_induced_chlorophyll_fluorescence
+
 

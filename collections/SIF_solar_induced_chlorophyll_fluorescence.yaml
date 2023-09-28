@@ -1,0 +1,22 @@
+Name: solar_induced_chlorophyll_fluorescence
+Title: Solar induced chlorophyll fluorescence
+EodashIdentifier: SIF
+Subtitle: Solar induced chlorophyll fluorescence
+Description: SIF_solar_induced_chlorophyll_fluorescence/SIF.md
+Themes:
+  - agriculture
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - GCOM-W
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: Time
+    LayerId: SIF-TROPOMI-Cairo-Monthly
+    OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
+Legend: SIF_solar_induced_chlorophyll_fluorescence/cm_legend.png

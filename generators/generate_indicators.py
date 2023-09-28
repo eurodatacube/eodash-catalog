@@ -296,7 +296,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
     # Disabling bubbling up of description as now it is considered to be
     # used as markdown loading would increase the catalog size unnecessarily
     # link.extra_fields["description"] = collection.description
-    link.extra_fields["subtitle"] = data["Subtitle"]
+    if "Subtitle" in data:
+        link.extra_fields["subtitle"] = data["Subtitle"]
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["themes"] = ",".join(data["Themes"])
@@ -581,7 +582,7 @@ def add_collection_information(config, collection, data):
             collection.providers = [
                 Provider(
                     # convert information to lower case
-                    **dict((k.lower(), v.lower()) for k,v in provider.items())
+                    **dict((k.lower(), v) for k,v in provider.items())
                 ) for provider in data["Provider"]
             ]
         except:
