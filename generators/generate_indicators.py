@@ -601,7 +601,7 @@ def add_collection_information(config, collection, data):
         if "Publication" in data["Citation"]:
             collection.extra_fields["sci:publications"] = [
                 # convert keys to lower case
-                dict((k.lower(), v.lower()) for k,v in publication.items())
+                dict((k.lower(), v) for k,v in publication.items())
                 for publication in data["Citation"]["Publication"]
             ]
 
