@@ -638,15 +638,15 @@ def add_collection_information(config, collection, data):
     
     # Add extra fields to collection if available
     if "Themes" in data:
-        collection.extra_fields["themes"] = ",".join(data["Themes"])
+        collection.extra_fields["themes"] = data["Themes"]
     if "Tags" in data:
-        collection.extra_fields["keywords"] = ",".join(data["Tags"])
+        collection.extra_fields["keywords"] = data["Tags"]
     if "Satellite" in data:
-        collection.extra_fields["satellite"] = ",".join(data["Satellite"])
+        collection.extra_fields["satellite"] = data["Satellite"]
     if "Sensor" in data:
-        collection.extra_fields["sensor"] = ",".join(data["Sensor"])
+        collection.extra_fields["sensor"] = data["Sensor"]
     if "Agency" in data:
-        collection.extra_fields["agency"] = ",".join(data["Agency"])
+        collection.extra_fields["agency"] = data["Agency"]
 
 
 def process_catalogs(folder_path, options):
