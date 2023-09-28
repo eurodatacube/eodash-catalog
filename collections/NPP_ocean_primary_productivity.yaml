@@ -1,5 +1,5 @@
 Name: ocean_primary_productivity
-Title: Net primary production
+Title: Ocean net primary production (BICEP)
 EodashIdentifier: NPP
 Description: NPP_ocean_primary_productivity/NPP.md
 Themes:
@@ -15,15 +15,6 @@ Sensor:
   - MODIS
 Agency:
   - NASA
-Provider:
-  - Name: Ocean Productivity
-    Url: http://science.oregonstate.edu/ocean.productivity/index.php
-    Description: The purpose of this website is, first and foremost, to provide the science and broader communities with global, updated ocean productivity estimates. In addition, the website provides information on the models employed, access to model code and ancillary data sets, and comparisons of productivity estimates for alternative models. Field data sets relevant to ocean productivity modeling are also provided and will be continually expanded as new data become available. Educational material and background information on phytoplankton ecology and physiology will also be added in the future.
-Citation:
-  - Citation: Data from Ocean Productivity site (http://science.oregonstate.edu/ocean.productivity/index.php)
-  - Publication:
-      - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
-        DOI: 10.4319/lo.1997.42.1.0001
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
