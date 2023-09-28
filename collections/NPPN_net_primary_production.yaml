@@ -1,7 +1,7 @@
-Name: ocean_primary_productivity
+Name: net_primary_production
 Title: Net primary production
-EodashIdentifier: NPP
-Description: NPP_ocean_primary_productivity/NPP.md
+EodashIdentifier: NPPN
+Description: NPPN_net_primary_production/NPPN.md
 Themes:
   - water
 Tags:
@@ -19,15 +19,27 @@ Provider:
   - Name: Ocean Productivity
     Url: http://science.oregonstate.edu/ocean.productivity/index.php
     Description: The purpose of this website is, first and foremost, to provide the science and broader communities with global, updated ocean productivity estimates. In addition, the website provides information on the models employed, access to model code and ancillary data sets, and comparisons of productivity estimates for alternative models. Field data sets relevant to ocean productivity modeling are also provided and will be continually expanded as new data become available. Educational material and background information on phytoplankton ecology and physiology will also be added in the future.
+    Roles: 
+      - producer
+  - Name: VEDA
+    Url: https://www.earthdata.nasa.gov/esds/veda
+    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
+    Roles:
+      - host
 Citation:
   - Citation: Data from Ocean Productivity site (http://science.oregonstate.edu/ocean.productivity/index.php)
   - Publication:
       - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
         DOI: 10.4319/lo.1997.42.1.0001
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: VEDA Statistics
 Resources:
-  - EndPoint: https://services.sentinel-hub.com
-    Name: Sentinel Hub
-    Type: zarr
-    CollectionId: a216afca-8a65-4072-87a5-8ed7aa21e08a
-    LayerId: BICEP_NPP_VIS_PP2
-# Legend: NPP_ocean_primary_productivity/cm_legend.png
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: MO_NPP_npp_vgpm
+    ColormapName: jet
+    Rescale: [0.0,1500.0]
+    Bidx: 1
+Legend: NPPN_net_primary_production/cm_legend.png
