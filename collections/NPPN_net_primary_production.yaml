@@ -27,10 +27,10 @@ Provider:
     Roles:
       - host
 Citation:
-  - Citation: Data from Ocean Productivity site (http://science.oregonstate.edu/ocean.productivity/index.php)
-  - Publication:
-      - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
-        DOI: 10.4319/lo.1997.42.1.0001
+  Citation: Data from Ocean Productivity site (http://science.oregonstate.edu/ocean.productivity/index.php)
+  Publication:
+    - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
+      DOI: 10.4319/lo.1997.42.1.0001
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: VEDA Statistics
