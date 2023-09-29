@@ -463,7 +463,10 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             
             colormap = ""
             if "Colormap" in endpoint:
-               colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
+                colormap = "&colormap=%s"%(endpoint["Colormap"])
+                # TODO: For now we assume a already urlparsed colormap definition
+                # it could be nice to allow a json and better convert it on the fly
+                # colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
 
             colormap_name = ""
             if "ColormapName" in endpoint:

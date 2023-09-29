@@ -57,6 +57,7 @@ collections:
   - E13c_cruises_impact
   - SIF_solar_induced_chlorophyll_fluorescence
   # - NLK_lake_cloudfree #TODO: needs implementation
+  - N6_geoglam
   - N7_slowdown_proxy
   - N8_recovery_proxy
 
