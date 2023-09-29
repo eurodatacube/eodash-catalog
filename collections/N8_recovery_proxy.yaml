@@ -12,7 +12,7 @@ Satellite:
 Sensor:
   - placeholder
 Agency:
-  - JAXA
+  - NASA
 Locations:
   - Identifier: CN01
     Country: CN
