@@ -186,50 +186,10 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     headers = {"Authorization": "Bearer %s"%token}
     endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
     endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"]
-    # Check if we have Locations in config, if yes we divide the collection
-    # into multiple collections based on their area
-    if "Locations" in data:
-        root_collection = get_or_create_collection(catalog, data["Name"], data, config)
-        for location in data["Locations"]:
-            collection = process_STACAPI_Endpoint(
-                config=config,
-                endpoint=endpoint,
-                data=data,
-                catalog=catalog,
-                headers=headers,
-                bbox=",".join(map(str,location["Bbox"])),
-                root_collection=root_collection,
-            )
-            # Update identifier to use location as well as title
-            collection.id = location["Identifier"]
-            collection.title = location["Name"],
-            # See if description should be overwritten
-            if "Description" in location:
-                collection.description = location["Description"]
-            # TODO: should we remove all assets from sub collections?
-            link = root_collection.add_child(collection)
-            latlng = "%s,%s"%(location["Point"][1], location["Point"][0])
-            # Add extra properties we need
-            link.extra_fields["id"] = location["Identifier"]
-            link.extra_fields["latlng"] = latlng
-            link.extra_fields["name"] = location["Name"]
-        root_collection.update_extent_from_items()
-        # Add bbox extents from children
-        for c_child in root_collection.get_children():
-            root_collection.extent.spatial.bboxes.append(
-                c_child.extent.spatial.bboxes[0]
-            )
-    else:
-        root_collection = process_STACAPI_Endpoint(
-            config=config,
-            endpoint=endpoint,
-            data=data,
-            catalog=catalog,
-            headers=headers,
-        )
+    handle_STAC_based_endpoint(config, endpoint, data, catalog, headers)
 
-    add_example_info(root_collection, data, endpoint, config)
-    add_to_catalog(root_collection, catalog, endpoint, data)
+def handle_VEDA_endpoint(config, endpoint, data, catalog):
+    handle_STAC_based_endpoint(config, endpoint, data, catalog)
 
 def get_or_create_collection(catalog, collection_id, data, config):
     # Check if collection already in catalog
@@ -248,7 +208,7 @@ def get_or_create_collection(catalog, collection_id, data, config):
         description = data["Description"]
         if description.endswith((".md", ".MD")):
             if description.startswith(("http")):
-                # if full absolut path is defined
+                # if full absolute path is defined
                 response = requests.get(description)
                 if response.status_code == 200:
                     description = response.text
@@ -377,15 +337,51 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
     return collection
 
 
-def handle_VEDA_endpoint(config, endpoint, data, catalog):
-    collection = process_STACAPI_Endpoint(
-        config=config,
-        endpoint=endpoint,
-        data=data,
-        catalog=catalog,
-    )
-    add_example_info(collection, data, endpoint, config)
-    add_to_catalog(collection, catalog, endpoint, data)
+def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
+    if "Locations" in data:
+        root_collection = get_or_create_collection(catalog, data["Name"], data, config)
+        for location in data["Locations"]:
+            collection = process_STACAPI_Endpoint(
+                config=config,
+                endpoint=endpoint,
+                data=data,
+                catalog=catalog,
+                headers=headers,
+                bbox=",".join(map(str,location["Bbox"])),
+                root_collection=root_collection,
+            )
+            # Update identifier to use location as well as title
+            collection.id = location["Identifier"]
+            collection.title = location["Name"],
+            # See if description should be overwritten
+            if "Description" in location:
+                collection.description = location["Description"]
+            else:
+                collection.description = location["Name"]
+            # TODO: should we remove all assets from sub collections?
+            link = root_collection.add_child(collection)
+            latlng = "%s,%s"%(location["Point"][1], location["Point"][0])
+            # Add extra properties we need
+            link.extra_fields["id"] = location["Identifier"]
+            link.extra_fields["latlng"] = latlng
+            link.extra_fields["name"] = location["Name"]
+        root_collection.update_extent_from_items()
+        # Add bbox extents from children
+        for c_child in root_collection.get_children():
+            root_collection.extent.spatial.bboxes.append(
+                c_child.extent.spatial.bboxes[0]
+            )
+    else:
+        root_collection = process_STACAPI_Endpoint(
+            config=config,
+            endpoint=endpoint,
+            data=data,
+            catalog=catalog,
+        )
+
+    add_example_info(root_collection, data, endpoint, config)
+    add_to_catalog(root_collection, catalog, endpoint, data)
+
 
 def add_example_info(stac_object, data, endpoint, config):
     if "Services" in data:
@@ -458,7 +454,12 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             
             bidx = ""
             if "Bidx" in endpoint:
-               bidx = "&bidx=%s"%(endpoint["Bidx"])
+                # Check if an array was provided
+                if hasattr(endpoint["Bidx"], "__len__"):
+                    for band in endpoint["Bidx"]:
+                        bidx = bidx + "&bidx=%s"%(band)
+                else:
+                    bidx = "&bidx=%s"%(endpoint["Bidx"])
             
             colormap = ""
             if "Colormap" in endpoint:
