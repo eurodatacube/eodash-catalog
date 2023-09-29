@@ -377,6 +377,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             endpoint=endpoint,
             data=data,
             catalog=catalog,
+            headers=headers,
         )
 
     add_example_info(root_collection, data, endpoint, config)
