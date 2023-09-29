@@ -1,0 +1,20 @@
+Name: water_quality
+Title: Water quality
+EodashIdentifier: N3b
+Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
+Description: N3b_water_quality/N3b.md
+Themes:
+    - air
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Regional_Water_quality_timeseries

@@ -1,0 +1,27 @@
+Name: lakes_alos2_hh
+Title: Lakes (ALOS2-HH)
+EodashIdentifier: Lakes_ALOS2
+Subtitle: Total suspended matter description
+Description: Lakes_ALOS2_lakes_alos2_hh/Lakes_ALOS2.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+    - Name: placeholder
+License: MIT
+Resources:
+  - Group: Sentinel Hub Resources
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: aa8a9899-9df9-4ea0-b983-34360d583e17
+    LayerId: JAXA_LAKES_ALOS2_HH
+#Image: Lakes_ALOS2_lakes_alos2_hh/Lakes_ALOS2.png
+Legend: Lakes_ALOS2_lakes_alos2_hh/cm_legend.png

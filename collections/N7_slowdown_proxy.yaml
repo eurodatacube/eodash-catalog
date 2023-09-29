@@ -1,0 +1,62 @@
+Name: slowdown_proxy
+Title: Slowdown proxy Covid-19
+EodashIdentifier: N7
+Description: N7_slowdown_proxy/N7.md
+Themes:
+  - economy
+Tags:
+  - covid
+  - slowdown
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Locations:
+  - Identifier: CN01
+    Country: CN
+    Name: Beijing
+    Subtitle: Slowdown Proxy Maps
+    Point: [116.38, 39.9]
+    Bbox: [115.11, 39.45, 117.31, 40.45]
+  - Identifier: FR03
+    Country: FR
+    Name: Port of Dunkirk
+    Subtitle: Slowdown Proxy Maps
+    Point: [2.28537, 51.03613]
+    Bbox: [1.162952178, 50.70592333959897, 3.744341067153335, 51.366756673]
+  - Identifier: BE03
+    Country: BE
+    Name: Port of Ghent
+    Subtitle: Slowdown Proxy Maps
+    Point: [3.74008, 51.09155]
+    Bbox: [3.200395303, 50.76456780514585, 4.676784191065174, 51.424290027]
+  - Identifier: US02
+    Country: US
+    Name: Los Angeles
+    Subtitle: Slowdown Proxy Maps
+    Point: [-118.25, 34.05]
+    Bbox: [-118.93, 33.51, -116.83, 34.55]
+  - Identifier: US04
+    Country: US
+    Name: New York
+    Subtitle: Slowdown Proxy Maps
+    Point: [-73.09, 41.0114]
+    Bbox: [-75.35, 40.27, -72.15, 41.28]
+  - Identifier: US03
+    Country: US
+    Name: San Francisco
+    Subtitle: Slowdown Proxy Maps
+    Point: [-122.41638, 37.7775]
+    Bbox: [-122.95, 37.01, -120.96, 38.18]
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: VEDA Statistics
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: slowdown-proxy-covid-19-changing-landscapes
+    Bidx: [1,2,3]
+# Legend: N7_slowdown_proxy/cm_legend.png

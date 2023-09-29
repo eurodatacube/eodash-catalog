@@ -8,6 +8,7 @@ collections:
   - N1_CH4
   - N1_CO
   - N1_SO2
+  # - N2_greenhouse_gases
   - no2-monthly
   - no2-monthly-diff
   - co2-mean
@@ -56,5 +57,15 @@ collections:
   - E13b_parked_planes
   - E13c_cruises_impact
   - SIF_solar_induced_chlorophyll_fluorescence
+  # - NLK_lake_cloudfree #TODO: needs implementation
+  - N5_nightlights
+  - N6_geoglam
+  - N7_slowdown_proxy
+  - N8_recovery_proxy
+  - N3b_water_quality
+  - N3a2_chl_concentration
+  - E10d_regional_cropland
+  - Lakes_ALOS2_HH
+  - Lakes_ALOS2_HV
 
 
