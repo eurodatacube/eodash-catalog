@@ -67,6 +67,6 @@ collections:
   - E10d_regional_cropland
   - Lakes_ALOS2_HH
   - Lakes_ALOS2_HV
-  - N1_NO2_jaxa_eg
-  - N2_CO2_jaxa_gosat_eg
+  - N1_NO2_jaxa
+  - N2_CO2_jaxa_gosat
 
