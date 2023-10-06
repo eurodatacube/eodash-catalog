@@ -1,22 +1,22 @@
-Name: N1_NO2_jaxa_eg
-Title: NO2 JAXA
-EodashIdentifier: N2
-Subtitle: NO2 JAXA
-Description: N1_NO2/N1.md
+Name: N2_CO2_jaxa_gosat
+Title: CO2 JAXA GOSAT
+EodashIdentifier: N2_CO2_jaxa_gosat
+Subtitle: XCO2 JAXA GOSAT Cairo
+Description: N2_greenhouse_gases/N2.md
 Themes:
   - atmosphere
 Tags:
   - placeholder
 Satellite:
-  - placeholder
+  - GOSAT
 Sensor:
-  - NO2
+  - GOSAT-CO2
 Agency:
   - JAXA
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
-    LayerId: NO2-TROPOMI-Cairo-Daily
+    LayerId: XCO2-GOSAT-Cairo
     OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
-Legend: N1_NO2_jaxa_eg/cm_legend.png
+Legend: N2_CO2_jaxa_gosat/cm_legend.png
