@@ -1,0 +1,18 @@
+Name: Green_Roofs
+Title: Green Roofs
+EodashIdentifier: SOL1
+Subtitle: Green Roof Impact
+Description: Green_Roofs/AQ.md
+Themes:
+  - air
+Tags:
+  - sustainable-cities
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

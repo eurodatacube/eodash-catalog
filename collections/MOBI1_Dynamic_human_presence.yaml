@@ -1,0 +1,18 @@
+Name: Dynamic_human_presence
+Title: Dynamic human presence
+EodashIdentifier: MOBI1
+Subtitle: Dynamic human presence
+Description: MOBI1_Dynamic_human_presence/AQ.md
+Themes:
+  - air
+Tags:
+  - mobility-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

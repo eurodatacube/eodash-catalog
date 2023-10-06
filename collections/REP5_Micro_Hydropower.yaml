@@ -1,0 +1,18 @@
+Name: Micro_Hydropower
+Title: Micro Hydropower Potential Assessment
+EodashIdentifier: REP5
+Subtitle: Micro Hydropower
+Description: Micro_Hydropower/AQ.md
+Themes:
+  - air
+Tags:
+  - energy-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+

@@ -1,0 +1,18 @@
+Name: Human_Mobility_Patterns
+Title: Human Mobility Patterns
+EodashIdentifier: AQ4
+Subtitle: Human Mobility Patterns
+Description: Human_Mobility_Patterns/AQ4.md
+Themes:
+  - air
+Tags:
+  - mobility-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

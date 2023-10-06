@@ -1,0 +1,18 @@
+Name: Dynamic_Storage_Capacity
+Title: Fine particulate matter (PM2.5)
+EodashIdentifier: AQC
+Subtitle: Daily aggregated maps of PM2.5 concentration
+Description: AQA_health_risk_index/AQ.md
+Themes:
+  - air
+Tags:
+  - energy-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

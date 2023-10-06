@@ -4,8 +4,10 @@ description: "Green Transition Information Factory"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/GTIF/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  # - E12c_truck_detections_motorways
-  # - E12c_truck_detections_primary_roads
-  # - AQ1_aggregated_mobility_data
+  - E12c_truck_detections_motorways
+  - E12c_truck_detections_primary_roads
+  - AQ1_aggregated_mobility_data
   - AQA_health_risk_index
-  
+  - AQB_Coarse_particulate_matter_PM2.5
+  - AQC_Coarse_particulate_matter_PM10
+  - AQ3_NO2_Innsbruck_hot_spot

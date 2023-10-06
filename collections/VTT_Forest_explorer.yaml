@@ -1,0 +1,18 @@
+Name: Forest_explorer
+Title: Forest explorer
+EodashIdentifier: VTT
+Subtitle: Assessment tool
+Description: VTT_Forest_explorer/AQ.md
+Themes:
+  - air
+Tags:
+  - eo-adaptation-services
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+

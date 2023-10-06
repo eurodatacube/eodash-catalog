@@ -1,0 +1,18 @@
+Name: Coarse_particulate_matter_PM10
+Title: Coarse particulate matter PM10
+EodashIdentifier: AQB
+Subtitle: Daily aggregated maps of PM10 concentration
+Description: AQA_health_risk_index/AQ.md
+Themes:
+  - air
+Tags:
+  - mobility-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

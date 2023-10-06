@@ -1,0 +1,18 @@
+Name: NO2_Innsbruck_hot_spot_emissions
+Title: Innsbruck hot spot NO2 emissions
+EodashIdentifier: AQ2
+Subtitle: Surface NO2 emissions measured at Innsbruck Atmospheric Observatory (IAO)
+Description: AQ2_NO2_Innsbruck_hot_spot/AQ.md
+Themes:
+  - atmosphere
+Tags:
+  - mobility-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

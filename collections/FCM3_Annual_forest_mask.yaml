@@ -1,0 +1,18 @@
+Name: Annual_forest_mask
+Title: Annual forest mask
+EodashIdentifier: FCM3
+Subtitle: Annual forest mask
+Description: FCM3_Annual_forest_mask/AQ.md
+Themes:
+  - air
+Tags:
+  - carbon-accounting
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+

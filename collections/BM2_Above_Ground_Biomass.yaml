@@ -1,0 +1,18 @@
+Name: Above_Ground_Biomass
+Title: Above Ground Biomass
+EodashIdentifier: BM2
+Subtitle: Above Ground Biomass
+Description: BM2_Above_Ground_Biomass/AQ.md
+Themes:
+  - air
+Tags:
+  - carbon-accounting
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+

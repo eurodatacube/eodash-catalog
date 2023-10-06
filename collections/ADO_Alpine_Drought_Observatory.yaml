@@ -1,0 +1,18 @@
+Name: Alpine_Drought_Observatory
+Title: Alpine Drought Observatory
+EodashIdentifier: ADO
+Subtitle: Alpine Drought Observatory
+Description: ADO_Alpine_Drought_Observatory/ADO.md
+Themes:
+  - water
+Tags:
+  - eo-adaptation-services
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+

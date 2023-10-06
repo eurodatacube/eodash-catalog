@@ -1,0 +1,18 @@
+Name: Forest_change_detections
+Title: Forest change detections
+EodashIdentifier: FCM1
+Subtitle: Forest change detections
+Description: FCM1_Forest_change_detections/AQ.md
+Themes:
+  - air
+Tags:
+  - mobility-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
