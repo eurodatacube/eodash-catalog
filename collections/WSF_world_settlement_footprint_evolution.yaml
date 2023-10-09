@@ -1,0 +1,28 @@
+Name: world_settlement_footprint_evolution
+Title: World settlement footprint Evolution
+EodashIdentifier: WSF
+Subtitle: World settlement footprint evolution description
+Description: WSF_world_settlement_footprint/WSF-WSF.md
+Themes:
+  - economy
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - DLR
+Resources:
+  - Group: Sentinel Hub Resources
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: db1ffd5a-9521-4679-80e8-9c92bd1782eb
+    LayerId: DLR-WSF-EVO
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: db1ffd5a-9521-4679-80e8-9c92bd1782eb
+    Script: WSF_world_settlement_footprint_evolution/script.js 
