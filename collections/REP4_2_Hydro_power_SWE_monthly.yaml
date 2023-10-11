@@ -1,0 +1,22 @@
+Name: Hydro_power_SWE_monthly
+Title: Hydropower SWE monthly
+EodashIdentifier: REP4_2
+Subtitle: "Surface water extent - expected vs. actual monthly energy potential"
+Description: Hydro_power_SWE_monthly/AQ.md
+Themes:
+  - air
+Tags:
+  - energy-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
+    Name: GeoDB
+    Database: GTIF
+    CollectionId: REP4_2

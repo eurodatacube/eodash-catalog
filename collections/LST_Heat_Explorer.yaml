@@ -1,0 +1,18 @@
+Name: Heat_Explorer
+Title: Heat Explorer
+EodashIdentifier: LST
+Subtitle: Heat Explorer
+Description: Heat_Explorer/AQ.md
+Themes:
+  - air
+Tags:
+  - eo-adaptation-services
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+

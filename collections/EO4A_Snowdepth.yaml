@@ -1,0 +1,18 @@
+Name: Snowdepth
+Title: Snowdepth
+EodashIdentifier: EO4A
+Subtitle: Snowdepth EO4Alps
+Description: Snowdepth/AQ.md
+Themes:
+  - air
+Tags:
+  - eo-adaptation-services
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+

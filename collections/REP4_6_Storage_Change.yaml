@@ -1,0 +1,22 @@
+Name: Hydro_Storage_Change
+Title: Hydropower Storage Change
+EodashIdentifier: REP4_6
+Subtitle: "Hydro Power inferred volume daily"
+Description: Hydro_Storage_Change/AQ.md
+Themes:
+  - air
+Tags:
+  - energy-transition
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
+    Name: GeoDB
+    Database: GTIF
+    CollectionId: REP4_6
