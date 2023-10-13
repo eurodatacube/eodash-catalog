@@ -18,6 +18,7 @@ Provider:
 # Dates: AQ1_aggregated_mobility_data/dates.json # Allows to bypass retrieval of dates - not implemented yet
 Resources:
   - Name: Collection-only
+    EndPoint: Collection-only
     OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
     Type: OverwriteTimes
     Times:

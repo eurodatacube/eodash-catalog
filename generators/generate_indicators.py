@@ -99,21 +99,22 @@ def process_collection_file(config, file_path, catalog):
     with open(file_path) as f:
         data = yaml.load(f, Loader=SafeLoader)
         for resource in data["Resources"]:
-            if resource["Name"] == "Sentinel Hub":
-                handle_SH_endpoint(config, resource, data, catalog)
-            elif resource["Name"] == "GeoDB":
-                collection = handle_GeoDB_endpoint(config, resource, data, catalog)
-                add_to_catalog(collection, catalog, resource, data)
-            elif resource["Name"] == "VEDA":
-                handle_VEDA_endpoint(config, resource, data, catalog)
-            elif resource["Name"] == "WMS":
-                handle_WMS_endpoint(config, resource, data, catalog)
-            elif resource["Name"] == "GeoDB Vector Tiles":
-                handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
-            elif resource["Name"] == "Collection-only":
-                handle_collection_only(config, resource, data, catalog)
-            else:
-                raise ValueError("Type of Resource is not supported")
+            if "EndPoint" in resource:
+                if resource["Name"] == "Sentinel Hub":
+                    handle_SH_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "GeoDB":
+                    collection = handle_GeoDB_endpoint(config, resource, data, catalog)
+                    add_to_catalog(collection, catalog, resource, data)
+                elif resource["Name"] == "VEDA":
+                    handle_VEDA_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "WMS":
+                    handle_WMS_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "GeoDB Vector Tiles":
+                    handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "Collection-only":
+                    handle_collection_only(config, resource, data, catalog)
+                else:
+                    raise ValueError("Type of Resource is not supported")
 
 
 def handle_collection_only(config, endpoint, data, catalog):
