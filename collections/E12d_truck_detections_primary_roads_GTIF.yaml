@@ -1,0 +1,27 @@
+Name: truck_detections_primary_roads
+Title: Truck detections primary roads
+EodashIdentifier: E12d
+Subtitle: Truck detections on primary roads description
+Description: E12d_truck_detections_primary_roads/E12d.md
+Themes:
+    - placeholder
+Tags:
+    - mobility-transition
+Satellite:
+    - Sentinel-2
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider:
+    - Name: placeholder
+License: MIT
+Resources:
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
+      LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
+Image: E12d_truck_detections_primary_roads/E12d.png
+Legend: E12d_truck_detections_motorways/cm_legend.png

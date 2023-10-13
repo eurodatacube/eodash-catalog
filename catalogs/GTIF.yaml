@@ -16,8 +16,8 @@ collections:
   - BM2_Above_Ground_Biomass
   - EO4A2_Snow_water_equivalent  
   - EO4A_Snowdepth
-  - E12c_truck_detections_motorways
-  - E12d_truck_detections_primary_roads
+  - E12c_truck_detections_motorways_GTIF
+  - E12d_truck_detections_primary_roads_GTIF
   - FCM1_Forest_change_detections
   - FCM2_Forest_disturbance_type
   - FCM3_Annual_forest_mask
@@ -35,3 +35,4 @@ collections:
   - SOL1_Green_Roofs
   - SOL2_Solar_Roofs
   - VTT_Forest_explorer
+
