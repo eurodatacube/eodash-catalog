@@ -19,6 +19,7 @@ from sh_endpoint import get_SH_token
 from utils import (
     create_geojson_point,
     retrieveExtentFromWMS,
+    generateDateIsostringsFromInterval,
 )
 from pystac import (
     Item,
@@ -111,13 +112,33 @@ def process_collection_file(config, file_path, catalog):
                 elif resource["Name"] == "GeoDB Vector Tiles":
                     handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "Collection-only":
-                    handle_collection_only(config, data, catalog)
+                    handle_collection_only(config, resource, data, catalog)
                 else:
                     raise ValueError("Type of Resource is not supported")
 
 
-def handle_collection_only(config, data, catalog):
+def handle_collection_only(config, endpoint, data, catalog):
+    times = []
     collection = get_or_create_collection(catalog, data["Name"], data, config)
+    if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
+        times = endpoint["Times"]
+    elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
+        start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
+        end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
+        timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
+        times = generateDateIsostringsFromInterval(start, end, timedelta_config)
+    for t in times:
+        item = Item(
+            id = t,
+            bbox=endpoint.get("OverwriteBBox"),
+            properties={},
+            geometry = None,
+            datetime = parser.isoparse(t),
+        )
+        # add_visualization_info(item, data, endpoint, time=t, styles=styles)
+        link = collection.add_item(item)
+        link.extra_fields["datetime"] = t
+    collection.update_extent_from_items()
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, None, data)
 
@@ -158,8 +179,13 @@ def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
 def handle_WMS_endpoint(config, endpoint, data, catalog):
     times = []
     extent = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
-    if "Type" in endpoint and endpoint["Type"] == "OverwriteTimes":
+    if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
         times = endpoint["Times"]
+    elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
+        start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
+        end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
+        timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
+        times = generateDateIsostringsFromInterval(start, end, timedelta_config)
     else:
         times = extent["temporal"]
     if "OverwriteBBox" in endpoint:

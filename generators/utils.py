@@ -132,3 +132,15 @@ def parse_duration(datestring):
         if groups["sign"] == '-':
             ret = Duration(0) - ret
     return ret
+
+def generateDateIsostringsFromInterval(start, end, timedelta_config={}):
+    start_dt = datetime.fromisoformate(start)
+    if end == 'today':
+        end = datetime.now()
+    end_dt = datetime.fromisoformate(end)
+    delta = timedelta(**timedelta_config)
+    dates = []
+    while start_dt <= end_dt:
+        dates.append(start_dt.isoformat())
+        start_dt += delta
+    return dates
