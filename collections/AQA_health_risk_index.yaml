@@ -21,8 +21,8 @@ Resources:
     Type: OverwriteTimes
     EndPoint: Collection-only
     DateTimeInterval:
-      Start: "2020-01-01T01:00:00Z"
-      End: "2022-12-18T00:00:00Z"
+      Start: "2020-01-01T01:00:00"
+      End: "2022-12-18T00:00:00"
       Timedelta:
         days: 1
 # Resources:

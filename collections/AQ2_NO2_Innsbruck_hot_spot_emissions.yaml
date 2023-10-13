@@ -21,7 +21,7 @@ Resources:
     OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
     Type: OverwriteTimes
     DateTimeInterval:
-      Start: "2021-01-01T01:00:00Z"
-      End: "2022-12-01T00:30:00Z"
+      Start: "2021-01-01T01:00:00"
+      End: "2022-12-01T00:30:00"
       Timedelta:
         minutes: 30
