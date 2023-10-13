@@ -16,3 +16,5 @@ Agency:
 Provider:
   - Name: placeholder
 
+Resources:
+    - Name: Collection-only

@@ -15,4 +15,5 @@ Agency:
   - ESA
 Provider:
   - Name: SISTEMA
-
+Resources:
+    - Name: Collection-only

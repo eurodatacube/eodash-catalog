@@ -14,5 +14,7 @@ Sensor:
 Agency:
   - ESA
 Provider:
-  - Name: placeholder
+  - Name: GeoVille
 
+Resources:
+    - Name: Collection-only

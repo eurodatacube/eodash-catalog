@@ -15,4 +15,9 @@ Agency:
   - ESA
 Provider:
   - Name: placeholder
+Resources:
+  - EndPoint: https://snow-app-gte2s.hub.eox.at/
+    Name: WMS
+    Type: Time
+    LayerId: 'SNOW-DEPTH'
 

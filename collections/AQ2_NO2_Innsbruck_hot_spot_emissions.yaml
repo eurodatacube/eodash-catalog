@@ -14,5 +14,6 @@ Sensor:
 Agency:
   - ESA
 Provider:
-  - Name: SISTEMA
-
+  - Name: placeholder
+Resources:
+    - Name: Collection-only

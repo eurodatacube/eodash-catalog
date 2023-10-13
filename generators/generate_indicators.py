@@ -110,8 +110,17 @@ def process_collection_file(config, file_path, catalog):
                     handle_WMS_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "GeoDB Vector Tiles":
                     handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "Collection-only":
+                    handle_collection_only(config, data, catalog)
                 else:
                     raise ValueError("Type of Resource is not supported")
+
+
+def handle_collection_only(config, data, catalog):
+    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    add_collection_information(config, collection, data)
+    add_to_catalog(collection, catalog, None, data)
+
 
 def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
     if "Dates" in data:
@@ -252,7 +261,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
     link = catalog.add_child(collection)
     # bubble fields we want to have up to collection link
-    link.extra_fields["endpointtype"] = endpoint["Name"]
+    if endpoint:
+        link.extra_fields["endpointtype"] = endpoint["Name"]
     # Disabling bubbling up of description as now it is considered to be
     # used as markdown loading would increase the catalog size unnecessarily
     # link.extra_fields["description"] = collection.description

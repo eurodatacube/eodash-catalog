@@ -16,4 +16,5 @@ Agency:
   - ESA
 Provider:
   - Name: placeholder
-
+Resources:
+    - Name: Collection-only

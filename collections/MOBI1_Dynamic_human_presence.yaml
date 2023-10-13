@@ -16,3 +16,5 @@ Agency:
 Provider:
   - Name: SISTEMA
 
+Resources:
+    - Name: Collection-only
