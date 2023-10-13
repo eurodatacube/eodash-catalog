@@ -136,7 +136,7 @@ def parse_duration(datestring):
 def generateDateIsostringsFromInterval(start, end, timedelta_config={}):
     start_dt = datetime.fromisoformat(start)
     if end == 'today':
-        end = datetime.now()
+        end = datetime.now().isoformat()
     end_dt = datetime.fromisoformat(end)
     delta = timedelta(**timedelta_config)
     dates = []
