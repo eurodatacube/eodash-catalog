@@ -25,11 +25,11 @@ collections:
   - MOBI1_Dynamic_human_presence
   - REP1_Wind_Energy
   - REP2_Solar_Energy
-  - REP4_1_Hydro_power_SWE_daily
-  - REP4_2_Hydro_power_SWE_monthly
-  - REP4_4_Hydro_power_WSE_monthly
-  - REP4_5_Hydro_LAC_Curve
-  - REP4_6_Storage_Change
+  # - REP4_1_Hydro_power_SWE_daily
+  # - REP4_2_Hydro_power_SWE_monthly
+  # - REP4_4_Hydro_power_WSE_monthly
+  # - REP4_5_Hydro_LAC_Curve
+  # - REP4_6_Storage_Change
   - REP5_Micro_Hydropower
   - REP6_Wind_Turbine_Detections
   - SOL1_Green_Roofs
