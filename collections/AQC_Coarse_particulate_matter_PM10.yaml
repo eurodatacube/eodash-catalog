@@ -4,9 +4,9 @@ EodashIdentifier: AQC
 Subtitle: Daily aggregated maps of PM2.5 concentration
 Description: AQA_health_risk_index/AQ.md
 Themes:
-  - air
-Tags:
   - mobility-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

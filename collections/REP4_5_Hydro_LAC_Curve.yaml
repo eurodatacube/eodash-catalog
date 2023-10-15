@@ -4,9 +4,9 @@ EodashIdentifier: REP4_5
 Subtitle: "Level-Area-Height curve (LAC) monthly"
 Description: Hydro_LAC_Curve/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

@@ -4,10 +4,10 @@ EodashIdentifier: FCM2
 Subtitle: Forest disturbance type
 Description: FCM2_Forest_disturbance_type/AQ.md
 Themes:
-  - air
-Tags:
   - carbon-accounting
   - eo-adaptation-services
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

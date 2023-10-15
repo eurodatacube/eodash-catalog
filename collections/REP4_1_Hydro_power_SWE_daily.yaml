@@ -4,9 +4,9 @@ EodashIdentifier: REP4_1
 Subtitle: "Surface water extent - current daily energy potential"
 Description: Hydro_power_SWE_daily/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

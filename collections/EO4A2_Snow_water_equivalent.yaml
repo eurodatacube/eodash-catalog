@@ -4,9 +4,9 @@ EodashIdentifier: EO4A2
 Subtitle: Snow water equivalent EO4Alps
 Description: Snow_water_equivalent/AQ.md
 Themes:
-  - air
-Tags:
   - eo-adaptation-services
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

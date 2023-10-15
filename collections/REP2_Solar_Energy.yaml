@@ -1,12 +1,12 @@
 Name: Solar_Energy
-Title: Site Suitability Assessment & Trade-off Explorer
+Title: Solar Energy
 EodashIdentifier: REP2
 Subtitle: Site Suitability Assessment & Trade-off Explorer
 Description: Solar_Energy/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

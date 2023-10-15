@@ -4,9 +4,9 @@ EodashIdentifier: REP4_2
 Subtitle: "Surface water extent - expected vs. actual monthly energy potential"
 Description: Hydro_power_SWE_monthly/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

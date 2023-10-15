@@ -4,9 +4,9 @@ EodashIdentifier: AQ1
 Subtitle: Aggregated mobility data
 Description: AQ1_aggregated_mobility_data/AQ1.md
 Themes:
-  - atmosphere
-Tags:
   - mobility-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

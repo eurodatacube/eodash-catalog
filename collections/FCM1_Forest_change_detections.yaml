@@ -4,9 +4,9 @@ EodashIdentifier: FCM1
 Subtitle: Forest change detections
 Description: FCM1_Forest_change_detections/AQ.md
 Themes:
-  - air
-Tags:
   - carbon-accounting
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

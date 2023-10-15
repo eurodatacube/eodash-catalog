@@ -4,9 +4,9 @@ EodashIdentifier: VTT
 Subtitle: Assessment tool
 Description: VTT_Forest_explorer/AQ.md
 Themes:
-  - air
-Tags:
   - eo-adaptation-services
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

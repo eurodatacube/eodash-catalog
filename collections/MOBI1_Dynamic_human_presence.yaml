@@ -4,9 +4,9 @@ EodashIdentifier: MOBI1
 Subtitle: Dynamic human presence
 Description: MOBI1_Dynamic_human_presence/AQ.md
 Themes:
-  - air
-Tags:
   - mobility-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

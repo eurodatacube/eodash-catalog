@@ -4,9 +4,9 @@ EodashIdentifier: EO4A
 Subtitle: Snowdepth EO4Alps
 Description: Snowdepth/AQ.md
 Themes:
-  - air
-Tags:
   - eo-adaptation-services
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

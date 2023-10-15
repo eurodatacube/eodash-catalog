@@ -4,9 +4,9 @@ EodashIdentifier: LST
 Subtitle: Heat Explorer
 Description: Heat_Explorer/AQ.md
 Themes:
-  - air
-Tags:
   - eo-adaptation-services
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

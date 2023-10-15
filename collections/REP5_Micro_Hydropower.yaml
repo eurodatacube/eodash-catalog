@@ -4,9 +4,9 @@ EodashIdentifier: REP5
 Subtitle: Micro Hydropower
 Description: Micro_Hydropower/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

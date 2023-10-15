@@ -4,9 +4,9 @@ EodashIdentifier: REP6
 Subtitle: Wind Turbine Detections
 Description: Wind_Turbine_Detections/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

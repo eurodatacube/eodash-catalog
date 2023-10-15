@@ -4,9 +4,9 @@ EodashIdentifier: BM2
 Subtitle: Above Ground Biomass
 Description: BM2_Above_Ground_Biomass/AQ.md
 Themes:
-  - air
-Tags:
   - carbon-accounting
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

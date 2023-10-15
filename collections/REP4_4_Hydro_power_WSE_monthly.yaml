@@ -4,9 +4,9 @@ EodashIdentifier: REP4_4
 Subtitle: "Water levels"
 Description: Hydro_power_WSE_monthly/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

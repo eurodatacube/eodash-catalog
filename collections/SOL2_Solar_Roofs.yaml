@@ -4,9 +4,9 @@ EodashIdentifier: SOL2
 Subtitle: Electrical Power Production potential
 Description: SOL2_Solar_Roofs/AQ.md
 Themes:
-  - air
-Tags:
   - sustainable-cities
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

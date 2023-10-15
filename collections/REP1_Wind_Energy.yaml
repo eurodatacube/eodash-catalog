@@ -1,12 +1,12 @@
 Name: Wind_Energy
-Title: Site Suitability Assessment & Trade-off Explorer
+Title: Wind Energy
 EodashIdentifier: REP1
 Subtitle: Site Suitability Assessment & Trade-off Explorer
 Description: Wind_Energy/AQ.md
 Themes:
-  - air
-Tags:
   - energy-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

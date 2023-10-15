@@ -4,9 +4,9 @@ EodashIdentifier: AQA
 Subtitle: Health Risk Index (ARI)
 Description: AQA_health_risk_index/AQ.md
 Themes:
-  - atmosphere
-Tags:
   - mobility-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

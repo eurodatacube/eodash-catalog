@@ -4,9 +4,9 @@ EodashIdentifier: SOL1
 Subtitle: Green Roof Impact
 Description: Green_Roofs/AQ.md
 Themes:
-  - air
-Tags:
   - sustainable-cities
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:

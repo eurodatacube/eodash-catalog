@@ -4,9 +4,9 @@ EodashIdentifier: AQ4
 Subtitle: Human Mobility Patterns
 Description: Human_Mobility_Patterns/AQ4.md
 Themes:
-  - air
-Tags:
   - mobility-transition
+Tags:
+  - placeholder
 Satellite:
   - placeholder
 Sensor:
