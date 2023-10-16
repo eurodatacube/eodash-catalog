@@ -1,12 +1,12 @@
 Name: truck_detections_primary_roads
-Title: Truck detections primary roads
+Title: Moving truck detections Primary Roads
 EodashIdentifier: E12d
-Subtitle: Truck detections on primary roads description
+Subtitle: Moving truck detections Primary Roads
 Description: E12d_truck_detections_primary_roads/E12d.md
 Themes:
-    - placeholder
-Tags:
     - mobility-transition
+Tags:
+    - placeholder
 Satellite:
     - Sentinel-2
 Sensor:

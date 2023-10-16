@@ -1,7 +1,7 @@
 Name: aggregated_mobility_data
 Title: Correlation explorer
 EodashIdentifier: AQ1
-Subtitle: Aggregated mobility data
+Subtitle: AQ-mobility
 Description: AQ1_aggregated_mobility_data/AQ1.md
 Themes:
   - mobility-transition

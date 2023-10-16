@@ -1,7 +1,7 @@
 Name: health_risk_index
 Title: Health Risk Index (ARI)
 EodashIdentifier: AQA
-Subtitle: Health Risk Index (ARI)
+Subtitle: Daily aggregated maps of ARI index
 Description: AQA_health_risk_index/AQ.md
 Themes:
   - mobility-transition

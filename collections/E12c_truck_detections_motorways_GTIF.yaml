@@ -1,12 +1,12 @@
 Name: truck_detections_motorways
-Title: Truck detections motorways
+Title: Moving truck detections Motorways
 EodashIdentifier: E12c
-Subtitle: Truck detections on motorways description
+Subtitle: Moving truck detections Motorways
 Description: E12c_truck_detections_motorways/E12c.md
 Themes:
-    - placeholder
-Tags:
     - mobility-transition
+Tags:
+    - placeholder
 Satellite:
     - Sentinel-2
 Sensor:
