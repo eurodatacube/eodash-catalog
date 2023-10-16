@@ -50,7 +50,7 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@v1.2
         env:
           DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          PATHS: '/catalog/${{ github.event.pull_request.head.ref }}/*'
+          PATHS: '/${{ github.event.pull_request.head.ref }}/*'
           AWS_REGION: 'eu-central-1'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

@@ -295,7 +295,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
         link.extra_fields["subtitle"] = data["Subtitle"]
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
-    link.extra_fields["themes"] = ",".join(data["Themes"])
+    link.extra_fields["themes"] = data["Themes"]
     # Check for summaries and bubble up info
     if collection.summaries.lists:
         for sum in collection.summaries.lists:
