@@ -1,0 +1,24 @@
+Name: NO2_Innsbruck_hot_spot_concentrations
+Title: Innsbruck hot spot NO2 concentrations
+EodashIdentifier: AQ3
+Subtitle: Surface NO2 concentrations measured at Innsbruck Atmospheric Observatory (IAO)
+Description: AQ3_NO2_Innsbruck_hot_spot/AQ.md
+Themes:
+  - mobility-transition
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy

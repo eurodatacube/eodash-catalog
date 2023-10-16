@@ -1,0 +1,24 @@
+Name: Forest_change_detections
+Title: Forest change detections
+EodashIdentifier: FCM1
+Subtitle: Forest change detections
+Description: FCM1_Forest_change_detections/AQ.md
+Themes:
+  - carbon-accounting
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    ype: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy

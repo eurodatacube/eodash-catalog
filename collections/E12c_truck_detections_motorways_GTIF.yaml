@@ -1,0 +1,28 @@
+Name: truck_detections_motorways
+Title: Moving truck detections Motorways
+EodashIdentifier: E12c
+Subtitle: Moving truck detections Motorways
+Description: E12c_truck_detections_motorways/E12c.md
+Themes:
+    - mobility-transition
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-2
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider:
+    - Name: placeholder
+License: MIT
+Resources:
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 34fbfb05-c3e5-4885-9840-830ee85dddd4
+      LayerId: VIS_TRUCK_DETECTION_MOTORWAYS_NEW
+      OverwriteBBox: [46.4, 49, 9.5, 17]
+Image: E12c_truck_detections_motorways/E12c.png
+Legend: E12c_truck_detections_motorways/cm_legend.png

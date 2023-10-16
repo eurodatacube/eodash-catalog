@@ -4,8 +4,35 @@ description: "Green Transition Information Factory"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/GTIF/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  # - E12c_truck_detections_motorways
-  # - E12c_truck_detections_primary_roads
-  # - AQ1_aggregated_mobility_data
+  - ADO_Alpine_Drought_Observatory
+  - AQ1_aggregated_mobility_data
+  - AQ2_NO2_Innsbruck_hot_spot_emissions
+  - AQ3_NO2_Innsbruck_hot_spot_concentrations
+  - AQ4_Human_Mobility_Patterns
+  - AQ5_Nitrogen_Dioxide_S5P
   - AQA_health_risk_index
-  
+  - AQB_Coarse_particulate_matter_PM2.5
+  - AQC_Coarse_particulate_matter_PM10
+  - BM2_Above_Ground_Biomass
+  - EO4A2_Snow_water_equivalent  
+  - EO4A_Snowdepth
+  - E12c_truck_detections_motorways_GTIF
+  - E12d_truck_detections_primary_roads_GTIF
+  - FCM1_Forest_change_detections
+  - FCM2_Forest_disturbance_type
+  - FCM3_Annual_forest_mask
+  - LST_Heat_Explorer
+  - MOBI1_Dynamic_human_presence
+  - REP1_Wind_Energy
+  - REP2_Solar_Energy
+  # - REP4_1_Hydro_power_SWE_daily
+  # - REP4_2_Hydro_power_SWE_monthly
+  # - REP4_4_Hydro_power_WSE_monthly
+  # - REP4_5_Hydro_LAC_Curve
+  # - REP4_6_Storage_Change
+  - REP5_Micro_Hydropower
+  - REP6_Wind_Turbine_Detections
+  - SOL1_Green_Roofs
+  - SOL2_Solar_Roofs
+  - VTT_Forest_explorer
+

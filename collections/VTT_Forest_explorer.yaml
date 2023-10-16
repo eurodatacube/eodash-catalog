@@ -1,0 +1,33 @@
+Name: Forest_explorer
+Title: Forest explorer
+EodashIdentifier: VTT
+Subtitle: Assessment tool
+Description: VTT_Forest_explorer/AQ.md
+Themes:
+  - eo-adaptation-services
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    Type: OverwriteTimes
+    Times:
+      - "2021-09-01"
+      - "2021-10-01"
+      - "2021-11-01"
+      - "2022-03-01"
+      - "2022-04-01"
+      - "2022-05-01"
+      - "2022-06-01"
+      - "2022-07-01"
+      - "2022-08-01"

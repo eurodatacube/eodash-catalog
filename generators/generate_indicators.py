@@ -19,6 +19,7 @@ from sh_endpoint import get_SH_token
 from utils import (
     create_geojson_point,
     retrieveExtentFromWMS,
+    generateDateIsostringsFromInterval,
 )
 from pystac import (
     Item,
@@ -110,8 +111,36 @@ def process_collection_file(config, file_path, catalog):
                     handle_WMS_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "GeoDB Vector Tiles":
                     handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "Collection-only":
+                    handle_collection_only(config, resource, data, catalog)
                 else:
                     raise ValueError("Type of Resource is not supported")
+
+
+def handle_collection_only(config, endpoint, data, catalog):
+    times = []
+    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
+        times = endpoint["Times"]
+    elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
+        start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
+        end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
+        timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
+        times = generateDateIsostringsFromInterval(start, end, timedelta_config)
+    for t in times:
+        item = Item(
+            id = t,
+            bbox=endpoint.get("OverwriteBBox"),
+            properties={},
+            geometry = None,
+            datetime = parser.isoparse(t),
+        )
+        link = collection.add_item(item)
+        link.extra_fields["datetime"] = t
+    collection.update_extent_from_items()
+    add_collection_information(config, collection, data)
+    add_to_catalog(collection, catalog, None, data)
+
 
 def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
     if "Dates" in data:
@@ -149,8 +178,13 @@ def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
 def handle_WMS_endpoint(config, endpoint, data, catalog):
     times = []
     extent = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
-    if "Type" in endpoint and endpoint["Type"] == "OverwriteTimes":
+    if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
         times = endpoint["Times"]
+    elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
+        start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
+        end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
+        timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
+        times = generateDateIsostringsFromInterval(start, end, timedelta_config)
     else:
         times = extent["temporal"]
     if "OverwriteBBox" in endpoint:
@@ -252,7 +286,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
     link = catalog.add_child(collection)
     # bubble fields we want to have up to collection link
-    link.extra_fields["endpointtype"] = endpoint["Name"]
+    if endpoint:
+        link.extra_fields["endpointtype"] = endpoint["Name"]
     # Disabling bubbling up of description as now it is considered to be
     # used as markdown loading would increase the catalog size unnecessarily
     # link.extra_fields["description"] = collection.description
@@ -260,7 +295,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
         link.extra_fields["subtitle"] = data["Subtitle"]
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
-    link.extra_fields["themes"] = ",".join(data["Themes"])
+    link.extra_fields["themes"] = data["Themes"]
     # Check for summaries and bubble up info
     if collection.summaries.lists:
         for sum in collection.summaries.lists:

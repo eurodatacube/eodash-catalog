@@ -1,32 +1,42 @@
 Name: health_risk_index
 Title: Health Risk Index (ARI)
 EodashIdentifier: AQA
-Subtitle: Health Risk Index (ARI)
-Description: AQ1_health_risk_index/AQA.md
+Subtitle: Daily aggregated maps of ARI index
+Description: AQA_health_risk_index/AQ.md
 Themes:
-  - economy
+  - mobility-transition
 Tags:
   - placeholder
 Satellite:
   - placeholder
 Sensor:
-  - MODIS
+  - placeholder
 Agency:
   - ESA
 Provider:
   - Name: SISTEMA
 Resources:
-  - EndPoint: https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/gwc/service/tms/1.0.0/
-    DBEndpoint: https://xcube-geodb.brockmann-consult.de/gtif/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
-    Source: air_quality_new_id
-    Name: GeoDB Vector Tiles
-    Instance: geodb_debd884d-92f9-4979-87b6-eadef1139394
-    Database: GTIF
-    CollectionId: AT_Gemeinden_3857
-    TimeKey: time
-    MatchKey: id_3
-    Parameters:
-      - pm10
-      - pm25
-      - ihr
-      - id_3
+  - Name: Collection-only
+    EndPoint: Collection-only
+    Type: OverwriteTimes
+    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    DateTimeInterval:
+      Start: "2020-01-01T01:00:00"
+      End: "2022-12-18T00:00:00"
+      Timedelta:
+        days: 1
+# Resources:
+#   - EndPoint: https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/gwc/service/tms/1.0.0/
+#     DBEndpoint: https://xcube-geodb.brockmann-consult.de/gtif/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
+#     Source: air_quality_new_id
+#     Name: GeoDB Vector Tiles
+#     Instance: geodb_debd884d-92f9-4979-87b6-eadef1139394
+#     Database: GTIF
+#     CollectionId: AT_Gemeinden_3857
+#     TimeKey: time
+#     MatchKey: id_3
+#     Parameters:
+#       - pm10
+#       - pm25
+#       - ihr
+#       - id_3

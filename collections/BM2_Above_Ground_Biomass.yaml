@@ -1,0 +1,24 @@
+Name: Above_Ground_Biomass
+Title: Above Ground Biomass
+EodashIdentifier: BM2
+Subtitle: Above Ground Biomass
+Description: BM2_Above_Ground_Biomass/AQ.md
+Themes:
+  - carbon-accounting
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy

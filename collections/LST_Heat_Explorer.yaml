@@ -1,0 +1,25 @@
+Name: Heat_Explorer
+Title: Heat Explorer
+EodashIdentifier: LST
+Subtitle: Heat Explorer
+Description: Heat_Explorer/AQ.md
+Themes:
+  - eo-adaptation-services
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: GeoVille
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy
