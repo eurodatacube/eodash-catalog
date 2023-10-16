@@ -19,6 +19,6 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
-    ype: OverwriteTimes
+    Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
