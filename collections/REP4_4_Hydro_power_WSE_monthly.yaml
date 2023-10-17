@@ -2,7 +2,7 @@ Name: Hydro_power_WSE_monthly
 Title: Hydropower WSE monthly
 EodashIdentifier: REP4_4
 Subtitle: "Water levels"
-Description: Hydro_power_WSE_monthly/AQ.md
+Description: REP4_4_Hydro_power_WSE_monthly/REP4_4.md
 Themes:
   - energy-transition
 Tags:

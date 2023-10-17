@@ -2,7 +2,7 @@ Name: Solar_Roofs
 Title: Solar Roofs
 EodashIdentifier: SOL2
 Subtitle: Electrical Power Production potential
-Description: SOL2_Solar_Roofs/AQ.md
+#Description: SOL2_Solar_Roofs/AQ.md
 Themes:
   - sustainable-cities
 Tags:

@@ -2,7 +2,7 @@ Name: Hydro_LAC_Curve
 Title: Level Area Height Curve
 EodashIdentifier: REP4_5
 Subtitle: "Level-Area-Height curve (LAC) monthly"
-Description: Hydro_LAC_Curve/AQ.md
+Description: REP4_5_Hydro_LAC_Curve/REP4_5.md
 Themes:
   - energy-transition
 Tags:

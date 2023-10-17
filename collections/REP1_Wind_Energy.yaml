@@ -2,7 +2,7 @@ Name: Wind_Energy
 Title: Wind Energy
 EodashIdentifier: REP1
 Subtitle: Site Suitability Assessment & Trade-off Explorer
-Description: Wind_Energy/AQ.md
+Description: REP1_Wind_Energy/REP1.md
 Themes:
   - energy-transition
 Tags:

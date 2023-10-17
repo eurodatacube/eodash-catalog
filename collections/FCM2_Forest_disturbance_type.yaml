@@ -2,7 +2,7 @@ Name: Forest_disturbance_type
 Title: Forest disturbance type
 EodashIdentifier: FCM2
 Subtitle: Forest disturbance type
-Description: FCM2_Forest_disturbance_type/AQ.md
+Description: FCM2_Forest_disturbance_type/FCM2.md
 Themes:
   - carbon-accounting
   - eo-adaptation-services

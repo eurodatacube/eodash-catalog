@@ -2,7 +2,7 @@ Name: Snow_water_equivalent
 Title: Snow water equivalent
 EodashIdentifier: EO4A2
 Subtitle: Snow water equivalent EO4Alps
-Description: Snow_water_equivalent/AQ.md
+Description: EO4A_Snowdepth/EO4A.md
 Themes:
   - eo-adaptation-services
 Tags:
