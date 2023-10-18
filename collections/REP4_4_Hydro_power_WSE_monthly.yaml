@@ -19,5 +19,5 @@ Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/gtif/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
     Name: GeoDB
     Database: GTIF
-    CollectionId: REP4_4
+    CollectionId: hydro_rep4_4
     OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
