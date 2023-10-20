@@ -332,13 +332,14 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         city = unique_values["city"]
         if country not in countries:
             countries.append(country)
+        # sanitize city identifier to be sure it is filename save
+        if city is not None:
+            city = "".join([c for c in city if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+        # Additional check to see if city name is empty afterwards
+        if city == "" or city is None:
+            city = "undefined"
         if city not in cities:
             cities.append(city)
-        # sanitize city identifier to be sure it is filename save
-        city = "".join([c for c in city if c.isalpha() or c.isdigit() or c==' ']).rstrip()
-        # Additional check to see if city name is empty afterwards
-        if city == "":
-            city = "undefined"
         min_date = min(times)
         max_date = max(times)
         latlon = unique_values["aoi"]
