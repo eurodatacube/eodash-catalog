@@ -20,4 +20,4 @@ Resources:
     Name: GeoDB
     Database: GTIF
     CollectionId: hydro_rep4_4
-    OverwriteBBox: [44.0, 48.7, 5.5, 16.5]
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
