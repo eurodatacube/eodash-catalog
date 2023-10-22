@@ -15,7 +15,6 @@ Agency:
   - ESA
 Provider:
   - Name: SISTEMA
-# Dates: AQ1_aggregated_mobility_data/dates.json # Allows to bypass retrieval of dates - not implemented yet
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only

@@ -1,0 +1,27 @@
+Name: ADD_West_Antarctica_S1
+Title: West Antarctica (Sentinel-1)
+EodashIdentifier: ADD
+Subtitle: West Antarctica Sentinel-1 Subset
+Description: ADD_West_Antarctica_S1/S1GRD-ADD.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel 1
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-103, -75, -102, -74]
+    Type: OverwriteTimes
+    DateTimeInterval:
+      Start: "2017-05-18T00:00:00"
+      End: "2022-01-15T00:00:00"
+      Timedelta:
+        days: 7
