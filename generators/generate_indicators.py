@@ -337,7 +337,8 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
             city = "".join([c for c in city if c.isalpha() or c.isdigit() or c==' ']).rstrip()
         # Additional check to see if city name is empty afterwards
         if city == "" or city is None:
-            city = "undefined"
+            # use aoi_id as a fallback unique id instead of city
+            city = key
         if city not in cities:
             cities.append(city)
         min_date = min(times)
