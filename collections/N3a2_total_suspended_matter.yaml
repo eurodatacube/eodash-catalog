@@ -14,7 +14,7 @@ Sensor:
 Agency:
   - ESA
 Provider:
-    - Name: placeholder
+  - Name: placeholder
 License: MIT
 Locations:
   - Identifier: NorthAdriaticTSM
@@ -44,5 +44,11 @@ Resources:
     Type: byoc
     CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
     LayerId: AWS_N3_CUSTOM_TSMNN
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
+    Script: N3a2_total_suspended_matter/script.js
 #Image: N3a2_total_suspended_matter/N3a2.png
 Legend: N3a2_total_suspended_matter/cm_legend.png

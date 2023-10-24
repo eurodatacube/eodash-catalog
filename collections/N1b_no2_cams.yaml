@@ -2,7 +2,7 @@ Name: no2_cams
 Title: City level NO2 (model)
 EodashIdentifier: N1b
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N1b_no2_cams/N1b.md
+Description: N1b_no2_cams/N1_CAMS.md
 Themes:
     - air
 Tags:

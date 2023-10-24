@@ -2,7 +2,7 @@ Name: pm10_cams
 Title: City level PM10 (model)
 EodashIdentifier: N1c
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N1c_pm10_cams/N1c.md
+Description: N1c_pm10_cams/N1_CAMS.md
 Themes:
     - air
 Tags:

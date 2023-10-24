@@ -2,7 +2,7 @@ Name: o3_cams
 Title: City level O3 (model)
 EodashIdentifier: N1d
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N1d_o3_cams/N1d.md
+Description: N1d_o3_cams/N1_CAMS.md
 Themes:
     - air
 Tags:

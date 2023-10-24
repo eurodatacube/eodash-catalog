@@ -13,7 +13,7 @@ Sensor:
     - placeholder
 Agency:
     - ESA
-Provider: 
+Provider:
     - Name: placeholder
 License: MIT
 Resources:
@@ -23,5 +23,3 @@ Resources:
       Type: byoc
       CollectionId: c47fa011-e9cd-4076-9b2f-68a93d757e58
       LayerId: AWS_ICEYE-E3
-Image: E3_oil_storage_volume/N3a2.png
-Legend: E3_oil_storage_volume/cm_legend.png

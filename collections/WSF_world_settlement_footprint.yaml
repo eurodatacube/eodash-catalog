@@ -16,7 +16,7 @@ Agency:
 Resources:
   - EndPoint: https://a.geoservice.dlr.de/eoc/land/wms/
     Name: WMS
-    Type: OverwriteTimes # time dimension is not described in getCapabilities 
+    Type: OverwriteTimes # time dimension is not described in getCapabilities
     # special case where env kvp is used to set time in wms
     Times:
       - "1985"
@@ -54,3 +54,5 @@ Resources:
   - EndPoint: https://a.geoservice.dlr.de/eoc/land/wms/
     Name: WMS
     LayerId: WSF_2019
+Legend: WSF_world_settlement_footprint/cm_legend.png
+Image: WSF_world_settlement_footprint/WSF-WSF.png

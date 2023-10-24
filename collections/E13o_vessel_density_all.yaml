@@ -20,3 +20,4 @@ Resources:
     CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12
     LayerId: AWS_VIS_VESSELDENSITY_ALL
 Legend: E13o_vessel_density_all/cm_legend.png
+Image: E13o_vessel_density_all/E13o.png
