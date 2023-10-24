@@ -20,3 +20,4 @@ Resources:
     CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12 # using vessel density all id (should be updated to correct id)
     LayerId: AWS_VIS_VESSELDENSITY_TANKER
 Legend: E13o_vessel_density_all/cm_legend.png
+Image: E13q_vessel_density_tanker/E13q.png

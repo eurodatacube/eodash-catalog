@@ -34,4 +34,4 @@ Resources:
       Type: byoc
       CollectionId: 4a537983-1c61-4c6e-9c85-7b3972b7b596
       LayerId: AWS_ICEYE-E13B
-Image: E13b_airport_throughput/E13b.png
+# Image: E13b_airport_throughput/E13b.png

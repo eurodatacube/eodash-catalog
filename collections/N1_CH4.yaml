@@ -23,5 +23,11 @@ Resources:
       Type: byoc
       CollectionId: 0ecb4a55-5ce2-4525-bdcb-a333d37d46ef
       LayerId: AWS_CH4_WEEKLY
+Services:
+    - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+      Name: Statistical API
+      Type: byoc
+      CollectionId: 0ecb4a55-5ce2-4525-bdcb-a333d37d46ef
+      Script: N1_CH4/script.js
 Image: N1_CH4/N1.png
 Legend: N1_CH4/cm_legend.png

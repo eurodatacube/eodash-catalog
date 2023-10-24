@@ -22,3 +22,4 @@ Resources:
     Styles: [sh_PurplesTransparent40_surface_concentration]
     OverwriteBBox: [45, 72, -25, 30] # WMS layer description provides incorrect BBox
 Legend: N1b_PM25/cm_legend.png
+Image: N1b_PM25/N1b.png

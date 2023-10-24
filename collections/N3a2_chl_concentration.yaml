@@ -14,7 +14,7 @@ Sensor:
 Agency:
   - ESA
 Provider:
-    - Name: placeholder
+  - Name: placeholder
 License: MIT
 Locations:
   - Identifier: NorthAdriatic
@@ -44,5 +44,11 @@ Resources:
     Type: byoc
     CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
     LayerId: AWS_N3_CUSTOM
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
+    Script: N3a2_chl_concentration/script.js
 #Image: N3a2_chl_concentration/N3a2.png
 Legend: N3a2_chl_concentration/cm_legend.png

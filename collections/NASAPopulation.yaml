@@ -23,5 +23,5 @@ Resources:
       Type: byoc
       CollectionId: b468089b-2627-4787-b984-89c10434f6c6
       LayerId: AWS_POPULATION_DENSITY
-Image: NASAPopulation/W6.png
+Image: NASAPopulation/NASAPopulation.png
 Legend: NASAPopulation/cm_legend.png

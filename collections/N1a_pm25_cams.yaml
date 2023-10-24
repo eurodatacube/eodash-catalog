@@ -2,7 +2,7 @@ Name: pm25_cams
 Title: City level PM25 (model)
 EodashIdentifier: N1a
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N1a_pm25_cams/N1a.md
+Description: N1a_pm25_cams/N1_CAMS.md
 Themes:
     - air
 Tags:
