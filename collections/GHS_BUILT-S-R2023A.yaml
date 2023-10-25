@@ -1,0 +1,30 @@
+Name: GHS-BUILT-S-R2023A
+Title: GHS-BUILT-S-R2023A
+EodashIdentifier: GHSBUILT
+Subtitle: GHS built-up surface dataset GHS-BUILT-S_GLOBE_R2023A
+Description: GHS-BUILT-S-R2023A/GHSBUILT.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Provider:
+    - Name: placeholder
+Citation:
+    Citation: This string needs to be added when using the data
+    DOI: 10.2760/098587
+License: MIT
+Resources:
+    - Group: Sentinel Hub Resources
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 0c7aa265-50f9-4947-9980-2ee5ae204803
+      LayerId: GHS-BUILT-S-R2023A
+Image: GHS-BUILT-S-R2023A/World-GHSBUILT.png
+Legend: GHS-BUILT-S-R2023A/cm_legend.png
