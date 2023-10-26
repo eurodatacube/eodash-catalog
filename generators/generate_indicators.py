@@ -3,6 +3,7 @@
 Indicator generator to harvest information from endpoints and generate catalog
 
 """
+import threading
 import time
 import requests
 import json
@@ -26,13 +27,11 @@ from pystac import (
     Asset,
     Catalog,
     Link,
-    # StacIO,
     CatalogType,
     Collection,
     Extent,
     SpatialExtent,
     TemporalExtent,
-    # MediaType,
     Summaries,
     Provider
 )
@@ -703,8 +702,12 @@ def add_collection_information(config, collection, data):
 def process_catalogs(folder_path, options):
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
+        tasks = []
         if os.path.isfile(file_path):
-            process_catalog_file(file_path, options)
+            tasks.append(threading.Thread(target=process_catalog_file, args=(file_path, options)))
+            tasks[-1].start()
+    for task in tasks:
+        task.join()
 
 options = argparser.parse_args()
 folder_path = "../catalogs/"
