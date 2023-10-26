@@ -1,12 +1,12 @@
-Name: Human_Mobility_Patterns
-Title: Human Mobility Patterns
-EodashIdentifier: AQ4
-Subtitle: Human Mobility Patterns
+Name: Human_Mobility_Patterns_Max_Trajectories
+Title: Max Trajectories
+EodashIdentifier: AQ4_4
+Subtitle: Max Trajectories
 Description: AQ4_Human_Mobility_Patterns/AQ4.md
 Themes:
   - mobility-transition
 Tags:
-  - placeholder
+  - "Human Mobility Patterns"
 Satellite:
   - placeholder
 Sensor:
@@ -19,9 +19,3 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-    Type: OverwriteTimes
-    DateTimeInterval:
-      Start: "2019-07-01T00:00"
-      End: "2022-12-31T22:00:00"
-      Timedelta:
-        days: 1

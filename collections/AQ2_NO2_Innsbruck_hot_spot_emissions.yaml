@@ -19,9 +19,3 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-    Type: OverwriteTimes
-    DateTimeInterval:
-      Start: "2021-01-01T01:00:00"
-      End: "2022-12-01T00:30:00"
-      Timedelta:
-        minutes: 30

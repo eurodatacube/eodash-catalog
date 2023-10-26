@@ -1,12 +1,12 @@
-Name: Solar_Energy
-Title: Solar Energy
-EodashIdentifier: REP2
+Name: Solar_Energy_Winter
+Title: Solar Energy Assessment Winter
+EodashIdentifier: REP2_4
 Subtitle: Site Suitability Assessment & Trade-off Explorer
 Description: REP2_Solar_Energy/REP2.md
 Themes:
   - energy-transition
 Tags:
-  - placeholder
+  - "Solar Energy Assessment"
 Satellite:
   - placeholder
 Sensor:

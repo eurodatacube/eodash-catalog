@@ -1,0 +1,25 @@
+Name: Wind_Energy_200m
+Title: Wind Energy Assessment at 200m height
+EodashIdentifier: REP1
+Subtitle: Site Suitability Assessment & Trade-off Explorer
+Description: REP1_Wind_Energy/REP1.md
+Themes:
+  - energy-transition
+Tags:
+  - "Wind Energy Assessment"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy

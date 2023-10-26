@@ -1,12 +1,12 @@
-Name: Coarse_particulate_matter_PM2.5
-Title: Fine particulate matter (PM2.5)
-EodashIdentifier: AQC
-Subtitle: Daily aggregated maps of PM2.5 concentration
-Description: AQA_health_risk_index/AQ.md
+Name: Dynamic_human_presence_count
+Title: Dynamic human presence count
+EodashIdentifier: MOBI1
+Subtitle: Max population count (for day)
+Description: MOBI1_Dynamic_human_presence/MOBI1.md
 Themes:
   - mobility-transition
 Tags:
-  - "Air Quality Health"
+  - "Dynamic human presence"
 Satellite:
   - placeholder
 Sensor:
@@ -15,6 +15,7 @@ Agency:
   - ESA
 Provider:
   - Name: SISTEMA
+
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only

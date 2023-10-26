@@ -1,12 +1,12 @@
-Name: Wind_Energy
-Title: Wind Energy
-EodashIdentifier: REP1
+Name: Solar_Energy_Summer
+Title: Solar Energy Assessment Summer
+EodashIdentifier: REP2_3
 Subtitle: Site Suitability Assessment & Trade-off Explorer
-Description: REP1_Wind_Energy/REP1.md
+Description: REP2_Solar_Energy/REP2.md
 Themes:
   - energy-transition
 Tags:
-  - placeholder
+  - "Solar Energy Assessment"
 Satellite:
   - placeholder
 Sensor:

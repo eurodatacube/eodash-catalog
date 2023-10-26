@@ -1,0 +1,25 @@
+Name: Solar_Energy_Spring
+Title: Solar Energy Assessment Spring
+EodashIdentifier: REP2_2
+Subtitle: Site Suitability Assessment & Trade-off Explorer
+Description: REP2_Solar_Energy/REP2.md
+Themes:
+  - energy-transition
+Tags:
+  - "Solar Energy Assessment"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy

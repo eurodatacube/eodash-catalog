@@ -18,10 +18,4 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    Type: OverwriteTimes
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-    DateTimeInterval:
-      Start: "2021-12-31T00:00:00"
-      End: "today"
-      Timedelta:
-        days: 1

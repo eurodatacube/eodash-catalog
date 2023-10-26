@@ -1,12 +1,12 @@
-Name: Coarse_particulate_matter_PM2.5
-Title: Fine particulate matter (PM2.5)
-EodashIdentifier: AQC
-Subtitle: Daily aggregated maps of PM2.5 concentration
-Description: AQA_health_risk_index/AQ.md
+Name: Human_Mobility_Patterns_Max_Motorized_trip_share
+Title: Max Trip Share Index
+EodashIdentifier: AQ4_5
+Subtitle: Max Motorized trip share index
+Description: AQ4_Human_Mobility_Patterns/AQ4.md
 Themes:
   - mobility-transition
 Tags:
-  - "Air Quality Health"
+  - "Human Mobility Patterns"
 Satellite:
   - placeholder
 Sensor:

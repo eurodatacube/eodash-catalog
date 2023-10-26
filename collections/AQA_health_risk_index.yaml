@@ -18,25 +18,4 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    Type: OverwriteTimes
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-    DateTimeInterval:
-      Start: "2020-01-01T00:00:00"
-      End: "2022-12-18T00:00:00"
-      Timedelta:
-        days: 1
-# Resources:
-#   - EndPoint: https://xcube-geodb.brockmann-consult.de/geoserver/geodb_debd884d-92f9-4979-87b6-eadef1139394/gwc/service/tms/1.0.0/
-#     DBEndpoint: https://xcube-geodb.brockmann-consult.de/gtif/f0ad1e25-98fa-4b82-9228-815ab24f5dd1/
-#     Source: air_quality_new_id
-#     Name: GeoDB Vector Tiles
-#     Instance: geodb_debd884d-92f9-4979-87b6-eadef1139394
-#     Database: GTIF
-#     CollectionId: AT_Gemeinden_3857
-#     TimeKey: time
-#     MatchKey: id_3
-#     Parameters:
-#       - pm10
-#       - pm25
-#       - ihr
-#       - id_3
