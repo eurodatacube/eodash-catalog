@@ -2,7 +2,7 @@ Name: Human_Mobility_Patterns_Max_Distance
 Title: Max Distance
 EodashIdentifier: AQ4_3
 Subtitle: Max Trip distance
-Description: AQ4_Human_Mobility_Patterns/AQ4.md
+Description: AQ4_3_Human_Mobility_Patterns_distance/AQ4_3.md
 Themes:
   - mobility-transition
 Tags:
@@ -19,3 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ4_3_Human_Mobility_Patterns_distance/cm_legend.png

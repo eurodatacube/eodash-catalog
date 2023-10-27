@@ -19,3 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ1_aggregated_mobility_data_motorized_share/cm_legend.png

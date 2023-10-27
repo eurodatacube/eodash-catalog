@@ -2,7 +2,7 @@ Name: Coarse_particulate_matter_PM10
 Title: Coarse particulate matter (PM10)
 EodashIdentifier: AQB
 Subtitle: Daily aggregated maps of PM10 concentration
-Description: AQA_health_risk_index/AQ.md
+Description: AQB_Coarse_particulate_matter_PM10/AQB.md
 Themes:
   - mobility-transition
 Tags:
@@ -19,3 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQB_Coarse_particulate_matter_PM10/air_quality_pm.png

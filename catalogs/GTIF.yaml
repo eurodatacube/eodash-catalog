@@ -25,8 +25,8 @@ collections:
   - AQ4_Human_Mobility_Patterns_Congestion_Index
   - AQ5_Nitrogen_Dioxide_S5P
   - AQA_health_risk_index
-  - AQB_Coarse_particulate_matter_PM2.5
-  - AQC_Coarse_particulate_matter_PM10
+  - AQB_Coarse_particulate_matter_PM10
+  - AQC_Coarse_particulate_matter_PM25
   - BM2_Above_Ground_Biomass
   - EO4A2_Snow_water_equivalent
   - EO4A_Snowdepth

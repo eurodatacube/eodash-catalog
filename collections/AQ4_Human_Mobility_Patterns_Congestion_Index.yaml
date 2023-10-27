@@ -2,7 +2,7 @@ Name: Human_Mobility_Patterns_Max_Congestion_Index
 Title: Max Congestion Index
 EodashIdentifier: AQ4
 Subtitle: Max Congestion Index
-Description: AQ4_Human_Mobility_Patterns/AQ4.md
+Description: AQ4_Human_Mobility_Patterns_congestion_index/AQ4.md
 Themes:
   - mobility-transition
 Tags:
@@ -19,3 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ4_Human_Mobility_Patterns_congestion_index/cm_legend.png

@@ -2,7 +2,7 @@ Name: Dynamic_human_presence_density
 Title: Dynamic human presence density
 EodashIdentifier: MOBI1_1
 Subtitle: Max population density (for day)
-Description: MOBI1_Dynamic_human_presence/MOBI1.md
+Description: MOBI1_Dynamic_human_presence_density/MOBI1_1.md
 Themes:
   - mobility-transition
 Tags:
@@ -20,3 +20,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: MOBI1_Dynamic_human_presence_density/cm_legend.png
