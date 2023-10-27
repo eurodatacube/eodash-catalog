@@ -8,7 +8,13 @@ collections:
   - ADO_Alpine_Drought_Observatory_SPI1
   - ADO_2_Alpine_Drought_Observatory_SPEI1
   - ADO_1_Alpine_Drought_Observatory_SPI12
-  - AQ1_aggregated_mobility_data
+  - AQ1_aggregated_mobility_data_trajectories
+  - AQ1_1_aggregated_mobility_data_satellite_values
+  - AQ1_2_aggregated_mobility_data_mean_value
+  - AQ1_3_aggregated_mobility_data_congestion_index
+  - AQ1_4_aggregated_mobility_data_speed
+  - AQ1_5_aggregated_mobility_data_motorized_count
+  - AQ1_6_aggregated_mobility_data_motorized_share
   - AQ2_NO2_Innsbruck_hot_spot_emissions
   # - AQ3_NO2_Innsbruck_hot_spot_concentrations
   - AQ4_1_Human_Mobility_Patterns_Max_Duration
@@ -22,7 +28,7 @@ collections:
   - AQB_Coarse_particulate_matter_PM2.5
   - AQC_Coarse_particulate_matter_PM10
   - BM2_Above_Ground_Biomass
-  - EO4A2_Snow_water_equivalent  
+  - EO4A2_Snow_water_equivalent
   - EO4A_Snowdepth
   - E12c_truck_detections_motorways_GTIF
   - E12d_truck_detections_primary_roads_GTIF

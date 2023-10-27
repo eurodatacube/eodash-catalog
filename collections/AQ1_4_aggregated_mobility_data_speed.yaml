@@ -1,0 +1,21 @@
+Name: aggregated_mobility_data_speed
+Title: Speed
+EodashIdentifier: AQ1_4
+Subtitle: Air Quality Mobility correlation
+Description: AQ1_aggregated_mobility_data/AQ1.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Mobility - Air Quality Correlation"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
