@@ -53,7 +53,14 @@ collections:
   - REP4_6_Storage_Change
   - REP5_Micro_Hydropower
   - REP6_Wind_Turbine_Detections
-  - SOL1_Green_Roofs
-  - SOL2_Solar_Roofs
+  - SOL1_Green_Roofs_grimpactscore
+  - SOL1_1_Green_Roofs_lst
+  - SOL1_2_Green_Roofs_grexisting
+  - SOL1_3_Green_Roofs_grpotential
+  - SOL1_4_Green_Roofs_grpotrelation
+  - SOL2_Solar_Roofs_high_performance
+  - SOL2_1_Solar_Roofs_existing_pv
+  - SOL2_2_Solar_Roofs_regular_performance
+  - SOL2_3_Solar_Roofs_low_performance
   - VTT_Forest_explorer
 

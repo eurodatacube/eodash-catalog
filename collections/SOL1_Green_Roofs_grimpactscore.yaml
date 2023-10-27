@@ -1,12 +1,12 @@
-Name: Solar_Roofs
-Title: Solar Roofs
-EodashIdentifier: SOL2
-Subtitle: Electrical Power Production potential
-#Description: SOL2_Solar_Roofs/AQ.md
+Name: Green_Roofs_grimpactscore
+Title: Green Roof Impact Score
+EodashIdentifier: SOL1
+Subtitle: Green Roof Impact Score
+Description: SOL1_Green_Roofs/SOL1.md
 Themes:
   - sustainable-cities
 Tags:
-  - placeholder
+  - "Green Roofs"
 Satellite:
   - placeholder
 Sensor:

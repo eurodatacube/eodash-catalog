@@ -1,0 +1,25 @@
+Name: Solar_Roofs_low_performance
+Title: Total electric power production potential - Low Performance
+EodashIdentifier: SOL2_3
+Subtitle: Total electric power production potential - Low Performance
+Description: SOL2_Solar_Roofs/AQ.md
+Themes:
+  - sustainable-cities
+Tags:
+  - "Solar Roofs"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy

@@ -1,0 +1,25 @@
+Name: Green_Roofs_grpotrelation
+Title: Percentage GR-Potential Area in relation to Total Roof Area
+EodashIdentifier: SOL1_4
+Subtitle: Roofs Suitable for Greening
+Description: SOL1_Green_Roofs/SOL1.md
+Themes:
+  - sustainable-cities
+Tags:
+  - "Green Roofs"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy
