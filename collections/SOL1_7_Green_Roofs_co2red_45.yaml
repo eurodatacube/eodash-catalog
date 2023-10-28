@@ -1,0 +1,26 @@
+Name: Green_Roofs_co2red_45
+Title: "Potential CO2 reduction from green roof slope < 45°"
+EodashIdentifier: SOL1_7
+Subtitle: "Potential annual CO2 reduction due to saved energy from green roof installation slope < 45°"
+Description: SOL1_7_Green_Roofs_co2red_45/SOL1_7.md
+Themes:
+  - sustainable-cities
+Tags:
+  - "Green Roofs"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy
+Legend: SOL1_5_Green_Roofs_co2red_05/SOL_temp.png

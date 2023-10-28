@@ -22,3 +22,5 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2022-09-01"
+Legend: FCM3_Annual_forest_mask/FCM_forest_mask.png
+

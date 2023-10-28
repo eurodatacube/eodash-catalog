@@ -23,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: FCM2_Forest_disturbance_type/FCM_dist_type.png

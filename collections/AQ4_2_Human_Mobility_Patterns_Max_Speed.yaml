@@ -1,0 +1,22 @@
+Name: Human_Mobility_Patterns_Max_Speed
+Title: Max Speed
+EodashIdentifier: AQ4_2
+Subtitle: Max Trip speed
+Description: AQ4_2_Human_Mobility_Patterns_speed/AQ4_2.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Human Mobility Patterns"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ4_2_Human_Mobility_Patterns_speed/cm_legend.png

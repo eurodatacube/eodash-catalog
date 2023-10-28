@@ -1,0 +1,22 @@
+Name: Human_Mobility_Patterns_Max_Duration
+Title: Max Duration
+EodashIdentifier: AQ4_1
+Subtitle: Max Trip Duration
+Description: AQ4_Human_Mobility_Patterns_duration/AQ4_1.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Human Mobility Patterns"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ4_Human_Mobility_Patterns_duration/cm_legend.png

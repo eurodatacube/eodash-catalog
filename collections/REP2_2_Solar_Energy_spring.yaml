@@ -1,12 +1,12 @@
-Name: Solar_Energy
-Title: Solar Energy
-EodashIdentifier: REP2
+Name: Solar_Energy_Spring
+Title: Solar Energy Assessment Spring
+EodashIdentifier: REP2_2
 Subtitle: Site Suitability Assessment & Trade-off Explorer
 Description: REP2_Solar_Energy/REP2.md
 Themes:
   - energy-transition
 Tags:
-  - placeholder
+  - "Solar Energy Assessment"
 Satellite:
   - placeholder
 Sensor:
@@ -23,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: REP2_Solar_Energy/viridis.png

@@ -1,0 +1,22 @@
+Name: Human_Mobility_Patterns_Max_Motorized_trip_share
+Title: Max Trip Share Index
+EodashIdentifier: AQ4_5
+Subtitle: Max Motorized trip share index
+Description: AQ4_5_Human_Mobility_Patterns_motorized_share/AQ4_5.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Human Mobility Patterns"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ4_5_Human_Mobility_Patterns_motorized_share/cm_legend.png

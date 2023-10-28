@@ -1,12 +1,12 @@
-Name: Green_Roofs
-Title: Green Roofs
-EodashIdentifier: SOL1
-Subtitle: Green Roof Impact
-#Description: SOL1_Green_Roofs/SOL1.md
+Name: Solar_Roofs_existing_pv
+Title: Existing photovoltaic panels
+EodashIdentifier: SOL2_1
+Subtitle: Existing photovoltaic panels
+Description: SOL2_1_Solar_Roofs_pv_existing/SOL2_1.md
 Themes:
   - sustainable-cities
 Tags:
-  - placeholder
+  - "Solar Roofs"
 Satellite:
   - placeholder
 Sensor:
@@ -23,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: SOL2_1_Solar_Roofs_pv_existing/pv_existing.png

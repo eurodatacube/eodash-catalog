@@ -1,12 +1,12 @@
-Name: NO2_Innsbruck_hot_spot_concentrations
-Title: Innsbruck hot spot NO2 concentrations
-EodashIdentifier: AQ3
-Subtitle: Surface NO2 concentrations measured at Innsbruck Atmospheric Observatory (IAO)
-Description: AQ3_NO2_Innsbruck_hot_spot/AQ3.md 
+Name: Green_Roofs_grexisting
+Title: Existing Green Roofs
+EodashIdentifier: SOL1_2
+Subtitle: Existing Green Roofs
+Description: SOL1_2_Green_Roofs_grexisting/SOL1_2.md
 Themes:
-  - mobility-transition
+  - sustainable-cities
 Tags:
-  - placeholder
+  - "Green Roofs"
 Satellite:
   - placeholder
 Sensor:
@@ -15,6 +15,7 @@ Agency:
   - ESA
 Provider:
   - Name: placeholder
+
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
@@ -22,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: SOL1_2_Green_Roofs_grexisting/SOL_temp.png

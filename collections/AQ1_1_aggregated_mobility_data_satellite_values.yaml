@@ -1,0 +1,22 @@
+Name: aggregated_mobility_data_satellite_values
+Title: Sentinel5-p NO2 
+EodashIdentifier: AQ1_1
+Subtitle: Air Quality Mobility correlation [µmol/m²]
+Description: AQ1_aggregated_mobility_data/AQ1.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Mobility - Air Quality Correlation"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ1_aggregated_mobility_data_satellite_values/cm_legend.png

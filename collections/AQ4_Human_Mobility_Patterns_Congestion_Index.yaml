@@ -1,0 +1,22 @@
+Name: Human_Mobility_Patterns_Max_Congestion_Index
+Title: Max Congestion Index
+EodashIdentifier: AQ4
+Subtitle: Max Congestion Index
+Description: AQ4_Human_Mobility_Patterns_congestion_index/AQ4.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Human Mobility Patterns"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: AQ4_Human_Mobility_Patterns_congestion_index/cm_legend.png

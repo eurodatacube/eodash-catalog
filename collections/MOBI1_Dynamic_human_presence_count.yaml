@@ -1,0 +1,23 @@
+Name: Dynamic_human_presence_count
+Title: Dynamic human presence count
+EodashIdentifier: MOBI1
+Subtitle: Max population count (for day)
+Description: MOBI1_Dynamic_human_presence_users_count/MOBI1.md
+Themes:
+  - mobility-transition
+Tags:
+  - "Dynamic human presence"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: SISTEMA
+
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+Legend: MOBI1_Dynamic_human_presence_users_count/cm_legend.png

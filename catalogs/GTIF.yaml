@@ -4,17 +4,31 @@ description: "Green Transition Information Factory"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/GTIF/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  - ADO_Alpine_Drought_Observatory
-  - AQ1_aggregated_mobility_data
+  - ADO_3_Alpine_Drought_Observatory_SPEI12
+  - ADO_Alpine_Drought_Observatory_SPI1
+  - ADO_2_Alpine_Drought_Observatory_SPEI1
+  - ADO_1_Alpine_Drought_Observatory_SPI12
+  - AQ1_aggregated_mobility_data_trajectories
+  - AQ1_1_aggregated_mobility_data_satellite_values
+  - AQ1_2_aggregated_mobility_data_mean_value
+  - AQ1_3_aggregated_mobility_data_congestion_index
+  - AQ1_4_aggregated_mobility_data_speed
+  - AQ1_5_aggregated_mobility_data_motorized_count
+  - AQ1_6_aggregated_mobility_data_motorized_share
   - AQ2_NO2_Innsbruck_hot_spot_emissions
-  - AQ3_NO2_Innsbruck_hot_spot_concentrations
-  - AQ4_Human_Mobility_Patterns
+  # - AQ3_NO2_Innsbruck_hot_spot_concentrations
+  - AQ4_1_Human_Mobility_Patterns_Max_Duration
+  - AQ4_2_Human_Mobility_Patterns_Max_Speed
+  - AQ4_3_Human_Mobility_Patterns_Max_Distance
+  - AQ4_4_Human_Mobility_Patterns_Max_Trajectories
+  - AQ4_5_Human_Mobility_Patterns_Motorized_trip_share
+  - AQ4_Human_Mobility_Patterns_Congestion_Index
   - AQ5_Nitrogen_Dioxide_S5P
   - AQA_health_risk_index
-  - AQB_Coarse_particulate_matter_PM2.5
-  - AQC_Coarse_particulate_matter_PM10
+  - AQB_Coarse_particulate_matter_PM10
+  - AQC_Coarse_particulate_matter_PM25
   - BM2_Above_Ground_Biomass
-  - EO4A2_Snow_water_equivalent  
+  - EO4A2_Snow_water_equivalent
   - EO4A_Snowdepth
   - E12c_truck_detections_motorways_GTIF
   - E12d_truck_detections_primary_roads_GTIF
@@ -22,9 +36,16 @@ collections:
   - FCM2_Forest_disturbance_type
   - FCM3_Annual_forest_mask
   - LST_Heat_Explorer
-  - MOBI1_Dynamic_human_presence
-  - REP1_Wind_Energy
-  - REP2_Solar_Energy
+  - MOBI1_Dynamic_human_presence_count
+  - MOBI1_1_Dynamic_human_presence_density
+  - REP1_Wind_Energy_200m
+  - REP1_1_Wind_Energy_100m
+  - REP1_2_Wind_Energy_50m
+  - REP2_Solar_Energy_annual
+  - REP2_1_Solar_Energy_fall
+  - REP2_2_Solar_Energy_spring
+  - REP2_3_Solar_Energy_summer
+  - REP2_4_Solar_Energy_winter
   - REP4_1_Hydro_power_SWE_daily
   - REP4_2_Hydro_power_SWE_monthly
   - REP4_4_Hydro_power_WSE_monthly
@@ -32,7 +53,17 @@ collections:
   - REP4_6_Storage_Change
   - REP5_Micro_Hydropower
   - REP6_Wind_Turbine_Detections
-  - SOL1_Green_Roofs
-  - SOL2_Solar_Roofs
+  - SOL1_Green_Roofs_grimpactscore
+  - SOL1_1_Green_Roofs_lst
+  - SOL1_2_Green_Roofs_grexisting
+  - SOL1_3_Green_Roofs_grpotential
+  - SOL1_4_Green_Roofs_grpotrelation
+  - SOL1_5_Green_Roofs_co2red_05
+  - SOL1_6_Green_Roofs_co2red_20
+  - SOL1_7_Green_Roofs_co2red_45
+  - SOL2_Solar_Roofs_high_performance
+  - SOL2_1_Solar_Roofs_existing_pv
+  - SOL2_2_Solar_Roofs_regular_performance
+  - SOL2_3_Solar_Roofs_low_performance
   - VTT_Forest_explorer
 

@@ -1,12 +1,12 @@
-Name: NO2_Innsbruck_hot_spot_concentrations
-Title: Innsbruck hot spot NO2 concentrations
-EodashIdentifier: AQ3
-Subtitle: Surface NO2 concentrations measured at Innsbruck Atmospheric Observatory (IAO)
-Description: AQ3_NO2_Innsbruck_hot_spot/AQ3.md 
+Name: Wind_Energy_100m
+Title: Wind Energy Assessment at 100m height
+EodashIdentifier: REP1_1
+Subtitle: Site Suitability Assessment & Trade-off Explorer
+Description: REP1_Wind_Energy/REP1.md
 Themes:
-  - mobility-transition
+  - energy-transition
 Tags:
-  - placeholder
+  - "Wind Energy Assessment"
 Satellite:
   - placeholder
 Sensor:
@@ -15,6 +15,7 @@ Agency:
   - ESA
 Provider:
   - Name: placeholder
+
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
@@ -22,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: REP1_Wind_Energy/REP1.png

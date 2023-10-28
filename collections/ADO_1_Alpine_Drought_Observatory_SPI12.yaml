@@ -1,0 +1,21 @@
+Name: Alpine_Drought_Observatory_SPI12
+Title: SPI12
+EodashIdentifier: ADO_1
+Subtitle: Alpine Drought Observatory SPI12
+Description: ADO_Alpine_Drought_Observatory/ADO_SPI12.md
+Themes:
+  - eo-adaptation-services
+Tags:
+  - "Alpine Drought Observatory"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]

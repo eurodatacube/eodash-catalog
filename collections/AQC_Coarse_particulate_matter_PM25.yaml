@@ -2,7 +2,7 @@ Name: Coarse_particulate_matter_PM2.5
 Title: Fine particulate matter (PM2.5)
 EodashIdentifier: AQC
 Subtitle: Daily aggregated maps of PM2.5 concentration
-Description: AQA_health_risk_index/AQ.md
+Description: AQC_Coarse_particulate_matter_PM25/AQC.md
 Themes:
   - mobility-transition
 Tags:
@@ -19,9 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-    Type: OverwriteTimes
-    DateTimeInterval:
-      Start: "2020-01-01T00:00:00"
-      End: "2022-12-18T00:00:00"
-      Timedelta:
-        days: 1
+Legend: AQC_Coarse_particulate_matter_PM25/air_quality_pm.png
