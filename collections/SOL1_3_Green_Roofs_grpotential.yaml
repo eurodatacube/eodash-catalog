@@ -2,7 +2,7 @@ Name: Green_Roofs_grpotential
 Title: Roofs Suitable for Greening
 EodashIdentifier: SOL1_3
 Subtitle: Roofs Suitable for Greening
-Description: SOL1_Green_Roofs/SOL1.md
+Description: SOL1_3_Green_Roofs_grpotential/SOL1_3.md
 Themes:
   - sustainable-cities
 Tags:
@@ -23,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: SOL1_3_Green_Roofs_grpotential/SOL_temp.png

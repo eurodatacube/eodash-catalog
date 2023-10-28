@@ -1,8 +1,8 @@
-Name: Green_Roofs_grimpactscore
-Title: Green Roof Impact Score
-EodashIdentifier: SOL1
-Subtitle: Green Roof Impact Score
-Description: SOL1_Green_Roofs_grimpactscore/SOL1.md
+Name: Green_Roofs_co2red_20
+Title: "Potential CO2 reduction from green roof slope < 20°"
+EodashIdentifier: SOL1_6
+Subtitle: "Potential annual CO2 reduction due to saved energy from green roof installation slope < 20°"
+Description: SOL1_6_Green_Roofs_co2red_20/SOL1_6.md
 Themes:
   - sustainable-cities
 Tags:
@@ -23,4 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: SOL1_Green_Roofs_grimpactscore/cm_legend.png
+Legend: SOL1_5_Green_Roofs_co2red_05/SOL_temp.png
