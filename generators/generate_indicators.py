@@ -302,13 +302,13 @@ def add_to_catalog(collection, catalog, endpoint, data):
     if "Locations" in data:
         link.extra_fields["locations"] = True
     if "Tags" in data:
-        link.extra_fields["tags"] = ",".join(data["Tags"])
+        link.extra_fields["tags"] = data["Tags"]
     if "Satellite" in data:
-        link.extra_fields["satellite"] = ",".join(data["Satellite"])
+        link.extra_fields["satellite"] = data["Satellite"]
     if "Sensor" in data:
-        link.extra_fields["sensor"] = ",".join(data["Sensor"])
+        link.extra_fields["sensor"] = data["Sensor"]
     if "Agency" in data:
-        link.extra_fields["agency"] = ",".join(data["Agency"])
+        link.extra_fields["agency"] = data["Agency"]
     if "yAxis" in data:
         link.extra_fields["yAxis"] = data["yAxis"]
     return link
