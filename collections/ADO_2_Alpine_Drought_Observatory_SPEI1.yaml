@@ -2,7 +2,7 @@ Name: Alpine_Drought_Observatory_SPEI1
 Title: SPEI1
 EodashIdentifier: ADO_2
 Subtitle: Alpine Drought Observatory SPEI1
-Description: ADO_Alpine_Drought_Observatory/ADO_SPEI.md
+Description: ADO_Alpine_Drought_Observatory/ADO_SPEI1.md
 Themes:
   - eo-adaptation-services
 Tags:

@@ -2,7 +2,7 @@ Name: Solar_Roofs_high_performance
 Title: Total electric power production potential - High Performance
 EodashIdentifier: SOL2
 Subtitle: Total electric power production potential - High Performance
-Description: SOL2_Solar_Roofs/AQ.md
+Description: SOL2_Solar_Roofs_high_performance/SOL2.md
 Themes:
   - sustainable-cities
 Tags:
@@ -23,3 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: SOL2_Solar_Roofs_high_performance/SOL_TEP.png
