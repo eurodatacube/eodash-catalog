@@ -471,7 +471,7 @@ def add_example_info(stac_object, data, endpoint, config):
                 )
     elif "Resources" in data:
         for service in data["Resources"]:
-            if service["Name"] == "xcube":
+            if service.get("Name") == "xcube":
                 target_url = "%s/timeseries/%s/%s?aggMethods=median"%(
                     endpoint["EndPoint"],
                     endpoint["DatacubeId"],
