@@ -18,7 +18,7 @@ Resources:
     Name: xcube
     DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
     Variable: 'AGC_LVOD_amazonia_methods_mean_crop'
-    #ColormapName: viridis
-    #Rescale: [0.0,100.0]
-# Legend: grdi-v1-built/cm_legend.png
-# Image: grdi-v1-built/preview.png
+    ColormapName: rain
+    Rescale: [0,150]
+Legend: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/cm_legend.png
+Image: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/preview.png

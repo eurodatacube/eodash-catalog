@@ -537,10 +537,12 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             if "Rescale" in endpoint:
                vmin = endpoint["Rescale"][0]
                vmax = endpoint["Rescale"][1]
-            target_url = "%s/tiles/%s/%s/{z}/{x}/{y}?crs={crs}&time={time}&vmin=%s&vmax=%s&cbar=%s"%(
+            crs = endpoint.get("Crs", "EPSG:3857")
+            target_url = "%s/tiles/%s/%s/{z}/{x}/{y}?crs=%s&time={time}&vmin=%s&vmax=%s&cbar=%s"%(
                 endpoint["EndPoint"],
                 endpoint["DatacubeId"],
                 endpoint["Variable"],
+                crs,
                 vmin,
                 vmax,
                 cbar,
@@ -550,7 +552,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 rel="xyz",
                 target=target_url,
                 media_type="image/png",
-                title=data["Name"],
+                title="xcube tiles",
             )
         )
         pass
@@ -710,7 +712,9 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
         else:
             link.extra_fields["start_datetime"] = item.properties["start_datetime"]
             link.extra_fields["end_datetime"] = item.properties["end_datetime"]
-
+    unit = variables.get(endpoint.get("Variable")).get('unit')
+    if unit:
+        data["yAxix"] = unit
     collection.update_extent_from_items()
 
     add_collection_information(config, collection, data)
@@ -810,8 +814,6 @@ def add_collection_information(config, collection, data):
 def process_catalogs(folder_path, options):
     tasks = []
     for file_name in os.listdir(folder_path):
-        if not 'trilateral' in file_name:
-            continue
         file_path = os.path.join(folder_path, file_name)
         if os.path.isfile(file_path):
             tasks.append(threading.Thread(target=process_catalog_file, args=(file_path, options)))
