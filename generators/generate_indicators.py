@@ -686,7 +686,7 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
     dimensions = item.properties.get('cube:dimensions', {})
     variables = item.properties.get('cube:variables')
     if not endpoint.get("Variable") in variables.keys():
-        raise Exception(f'Variable ${endpoint.get("Variable")} not found in datacube ${variables}')
+        raise Exception(f'Variable {endpoint.get("Variable")} not found in datacube {variables}')
     time_dimension = 'time'
     for k, v in dimensions.items():
         if v.get('type') == 'temporal':
