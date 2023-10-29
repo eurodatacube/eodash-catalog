@@ -9,6 +9,7 @@ from typing import Iterator
 from six import string_types
 from owslib.wms import WebMapService
 from dateutil import parser
+import threading
 
 ISO8601_PERIOD_REGEX = re.compile(
     r"^(?P<sign>[+-])?"
@@ -144,3 +145,17 @@ def generateDateIsostringsFromInterval(start, end, timedelta_config={}):
         dates.append(start_dt.isoformat())
         start_dt += delta
     return dates
+
+
+class RaisingThread(threading.Thread):
+  def run(self):
+    self._exc = None
+    try:
+      super().run()
+    except Exception as e:
+      self._exc = e
+
+  def join(self, timeout=None):
+    super().join(timeout=timeout)
+    if self._exc:
+      raise self._exc

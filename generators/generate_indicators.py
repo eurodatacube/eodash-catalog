@@ -20,6 +20,7 @@ from utils import (
     create_geojson_point,
     retrieveExtentFromWMS,
     generateDateIsostringsFromInterval,
+    RaisingThread,
 )
 from pystac import (
     Item,
@@ -815,7 +816,7 @@ def process_catalogs(folder_path, options):
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
         if os.path.isfile(file_path):
-            tasks.append(threading.Thread(target=process_catalog_file, args=(file_path, options)))
+            tasks.append(RaisingThread(target=process_catalog_file, args=(file_path, options)))
             tasks[-1].start()
     for task in tasks:
         task.join()
