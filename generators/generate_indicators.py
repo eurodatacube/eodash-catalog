@@ -538,7 +538,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                vmin = endpoint["Rescale"][0]
                vmax = endpoint["Rescale"][1]
             crs = endpoint.get("Crs", "EPSG:3857")
-            target_url = "%s/tiles/%s/%s/{z}/{x}/{y}?crs=%s&time={time}&vmin=%s&vmax=%s&cbar=%s"%(
+            target_url = "%s/tiles/%s/%s/{z}/{y}/{x}?crs=%s&time={time}&vmin=%s&vmax=%s&cbar=%s"%(
                 endpoint["EndPoint"],
                 endpoint["DatacubeId"],
                 endpoint["Variable"],
@@ -672,8 +672,7 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     return collection
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
-    collection_name = endpoint.get("DatacubeId") + "_" + endpoint.get("Variable")
-    collection = get_or_create_collection(catalog, collection_name, data, config)
+    collection = get_or_create_collection(catalog, data["Name"], data, config)
     add_visualization_info(collection, data, endpoint)
 
     stac_endpoint_url = endpoint["EndPoint"]
