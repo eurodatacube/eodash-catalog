@@ -120,7 +120,7 @@ def process_collection_file(config, file_path, catalog):
 
 def handle_collection_only(config, endpoint, data, catalog):
     times = []
-    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
         times = endpoint["Times"]
     elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
@@ -138,7 +138,8 @@ def handle_collection_only(config, endpoint, data, catalog):
         )
         link = collection.add_item(item)
         link.extra_fields["datetime"] = t
-    collection.update_extent_from_items()
+    if len(times) > 0:
+        collection.update_extent_from_items()
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, None, data)
 
@@ -156,7 +157,7 @@ def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
             styles = None
             if hasattr(endpoint, "Styles"):
                 styles = endpoint["Styles"]
-            collection = get_or_create_collection(catalog, data["Name"], data, config)
+            collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
             # TODO: For now we create global extent, we should be able to
             # fetch the extent of the layer
             for t in times:
@@ -191,7 +192,7 @@ def handle_WMS_endpoint(config, endpoint, data, catalog):
     if "OverwriteBBox" in endpoint:
         extent["spatial"] = endpoint["OverwriteBBox"]
     
-    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     # Create an item per time to allow visualization in stac clients
     styles = None
     if hasattr(endpoint, "Styles"):
@@ -238,16 +239,19 @@ def handle_xcube_endpoint(config, endpoint, data, catalog):
     add_to_catalog(root_collection, catalog, endpoint, data)
 
 
-def get_or_create_collection(catalog, collection_id, data, config):
+def get_or_create_collection(catalog, collection_id, data, config, endpoint):
     # Check if collection already in catalog
     for collection in catalog.get_collections():
         if collection.id == collection_id:
             return collection
     # If none found create a new one
+    spatial_extent = [-180.0, -90.0, 180.0, 90.0]
+    if endpoint.get("OverwriteBBox"):
+        spatial_extent = endpoint.get("OverwriteBBox")
     spatial_extent = SpatialExtent([
-        [-180.0, -90.0, 180.0, 90.0],
+        spatial_extent,
     ])
-    temporal_extent = TemporalExtent([[datetime.now()]])
+    temporal_extent = TemporalExtent([[datetime.now(), None]])
     extent = Extent(spatial=spatial_extent, temporal=temporal_extent)
 
     # Check if description is link to markdown file
@@ -329,7 +333,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
-    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config)
+    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     response = json.loads(requests.get(url).text)
@@ -397,7 +401,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
 
 def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
     if "Locations" in data:
-        root_collection = get_or_create_collection(catalog, data["Name"], data, config)
+        root_collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
         for location in data["Locations"]:
             collection = process_STACAPI_Endpoint(
                 config=config,
@@ -634,7 +638,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         print("Visualization endpoint not supported")
 
 def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=None, root_collection=None):
-    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config)
+    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
     add_visualization_info(collection, data, endpoint)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
@@ -673,7 +677,7 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     return collection
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
-    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     add_visualization_info(collection, data, endpoint)
 
     stac_endpoint_url = endpoint["EndPoint"]
