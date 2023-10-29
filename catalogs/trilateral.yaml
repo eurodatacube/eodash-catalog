@@ -71,14 +71,14 @@ collections:
   - N2_CO2_jaxa_gosat
   - GHS_BUILT-S-R2023A
   - RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop
-  # - RECCAP2_2_AGC_LVOD_amazonia_smooth_max_crop
-  # - RECCAP2_3_AGC_LVOD_amazonia_smooth_mean_crop
-  # - RECCAP2_4_AGC_LVOD_amazonia_trend_mean_crop
-  # - RECCAP2_5_SF_biomass_growth
-  # - RECCAP2_6_deforested_biomass
-  # - RECCAP2_7_degraded_biomass
-  # - RECCAP2_8_edge_biomass_change
-  # - RECCAP2_9_intact_biomass_change_methods_mean
-  # - RECCAP2_10_intact_biomass_change_smooth_max
-  # - RECCAP2_11_intact_biomass_change_smooth_mean
-  # - RECCAP2_12_intact_biomass_change_trend_mean
+  - RECCAP2_2_AGC_LVOD_amazonia_smooth_max_crop
+  - RECCAP2_3_AGC_LVOD_amazonia_smooth_mean_crop
+  - RECCAP2_4_AGC_LVOD_amazonia_trend_mean_crop
+  - RECCAP2_5_SF_biomass_growth
+  - RECCAP2_6_deforested_biomass
+  - RECCAP2_7_degraded_biomass
+  - RECCAP2_8_edge_biomass_change
+  - RECCAP2_9_intact_biomass_change_methods_mean
+  - RECCAP2_10_intact_biomass_change_smooth_max
+  - RECCAP2_11_intact_biomass_change_smooth_mean
+  - RECCAP2_12_intact_biomass_change_trend_mean
