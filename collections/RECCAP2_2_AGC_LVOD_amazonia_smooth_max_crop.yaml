@@ -1,6 +1,6 @@
-Name: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop
-Title: Methods mean aboveground carbon (RECCAP2)
-EodashIdentifier: RECCAP_2_1
+Name: RECCAP2_2_AGC_LVOD_amazonia_smooth_max_crop
+Title: Smooth max aboveground carbon (RECCAP2)
+EodashIdentifier: RECCAP_2_2
 Description: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/RECCAP2_1.md
 Themes:
   - biomass
@@ -17,7 +17,7 @@ Resources:
     Type: zarr
     Name: xcube
     DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
-    Variable: AGC_LVOD_amazonia_methods_mean_crop
+    Variable: AGC_LVOD_amazonia_smooth_max_crop
     ColormapName: rain
     Rescale: [0,150]
 Legend: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/cm_legend.png
