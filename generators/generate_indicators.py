@@ -12,7 +12,6 @@ import os
 from datetime import datetime
 import yaml
 from yaml.loader import SafeLoader
-import urllib.parse
 from itertools import groupby
 from operator import itemgetter
 from dateutil import parser
@@ -106,6 +105,8 @@ def process_collection_file(config, file_path, catalog):
                     add_to_catalog(collection, catalog, resource, data)
                 elif resource["Name"] == "VEDA":
                     handle_VEDA_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "xcube":
+                    handle_xcube_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "WMS":
                     handle_WMS_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "GeoDB Vector Tiles":
@@ -223,6 +224,18 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
 
 def handle_VEDA_endpoint(config, endpoint, data, catalog):
     handle_STAC_based_endpoint(config, endpoint, data, catalog)
+
+def handle_xcube_endpoint(config, endpoint, data, catalog):
+    root_collection = process_STAC_Datacube_Endpoint(
+        config=config,
+        endpoint=endpoint,
+        data=data,
+        catalog=catalog,
+    )
+
+    add_example_info(root_collection, data, endpoint, config)
+    add_to_catalog(root_collection, catalog, endpoint, data)
+
 
 def get_or_create_collection(catalog, collection_id, data, config):
     # Check if collection already in catalog
@@ -456,6 +469,26 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
+    elif "Resources" in data:
+        for service in data["Resources"]:
+            if service.get("Name") == "xcube":
+                target_url = "%s/timeseries/%s/%s?aggMethods=median"%(
+                    endpoint["EndPoint"],
+                    endpoint["DatacubeId"],
+                    endpoint["Variable"],
+                )
+                stac_object.add_link(
+                    Link(
+                        rel="example",
+                        target=target_url,
+                        title=service["Name"] + " analytics",
+                        media_type="application/json",
+                        extra_fields={
+                            "example:language": "JSON",
+                            "example:method": "POST"
+                        },
+                    )
+                )
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
@@ -494,6 +527,35 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 extra_fields=extra_fields,
             )
         )
+    elif endpoint["Name"] == "xcube":
+        if endpoint["Type"] == "zarr":
+            # either preset ColormapName of left as a template
+            cbar = endpoint.get("ColormapName", "{cbar}")
+            # either preset Rescale of left as a template
+            vmin = "{vmin}"
+            vmax = "{vmax}"
+            if "Rescale" in endpoint:
+               vmin = endpoint["Rescale"][0]
+               vmax = endpoint["Rescale"][1]
+            crs = endpoint.get("Crs", "EPSG:3857")
+            target_url = "%s/tiles/%s/%s/{z}/{y}/{x}?crs=%s&time={time}&vmin=%s&vmax=%s&cbar=%s"%(
+                endpoint["EndPoint"],
+                endpoint["DatacubeId"],
+                endpoint["Variable"],
+                crs,
+                vmin,
+                vmax,
+                cbar,
+            )
+            stac_object.add_link(
+            Link(
+                rel="xyz",
+                target=target_url,
+                media_type="image/png",
+                title="xcube tiles",
+            )
+        )
+        pass
     elif endpoint["Name"] == "VEDA":
         if endpoint["Type"] == "cog":
             
@@ -609,6 +671,55 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
 
     return collection
 
+def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
+    collection = get_or_create_collection(catalog, data["Name"], data, config)
+    add_visualization_info(collection, data, endpoint)
+
+    stac_endpoint_url = endpoint["EndPoint"]
+    if endpoint.get('Name') == 'xcube':
+        stac_endpoint_url = stac_endpoint_url + '/catalog'
+    # assuming /search not implemented
+    api = Client.open(stac_endpoint_url)
+    coll = api.get_collection(endpoint.get('CollectionId', 'datacubes'))
+    item = coll.get_item(endpoint.get('DatacubeId'))
+    # slice a datacube along temporal axis to individual items, selectively adding properties
+    dimensions = item.properties.get('cube:dimensions', {})
+    variables = item.properties.get('cube:variables')
+    if not endpoint.get("Variable") in variables.keys():
+        raise Exception(f'Variable ${endpoint.get("Variable")} not found in datacube ${variables}')
+    time_dimension = 'time'
+    for k, v in dimensions.items():
+        if v.get('type') == 'temporal':
+            time_dimension = k
+            break
+    time_entries = dimensions.get(time_dimension).get('values')
+    for t in time_entries:
+        item = Item(
+            id = t,
+            bbox=item.bbox,
+            properties={},
+            geometry = item.geometry,
+            datetime = parser.isoparse(t),
+        )
+        link = collection.add_item(item)
+        link.extra_fields["datetime"] = t
+        # bubble up information we want to the link
+        item_datetime = item.get_datetime()
+        # it is possible for datetime to be null, if it is start and end datetime have to exist
+        if item_datetime:
+            link.extra_fields["datetime"] = item_datetime.isoformat()[:-6] + 'Z'
+        else:
+            link.extra_fields["start_datetime"] = item.properties["start_datetime"]
+            link.extra_fields["end_datetime"] = item.properties["end_datetime"]
+    unit = variables.get(endpoint.get("Variable")).get('unit')
+    if unit:
+        data["yAxix"] = unit
+    collection.update_extent_from_items()
+
+    add_collection_information(config, collection, data)
+
+    return collection
+
 def add_collection_information(config, collection, data):
     # Add metadata information
     # Check license identifier
@@ -700,9 +811,9 @@ def add_collection_information(config, collection, data):
 
 
 def process_catalogs(folder_path, options):
+    tasks = []
     for file_name in os.listdir(folder_path):
         file_path = os.path.join(folder_path, file_name)
-        tasks = []
         if os.path.isfile(file_path):
             tasks.append(threading.Thread(target=process_catalog_file, args=(file_path, options)))
             tasks[-1].start()

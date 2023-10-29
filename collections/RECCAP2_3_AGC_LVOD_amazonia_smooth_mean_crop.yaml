@@ -1,0 +1,24 @@
+Name: RECCAP2_3_AGC_LVOD_amazonia_smooth_mean_crop
+Title: Smooth mean aboveground carbon (RECCAP2)
+EodashIdentifier: RECCAP_2_3
+Description: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/RECCAP2_1.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - placeholder
+Resources:
+  - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
+    Type: zarr
+    Name: xcube
+    DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
+    Variable: AGC_LVOD_amazonia_smooth_mean_crop
+    ColormapName: rain
+    Rescale: [0,150]
+Legend: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/cm_legend.png
+Image: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/preview.png

@@ -1,0 +1,24 @@
+Name: RECCAP2_5_SF_biomass_growth
+Title: Secondary forest growth (RECCAP2)
+EodashIdentifier: RECCAP_2_5
+Description: RECCAP2_5_SF_biomass_growth/RECCAP2_5.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - placeholder
+Resources:
+  - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
+    Type: zarr
+    Name: xcube
+    DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
+    Variable: SF_biomass_growth
+    ColormapName: YlGn
+    Rescale: [0,2]
+Legend: RECCAP2_5_SF_biomass_growth/cm_legend.png
+Image: RECCAP2_5_SF_biomass_growth/preview.png
