@@ -23,4 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: SOL1_5_Green_Roofs_co2red_05/SOL_temp.png
+Legend: SOL1_5_Green_Roofs_co2red_05/cm_legend.png
