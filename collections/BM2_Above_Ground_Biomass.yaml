@@ -4,7 +4,7 @@ EodashIdentifier: BM2
 Subtitle: Above Ground Biomass
 Description: BM2_Above_Ground_Biomass/BM2.md
 Themes:
-  - "Carbon Accounting"
+  - carbon-accounting
 Tags:
   - "Biomass tools"
 Satellite:

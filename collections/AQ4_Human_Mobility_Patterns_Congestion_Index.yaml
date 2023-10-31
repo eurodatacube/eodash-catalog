@@ -4,7 +4,7 @@ EodashIdentifier: AQ4
 Subtitle: Max Congestion Index
 Description: AQ4_Human_Mobility_Patterns_congestion_index/AQ4.md
 Themes:
-  - "Mobility Transition"
+  - mobility-transition
 Tags:
   - "Human Mobility Patterns"
 Satellite:

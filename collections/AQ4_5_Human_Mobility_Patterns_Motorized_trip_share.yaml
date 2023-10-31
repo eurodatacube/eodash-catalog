@@ -4,7 +4,7 @@ EodashIdentifier: AQ4_5
 Subtitle: Max Motorized trip share index
 Description: AQ4_5_Human_Mobility_Patterns_motorized_share/AQ4_5.md
 Themes:
-  - "Mobility Transition"
+  - mobility-transition
 Tags:
   - "Human Mobility Patterns"
 Satellite:

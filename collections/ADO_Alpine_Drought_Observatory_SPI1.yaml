@@ -4,7 +4,7 @@ EodashIdentifier: ADO
 Subtitle: Alpine Drought Observatory SPI1
 Description: ADO_Alpine_Drought_Observatory/ADO_SPI1.md
 Themes:
-  - "EO Adaptation Services"
+  - eo-adaptation-services
 Tags:
   - "Alpine Drought Observatory"
 Satellite:

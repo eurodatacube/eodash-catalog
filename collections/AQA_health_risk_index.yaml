@@ -4,7 +4,7 @@ EodashIdentifier: AQA
 Subtitle: Daily aggregated maps of ARI index
 Description: AQA_health_risk_index/AQA.md
 Themes:
-  - "Mobility Transition"
+  - mobility-transition
 Tags:
   - "Air Quality Health"
 Satellite:

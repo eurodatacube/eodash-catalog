@@ -4,7 +4,7 @@ EodashIdentifier: REP4_6
 Subtitle: "Hydro Power inferred volume daily"
 Description: REP4_6_Hydro_Storage_Change/REP4_6.md
 Themes:
-  - "Energy Transition"
+  - energy-transition
 Tags:
   - "Hydropower assessment"
 Satellite:

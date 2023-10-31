@@ -4,7 +4,7 @@ EodashIdentifier: REP4_5
 Subtitle: "Level-Area-Height curve (LAC) monthly"
 Description: REP4_5_Hydro_LAC_Curve/REP4_5.md
 Themes:
-  - "Energy Transition"
+  - energy-transition
 Tags:
   - "Hydropower assessment"
 Satellite:

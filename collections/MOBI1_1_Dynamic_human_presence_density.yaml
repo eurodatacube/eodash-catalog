@@ -4,7 +4,7 @@ EodashIdentifier: MOBI1_1
 Subtitle: Max population density (for day)
 Description: MOBI1_Dynamic_human_presence_users_density/MOBI1_1.md
 Themes:
-  - "Mobility Transition"
+  - mobility-transition
 Tags:
   - "Dynamic human presence"
 Satellite:

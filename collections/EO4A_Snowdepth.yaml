@@ -4,7 +4,7 @@ EodashIdentifier: EO4A
 Subtitle: Snowdepth EO4Alps
 Description: EO4A_Snowdepth/EO4A.md
 Themes:
-  - "EO Adaptation Services"
+  - eo-adaptation-services
 Tags:
   - "EO4Alps"
 Satellite:

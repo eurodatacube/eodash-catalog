@@ -4,7 +4,7 @@ EodashIdentifier: SOL1_1
 Subtitle: Max Land Surface Temperature
 Description: SOL1_1_Green_Roofs_lst/SOL1_1.md
 Themes:
-  - "Sustainable Cities"
+  - sustainable-cities
 Tags:
   - "Green Roofs"
 Satellite:
