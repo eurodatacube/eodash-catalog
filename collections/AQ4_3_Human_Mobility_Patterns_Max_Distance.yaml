@@ -4,7 +4,7 @@ EodashIdentifier: AQ4_3
 Subtitle: Max Trip distance
 Description: AQ4_3_Human_Mobility_Patterns_distance/AQ4_3.md
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "Human Mobility Patterns"
 Satellite:

@@ -4,7 +4,7 @@ EodashIdentifier: AQ4_4
 Subtitle: Max Trajectories
 Description: AQ4_4_Human_Mobility_Patterns_trajectories/AQ4_4.md
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "Human Mobility Patterns"
 Satellite:

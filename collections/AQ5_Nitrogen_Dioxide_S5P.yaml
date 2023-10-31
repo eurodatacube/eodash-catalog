@@ -4,7 +4,7 @@ EodashIdentifier: AQ5
 Subtitle: NO2 maps obtained from the Copernicus Sentinel5-p satellite
 Description: AQ5_Nitrogen_Dioxide_S5P/AQ5.md
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "NO2 measurements"
 Satellite:

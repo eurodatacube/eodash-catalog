@@ -4,7 +4,7 @@ EodashIdentifier: AQ1
 Subtitle: Air Quality Mobility correlation
 Description: AQ1_aggregated_mobility_data/AQ1.md
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "Mobility - Air Quality Correlation"
 Satellite:

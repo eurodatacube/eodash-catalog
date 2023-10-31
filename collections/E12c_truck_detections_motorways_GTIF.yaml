@@ -4,7 +4,7 @@ EodashIdentifier: E12c
 Subtitle: Moving truck detections Motorways
 Description: E12c_truck_detections_motorways/E12c.md
 Themes:
-    - mobility-transition
+    - "Mobility Transition"
 Tags:
     - placeholder
 Satellite:

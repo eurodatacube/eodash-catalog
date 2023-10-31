@@ -4,7 +4,7 @@ EodashIdentifier: E12d
 Subtitle: Moving truck detections Primary Roads
 Description: E12d_truck_detections_primary_roads/E12d.md
 Themes:
-    - mobility-transition
+    - "Mobility Transition"
 Tags:
     - placeholder
 Satellite:

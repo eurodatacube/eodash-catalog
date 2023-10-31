@@ -4,7 +4,7 @@ EodashIdentifier: VTT
 Subtitle: Assessment tool
 Description: VTT_Forest_explorer/VTT.md
 Themes:
-  - eo-adaptation-services
+  - "EO Adaptation Services"
 Tags:
   - "Biomass tools"
 Satellite:

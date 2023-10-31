@@ -4,7 +4,7 @@ EodashIdentifier: LST
 Subtitle: Heat Explorer
 Description: LST_Heat_Explorer/LST.md
 Themes:
-  - eo-adaptation-services
+  - "EO Adaptation Services"
 Tags:
   - "Heat Explorer"
 Satellite:

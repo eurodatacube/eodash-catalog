@@ -4,7 +4,7 @@ EodashIdentifier: AQ4_2
 Subtitle: Max Trip speed
 Description: AQ4_2_Human_Mobility_Patterns_speed/AQ4_2.md
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "Human Mobility Patterns"
 Satellite:

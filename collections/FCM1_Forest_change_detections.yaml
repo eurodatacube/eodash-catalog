@@ -4,7 +4,7 @@ EodashIdentifier: FCM1
 Subtitle: Forest change detections
 Description: FCM1_Forest_change_detections/FCM1.md
 Themes:
-  - carbon-accounting
+  - "Carbon Accounting"
 Tags:
   - "Biomass tools"
 Satellite:

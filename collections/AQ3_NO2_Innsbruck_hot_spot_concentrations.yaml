@@ -4,7 +4,7 @@ EodashIdentifier: AQ3
 Subtitle: Surface NO2 concentrations measured at Innsbruck Atmospheric Observatory (IAO)
 Description: AQ3_NO2_Innsbruck_hot_spot/AQ3.md 
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "NO2 measurements"
 Satellite:

@@ -4,7 +4,7 @@ EodashIdentifier: AQB
 Subtitle: Daily aggregated maps of PM10 concentration
 Description: AQB_Coarse_particulate_matter_PM10/AQB.md
 Themes:
-  - mobility-transition
+  - "Mobility Transition"
 Tags:
   - "Air Quality Health"
 Satellite:

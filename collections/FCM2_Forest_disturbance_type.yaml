@@ -4,8 +4,8 @@ EodashIdentifier: FCM2
 Subtitle: Forest disturbance type
 Description: FCM2_Forest_disturbance_type/FCM2.md
 Themes:
-  - carbon-accounting
-  - eo-adaptation-services
+  - "Carbon Accounting"
+  - "EO Adaptation Services"
 Tags:
   - "Biomass tools"
 Satellite:
