@@ -383,12 +383,13 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         link.extra_fields["country"] = country
         link.extra_fields["city"] = city
 
-    # fetch yAxis and store it to data, preventing need to save it per dataset in yml
-    select = "?select=y_axis&limit=1"
-    url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
-    response = json.loads(requests.get(url).text)
-    yAxis = response[0]['y_axis']
-    data['yAxis'] = yAxis
+    if "yAxis" not in data:
+        # fetch yAxis and store it to data, preventing need to save it per dataset in yml
+        select = "?select=y_axis&limit=1"
+        url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
+        response = json.loads(requests.get(url).text)
+        yAxis = response[0]['y_axis']
+        data['yAxis'] = yAxis
     add_collection_information(config, collection, data)
 
     collection.update_extent_from_items()    
@@ -717,8 +718,8 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
             link.extra_fields["start_datetime"] = item.properties["start_datetime"]
             link.extra_fields["end_datetime"] = item.properties["end_datetime"]
     unit = variables.get(endpoint.get("Variable")).get('unit')
-    if unit:
-        data["yAxix"] = unit
+    if unit and "yAxis" not in data:
+        data["yAxis"] = unit
     collection.update_extent_from_items()
 
     add_collection_information(config, collection, data)
