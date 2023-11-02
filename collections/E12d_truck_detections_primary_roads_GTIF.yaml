@@ -6,7 +6,7 @@ Description: E12d_truck_detections_primary_roads/E12d.md
 Themes:
     - mobility-transition
 Tags:
-    - placeholder
+    - "Moving Truck Detections"
 Satellite:
     - Sentinel-2
 Sensor:
