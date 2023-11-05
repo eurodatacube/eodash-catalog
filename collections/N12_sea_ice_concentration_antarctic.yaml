@@ -29,5 +29,5 @@ Resources:
     Name: WMS
     Type: Time
     LayerId: SIC_S
-Legend: N12_sea_ice_concentration/legend.png
+Legend: N12_sea_ice_concentration/World-SIC.png
 Image: N12_sea_ice_concentration/Antarctic-N12.png
