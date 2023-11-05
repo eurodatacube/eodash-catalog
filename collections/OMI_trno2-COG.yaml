@@ -1,19 +1,26 @@
 Name: OMI_trno2-COG
 Title: Nitrogen Dioxide (Yearly)
 EodashIdentifier: N9
-Subtitle: Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura
+Subtitle: Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura 0.10 x 0.10
 Description: OMI_trno2-COG/N9.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
+  - air quality
+  - no2
 Satellite:
-  - placeholder
+  - AURA
 Sensor:
-  - placeholder
+  - OMI
 Agency:
   - NASA
-Legend: OMI_trno2-COG/cm_legend.png
+Provider:
+  - Name: VEDA
+    Url: https://www.earthdata.nasa.gov/esds/veda
+    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
+    Roles:
+      - host
+Legend: OMI_trno2-COG/N9_W8.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: VEDA Statistics
@@ -28,3 +35,4 @@ Resources:
     ColormapName: reds
     Rescale: [0, 37e14]
     Bidx: 1
+Image: OMI_trno2-COG/N9.png

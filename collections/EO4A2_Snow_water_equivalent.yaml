@@ -2,7 +2,7 @@ Name: Snow_water_equivalent
 Title: Snow water equivalent
 EodashIdentifier: EO4A2
 Subtitle: Snow water equivalent EO4Alps
-Description: EO4A_Snowdepth/EO4A.md
+Description: EO4A2_Snow_water_equivalent/EO4A2.md
 Themes:
   - eo-adaptation-services
 Tags:
@@ -18,7 +18,7 @@ Provider:
 Resources:
   - EndPoint: https://snow-app-gte2s.hub.eox.at/
     Name: WMS
-    LayerId: 'SWE'
+    LayerId: "SWE"
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
     Type: OverwriteTimes
     DateTimeInterval:
