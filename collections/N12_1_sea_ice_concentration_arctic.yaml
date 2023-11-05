@@ -1,7 +1,7 @@
-Name: N12_sea_ice_concentration_antarctic
-Title: Sea ice concentration - Antarctic
-EodashIdentifier: N12
-Subtitle: Sea ice concentration GCOM-W - Antarctic
+Name: N12_1_sea_ice_concentration_arctic
+Title: Sea ice concentration - Arctic
+EodashIdentifier: N12_1
+Subtitle: Sea ice concentration GCOM-W - Arctic
 Description: N12_sea_ice_concentration/N12.md
 Themes:
   - cryosphere
@@ -28,6 +28,6 @@ Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
-    LayerId: SIC_S
+    LayerId: SIC_N
 Legend: N12_sea_ice_concentration/legend.png
-Image: N12_sea_ice_concentration/Antarctic-N12.png
+Image: N12_sea_ice_concentration/Arctic-N12_1.png
