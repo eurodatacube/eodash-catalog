@@ -2,7 +2,7 @@ Name: truck_detections_primary_roads
 Title: Moving truck detections Primary Roads
 EodashIdentifier: E12d
 Subtitle: Moving truck detections Primary Roads
-Description: E12d_truck_detections_primary_roads/E12d.md
+Description: E12d_truck_detections_primary_roads_GTIF/E12d.md
 Themes:
     - mobility-transition
 Tags:
@@ -24,5 +24,5 @@ Resources:
       CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
       LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
       OverwriteBBox: [46.4, 49, 9.5, 17]
-Image: E12d_truck_detections_primary_roads/E12d.png
-Legend: E12d_truck_detections_motorways/cm_legend.png
+Image: E12d_truck_detections_primary_roads_GTIF/E12d.png
+Legend: E12d_truck_detections_motorways_GTIF/cm_legend.png
