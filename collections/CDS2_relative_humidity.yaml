@@ -13,8 +13,6 @@ Sensor:
     - placeholder
 Agency:
     - ESA
-Provider: 
-    - Name: placeholder
 License: MIT
 Resources:
     - Group: Sentinel Hub Resources
@@ -23,5 +21,11 @@ Resources:
       Type: byoc
       CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
       LayerId: AWS_VIS_RELHUMIDITY1000HPA
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
+    Script: CDS2_relative_humidity/script.js
 Image: CDS2_relative_humidity/CDS2.png
 Legend: CDS2_relative_humidity/cm_legend.png

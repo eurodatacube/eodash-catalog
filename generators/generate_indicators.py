@@ -648,7 +648,7 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     results = api.search(
         collections=[endpoint["CollectionId"]],
         bbox=bbox,
-        datetime=['1970-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
+        datetime=['1900-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
     )
     for item in results.items():
         link = collection.add_item(item)
