@@ -1,5 +1,5 @@
 Name: sea_surface_temperature
-Title: Sea surface temperature
+Title: Sea surface temperature time series
 EodashIdentifier: SST
 Subtitle: Key ocean monitoring indicator
 Description: SST_sea_surface_temperature/SST.md
