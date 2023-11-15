@@ -428,6 +428,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             link.extra_fields["id"] = location["Identifier"]
             link.extra_fields["latlng"] = latlng
             link.extra_fields["name"] = location["Name"]
+            add_example_info(collection, data, endpoint, config)
         root_collection.update_extent_from_items()
         # Add bbox extents from children
         for c_child in root_collection.get_children():
