@@ -1,6 +1,6 @@
 Name: RECCAP2_6_deforested_biomass
 Title: Deforestation (CCI RECCAP2)
-EodashIdentifier: RECCAP_2_6
+EodashIdentifier: RECCAP2_6
 Description: RECCAP2_6_deforested_biomass/RECCAP2_6.md
 Themes:
   - biomass

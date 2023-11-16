@@ -1,6 +1,6 @@
 Name: RECCAP2_7_degraded_biomass
 Title: Degradation (CCI RECCAP2)
-EodashIdentifier: RECCAP_2_7
+EodashIdentifier: RECCAP2_7
 Description: RECCAP2_7_degraded_biomass/RECCAP2_7.md
 Themes:
   - biomass

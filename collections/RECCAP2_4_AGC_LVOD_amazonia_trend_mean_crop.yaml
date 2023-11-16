@@ -1,6 +1,6 @@
 Name: RECCAP2_4_AGC_LVOD_amazonia_trend_mean_crop
 Title: Trend mean aboveground carbon (CCI RECCAP2)
-EodashIdentifier: RECCAP_2_4
+EodashIdentifier: RECCAP2_4
 Description: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/RECCAP2_1.md
 Themes:
   - biomass
