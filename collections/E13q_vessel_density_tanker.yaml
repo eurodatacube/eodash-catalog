@@ -17,7 +17,13 @@ Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
-    CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12 # using vessel density all id (should be updated to correct id)
+    CollectionId: 49f706b3-53dc-46fb-aafd-0f9e5f8cef47
     LayerId: AWS_VIS_VESSELDENSITY_TANKER
 Legend: E13o_vessel_density_all/cm_legend.png
 Image: E13q_vessel_density_tanker/E13q.png
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 49f706b3-53dc-46fb-aafd-0f9e5f8cef47
+    Script: E13q_vessel_density_tanker/script.js
