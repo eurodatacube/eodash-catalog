@@ -1,0 +1,20 @@
+Name: Greenhouse_gas_reconsiliation_N2O
+Title: Greenhouse gas reconciliation N2O
+EodashIdentifier: GGI_N2O
+Subtitle: National greenhouse gas inventories (NGHGI), atmospheric inversion models
+Description: GGI_N2O/GGI_N2O.md
+Themes:
+    - atmosphere
+Tags:
+    - placeholder
+Satellite:
+    - GOSAT
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: GGI_N2O

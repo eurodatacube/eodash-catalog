@@ -80,3 +80,6 @@ collections:
   - RECCAP2_10_intact_biomass_change_smooth_max
   - RECCAP2_11_intact_biomass_change_smooth_mean
   - RECCAP2_12_intact_biomass_change_trend_mean
+  - GGI_CO2
+  - GGI_N2O
+  - GGI_CH4
