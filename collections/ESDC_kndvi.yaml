@@ -13,9 +13,10 @@ Sensor:
 Agency:
   - placeholder
 Resources:
-  - EndPoint: https://api.earthsystemdatalab.net
+  - EndPoint: https://api.earthsystemdatalab.net/api
     Type: zarr
     Name: xcube
+    StacEndpoint: "/catalog"
     DatacubeId: 'esdc'
     Variable: kndvi
     ColormapName: RdYlGn

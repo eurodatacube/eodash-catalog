@@ -16,6 +16,7 @@ Resources:
   - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
     Type: zarr
     Name: xcube
+    StacEndpoint: "/ogc"
     DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
     Variable: edge_biomass_change
     ColormapName: YlOrRd

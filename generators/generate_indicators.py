@@ -3,7 +3,6 @@
 Indicator generator to harvest information from endpoints and generate catalog
 
 """
-import threading
 import time
 import requests
 import json
@@ -684,7 +683,7 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
 
     stac_endpoint_url = endpoint["EndPoint"]
     if endpoint.get('Name') == 'xcube':
-        stac_endpoint_url = stac_endpoint_url + '/catalog'
+        stac_endpoint_url = stac_endpoint_url + endpoint.get('StacEndpoint','')
     # assuming /search not implemented
     api = Client.open(stac_endpoint_url)
     coll = api.get_collection(endpoint.get('CollectionId', 'datacubes'))
