@@ -1,0 +1,20 @@
+Name: OX_Crude_Oil_Storage_Index_Europe
+Title: Crude Oil Storage Index Europe
+EodashIdentifier: OX
+Subtitle: Level of oil in tanks based on SAR and optical data Europe
+Description: OX_Crude_Oil_Storage_Index/OX.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Crude_Oil_Storage_Index-Europe

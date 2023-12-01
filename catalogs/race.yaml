@@ -74,3 +74,5 @@ collections:
   - E13n_maritime_traffic_combined
   - SST_sea_surface_temperature
   - GHS_BUILT-S-R2023A
+  - OX_Crude_Oil_Storage_Index
+  - OX_EU_Crude_Oil_Storage_Index_EU
