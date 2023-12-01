@@ -357,6 +357,9 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         if city == "" or city is None:
             # use aoi_id as a fallback unique id instead of city
             city = key
+        if city == "/":
+            # FIXME to be removed - temporary workaround until OX is fixed
+            city = "EU"
         if city not in cities:
             cities.append(city)
         min_date = min(times)
