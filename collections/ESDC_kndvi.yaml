@@ -1,0 +1,24 @@
+Name: ESDC_kndvi
+Title: KNDVI
+EodashIdentifier: ESDC_kndvi
+Description: ESDC_kndvi/ESDC_kndvi.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - placeholder
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net
+    Type: zarr
+    Name: xcube
+    DatacubeId: 'esdc'
+    Variable: kndvi
+    ColormapName: RdYlGn
+    Rescale: [0,1]
+Legend: ESDC_kndvi/cm_legend.png
+Image: ESDC_kndvi/World-ESDC_kndvi.png

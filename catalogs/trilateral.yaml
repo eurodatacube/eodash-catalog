@@ -83,3 +83,6 @@ collections:
   - GGI_CO2
   - GGI_N2O
   - GGI_CH4
+  - ESDC_gross_primary_productivity
+  - ESDC_kndvi
+  - ESDC_net_ecosystem_exchange
