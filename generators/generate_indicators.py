@@ -334,7 +334,10 @@ def add_to_catalog(collection, catalog, endpoint, data):
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
     collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
+    where_parameter = endpoint.get("WhereParameter")
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
+    if where_parameter:
+        url += f"&{where_parameter}"
     response = json.loads(requests.get(url).text)
 
     # Sort locations by key
@@ -357,9 +360,6 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         if city == "" or city is None:
             # use aoi_id as a fallback unique id instead of city
             city = key
-        if city == "/":
-            # FIXME to be removed - temporary workaround until OX is fixed
-            city = "EU"
         if city not in cities:
             cities.append(city)
         min_date = min(times)
