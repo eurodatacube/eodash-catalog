@@ -22,4 +22,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: BM2_Above_Ground_Biomass/viridis.png
+Legend: BM2_Above_Ground_Biomass/cm_legend.png

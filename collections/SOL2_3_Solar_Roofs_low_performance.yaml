@@ -23,4 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: SOL2_Solar_Roofs_high_performance/SOL_TEP.png
+Legend: SOL2_Solar_Roofs_high_performance/cm_legend.png

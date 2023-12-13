@@ -19,4 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-Legend: AQA_health_risk_index/air_quality_ihr.png
+Legend: AQA_health_risk_index/cm_legend.png

@@ -19,4 +19,4 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-Legend: AQB_Coarse_particulate_matter_PM10/air_quality_pm.png
+Legend: AQB_Coarse_particulate_matter_PM10/cm_legend.png

@@ -23,4 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: REP2_Solar_Energy/viridis.png
+Legend: REP2_Solar_Energy/cm_legend.png

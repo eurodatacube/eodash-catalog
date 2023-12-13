@@ -2,7 +2,7 @@ Name: Solar_Energy_Winter
 Title: Solar Energy Assessment Winter
 EodashIdentifier: REP2_4
 Subtitle: Site Suitability Assessment & Trade-off Explorer
-Description: REP2_Solar_Energy_winter/REP2.md
+Description: REP2_4_Solar_Energy_winter/REP2.md
 Themes:
   - energy-transition
 Tags:
@@ -23,4 +23,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: REP2_Solar_Energy/viridis.png
+Legend: REP2_4_Solar_Energy_winter/cm_legend.png
