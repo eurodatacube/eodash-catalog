@@ -26,7 +26,7 @@ Resources:
       Type: byoc
       CollectionId: 0c7aa265-50f9-4947-9980-2ee5ae204803
       LayerId: GHS_BUILT_S
-Image: GHS-BUILT-S-R2023A/World-GHSBUILT.png
+Image: GHS-BUILT-S-R2023A/thumbnail.png
 Legend: GHS-BUILT-S-R2023A/cm_legend.png
 Services:
     - Endpoint: https://services.sentinel-hub.com/api/v1/statistics

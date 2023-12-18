@@ -20,7 +20,7 @@ Resources:
     CollectionId: 093a3988-6ed6-4bb0-ae37-e356f14d7daf
     LayerId: AWS_VIS_VESSELDENSITY_CARGO
 Legend: E13o_vessel_density_all/cm_legend.png
-Image: E13p_vessel_density_cargo/E13p.png
+Image: E13p_vessel_density_cargo/thumbnail.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API

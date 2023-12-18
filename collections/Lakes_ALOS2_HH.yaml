@@ -23,5 +23,5 @@ Resources:
     Type: byoc
     CollectionId: aa8a9899-9df9-4ea0-b983-34360d583e17
     LayerId: JAXA_LAKES_ALOS2_HH
-#Image: Lakes_ALOS2_lakes_alos2_hh/Lakes_ALOS2.png
+Image: Lakes_ALOS2_lakes_alos2_hh/thumbnail.png
 Legend: Lakes_ALOS2_lakes_alos2_hh/cm_legend.png

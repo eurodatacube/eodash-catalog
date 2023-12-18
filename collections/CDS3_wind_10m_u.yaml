@@ -44,7 +44,7 @@ OpenEOPID: ERA5_WIND_U
 AdditionalInfoExternal:
   Title: Additional info
   Path: CDS3_wind_10m_u/README.MD
-Image: CDS3_wind_10m_u/wind_10m_u.png
+Image: CDS3_wind_10m_u/thumbnail.png
 EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_u&layerId=Wind%20U-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
 Resolution: 0.25° x 0.25°
 BandInformation: windu10m

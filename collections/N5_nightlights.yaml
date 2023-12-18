@@ -74,3 +74,4 @@ Resources:
     ColormapName: inferno
     Rescale: [0,255]
 # Legend: N5_nightlights/cm_legend.png
+Image: N5_nightlights/thumbnail.png

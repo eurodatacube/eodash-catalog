@@ -50,5 +50,5 @@ Services:
     Type: byoc
     CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
     Script: N3a2_chl_concentration/script.js
-#Image: N3a2_chl_concentration/N3a2.png
+Image: N3a2_chl_concentration/thumbnail.png
 Legend: N3a2_chl_concentration/cm_legend.png

@@ -22,3 +22,4 @@ Resources:
     ColormapName: rdbu_r
     Rescale: [-0.000001,0.000001]
     Bidx: 1
+Image: co2-diff/thumbnail.png
