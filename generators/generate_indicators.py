@@ -691,7 +691,7 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     return collection
 
 def fetch_and_save_thumbnail(data, url):
-    collection_path = "../thumbnails/%s/"%data["EodashIdentifier"]
+    collection_path = "../thumbnails/%s_%s/"%(data["EodashIdentifier"], data["Name"])
     Path(collection_path).mkdir(parents=True, exist_ok=True)
     image_path = '%s/thumbnail.png'%(collection_path)
     if not os.path.exists(image_path):
