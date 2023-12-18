@@ -8,6 +8,7 @@ import requests
 import json
 from pystac_client import Client
 import os
+from pathlib import Path
 from datetime import datetime
 import yaml
 from yaml.loader import SafeLoader
@@ -48,6 +49,7 @@ argparser = argparse.ArgumentParser(
 
 argparser.add_argument("-vd", action="store_true", help="validation flag, if set, validation will be run on generated catalogs")
 argparser.add_argument("-ni", action="store_true", help="no items flag, if set, items will not be saved")
+argparser.add_argument("-tn", action="store_true", help="generate additionally thumbnail image for supported collections")
 
 def recursive_save(stac_object, no_items=False):
     stac_object.save_object()
@@ -655,6 +657,8 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     )
     for item in results.items():
         link = collection.add_item(item)
+        if(options.tn):
+            generate_thumbnail(item, data, endpoint)
         # Check if we can create visualization link
         if "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
@@ -680,6 +684,43 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
 
     return collection
 
+def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, styles=None):
+    if endpoint["Name"] == "Sentinel Hub":
+        instanceId = os.getenv("SH_INSTANCE_ID")
+        if "InstanceId" in endpoint:
+            instanceId = endpoint["InstanceId"]
+        # if options.ni:
+        #     recursive_save(catalog, options.ni)
+        # Build example url
+        wms_config = "REQUEST=GetMap&SERVICE=WMS&VERSION=1.3.0&FORMAT=image/png&STYLES=&TRANSPARENT=true"
+        bbox = "%s,%s,%s,%s"%(
+            stac_object.bbox[1],
+            stac_object.bbox[0],
+            stac_object.bbox[3],
+            stac_object.bbox[2],
+        )
+        output_format = "format=image/png&WIDTH=256&HEIGHT=128&CRS=EPSG:4326&BBOX=%s"%(bbox)
+        item_datetime = stac_object.get_datetime()
+        # it is possible for datetime to be null, if it is start and end datetime have to exist
+        if item_datetime:
+            time = item_datetime.isoformat()[:-6] + 'Z'
+        url = "https://services.sentinel-hub.com/ogc/wms/%s?%s&layers=%s&time=%s&%s"%(
+            instanceId,
+            wms_config,
+            endpoint["LayerId"],
+            time,
+            output_format,
+        )
+        collection_path = "../thumbnails/%s/"%data["EodashIdentifier"]
+        Path(collection_path).mkdir(parents=True, exist_ok=True)
+        image_path = '%s/thumbnail.jpg'%(collection_path)
+        if not os.path.exists(image_path):
+            data = requests.get(url).content 
+            f = open(image_path,'wb') 
+            f.write(data) 
+            f.close() 
+  
+    
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
     collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     add_visualization_info(collection, data, endpoint)
