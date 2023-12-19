@@ -1,4 +1,4 @@
-Name: GG_Google_Mobility_Data
+Name: GG_Google_Mobility_Data_RACE
 Title: Mobility
 EodashIdentifier: GG
 Subtitle: Mobility data from Google
@@ -18,3 +18,5 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: Mobility_data
+      AdditionalQueryString: 'aoi_id=in.("AT","BA","BE","BG","CH","CZ","DE","DK","EE","EG","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","RU","SE","SI","SK","TR")'
+      IdKey: 'aoi_id'
