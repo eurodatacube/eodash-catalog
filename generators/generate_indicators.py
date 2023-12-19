@@ -8,6 +8,8 @@ import requests
 import json
 from pystac_client import Client
 import os
+import re
+from pathlib import Path
 from datetime import datetime
 import yaml
 from yaml.loader import SafeLoader
@@ -48,6 +50,7 @@ argparser = argparse.ArgumentParser(
 
 argparser.add_argument("-vd", action="store_true", help="validation flag, if set, validation will be run on generated catalogs")
 argparser.add_argument("-ni", action="store_true", help="no items flag, if set, items will not be saved")
+argparser.add_argument("-tn", action="store_true", help="generate additionally thumbnail image for supported collections")
 
 def recursive_save(stac_object, no_items=False):
     stac_object.save_object()
@@ -498,6 +501,45 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
+def generate_veda_link(endpoint, file_url):
+    bidx = ""
+    if "Bidx" in endpoint:
+        # Check if an array was provided
+        if hasattr(endpoint["Bidx"], "__len__"):
+            for band in endpoint["Bidx"]:
+                bidx = bidx + "&bidx=%s"%(band)
+        else:
+            bidx = "&bidx=%s"%(endpoint["Bidx"])
+    
+    colormap = ""
+    if "Colormap" in endpoint:
+        colormap = "&colormap=%s"%(endpoint["Colormap"])
+        # TODO: For now we assume a already urlparsed colormap definition
+        # it could be nice to allow a json and better convert it on the fly
+        # colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
+
+    colormap_name = ""
+    if "ColormapName" in endpoint:
+        colormap_name = "&colormap_name=%s"%(endpoint["ColormapName"])
+
+    rescale = ""
+    if "Rescale" in endpoint:
+        rescale = "&rescale=%s,%s"%(endpoint["Rescale"][0], endpoint["Rescale"][1])
+    
+    if file_url:
+        file_url = "url=%s&"%(file_url)
+    else:
+        file_url = ""
+
+    target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+        file_url,
+        bidx,
+        colormap,
+        colormap_name,
+        rescale,
+    )
+    return target_url
+
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
@@ -566,45 +608,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         )
         pass
     elif endpoint["Name"] == "VEDA":
-        if endpoint["Type"] == "cog":
-            
-            bidx = ""
-            if "Bidx" in endpoint:
-                # Check if an array was provided
-                if hasattr(endpoint["Bidx"], "__len__"):
-                    for band in endpoint["Bidx"]:
-                        bidx = bidx + "&bidx=%s"%(band)
-                else:
-                    bidx = "&bidx=%s"%(endpoint["Bidx"])
-            
-            colormap = ""
-            if "Colormap" in endpoint:
-                colormap = "&colormap=%s"%(endpoint["Colormap"])
-                # TODO: For now we assume a already urlparsed colormap definition
-                # it could be nice to allow a json and better convert it on the fly
-                # colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
-
-            colormap_name = ""
-            if "ColormapName" in endpoint:
-               colormap_name = "&colormap_name=%s"%(endpoint["ColormapName"])
-
-            rescale = ""
-            if "Rescale" in endpoint:
-               rescale = "&rescale=%s,%s"%(endpoint["Rescale"][0], endpoint["Rescale"][1])
-            
-            if file_url:
-                file_url = "url=%s&"%(file_url)
-            else:
-                file_url = ""
-
-            target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
-                file_url,
-                bidx,
-                colormap,
-                colormap_name,
-                rescale,
-            )
-
+        if endpoint["Type"] == "cog":    
+            target_url = generate_veda_link(endpoint, file_url)
             stac_object.add_link(
             Link(
                 rel="xyz",
@@ -655,6 +660,11 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     )
     for item in results.items():
         link = collection.add_item(item)
+        if(options.tn):
+            if "cog_default" in item.assets:
+                generate_thumbnail(item, data, endpoint, item.assets["cog_default"].href)
+            else:
+                generate_thumbnail(item, data, endpoint)
         # Check if we can create visualization link
         if "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
@@ -679,6 +689,49 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     add_collection_information(config, collection, data)
 
     return collection
+
+def fetch_and_save_thumbnail(data, url):
+    collection_path = "../thumbnails/%s_%s/"%(data["EodashIdentifier"], data["Name"])
+    Path(collection_path).mkdir(parents=True, exist_ok=True)
+    image_path = '%s/thumbnail.png'%(collection_path)
+    if not os.path.exists(image_path):
+        data = requests.get(url).content 
+        f = open(image_path,'wb') 
+        f.write(data) 
+        f.close()
+
+def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, styles=None):
+    if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "WMS":
+        instanceId = os.getenv("SH_INSTANCE_ID")
+        if "InstanceId" in endpoint:
+            instanceId = endpoint["InstanceId"]
+        # Build example url
+        wms_config = "REQUEST=GetMap&SERVICE=WMS&VERSION=1.3.0&FORMAT=image/png&STYLES=&TRANSPARENT=true"
+        bbox = "%s,%s,%s,%s"%(
+            stac_object.bbox[1],
+            stac_object.bbox[0],
+            stac_object.bbox[3],
+            stac_object.bbox[2],
+        )
+        output_format = "format=image/png&WIDTH=256&HEIGHT=128&CRS=EPSG:4326&BBOX=%s"%(bbox)
+        item_datetime = stac_object.get_datetime()
+        # it is possible for datetime to be null, if it is start and end datetime have to exist
+        if item_datetime:
+            time = item_datetime.isoformat()[:-6] + 'Z'
+        url = "https://services.sentinel-hub.com/ogc/wms/%s?%s&layers=%s&time=%s&%s"%(
+            instanceId,
+            wms_config,
+            endpoint["LayerId"],
+            time,
+            output_format,
+        )
+        fetch_and_save_thumbnail(data, url)
+    elif endpoint["Name"] == "VEDA":
+        target_url = generate_veda_link(endpoint, file_url)
+        # set to get 0/0/0 tile
+        url = re.sub(r"\{.\}", "0", target_url)
+        fetch_and_save_thumbnail(data, url)
+    
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
     collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
@@ -783,7 +836,7 @@ def add_collection_information(config, collection, data):
             Asset(
                 href="%s/%s"%(config["assets_endpoint"], data["Legend"]),
                 media_type="image/png",
-                roles=["thumbnail"],
+                roles=["metadata"],
             ),
         )
     if "Story" in data:

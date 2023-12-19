@@ -29,5 +29,5 @@ Services:
       Type: byoc
       CollectionId: 4ad9663f-d173-411d-8d28-3081d4d9e3aa
       Script: N1_SO2/script.js
-Image: N1_SO2/N1.png
+Image: N1_SO2/thumbnail.png
 Legend: N1_SO2/cm_legend.png

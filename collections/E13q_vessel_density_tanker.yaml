@@ -20,7 +20,7 @@ Resources:
     CollectionId: 49f706b3-53dc-46fb-aafd-0f9e5f8cef47
     LayerId: AWS_VIS_VESSELDENSITY_TANKER
 Legend: E13o_vessel_density_all/cm_legend.png
-Image: E13q_vessel_density_tanker/E13q.png
+Image: E13q_vessel_density_tanker/thumbnail.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API

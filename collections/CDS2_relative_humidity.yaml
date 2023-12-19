@@ -27,5 +27,5 @@ Services:
     Type: byoc
     CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
     Script: CDS2_relative_humidity/script.js
-Image: CDS2_relative_humidity/CDS2.png
+Image: CDS2_relative_humidity/thumbnail.png
 Legend: CDS2_relative_humidity/cm_legend.png

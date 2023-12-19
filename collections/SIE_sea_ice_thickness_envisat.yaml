@@ -24,3 +24,4 @@ Resources:
       CollectionId: a71a2cf1-f336-4baa-93b2-0b2ae1fd512d
       LayerId: ESA-CCI-V2-ENVISAT
 Legend: SIE_sea_ice_thickness_envisat/cm_legend.png
+Image: SIE_sea_ice_thickness_envisat/thumbnail.png
