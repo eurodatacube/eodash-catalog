@@ -4,6 +4,7 @@ description: "A Tri-Agency Dashboard by NASA, ESA, JAXA"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/trilateral/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
+  - E9_car_containers
   - N1_NO2
   - N1_CH4
   - N1_CO
