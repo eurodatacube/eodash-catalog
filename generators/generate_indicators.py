@@ -337,10 +337,9 @@ def add_to_catalog(collection, catalog, endpoint, data):
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
     collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
-    where_parameter = endpoint.get("WhereParameter")
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
-    if where_parameter:
-        url += f"&{where_parameter}"
+    if additional_query_parameters := endpoint.get("AdditionalQueryString"):
+        url += f"&{additional_query_parameters}"
     response = json.loads(requests.get(url).text)
 
     # Sort locations by key
@@ -354,15 +353,17 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         unique_values = list({v["aoi_id"]:v for v in values}.values())[0]
         country = unique_values["country"]
         city = unique_values["city"]
+        IdKey = endpoint.get("IdKey", "city")
+        IdValue = unique_values[IdKey]
         if country not in countries:
             countries.append(country)
-        # sanitize city identifier to be sure it is filename save
-        if city is not None:
-            city = "".join([c for c in city if c.isalpha() or c.isdigit() or c==' ']).rstrip()
-        # Additional check to see if city name is empty afterwards
-        if city == "" or city is None:
-            # use aoi_id as a fallback unique id instead of city
-            city = key
+        # sanitize unique key identifier to be sure it is saveable as a filename
+        if IdValue is not None:
+            IdValue = "".join([c for c in IdValue if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+        # Additional check to see if unique key name is empty afterwards
+        if IdValue == "" or IdValue is None:
+            # use aoi_id as a fallback unique id instead of configured key
+            IdValue = key
         if city not in cities:
             cities.append(city)
         min_date = min(times)
@@ -373,7 +374,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         buff = 0.01
         bbox = [lon-buff, lat-buff,lon+buff,lat+buff]
         item = Item(
-            id = city,
+            id = IdValue,
             bbox=bbox,
             properties={},
             geometry = create_geojson_point(lon, lat),
