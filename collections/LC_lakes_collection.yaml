@@ -1,0 +1,34 @@
+Name: lakes_collection
+Title: Lakes collection
+EodashIdentifier: LC
+Subtitle: Collection of multiple lake related datasets
+Description: Collection of multiple lake related datasets
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - ALOS
+  - Sentinel 2
+Sensor:
+  - placeholder
+  - placeholder 2
+Agency:
+  - ESA
+  - NASA
+  - JAXA
+Provider:
+    - Name: ESA
+License: MIT
+Subcollections:
+  - Identifier: Lakes_ALOS2_HH
+    Country: KH
+    Name: Tonle Sap (ALOS2_HH)
+    Point: [104.1, 12.9]
+    Bbox: [103.4, 13.3, 105, 12.5]
+  - Identifier: Lakes_ALOS2_HV
+    Country: KH
+    Name: Tonle Sap (ALOS2_HV)
+    Point: [104.1, 12.9]
+    Bbox:  [103.4, 13.3, 105, 12.5]
+#Image: LC_lakes_collection/thumbnail.png

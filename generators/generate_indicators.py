@@ -99,25 +99,45 @@ def process_collection_file(config, file_path, catalog):
     print("Processing collection:", file_path)
     with open(file_path) as f:
         data = yaml.load(f, Loader=SafeLoader)
-        for resource in data["Resources"]:
-            if "EndPoint" in resource:
-                if resource["Name"] == "Sentinel Hub":
-                    handle_SH_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "GeoDB":
-                    collection = handle_GeoDB_endpoint(config, resource, data, catalog)
-                    add_to_catalog(collection, catalog, resource, data)
-                elif resource["Name"] == "VEDA":
-                    handle_VEDA_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "xcube":
-                    handle_xcube_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "WMS":
-                    handle_WMS_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "GeoDB Vector Tiles":
-                    handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "Collection-only":
-                    handle_collection_only(config, resource, data, catalog)
-                else:
-                    raise ValueError("Type of Resource is not supported")
+        if "Resources" in data:
+            for resource in data["Resources"]:
+                if "EndPoint" in resource:
+                    if resource["Name"] == "Sentinel Hub":
+                        handle_SH_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "GeoDB":
+                        collection = handle_GeoDB_endpoint(config, resource, data, catalog)
+                        add_to_catalog(collection, catalog, resource, data)
+                    elif resource["Name"] == "VEDA":
+                        handle_VEDA_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "xcube":
+                        handle_xcube_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "WMS":
+                        handle_WMS_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "GeoDB Vector Tiles":
+                        handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "Collection-only":
+                        handle_collection_only(config, resource, data, catalog)
+                    else:
+                        raise ValueError("Type of Resource is not supported")
+        elif "Subcollections" in data:
+            # TODO:
+            #  - implement bbox filtering for sub collections
+            #  - implement summary of locations on parent collection level
+            #  - ...
+            # if no endpoint is specified we check for combination of collections
+            for sub_collection in data["Subcollections"]:
+                parent_collection = get_or_create_collection(catalog, data["Name"], data, config)
+                process_collection_file(config, "../collections/%s.yaml"%(sub_collection["Identifier"]), parent_collection)
+                add_collection_information(config, parent_collection, data)
+                parent_collection.update_extent_from_items()
+                # find link in parent collection to update metadata
+                for link in parent_collection.links:
+                    if link.rel == "child" and link.extra_fields["code"] == sub_collection["Identifier"]:
+                        latlng = "%s,%s"%(sub_collection["Point"][1], sub_collection["Point"][0])
+                        link.extra_fields["id"] = sub_collection["Identifier"]
+                        link.extra_fields["latlng"] = latlng
+                        link.extra_fields["name"] = sub_collection["Name"]
+                add_to_catalog(parent_collection, catalog, None, data)
 
 
 def handle_collection_only(config, endpoint, data, catalog):
@@ -241,14 +261,14 @@ def handle_xcube_endpoint(config, endpoint, data, catalog):
     add_to_catalog(root_collection, catalog, endpoint, data)
 
 
-def get_or_create_collection(catalog, collection_id, data, config, endpoint):
+def get_or_create_collection(catalog, collection_id, data, config, endpoint=None):
     # Check if collection already in catalog
     for collection in catalog.get_collections():
         if collection.id == collection_id:
             return collection
     # If none found create a new one
     spatial_extent = [-180.0, -90.0, 180.0, 90.0]
-    if endpoint.get("OverwriteBBox"):
+    if endpoint and endpoint.get("OverwriteBBox"):
         spatial_extent = endpoint.get("OverwriteBBox")
     spatial_extent = SpatialExtent([
         spatial_extent,
@@ -319,7 +339,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
     if collection.summaries.lists:
         for sum in collection.summaries.lists:
             link.extra_fields[sum] = collection.summaries.lists[sum]
-    if "Locations" in data:
+    if "Locations" in data or "Subcollections" in data:
         link.extra_fields["locations"] = True
     if "Tags" in data:
         link.extra_fields["tags"] = data["Tags"]

@@ -4,86 +4,87 @@ description: "A Tri-Agency Dashboard by NASA, ESA, JAXA"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/trilateral/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  - E9_car_containers
-  - N1_NO2
-  - N1_CH4
-  - N1_CO
-  - N1_SO2
+  # - E9_car_containers
+  # - N1_NO2
+  # - N1_CH4
+  # - N1_CO
+  # - N1_SO2
+  # # - N2_greenhouse_gases
+  # - no2-monthly
+  # - no2-monthly-diff
+  # - co2-mean
+  # - facebook_population_density
+  # - OMI_trno2-COG
+  # - co2-diff 
+  # - NPP_ocean_primary_productivity
+  # - NPPN_net_primary_production
+  # - IS2SITMOGR4-cog
+  # - nceo_africa_2017
+  # - grdi-v1-built
+  # - grdi-v1-raster
+  # - grdi-shdi-raster
+  # - grdi-vnl-slope-raster
+  # - grdi-vnl-raster
+  # - grdi-filled-missing-values-count
+  # - grdi-imr-raster
+  # - grdi-cdr-raster
+  # - OMSO2PCA-COG
+  # - SIE_sea_ice_thickness_envisat
+  # - SIC_sea_ice_thickness_cryosat
+  # - NASAPopulation
+  # - WSF_world_settlement_footprint
+  # - E10e_ndvi
+  # - N11_ocean_primary_productivity
+  # - SMC_soil_moisture_anomaly
+  # - PRC_precipitation_anomaly
+  # - PRCG_precipitation
+  # - E10a1_agricultural_production_productive_area
+  # - E10a2_agricultural_production_area
+  # - E10a3_agricultural_production_area_change
+  # - E10a6_harvested_parcels_evolution
+  # - E10a8_winter_cereals
+  # - E10c_rice_planting
   # - N2_greenhouse_gases
-  - no2-monthly
-  - no2-monthly-diff
-  - co2-mean
-  - facebook_population_density
-  - OMI_trno2-COG
-  - co2-diff 
-  - NPP_ocean_primary_productivity
-  - NPPN_net_primary_production
-  - IS2SITMOGR4-cog
-  - nceo_africa_2017
-  - grdi-v1-built
-  - grdi-v1-raster
-  - grdi-shdi-raster
-  - grdi-vnl-slope-raster
-  - grdi-vnl-raster
-  - grdi-filled-missing-values-count
-  - grdi-imr-raster
-  - grdi-cdr-raster
-  - OMSO2PCA-COG
-  - SIE_sea_ice_thickness_envisat
-  - SIC_sea_ice_thickness_cryosat
-  - NASAPopulation
-  - WSF_world_settlement_footprint
-  - E10e_ndvi
-  - N11_ocean_primary_productivity
-  - SMC_soil_moisture_anomaly
-  - PRC_precipitation_anomaly
-  - PRCG_precipitation
-  - E10a1_agricultural_production_productive_area
-  - E10a2_agricultural_production_area
-  - E10a3_agricultural_production_area_change
-  - E10a6_harvested_parcels_evolution
-  - E10a8_winter_cereals
-  - E10c_rice_planting
-  - N2_greenhouse_gases
-  - VITS_vegetation_index_timeseries
-  - SMCTS_soil_moisture_timeseries
-  - PRCTS_precipitation_timeseries
-  - LWE_lake_water_extent
-  - LWL_lake_water_level
-  - SMCG_soil_moisture_content
-  - E13b_parked_planes
-  - E13b_airport_throughput
-  - E13b_parked_planes
-  - E13c_cruises_impact
-  - SIF_solar_induced_chlorophyll_fluorescence
-  # - NLK_lake_cloudfree #TODO: needs implementation
-  - N5_nightlights
-  - N6_geoglam
-  - N7_slowdown_proxy
-  - N8_recovery_proxy
-  - N3b_water_quality
-  - N3a2_chl_concentration
-  - E10d_regional_cropland
-  - Lakes_ALOS2_HH
-  - Lakes_ALOS2_HV
-  - N1_NO2_jaxa
-  - N2_CO2_jaxa_gosat
-  - GHS_BUILT-S-R2023A
-  - RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop
-  - RECCAP2_2_AGC_LVOD_amazonia_smooth_max_crop
-  - RECCAP2_3_AGC_LVOD_amazonia_smooth_mean_crop
-  - RECCAP2_4_AGC_LVOD_amazonia_trend_mean_crop
-  - RECCAP2_5_SF_biomass_growth
-  - RECCAP2_6_deforested_biomass
-  - RECCAP2_7_degraded_biomass
-  - RECCAP2_8_edge_biomass_change
-  - RECCAP2_9_intact_biomass_change_methods_mean
-  - RECCAP2_10_intact_biomass_change_smooth_max
-  - RECCAP2_11_intact_biomass_change_smooth_mean
-  - RECCAP2_12_intact_biomass_change_trend_mean
-  - GGI_CO2
-  - GGI_N2O
-  - GGI_CH4
-  - ESDC_gross_primary_productivity
-  - ESDC_kndvi
-  - ESDC_net_ecosystem_exchange
+  # - VITS_vegetation_index_timeseries
+  # - SMCTS_soil_moisture_timeseries
+  # - PRCTS_precipitation_timeseries
+  # - LWE_lake_water_extent
+  # - LWL_lake_water_level
+  # - SMCG_soil_moisture_content
+  #  - E13b_parked_planes
+  # - E13b_airport_throughput
+  # - E13b_parked_planes
+  # - E13c_cruises_impact
+  # - SIF_solar_induced_chlorophyll_fluorescence
+  # # - NLK_lake_cloudfree #TODO: needs implementation
+  # - N5_nightlights
+  # - N6_geoglam
+  # - N7_slowdown_proxy
+  # - N8_recovery_proxy
+  # - N3b_water_quality
+  # - N3a2_chl_concentration
+  # - E10d_regional_cropland
+  - LC_lakes_collection
+  # - Lakes_ALOS2_HH
+  # - Lakes_ALOS2_HV
+  # - N1_NO2_jaxa
+  # - N2_CO2_jaxa_gosat
+  # - GHS_BUILT-S-R2023A
+  # - RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop
+  # - RECCAP2_2_AGC_LVOD_amazonia_smooth_max_crop
+  # - RECCAP2_3_AGC_LVOD_amazonia_smooth_mean_crop
+  # - RECCAP2_4_AGC_LVOD_amazonia_trend_mean_crop
+  # - RECCAP2_5_SF_biomass_growth
+  # - RECCAP2_6_deforested_biomass
+  # - RECCAP2_7_degraded_biomass
+  # - RECCAP2_8_edge_biomass_change
+  # - RECCAP2_9_intact_biomass_change_methods_mean
+  # - RECCAP2_10_intact_biomass_change_smooth_max
+  # - RECCAP2_11_intact_biomass_change_smooth_mean
+  # - RECCAP2_12_intact_biomass_change_trend_mean
+  # - GGI_CO2
+  # - GGI_N2O
+  # - GGI_CH4
+  # - ESDC_gross_primary_productivity
+  # - ESDC_kndvi
+  # - ESDC_net_ecosystem_exchange
