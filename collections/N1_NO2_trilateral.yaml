@@ -1,0 +1,32 @@
+Name: N1_NO2_trilateral
+Title: Nitrogen dioxide
+EodashIdentifier: N1_NO2
+Subtitle: Weekly Nitrogen Dioxide
+Description: N1_NO2_trilateral/N1.md
+Themes:
+    - air
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-5P
+Sensor:
+    - TROPOMI
+Agency:
+    - NASA
+Provider:
+    - Name: placeholder
+License: MIT
+Resources:
+    - EndPoint: https://services.sentinel-hub.com
+      Name: Sentinel Hub
+      Type: byoc
+      CollectionId: 972e67a7-2ca8-4bf6-964a-11fe772e3ac2
+      LayerId: AWS_NO2-VISUALISATION
+Services:
+    - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+      Name: Statistical API
+      Type: byoc
+      CollectionId: 972e67a7-2ca8-4bf6-964a-11fe772e3ac2
+      Script: N1_NO2/script.js 
+Image: N1_NO2/N1.png
+Legend: N1_NO2/cm_legend.png
