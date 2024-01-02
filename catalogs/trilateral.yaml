@@ -4,13 +4,14 @@ description: "A Tri-Agency Dashboard by NASA, ESA, JAXA"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/trilateral/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  - N1_NO2
+  - N1_NO2_trilateral
   - N1_CH4
   - N1_CO
   - N1_SO2
   # - N2_greenhouse_gases
-  - no2-monthly
-  - no2-monthly-diff
+  - N1_NO2_monthly
+  - N1_NO2_diff_monthly
+  - N1_NO2_city_trilateral
   - co2-mean
   - facebook_population_density
   - OMI_trno2-COG

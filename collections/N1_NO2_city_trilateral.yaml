@@ -1,0 +1,20 @@
+Name: N1_NO2_city_trilateral
+Title: City level NO2 (S5P)
+EodashIdentifier: N1_NO2_city_trilateral
+Subtitle: NO2 detected at cities based on Sentinel-5P data
+Description: N1_NO2_city_trilateral/N1.md
+Themes:
+    - air
+Tags:
+    - placeholder
+Satellite:
+    - Sentinel-5P
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: N1_tri
