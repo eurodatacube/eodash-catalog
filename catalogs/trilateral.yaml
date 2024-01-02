@@ -52,10 +52,6 @@ collections:
   - LWE_lake_water_extent
   - LWL_lake_water_level
   - SMCG_soil_moisture_content
-  - E13b_parked_planes
-  - E13b_airport_throughput
-  - E13b_parked_planes
-  - E13c_cruises_impact
   - SIF_solar_induced_chlorophyll_fluorescence
   # - NLK_lake_cloudfree #TODO: needs implementation
   - N5_nightlights
@@ -90,4 +86,4 @@ collections:
   - ESDC_net_ecosystem_exchange
   - GG_Google_Mobility_Data_trilateral
   - E13c_shipping_activity
-  - E13b_shipping_activity
+  - E13b_parked_airplanes
