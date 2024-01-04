@@ -120,16 +120,22 @@ def process_collection_file(config, file_path, catalog):
                     else:
                         raise ValueError("Type of Resource is not supported")
         elif "Subcollections" in data:
+            # if no endpoint is specified we check for definition of subcollections
             # TODO:
             #  - implement bbox filtering for sub collections
             #  - implement summary of locations on parent collection level
             #  - ...
-            # if no endpoint is specified we check for combination of collections
+            parent_collection = get_or_create_collection(catalog, data["Name"], data, config)
+            
+            locations = []
+            countries = []
             for sub_collection in data["Subcollections"]:
-                parent_collection = get_or_create_collection(catalog, data["Name"], data, config)
-                process_collection_file(config, "../collections/%s.yaml"%(sub_collection["Identifier"]), parent_collection)
-                add_collection_information(config, parent_collection, data)
-                parent_collection.update_extent_from_items()
+                locations.append(sub_collection["Name"])
+                if isinstance(sub_collection["Country"], list):
+                    countries.extend(sub_collection["Country"])
+                else:
+                    countries.append(sub_collection["Country"])
+                process_collection_file(config, "../collections/%s.yaml"%(sub_collection["Collection"]), parent_collection)
                 # find link in parent collection to update metadata
                 for link in parent_collection.links:
                     if link.rel == "child" and link.extra_fields["code"] == sub_collection["Identifier"]:
@@ -137,7 +143,19 @@ def process_collection_file(config, file_path, catalog):
                         link.extra_fields["id"] = sub_collection["Identifier"]
                         link.extra_fields["latlng"] = latlng
                         link.extra_fields["name"] = sub_collection["Name"]
-                add_to_catalog(parent_collection, catalog, None, data)
+            add_collection_information(config, parent_collection, data)
+            parent_collection.update_extent_from_items()
+            # Add bbox extents from children
+            for c_child in parent_collection.get_children():
+                parent_collection.extent.spatial.bboxes.append(
+                    c_child.extent.spatial.bboxes[0]
+                )
+            # Fill summaries for locations
+            parent_collection.summaries = Summaries({
+                "cities": list(set(locations)),
+                "countries": list(set(countries)),
+            })
+            add_to_catalog(parent_collection, catalog, None, data)
 
 
 def handle_collection_only(config, endpoint, data, catalog):
@@ -324,8 +342,12 @@ def add_to_catalog(collection, catalog, endpoint, data):
             return
 
     link = catalog.add_child(collection)
-    # bubble fields we want to have up to collection link
-    if endpoint:
+    # bubble fields we want to have up to collection link and add them to collection
+    if endpoint and endpoint["Type"]:
+        collection.extra_fields["endpointtype"] = "%s_%s"%(endpoint["Name"], endpoint["Type"])
+        link.extra_fields["endpointtype"] = "%s_%s"%(endpoint["Name"], endpoint["Type"])
+    elif endpoint:
+        collection.extra_fields["endpointtype"] = endpoint["Name"]
         link.extra_fields["endpointtype"] = endpoint["Name"]
     # Disabling bubbling up of description as now it is considered to be
     # used as markdown loading would increase the catalog size unnecessarily
@@ -521,7 +543,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
-def generate_veda_link(endpoint, file_url):
+def generate_veda_cog_link(endpoint, file_url):
     bidx = ""
     if "Bidx" in endpoint:
         # Check if an array was provided
@@ -557,6 +579,28 @@ def generate_veda_link(endpoint, file_url):
         colormap,
         colormap_name,
         rescale,
+    )
+    return target_url
+
+def generate_veda_tiles_link(endpoint, item):
+    assets = ""
+    for asset in endpoint["Assets"]:
+        assets += "&assets=%s"%asset
+    color_formula = ""
+    if "ColorFormula" in endpoint:
+        color_formula = "&color_formula=%s"%endpoint["ColorFormula"]
+    no_data = ""
+    if "NoData" in endpoint:
+        no_data = "&no_data=%s"%endpoint["NoData"]
+    if item:
+        item = "item=%s&"%(item)
+    else:
+        item = ""
+    target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s"%(
+        item,
+        assets,
+        color_formula,
+        no_data,
     )
     return target_url
 
@@ -628,8 +672,15 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         )
         pass
     elif endpoint["Name"] == "VEDA":
-        if endpoint["Type"] == "cog":    
-            target_url = generate_veda_link(endpoint, file_url)
+        if endpoint["Type"] == "cog":
+            target_url = generate_veda_cog_link(endpoint, file_url)
+        elif endpoint["Type"] == "tiles":
+            item_kvp = ""
+            if file_url:
+                item_kvp = "&item=%s"%file_url
+            target_url = generate_veda_tiles_link(endpoint, file_url)
+            target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?collection=%s%s&assets=red&assets=green&assets=blue&color_formula=gamma RGB 2.7, saturation 1.5, sigmoidal RGB 15 0.55&nodata=0&format=png"%(endpoint["CollectionId"], item_kvp)
+        if target_url:
             stac_object.add_link(
             Link(
                 rel="xyz",
@@ -638,7 +689,6 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title=data["Name"],
             )
         )
-        pass
     elif endpoint["Name"] == "GeoDB Vector Tiles":
         #`${geoserverUrl}${config.layerName}@EPSG%3A${projString}@pbf/{z}/{x}/{-y}.pbf`,
         # 'geodb_debd884d-92f9-4979-87b6-eadef1139394:GTIF_AT_Gemeinden_3857'
@@ -686,7 +736,10 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
             else:
                 generate_thumbnail(item, data, endpoint)
         # Check if we can create visualization link
-        if "cog_default" in item.assets:
+        if "Assets" in endpoint:
+            add_visualization_info(item, data, endpoint, item.id)
+            link.extra_fields["item"] = item.id
+        elif "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
             link.extra_fields["cog_href"] = item.assets["cog_default"].href
         # If a root collection exists we point back to it from the item
