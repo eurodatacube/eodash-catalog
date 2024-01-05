@@ -65,6 +65,7 @@ collections:
   # - N3a2_chl_concentration
   # - E10d_regional_cropland
   - LC_lakes_collection
+  # - Lakes_S2L2A
   # - Lakes_ALOS2_HH
   # - Lakes_ALOS2_HV
   # - N1_NO2_jaxa

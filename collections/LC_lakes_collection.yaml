@@ -9,6 +9,7 @@ Tags:
   - placeholder
 Satellite:
   - ALOS
+  - Sentinel 1
   - Sentinel 2
 Sensor:
   - placeholder
@@ -22,13 +23,24 @@ Provider:
 License: MIT
 Subcollections:
   - Identifier: Lakes_ALOS2_HH
+    Collection: Lakes_ALOS2_HH
     Country: KH
     Name: Tonle Sap (ALOS2_HH)
     Point: [104.1, 12.9]
     Bbox: [103.4, 13.3, 105, 12.5]
-  - Identifier: Lakes_ALOS2_HV
-    Country: KH
-    Name: Tonle Sap (ALOS2_HV)
-    Point: [104.1, 12.9]
-    Bbox:  [103.4, 13.3, 105, 12.5]
+  - Identifier: Lakes_S2L2A
+    Collection: Lakes_S2L2A
+  # - Identifier: Lakes_ALOS2_HV
+  #   Collection: Lakes_ALOS2_HV
+  #   Country: KH
+  #   Name: Tonle Sap (ALOS2_HV)
+  #   Point: [104.1, 12.9]
+  #   Bbox:  [103.4, 13.3, 105, 12.5]
+  # - Identifier: NLK
+  #   Collection: NLK_lake_cloudfree
+  #   Country: ['UZ', 'KZ']
+  #   Name: Aral Lake
+  #   Point: [58.581, 45.303]
+  #   Bbox:  [57, 43, 62.29, 47.72]
+  
 #Image: LC_lakes_collection/thumbnail.png
