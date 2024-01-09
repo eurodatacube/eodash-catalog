@@ -1,6 +1,6 @@
 Name: NO2
 Title: Nitrogen dioxide daily average
-EodashIdentifier: N1b # Leaving original N1b without NO2 identifier to support older scheme
+EodashIdentifier: N1b_NO2
 Subtitle: Nitrogen dioxide daily average description
 Description: N1b_NO2/N1_CAMS.md
 Themes:
