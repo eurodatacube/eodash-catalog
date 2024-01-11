@@ -22,3 +22,4 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
+Legend: FCM1_Forest_change_detections/cm_legend.png
