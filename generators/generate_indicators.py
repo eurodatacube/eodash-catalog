@@ -442,13 +442,23 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
                 c_child.extent.spatial.bboxes[0]
             )
     else:
-        root_collection = process_STACAPI_Endpoint(
-            config=config,
-            endpoint=endpoint,
-            data=data,
-            catalog=catalog,
-            headers=headers,
-        )
+        if "Bbox" in endpoint:
+                root_collection = process_STACAPI_Endpoint(
+                config=config,
+                endpoint=endpoint,
+                data=data,
+                catalog=catalog,
+                headers=headers,
+                bbox=",".join(map(str,endpoint["Bbox"])),
+            )
+        else:
+            root_collection = process_STACAPI_Endpoint(
+                config=config,
+                endpoint=endpoint,
+                data=data,
+                catalog=catalog,
+                headers=headers,
+            )
 
     add_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
@@ -688,6 +698,12 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     # replace SH identifier with catalog identifier
     collection.id = data["Name"]
     add_collection_information(config, collection, data)
+
+    # Check if we need to overwrite the bbox after update from items
+    if "OverwriteBBox" in endpoint:
+        collection.extent.spatial = SpatialExtent([
+            endpoint["OverwriteBBox"],
+        ])
 
     return collection
 
