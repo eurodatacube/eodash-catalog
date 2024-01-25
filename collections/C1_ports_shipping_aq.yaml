@@ -7,17 +7,36 @@ Themes:
     - economy
     - air
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-5P
-Sensor:
-    - placeholder
+    - Air quality
+    - NO2
+    - Ports
+    - Multi-sensors
+DataSource:
+    - Spaceborne:
+        Satellite:
+        - Sentinel-5P
+        - GNSS
+        Sensor:
+        - TROPOMI
+    - InSitu:
+        - AIS
+        - Mobile
 Agency:
     - ESA
 Provider:
     - Name: e-GEOS
+      Url: https://www.e-geos.it/#/
     - Name: ExpertLab
+      Url: http://www.expertlab.it/
     - Name: CherryData
+      Url: https://www.cherry-data.com/
+References:
+    - Name: AIS data
+      Url: https://www.imo.org/en/OurWork/Safety/Pages/AIS.aspx
+    - Name: TomTom data
+      Url: https://www.tomtom.com/products/traffic-and-travel-information/
+    - Name: Oxford University’s coronavirus government response tracker
+      Url: https://covidtracker.bsg.ox.ac.uk/
 Resources:
     - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
       Name: GeoDB
