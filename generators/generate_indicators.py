@@ -3,12 +3,13 @@
 Indicator generator to harvest information from endpoints and generate catalog
 
 """
-import threading
 import time
 import requests
 import json
 from pystac_client import Client
 import os
+import re
+from pathlib import Path
 from datetime import datetime
 import yaml
 from yaml.loader import SafeLoader
@@ -49,6 +50,7 @@ argparser = argparse.ArgumentParser(
 
 argparser.add_argument("-vd", action="store_true", help="validation flag, if set, validation will be run on generated catalogs")
 argparser.add_argument("-ni", action="store_true", help="no items flag, if set, items will not be saved")
+argparser.add_argument("-tn", action="store_true", help="generate additionally thumbnail image for supported collections")
 
 def recursive_save(stac_object, no_items=False):
     stac_object.save_object()
@@ -336,6 +338,8 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
     collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
+    if additional_query_parameters := endpoint.get("AdditionalQueryString"):
+        url += f"&{additional_query_parameters}"
     response = json.loads(requests.get(url).text)
 
     # Sort locations by key
@@ -349,15 +353,17 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         unique_values = list({v["aoi_id"]:v for v in values}.values())[0]
         country = unique_values["country"]
         city = unique_values["city"]
+        IdKey = endpoint.get("IdKey", "city")
+        IdValue = unique_values[IdKey]
         if country not in countries:
             countries.append(country)
-        # sanitize city identifier to be sure it is filename save
-        if city is not None:
-            city = "".join([c for c in city if c.isalpha() or c.isdigit() or c==' ']).rstrip()
-        # Additional check to see if city name is empty afterwards
-        if city == "" or city is None:
-            # use aoi_id as a fallback unique id instead of city
-            city = key
+        # sanitize unique key identifier to be sure it is saveable as a filename
+        if IdValue is not None:
+            IdValue = "".join([c for c in IdValue if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+        # Additional check to see if unique key name is empty afterwards
+        if IdValue == "" or IdValue is None:
+            # use aoi_id as a fallback unique id instead of configured key
+            IdValue = key
         if city not in cities:
             cities.append(city)
         min_date = min(times)
@@ -368,7 +374,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         buff = 0.01
         bbox = [lon-buff, lat-buff,lon+buff,lat+buff]
         item = Item(
-            id = city,
+            id = IdValue,
             bbox=bbox,
             properties={},
             geometry = create_geojson_point(lon, lat),
@@ -428,6 +434,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             link.extra_fields["id"] = location["Identifier"]
             link.extra_fields["latlng"] = latlng
             link.extra_fields["name"] = location["Name"]
+            add_example_info(collection, data, endpoint, config)
         root_collection.update_extent_from_items()
         # Add bbox extents from children
         for c_child in root_collection.get_children():
@@ -435,13 +442,23 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
                 c_child.extent.spatial.bboxes[0]
             )
     else:
-        root_collection = process_STACAPI_Endpoint(
-            config=config,
-            endpoint=endpoint,
-            data=data,
-            catalog=catalog,
-            headers=headers,
-        )
+        if "Bbox" in endpoint:
+                root_collection = process_STACAPI_Endpoint(
+                config=config,
+                endpoint=endpoint,
+                data=data,
+                catalog=catalog,
+                headers=headers,
+                bbox=",".join(map(str,endpoint["Bbox"])),
+            )
+        else:
+            root_collection = process_STACAPI_Endpoint(
+                config=config,
+                endpoint=endpoint,
+                data=data,
+                catalog=catalog,
+                headers=headers,
+            )
 
     add_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
@@ -495,6 +512,45 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
+def generate_veda_link(endpoint, file_url):
+    bidx = ""
+    if "Bidx" in endpoint:
+        # Check if an array was provided
+        if hasattr(endpoint["Bidx"], "__len__"):
+            for band in endpoint["Bidx"]:
+                bidx = bidx + "&bidx=%s"%(band)
+        else:
+            bidx = "&bidx=%s"%(endpoint["Bidx"])
+    
+    colormap = ""
+    if "Colormap" in endpoint:
+        colormap = "&colormap=%s"%(endpoint["Colormap"])
+        # TODO: For now we assume a already urlparsed colormap definition
+        # it could be nice to allow a json and better convert it on the fly
+        # colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
+
+    colormap_name = ""
+    if "ColormapName" in endpoint:
+        colormap_name = "&colormap_name=%s"%(endpoint["ColormapName"])
+
+    rescale = ""
+    if "Rescale" in endpoint:
+        rescale = "&rescale=%s,%s"%(endpoint["Rescale"][0], endpoint["Rescale"][1])
+    
+    if file_url:
+        file_url = "url=%s&"%(file_url)
+    else:
+        file_url = ""
+
+    target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+        file_url,
+        bidx,
+        colormap,
+        colormap_name,
+        rescale,
+    )
+    return target_url
+
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub":
@@ -563,45 +619,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         )
         pass
     elif endpoint["Name"] == "VEDA":
-        if endpoint["Type"] == "cog":
-            
-            bidx = ""
-            if "Bidx" in endpoint:
-                # Check if an array was provided
-                if hasattr(endpoint["Bidx"], "__len__"):
-                    for band in endpoint["Bidx"]:
-                        bidx = bidx + "&bidx=%s"%(band)
-                else:
-                    bidx = "&bidx=%s"%(endpoint["Bidx"])
-            
-            colormap = ""
-            if "Colormap" in endpoint:
-                colormap = "&colormap=%s"%(endpoint["Colormap"])
-                # TODO: For now we assume a already urlparsed colormap definition
-                # it could be nice to allow a json and better convert it on the fly
-                # colormap = "&colormap=%s"%(urllib.parse.quote(str(endpoint["Colormap"])))
-
-            colormap_name = ""
-            if "ColormapName" in endpoint:
-               colormap_name = "&colormap_name=%s"%(endpoint["ColormapName"])
-
-            rescale = ""
-            if "Rescale" in endpoint:
-               rescale = "&rescale=%s,%s"%(endpoint["Rescale"][0], endpoint["Rescale"][1])
-            
-            if file_url:
-                file_url = "url=%s&"%(file_url)
-            else:
-                file_url = ""
-
-            target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
-                file_url,
-                bidx,
-                colormap,
-                colormap_name,
-                rescale,
-            )
-
+        if endpoint["Type"] == "cog":    
+            target_url = generate_veda_link(endpoint, file_url)
             stac_object.add_link(
             Link(
                 rel="xyz",
@@ -648,10 +667,15 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     results = api.search(
         collections=[endpoint["CollectionId"]],
         bbox=bbox,
-        datetime=['1970-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
+        datetime=['1900-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
     )
     for item in results.items():
         link = collection.add_item(item)
+        if(options.tn):
+            if "cog_default" in item.assets:
+                generate_thumbnail(item, data, endpoint, item.assets["cog_default"].href)
+            else:
+                generate_thumbnail(item, data, endpoint)
         # Check if we can create visualization link
         if "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
@@ -675,7 +699,56 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
     collection.id = data["Name"]
     add_collection_information(config, collection, data)
 
+    # Check if we need to overwrite the bbox after update from items
+    if "OverwriteBBox" in endpoint:
+        collection.extent.spatial = SpatialExtent([
+            endpoint["OverwriteBBox"],
+        ])
+
     return collection
+
+def fetch_and_save_thumbnail(data, url):
+    collection_path = "../thumbnails/%s_%s/"%(data["EodashIdentifier"], data["Name"])
+    Path(collection_path).mkdir(parents=True, exist_ok=True)
+    image_path = '%s/thumbnail.png'%(collection_path)
+    if not os.path.exists(image_path):
+        data = requests.get(url).content 
+        f = open(image_path,'wb') 
+        f.write(data) 
+        f.close()
+
+def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, styles=None):
+    if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "WMS":
+        instanceId = os.getenv("SH_INSTANCE_ID")
+        if "InstanceId" in endpoint:
+            instanceId = endpoint["InstanceId"]
+        # Build example url
+        wms_config = "REQUEST=GetMap&SERVICE=WMS&VERSION=1.3.0&FORMAT=image/png&STYLES=&TRANSPARENT=true"
+        bbox = "%s,%s,%s,%s"%(
+            stac_object.bbox[1],
+            stac_object.bbox[0],
+            stac_object.bbox[3],
+            stac_object.bbox[2],
+        )
+        output_format = "format=image/png&WIDTH=256&HEIGHT=128&CRS=EPSG:4326&BBOX=%s"%(bbox)
+        item_datetime = stac_object.get_datetime()
+        # it is possible for datetime to be null, if it is start and end datetime have to exist
+        if item_datetime:
+            time = item_datetime.isoformat()[:-6] + 'Z'
+        url = "https://services.sentinel-hub.com/ogc/wms/%s?%s&layers=%s&time=%s&%s"%(
+            instanceId,
+            wms_config,
+            endpoint["LayerId"],
+            time,
+            output_format,
+        )
+        fetch_and_save_thumbnail(data, url)
+    elif endpoint["Name"] == "VEDA":
+        target_url = generate_veda_link(endpoint, file_url)
+        # set to get 0/0/0 tile
+        url = re.sub(r"\{.\}", "0", target_url)
+        fetch_and_save_thumbnail(data, url)
+    
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
     collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
@@ -683,7 +756,7 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
 
     stac_endpoint_url = endpoint["EndPoint"]
     if endpoint.get('Name') == 'xcube':
-        stac_endpoint_url = stac_endpoint_url + '/catalog'
+        stac_endpoint_url = stac_endpoint_url + endpoint.get('StacEndpoint','')
     # assuming /search not implemented
     api = Client.open(stac_endpoint_url)
     coll = api.get_collection(endpoint.get('CollectionId', 'datacubes'))
@@ -780,7 +853,7 @@ def add_collection_information(config, collection, data):
             Asset(
                 href="%s/%s"%(config["assets_endpoint"], data["Legend"]),
                 media_type="image/png",
-                roles=["thumbnail"],
+                roles=["metadata"],
             ),
         )
     if "Story" in data:

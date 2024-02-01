@@ -4,13 +4,15 @@ description: "A Tri-Agency Dashboard by NASA, ESA, JAXA"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/trilateral/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  - N1_NO2
+  - E9_car_containers
+  - N1_NO2_trilateral
   - N1_CH4
   - N1_CO
   - N1_SO2
   # - N2_greenhouse_gases
-  - no2-monthly
-  - no2-monthly-diff
+  - N1_NO2_monthly
+  - N1_NO2_diff_monthly
+  - N1_NO2_city_trilateral
   - co2-mean
   - facebook_population_density
   - OMI_trno2-COG
@@ -52,10 +54,6 @@ collections:
   - LWE_lake_water_extent
   - LWL_lake_water_level
   - SMCG_soil_moisture_content
-  - E13b_parked_planes
-  - E13b_airport_throughput
-  - E13b_parked_planes
-  - E13c_cruises_impact
   - SIF_solar_induced_chlorophyll_fluorescence
   # - NLK_lake_cloudfree #TODO: needs implementation
   - N5_nightlights
@@ -82,3 +80,12 @@ collections:
   - RECCAP2_10_intact_biomass_change_smooth_max
   - RECCAP2_11_intact_biomass_change_smooth_mean
   - RECCAP2_12_intact_biomass_change_trend_mean
+  - GGI_CO2
+  - GGI_N2O
+  - GGI_CH4
+  - ESDC_gross_primary_productivity
+  - ESDC_kndvi
+  - ESDC_net_ecosystem_exchange
+  - GG_Google_Mobility_Data_trilateral
+  - E13c_shipping_activity
+  - E13b_parked_airplanes

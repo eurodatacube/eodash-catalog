@@ -25,3 +25,4 @@ Resources:
     ColormapName: magma
     Rescale: [0,1]
 # Legend: E10d_regional_cropland/cm_legend.png
+Image: E10d_regional_cropland/thumbnail.png

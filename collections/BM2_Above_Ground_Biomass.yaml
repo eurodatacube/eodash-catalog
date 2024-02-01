@@ -6,7 +6,7 @@ Description: BM2_Above_Ground_Biomass/BM2.md
 Themes:
   - carbon-accounting
 Tags:
-  - "Biomass tools"
+  - "Forest Analysis"
 Satellite:
   - placeholder
 Sensor:
@@ -18,8 +18,8 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: BM2_Above_Ground_Biomass/viridis.png
+Legend: BM2_Above_Ground_Biomass/cm_legend.png

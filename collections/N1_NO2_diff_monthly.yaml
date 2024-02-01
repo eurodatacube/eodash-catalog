@@ -1,8 +1,8 @@
-Name: no2-monthly-diff
+Name: N1_NO2_diff_monthly
 Title: Nitrogen Dioxide (Monthly difference)
-EodashIdentifier: N1_NO2_monthly_diff
+EodashIdentifier: N1_NO2_diff_monthly
 Subtitle: Monthly difference of Nitrogen Dioxide (NO2) from NASA [10^15 molecules/cm²]
-Description: OMI_trno2-COG/N9.md
+Description: N1_NO2_trilateral/N1.md
 Themes:
   - atmosphere
 Tags:
@@ -13,7 +13,7 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: no2-monthly-diff/cm_legend.png
+Legend: N1_NO2_diff_monthly/cm_legend.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: VEDA Statistics

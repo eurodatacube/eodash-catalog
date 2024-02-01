@@ -1,6 +1,6 @@
 Name: co2-diff
 Title: Difference of Carbon Dioxide
-EodashIdentifier: N2
+EodashIdentifier: N2_diff
 Subtitle: Difference of Carbon Dioxide [ppm]
 Description: co2-diff/N2.md
 Themes:
@@ -22,3 +22,4 @@ Resources:
     ColormapName: rdbu_r
     Rescale: [-0.000001,0.000001]
     Bidx: 1
+Image: co2-diff/thumbnail.png

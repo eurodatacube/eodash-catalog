@@ -18,5 +18,5 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
-Legend: AQC_Coarse_particulate_matter_PM25/air_quality_pm.png
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
+Legend: AQC_Coarse_particulate_matter_PM25/cm_legend.png

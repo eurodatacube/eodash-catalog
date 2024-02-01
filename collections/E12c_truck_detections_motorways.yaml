@@ -23,5 +23,5 @@ Resources:
       Type: byoc
       CollectionId: 34fbfb05-c3e5-4885-9840-830ee85dddd4
       LayerId: VIS_TRUCK_DETECTION_MOTORWAYS_NEW
-Image: E12c_truck_detections_motorways/E12c.png
+Image: E12c_truck_detections_motorways/thumbnail.png
 Legend: E12c_truck_detections_motorways/cm_legend.png

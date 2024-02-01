@@ -30,3 +30,4 @@ Resources:
       Type: byoc
       CollectionId: a9ae7d6a-70c8-4575-854a-1a8f0cb33317
       LayerId: AWS_ICEYE-E11A
+Image: E11a_parking_lot_volume/thumbnail.png

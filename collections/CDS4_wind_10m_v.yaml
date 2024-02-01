@@ -3,7 +3,7 @@ Title: Wind V Field
 EodashIdentifier: CDS4
 Subtitle: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field
 Description: CDS4_wind_10m_v/README.MD
-Story: CDS3_wind_10m_u/CDS.md
+Story: CDS4_wind_10m_v/CDS.md
 Themes:
   - air
 Tags:
@@ -25,6 +25,12 @@ Provider:
       Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)"
 License: |
   Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 3043d07f-3c20-410c-9a87-7da720942ab8
+    Script: CDS4_wind_10m_v/script.js
 Resources:
   - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
@@ -38,7 +44,7 @@ OpenEOPID: ERA5_WIND_V
 AdditionalInfoExternal:
   Title: Additional info
   Path: CDS4_wind_10m_v/README.MD
-Image: CDS4_wind_10m_v/wind_10m_v.png
+Image: CDS4_wind_10m_v/thumbnail.png
 EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_v&layerId=Wind%20V-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
 Resolution: 0.25° x 0.25°
 GeographicalCoverage: -179.999755859375, -90.12489004526765, 179.99977453631897, 90.125

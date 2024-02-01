@@ -19,8 +19,8 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: SOL1_2_Green_Roofs_grexisting/gr_existing.png
+Legend: SOL1_2_Green_Roofs_grexisting/cm_legend.png

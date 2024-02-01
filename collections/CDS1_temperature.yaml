@@ -13,17 +13,6 @@ Sensor:
     - placeholder
 Agency:
     - ESA
-Provider:
-    - Name: placeholder
-      Url: https://example.com
-Citation:
-    Citation: This string needs to be added when using the data
-    DOI: 10.5061/dryad.s2v81.2
-    Publication:
-        - Citation: Citation string of publication
-          DOI: 10.5061/dryad.s2v81.3
-        - Citation: Another string of publication
-          DOI: 10.5061/dryad.s2v81.4
 License: MIT
 Resources:
     - Group: Sentinel Hub Resources
@@ -32,5 +21,11 @@ Resources:
       Type: byoc
       CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
       LayerId: AWS_VIS_2MTEMPERATURE
-Image: CDS1_temperature/CDS1.png
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
+    Script: CDS1_temperature/script.js
+Image: CDS1_temperature/thumbnail.png
 Legend: CDS1_temperature/cm_legend.png

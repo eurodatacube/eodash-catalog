@@ -22,4 +22,4 @@ Resources:
     Rescale: [0.0,100.0]
     Bidx: 1
 Legend: grdi-v1-built/cm_legend.png
-Image: grdi-shdi-raster/preview.png
+Image: grdi-shdi-raster/thumbnail.png

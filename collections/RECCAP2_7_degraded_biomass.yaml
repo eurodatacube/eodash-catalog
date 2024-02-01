@@ -1,6 +1,6 @@
 Name: RECCAP2_7_degraded_biomass
 Title: Degradation (CCI RECCAP2)
-EodashIdentifier: RECCAP_2_7
+EodashIdentifier: RECCAP2_7
 Description: RECCAP2_7_degraded_biomass/RECCAP2_7.md
 Themes:
   - biomass
@@ -16,9 +16,10 @@ Resources:
   - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
     Type: zarr
     Name: xcube
+    StacEndpoint: "/ogc"
     DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
     Variable: degraded_biomass
     ColormapName: YlOrRd
     Rescale: [0,5]
 Legend: RECCAP2_6_deforested_biomass/cm_legend.png
-Image: RECCAP2_7_degraded_biomass/preview.png
+Image: RECCAP2_7_degraded_biomass/World-RECCAP2_7.png

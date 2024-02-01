@@ -1,0 +1,25 @@
+Name: ESDC_gross_primary_productivity
+Title: Gross Primary Productivity
+EodashIdentifier: ESDC_gross_primary_productivity
+Description: ESDC_gross_primary_productivity/ESDC_gross_primary_productivity.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - placeholder
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'esdc'
+    Variable: gross_primary_productivity
+    ColormapName: jet
+    Rescale: [-1,15]
+Legend: ESDC_gross_primary_productivity/cm_legend.png
+Image: ESDC_gross_primary_productivity/World-ESDC_gross_primary_productivity.png

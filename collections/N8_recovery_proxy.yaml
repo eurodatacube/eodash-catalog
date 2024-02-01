@@ -90,3 +90,4 @@ Resources:
     CollectionId: recovery-proxy-maps-covid-19
     Bidx: [1,2,3]
 # Legend: N8_recovery_proxy/cm_legend.png
+Image: N8_recovery_proxy/thumbnail.png

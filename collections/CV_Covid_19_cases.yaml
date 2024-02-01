@@ -1,0 +1,19 @@
+Name: CV_Covid_19_cases
+Title: Covid-19 Cases
+EodashIdentifier: CV
+Description: CV_Covid_19_cases/CV.md
+Themes:
+    - economy
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Covid_cases # TODO

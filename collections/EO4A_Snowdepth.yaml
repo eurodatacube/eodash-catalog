@@ -19,7 +19,7 @@ Resources:
   - EndPoint: https://snow-app-gte2s.hub.eox.at/
     Name: WMS
     LayerId: 'SNOW-DEPTH'
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
     Type: OverwriteTimes
     DateTimeInterval:
       Start: "2020-10-01T00:00:00"

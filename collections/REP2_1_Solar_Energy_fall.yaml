@@ -2,7 +2,7 @@ Name: Solar_Energy_Fall
 Title: Solar Energy Assessment Fall
 EodashIdentifier: REP2_1
 Subtitle: Site Suitability Assessment & Trade-off Explorer
-Description: REP2_Solar_Energy_fall/REP2.md
+Description: REP2_1_Solar_Energy_fall/REP2.md
 Themes:
   - energy-transition
 Tags:
@@ -19,8 +19,8 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: REP2_Solar_Energy/viridis.png
+Legend: REP2_1_Solar_Energy_fall/cm_legend.png

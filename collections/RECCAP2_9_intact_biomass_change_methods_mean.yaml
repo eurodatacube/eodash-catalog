@@ -1,6 +1,6 @@
 Name: RECCAP2_9_intact_biomass_change_methods_mean
 Title: Methods mean intact biomass change (CCI RECCAP2)
-EodashIdentifier: RECCAP_2_9
+EodashIdentifier: RECCAP2_9
 Description: RECCAP2_9_intact_biomass_change_methods_mean/RECCAP2_9.md
 Themes:
   - biomass
@@ -16,9 +16,10 @@ Resources:
   - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
     Type: zarr
     Name: xcube
+    StacEndpoint: "/ogc"
     DatacubeId: 'cop28~reccap2-9x108x139-0.0.1.zarr'
     Variable: intact_biomass_change_methods_mean
     ColormapName: Spectral
     Rescale: [-5,5]
 Legend: RECCAP2_9_intact_biomass_change_methods_mean/cm_legend.png
-Image: RECCAP2_9_intact_biomass_change_methods_mean/preview.png
+Image: RECCAP2_9_intact_biomass_change_methods_mean/World-RECCAP2_9.png

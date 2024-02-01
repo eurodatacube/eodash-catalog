@@ -1,8 +1,7 @@
 Name: facebook_population_density
 Title: Population Density (Meta)
 EodashIdentifier: FB
-Subtitle: Monthly difference of Nitrogen Dioxide (NO2) from NASA [10^15 molecules/cm²]
-Description: facebook_population_density/N9.md
+Description: facebook_population_density/FB.md
 Themes:
   - economy
 Tags:
@@ -22,3 +21,4 @@ Resources:
     ColormapName: ylorrd
     Rescale: [0,70]
     Bidx: 1
+Image: facebook_population_density/thumbnail.png

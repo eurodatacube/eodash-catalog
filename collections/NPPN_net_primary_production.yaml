@@ -43,3 +43,4 @@ Resources:
     Rescale: [0.0,1500.0]
     Bidx: 1
 Legend: NPPN_net_primary_production/cm_legend.png
+Image: NPPN_net_primary_production/thumbnail.png

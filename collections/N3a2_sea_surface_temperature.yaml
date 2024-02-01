@@ -1,6 +1,6 @@
 Name: sea_surface_temperature
-Title: Sea surface temperature
-EodashIdentifier: N3a2
+Title: Sea surface temperature maps
+EodashIdentifier: N3a2_SST
 Subtitle: Sea surface temperature description
 Description: N3a2_sea_surface_temperature/N3a2.md
 Themes:
@@ -50,5 +50,5 @@ Services:
     Type: byoc
     CollectionId: 92780d01-126f-4827-80f8-4e561dd8e228
     Script: N3a2_sea_surface_temperature/script.js
-#Image: N3a2_sea_surface_temperature/N3a2.png
+Image: N3a2_sea_surface_temperature/thumbnail.png
 Legend: N3a2_sea_surface_temperature/cm_legend.png

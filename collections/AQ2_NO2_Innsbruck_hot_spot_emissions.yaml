@@ -18,4 +18,4 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    OverwriteBBox: [11.380, 47.260, 11.396, 47.270]

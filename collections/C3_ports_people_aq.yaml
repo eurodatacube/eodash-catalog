@@ -1,8 +1,8 @@
 Name: ports_people_aq
-Title: Ports and people - impact on ar quality
+Title: Ports and people - impact on air quality
 EodashIdentifier: C3
 Subtitle: Port Activities, sources of pollution and NO2 levels
-Description: ""
+Description: "C3_ports_people_aq/C3.md"
 Themes:
     - economy
     - air

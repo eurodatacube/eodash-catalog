@@ -1,0 +1,25 @@
+Name: ESDC_net_ecosystem_exchange
+Title: Net Ecosystem Exchange
+EodashIdentifier: ESDC_net_ecosystem_exchange
+Description: ESDC_net_ecosystem_exchange/ESDC_net_ecosystem_exchange.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - placeholder
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'esdc'
+    Variable: net_ecosystem_exchange
+    ColormapName: bwr
+    Rescale: [-7,2]
+Legend: ESDC_net_ecosystem_exchange/cm_legend.png
+Image: ESDC_net_ecosystem_exchange/World-ESDC_net_ecosystem_exchange.png

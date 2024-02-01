@@ -1,6 +1,6 @@
 Name: vessel_density_others
 Title: Vessel density for non tanker or cargo
-EodashIdentifier: E13q
+EodashIdentifier: E13r
 Subtitle: Vessel density for non tanker or cargo vessels
 Description: E13r_vessel_density_others/E13o.md
 Themes:
@@ -17,7 +17,13 @@ Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
-    CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12 # using vessel density all id (should be updated to correct id)
+    CollectionId: cc0a4c72-870d-4e9f-84d0-ba4e3d785693
     LayerId: AWS_VIS_VESSELDENSITY_OTHER
 Legend: E13o_vessel_density_all/cm_legend.png
 Image: E13r_vessel_density_others/E13r.png
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: cc0a4c72-870d-4e9f-84d0-ba4e3d785693
+    Script: E13r_vessel_density_others/script.js
