@@ -1,6 +1,6 @@
 Name: N12_1_sea_ice_concentration_arctic
 Title: Sea ice concentration - Arctic
-EodashIdentifier: N12_1
+EodashIdentifier: N12_1_sea_ice_concentration_arctic
 Subtitle: Sea ice concentration GCOM-W - Arctic
 Description: N12_sea_ice_concentration/N12.md
 Themes:
@@ -27,7 +27,12 @@ Provider:
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
-    Type: Time
+    Type: OverwriteTimes
     LayerId: SIC_N
+    OverwriteBBox: [-20, 77, 50, 83]
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "1978-11-01T00:00:00"
+      End: "2023-12-31T00:00:00"
 Legend: N12_sea_ice_concentration/World-SIC.png
 Image: N12_sea_ice_concentration/Arctic-N12_1.png

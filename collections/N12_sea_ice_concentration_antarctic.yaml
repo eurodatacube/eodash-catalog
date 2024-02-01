@@ -1,6 +1,6 @@
 Name: N12_sea_ice_concentration_antarctic
 Title: Sea ice concentration - Antarctic
-EodashIdentifier: N12
+EodashIdentifier: N12_sea_ice_concentration_antarctic
 Subtitle: Sea ice concentration GCOM-W - Antarctic
 Description: N12_sea_ice_concentration/N12.md
 Themes:
@@ -27,7 +27,9 @@ Provider:
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
-    Type: Time
+    Type: OverwriteTimes
     LayerId: SIC_S
+    OverwriteBBox: [-107, -84, 125, -64]
+    Disable_Items: true
 Legend: N12_sea_ice_concentration/World-SIC.png
 Image: N12_sea_ice_concentration/Antarctic-N12.png
