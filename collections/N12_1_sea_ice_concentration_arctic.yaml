@@ -1,0 +1,37 @@
+Name: N12_1_sea_ice_concentration_arctic
+Title: Sea ice concentration GCOM-W - Arctic
+EodashIdentifier: N12_1_sea_ice_concentration_arctic
+Description: N12_sea_ice_concentration/N12.md
+Themes:
+  - cryosphere
+Tags:
+  - sea ice
+Satellite:
+  - GCOM-W
+Sensor:
+  - GCOM-W
+Agency:
+  - JAXA
+Provider:
+  - Name: "Global Change Observation Mission – Water SHIZUKU (GCOM-W)"
+    Url: https://global.jaxa.jp/projects/sat/gcom_w/
+    Description: The purpose of this website is, first and foremost, to provide the science and broader communities with global, updated ocean productivity estimates. In addition, the website provides information on the models employed, access to model code and ancillary data sets, and comparisons of productivity estimates for alternative models. Field data sets relevant to ocean productivity modeling are also provided and will be continually expanded as new data become available. Educational material and background information on phytoplankton ecology and physiology will also be added in the future.
+    Roles: 
+      - producer
+  - Name: GCOM-W Research Product Distribution Service
+    Url: https://suzaku.eorc.jaxa.jp/GCOM_W/research/resdist.html
+    Description: The GCOM-W Research Product Distribution Service provides GCOM-W/AMSR2 and Aqua/AMSR-E research products with free of charge.
+    Roles:
+      - host
+Resources:
+  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+    Name: WMS
+    Type: OverwriteTimes
+    LayerId: SIC_N
+    OverwriteBBox: [-20, 77, 50, 83]
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "1978-11-01T00:00:00"
+      End: "2023-12-31T00:00:00"
+Legend: N12_sea_ice_concentration/World-SIC.png
+Image: N12_sea_ice_concentration/Arctic-N12_1.png
