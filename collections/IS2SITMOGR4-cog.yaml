@@ -13,6 +13,7 @@ Sensor:
 Agency:
   - NASA
 Legend: IS2SITMOGR4-cog/cm_legend.png
+Image: IS2SITMOGR4-cog/thumbnail.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog

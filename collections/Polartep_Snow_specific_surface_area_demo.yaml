@@ -13,6 +13,7 @@ Sensor:
 Agency:
   - ESA
 # Legend: Polartep_Snow_specific_surface_area_demo/cm_legend.png
+Image: Polartep_Snow_specific_surface_area_demo/thumbnail.png
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only

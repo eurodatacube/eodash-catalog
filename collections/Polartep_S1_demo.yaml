@@ -13,6 +13,7 @@ Sensor:
 Agency:
   - ESA
 # Legend: Polartep_S1_demo/cm_legend.png
+Image: Polartep_S1_demo/thumbnail.png
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
