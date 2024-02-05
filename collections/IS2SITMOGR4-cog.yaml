@@ -18,7 +18,6 @@ Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
     Name: VEDA
-    Tileset: UPSArcticWGS84Quad
     CollectionId: IS2SITMOGR4-cog
     ColormapName: plasma
     Rescale: [0.0,4.0]
