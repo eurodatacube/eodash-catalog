@@ -1,6 +1,6 @@
-Name: N12_sea_ice_concentration_antarctic
-Title: Sea ice concentration GCOM-W - Antarctic
-EodashIdentifier: N12_sea_ice_concentration_antarctic
+Name: N12_2_sea_ice_concentration_both_hemispheres
+Title: Sea ice concentration GCOM-W - Global
+EodashIdentifier: N12_2_sea_ice_concentration_both_hemispheres
 Description: N12_sea_ice_concentration/N12.md
 Themes:
   - cryosphere
@@ -27,11 +27,10 @@ Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: OverwriteTimes
-    LayerId: SIC_S
-    OverwriteBBox: [-107, -84, 125, -64]
+    LayerId: SIC_N
     Disable_Items: true
     DateTimeInterval:
       Start: "1978-11-01T00:00:00"
       End: "2023-12-31T00:00:00"
 Legend: N12_sea_ice_concentration/World-SIC.png
-Image: N12_sea_ice_concentration/Antarctic-N12.png
+Image: N12_sea_ice_concentration/Arctic-N12_1.png

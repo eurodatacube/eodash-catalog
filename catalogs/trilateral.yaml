@@ -36,6 +36,7 @@ collections:
   - WSF_world_settlement_footprint
   - N12_sea_ice_concentration_antarctic
   - N12_1_sea_ice_concentration_arctic
+  - N12_2_sea_ice_concentration_both_hemispheres
   - E10e_ndvi
   - N11_ocean_primary_productivity
   - SMC_soil_moisture_anomaly
