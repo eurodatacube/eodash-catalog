@@ -501,8 +501,10 @@ def generate_veda_link(endpoint, file_url):
         file_url = "url=%s&"%(file_url)
     else:
         file_url = ""
+    tileset = endpoint.get("Tileset", "WebMercatorQuad")
 
-    target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+    target_url = "https://staging-raster.delta-backend.com/cog/tiles/%s/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+        tileset,
         file_url,
         bidx,
         colormap,
