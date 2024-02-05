@@ -127,28 +127,48 @@ def process_collection_file(config, file_path, catalog):
                         raise ValueError("Type of Resource is not supported")
         elif "Subcollections" in data:
             # if no endpoint is specified we check for definition of subcollections
-            # TODO:
-            #  - implement bbox filtering for sub collections
-            #  - implement summary of locations on parent collection level
-            #  - ...
             parent_collection = get_or_create_collection(catalog, data["Name"], data, config)
             
             locations = []
             countries = []
-            for sub_collection in data["Subcollections"]:
-                locations.append(sub_collection["Name"])
-                if isinstance(sub_collection["Country"], list):
-                    countries.extend(sub_collection["Country"])
+            for sub_coll_def in data["Subcollections"]:
+                # Subcollection has only data on one location which is defined for the entire collection
+                if "Name" in sub_coll_def and "Point" in sub_coll_def:
+                    locations.append(sub_coll_def["Name"])
+                    if isinstance(sub_coll_def["Country"], list):
+                        countries.extend(sub_coll_def["Country"])
+                    else:
+                        countries.append(sub_coll_def["Country"])
+                    process_collection_file(config, "../collections/%s.yaml"%(sub_coll_def["Collection"]), parent_collection)
+                    # find link in parent collection to update metadata
+                    for link in parent_collection.links:
+                        if link.rel == "child" and "id" in link.extra_fields and link.extra_fields["id"] == sub_coll_def["Identifier"]:
+                            latlng = "%s,%s"%(sub_coll_def["Point"][1], sub_coll_def["Point"][0])
+                            link.extra_fields["id"] = sub_coll_def["Identifier"]
+                            link.extra_fields["latlng"] = latlng
+                            link.extra_fields["name"] = sub_coll_def["Name"]
+                    # Update title of collection to use location name
+                    sub_collection = parent_collection.get_child(id=sub_coll_def["Identifier"])
+                    if sub_collection:
+                        sub_collection.title = sub_coll_def["Name"]
+                # The subcollection has multiple locations which need to be extracted and elevated to parent collection level
                 else:
-                    countries.append(sub_collection["Country"])
-                process_collection_file(config, "../collections/%s.yaml"%(sub_collection["Collection"]), parent_collection)
-                # find link in parent collection to update metadata
-                for link in parent_collection.links:
-                    if link.rel == "child" and link.extra_fields["code"] == sub_collection["Identifier"]:
-                        latlng = "%s,%s"%(sub_collection["Point"][1], sub_collection["Point"][0])
-                        link.extra_fields["id"] = sub_collection["Identifier"]
-                        link.extra_fields["latlng"] = latlng
-                        link.extra_fields["name"] = sub_collection["Name"]
+                    # create temp catalog to save collection
+                    tmp_catalog = Catalog(id = "tmp_catalog", description="temp catalog placeholder")
+                    process_collection_file(config, "../collections/%s.yaml"%(sub_coll_def["Collection"]), tmp_catalog)
+                    links = tmp_catalog.get_child(sub_coll_def["Identifier"]).get_links()
+                    for link in links:
+                        # extract summary information
+                        if "city" in link.extra_fields:
+                            locations.append(link.extra_fields["city"])
+                        if "country" in link.extra_fields:
+                            if isinstance(link.extra_fields["country"], list):
+                                countries.extend(link.extra_fields["country"])
+                            else:
+                                countries.append(link.extra_fields["country"])
+
+                    parent_collection.add_links(links)
+            
             add_collection_information(config, parent_collection, data)
             parent_collection.update_extent_from_items()
             # Add bbox extents from children
@@ -410,6 +430,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
         link.extra_fields["subtitle"] = data["Subtitle"]
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
+    link.extra_fields["id"] = data["Name"]
     link.extra_fields["themes"] = data["Themes"]
     # Check for summaries and bubble up info
     if collection.summaries.lists:
