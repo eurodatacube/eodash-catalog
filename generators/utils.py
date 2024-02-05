@@ -71,11 +71,7 @@ def retrieveExtentFromWMS(capabilties_url, layer):
     bbox = [-180,-90,180,90]
     if wms and wms[layer].boundingBoxWGS84:
         bbox = [float(x) for x in wms[layer].boundingBoxWGS84]
-
-    return {
-        "spatial": bbox,
-        "temporal": times,
-    }
+    return bbox, times
 
 def interval(start: datetime, stop: datetime, delta: timedelta) -> Iterator[datetime]:
     while start <= stop:
