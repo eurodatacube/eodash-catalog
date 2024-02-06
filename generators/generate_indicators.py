@@ -11,6 +11,7 @@ import os
 import re
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
 import yaml
 from yaml.loader import SafeLoader
 from itertools import groupby
@@ -40,6 +41,9 @@ from pystac.layout import TemplateLayoutStrategy
 from pystac.validation import validate_all
 import spdx_lookup as lookup
 import argparse
+
+# make sure we are loading the env local definition
+load_dotenv()
 
 argparser = argparse.ArgumentParser(
     prog='STAC generator and harvester',
@@ -99,25 +103,85 @@ def process_collection_file(config, file_path, catalog):
     print("Processing collection:", file_path)
     with open(file_path) as f:
         data = yaml.load(f, Loader=SafeLoader)
-        for resource in data["Resources"]:
-            if "EndPoint" in resource:
-                if resource["Name"] == "Sentinel Hub":
-                    handle_SH_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "GeoDB":
-                    collection = handle_GeoDB_endpoint(config, resource, data, catalog)
-                    add_to_catalog(collection, catalog, resource, data)
-                elif resource["Name"] == "VEDA":
-                    handle_VEDA_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "xcube":
-                    handle_xcube_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "WMS":
-                    handle_WMS_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "GeoDB Vector Tiles":
-                    handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "Collection-only":
-                    handle_collection_only(config, resource, data, catalog)
+        if "Resources" in data:
+            for resource in data["Resources"]:
+                if "EndPoint" in resource:
+                    if resource["Name"] == "Sentinel Hub":
+                        handle_SH_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "Sentinel Hub WMS":
+                        collection = handle_SH_WMS_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "GeoDB":
+                        collection = handle_GeoDB_endpoint(config, resource, data, catalog)
+                        add_to_catalog(collection, catalog, resource, data)
+                    elif resource["Name"] == "VEDA":
+                        handle_VEDA_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "xcube":
+                        handle_xcube_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "WMS":
+                        handle_WMS_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "GeoDB Vector Tiles":
+                        handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "Collection-only":
+                        handle_collection_only(config, resource, data, catalog)
+                    else:
+                        raise ValueError("Type of Resource is not supported")
+        elif "Subcollections" in data:
+            # if no endpoint is specified we check for definition of subcollections
+            parent_collection, _ = get_or_create_collection(catalog, data["Name"], data, config)
+            
+            locations = []
+            countries = []
+            for sub_coll_def in data["Subcollections"]:
+                # Subcollection has only data on one location which is defined for the entire collection
+                if "Name" in sub_coll_def and "Point" in sub_coll_def:
+                    locations.append(sub_coll_def["Name"])
+                    if isinstance(sub_coll_def["Country"], list):
+                        countries.extend(sub_coll_def["Country"])
+                    else:
+                        countries.append(sub_coll_def["Country"])
+                    process_collection_file(config, "../collections/%s.yaml"%(sub_coll_def["Collection"]), parent_collection)
+                    # find link in parent collection to update metadata
+                    for link in parent_collection.links:
+                        if link.rel == "child" and "id" in link.extra_fields and link.extra_fields["id"] == sub_coll_def["Identifier"]:
+                            latlng = "%s,%s"%(sub_coll_def["Point"][1], sub_coll_def["Point"][0])
+                            link.extra_fields["id"] = sub_coll_def["Identifier"]
+                            link.extra_fields["latlng"] = latlng
+                            link.extra_fields["name"] = sub_coll_def["Name"]
+                    # Update title of collection to use location name
+                    sub_collection = parent_collection.get_child(id=sub_coll_def["Identifier"])
+                    if sub_collection:
+                        sub_collection.title = sub_coll_def["Name"]
+                # The subcollection has multiple locations which need to be extracted and elevated to parent collection level
                 else:
-                    raise ValueError("Type of Resource is not supported")
+                    # create temp catalog to save collection
+                    tmp_catalog = Catalog(id = "tmp_catalog", description="temp catalog placeholder")
+                    process_collection_file(config, "../collections/%s.yaml"%(sub_coll_def["Collection"]), tmp_catalog)
+                    links = tmp_catalog.get_child(sub_coll_def["Identifier"]).get_links()
+                    for link in links:
+                        # extract summary information
+                        if "city" in link.extra_fields:
+                            locations.append(link.extra_fields["city"])
+                        if "country" in link.extra_fields:
+                            if isinstance(link.extra_fields["country"], list):
+                                countries.extend(link.extra_fields["country"])
+                            else:
+                                countries.append(link.extra_fields["country"])
+
+                    parent_collection.add_links(links)
+            
+            add_collection_information(config, parent_collection, data)
+            parent_collection.update_extent_from_items()
+            # Add bbox extents from children
+            for c_child in parent_collection.get_children():
+                parent_collection.extent.spatial.bboxes.append(
+                    c_child.extent.spatial.bboxes[0]
+                )
+            # Fill summaries for locations
+            parent_collection.summaries = Summaries({
+                "cities": list(set(locations)),
+                "countries": list(set(countries)),
+            })
+            add_to_catalog(parent_collection, catalog, None, data)
 
 
 def handle_collection_only(config, endpoint, data, catalog):
@@ -170,8 +234,56 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
     token = get_SH_token()
     headers = {"Authorization": "Bearer %s"%token}
     endpoint["EndPoint"] = "https://services.sentinel-hub.com/api/v1/catalog/1.0.0/"
-    endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"]
+    # Overwrite collection id with type, such as ZARR or BYOC
+    if "Type" in endpoint:
+        endpoint["CollectionId"] = endpoint["Type"] + "-" + endpoint["CollectionId"]
     handle_STAC_based_endpoint(config, endpoint, data, catalog, headers)
+
+def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
+    # create collection and subcollections (based on locations)
+    if "Locations" in data:
+        root_collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        for location in data["Locations"]:
+            # create  and populate location collections based on times
+            # TODO: Should we add some new description per location?
+            location_config = {
+                "Title": location["Name"],
+                "Description": "",
+            }
+            collection, _ = get_or_create_collection(
+                catalog, location["Identifier"], location_config, config, endpoint
+            )
+            collection.extra_fields["endpointtype"] = endpoint["Name"]
+            for time in location["Times"]:
+                item = Item(
+                    id = time,
+                    bbox=location["Bbox"],
+                    properties={},
+                    geometry = None,
+                    datetime = parser.isoparse(time),
+                )
+                item_link = collection.add_item(item)
+                item_link.extra_fields["datetime"] = time
+
+            link = root_collection.add_child(collection)
+            # bubble up information we want to the link
+            latlng = "%s,%s"%(location["Point"][1], location["Point"][0])
+            link.extra_fields["id"] = location["Identifier"] 
+            link.extra_fields["latlng"] = latlng
+            link.extra_fields["country"] = location["Country"]
+            link.extra_fields["city"] = location["Name"]
+            collection.update_extent_from_items()
+            add_visualization_info(collection, data, endpoint)
+
+
+        root_collection.update_extent_from_items()
+        # Add bbox extents from children
+        for c_child in root_collection.get_children():
+            root_collection.extent.spatial.bboxes.append(
+                c_child.extent.spatial.bboxes[0]
+            )
+        add_to_catalog(root_collection, catalog, endpoint, data)
+    return root_collection
 
 def handle_VEDA_endpoint(config, endpoint, data, catalog):
     handle_STAC_based_endpoint(config, endpoint, data, catalog)
@@ -188,21 +300,21 @@ def handle_xcube_endpoint(config, endpoint, data, catalog):
     add_to_catalog(root_collection, catalog, endpoint, data)
 
 
-def get_or_create_collection(catalog, collection_id, data, config, endpoint):
+def get_or_create_collection(catalog, collection_id, data, config, endpoint=None):
     # Check if collection already in catalog
     for collection in catalog.get_collections():
         if collection.id == collection_id:
             return collection, []
     # If none found create a new one
     spatial_extent = [-180.0, -90.0, 180.0, 90.0]
-    if endpoint.get("OverwriteBBox"):
+    if endpoint and endpoint.get("OverwriteBBox"):
         spatial_extent = endpoint.get("OverwriteBBox")
     spatial_extent = SpatialExtent([
         spatial_extent,
     ])
     times = []
     temporal_extent = TemporalExtent([[datetime.now(), None]])
-    if endpoint.get("Type") == "OverwriteTimes":
+    if endpoint and endpoint.get("Type") == "OverwriteTimes":
         if endpoint.get("Times"):
             times = endpoint.get("Times")
             times_datetimes = sorted([parser.isoparse(time) for time in times])
@@ -264,8 +376,12 @@ def add_to_catalog(collection, catalog, endpoint, data):
             return
 
     link = catalog.add_child(collection)
-    # bubble fields we want to have up to collection link
-    if endpoint:
+    # bubble fields we want to have up to collection link and add them to collection
+    if endpoint and "Type" in endpoint:
+        collection.extra_fields["endpointtype"] = "%s_%s"%(endpoint["Name"], endpoint["Type"])
+        link.extra_fields["endpointtype"] = "%s_%s"%(endpoint["Name"], endpoint["Type"])
+    elif endpoint:
+        collection.extra_fields["endpointtype"] = endpoint["Name"]
         link.extra_fields["endpointtype"] = endpoint["Name"]
     # Disabling bubbling up of description as now it is considered to be
     # used as markdown loading would increase the catalog size unnecessarily
@@ -274,12 +390,13 @@ def add_to_catalog(collection, catalog, endpoint, data):
         link.extra_fields["subtitle"] = data["Subtitle"]
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
+    link.extra_fields["id"] = data["Name"]
     link.extra_fields["themes"] = data["Themes"]
     # Check for summaries and bubble up info
     if collection.summaries.lists:
         for sum in collection.summaries.lists:
             link.extra_fields[sum] = collection.summaries.lists[sum]
-    if "Locations" in data:
+    if "Locations" in data or "Subcollections" in data:
         link.extra_fields["locations"] = True
     if "Tags" in data:
         link.extra_fields["tags"] = data["Tags"]
@@ -370,16 +487,30 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
     if "Locations" in data:
         root_collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
         for location in data["Locations"]:
-            collection = process_STACAPI_Endpoint(
-                config=config,
-                endpoint=endpoint,
-                data=data,
-                catalog=catalog,
-                headers=headers,
-                bbox=",".join(map(str,location["Bbox"])),
-                root_collection=root_collection,
-            )
+            if "FilterDates" in location:
+                collection = process_STACAPI_Endpoint(
+                    config=config,
+                    endpoint=endpoint,
+                    data=data,
+                    catalog=catalog,
+                    headers=headers,
+                    bbox=",".join(map(str,location["Bbox"])),
+                    filter_dates=location["FilterDates"],
+                    root_collection=root_collection,
+                )
+            else:
+                collection = process_STACAPI_Endpoint(
+                    config=config,
+                    endpoint=endpoint,
+                    data=data,
+                    catalog=catalog,
+                    headers=headers,
+                    bbox=",".join(map(str,location["Bbox"])),
+                    root_collection=root_collection,
+                )
             # Update identifier to use location as well as title
+            # TODO: should we use the name as id? it provides much more
+            # information in the clients
             collection.id = location["Identifier"]
             collection.title = location["Name"],
             # See if description should be overwritten
@@ -395,6 +526,10 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             link.extra_fields["latlng"] = latlng
             link.extra_fields["name"] = location["Name"]
             add_example_info(collection, data, endpoint, config)
+            if "OverwriteBBox" in location:
+                collection.extent.spatial =  SpatialExtent([
+                    location["OverwriteBBox"],
+                ])
         root_collection.update_extent_from_items()
         # Add bbox extents from children
         for c_child in root_collection.get_children():
@@ -403,7 +538,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             )
     else:
         if "Bbox" in endpoint:
-                root_collection = process_STACAPI_Endpoint(
+            root_collection = process_STACAPI_Endpoint(
                 config=config,
                 endpoint=endpoint,
                 data=data,
@@ -472,7 +607,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
-def generate_veda_link(endpoint, file_url):
+def generate_veda_cog_link(endpoint, file_url):
     bidx = ""
     if "Bidx" in endpoint:
         # Check if an array was provided
@@ -511,9 +646,31 @@ def generate_veda_link(endpoint, file_url):
     )
     return target_url
 
+def generate_veda_tiles_link(endpoint, item):
+    assets = ""
+    for asset in endpoint["Assets"]:
+        assets += "&assets=%s"%asset
+    color_formula = ""
+    if "ColorFormula" in endpoint:
+        color_formula = "&color_formula=%s"%endpoint["ColorFormula"]
+    no_data = ""
+    if "NoData" in endpoint:
+        no_data = "&no_data=%s"%endpoint["NoData"]
+    if item:
+        item = "item=%s&"%(item)
+    else:
+        item = ""
+    target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s"%(
+        item,
+        assets,
+        color_formula,
+        no_data,
+    )
+    return target_url
+
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
     # add extension reference
-    if endpoint["Name"] == "Sentinel Hub":
+    if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "Sentinel Hub WMS":
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
             instanceId = endpoint["InstanceId"]
@@ -579,8 +736,15 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         )
         pass
     elif endpoint["Name"] == "VEDA":
-        if endpoint["Type"] == "cog":    
-            target_url = generate_veda_link(endpoint, file_url)
+        if endpoint["Type"] == "cog":
+            target_url = generate_veda_cog_link(endpoint, file_url)
+        elif endpoint["Type"] == "tiles":
+            item_kvp = ""
+            if file_url:
+                item_kvp = "&item=%s"%file_url
+            target_url = generate_veda_tiles_link(endpoint, file_url)
+            target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?collection=%s%s&assets=red&assets=green&assets=blue&color_formula=gamma RGB 2.7, saturation 1.5, sigmoidal RGB 15 0.55&nodata=0&format=png"%(endpoint["CollectionId"], item_kvp)
+        if target_url:
             stac_object.add_link(
             Link(
                 rel="xyz",
@@ -589,7 +753,6 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title=data["Name"],
             )
         )
-        pass
     elif endpoint["Name"] == "GeoDB Vector Tiles":
         #`${geoserverUrl}${config.layerName}@EPSG%3A${projString}@pbf/{z}/{x}/{-y}.pbf`,
         # 'geodb_debd884d-92f9-4979-87b6-eadef1139394:GTIF_AT_Gemeinden_3857'
@@ -617,8 +780,13 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
     else:
         print("Visualization endpoint not supported")
 
-def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=None, root_collection=None):
-    collection, _ = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
+def process_STACAPI_Endpoint(
+        config, endpoint, data, catalog, headers={}, bbox=None,
+        root_collection=None, filter_dates=None
+    ):
+    collection, _ = get_or_create_collection(
+        catalog, endpoint["CollectionId"], data, config, endpoint
+    )
     add_visualization_info(collection, data, endpoint)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
@@ -629,7 +797,18 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
         bbox=bbox,
         datetime=['1900-01-01T00:00:00Z', '3000-01-01T00:00:00Z'],
     )
+    # We keep track of potential duplicate times in this list
+    added_times = {}
     for item in results.items():
+        item_datetime = item.get_datetime()
+        if item_datetime != None:
+            iso_date = item_datetime.isoformat()[:10]
+            # if filterdates has been specified skip dates not listed in config
+            if filter_dates and iso_date not in filter_dates:
+                continue
+            if iso_date in added_times:
+                continue
+            added_times[iso_date] = True
         link = collection.add_item(item)
         if(options.tn):
             if "cog_default" in item.assets:
@@ -637,7 +816,10 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
             else:
                 generate_thumbnail(item, data, endpoint)
         # Check if we can create visualization link
-        if "cog_default" in item.assets:
+        if "Assets" in endpoint:
+            add_visualization_info(item, data, endpoint, item.id)
+            link.extra_fields["item"] = item.id
+        elif "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
             link.extra_fields["cog_href"] = item.assets["cog_default"].href
         # If a root collection exists we point back to it from the item
@@ -645,10 +827,14 @@ def process_STACAPI_Endpoint(config, endpoint, data, catalog, headers={}, bbox=N
             item.set_collection(root_collection)
 
         # bubble up information we want to the link
-        item_datetime = item.get_datetime()
         # it is possible for datetime to be null, if it is start and end datetime have to exist
         if item_datetime:
-            link.extra_fields["datetime"] = item_datetime.isoformat()[:-6] + 'Z'
+            iso_time = item_datetime.isoformat()[:-6] + 'Z'
+            if endpoint["Name"] == "Sentinel Hub":
+                # for SH WMS we only save the date (no time)
+                link.extra_fields["datetime"] = iso_date
+            else:
+                link.extra_fields["datetime"] = iso_time
         else:
             link.extra_fields["start_datetime"] = item.properties["start_datetime"]
             link.extra_fields["end_datetime"] = item.properties["end_datetime"]

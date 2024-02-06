@@ -1,7 +1,7 @@
-Name: NLK_lake_cloud_free
+Name: NLK_lake_cloudfree
 Title: Aral Lake cloud free
 EodashIdentifier: NLK
-Description: NLK_lake_cloud_free/NLK.md
+Description: NLK_lake_cloudfree/NLK.md
 Themes:
   - oceans
 Tags:
@@ -18,7 +18,7 @@ Services:
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
-    Type: cog
+    Type: tiles
     Name: VEDA
     CollectionId: landsat-c2l2-sr-lakes-aral-sea
     Assets: 
