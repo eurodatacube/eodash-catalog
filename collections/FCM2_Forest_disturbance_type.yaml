@@ -7,7 +7,7 @@ Themes:
   - carbon-accounting
   - eo-adaptation-services
 Tags:
-  - "Biomass tools"
+  - "Forest Analysis"
 Satellite:
   - placeholder
 Sensor:
@@ -19,7 +19,7 @@ Provider:
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [5.5, 44.0, 16.5, 48.7]
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy

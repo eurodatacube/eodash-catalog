@@ -23,6 +23,6 @@ Resources:
       Type: byoc
       CollectionId: 34fbfb05-c3e5-4885-9840-830ee85dddd4
       LayerId: VIS_TRUCK_DETECTION_MOTORWAYS_NEW
-      OverwriteBBox: [46.4, 49, 9.5, 17]
+      OverwriteBBox: [11, 46.5, 15.5, 48.9]
 Image: E12c_truck_detections_motorways_GTIF/thumbnail.png
 Legend: E12c_truck_detections_motorways_GTIF/cm_legend.png

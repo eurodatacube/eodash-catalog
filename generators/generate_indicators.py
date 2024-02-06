@@ -89,7 +89,7 @@ def process_catalog_file(file_path, options):
             # For full catalog save with items this still seems to be faster
             catalog.save(dest_href="../build/%s"%config["id"])
         end = time.time()
-        print("Time consumed in saving: ", end - start)
+        print(f"Catalog {config['id']}: Time consumed in saving: {end - start}")
 
         if options.vd:
             # try to validate catalog if flag was set
@@ -127,7 +127,7 @@ def process_collection_file(config, file_path, catalog):
                         raise ValueError("Type of Resource is not supported")
         elif "Subcollections" in data:
             # if no endpoint is specified we check for definition of subcollections
-            parent_collection = get_or_create_collection(catalog, data["Name"], data, config)
+            parent_collection, _ = get_or_create_collection(catalog, data["Name"], data, config)
             
             locations = []
             countries = []
@@ -185,90 +185,37 @@ def process_collection_file(config, file_path, catalog):
 
 
 def handle_collection_only(config, endpoint, data, catalog):
-    times = []
-    collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
-    if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
-        times = endpoint["Times"]
-    elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
-        start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
-        end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
-        timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
-        times = generateDateIsostringsFromInterval(start, end, timedelta_config)
-    for t in times:
-        item = Item(
-            id = t,
-            bbox=endpoint.get("OverwriteBBox"),
-            properties={},
-            geometry = None,
-            datetime = parser.isoparse(t),
-        )
-        link = collection.add_item(item)
-        link.extra_fields["datetime"] = t
-    if len(times) > 0:
-        collection.update_extent_from_items()
+    collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+    if len(times) > 0 and not endpoint.get("Disable_Items"):
+        for t in times:
+            item = Item(
+                id = t,
+                bbox=endpoint.get("OverwriteBBox"),
+                properties={},
+                geometry = None,
+                datetime = parser.isoparse(t),
+            )
+            link = collection.add_item(item)
+            link.extra_fields["datetime"] = t
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, None, data)
 
-
-def handle_GeoDB_Tiles_endpoint(config, endpoint, data, catalog):
-    if "Dates" in data:
-        pass
-    else:
-        select = "?select=%s"%endpoint["TimeKey"]
-        url = endpoint["DBEndpoint"] + endpoint["Database"] + "_%s"%endpoint["Source"] + select
-        response = json.loads(requests.get(url).text)
-        times = set([entry[endpoint["TimeKey"]] for entry in response])
-        if len(times) > 0:
-            # Create an item per time to allow visualization in stac clients
-            styles = None
-            if hasattr(endpoint, "Styles"):
-                styles = endpoint["Styles"]
-            collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
-            # TODO: For now we create global extent, we should be able to
-            # fetch the extent of the layer
-            for t in times:
-                item = Item(
-                    id = t,
-                    bbox=[-180.0, -90.0, 180.0, 90.0],
-                    properties={},
-                    geometry = None,
-                    datetime = parser.isoparse(t),
-                )
-                # add_visualization_info(item, data, endpoint, time=t, styles=styles)
-                link = collection.add_item(item)
-                link.extra_fields["datetime"] = t
-            collection.update_extent_from_items()
-            add_visualization_info(collection, data, endpoint, styles=styles)
-            add_collection_information(config, collection, data)
-            add_to_catalog(collection, catalog, endpoint, data)
-
-    
 def handle_WMS_endpoint(config, endpoint, data, catalog):
-    times = []
-    extent = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
-    if endpoint.get("Type") == "OverwriteTimes" and endpoint.get("Times"):
-        times = endpoint["Times"]
-    elif endpoint.get("Type") == "OverwriteTimes" and endpoint.get("DateTimeInterval"):
-        start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
-        end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
-        timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
-        times = generateDateIsostringsFromInterval(start, end, timedelta_config)
-    else:
-        times = extent["temporal"]
-    if "OverwriteBBox" in endpoint:
-        extent["spatial"] = endpoint["OverwriteBBox"]
-    
-    collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+    collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+    spatial_extent = collection.extent.spatial.to_dict().get("bbox", [-180, -90, 180, 90])[0]
+    if not endpoint.get("Type") == "OverwriteTimes" and not endpoint.get("OverwriteBBox"):
+        spatial_extent, times = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
+
     # Create an item per time to allow visualization in stac clients
     styles = None
     if hasattr(endpoint, "Styles"):
         styles = endpoint["Styles"]
 
-    if len(times) > 0:
+    if len(times) > 0 and not endpoint.get("Disable_Items"):
         for t in times:
             item = Item(
                 id = t,
-                bbox=extent["spatial"],
+                bbox=spatial_extent,
                 properties={},
                 geometry = None,
                 datetime = parser.isoparse(t),
@@ -276,8 +223,8 @@ def handle_WMS_endpoint(config, endpoint, data, catalog):
             add_visualization_info(item, data, endpoint, time=t, styles=styles)
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t
+        collection.update_extent_from_items()
 
-    collection.update_extent_from_items()
     add_visualization_info(collection, data, endpoint, styles=styles)
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, endpoint, data)
@@ -295,7 +242,7 @@ def handle_SH_endpoint(config, endpoint, data, catalog):
 def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
     # create collection and subcollections (based on locations)
     if "Locations" in data:
-        root_collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        root_collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
         for location in data["Locations"]:
             # create  and populate location collections based on times
             # TODO: Should we add some new description per location?
@@ -303,7 +250,7 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
                 "Title": location["Name"],
                 "Description": "",
             }
-            collection = get_or_create_collection(
+            collection, _ = get_or_create_collection(
                 catalog, location["Identifier"], location_config, config, endpoint
             )
             collection.extra_fields["endpointtype"] = endpoint["Name"]
@@ -357,7 +304,7 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
     # Check if collection already in catalog
     for collection in catalog.get_collections():
         if collection.id == collection_id:
-            return collection
+            return collection, []
     # If none found create a new one
     spatial_extent = [-180.0, -90.0, 180.0, 90.0]
     if endpoint and endpoint.get("OverwriteBBox"):
@@ -365,7 +312,20 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
     spatial_extent = SpatialExtent([
         spatial_extent,
     ])
+    times = []
     temporal_extent = TemporalExtent([[datetime.now(), None]])
+    if endpoint and endpoint.get("Type") == "OverwriteTimes":
+        if endpoint.get("Times"):
+            times = endpoint.get("Times")
+            times_datetimes = sorted([parser.isoparse(time) for time in times])
+            temporal_extent = TemporalExtent([[times_datetimes[0], times_datetimes[-1]]])
+        elif endpoint.get("DateTimeInterval"):
+            start = endpoint["DateTimeInterval"].get("Start", "2020-09-01T00:00:00")
+            end = endpoint["DateTimeInterval"].get("End", "2020-10-01T00:00:00")
+            timedelta_config = endpoint["DateTimeInterval"].get("Timedelta", {'days': 1})
+            times = generateDateIsostringsFromInterval(start, end, timedelta_config)
+            times_datetimes = sorted([parser.isoparse(time) for time in times])
+            temporal_extent = TemporalExtent([[times_datetimes[0], times_datetimes[-1]]])
     extent = Extent(spatial=spatial_extent, temporal=temporal_extent)
 
     # Check if description is link to markdown file
@@ -406,7 +366,7 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
         ],
         extent=extent
     )
-    return collection
+    return (collection, times)
 
 def add_to_catalog(collection, catalog, endpoint, data):
     # check if already in catalog, if it is do not re-add it
@@ -452,12 +412,11 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
-    collection = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
+    collection, _ = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
-    where_parameter = endpoint.get("WhereParameter")
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
-    if where_parameter:
-        url += f"&{where_parameter}"
+    if additional_query_parameters := endpoint.get("AdditionalQueryString"):
+        url += f"&{additional_query_parameters}"
     response = json.loads(requests.get(url).text)
 
     # Sort locations by key
@@ -471,15 +430,17 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         unique_values = list({v["aoi_id"]:v for v in values}.values())[0]
         country = unique_values["country"]
         city = unique_values["city"]
+        IdKey = endpoint.get("IdKey", "city")
+        IdValue = unique_values[IdKey]
         if country not in countries:
             countries.append(country)
-        # sanitize city identifier to be sure it is filename save
-        if city is not None:
-            city = "".join([c for c in city if c.isalpha() or c.isdigit() or c==' ']).rstrip()
-        # Additional check to see if city name is empty afterwards
-        if city == "" or city is None:
-            # use aoi_id as a fallback unique id instead of city
-            city = key
+        # sanitize unique key identifier to be sure it is saveable as a filename
+        if IdValue is not None:
+            IdValue = "".join([c for c in IdValue if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+        # Additional check to see if unique key name is empty afterwards
+        if IdValue == "" or IdValue is None:
+            # use aoi_id as a fallback unique id instead of configured key
+            IdValue = key
         if city not in cities:
             cities.append(city)
         min_date = min(times)
@@ -490,7 +451,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         buff = 0.01
         bbox = [lon-buff, lat-buff,lon+buff,lat+buff]
         item = Item(
-            id = city,
+            id = IdValue,
             bbox=bbox,
             properties={},
             geometry = create_geojson_point(lon, lat),
@@ -524,18 +485,29 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
 
 def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
     if "Locations" in data:
-        root_collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        root_collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
         for location in data["Locations"]:
-            collection = process_STACAPI_Endpoint(
-                config=config,
-                endpoint=endpoint,
-                data=data,
-                catalog=catalog,
-                headers=headers,
-                bbox=",".join(map(str,location["Bbox"])),
-                filter_dates=location["FilterDates"],
-                root_collection=root_collection,
-            )
+            if "FilterDates" in location:
+                collection = process_STACAPI_Endpoint(
+                    config=config,
+                    endpoint=endpoint,
+                    data=data,
+                    catalog=catalog,
+                    headers=headers,
+                    bbox=",".join(map(str,location["Bbox"])),
+                    filter_dates=location["FilterDates"],
+                    root_collection=root_collection,
+                )
+            else:
+                collection = process_STACAPI_Endpoint(
+                    config=config,
+                    endpoint=endpoint,
+                    data=data,
+                    catalog=catalog,
+                    headers=headers,
+                    bbox=",".join(map(str,location["Bbox"])),
+                    root_collection=root_collection,
+                )
             # Update identifier to use location as well as title
             # TODO: should we use the name as id? it provides much more
             # information in the clients
@@ -812,7 +784,7 @@ def process_STACAPI_Endpoint(
         config, endpoint, data, catalog, headers={}, bbox=None,
         root_collection=None, filter_dates=None
     ):
-    collection = get_or_create_collection(
+    collection, _ = get_or_create_collection(
         catalog, endpoint["CollectionId"], data, config, endpoint
     )
     add_visualization_info(collection, data, endpoint)
@@ -829,13 +801,14 @@ def process_STACAPI_Endpoint(
     added_times = {}
     for item in results.items():
         item_datetime = item.get_datetime()
-        iso_date = item_datetime.isoformat()[:10]
-        # if filterdates has been specified skip dates not listed in config
-        if filter_dates and iso_date not in filter_dates:
-            continue
-        if iso_date in added_times:
-            continue
-        added_times[iso_date] = True
+        if item_datetime != None:
+            iso_date = item_datetime.isoformat()[:10]
+            # if filterdates has been specified skip dates not listed in config
+            if filter_dates and iso_date not in filter_dates:
+                continue
+            if iso_date in added_times:
+                continue
+            added_times[iso_date] = True
         link = collection.add_item(item)
         if(options.tn):
             if "cog_default" in item.assets:
@@ -871,6 +844,12 @@ def process_STACAPI_Endpoint(
     # replace SH identifier with catalog identifier
     collection.id = data["Name"]
     add_collection_information(config, collection, data)
+
+    # Check if we need to overwrite the bbox after update from items
+    if "OverwriteBBox" in endpoint:
+        collection.extent.spatial = SpatialExtent([
+            endpoint["OverwriteBBox"],
+        ])
 
     return collection
 
@@ -918,7 +897,7 @@ def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, st
     
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
-    collection = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+    collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     add_visualization_info(collection, data, endpoint)
 
     stac_endpoint_url = endpoint["EndPoint"]
@@ -986,7 +965,8 @@ def add_collection_information(config, collection, data):
             print("WARNING: License could not be parsed, falling back to proprietary")
             collection.license = "proprietary"
     else:
-        print("WARNING: No license was provided, falling back to proprietary")
+        # print("WARNING: No license was provided, falling back to proprietary")
+        pass
 
     if "Provider" in data:
         try:
