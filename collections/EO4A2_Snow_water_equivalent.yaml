@@ -26,3 +26,4 @@ Resources:
       End: "2022-06-30T00:00:00"
       Timedelta:
         days: 1
+Legend: EO4A2_Snow_water_equivalent/cm_legend.png

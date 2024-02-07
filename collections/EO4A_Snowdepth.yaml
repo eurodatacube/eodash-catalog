@@ -26,3 +26,4 @@ Resources:
       End: "2022-06-30T00:00:00"
       Timedelta:
         days: 1
+Legend: EO4A_Snowdepth/cm_legend.png
