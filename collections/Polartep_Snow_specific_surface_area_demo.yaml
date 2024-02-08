@@ -1,0 +1,20 @@
+Name: Polartep_Snow_specific_surface_area_demo
+Title: Snow Specific Surface Area Demonstration polartep
+EodashIdentifier: Polartep_Snow_specific_surface_area_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+# Legend: Polartep_Snow_specific_surface_area_demo/cm_legend.png
+Image: Polartep_Snow_specific_surface_area_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-25.7, 62.4, -11.3, 67.1]

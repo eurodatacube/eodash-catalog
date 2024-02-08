@@ -1,0 +1,20 @@
+Name: Polartep_SeaIce_demo
+Title: Sea Ice Concentration Geometries Demonstration polartep
+EodashIdentifier: Polartep_SeaIce_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+# Legend: Polartep_SeaIce_demo/cm_legend.png
+Image: Polartep_SeaIce_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-66.6, 59.7, -28.3, 74.3]

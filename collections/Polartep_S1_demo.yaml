@@ -1,0 +1,20 @@
+Name: Polartep_S1_demo
+Title: Sentinel 1 Demonstration polartep
+EodashIdentifier: Polartep_S1_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel-1
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+# Legend: Polartep_S1_demo/cm_legend.png
+Image: Polartep_S1_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-12.15, 61.1, 7.2, 70.3]

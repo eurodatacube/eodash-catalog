@@ -1,0 +1,15 @@
+id: "polar"
+title: "Polar TEP dashboard"
+description: "The Polar Thematic Exploitation Platform Dashboard Catalog"
+endpoint: "https://eurodatacube.github.io/eodash-catalog/polar/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
+collections:
+  - CDS1_temperature
+  - CDS3_wind_10m_u
+  - CDS4_wind_10m_v
+  - IS2SITMOGR4-cog
+  - Polartep_S1_demo
+  - Polartep_Snowgrain_diameter_demo
+  - Polartep_Snow_specific_surface_area_demo
+  - Polartep_SeaIce_demo
+  - N12_1_sea_ice_concentration_arctic
