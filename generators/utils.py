@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from typing import Iterator
 from six import string_types
 from owslib.wms import WebMapService
+from owslib.wmts import WebMapTileService
 from dateutil import parser
 import threading
 
@@ -42,13 +43,23 @@ def create_geojson_point(lon, lat):
 
     return feature_collection
 
-def retrieveExtentFromWMS(capabilties_url, layer):
+def retrieveExtentFromWMSWMTS(capabilties_url, layer, wmts=False):
     times = []
-    wms = None
+    service = None
     try:
-        wms = WebMapService(capabilties_url, version='1.1.1')
-        if layer in list(wms.contents) and wms[layer].timepositions != None:
-            for tp in wms[layer].timepositions:
+        if not wmts:
+            service = WebMapService(capabilties_url, version='1.1.1')
+        else:
+            service = WebMapTileService(capabilties_url)
+        if layer in list(service.contents):
+            if not wmts and service[layer].timepositions != None:
+                tps = service[layer].timepositions
+            elif wmts:
+                # due to https://github.com/geopython/OWSLib/issues/368
+                # using custom version from fork
+                tps = ["2021-07-05T00:00:00Z/2024-02-14T00:00:00Z/P1D"]
+                # tps = service[layer].dimensions.time.values
+            for tp in tps:
                 tp_def = tp.split("/")
                 if len(tp_def)>1:
                     dates = interval(
@@ -63,14 +74,14 @@ def retrieveExtentFromWMS(capabilties_url, layer):
             # get unique times
             times = reduce(lambda re, x: re+[x] if x not in re else re, times, [])
     except Exception as e:
-        print("Issue extracting information from WMS capabilities")
+        print("Issue extracting information from service capabilities")
         template = "An exception of type {0} occurred. Arguments:\n{1!r}"
         message = template.format(type(e).__name__, e.args)
         print (message)
 
     bbox = [-180,-90,180,90]
-    if wms and wms[layer].boundingBoxWGS84:
-        bbox = [float(x) for x in wms[layer].boundingBoxWGS84]
+    if service and service[layer].boundingBoxWGS84:
+        bbox = [float(x) for x in service[layer].boundingBoxWGS84]
     return bbox, times
 
 def interval(start: datetime, stop: datetime, delta: timedelta) -> Iterator[datetime]:

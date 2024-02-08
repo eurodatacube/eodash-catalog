@@ -19,7 +19,7 @@ from dateutil import parser
 from sh_endpoint import get_SH_token
 from utils import (
     create_geojson_point,
-    retrieveExtentFromWMS,
+    retrieveExtentFromWMSWMTS,
     generateDateIsostringsFromInterval,
     RaisingThread,
 )
@@ -108,12 +108,12 @@ def process_collection_file(config, file_path, catalog):
                     add_to_catalog(collection, catalog, resource, data)
                 elif resource["Name"] == "VEDA":
                     handle_VEDA_endpoint(config, resource, data, catalog)
+                elif resource["Name"] == "marinedatastore":
+                    handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                 elif resource["Name"] == "xcube":
                     handle_xcube_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "WMS":
                     handle_WMS_endpoint(config, resource, data, catalog)
-                elif resource["Name"] == "GeoDB Vector Tiles":
-                    handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
                 elif resource["Name"] == "Collection-only":
                     handle_collection_only(config, resource, data, catalog)
                 else:
@@ -136,11 +136,11 @@ def handle_collection_only(config, endpoint, data, catalog):
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, None, data)
 
-def handle_WMS_endpoint(config, endpoint, data, catalog):
+def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     spatial_extent = collection.extent.spatial.to_dict().get("bbox", [-180, -90, 180, 90])[0]
     if not endpoint.get("Type") == "OverwriteTimes" and not endpoint.get("OverwriteBBox"):
-        spatial_extent, times = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
+        spatial_extent, times = retrieveExtentFromWMSWMTS(endpoint["EndPoint"], endpoint["LayerId"], wmts=wmts)
 
     # Create an item per time to allow visualization in stac clients
     styles = None
@@ -186,7 +186,6 @@ def handle_xcube_endpoint(config, endpoint, data, catalog):
 
     add_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
-
 
 def get_or_create_collection(catalog, collection_id, data, config, endpoint):
     # Check if collection already in catalog
@@ -577,7 +576,35 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title="xcube tiles",
             )
         )
-        pass
+    elif endpoint["Type"] == "wmts":
+        tilematrixset = endpoint.get("TilematrixSet", "EPSG:3857")
+        target_url = "%s?service=WMTS&version=1.0.0&request=GetTile&tilematrixset=%s&tilematrix={z}&tilerow={y}&tilecol={x}&layer=%s&time={time}"%(
+            endpoint["EndPoint"],
+            tilematrixset,
+            endpoint["LayerId"],
+        )
+        # set parameters values only if provided in config
+        # special for marine store
+        if elevation:= endpoint.get("Elevation"):
+            target_url += "&elevation=%s" % elevation
+        if cbar:= endpoint.get("ColormapName"):
+            target_url += "&cbar=%s" % cbar
+        if endpoint.get("Rescale"):
+            vmin = endpoint["Rescale"][0]
+            vmax = endpoint["Rescale"][1]
+            target_url += "&range=%s/%s" % (vmin, vmax)
+        if logarithmic := endpoint.get("Logarithmic"):
+            target_url += "&logScale=%s" % logarithmic
+        if noClamp := endpoint.get("NoClamp"):
+            target_url += "&noClamp=%s" % noClamp
+        stac_object.add_link(
+        Link(
+            rel="xyz",
+            target=target_url,
+            media_type="image/png",
+            title="wmts tiles %s" % endpoint.get('Name'),
+        )
+    )
     elif endpoint["Name"] == "VEDA":
         if endpoint["Type"] == "cog":    
             target_url = generate_veda_link(endpoint, file_url)
