@@ -1,12 +1,10 @@
 import os
 from oauthlib.oauth2 import BackendApplicationClient
 from requests_oauthlib import OAuth2Session
-from dotenv import load_dotenv
+
 
 
 def get_SH_token():
-    load_dotenv()
-
     # Your client credentials
     client_id = os.getenv('SH_CLIENT_ID')
     client_secret = os.getenv('SH_CLIENT_SECRET')
