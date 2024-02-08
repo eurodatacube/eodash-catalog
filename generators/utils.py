@@ -43,6 +43,7 @@ def create_geojson_point(lon, lat):
 
     return feature_collection
 
+
 def retrieveExtentFromWMSWMTS(capabilties_url, layer, wmts=False):
     times = []
     service = None
@@ -55,10 +56,9 @@ def retrieveExtentFromWMSWMTS(capabilties_url, layer, wmts=False):
             if not wmts and service[layer].timepositions != None:
                 tps = service[layer].timepositions
             elif wmts:
-                # due to https://github.com/geopython/OWSLib/issues/368
-                # using custom version from fork
-                tps = ["2021-07-05T00:00:00Z/2024-02-14T00:00:00Z/P1D"]
-                # tps = service[layer].dimensions.time.values
+                # specifically taking 'time' dimension
+                if time_dimension := service[layer].dimensions.get('time'):
+                    tps = time_dimension["values"]
             for tp in tps:
                 tp_def = tp.split("/")
                 if len(tp_def)>1:

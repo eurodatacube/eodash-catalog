@@ -15,6 +15,7 @@ Tags:
   - placeholder
 Resources:
   - EndPoint: https://wmts.marine.copernicus.eu/teroWmts
+    CapabilitiesUrl: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311
     Type: wmts
     Name: marinedatastore
     LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/siage
