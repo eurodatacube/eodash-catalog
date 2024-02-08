@@ -585,18 +585,22 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         )
         # set parameters values only if provided in config
         # special for marine store
-        if elevation:= endpoint.get("Elevation"):
-            target_url += "&elevation=%s" % elevation
-        if cbar:= endpoint.get("ColormapName"):
-            target_url += "&cbar=%s" % cbar
-        if endpoint.get("Rescale"):
-            vmin = endpoint["Rescale"][0]
-            vmax = endpoint["Rescale"][1]
-            target_url += "&range=%s/%s" % (vmin, vmax)
-        if logarithmic := endpoint.get("Logarithmic"):
-            target_url += "&logScale=%s" % logarithmic
-        if noClamp := endpoint.get("NoClamp"):
-            target_url += "&noClamp=%s" % noClamp
+        if endpoint["Name"] == "marinedatastore":
+            if elevation:= endpoint.get("Elevation"):
+                target_url += "&elevation=%s" % elevation
+            style_variable = ""
+            if cmap:= endpoint.get("ColormapName"):
+                style_variable += "cmap:%s" % cmap
+            if endpoint.get("Rescale"):
+                vmin = endpoint["Rescale"][0]
+                vmax = endpoint["Rescale"][1]
+                style_variable += ",range:%s/%s" % (vmin, vmax)
+            if endpoint.get("Logarithmic"):
+                style_variable += ",logScale"
+            if endpoint.get("NoClamp"):
+                style_variable += ",noClamp"
+            if style_variable != "":
+                target_url += "&style=%s" % style_variable
         stac_object.add_link(
         Link(
             rel="xyz",
