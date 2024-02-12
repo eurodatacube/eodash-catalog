@@ -54,6 +54,13 @@ collections:
   - PRCTS_precipitation_timeseries
   - LWE_lake_water_extent
   - LWL_lake_water_level
+  - NLK_lakes
+  - Lakes_S2L2A
+  - Lakes_ALOS2
+  - Lakes_Sentinel1
+  - Lakes_SWT
+  - Lakes_WQ_TC_water_quality
+  - Lakes_WQ_TURB_water_turbidity
   - SMCG_soil_moisture_content
   - SIF_solar_induced_chlorophyll_fluorescence
   - N5_nightlights
@@ -63,7 +70,6 @@ collections:
   - N3b_water_quality
   - N3a2_chl_concentration
   - E10d_regional_cropland
-  - LC_lakes_collection
   - N1_NO2_jaxa
   - N2_CO2_jaxa_gosat
   - GHS_BUILT-S-R2023A
