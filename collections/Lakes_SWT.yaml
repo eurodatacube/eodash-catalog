@@ -1,0 +1,57 @@
+Name: Lakes_SWT_surface_water_temperature
+Title: Surface water temperature of lakes
+EodashIdentifier: Lakes_SWT
+Description: Lakes_SWT_surface_water_temperature/Lakes_SWT.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel 2
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+    - Name: placeholder
+License: MIT
+Locations:
+  - Identifier: Aral
+    Country: ['UZ', 'KZ']
+    Name: Aral
+    Point: [58.581, 45.303]
+    Bbox: [57, 43.24, 62.29, 47.72]
+  - Identifier: Biwa
+    Country: ['JP']
+    Name: Biwa
+    Point: [136.095, 35.284]
+    Bbox: [135.133, 33.535, 138.1728, 35.7509]
+  - Identifier: Tonle_sap
+    Country: ['KH']
+    Name: Tonlé Sap
+    Point: [104.2, 12.7]
+    Bbox: [101.938, 11.945, 106.37, 14.0674]
+  - Identifier: Vanern
+    Country: ['SW']
+    Name: Vänern
+    Point: [13.535, 59.07]
+    Bbox: [10.6994, 57.353, 15.9848, 59.83119]
+  - Identifier: Balaton
+    Country: ['HU']
+    Name: Balaton
+    Point: [17.77, 46.825]
+    Bbox: [17.08, 46.55, 18.24, 47.12]
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 9fdb8c27-9000-4912-b715-1465f840a1db
+    LayerId: LAKES_SURFACE_WATER_TEMPERATURE
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 9fdb8c27-9000-4912-b715-1465f840a1db
+    Script: Lakes_SWT/script.js
+Image: Lakes_SWT_surface_water_temperature/thumbnail.png
+Legend: Lakes_SWT_surface_water_temperature/cm_legend.png
