@@ -208,7 +208,7 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     if not endpoint.get("Type") == "OverwriteTimes" and not endpoint.get("OverwriteBBox"):
         # some endpoints allow "narrowed-down" capabilities per-layer, which we utilize to not
         # have to process full service capabilities XML
-        capabilities_url = endpoint.get("CapabilitiesUrl") or endpoint["EndPoint"]
+        capabilities_url = endpoint["EndPoint"]
         spatial_extent, times = retrieveExtentFromWMSWMTS(capabilities_url, endpoint["LayerId"], wmts=wmts)
 
     # Create an item per time to allow visualization in stac clients
