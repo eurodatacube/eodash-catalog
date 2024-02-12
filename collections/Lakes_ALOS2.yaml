@@ -1,0 +1,25 @@
+Name: lakes_alos2
+Title: Lakes collection (ALOS2-HH/HV)
+EodashIdentifier: Lakes_ALOS2
+Subtitle: Total suspended matter description
+Description: Lakes_ALOS2_lakes_alos2/Lakes_ALOS2.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+    - Name: placeholder
+License: MIT
+Subcollections:
+  - Identifier: lakes_alos2_hh
+    Collection: Lakes_ALOS2_HH
+  - Identifier: lakes_alos2_hv
+    Collection: Lakes_ALOS2_HV
+Image: Lakes_ALOS2_lakes_alos2/thumbnail.png
+Legend: Lakes_ALOS2_lakes_alos2/cm_legend.png

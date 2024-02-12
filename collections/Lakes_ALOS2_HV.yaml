@@ -1,8 +1,7 @@
 Name: lakes_alos2_hv
 Title: Lakes (ALOS2-HV)
 EodashIdentifier: Lakes_ALOS2_HV
-Subtitle: Total suspended matter description
-Description: Lakes_ALOS2_lakes_alos2_hv/Lakes_ALOS2.md
+Description: Lakes collection for ALOS2 HH
 Themes:
   - water
 Tags:
@@ -16,6 +15,17 @@ Agency:
 Provider:
     - Name: placeholder
 License: MIT
+Locations:
+  - Identifier: TonleSap_HV
+    Country: ['KH']
+    Name: Tonlé Sap (ALOS2-HV)
+    Point: [104.2, 12.7]
+    Bbox: [101.938, 11.945, 106.37, 14.0674]
+    Times: [
+      '2016-11-23T00:00:00', '2017-11-22T00:00:00', '2020-11-04T00:00:00', '2021-11-03T00:00:00',
+      '2022-02-09T00:00:00', '2022-03-23T00:00:00', '2022-04-20T00:00:00', '2022-06-01T00:00:00',
+      '2022-07-13T00:00:00', '2022-08-24T00:00:00', '2022-09-21T00:00:00', '2022-12-14T00:00:00'
+    ]
 Resources:
   - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
