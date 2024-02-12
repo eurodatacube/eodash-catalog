@@ -14,14 +14,12 @@ Tags:
   - model
   - placeholder
 Resources:
-  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts
-    CapabilitiesUrl: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311
-    Type: wmts
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311
+    Type: WMTSCapabilities
     Name: marinedatastore
     LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/siage
-    ColormapName: viridis
-    Elevation: 0
-    Rescale: [0,1200]
+    Dimensions:
+      elevation: 0
 Legend: TOPAZ5_SIAGE/cm_legend.png
 Image: TOPAZ5_SIAGE/TOPAZ5_SIAGE.png
 

@@ -739,37 +739,28 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title="xcube tiles",
             )
         )
-    elif endpoint["Type"] == "wmts":
-        tilematrixset = endpoint.get("TilematrixSet", "EPSG:3857")
-        target_url = "%s?service=WMTS&version=1.0.0&request=GetTile&tilematrixset=%s&tilematrix={z}&tilerow={y}&tilecol={x}&layer=%s&time={time}"%(
-            endpoint["EndPoint"],
-            tilematrixset,
-            endpoint["LayerId"],
+    elif endpoint["Type"] == "WMTSCapabilities":
+        target_url = "%s"%(
+            endpoint.get('EndPoint'),
         )
-        # set parameters values only if provided in config
-        # special for marine store
-        if endpoint["Name"] == "marinedatastore":
-            if elevation:= endpoint.get("Elevation"):
-                target_url += "&elevation=%s" % elevation
-            style_variable = ""
-            if cmap:= endpoint.get("ColormapName"):
-                style_variable += "cmap:%s" % cmap
-            if endpoint.get("Rescale"):
-                vmin = endpoint["Rescale"][0]
-                vmax = endpoint["Rescale"][1]
-                style_variable += ",range:%s/%s" % (vmin, vmax)
-            if endpoint.get("Logarithmic"):
-                style_variable += ",logScale"
-            if endpoint.get("NoClamp"):
-                style_variable += ",noClamp"
-            if style_variable != "":
-                target_url += "&style=%s" % style_variable
+        extra_fields={
+            "wmts:layer": endpoint.get('LayerId')
+        }
+        dimensions = {}
+        if time != None:
+            dimensions["time"] = time
+        if dimensions_config := endpoint.get('Dimensions', {}):
+            for key, value in dimensions_config.items():
+                dimensions[key] = value
+        if dimensions != {}:
+            extra_fields["wmts:dimensions"] = dimensions
         stac_object.add_link(
         Link(
-            rel="xyz",
+            rel="wmts",
             target=target_url,
             media_type="image/png",
-            title="wmts tiles %s" % endpoint.get('Name'),
+            title="wmts capabilities",
+            extra_fields=extra_fields,
         )
     )
     elif endpoint["Name"] == "VEDA":
