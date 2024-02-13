@@ -27,14 +27,24 @@ jobs:
         run: |
           pip install -U pip
           pip install -r generators/requirements.txt
-      - name: Build
+      - if: github.event.pull_request.body==all
+        name: Build all
         env:
           SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
           SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
           SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
         run: |
           cd generators/
-          python generate_indicators.py -ni
+          python generate_indicators.py
+      - if: github.event.pull_request.body!=all
+        name: Build only specified collections
+        env:
+          SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
+          SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
+          SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
+        run: |
+          cd generators/
+          python generate_indicators.py -c ${{ github.event.pull_request.body }}
       # Upload build to S3
       - name: sync client s3
         uses: jakejarvis/s3-sync-action@v0.5.1
