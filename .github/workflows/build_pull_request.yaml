@@ -19,6 +19,10 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
+      - if: github.event.pull_request.body == ''
+        run: |
+          echo "::error::Pull request body text can't be empty, please define which collections to test"
+          exit 1
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
@@ -27,10 +31,6 @@ jobs:
         run: |
           pip install -U pip
           pip install -r generators/requirements.txt
-      - if: github.event.pull_request.body == ''
-        run: |
-          echo "::error::Pull request body text can't be empty, please define which collections to test"
-          exit 1
       - if: github.event.pull_request.body == 'all'
         name: Build all
         env:
