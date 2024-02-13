@@ -1,0 +1,39 @@
+Name: TOPAZ4_P1D_SITHICK
+Title: Sea ice thickness Arctic Ocean TOPAZ4
+EodashIdentifier: TOPAZ4_P1D_SITHICK
+Description: TOPAZ4_P1D_VXSI/TOPAZ4_P1D_VXSI.md
+Themes:
+  - cryosphere
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - CMEMS
+Tags:
+  - model
+Resources:
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_MULTIYEAR_PHY_002_003/cmems_mod_arc_phy_my_topaz4_P1D-m_202211
+    Type: WMTSCapabilities
+    Name: marinedatastore
+    LayerId: ARCTIC_MULTIYEAR_PHY_002_003/cmems_mod_arc_phy_my_topaz4_P1D-m_202211/sithick
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "1991-01-01T00:00:00"
+      End: "2022-12-31T00:00:00"
+    Dimensions:
+      elevation: 0
+      style: 'cmap:ice,range:0.001/4,noClamp'
+Legend: TOPAZ4_P1D_SITHICK/cm_legend.png
+Image: TOPAZ4_P1D_SITHICK/thumbnail.png
+
+Provider:
+  - Name: E.U. Copernicus Marine Service Information (CMEMS)
+    Url: https://data.marine.copernicus.eu/
+    Description: The Copernicus Marine Service (or Copernicus Marine Environment Monitoring Service) is the marine component of the Copernicus Programme of the European Union. It provides free, regular and systematic authoritative information on the state of the Blue (physical), White (sea ice) and Green (biogeochemical) ocean,  on a global and regional scale. It is funded by the European Commission (EC) and implemented by Mercator Ocean International. It is designed to serve EU policies and International legal Commitments related to Ocean Governance, to cater for the needs of society at large for global ocean knowledge and to boost the Blue Economy across all maritime sectors by providing free-of-charge state-of-the-art ocean data and information.
+    Roles: 
+      - producer
+Citation:
+  Citation: TOPAZ4b - Arctic Ocean Physics Reanalysis; ARCTIC_MULTIYEAR_PHY_002_003; E.U. Copernicus Marine Service Information (CMEMS), Marine Data Store (MDS).
+  Publication:
+    - DOI: 10.48670/moi-00007

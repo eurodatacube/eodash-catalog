@@ -20,7 +20,7 @@ from dateutil import parser
 from sh_endpoint import get_SH_token
 from utils import (
     create_geojson_point,
-    retrieveExtentFromWMS,
+    retrieveExtentFromWMSWMTS,
     generateDateIsostringsFromInterval,
     RaisingThread,
 )
@@ -144,6 +144,8 @@ def process_collection_file(config, file_path, catalog):
                         add_to_catalog(collection, catalog, resource, data)
                     elif resource["Name"] == "VEDA":
                         handle_VEDA_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "marinedatastore":
+                        handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                     elif resource["Name"] == "xcube":
                         handle_xcube_endpoint(config, resource, data, catalog)
                     elif resource["Name"] == "WMS":
@@ -229,11 +231,14 @@ def handle_collection_only(config, endpoint, data, catalog):
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, None, data)
 
-def handle_WMS_endpoint(config, endpoint, data, catalog):
+def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     spatial_extent = collection.extent.spatial.to_dict().get("bbox", [-180, -90, 180, 90])[0]
     if not endpoint.get("Type") == "OverwriteTimes" and not endpoint.get("OverwriteBBox"):
-        spatial_extent, times = retrieveExtentFromWMS(endpoint["EndPoint"], endpoint["LayerId"])
+        # some endpoints allow "narrowed-down" capabilities per-layer, which we utilize to not
+        # have to process full service capabilities XML
+        capabilities_url = endpoint["EndPoint"]
+        spatial_extent, times = retrieveExtentFromWMSWMTS(capabilities_url, endpoint["LayerId"], wmts=wmts)
 
     # Create an item per time to allow visualization in stac clients
     styles = None
@@ -763,7 +768,30 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title="xcube tiles",
             )
         )
-        pass
+    elif endpoint["Type"] == "WMTSCapabilities":
+        target_url = "%s"%(
+            endpoint.get('EndPoint'),
+        )
+        extra_fields={
+            "wmts:layer": endpoint.get('LayerId')
+        }
+        dimensions = {}
+        if time != None:
+            dimensions["time"] = time
+        if dimensions_config := endpoint.get('Dimensions', {}):
+            for key, value in dimensions_config.items():
+                dimensions[key] = value
+        if dimensions != {}:
+            extra_fields["wmts:dimensions"] = dimensions
+        stac_object.add_link(
+        Link(
+            rel="wmts",
+            target=target_url,
+            media_type="image/png",
+            title="wmts capabilities",
+            extra_fields=extra_fields,
+        )
+    )
     elif endpoint["Name"] == "VEDA":
         if endpoint["Type"] == "cog":
             target_url = generate_veda_cog_link(endpoint, file_url)
