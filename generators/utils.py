@@ -53,6 +53,7 @@ def retrieveExtentFromWMSWMTS(capabilties_url, layer, wmts=False):
         else:
             service = WebMapTileService(capabilties_url)
         if layer in list(service.contents):
+            tps = []
             if not wmts and service[layer].timepositions != None:
                 tps = service[layer].timepositions
             elif wmts:
