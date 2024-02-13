@@ -1,6 +1,6 @@
-Name: TOPAZ5_SIAGE
-Title: Age of sea ice Arctic Ocean (days)
-EodashIdentifier: TOPAZ5_SIAGE
+Name: TOPAZ5_VYO
+Title: Northward sea water velocity (vyo)
+EodashIdentifier: TOPAZ5_VYO
 Description: TOPAZ5_SIAGE/TOPAZ5_SIAGE.md
 Themes:
   - cryosphere
@@ -16,12 +16,12 @@ Resources:
   - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311
     Type: WMTSCapabilities
     Name: marinedatastore
-    LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/siage
+    LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/vyo
     Dimensions:
       elevation: 0
-      style: 'cmap:viridis,range:1/1400,noClamp'
-Legend: TOPAZ5_SIAGE/cm_legend.png
-Image: TOPAZ5_SIAGE/thumbnail.png
+      style: 'cmap:delta,range:-0.3/0.3,noClamp'
+Legend: TOPAZ5_VYO/cm_legend.png
+Image: TOPAZ5_VYO/thumbnail.png
 
 Provider:
   - Name: E.U. Copernicus Marine Service Information (CMEMS)

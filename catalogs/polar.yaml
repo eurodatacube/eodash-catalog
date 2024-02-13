@@ -14,3 +14,10 @@ collections:
   - Polartep_SeaIce_demo
   - N12_1_sea_ice_concentration_arctic
   - TOPAZ5_SIAGE
+  - TOPAZ5_SICONC
+  - TOPAZ5_SISNTHICK
+  - TOPAZ5_SITHICK
+  - TOPAZ5_VXO
+  - TOPAZ5_VXSI
+  - TOPAZ5_VYO
+  - TOPAZ5_VYSI
