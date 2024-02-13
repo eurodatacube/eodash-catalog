@@ -52,9 +52,28 @@ argparser = argparse.ArgumentParser(
         as possible and generating a STAC catalog with the information''',
 )
 
-argparser.add_argument("-vd", action="store_true", help="validation flag, if set, validation will be run on generated catalogs")
-argparser.add_argument("-ni", action="store_true", help="no items flag, if set, items will not be saved")
-argparser.add_argument("-tn", action="store_true", help="generate additionally thumbnail image for supported collections")
+argparser.add_argument(
+    "-vd",
+    action="store_true",
+    help="validation flag, if set, validation will be run on generated catalogs"
+)
+argparser.add_argument(
+    "-ni",
+    action="store_true",
+    help="no items flag, if set, items will not be saved"
+)
+argparser.add_argument(
+    "-tn",
+    action="store_true",
+    help="generate additionally thumbnail image for supported collections"
+)
+argparser.add_argument(
+    "-c", "--collections",
+    help="list of collection identifiers to be generated for test build",
+    nargs='+',
+    required=False,
+    default=[]
+)
 
 def recursive_save(stac_object, no_items=False):
     stac_object.save_object()
@@ -69,13 +88,23 @@ def process_catalog_file(file_path, options):
     print("Processing catalog:", file_path)
     with open(file_path) as f:
         config = yaml.load(f, Loader=SafeLoader)
+        
+        if len(options.collections) > 0:
+            # create only catalogs containing the passed collections
+            process_collections = [c for c in config["collections"] if c in options.collections]
+        elif (len(options.collections) == 1 and options.collections == "all") or len(options.collections) == 0:
+            # create full catalog
+            process_collections = config["collections"]
+        if len(process_collections) == 0:
+            print("No applicable collections found for catalog, skipping creation")
+            return
         catalog = Catalog(
             id = config["id"],
             description = config["description"],
             title = config["title"],
             catalog_type=CatalogType.RELATIVE_PUBLISHED,
         )
-        for collection in config["collections"]:
+        for collection in process_collections:
             process_collection_file(config, "../collections/%s.yaml"%(collection), catalog)
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
