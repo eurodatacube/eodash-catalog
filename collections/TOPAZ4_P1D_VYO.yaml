@@ -1,7 +1,7 @@
-Name: TOPAZ5_VXO
-Title: Eastward sea water velocity (vxo)
-EodashIdentifier: TOPAZ5_VXO
-Description: TOPAZ5_SIAGE/TOPAZ5_SIAGE.md
+Name: TOPAZ4_P1D_VYO
+Title: Northward sea water velocity Arctic Ocean
+EodashIdentifier: TOPAZ4_P1D_VYO
+Description: TOPAZ4_P1D_VXSI/TOPAZ4_P1D_VXSI.md
 Themes:
   - cryosphere
 Satellite:
@@ -13,15 +13,19 @@ Agency:
 Tags:
   - model
 Resources:
-  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_MULTIYEAR_PHY_002_003/cmems_mod_arc_phy_my_topaz4_P1D-m_202211
     Type: WMTSCapabilities
     Name: marinedatastore
-    LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/vxo
+    LayerId: ARCTIC_MULTIYEAR_PHY_002_003/cmems_mod_arc_phy_my_topaz4_P1D-m_202211/vyo
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "1991-01-01T00:00:00"
+      End: "2022-12-31T00:00:00"
     Dimensions:
       elevation: 0
       style: 'cmap:delta,range:-0.3/0.3,noClamp'
-Legend: TOPAZ5_VXO/cm_legend.png
-Image: TOPAZ5_VXO/thumbnail.png
+Legend: TOPAZ4_P1D_VYO/cm_legend.png
+Image: TOPAZ4_P1D_VYO/thumbnail.png
 
 Provider:
   - Name: E.U. Copernicus Marine Service Information (CMEMS)
@@ -30,7 +34,6 @@ Provider:
     Roles: 
       - producer
 Citation:
-  Citation: TOPAZ 5 - Arctic Ocean Physics Analysis and Forecast; ARCTIC_ANALYSISFORECAST_PHY_002_001; E.U. Copernicus Marine Service Information (CMEMS), Marine Data Store (MDS).
+  Citation: TOPAZ4b - Arctic Ocean Physics Reanalysis; ARCTIC_MULTIYEAR_PHY_002_003; E.U. Copernicus Marine Service Information (CMEMS), Marine Data Store (MDS).
   Publication:
-    - Citation: "Sakov, P., Counillon, F., Bertino, L., Lisæter, K. A., Oke, P. R. and Korablev, A.: TOPAZ4: an ocean-sea ice data assimilation system for the North Atlantic and Arctic, Ocean Sci., 8(4), 633–656, doi:10.5194/os-8-633-2012, 2012. Melsom, A., Counillon, F., LaCasce, J. H. and Bertino, L.: Forecasting search areas using ensemble ocean circulation modeling, Ocean Dyn., 62(8), 1245–1257, doi:10.1007/s10236-012-0561-5, 2012."
-      DOI: 10.48670/moi-00001
+    - DOI: 10.48670/moi-00007
