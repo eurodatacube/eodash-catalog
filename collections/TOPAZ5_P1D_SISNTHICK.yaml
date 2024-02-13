@@ -19,7 +19,7 @@ Resources:
     LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/sisnthick
     Dimensions:
       elevation: 0
-      style: 'cmap:ice,range:0/1,noClamp'
+      style: 'cmap:ice,range:0.001/0.7,noClamp'
 Legend: TOPAZ5_P1D_SISNTHICK/cm_legend.png
 Image: TOPAZ5_P1D_SISNTHICK/thumbnail.png
 

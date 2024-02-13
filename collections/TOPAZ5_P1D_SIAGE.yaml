@@ -19,7 +19,7 @@ Resources:
     LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/siage
     Dimensions:
       elevation: 0
-      style: 'cmap:viridis,range:1/1400,noClamp'
+      style: 'cmap:viridis,range:0.001/1800,noClamp'
 Legend: TOPAZ5_P1D_SIAGE/cm_legend.png
 Image: TOPAZ5_P1D_SIAGE/thumbnail.png
 

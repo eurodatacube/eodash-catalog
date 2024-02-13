@@ -19,7 +19,7 @@ Resources:
     LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/siconc
     Dimensions:
       elevation: 0
-      style: 'cmap:ice,range:0/1,noClamp'
+      style: 'cmap:ice,range:0.001/1,noClamp'
 Legend: TOPAZ5_P1D_SICONC/cm_legend.png
 Image: TOPAZ5_P1D_SICONC/thumbnail.png
 

@@ -23,7 +23,7 @@ Resources:
       End: "2022-12-31T00:00:00"
     Dimensions:
       elevation: 0
-      style: 'cmap:ice,range:0/1,noClamp'
+      style: 'cmap:ice,range:0.001/1,noClamp'
 Legend: TOPAZ4_P1D_SICONC/cm_legend.png
 Image: TOPAZ4_P1D_SICONC/thumbnail.png
 
