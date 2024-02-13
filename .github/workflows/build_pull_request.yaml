@@ -27,7 +27,7 @@ jobs:
         run: |
           pip install -U pip
           pip install -r generators/requirements.txt
-      - if: github.event.pull_request.body==all
+      - if: github.event.pull_request.body == 'all'
         name: Build all
         env:
           SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
@@ -36,7 +36,7 @@ jobs:
         run: |
           cd generators/
           python generate_indicators.py
-      - if: github.event.pull_request.body!=all
+      - if: github.event.pull_request.body != 'all'
         name: Build only specified collections
         env:
           SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
