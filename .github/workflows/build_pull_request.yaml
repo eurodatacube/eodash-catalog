@@ -45,7 +45,7 @@ jobs:
         run: |
           cd generators/
           python generate_indicators.py
-      - if: github.event.pull_request.body != 'all'
+      - if: github.event.pull_request.body != 'all' && github.event.pull_request.body != ''
         name: Build only specified collections
         env:
           SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
