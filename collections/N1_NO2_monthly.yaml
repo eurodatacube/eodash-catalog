@@ -2,7 +2,7 @@ Name: N1_NO2_monthly
 Title: Nitrogen Dioxide (Monthly)
 EodashIdentifier: N1_NO2_monthly
 Subtitle: Monthly Nitrogen Dioxide (NO2) from NASA
-Description: N1_NO2_monthly/N9.md
+Description: N1_NO2_trilateral/N1.md
 Themes:
   - atmosphere
 Tags:

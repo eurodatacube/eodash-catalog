@@ -2,7 +2,7 @@ Name: N1_NO2_city_trilateral
 Title: City level NO2 (S5P)
 EodashIdentifier: N1_NO2_city_trilateral
 Subtitle: NO2 detected at cities based on Sentinel-5P data
-Description: N1_NO2_city_trilateral/N1.md
+Description: N1_NO2_trilateral/N1.md
 Themes:
     - air
 Tags:

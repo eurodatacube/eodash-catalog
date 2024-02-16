@@ -1,0 +1,36 @@
+Name: TOPAZ5_P1D_VXSI
+Title: Eastward sea ice velocity Arctic Ocean TOPAZ5
+EodashIdentifier: TOPAZ5_P1D_VXSI
+Description: TOPAZ5_P1D_SIAGE/TOPAZ5_P1D_SIAGE.md
+Themes:
+  - cryosphere
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - CMEMS
+Tags:
+  - model
+Resources:
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311
+    Type: WMTSCapabilities
+    Name: marinedatastore
+    LayerId: ARCTIC_ANALYSISFORECAST_PHY_002_001/cmems_mod_arc_phy_anfc_6km_detided_P1D-m_202311/vxsi
+    Dimensions:
+      elevation: 0
+      style: 'cmap:delta,range:-0.3/0.3,noClamp'
+Legend: TOPAZ5_P1D_VXSI/cm_legend.png
+Image: TOPAZ5_P1D_VXSI/thumbnail.png
+
+Provider:
+  - Name: E.U. Copernicus Marine Service Information (CMEMS)
+    Url: https://data.marine.copernicus.eu/
+    Description: The Copernicus Marine Service (or Copernicus Marine Environment Monitoring Service) is the marine component of the Copernicus Programme of the European Union. It provides free, regular and systematic authoritative information on the state of the Blue (physical), White (sea ice) and Green (biogeochemical) ocean,  on a global and regional scale. It is funded by the European Commission (EC) and implemented by Mercator Ocean International. It is designed to serve EU policies and International legal Commitments related to Ocean Governance, to cater for the needs of society at large for global ocean knowledge and to boost the Blue Economy across all maritime sectors by providing free-of-charge state-of-the-art ocean data and information.
+    Roles: 
+      - producer
+Citation:
+  Citation: TOPAZ5 - Arctic Ocean Physics Analysis and Forecast; ARCTIC_ANALYSISFORECAST_PHY_002_001; E.U. Copernicus Marine Service Information (CMEMS), Marine Data Store (MDS).
+  Publication:
+    - Citation: "Sakov, P., Counillon, F., Bertino, L., Lisæter, K. A., Oke, P. R. and Korablev, A.: TOPAZ4: an ocean-sea ice data assimilation system for the North Atlantic and Arctic, Ocean Sci., 8(4), 633–656, doi:10.5194/os-8-633-2012, 2012. Melsom, A., Counillon, F., LaCasce, J. H. and Bertino, L.: Forecasting search areas using ensemble ocean circulation modeling, Ocean Dyn., 62(8), 1245–1257, doi:10.1007/s10236-012-0561-5, 2012."
+      DOI: 10.48670/moi-00001

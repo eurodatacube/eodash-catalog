@@ -1,0 +1,20 @@
+Name: Polartep_Snowgrain_diameter_demo
+Title: Snow Grain Diameter Demonstration polartep
+EodashIdentifier: Polartep_Snowgrain_diameter_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+# Legend: Polartep_Snowgrain_diameter_demo/cm_legend.png
+Image: Polartep_Snowgrain_diameter_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-25.7, 62.4, -11.3, 67.1]
