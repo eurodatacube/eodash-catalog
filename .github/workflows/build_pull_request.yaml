@@ -31,6 +31,15 @@ jobs:
         run: |
           pip install -U pip
           pip install -r generators/requirements.txt
+      - if: github.event.pull_request.body == ''
+        name: Build all - no items
+        env:
+          SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
+          SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
+          SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
+        run: |
+          cd generators/
+          python generate_indicators.py -ni
       - if: github.event.pull_request.body == 'all'
         name: Build all
         env:
