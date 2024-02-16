@@ -19,10 +19,6 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - if: github.event.pull_request.body == ''
-        run: |
-          echo "::error::Pull request body text can't be empty, please define which collections to test"
-          exit 1
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
