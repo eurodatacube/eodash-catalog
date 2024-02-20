@@ -2,7 +2,7 @@ Name: ports_shipping_aq
 Title: Ports and shipping - impact on air quality
 EodashIdentifier: C1
 Subtitle: Port Activities, sources of pollution and NO2 levels
-Description: "C1_ports_shipping_aq/C1.md"
+Description: C1_ports_shipping_aq/C1_ports_shipping_aq.md
 Themes:
     - economy
     - air
