@@ -2,28 +2,32 @@ Name: vessel_density_all
 Title: Vessel density
 EodashIdentifier: E13o
 Subtitle: Vessel density description
-Description: E13o_vessel_density_all/E13o.md
+Description: E13o_vessel_density_all/E13o_vessel_density_all.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel-2
-Sensor:
-  - placeholder
+  - Maritime
+  - Traffic
+  - Open data
+DataSource:
+    - InSitu:
+        - AIS
 Agency:
   - ESA
+Provider:
+    - Name: EMODnet
+      Url: https://emodnet.ec.europa.eu/en
+Image: E13o_vessel_density_all/E13o_vessel_density_all.png
+Legend: E13o_vessel_density_all/E13o_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
     CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12
     LayerId: AWS_VIS_VESSELDENSITY_ALL
-Legend: E13o_vessel_density_all/cm_legend.png
-Image: E13o_vessel_density_all/thumbnail.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: beee9b47-b1ab-4044-baa5-0958d3465f12
-    Script: E13o_vessel_density_all/script.js
+    Script: E13o_vessel_density_all/E13o_vessel_density_all.js
