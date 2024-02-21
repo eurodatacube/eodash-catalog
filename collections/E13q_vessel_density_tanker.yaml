@@ -2,28 +2,32 @@ Name: vessel_density_tanker
 Title: Vessel density for tanker
 EodashIdentifier: E13q
 Subtitle: Vessel density for tanker description
-Description: E13q_vessel_density_tanker/E13o.md
+Description: E13q_vessel_density_tanker/E13q_vessel_density_tanker.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel-2
-Sensor:
-  - placeholder
+  - Maritime
+  - Traffic
+  - Open data
+DataSource:
+    - InSitu:
+        - AIS
 Agency:
   - ESA
+Provider:
+    - Name: EMODnet
+      Url: https://emodnet.ec.europa.eu/en
+Image: E13q_vessel_density_tanker/E13q_vessel_density_tanker.png
+Legend: E13o_vessel_density_all/E13q_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 49f706b3-53dc-46fb-aafd-0f9e5f8cef47
     LayerId: AWS_VIS_VESSELDENSITY_TANKER
-Legend: E13o_vessel_density_all/cm_legend.png
-Image: E13q_vessel_density_tanker/thumbnail.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: 49f706b3-53dc-46fb-aafd-0f9e5f8cef47
-    Script: E13q_vessel_density_tanker/script.js
+    Script: E13q_vessel_density_tanker/E13q_vessel_density_tanker.js
