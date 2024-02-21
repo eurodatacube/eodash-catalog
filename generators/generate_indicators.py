@@ -597,6 +597,7 @@ def add_example_info(stac_object, data, endpoint, config):
     if "Services" in data:
         for service in data["Services"]:
             if service["Name"] == "Statistical API":
+                service_type = "byoc" if "Type" not in service else service["Type"]
                 stac_object.add_link(
                     Link(
                         rel="example",
@@ -605,7 +606,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         media_type="application/javascript",
                         extra_fields={
                             "example:language": "JavaScript",
-                            "dataId": "%s-%s"%(service["Type"], service["CollectionId"]),
+                            "dataId": "%s-%s"%(service_type, service["CollectionId"]),
                         },
                     )
                 )
