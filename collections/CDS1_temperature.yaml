@@ -29,3 +29,11 @@ Services:
     Script: CDS1_temperature/script.js
 Image: CDS1_temperature/thumbnail.png
 Legend: CDS1_temperature/cm_legend.png
+BaseLayers:
+  - id: osm_background
+    name: 'OSM Background'
+    url: '//s2maps-tiles.eu/wmts/1.0.0/osm_3857/default/g/{z}/{y}/{x}.jpg'
+    media_type: image/jpg
+    visible: true,
+    attribution: '{ OSM: Data &copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors and <a href="//maps.eox.at/#data" target="_blank">others</a>, Rendering &copy; <a href="http://eox.at" target="_blank">EOX</a> }'
+    protocol: 'xyz'
