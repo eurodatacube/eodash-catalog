@@ -19,10 +19,6 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - if: github.event.pull_request.body == ''
-        run: |
-          echo "::error::Pull request body text can't be empty, please define which collections to test"
-          exit 1
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
@@ -31,6 +27,15 @@ jobs:
         run: |
           pip install -U pip
           pip install -r generators/requirements.txt
+      - if: github.event.pull_request.body == ''
+        name: Build all - no items
+        env:
+          SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
+          SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
+          SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
+        run: |
+          cd generators/
+          python generate_indicators.py -ni
       - if: github.event.pull_request.body == 'all'
         name: Build all
         env:
@@ -40,7 +45,7 @@ jobs:
         run: |
           cd generators/
           python generate_indicators.py
-      - if: github.event.pull_request.body != 'all'
+      - if: github.event.pull_request.body != 'all' && github.event.pull_request.body != ''
         name: Build only specified collections
         env:
           SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
