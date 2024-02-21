@@ -2,28 +2,32 @@ Name: vessel_density_others
 Title: Vessel density for non tanker or cargo
 EodashIdentifier: E13r
 Subtitle: Vessel density for non tanker or cargo vessels
-Description: E13r_vessel_density_others/E13o.md
+Description: E13r_vessel_density_others/E13r_vessel_density_others.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel-2
-Sensor:
-  - placeholder
+  - Maritime
+  - Traffic
+  - Open data
+DataSource:
+    - InSitu:
+        - AIS
 Agency:
   - ESA
+Provider:
+    - Name: EMODnet
+      Url: https://emodnet.ec.europa.eu/en
+Image: E13r_vessel_density_others/E13r_vessel_density_others.png
+Legend: E13o_vessel_density_all/E13r_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
     CollectionId: cc0a4c72-870d-4e9f-84d0-ba4e3d785693
     LayerId: AWS_VIS_VESSELDENSITY_OTHER
-Legend: E13o_vessel_density_all/cm_legend.png
-Image: E13r_vessel_density_others/E13r.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: cc0a4c72-870d-4e9f-84d0-ba4e3d785693
-    Script: E13r_vessel_density_others/script.js
+    Script: E13r_vessel_density_others/E13r_vessel_density_others.js
