@@ -10,13 +10,13 @@ Tags:
   - Traffic
   - Open data
 DataSource:
-    - InSitu:
-        - AIS
+  InSitu:
+    - AIS
 Agency:
   - ESA
 Provider:
-    - Name: EMODnet
-      Url: https://emodnet.ec.europa.eu/en
+  - Name: EMODnet
+    Url: https://emodnet.ec.europa.eu/en
 Image: E13r_vessel_density_others/E13r_vessel_density_others.png
 Legend: E13o_vessel_density_all/E13r_legend.png
 Resources:
