@@ -425,33 +425,11 @@ def add_to_catalog(collection, catalog, endpoint, data):
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["id"] = data["Name"]
-    link.extra_fields["themes"] = data["Themes"]
     # Check for summaries and bubble up info
     if collection.summaries.lists:
         for sum in collection.summaries.lists:
             link.extra_fields[sum] = collection.summaries.lists[sum]
-    if "Locations" in data or "Subcollections" in data:
-        link.extra_fields["locations"] = True
-    if "Tags" in data:
-        link.extra_fields["tags"] = data["Tags"]
-    if "Satellite" in data:
-        link.extra_fields["satellite"] = data["Satellite"]
-    if "Sensor" in data:
-        link.extra_fields["sensor"] = data["Sensor"]
-    if "Agency" in data:
-        link.extra_fields["agency"] = data["Agency"]
-    if "yAxis" in data:
-        link.extra_fields["yAxis"] = data["yAxis"]
-    if "DataSource" in data:
-        if "Spaceborne" in data["DataSource"]:
-            if "Sensor" in data["DataSource"]["Spaceborne"]:
-                link.extra_fields["sensor"] = data["DataSource"]["Spaceborne"]["Sensor"]
-            if "Satellite" in data["DataSource"]["Spaceborne"]:
-                link.extra_fields["satellite"] = data["DataSource"]["Spaceborne"]["Satellite"]
-        if "InSitu" in data["DataSource"]:
-            link.extra_fields["insitu"] = data["DataSource"]["InSitu"]
-        if "Other" in data["DataSource"]:
-            link.extra_fields["other"] = data["DataSource"]["Other"]
+    
     add_extra_fields(link, data)
     return link
 
