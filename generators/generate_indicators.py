@@ -10,7 +10,7 @@ from pystac_client import Client
 import os
 import re
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import yaml
 from yaml.loader import SafeLoader
@@ -234,17 +234,13 @@ def handle_collection_only(config, endpoint, data, catalog):
 def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     spatial_extent = collection.extent.spatial.to_dict().get("bbox", [-180, -90, 180, 90])[0]
-    if not endpoint.get("Type") == "OverwriteTimes" and not endpoint.get("OverwriteBBox"):
+    if not endpoint.get("Type") == "OverwriteTimes" or not endpoint.get("OverwriteBBox"):
+        
         # some endpoints allow "narrowed-down" capabilities per-layer, which we utilize to not
         # have to process full service capabilities XML
         capabilities_url = endpoint["EndPoint"]
         spatial_extent, times = retrieveExtentFromWMSWMTS(capabilities_url, endpoint["LayerId"], wmts=wmts)
-
     # Create an item per time to allow visualization in stac clients
-    styles = None
-    if hasattr(endpoint, "Styles"):
-        styles = endpoint["Styles"]
-
     if len(times) > 0 and not endpoint.get("Disable_Items"):
         for t in times:
             item = Item(
@@ -254,12 +250,19 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
                 geometry = None,
                 datetime = parser.isoparse(t),
             )
-            add_visualization_info(item, data, endpoint, time=t, styles=styles)
+            add_visualization_info(item, data, endpoint, time=t)
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t
         collection.update_extent_from_items()
 
-    add_visualization_info(collection, data, endpoint, styles=styles)
+    # Check if we should overwrite bbox
+    if "OverwriteBBox" in endpoint:
+        collection.extent.spatial =  SpatialExtent([
+            endpoint["OverwriteBBox"],
+        ])
+        
+
+    add_visualization_info(collection, data, endpoint)
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, endpoint, data)
 
@@ -296,6 +299,7 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
                     geometry = None,
                     datetime = parser.isoparse(time),
                 )
+                add_visualization_info(item, data, endpoint, time=time)
                 item_link = collection.add_item(item)
                 item_link.extra_fields["datetime"] = time
 
@@ -681,6 +685,7 @@ def generate_veda_cog_link(endpoint, file_url):
     return target_url
 
 def generate_veda_tiles_link(endpoint, item):
+    collection = "collection=%s"%endpoint["CollectionId"]
     assets = ""
     for asset in endpoint["Assets"]:
         assets += "&assets=%s"%asset
@@ -691,10 +696,11 @@ def generate_veda_tiles_link(endpoint, item):
     if "NoData" in endpoint:
         no_data = "&no_data=%s"%endpoint["NoData"]
     if item:
-        item = "item=%s&"%(item)
+        item = "&item=%s"%(item)
     else:
         item = ""
-    target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s"%(
+    target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s%s"%(
+        collection,
         item,
         assets,
         color_formula,
@@ -702,21 +708,36 @@ def generate_veda_tiles_link(endpoint, item):
     )
     return target_url
 
-def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None, styles=None):
+def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "Sentinel Hub WMS":
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
             instanceId = endpoint["InstanceId"]
+        extra_fields={
+            "wms:layers": [endpoint["LayerId"]],
+        }
+        if time != None:
+            if endpoint["Name"] == "Sentinel Hub WMS":
+                # SH WMS for public collections needs time interval, we use full day here
+                datetime_object = datetime.strptime(time, "%Y-%m-%d")
+                extra_fields["wms:dimensions"] = {
+                    "TIME": "%s/%s"%(
+                        datetime_object.isoformat(),
+                        (datetime_object + timedelta(days=1) - timedelta(milliseconds=1)).isoformat()
+                    )
+                }
+            if endpoint["Name"] == "Sentinel Hub":
+                 extra_fields["wms:dimensions"] = {
+                    "TIME": time
+                }
         stac_object.add_link(
             Link(
                 rel="wms",
                 target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
                 media_type="text/xml",
                 title=data["Name"],
-                extra_fields={
-                    "wms:layers": [endpoint["LayerId"]],
-                },
+                extra_fields=extra_fields,
             )
         )
     # elif resource["Name"] == "GeoDB":
@@ -729,13 +750,16 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             extra_fields["wms:dimensions"] = {
                 "TIME": time,
             }
-        if styles != None:
-            extra_fields["wms:styles"] = styles
+        if "Styles" in endpoint:
+            extra_fields["wms:styles"] = endpoint["Styles"]
+        media_type = "image/jpeg"
+        if "MediaType" in endpoint:
+            media_type = endpoint["MediaType"]
         stac_object.add_link(
             Link(
                 rel="wms",
                 target=endpoint["EndPoint"],
-                media_type="text/xml",
+                media_type=media_type,
                 title=data["Name"],
                 extra_fields=extra_fields,
             )
@@ -796,11 +820,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         if endpoint["Type"] == "cog":
             target_url = generate_veda_cog_link(endpoint, file_url)
         elif endpoint["Type"] == "tiles":
-            item_kvp = ""
-            if file_url:
-                item_kvp = "&item=%s"%file_url
             target_url = generate_veda_tiles_link(endpoint, file_url)
-            target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?collection=%s%s&assets=red&assets=green&assets=blue&color_formula=gamma RGB 2.7, saturation 1.5, sigmoidal RGB 15 0.55&nodata=0&format=png"%(endpoint["CollectionId"], item_kvp)
         if target_url:
             stac_object.add_link(
             Link(
@@ -879,6 +899,13 @@ def process_STACAPI_Endpoint(
         elif "cog_default" in item.assets:
             add_visualization_info(item, data, endpoint, item.assets["cog_default"].href)
             link.extra_fields["cog_href"] = item.assets["cog_default"].href
+        elif item_datetime:
+            time_string = item_datetime.isoformat()[:-6] + 'Z'
+            add_visualization_info(item, data, endpoint,time=time_string)
+        elif "start_datetime" in item.properties and "end_datetime" in item.properties:
+            add_visualization_info(item, data, endpoint,time="%s/%s"%(
+                item.properties["start_datetime"], item.properties["end_datetime"]
+            ))
         # If a root collection exists we point back to it from the item
         if root_collection != None:
             item.set_collection(root_collection)
@@ -947,7 +974,7 @@ def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, st
         )
         fetch_and_save_thumbnail(data, url)
     elif endpoint["Name"] == "VEDA":
-        target_url = generate_veda_link(endpoint, file_url)
+        target_url = generate_veda_cog_link(endpoint, file_url)
         # set to get 0/0/0 tile
         url = re.sub(r"\{.\}", "0", target_url)
         fetch_and_save_thumbnail(data, url)
