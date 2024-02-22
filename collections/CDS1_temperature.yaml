@@ -2,20 +2,39 @@ Name: temperature
 Title: Global temperature
 EodashIdentifier: CDS1_temperature
 Subtitle: Global temperature description
-Description: CDS1_temperature/CDS.md
+Description: CDS1_temperature/CDS1_temperature.md
 Themes:
-    - air
+  - air
 Tags:
-    - placeholder
-Satellite:
-    - ICEYE
-Sensor:
-    - placeholder
+  - Copernicus Services
+  - C3S
+  - CDS
+  - Open data
+DataSource:
+  Other:
+    - ERA5
 Agency:
-    - ESA
-License: MIT
+  - European Commission
+  - ECMWF
+License: proprietary | 
+  ([more information](https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf))
+Provider: 
+  - Name: Copernicus Climate Change Service
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+  - Name: Climate Data Store
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+Citation:
+  Citation: |
+    Muñoz Sabater, J., (2019) was downloaded from the Copernicus Climate Change Service (2021).
+    The results contain modified Copernicus Climate Change Service information 2020. 
+    Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.
+  DOI: 10.24381/cds.68d2bb30
+  Publication:
+    - Citation: Zaitchik, B.F., Sweijd, N., Shumake-Guillemot, J. et al. A framework for research linking weather, climate and COVID-19. Nat Commun 11, 5730 (2020).
+      DOI: 10.1038/s41467-020-19546-7
+Image: CDS1_temperature/CDS1_temperature.png
+Legend: CDS1_temperature/CDS1_legend.png
 Resources:
-    - Group: Sentinel Hub Resources
     - EndPoint: https://services.sentinel-hub.com
       Name: Sentinel Hub
       Type: byoc
@@ -24,8 +43,5 @@ Resources:
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
-    Type: byoc
     CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
-    Script: CDS1_temperature/script.js
-Image: CDS1_temperature/thumbnail.png
-Legend: CDS1_temperature/cm_legend.png
+    Script: CDS1_temperature/CDS1_temperature.js
