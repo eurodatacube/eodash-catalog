@@ -1033,21 +1033,45 @@ def add_collection_information(config, collection, data):
     # Add metadata information
     # Check license identifier
     if "License" in data:
-        license = lookup.by_id(data["License"])
-        if license is not None:
-            collection.license = license.id
-            if license.sources:
-                # add links to licenses
-                for source in license.sources:
-                    collection.links.append(Link(
+        # Check if list was provided
+        if isinstance(data["License"], list):
+            if len(data["License"]) == 1:
+                collection.license = 'proprietary'
+                link = Link(
+                    rel="license",
+                    target=data["License"][0]["Url"],
+                    media_type=data["License"][0]["Type"] if "Type" in data["License"][0] else "text/html",
+                )
+                if "Title" in data["License"][0]:
+                    link.title = data["License"][0]["Title"]
+                collection.links.append(link)
+            elif len(data["License"]) > 1:
+                collection.license = 'various'
+                for l in data["License"]:
+                    link = Link(
                         rel="license",
-                        target=source,
-                        media_type="text/html",
-                    ))
+                        target=l["Url"],
+                        media_type="text/html" if "Type" in l else l["Type"],
+                    )
+                    if "Title" in l:
+                        link.title = l["Title"]
+                    collection.links.append(link)
         else:
-            # fallback to proprietary
-            print("WARNING: License could not be parsed, falling back to proprietary")
-            collection.license = "proprietary"
+            license = lookup.by_id(data["License"])
+            if license is not None:
+                collection.license = license.id
+                if license.sources:
+                    # add links to licenses
+                    for source in license.sources:
+                        collection.links.append(Link(
+                            rel="license",
+                            target=source,
+                            media_type="text/html",
+                        ))
+            else:
+                # fallback to proprietary
+                print("WARNING: License could not be parsed, falling back to proprietary")
+                collection.license = "proprietary"
     else:
         # print("WARNING: No license was provided, falling back to proprietary")
         pass
