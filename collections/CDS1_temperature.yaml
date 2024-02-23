@@ -16,8 +16,10 @@ DataSource:
 Agency:
   - European Commission
   - ECMWF
-License: proprietary | 
-  ([more information](https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf))
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
 Provider: 
   - Name: Copernicus Climate Change Service
     Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
