@@ -2,8 +2,7 @@ Name: wind_10m_v
 Title: Wind V Field
 EodashIdentifier: CDS4
 Subtitle: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field
-Description: CDS4_wind_10m_v/README.MD
-Story: CDS4_wind_10m_v/CDS4_wind_10m_v.md
+Description: CDS4_wind_10m_v/CDS4_wind_10m_v.md
 Themes:
   - air
 Tags:
@@ -21,7 +20,7 @@ License:
   - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
     Type: application/pdf
     Title: Licence to Use Copernicus Products
-Provider:
+Provider: 
   - Name: Copernicus Climate Change Service
     Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
   - Name: Climate Data Store
@@ -40,7 +39,6 @@ Legend: CDS4_wind_10m_v/CDS4_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
-    Role: processor
     Type: byoc
     CollectionId: 3043d07f-3c20-410c-9a87-7da720942ab8
     LayerId: AWS_VIS_WIND_V_10M
