@@ -249,6 +249,9 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
                 properties={},
                 geometry = None,
                 datetime = parser.isoparse(t),
+                stac_extensions=[
+                    "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+                ]
             )
             add_visualization_info(item, data, endpoint, time=t)
             link = collection.add_item(item)
@@ -297,6 +300,9 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
                     properties={},
                     geometry = None,
                     datetime = parser.isoparse(time),
+                    stac_extensions=[
+                        "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+                    ]
                 )
                 add_visualization_info(item, data, endpoint, time=time)
                 item_link = collection.add_item(item)
@@ -497,6 +503,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
             start_datetime = min_date,
             end_datetime = max_date
         )
+        # TODO: do we need to add extensions to the item?
         link = collection.add_item(item)
         # bubble up information we want to the link
         link.extra_fields["id"] = key 
@@ -790,7 +797,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             Link(
                 rel="wms",
                 target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
-                media_type="text/xml",
+                media_type=endpoint["MimeType"] if "MimeType" in endpoint else "image/png",
                 title=data["Name"],
                 extra_fields=extra_fields,
             )
@@ -963,6 +970,10 @@ def process_STACAPI_Endpoint(
             add_visualization_info(item, data, endpoint,time="%s/%s"%(
                 item.properties["start_datetime"], item.properties["end_datetime"]
             ))
+        # Add used STAC extensions
+        item.stac_extensions=[
+            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+        ]
         # If a root collection exists we point back to it from the item
         if root_collection != None:
             item.set_collection(root_collection)
