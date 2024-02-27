@@ -2,30 +2,49 @@ Name: relative_humidity
 Title: Relative humidity
 EodashIdentifier: CDS2_relative_humidity
 Subtitle: Global relative humidity
-Description: CDS2_relative_humidity/CDS.md
+Description: CDS2_relative_humidity/CDS2_relative_humidity.md
 Themes:
-    - air
+  - air
 Tags:
-    - placeholder
-Satellite:
-    - ICEYE
-Sensor:
-    - placeholder
+  - Copernicus Services
+  - C3S
+  - CDS
+  - Open data
+DataSource:
+  Other:
+    - ERA5
 Agency:
-    - ESA
-License: MIT
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Provider: 
+  - Name: Copernicus Climate Change Service
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+  - Name: Climate Data Store
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+Citation:
+  Citation: |
+    Muñoz Sabater, J., (2019) was downloaded from the Copernicus Climate Change Service (2021).
+    The results contain modified Copernicus Climate Change Service information 2020. 
+    Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.
+  DOI: 10.24381/cds.68d2bb30
+  Publication:
+    - Citation: Zaitchik, B.F., Sweijd, N., Shumake-Guillemot, J. et al. A framework for research linking weather, climate and COVID-19. Nat Commun 11, 5730 (2020).
+      DOI: 10.1038/s41467-020-19546-7
+Image: CDS2_relative_humidity/CDS2_relative_humidity.png
+Legend: CDS2_relative_humidity/CDS2_legend.png
 Resources:
-    - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
-      Name: Sentinel Hub
-      Type: byoc
-      CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
-      LayerId: AWS_VIS_RELHUMIDITY1000HPA
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
+    LayerId: AWS_VIS_RELHUMIDITY1000HPA
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
-    Script: CDS2_relative_humidity/script.js
-Image: CDS2_relative_humidity/thumbnail.png
-Legend: CDS2_relative_humidity/cm_legend.png
+    Script: CDS2_relative_humidity/CDS2_relative_humidity.js
