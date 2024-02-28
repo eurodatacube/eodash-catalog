@@ -1,21 +1,35 @@
 Name: agricultural_workers
 Title: Agricultural workers
 EodashIdentifier: E10a9
-Subtitle: The impacts of COVID-19 on the availability of agricultural workers
-Description: E10a9_agricultural_workers/E10a9.md
+Subtitle: Availability of agricultural workers
+Description: E10a9_agricultural_workers/E10a9_agricultural_workers.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - Pleiades
-    - Sentinel-2
-Sensor:
-    - placeholder
+  - Land cover
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+      - Deimos-2
+    Sensor:
+      - MSI
+      - DMAC
+  InSitu:
+    - Mobile
 Agency:
-    - ESA
+  - ESA
+Provider:
+  - Name: Geosat
+    Url: https://geosat.space/
+  - Name: Vodafone
+    URL: https://www.vodafone.com/
+References:
+  - Name: Land cover classification map
+    Url: http://www.sit.puglia.it/portal/portale_cartografie_tecniche_tematiche/Download/Cartografie
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E10a9
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E10a9
