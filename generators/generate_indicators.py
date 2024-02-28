@@ -154,6 +154,8 @@ def process_collection_file(config, file_path, catalog):
                         handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
+                    elif resource["Name"] == "STAC Endpoint":
+                        handle_STAC_based_endpoint(config, resource, data, catalog)
                     else:
                         raise ValueError("Type of Resource is not supported")
         elif "Subcollections" in data:
@@ -214,7 +216,6 @@ def process_collection_file(config, file_path, catalog):
             })
             add_to_catalog(parent_collection, catalog, None, data)
 
-
 def handle_collection_only(config, endpoint, data, catalog):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     if len(times) > 0 and not endpoint.get("Disable_Items"):
@@ -249,9 +250,6 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
                 properties={},
                 geometry = None,
                 datetime = parser.isoparse(t),
-                stac_extensions=[
-                    "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-                ]
             )
             add_visualization_info(item, data, endpoint, time=t)
             link = collection.add_item(item)
@@ -300,9 +298,6 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
                     properties={},
                     geometry = None,
                     datetime = parser.isoparse(time),
-                    stac_extensions=[
-                        "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-                    ]
                 )
                 add_visualization_info(item, data, endpoint, time=time)
                 item_link = collection.add_item(item)
@@ -397,15 +392,13 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
         # Try to use at least subtitle to fill some information
         description = data["Subtitle"]
 
-
+    # TODO: Do we need some extensions by default?
     collection = Collection(
         id=collection_id,
         title=data["Title"],
         description=description,
         stac_extensions=[
-            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-            "https://stac-extensions.github.io/example-links/v0.0.1/schema.json",
-            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+            # "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
         ],
         extent=extent
     )
@@ -601,8 +594,30 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             )
 
     add_example_info(root_collection, data, endpoint, config)
+    # TODO: remove from collection level
+    add_item_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
 
+def add_item_example_info(stac_object, data, endpoint, config):
+    if "Resources" in data:
+        for service in data["Resources"]:
+            if service.get("Name") == "STAC Endpoint" and "FlatStyle" in service:
+                target_url = "%s/%s"%(config["assets_endpoint"], service["FlatStyle"])
+                stac_object.add_link(
+                    Link(
+                        rel="example",
+                        target=target_url,
+                        title="OpenLayers flat style",
+                        media_type="application/json",
+                        extra_fields={
+                            "example:language": "FlatStyle",
+                        },
+                    )
+                )
+                # TODO: should we move adding the stac extension for examples somewhere else?
+                stac_object.stac_extensions.append(
+                    "https://stac-extensions.github.io/example-links/v0.0.1/schema.json"
+                )
 
 def add_example_info(stac_object, data, endpoint, config):
     if "Services" in data:
@@ -652,6 +667,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
+
 def generate_veda_cog_link(endpoint, file_url):
     bidx = ""
     if "Bidx" in endpoint:
@@ -771,6 +787,7 @@ def create_web_map_link(layer, role):
 
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None):
     # add extension reference
+    web_map_link_used = True
     if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "Sentinel Hub WMS":
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
@@ -855,7 +872,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title="xcube tiles",
             )
         )
-    elif endpoint["Type"] == "WMTSCapabilities":
+    elif "Type" in endpoint and endpoint["Type"] == "WMTSCapabilities":
         target_url = "%s"%(
             endpoint.get('EndPoint'),
         )
@@ -919,7 +936,13 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             )
         )
     else:
+        web_map_link_used = False
         print("Visualization endpoint not supported")
+    
+    wml = "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json"
+    if web_map_link_used and wml not in stac_object.stac_extensions:
+        stac_object.stac_extensions.append(wml)
+
 
 def process_STACAPI_Endpoint(
         config, endpoint, data, catalog, headers={}, bbox=None,
@@ -970,10 +993,8 @@ def process_STACAPI_Endpoint(
             add_visualization_info(item, data, endpoint,time="%s/%s"%(
                 item.properties["start_datetime"], item.properties["end_datetime"]
             ))
-        # Add used STAC extensions
-        item.stac_extensions=[
-            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-        ]
+
+        add_item_example_info(item, data, endpoint, config)
         # If a root collection exists we point back to it from the item
         if root_collection != None:
             item.set_collection(root_collection)
