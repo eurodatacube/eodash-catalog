@@ -154,6 +154,8 @@ def process_collection_file(config, file_path, catalog):
                         handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
+                    elif resource["Name"] == "STAC Endpoint":
+                        handle_STAC_based_endpoint(config, resource, data, catalog)
                     else:
                         raise ValueError("Type of Resource is not supported")
         elif "Subcollections" in data:
@@ -214,7 +216,6 @@ def process_collection_file(config, file_path, catalog):
             })
             add_to_catalog(parent_collection, catalog, None, data)
 
-
 def handle_collection_only(config, endpoint, data, catalog):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     if len(times) > 0 and not endpoint.get("Disable_Items"):
@@ -260,9 +261,8 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
         collection.extent.spatial =  SpatialExtent([
             endpoint["OverwriteBBox"],
         ])
-        
 
-    add_visualization_info(collection, data, endpoint)
+    add_base_overlay_info(collection, config, data)
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, endpoint, data)
 
@@ -311,7 +311,7 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
             link.extra_fields["country"] = location["Country"]
             link.extra_fields["city"] = location["Name"]
             collection.update_extent_from_items()
-            add_visualization_info(collection, data, endpoint)
+            add_base_overlay_info(collection, config, data)
 
 
         root_collection.update_extent_from_items()
@@ -392,15 +392,13 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
         # Try to use at least subtitle to fill some information
         description = data["Subtitle"]
 
-
+    # TODO: Do we need some extensions by default?
     collection = Collection(
         id=collection_id,
         title=data["Title"],
         description=description,
         stac_extensions=[
-            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
-            "https://stac-extensions.github.io/example-links/v0.0.1/schema.json",
-            "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
+            # "https://stac-extensions.github.io/scientific/v1.0.0/schema.json"
         ],
         extent=extent
     )
@@ -451,6 +449,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
     collection, _ = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
+    add_base_overlay_info(collection, config, data)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     if additional_query_parameters := endpoint.get("AdditionalQueryString"):
@@ -497,6 +496,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
             start_datetime = min_date,
             end_datetime = max_date
         )
+        # TODO: do we need to add extensions to the item?
         link = collection.add_item(item)
         # bubble up information we want to the link
         link.extra_fields["id"] = key 
@@ -594,8 +594,30 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             )
 
     add_example_info(root_collection, data, endpoint, config)
+    # TODO: remove from collection level
+    add_item_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
 
+def add_item_example_info(stac_object, data, endpoint, config):
+    if "Resources" in data:
+        for service in data["Resources"]:
+            if service.get("Name") == "STAC Endpoint" and "FlatStyle" in service:
+                target_url = "%s/%s"%(config["assets_endpoint"], service["FlatStyle"])
+                stac_object.add_link(
+                    Link(
+                        rel="example",
+                        target=target_url,
+                        title="OpenLayers flat style",
+                        media_type="application/json",
+                        extra_fields={
+                            "example:language": "FlatStyle",
+                        },
+                    )
+                )
+                # TODO: should we move adding the stac extension for examples somewhere else?
+                stac_object.stac_extensions.append(
+                    "https://stac-extensions.github.io/example-links/v0.0.1/schema.json"
+                )
 
 def add_example_info(stac_object, data, endpoint, config):
     if "Services" in data:
@@ -645,6 +667,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         },
                     )
                 )
+
 def generate_veda_cog_link(endpoint, file_url):
     bidx = ""
     if "Bidx" in endpoint:
@@ -708,14 +731,70 @@ def generate_veda_tiles_link(endpoint, item):
     )
     return target_url
 
+def add_base_overlay_info(collection, config, data):
+    # check if default base layers defined
+    if "default_base_layers" in config:
+        with open("../%s.yaml"%config["default_base_layers"]) as f:
+            base_layers = yaml.load(f, Loader=SafeLoader)
+            for layer in base_layers:
+                collection.add_link(create_web_map_link(layer, role="baselayer"))
+    # check if default overlay layers defined
+    if "default_overlay_layers" in config:
+        with open("../%s.yaml"%config["default_overlay_layers"]) as f:
+            overlay_layers = yaml.load(f, Loader=SafeLoader)
+            for layer in overlay_layers:
+                collection.add_link(create_web_map_link(layer, role="overlay"))
+    if "BaseLayers" in data:
+        for layer in data["BaseLayers"]:
+            collection.add_link(create_web_map_link(layer, role="baselayer"))
+    if "OverlayLayers" in data:
+        for layer in data["OverlayLayers"]:
+            collection.add_link(create_web_map_link(layer, role="overlay"))
+    # TODO: possibility to overwrite default base and overlay layers
+
+def create_web_map_link(layer, role):
+    extra_fields = {
+        "roles": [role],
+        "id": layer["id"],
+    }
+    if "default" in layer and layer["default"]:
+        extra_fields["roles"].append("default")
+    if "visible" in layer and layer["visible"]:
+        extra_fields["roles"].append("visible")
+    if "visible" in layer and not layer["visible"]:
+        extra_fields["roles"].append("invisible")
+
+    match layer["protocol"]:
+        case "wms":
+            # handle wms special config options
+            extra_fields["wms:layers"] = layer["layers"]
+            if "styles" in layer:
+                extra_fields["wms:styles"] = layer["styles"]
+            # TODO: handle wms dimensions extra_fields["wms:dimensions"]
+        case "wmts":
+            extra_fields["wmts:layer"] = layer["layer"]
+            # TODO: handle wmts dimensions extra_fields["wmts:dimensions"]
+            
+
+    wml = Link(
+        rel=layer["protocol"],
+        target=layer["url"],
+        media_type='image/png' if "media_type" not in layer else layer["media_type"],
+        title=layer["name"],
+        extra_fields=extra_fields,
+    )
+    return wml
+
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None):
     # add extension reference
+    web_map_link_used = True
     if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "Sentinel Hub WMS":
         instanceId = os.getenv("SH_INSTANCE_ID")
         if "InstanceId" in endpoint:
             instanceId = endpoint["InstanceId"]
         extra_fields={
             "wms:layers": [endpoint["LayerId"]],
+            "role": ["data"],
         }
         if time != None:
             if endpoint["Name"] == "Sentinel Hub WMS":
@@ -735,7 +814,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             Link(
                 rel="wms",
                 target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
-                media_type="text/xml",
+                media_type=endpoint["MimeType"] if "MimeType" in endpoint else "image/png",
                 title=data["Name"],
                 extra_fields=extra_fields,
             )
@@ -744,7 +823,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
     #     pass
     elif endpoint["Name"] == "WMS":
         extra_fields={
-            "wms:layers": [endpoint["LayerId"]]
+            "wms:layers": [endpoint["LayerId"]],
+            "role": ["data"],
         }
         if time != None:
             extra_fields["wms:dimensions"] = {
@@ -792,12 +872,13 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 title="xcube tiles",
             )
         )
-    elif endpoint["Type"] == "WMTSCapabilities":
+    elif "Type" in endpoint and endpoint["Type"] == "WMTSCapabilities":
         target_url = "%s"%(
             endpoint.get('EndPoint'),
         )
         extra_fields={
-            "wmts:layer": endpoint.get('LayerId')
+            "wmts:layer": endpoint.get('LayerId'),
+            "role": ["data"],
         }
         dimensions = {}
         if time != None:
@@ -855,7 +936,13 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             )
         )
     else:
+        web_map_link_used = False
         print("Visualization endpoint not supported")
+    
+    wml = "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json"
+    if web_map_link_used and wml not in stac_object.stac_extensions:
+        stac_object.stac_extensions.append(wml)
+
 
 def process_STACAPI_Endpoint(
         config, endpoint, data, catalog, headers={}, bbox=None,
@@ -864,7 +951,7 @@ def process_STACAPI_Endpoint(
     collection, _ = get_or_create_collection(
         catalog, endpoint["CollectionId"], data, config, endpoint
     )
-    add_visualization_info(collection, data, endpoint)
+    add_base_overlay_info(collection, config, data)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     if bbox == None:
@@ -906,6 +993,8 @@ def process_STACAPI_Endpoint(
             add_visualization_info(item, data, endpoint,time="%s/%s"%(
                 item.properties["start_datetime"], item.properties["end_datetime"]
             ))
+
+        add_item_example_info(item, data, endpoint, config)
         # If a root collection exists we point back to it from the item
         if root_collection != None:
             item.set_collection(root_collection)
@@ -982,7 +1071,7 @@ def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, st
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
     collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
-    add_visualization_info(collection, data, endpoint)
+    add_base_overlay_info(collection, config, data)
 
     stac_endpoint_url = endpoint["EndPoint"]
     if endpoint.get('Name') == 'xcube':
