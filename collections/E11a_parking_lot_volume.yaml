@@ -2,32 +2,36 @@ Name: parking_lot_volume
 Title: Parking lot volume
 EodashIdentifier: E11a
 Subtitle: Parking lot volume description
-Description: E11a_parking_lot_volume/PL7-E11a.md
+Description: E11a_parking_lot_volume/E11a_parking_lot_volume.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - ICEYE
-Sensor:
-    - placeholder
+  - SAR
+  - Mobility
+  - 
+DataSource:
+  Spaceborne:
+    Satellite:
+      - ICEYE SAR
+      - Sentinel-2
+    Sensor:
+      - MSI
 Agency:
-    - ESA
-Provider:
-    - Name: placeholder
-License: MIT
+  - ESA
 Locations:
-    - Identifier: PL7
-      Country: PL
-      Name: Warsaw
-      Subtitle: Volume of activity at parking lot at Warsaw
-      Point: [21.045, 52.244]
-      Bbox: [-180, -90, 180, 90]
+  - Identifier: PL7
+    Country: PL
+    Name: Warsaw
+    Point: [21.045, 52.244]
+    Bbox: [-180, -90, 180, 90]
+Provider:
+  - Name: ICEYE
+    URL: https://www.iceye.com/
+Image: E11a_parking_lot_volume/E11a_parking_lot_volume_1.png
+Image: E11a_parking_lot_volume/E11a_parking_lot_volume_2.png
 Resources:
-    - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
-      Name: Sentinel Hub
-      Type: byoc
-      CollectionId: a9ae7d6a-70c8-4575-854a-1a8f0cb33317
-      LayerId: AWS_ICEYE-E11A
-Image: E11a_parking_lot_volume/thumbnail.png
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: a9ae7d6a-70c8-4575-854a-1a8f0cb33317
+    LayerId: AWS_ICEYE-E11A
