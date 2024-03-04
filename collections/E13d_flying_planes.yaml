@@ -2,19 +2,42 @@ Name: flying_planes
 Title: Flying planes detections
 EodashIdentifier: E13d
 Subtitle: Flying planes detected on Sentinel-2 data
-Description: E13d_flying_planes/E13d.md
+Description: E13d_flying_planes/E13d_flying_planes.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-2
-Sensor:
-    - placeholder
+  - Copernicus
+  - Mobility
+  - Air traffic
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
 Agency:
-    - ESA
+  - ESA
+Provider:
+  - Name: Copernicus
+    URL: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+Image: E13d_flying_planes/E13d_flying_planes_1.png
+Image: E13d_flying_planes/E13d_flying_planes_2.png
+References:
+  - Name: Covid19 Custom Script Contest
+    URL: https://github.com/maups/covid19-custom-script-contest/tree/master
+  - Name: OpenSky Network
+    Url: https://opensky-network.org/
+  - Name: EUROCONTROL
+    URL: https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html
+Citation:
+  Publication:
+    - Citation: M. P. Segundo, A. Pinto, R. Minetto, R. d. S. Torres and S. Sarkar, "Measuring Economic Activity From Space: A Case Study Using Flying Airplanes and COVID-19," in IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 14, pp. 7213-7224, 2021.
+      DOI: 10.1109/JSTARS.2021.3094053
+    - Citation: Mauricio Pamplona Segundo, Allan Pinto, Rodrigo Minetto, Ricardo da Silva Torres, Sudeep Sarkar, July 2, 2021, "A dataset for detecting flying airplanes on satellite images", IEEE Dataport.
+      DOI: 10.21227/3mbt-tb11
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E13d
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E13d
