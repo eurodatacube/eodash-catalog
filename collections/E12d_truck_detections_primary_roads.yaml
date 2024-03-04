@@ -2,26 +2,39 @@ Name: truck_detections_primary_roads
 Title: Truck detections primary roads
 EodashIdentifier: E12d
 Subtitle: Truck detections on primary roads description
-Description: E12d_truck_detections_primary_roads/E12d.md
+Description: E12d_truck_detections_primary_roads/E12d_truck_detections_primary_roads.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-2
-Sensor:
-    - placeholder
+  - Copernicus
+  - Mobility
+  - Traffic
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
 Agency:
-    - ESA
+  - ESA
 Provider:
-    - Name: placeholder
-License: MIT
+  - Name: Copernicus
+    URL: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: BASt
+    URL: https://www.bast.de/DE/Verkehrstechnik/Fachthemen/v2-verkehrszaehlung/zaehl_node.html
+  - Name: Open Street Maps
+    URL: https://wiki.openstreetmap.org/wiki/Key:highway
+Image: E12d_truck_detections_primary_roads/E12d_truck_detections_primary_roads.png
+Legend: E12d_truck_detections_motorways/E12d_legend.png
+References:
+  - Name: Eurostat
+    Url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Freight_transport_statistics_-_modal_split
+  - Name: Destatis
+    URL: https://www.destatis.de/EN/Service/EXSTAT/_node.html
 Resources:
-    - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
-      Name: Sentinel Hub
-      Type: byoc
-      CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
-      LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
-Image: E12d_truck_detections_primary_roads/thumbnail.png
-Legend: E12d_truck_detections_motorways/cm_legend.png
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
+    LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
