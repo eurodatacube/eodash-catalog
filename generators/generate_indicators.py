@@ -529,6 +529,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         yAxis = response[0]['y_axis']
         data['yAxis'] = yAxis
     add_collection_information(config, collection, data)
+    add_example_info(collection, data, endpoint, config)
 
     collection.update_extent_from_items()    
     collection.summaries = Summaries({
@@ -640,6 +641,20 @@ def add_example_info(stac_object, data, endpoint, config):
                         media_type="application/json",
                         extra_fields={
                             "example:language": "JSON",
+                        },
+                    )
+                )
+            if service["Name"] == "EOxHub Notebook":
+                # TODO: we need to consider if we can improve information added
+                stac_object.add_link(
+                    Link(
+                        rel="example",
+                        target=service["Url"],
+                        title=service["Title"] if "Title" in service else service["Name"],
+                        media_type="application/x-ipynb+json",
+                        extra_fields={
+                            "example:language": "Jupyter Notebook",
+                            "example:container": True
                         },
                     )
                 )
@@ -1149,6 +1164,25 @@ def add_collection_information(config, collection, data):
         )
     # Add extra fields to collection if available
     add_extra_fields(collection, data)
+
+    if "References" in data:
+        generic_counter = 1
+        for ref in data["References"]:
+            if "Key" in ref:
+                key = ref["Key"]
+            else:
+                key = "reference_%s"%generic_counter
+                generic_counter = generic_counter + 1
+            collection.add_asset(
+                key,
+                Asset(
+                    href=ref["Url"],
+                    title=ref["Name"],
+                    media_type=ref["MediaType"] if "MediaType" in ref else "text/html",
+                    roles=["metadata"],
+                ),
+            )
+
 
 
 def process_catalogs(folder_path, options):
