@@ -1170,6 +1170,7 @@ def add_collection_information(config, collection, data):
                 key,
                 Asset(
                     href=ref["Url"],
+                    title=ref["Name"],
                     media_type=ref["MediaType"] if "MediaType" in ref else "text/html",
                     roles=["metadata"],
                 ),
