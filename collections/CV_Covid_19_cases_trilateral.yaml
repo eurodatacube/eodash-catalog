@@ -1,4 +1,4 @@
-Name: CV_Covid_19_cases
+Name: CV_Covid_19_cases_trilatearl
 Title: Covid-19 Cases
 EodashIdentifier: CV
 Description: CV_Covid_19_cases/CV.md
@@ -17,5 +17,4 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: Global_COVID_data
-      AdditionalQueryString: 'aoi_id=in.("AT","BA","BE","BG","CH","CZ","DE","DK","EE","EG","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","RU","SE","SI","SK","TR")'
       IdKey: 'aoi_id'

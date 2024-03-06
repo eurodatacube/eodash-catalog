@@ -78,4 +78,4 @@ collections:
   - OX_EU_Crude_Oil_Storage_Index
   # - OW_Covid_19_vaccinations
   - GG_Google_Mobility_Data_RACE
-  # - CV_Covid_19_cases
+  - CV_Covid_19_cases
