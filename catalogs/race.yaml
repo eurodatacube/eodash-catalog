@@ -3,6 +3,8 @@ title: "RACE"
 description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
+default_base_layers: "layers/baselayers"
+default_overlay_layers: "layers/overlays"
 collections:
   - CDS1_temperature
   - CDS2_relative_humidity

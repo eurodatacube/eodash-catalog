@@ -249,6 +249,9 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
                 properties={},
                 geometry = None,
                 datetime = parser.isoparse(t),
+                stac_extensions=[
+                    "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+                ]
             )
             add_visualization_info(item, data, endpoint, time=t)
             link = collection.add_item(item)
@@ -260,9 +263,8 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
         collection.extent.spatial =  SpatialExtent([
             endpoint["OverwriteBBox"],
         ])
-        
 
-    add_visualization_info(collection, data, endpoint)
+    add_base_overlay_info(collection, config, data)
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, endpoint, data)
 
@@ -298,6 +300,9 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
                     properties={},
                     geometry = None,
                     datetime = parser.isoparse(time),
+                    stac_extensions=[
+                        "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+                    ]
                 )
                 add_visualization_info(item, data, endpoint, time=time)
                 item_link = collection.add_item(item)
@@ -311,7 +316,7 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
             link.extra_fields["country"] = location["Country"]
             link.extra_fields["city"] = location["Name"]
             collection.update_extent_from_items()
-            add_visualization_info(collection, data, endpoint)
+            add_base_overlay_info(collection, config, data)
 
 
         root_collection.update_extent_from_items()
@@ -451,6 +456,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
     collection, _ = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
+    add_base_overlay_info(collection, config, data)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     if additional_query_parameters := endpoint.get("AdditionalQueryString"):
@@ -497,6 +503,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
             start_datetime = min_date,
             end_datetime = max_date
         )
+        # TODO: do we need to add extensions to the item?
         link = collection.add_item(item)
         # bubble up information we want to the link
         link.extra_fields["id"] = key 
@@ -723,6 +730,60 @@ def generate_veda_tiles_link(endpoint, item):
     )
     return target_url
 
+def add_base_overlay_info(collection, config, data):
+    # check if default base layers defined
+    if "default_base_layers" in config:
+        with open("../%s.yaml"%config["default_base_layers"]) as f:
+            base_layers = yaml.load(f, Loader=SafeLoader)
+            for layer in base_layers:
+                collection.add_link(create_web_map_link(layer, role="baselayer"))
+    # check if default overlay layers defined
+    if "default_overlay_layers" in config:
+        with open("../%s.yaml"%config["default_overlay_layers"]) as f:
+            overlay_layers = yaml.load(f, Loader=SafeLoader)
+            for layer in overlay_layers:
+                collection.add_link(create_web_map_link(layer, role="overlay"))
+    if "BaseLayers" in data:
+        for layer in data["BaseLayers"]:
+            collection.add_link(create_web_map_link(layer, role="baselayer"))
+    if "OverlayLayers" in data:
+        for layer in data["OverlayLayers"]:
+            collection.add_link(create_web_map_link(layer, role="overlay"))
+    # TODO: possibility to overwrite default base and overlay layers
+
+def create_web_map_link(layer, role):
+    extra_fields = {
+        "roles": [role],
+        "id": layer["id"],
+    }
+    if "default" in layer and layer["default"]:
+        extra_fields["roles"].append("default")
+    if "visible" in layer and layer["visible"]:
+        extra_fields["roles"].append("visible")
+    if "visible" in layer and not layer["visible"]:
+        extra_fields["roles"].append("invisible")
+
+    match layer["protocol"]:
+        case "wms":
+            # handle wms special config options
+            extra_fields["wms:layers"] = layer["layers"]
+            if "styles" in layer:
+                extra_fields["wms:styles"] = layer["styles"]
+            # TODO: handle wms dimensions extra_fields["wms:dimensions"]
+        case "wmts":
+            extra_fields["wmts:layer"] = layer["layer"]
+            # TODO: handle wmts dimensions extra_fields["wmts:dimensions"]
+            
+
+    wml = Link(
+        rel=layer["protocol"],
+        target=layer["url"],
+        media_type='image/png' if "media_type" not in layer else layer["media_type"],
+        title=layer["name"],
+        extra_fields=extra_fields,
+    )
+    return wml
+
 def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None):
     # add extension reference
     if endpoint["Name"] == "Sentinel Hub" or endpoint["Name"] == "Sentinel Hub WMS":
@@ -731,6 +792,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             instanceId = endpoint["InstanceId"]
         extra_fields={
             "wms:layers": [endpoint["LayerId"]],
+            "role": ["data"],
         }
         if time != None:
             if endpoint["Name"] == "Sentinel Hub WMS":
@@ -750,7 +812,7 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             Link(
                 rel="wms",
                 target="https://services.sentinel-hub.com/ogc/wms/%s"%(instanceId),
-                media_type="text/xml",
+                media_type=endpoint["MimeType"] if "MimeType" in endpoint else "image/png",
                 title=data["Name"],
                 extra_fields=extra_fields,
             )
@@ -759,7 +821,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
     #     pass
     elif endpoint["Name"] == "WMS":
         extra_fields={
-            "wms:layers": [endpoint["LayerId"]]
+            "wms:layers": [endpoint["LayerId"]],
+            "role": ["data"],
         }
         if time != None:
             extra_fields["wms:dimensions"] = {
@@ -812,7 +875,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
             endpoint.get('EndPoint'),
         )
         extra_fields={
-            "wmts:layer": endpoint.get('LayerId')
+            "wmts:layer": endpoint.get('LayerId'),
+            "role": ["data"],
         }
         dimensions = {}
         if time != None:
@@ -879,7 +943,7 @@ def process_STACAPI_Endpoint(
     collection, _ = get_or_create_collection(
         catalog, endpoint["CollectionId"], data, config, endpoint
     )
-    add_visualization_info(collection, data, endpoint)
+    add_base_overlay_info(collection, config, data)
 
     api = Client.open(endpoint["EndPoint"], headers=headers)
     if bbox == None:
@@ -921,6 +985,10 @@ def process_STACAPI_Endpoint(
             add_visualization_info(item, data, endpoint,time="%s/%s"%(
                 item.properties["start_datetime"], item.properties["end_datetime"]
             ))
+        # Add used STAC extensions
+        item.stac_extensions=[
+            "https://stac-extensions.github.io/web-map-links/v1.1.0/schema.json",
+        ]
         # If a root collection exists we point back to it from the item
         if root_collection != None:
             item.set_collection(root_collection)
@@ -997,7 +1065,7 @@ def generate_thumbnail(stac_object, data, endpoint, file_url=None, time=None, st
 
 def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
     collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
-    add_visualization_info(collection, data, endpoint)
+    add_base_overlay_info(collection, config, data)
 
     stac_endpoint_url = endpoint["EndPoint"]
     if endpoint.get('Name') == 'xcube':

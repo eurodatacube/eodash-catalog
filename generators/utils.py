@@ -36,12 +36,7 @@ def create_geojson_point(lon, lat):
         "properties": {}
     }
 
-    feature_collection = {
-        "type": "FeatureCollection",
-        "features": [feature]
-    }
-
-    return feature_collection
+    return feature
 
 
 def retrieveExtentFromWMSWMTS(capabilties_url, layer, wmts=False):
