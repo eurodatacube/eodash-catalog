@@ -18,5 +18,5 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: Mobility_data
-      AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","EG","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR")'
+      AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR","XK")'
       IdKey: 'aoi_id'
