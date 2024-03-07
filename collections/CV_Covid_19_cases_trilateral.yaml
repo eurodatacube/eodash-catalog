@@ -1,9 +1,9 @@
-Name: CV_Covid_19_cases
+Name: CV_Covid_19_cases_trilateral
 Title: Covid-19 Cases
 EodashIdentifier: CV
 Description: CV_Covid_19_cases/CV.md
 Themes:
-    - health
+    - covid-19
 Tags:
     - placeholder
 Satellite:
@@ -17,5 +17,4 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: Global_COVID_data
-      AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR","XK")'
       IdKey: 'aoi_id'
