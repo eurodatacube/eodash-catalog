@@ -1,6 +1,6 @@
 Name: OX_EU_Crude_Oil_Storage_Index
 Title: Crude Oil Storage Index Europe
-EodashIdentifier: OX-EU
+EodashIdentifier: OX_EU
 Subtitle: Level of oil in tanks based on SAR and optical data Europe
 Description: OX_Crude_Oil_Storage_Index/OX.md
 Themes:
