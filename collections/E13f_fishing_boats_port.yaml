@@ -21,4 +21,4 @@ Resources:
     CollectionId: E13f
 References:
   - Name: AIS data
-    URL: https://www.imo.org/en/OurWork/Safety/Pages/AIS.aspx
+    Url: https://www.imo.org/en/OurWork/Safety/Pages/AIS.aspx
