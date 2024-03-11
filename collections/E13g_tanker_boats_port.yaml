@@ -2,21 +2,23 @@ Name: tanker_boats_port
 Title: Tankers boats in ports
 EodashIdentifier: E13g
 Subtitle: Changes in the number of boats in ports
-Description: E13g_tanker_boats_port/E13g.md
+Description: E13g_tanker_boats_port/E13g_tanker_boats_port.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Ports
+  - Maritime
+  - Traffic
+DataSource:
+  InSitu:
+    - AIS
 Agency:
-    - ESA
-Provider:
-    - Name: AIS
+  - ESA
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E13g
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E13g
+References:
+  - Name: AIS data
+    URL: https://www.imo.org/en/OurWork/Safety/Pages/AIS.aspx
