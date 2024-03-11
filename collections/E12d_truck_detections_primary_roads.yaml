@@ -20,18 +20,18 @@ Agency:
   - ESA
 Provider:
   - Name: Copernicus
-    URL: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
   - Name: BASt
-    URL: https://www.bast.de/DE/Verkehrstechnik/Fachthemen/v2-verkehrszaehlung/zaehl_node.html
+    Url: https://www.bast.de/DE/Verkehrstechnik/Fachthemen/v2-verkehrszaehlung/zaehl_node.html
   - Name: Open Street Maps
-    URL: https://wiki.openstreetmap.org/wiki/Key:highway
+    Url: https://wiki.openstreetmap.org/wiki/Key:highway
 Image: E12d_truck_detections_primary_roads/E12d_truck_detections_primary_roads.png
 Legend: E12d_truck_detections_motorways/E12d_legend.png
 References:
   - Name: Eurostat
     Url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Freight_transport_statistics_-_modal_split
   - Name: Destatis
-    URL: https://www.destatis.de/EN/Service/EXSTAT/_node.html
+    Url: https://www.destatis.de/EN/Service/EXSTAT/_node.html
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
