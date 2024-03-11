@@ -26,9 +26,9 @@ Locations:
     Bbox: [-180, -90, 180, 90]
 Provider:
   - Name: ICEYE
-    URL: https://www.iceye.com/
+    Url: https://www.iceye.com/
   - Name: Copernicus
-    URL: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
 Image: E11a_parking_lot_volume/E11a_parking_lot_volume_1.png
 Image: E11a_parking_lot_volume/E11a_parking_lot_volume_2.png
 Resources:
