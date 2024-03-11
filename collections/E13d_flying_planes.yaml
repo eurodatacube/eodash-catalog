@@ -20,16 +20,16 @@ Agency:
   - ESA
 Provider:
   - Name: Copernicus
-    URL: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
 Image: E13d_flying_planes/E13d_flying_planes_1.png
 Image: E13d_flying_planes/E13d_flying_planes_2.png
 References:
   - Name: Covid19 Custom Script Contest
-    URL: https://github.com/maups/covid19-custom-script-contest/tree/master
+    Url: https://github.com/maups/covid19-custom-script-contest/tree/master
   - Name: OpenSky Network
     Url: https://opensky-network.org/
   - Name: EUROCONTROL
-    URL: https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html
+    Url: https://www.eurocontrol.int/Economics/DailyTrafficVariation-States.html
 Citation:
   Publication:
     - Citation: M. P. Segundo, A. Pinto, R. Minetto, R. d. S. Torres and S. Sarkar, "Measuring Economic Activity From Space: A Case Study Using Flying Airplanes and COVID-19," in IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 14, pp. 7213-7224, 2021.
