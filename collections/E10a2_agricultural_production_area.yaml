@@ -18,7 +18,7 @@ Agency:
   - ESA
 Provider:
   - Name: Copernicus
-    URL: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
 Image: E10a2_agricultural_production_area/E10a2_agricultural_production_area.gif
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
