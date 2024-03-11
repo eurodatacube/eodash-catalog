@@ -24,7 +24,7 @@ Provider:
   - Name: Geosat
     Url: https://geosat.space/
   - Name: Vodafone
-    URL: https://www.vodafone.com/
+    Url: https://www.vodafone.com/
 References:
   - Name: Land cover classification map
     Url: http://www.sit.puglia.it/portal/portale_cartografie_tecniche_tematiche/Download/Cartografie
