@@ -27,14 +27,18 @@ Provider:
     URL: https://wiki.openstreetmap.org/wiki/Key:highway
 Image: E12c_truck_detections_motorways/E12c_truck_detections_motorways.png
 Legend: E12c_truck_detections_motorways/E12c_legend.png
-References:
-  - Name: Eurostat
-    Url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Freight_transport_statistics_-_modal_split
-  - Name: Destatis
-    URL: https://www.destatis.de/EN/Service/EXSTAT/_node.html
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 34fbfb05-c3e5-4885-9840-830ee85dddd4
     LayerId: VIS_TRUCK_DETECTION_MOTORWAYS_NEW
+Services:
+  - Name: EOxHub Notebook
+    Title: Detect Trucks using Sentinel-2 data
+    Url: https://eurodatacube.com/notebooks/contributions/Detect_Trucks_Sentinel2.ipynb
+References:
+  - Name: Eurostat
+    Url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Freight_transport_statistics_-_modal_split
+  - Name: Destatis
+    URL: https://www.destatis.de/EN/Service/EXSTAT/_node.html
