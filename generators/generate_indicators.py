@@ -152,6 +152,9 @@ def process_collection_file(config, file_path, catalog):
                         handle_WMS_endpoint(config, resource, data, catalog)
                     elif resource["Name"] == "GeoDB Vector Tiles":
                         handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "JAXA_WMTS_PALSAR":
+                        # somewhat one off creation of individual WMTS layers as individual items
+                        handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
                     else:
@@ -235,7 +238,6 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     spatial_extent = collection.extent.spatial.to_dict().get("bbox", [-180, -90, 180, 90])[0]
     if not endpoint.get("Type") == "OverwriteTimes" or not endpoint.get("OverwriteBBox"):
-        
         # some endpoints allow "narrowed-down" capabilities per-layer, which we utilize to not
         # have to process full service capabilities XML
         capabilities_url = endpoint["EndPoint"]
@@ -779,6 +781,22 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 extra_fields=extra_fields,
             )
         )
+    elif endpoint["Name"] == "JAXA_WMTS_PALSAR":
+        target_url = "%s"%(
+            endpoint.get('EndPoint'),
+        )
+        # custom time just for this special case as a default for collection wmts
+        extra_fields={
+            "wmts:layer": endpoint.get('LayerId').replace('{time}', time or '2017')
+        }
+        stac_object.add_link(
+        Link(
+            rel="wmts",
+            target=target_url,
+            media_type="image/png",
+            title="wmts capabilities",
+            extra_fields=extra_fields,
+        ))
     elif endpoint["Name"] == "xcube":
         if endpoint["Type"] == "zarr":
             # either preset ColormapName of left as a template

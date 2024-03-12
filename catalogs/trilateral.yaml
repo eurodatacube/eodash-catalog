@@ -9,7 +9,6 @@ collections:
   - N1_CH4
   - N1_CO
   - N1_SO2
-  # - N2_greenhouse_gases
   - N1_NO2_monthly
   - N1_NO2_diff_monthly
   - N1_NO2_city_trilateral
@@ -94,3 +93,4 @@ collections:
   - E13c_shipping_activity
   - E13b_parked_airplanes
   - CV_Covid_19_cases_trilateral
+  - FNF_Palsar
