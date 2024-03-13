@@ -33,5 +33,5 @@ Resources:
       - blue
     ColorFormula: gamma+RGB+2.7%2C+saturation+1.5%2C+sigmoidal+RGB+15+0.55
     NoData: 0
-    OverwriteBBox: [-103, -75, -102, -74]
+    OverwriteBBox: [-115, -80, -100, -73]
 Image: ADD_L2_Thwaites/thumbnail.png
