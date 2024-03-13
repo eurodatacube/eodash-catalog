@@ -1,0 +1,29 @@
+Name: ADD_Meltmap
+Title: Antarctica Meltmap
+EodashIdentifier: ADD_Meltmap
+Subtitle: Antarctica Meltmap from 4D Antarctica
+Description: ADD_Meltmap/ADD_Meltmap.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
+    Type: OverwriteTimes
+    LayerId: VIS_ANTARTICA_MELTMAP
+    OverwriteBBox: [-100, -75, -70, -68]
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "2007-01-02T00:00:00"
+      End: "2021-12-31T00:00:00"
+Image: ADD_Meltmap/thumbnail.png
+Legend: ADD_Meltmap/legend.png
