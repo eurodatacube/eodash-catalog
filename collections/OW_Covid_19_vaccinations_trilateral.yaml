@@ -1,9 +1,9 @@
-Name: OW_Covid_19_vaccinations
+Name: OW_Covid_19_vaccinations_trilateral
 Title: Covid-19 Vaccinations
 EodashIdentifier: OW
 Description: OW_Covid_19_vaccinations/OW.md
 Themes:
-    - health
+    - covid-19
 Tags:
     - placeholder
 Satellite:
