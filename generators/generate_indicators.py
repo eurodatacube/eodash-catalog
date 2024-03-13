@@ -772,10 +772,12 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         media_type = "image/jpeg"
         if "MediaType" in endpoint:
             media_type = endpoint["MediaType"]
+        # special case for non-byoc SH WMS
+        EndPoint = endpoint.get("EndPoint").replace("{SH_INSTANCE_ID}", os.getenv("SH_INSTANCE_ID"))
         stac_object.add_link(
             Link(
                 rel="wms",
-                target=endpoint["EndPoint"],
+                target=EndPoint,
                 media_type=media_type,
                 title=data["Name"],
                 extra_fields=extra_fields,

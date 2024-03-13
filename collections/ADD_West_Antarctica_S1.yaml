@@ -16,7 +16,7 @@ Agency:
 Provider:
   - Name: Sentinel-Hub
 Resources:
-  - EndPoint: https://services.sentinel-hub.com
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
     Name: WMS
     Type: OverwriteTimes
     LayerId: SENTINEL-1-EW
