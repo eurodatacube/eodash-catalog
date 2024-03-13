@@ -1,6 +1,6 @@
 Name: ADD_West_Antarctica_S1
 Title: West Antarctica (Sentinel-1)
-EodashIdentifier: ADD
+EodashIdentifier: ADD_West_Antarctica_S1
 Subtitle: West Antarctica Sentinel-1 Subset
 Description: ADD_West_Antarctica_S1/S1GRD-ADD.md
 Themes:

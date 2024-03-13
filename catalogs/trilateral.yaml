@@ -96,8 +96,7 @@ collections:
   - OW_Covid_19_vaccinations_trilateral
   - FNF_Palsar
   - ADD_West_Antarctica_S1
-  - ADD_L2_Pine_Island
-  - ADD_L2_Thwaites
+  - ADD_Landsat_L2_Antarctica
   - ADD_Melt_Duration
   - ADD_Melt_Onset
   - ADD_Melt_Season_End
