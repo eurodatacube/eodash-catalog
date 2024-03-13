@@ -4,7 +4,7 @@ EodashIdentifier: N3b
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
 Description: N3b_water_quality/N3b.md
 Themes:
-    - air
+    - oceans
 Tags:
     - placeholder
 Satellite:

@@ -35,5 +35,5 @@ Subcollections:
     Country: ['AQ']
     Name: Thwaites Glacier
     Point: [-107, -74]
-    Bbox: [-115, -80, -100, -73]
+    Bbox: [-115, -78, -100, -73]
 Image: ADD_L2_Pine_Island/thumbnail.png
