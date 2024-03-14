@@ -26,6 +26,8 @@ Provider:
   - Name: Open Street Maps
     Url: https://wiki.openstreetmap.org/wiki/Key:highway
 Image: E12c_truck_detections_motorways/E12c_truck_detections_motorways.png
+Image: E12c_truck_detections_motorways/E12c_2018-04-19_france.jpg
+Image: E12c_truck_detections_motorways/E12c_validation_percentages.png
 Legend: E12c_truck_detections_motorways/E12c_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
