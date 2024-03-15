@@ -13,7 +13,7 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: co2-mean/cm_legend.png
+Legend: co2-mean/legend.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: VEDA Statistics

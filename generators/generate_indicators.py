@@ -452,7 +452,7 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
-    collection, _ = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
+    collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     if additional_query_parameters := endpoint.get("AdditionalQueryString"):

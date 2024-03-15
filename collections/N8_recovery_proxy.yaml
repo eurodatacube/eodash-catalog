@@ -80,9 +80,6 @@ Locations:
     Subtitle: Recovery Proxy Maps
     Point: [-121.944, 38.715]
     Bbox: [-122.13, 38.20, -120.00, 39.23]
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
@@ -90,4 +87,4 @@ Resources:
     CollectionId: recovery-proxy-maps-covid-19
     Bidx: [1,2,3]
 # Legend: N8_recovery_proxy/cm_legend.png
-Image: N8_recovery_proxy/thumbnail.png
+# Image: N8_recovery_proxy/thumbnail.png

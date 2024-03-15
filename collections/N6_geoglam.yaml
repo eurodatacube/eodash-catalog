@@ -13,9 +13,6 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog

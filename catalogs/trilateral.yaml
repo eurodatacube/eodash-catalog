@@ -65,7 +65,8 @@ collections:
   - N6_geoglam
   - N7_slowdown_proxy
   - N8_recovery_proxy
-  - N3b_water_quality
+  - N3b_water_quality_tsm_chart
+  - N3b_water_quality_chl_chart
   - N3a2_chl_concentration
   - E10d_regional_cropland
   - N1_NO2_jaxa

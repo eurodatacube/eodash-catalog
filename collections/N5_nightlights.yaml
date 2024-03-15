@@ -63,9 +63,6 @@ Locations:
     Subtitle: Recovery Proxy Maps
     Point: [-121.944, 38.715]
     Bbox: [-122.13, 38.20, -120.00, 39.23]
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
