@@ -245,6 +245,7 @@ def handle_collection_only(config, endpoint, data, catalog):
                         datetime = parser.isoparse(t),
                     )
                     link = collection.add_item(item)
+                    link.extra_fields["datetime"] = t
             add_collection_information(config, collection, data)
         
             if "Bbox" in location:
