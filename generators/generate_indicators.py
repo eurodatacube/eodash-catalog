@@ -222,7 +222,7 @@ def handle_collection_only(config, endpoint, data, catalog):
     if "Locations" in data:
         root_collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
         for location in data["Locations"]:
-            collection, times = get_or_create_collection(catalog, location["Identifier"], data, config, endpoint)
+            collection, times = get_or_create_collection(catalog, location["Identifier"], data, config, location) # location is not a typo, this is deliberate
             collection.title = location["Name"]
             # See if description should be overwritten
             if "Description" in location:
