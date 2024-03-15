@@ -1,0 +1,39 @@
+Name: N3a2_total_suspended_matter_tri_nasa
+Title: Total suspended matter maps NASA
+EodashIdentifier: N3a2_TSM_nasa
+Subtitle: Total suspended matter description
+Description: N3a2_total_suspended_matter/N3a2.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Provider:
+  - Name: placeholder
+License: MIT
+Locations:
+  - Identifier: NorthAdriaticTSM_NASA
+    Name: "North Adriatic"
+    Subtitle: Total suspended matter in North Adriatic
+    Point: [13.02978, 45.19752]
+    Bbox: [11.6, 44, 15, 46]
+  - Identifier: US03SPM
+    Name: "San Francisco"
+    Subtitle: Chlorophyll-a concentration around San Francisco
+    Point: [-122.4, 37.8]
+    Bbox: [-122.6, 37.4, -121.7, 38.15]
+  - Identifier: US04TSM
+    Name: "New York"
+    Subtitle: Chlorophyll-a concentration around New York
+    Point: [-73.09, 41]
+    Bbox: [-74.2, 40.1, -70.97, 41.5]
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+Image: N3a2_total_suspended_matter/thumbnail.png
+Legend: N3a2_total_suspended_matter/cm_legend.png

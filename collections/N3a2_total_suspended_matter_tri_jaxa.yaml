@@ -1,6 +1,6 @@
-Name: total_suspended_matter
-Title: Total suspended matter maps
-EodashIdentifier: N3a2_TSM
+Name: N3a2_total_suspended_matter_tri_jaxa
+Title: Total suspended matter maps JAXA
+EodashIdentifier: N3a2_TSM_jaxa
 Subtitle: Total suspended matter description
 Description: N3a2_total_suspended_matter/N3a2.md
 Themes:
@@ -12,43 +12,43 @@ Satellite:
 Sensor:
   - placeholder
 Agency:
-  - ESA
+  - JAXA
 Provider:
   - Name: placeholder
 License: MIT
 Locations:
-  - Identifier: NorthAdriaticTSM
+  - Identifier: NorthAdriatic
     Name: North Adriatic
     Subtitle: Total suspended matter in North Adriatic
     Point: [13.02978, 45.19752]
     Bbox: [11.6, 44, 15, 46]
-  - Identifier: RhoneDeltaTSM
-    Name: Rhone Delta
-    Subtitle: Total suspended matter in Rhone Delta
-    Point: [4.94, 43.4]
-    Bbox: [4, 42.8, 6, 44]
-  - Identifier: BarcelonaTSM
-    Name: Barcelona
-    Subtitle: Total suspended matter in Barcelona
-    Point: [1.769, 40.985]
-    Bbox: [0, 40, 3, 42]
-  - Identifier: DanubeDeltaTSM
-    Name: Danube Delta
-    Subtitle: Total suspended matter in Danube Delta
-    Point: [29.9, 45.05]
-    Bbox: [28.5, 44, 31, 46]
+  - Identifier: JP01
+    Name: Tokyo
+    Subtitle: Total suspended matter outside of Tokyo
+    Point: [139.78, 35.61]
+    Bbox: [139, 34.7, 140.3, 35.7]
+  - Identifier: JP04
+    Name: Nagoya
+    Subtitle: Total suspended matter outside of Nagoya
+    Point: [136.9, 34.7]
+    Bbox: [136.4, 34.2, 137.4, 35.2]
+  - Identifier: JP02
+    Name: Kobe
+    Subtitle: Total suspended matter outside of Kobe
+    Point: [135, 34.35]
+    Bbox: [134.5, 33.8, 135.5, 34.8]
 Resources:
   - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
-    CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
-    LayerId: AWS_N3_CUSTOM_TSMNN
+    CollectionId: 925b4bf6-ca1b-45df-a523-88f30823ab07
+    LayerId: AWS_JAXA_TSM
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
-    CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
+    CollectionId: 925b4bf6-ca1b-45df-a523-88f30823ab07
     Script: N3a2_total_suspended_matter/script.js
 Image: N3a2_total_suspended_matter/thumbnail.png
 Legend: N3a2_total_suspended_matter/cm_legend.png

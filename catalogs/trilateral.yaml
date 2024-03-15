@@ -67,7 +67,13 @@ collections:
   - N8_recovery_proxy
   - N3b_water_quality_tsm_chart
   - N3b_water_quality_chl_chart
-  - N3a2_chl_concentration
+  - N3a2_chl_concentration_tri_esa
+  - N3a2_chl_concentration_tri_jaxa
+  - N3a2_chl_concentration_tri_nasa
+  - N3a2_total_suspended_matter_tri_esa
+  - N3a2_total_suspended_matter_tri_jaxa
+  - N3a2_total_suspended_matter_tri_nasa
+  - N3a2_sea_surface_temperature
   - E10d_regional_cropland
   - N1_NO2_jaxa
   - N2_CO2_jaxa_gosat

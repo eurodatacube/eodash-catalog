@@ -1,0 +1,39 @@
+Name: N3a2_chl_concentration_tri_nasa
+Title: Chlorophyll-a concentration maps NASA
+EodashIdentifier: N3a2_chl_nasa
+Subtitle: Chlorophyll-a concentration description
+Description: N3a2_chl_concentration_tri/N3a2.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - NASA
+Provider:
+  - Name: placeholder
+License: MIT
+Locations:
+  - Identifier: NorthAdriatic_NASA
+    Name: "North Adriatic"
+    Subtitle: Chlorophyll-a concentration in North Adriatic
+    Point: [13.02978, 45.19752]
+    Bbox: [11.6, 44, 15, 46]
+  - Identifier: US03
+    Name: "San Francisco"
+    Subtitle: Chlorophyll-a concentration around San Francisco
+    Point: [-122.4, 37.8]
+    Bbox: [-122.6, 37.4, -121.7, 38.15]
+  - Identifier: US04
+    Name: "New York"
+    Subtitle: Chlorophyll-a concentration around New York
+    Point: [-73.09, 41]
+    Bbox: [-74.2, 40.1, -70.97, 41.5]
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+# Image: N3a2_chl_concentration_tri/thumbnail.png
+Legend: N3a2_chl_concentration_tri/legend.png

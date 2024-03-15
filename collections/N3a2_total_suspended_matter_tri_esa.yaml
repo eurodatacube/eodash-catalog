@@ -1,6 +1,6 @@
-Name: total_suspended_matter
-Title: Total suspended matter maps
-EodashIdentifier: N3a2_TSM
+Name: N3a2_total_suspended_matter_tri_esa
+Title: Total suspended matter maps ESA
+EodashIdentifier: N3a2_TSM_esa
 Subtitle: Total suspended matter description
 Description: N3a2_total_suspended_matter/N3a2.md
 Themes:
@@ -43,7 +43,7 @@ Resources:
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
-    LayerId: AWS_N3_CUSTOM_TSMNN
+    LayerId: AWS_N3_CUSTOM_TRILATERAL_TSMNN
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
@@ -51,4 +51,4 @@ Services:
     CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
     Script: N3a2_total_suspended_matter/script.js
 Image: N3a2_total_suspended_matter/thumbnail.png
-Legend: N3a2_total_suspended_matter/cm_legend.png
+Legend: N3a2_total_suspended_matter/legend.png

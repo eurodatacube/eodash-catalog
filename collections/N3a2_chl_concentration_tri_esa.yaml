@@ -1,8 +1,8 @@
-Name: chl_concentration
-Title: Chlorophyll-a concentration maps
-EodashIdentifier: N3a2
+Name: N3a2_chl_concentration_tri_esa
+Title: Chlorophyll-a concentration maps ESA
+EodashIdentifier: N3a2_chl_esa
 Subtitle: Chlorophyll-a concentration description
-Description: N3a2_chl_concentration/N3a2.md
+Description: N3a2_chl_concentration_tri/N3a2.md
 Themes:
   - water
 Tags:
@@ -43,12 +43,12 @@ Resources:
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
-    LayerId: AWS_N3_CUSTOM
+    LayerId: AWS_N3_CUSTOM_TRILATERAL
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
     Script: N3a2_chl_concentration/script.js
-Image: N3a2_chl_concentration/thumbnail.png
-Legend: N3a2_chl_concentration/cm_legend.png
+# Image: N3a2_chl_concentration_tri/thumbnail.png
+Legend: N3a2_chl_concentration_tri/legend.png

@@ -219,20 +219,59 @@ def process_collection_file(config, file_path, catalog):
 
 
 def handle_collection_only(config, endpoint, data, catalog):
-    collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
-    if len(times) > 0 and not endpoint.get("Disable_Items"):
-        for t in times:
-            item = Item(
-                id = t,
-                bbox=endpoint.get("OverwriteBBox"),
-                properties={},
-                geometry = None,
-                datetime = parser.isoparse(t),
+    if "Locations" in data:
+        root_collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        for location in data["Locations"]:
+            collection, times = get_or_create_collection(catalog, location["Identifier"], data, config, endpoint)
+            collection.title = location["Name"]
+            # See if description should be overwritten
+            if "Description" in location:
+                collection.description = location["Description"]
+            else:
+                collection.description = location["Name"]
+            link = root_collection.add_child(collection)
+            latlng = "%s,%s"%(location["Point"][1], location["Point"][0])
+            # Add extra properties we need
+            link.extra_fields["id"] = location["Identifier"]
+            link.extra_fields["latlng"] = latlng
+            link.extra_fields["name"] = location["Name"]
+            if len(times) > 0 and not endpoint.get("Disable_Items"):
+                for t in times:
+                    item = Item(
+                        id = t,
+                        bbox=location["Bbox"],
+                        properties={},
+                        geometry = None,
+                        datetime = parser.isoparse(t),
+                    )
+                    link = collection.add_item(item)
+            add_collection_information(config, collection, data)
+        
+            if "Bbox" in location:
+                collection.extent.spatial =  SpatialExtent([
+                    location["Bbox"],
+                ])
+        # Add bbox extents from children
+        for c_child in root_collection.get_children():
+            root_collection.extent.spatial.bboxes.append(
+                c_child.extent.spatial.bboxes[0]
             )
-            link = collection.add_item(item)
-            link.extra_fields["datetime"] = t
-    add_collection_information(config, collection, data)
-    add_to_catalog(collection, catalog, None, data)
+        add_to_catalog(root_collection, catalog, None, data)
+    else:
+        collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        if len(times) > 0 and not endpoint.get("Disable_Items"):
+            for t in times:
+                item = Item(
+                    id = t,
+                    bbox=endpoint.get("OverwriteBBox"),
+                    properties={},
+                    geometry = None,
+                    datetime = parser.isoparse(t),
+                )
+                link = collection.add_item(item)
+                link.extra_fields["datetime"] = t
+        add_collection_information(config, collection, data)
+        add_to_catalog(collection, catalog, None, data)
 
 def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
