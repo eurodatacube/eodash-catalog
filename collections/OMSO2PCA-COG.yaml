@@ -2,7 +2,7 @@ Name: OMSO2PCA-COG
 Title: Sulfur Dioxide (OMI/Aura)
 EodashIdentifier: N10
 Subtitle: Sulfur Dioxide (OMI/Aura)
-Description: OMI_trno2-COG/N10.md
+Description: N10_OMSO2PCA-COG/N10.md
 Themes:
   - atmosphere
 Tags:
@@ -23,6 +23,6 @@ Resources:
     Name: VEDA
     CollectionId: OMSO2PCA-COG
     ColormapName: viridis
-    Rescale: [0.0,1.0]
+    Rescale: [0.0, 1.0]
     Bidx: 1
 Image: OMSO2PCA-COG/thumbnail.png

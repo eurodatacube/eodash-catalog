@@ -70,6 +70,6 @@ Resources:
     CollectionId: nightlights-hd-monthly
     Bidx: 1
     ColormapName: inferno
-    Rescale: [0,255]
-# Legend: N5_nightlights/cm_legend.png
+    Rescale: [0, 255]
+Legend: N5_nightlights/legend.png
 Image: N5_nightlights/thumbnail.png

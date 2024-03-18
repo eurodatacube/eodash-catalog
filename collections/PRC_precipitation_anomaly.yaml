@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: PRC-Anomaly-GSMaP-World-Monthly
 Legend: PRC_precipitation_anomaly/cm_legend.png
+Image: PRC_precipitation_anomaly/thumbnail.png

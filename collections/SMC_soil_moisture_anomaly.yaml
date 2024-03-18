@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: SMC-Anomaly-GCOMW-World-Monthly
 Legend: SMC_soil_moisture_anomaly/cm_legend.png
+Image: SMC_soil_moisture_anomaly/thumbnail.png

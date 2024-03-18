@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: NDVI-GCOMC-World-Monthly
 Legend: E10e_ndvi/cm_legend.png
+Image: E10e_ndvi/thumbnail.png

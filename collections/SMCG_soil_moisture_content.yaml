@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: SMC-GCOMW-World-Monthly
 Legend: SMCG_soil_moisture_content/cm_legend.png
+Image: SMCG_soil_moisture_content/thumbnail.png
