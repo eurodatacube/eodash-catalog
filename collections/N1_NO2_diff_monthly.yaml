@@ -23,5 +23,6 @@ Resources:
     Name: VEDA
     CollectionId: no2-monthly-diff
     ColormapName: rdbu_r
-    Rescale: [-3e15,3e15]
+    Rescale: [-3e15, 3e15]
     Bidx: 1
+Image: N1_NO2_diff_monthly/thumbnail.png

@@ -23,5 +23,6 @@ Resources:
     Name: VEDA
     CollectionId: no2-monthly
     ColormapName: reds
-    Rescale: [0,108e14]
+    Rescale: [0, 108e14]
     Bidx: 1
+Image: N1_NO2_monthly/thumbnail.png

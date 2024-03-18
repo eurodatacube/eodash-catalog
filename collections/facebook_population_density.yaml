@@ -19,6 +19,6 @@ Resources:
     Name: VEDA
     CollectionId: facebook_population_density
     ColormapName: ylorrd
-    Rescale: [0,70]
+    Rescale: [0, 70]
     Bidx: 1
 Image: facebook_population_density/thumbnail.png
