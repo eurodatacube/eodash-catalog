@@ -547,7 +547,6 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         link.extra_fields["latlng"] = latlon
         link.extra_fields["country"] = country
         link.extra_fields["city"] = city
-        link.extra_fields["geoDBID"] = endpoint["CollectionId"]
 
     if "yAxis" not in data:
         # fetch yAxis and store it to data, preventing need to save it per dataset in yml
@@ -558,6 +557,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         data['yAxis'] = yAxis
     add_collection_information(config, collection, data)
     add_example_info(collection, data, endpoint, config)
+    collection.extra_fields["geoDBID"] = endpoint["CollectionId"]
 
     collection.update_extent_from_items()    
     collection.summaries = Summaries({
