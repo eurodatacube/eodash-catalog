@@ -492,6 +492,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
 
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
+    # ID of collection is data["Name"] instead of CollectionId to be able to 
+    # create more STAC collections from one geoDB table
     collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
@@ -545,6 +547,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         link.extra_fields["latlng"] = latlon
         link.extra_fields["country"] = country
         link.extra_fields["city"] = city
+        link.extra_fields["geoDBID"] = endpoint["CollectionId"]
 
     if "yAxis" not in data:
         # fetch yAxis and store it to data, preventing need to save it per dataset in yml
