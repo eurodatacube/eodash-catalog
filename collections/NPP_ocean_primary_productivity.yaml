@@ -20,7 +20,7 @@ Resources:
     Name: WMS
     Type: OverwriteTimes
     LayerId: BICEP_NPP_VIS_PP2
-    OverwriteBBox: [-100, -75, -70, -68]
+    OverwriteBBox: [-180, -85, 180, 85]
     DateTimeInterval:
       Start: "1998-01-28T00:00:00"
       End: "2020-12-28T00:00:00"
