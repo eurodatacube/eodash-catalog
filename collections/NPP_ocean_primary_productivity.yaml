@@ -16,10 +16,9 @@ Sensor:
 Agency:
   - NASA
 Resources:
-  - EndPoint: https://services.sentinel-hub.com
-    Name: Sentinel Hub
-    Type: zarr
-    CollectionId: a216afca-8a65-4072-87a5-8ed7aa21e08a
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
+    Type: OverwriteTimes
     LayerId: BICEP_NPP_VIS_PP2
 Legend: NPP_ocean_primary_productivity/legend.png
 Image: NPP_ocean_primary_productivity/thumbnail.png
