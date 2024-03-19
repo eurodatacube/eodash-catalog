@@ -486,8 +486,6 @@ def add_to_catalog(collection, catalog, endpoint, data):
         link.extra_fields["sensor"] = data["Sensor"]
     if "Agency" in data:
         link.extra_fields["agency"] = data["Agency"]
-    if "yAxis" in data:
-        link.extra_fields["yAxis"] = data["yAxis"]
     return link
 
 
