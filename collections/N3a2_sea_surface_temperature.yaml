@@ -52,3 +52,4 @@ Services:
     Script: N3a2_sea_surface_temperature/script.js
 Image: N3a2_sea_surface_temperature/thumbnail.png
 Legend: N3a2_sea_surface_temperature/cm_legend.png
+yAxis: "%"

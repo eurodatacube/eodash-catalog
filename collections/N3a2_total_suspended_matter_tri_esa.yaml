@@ -52,3 +52,4 @@ Services:
     Script: N3a2_total_suspended_matter/script.js
 Image: N3a2_total_suspended_matter/thumbnail.png
 Legend: N3a2_total_suspended_matter/legend.png
+yAxis: "%"

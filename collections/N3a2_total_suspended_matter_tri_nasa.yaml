@@ -24,3 +24,4 @@ Resources:
       AdditionalQueryString: 'indicator_code=eq.N3a2_tsm_nasa'
 Image: N3a2_total_suspended_matter/thumbnail.png
 Legend: N3a2_total_suspended_matter/cm_legend.png
+yAxis: "%"

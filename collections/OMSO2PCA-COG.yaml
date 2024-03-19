@@ -15,7 +15,7 @@ Agency:
   - NASA
 Legend: OMSO2PCA-COG/cm_legend.png
 Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
@@ -26,3 +26,4 @@ Resources:
     Rescale: [0.0, 1.0]
     Bidx: 1
 Image: OMSO2PCA-COG/thumbnail.png
+yAxis: "DU"

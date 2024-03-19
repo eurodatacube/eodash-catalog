@@ -22,7 +22,7 @@ Provider:
       - host
 Legend: OMI_trno2-COG/N9_W8.png
 Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/

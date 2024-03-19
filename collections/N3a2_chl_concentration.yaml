@@ -52,3 +52,4 @@ Services:
     Script: N3a2_chl_concentration/script.js
 Image: N3a2_chl_concentration/thumbnail.png
 Legend: N3a2_chl_concentration/cm_legend.png
+yAxis: "%"

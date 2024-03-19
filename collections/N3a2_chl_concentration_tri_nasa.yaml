@@ -24,3 +24,4 @@ Resources:
       AdditionalQueryString: 'indicator_code=eq.N3a2_chl_nasa'
 # Image: N3a2_chl_concentration_tri/thumbnail.png
 Legend: N3a2_chl_concentration_tri/legend.png
+yAxis: "%"
