@@ -2,7 +2,7 @@ Name: N3a2_total_suspended_matter_tri_jaxa
 Title: Total suspended matter maps JAXA
 EodashIdentifier: N3a2_TSM_jaxa
 Subtitle: Total suspended matter description
-Description: N3a2_total_suspended_matter/N3a2.md
+Description: N3a2_total_suspended_matter_tri/N3a2.md
 Themes:
   - water
 Tags:
@@ -49,7 +49,7 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: 925b4bf6-ca1b-45df-a523-88f30823ab07
-    Script: N3a2_total_suspended_matter/script.js
-Image: N3a2_total_suspended_matter/thumbnail.png
-Legend: N3a2_total_suspended_matter/cm_legend.png
+    Script: N3a2_total_suspended_matter_tri/script.js
+Image: N3a2_total_suspended_matter_tri/thumbnail.png
+Legend: N3a2_total_suspended_matter_tri/legend.png
 yAxis: "%"

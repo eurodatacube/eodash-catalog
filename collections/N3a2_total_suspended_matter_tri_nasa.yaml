@@ -2,7 +2,7 @@ Name: N3a2_total_suspended_matter_tri_nasa
 Title: Total suspended matter maps NASA
 EodashIdentifier: N3a2_tsm_nasa
 Subtitle: Total suspended matter description
-Description: N3a2_total_suspended_matter/N3a2.md
+Description: N3a2_total_suspended_matter_tri/N3a2.md
 Themes:
   - water
 Tags:
@@ -22,6 +22,6 @@ Resources:
       Database: eodash
       CollectionId: N3a2_nasa_tri
       AdditionalQueryString: 'indicator_code=eq.N3a2_tsm_nasa'
-Image: N3a2_total_suspended_matter/thumbnail.png
-Legend: N3a2_total_suspended_matter/cm_legend.png
+Image: N3a2_total_suspended_matter_tri/thumbnail.png
+Legend: N3a2_total_suspended_matter_tri/legend.png
 yAxis: "%"

@@ -18,7 +18,7 @@ collections:
   - N9_OMI_trno2-COG
   - NPP_ocean_primary_productivity
   - NPPN_net_primary_production
-  - IS2SITMOGR4-cog
+  - SITI_IS2SITMOGR4-cog
   - nceo_africa_2017
   - grdi-v1-built
   - grdi-v1-raster

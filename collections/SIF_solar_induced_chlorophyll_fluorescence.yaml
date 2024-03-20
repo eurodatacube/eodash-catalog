@@ -1,7 +1,6 @@
 Name: solar_induced_chlorophyll_fluorescence
 Title: Solar induced chlorophyll fluorescence
 EodashIdentifier: SIF
-Subtitle: Solar induced chlorophyll fluorescence
 Description: SIF_solar_induced_chlorophyll_fluorescence/SIF.md
 Themes:
   - agriculture

@@ -21,3 +21,4 @@ Resources:
     Bidx: 1
     ColormapName: magma
     Rescale: [0,1]
+Legend: E10d_regional_cropland/legend.png

@@ -27,5 +27,11 @@ Resources:
       Timedelta: # creating monthly dates as timedelta does not allow jumping by 1 month
         days: 30
         hours: 9
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: a216afca-8a65-4072-87a5-8ed7aa21e08a
+    Script: NPP_ocean_primary_productivity/script.js
 Legend: NPP_ocean_primary_productivity/legend.png
 Image: NPP_ocean_primary_productivity/thumbnail.png

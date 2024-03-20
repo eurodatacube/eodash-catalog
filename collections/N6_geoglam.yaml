@@ -1,4 +1,4 @@
-Name: crop_conditions
+Name: N6_geoglam
 Title: Crop Conditions (GEOGLAM)
 EodashIdentifier: N6
 Description: N6_geoglam/N6.md
@@ -20,5 +20,5 @@ Resources:
     CollectionId: geoglam
     Bidx: 1
     Colormap: "%7B%221%22%3A%20%5B120%2C%20120%2C%20120%2C%20255%5D%2C%222%22%3A%20%5B130%2C%2065%2C%200%2C%20255%5D%2C%223%22%3A%20%5B66%2C%20207%2C%2056%2C%20255%5D%2C%224%22%3A%20%5B245%2C%20239%2C%200%2C%20255%5D%2C%225%22%3A%20%5B241%2C%2089%2C%2032%2C%20255%5D%2C%226%22%3A%20%5B168%2C%200%2C%200%2C%20255%5D%2C%227%22%3A%20%5B0%2C%20143%2C%20201%2C%20255%5D%7D"
-# Legend: N6_crop_conditions/cm_legend.png
-Image: N6_crop_conditions/thumbnail.png
+Legend: N6_geoglam/legend.png
+Image: N6_geoglam/thumbnail.png

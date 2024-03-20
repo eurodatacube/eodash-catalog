@@ -20,7 +20,6 @@ Provider:
     Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
     Roles:
       - host
-Legend: N9_OMI_trno2-COG/cm_legend.png
 Services:
   - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
@@ -36,3 +35,4 @@ Resources:
     Rescale: [0, 37e14]
     Bidx: 1
 Image: N9_OMI_trno2-COG/thumbnail.png
+Legend: N9_OMI_trno2-COG/cm_legend.png
