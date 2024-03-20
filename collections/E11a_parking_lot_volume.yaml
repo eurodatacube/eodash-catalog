@@ -29,8 +29,7 @@ Provider:
     Url: https://www.iceye.com/
   - Name: Copernicus
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
-Image: E11a_parking_lot_volume/E11a_parking_lot_volume_1.png
-Image: E11a_parking_lot_volume/E11a_parking_lot_volume_2.png
+Image: E11a_parking_lot_volume/E11a_parking_lot_volume.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
