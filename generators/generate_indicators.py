@@ -148,7 +148,7 @@ def extract_indicator_info(parent_collection):
         for key in to_extract:
             if key in collection.extra_fields:
                 param = collection.extra_fields[key]
-                if hasattr(param, "__len__"):
+                if isinstance(param, list):
                     for p in param:
                         summaries[key].add(p)
                 else:
@@ -1207,6 +1207,8 @@ def add_collection_information(config, collection, data):
             ),
         )
     # Add extra fields to collection if available
+    if "EodashIdentifier" in data:
+        collection.extra_fields["subcode"] = data["EodashIdentifier"]
     if "yAxis" in data:
         collection.extra_fields["yAxis"] = data["yAxis"]
     if "Themes" in data:
