@@ -12,7 +12,7 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: facebook_population_density/cm_legend.png
+Legend: facebook_population_density/legend.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog

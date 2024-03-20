@@ -1,10 +1,10 @@
 Name: greenhouse_gases
 Title: Greenhouse gases
-EodashIdentifier: N2
+EodashIdentifier: N2_greenhouse_gases
 Subtitle: The Impact of the COVID-19 Pandemic on Atmospheric CO2
-Description: N2_greenhouse_gases/N2_greenhouse_gases.md
+Description: N2_greenhouse_gases/N2.md
 Themes:
-    - agriculture
+    - atmosphere
 Tags:
     - placeholder
 Satellite:
@@ -21,3 +21,4 @@ Resources:
       Database: eodash
       CollectionId: N2_tri
 Image: N2_greenhouse_gases/thumbnail.png
+Legend: N2_greenhouse_gases/legend.png

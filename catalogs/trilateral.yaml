@@ -12,10 +12,10 @@ collections:
   - N1_NO2_monthly
   - N1_NO2_diff_monthly
   - N1_NO2_city_trilateral
-  - co2-mean
+  - N2_CO2_mean
+  - N2_CO2_diff
   - facebook_population_density
-  - OMI_trno2-COG
-  - co2-diff 
+  - N9_OMI_trno2-COG
   - NPP_ocean_primary_productivity
   - NPPN_net_primary_production
   - IS2SITMOGR4-cog
@@ -28,7 +28,7 @@ collections:
   - grdi-filled-missing-values-count
   - grdi-imr-raster
   - grdi-cdr-raster
-  - OMSO2PCA-COG
+  - N10_OMSO2PCA-COG
   - SIE_sea_ice_thickness_envisat
   - SIC_sea_ice_thickness_cryosat
   - NASAPopulation

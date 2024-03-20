@@ -18,5 +18,5 @@ Resources:
     Name: WMS
     Type: Time
     LayerId: NDVI-GCOMC-World-Monthly
-Legend: E10e_ndvi/cm_legend.png
+Legend: E10e_ndvi/legend.png
 Image: E10e_ndvi/thumbnail.png

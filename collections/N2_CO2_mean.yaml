@@ -1,8 +1,8 @@
-Name: co2-diff
-Title: Difference of Carbon Dioxide
-EodashIdentifier: N2_diff
-Subtitle: Difference of Carbon Dioxide [ppm]
-Description: co2-diff/N2.md
+Name: N2_CO2_mean
+Title: Mean Carbon Dioxide
+EodashIdentifier: N2_CO2_mean
+Subtitle: Mean Carbon Dioxide [ppm]
+Description: N2_CO2_mean/N2.md
 Themes:
   - atmosphere
 Tags:
@@ -13,7 +13,7 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: co2-diff/legend.png
+Legend: N2_CO2_mean/legend.png
 Services:
   - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
@@ -21,8 +21,8 @@ Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
     Name: VEDA
-    CollectionId: co2-diff
-    ColormapName: rdbu_r
-    Rescale: [-0.000001,0.000001]
+    CollectionId: co2-mean
+    ColormapName: rdylbu_r
+    Rescale: [0.000408, 0.000419]
     Bidx: 1
-Image: co2-diff/thumbnail.png
+Image: N2_CO2_mean/thumbnail.png
