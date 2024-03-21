@@ -167,6 +167,9 @@ def extract_indicator_info(parent_collection):
             del summaries[key]
     parent_collection.summaries = Summaries(summaries)
 
+def iter_len_at_least(i, n):
+    return sum(1 for _ in zip(range(n), i)) == n
+
 def process_indicator_file(config, file_path, catalog):
     with open(file_path) as f:
         print("Processing indicator:", file_path)
@@ -179,7 +182,8 @@ def process_indicator_file(config, file_path, catalog):
             # we assume that collection files can also be loaded directy
             process_collection_file(config, file_path, parent_indicator)
         add_collection_information(config, parent_indicator, data)
-        parent_indicator.update_extent_from_items()
+        if iter_len_at_least(parent_indicator.get_items(recursive=True),1):
+            parent_indicator.update_extent_from_items()
         # Add bbox extents from children
         for c_child in parent_indicator.get_children():
             parent_indicator.extent.spatial.bboxes.append(
