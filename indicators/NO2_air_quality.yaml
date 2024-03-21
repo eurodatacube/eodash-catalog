@@ -1,9 +1,0 @@
-Name: NO2_air_quality
-Title: NO2 Air Quality
-EodashIdentifier: NO2_AQ
-Description: Collection of NO2 relevant data
-Collections:
-  - N1_NO2
-  - N1b_NO2
-  - N1b_no2_cams
-  - N1_city_no2

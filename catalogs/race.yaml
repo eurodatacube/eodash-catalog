@@ -32,11 +32,11 @@ collections:
   - E4_intermediate_goods_production
   - E5_metal_density
   - N1_CH4
-  # - N1_city_no2
+  - N1_city_no2
   - N1_CO
-  # - N1_NO2
+  - N1_NO2
   - N1_SO2
-  # - N1b_NO2
+  - N1b_NO2
   - N1b_O3
   - N1b_PM10
   - N1b_PM25
@@ -53,7 +53,6 @@ collections:
   # - C2_ports_cars_aq
   # - C3_ports_people_aq
   - CAQ_ports_air_quality
-  - NO2_air_quality
   - E8_output_inventory_level
   - E10a1_agricultural_production_productive_area
   - E10a2_agricultural_production_area
@@ -63,7 +62,7 @@ collections:
   - E10a9_agricultural_workers
   - E10a10_harvesting_evolution
   - N1a_pm25_cams
-  # - N1b_no2_cams
+  - N1b_no2_cams
   - N1c_pm10_cams
   - N1d_o3_cams
   - E13e_cargo_boats_port
