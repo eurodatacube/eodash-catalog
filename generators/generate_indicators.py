@@ -217,6 +217,9 @@ def process_collection_file(config, file_path, catalog):
                         handle_WMS_endpoint(config, resource, data, catalog)
                     elif resource["Name"] == "GeoDB Vector Tiles":
                         handle_GeoDB_Tiles_endpoint(config, resource, data, catalog)
+                    elif resource["Name"] == "JAXA_WMTS_PALSAR":
+                        # somewhat one off creation of individual WMTS layers as individual items
+                        handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
                     else:
@@ -281,26 +284,65 @@ def process_collection_file(config, file_path, catalog):
 
 
 def handle_collection_only(config, endpoint, data, catalog):
-    collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
-    if len(times) > 0 and not endpoint.get("Disable_Items"):
-        for t in times:
-            item = Item(
-                id = t,
-                bbox=endpoint.get("OverwriteBBox"),
-                properties={},
-                geometry = None,
-                datetime = parser.isoparse(t),
+    if "Locations" in data:
+        root_collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        for location in data["Locations"]:
+            collection, times = get_or_create_collection(catalog, location["Identifier"], data, config, location) # location is not a typo, this is deliberate
+            collection.title = location["Name"]
+            # See if description should be overwritten
+            if "Description" in location:
+                collection.description = location["Description"]
+            else:
+                collection.description = location["Name"]
+            link = root_collection.add_child(collection)
+            latlng = "%s,%s"%(location["Point"][1], location["Point"][0])
+            # Add extra properties we need
+            link.extra_fields["id"] = location["Identifier"]
+            link.extra_fields["latlng"] = latlng
+            link.extra_fields["name"] = location["Name"]
+            if len(times) > 0 and not endpoint.get("Disable_Items"):
+                for t in times:
+                    item = Item(
+                        id = t,
+                        bbox=location["Bbox"],
+                        properties={},
+                        geometry = None,
+                        datetime = parser.isoparse(t),
+                    )
+                    link = collection.add_item(item)
+                    link.extra_fields["datetime"] = t
+            add_collection_information(config, collection, data)
+        
+            if "Bbox" in location:
+                collection.extent.spatial =  SpatialExtent([
+                    location["Bbox"],
+                ])
+        # Add bbox extents from children
+        for c_child in root_collection.get_children():
+            root_collection.extent.spatial.bboxes.append(
+                c_child.extent.spatial.bboxes[0]
             )
-            link = collection.add_item(item)
-            link.extra_fields["datetime"] = t
-    add_collection_information(config, collection, data)
-    add_to_catalog(collection, catalog, None, data)
+        add_to_catalog(root_collection, catalog, None, data)
+    else:
+        collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+        if len(times) > 0 and not endpoint.get("Disable_Items"):
+            for t in times:
+                item = Item(
+                    id = t,
+                    bbox=endpoint.get("OverwriteBBox"),
+                    properties={},
+                    geometry = None,
+                    datetime = parser.isoparse(t),
+                )
+                link = collection.add_item(item)
+                link.extra_fields["datetime"] = t
+        add_collection_information(config, collection, data)
+        add_to_catalog(collection, catalog, None, data)
 
 def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     spatial_extent = collection.extent.spatial.to_dict().get("bbox", [-180, -90, 180, 90])[0]
     if not endpoint.get("Type") == "OverwriteTimes" or not endpoint.get("OverwriteBBox"):
-        
         # some endpoints allow "narrowed-down" capabilities per-layer, which we utilize to not
         # have to process full service capabilities XML
         capabilities_url = endpoint["EndPoint"]
@@ -510,13 +552,13 @@ def add_to_catalog(collection, catalog, endpoint, data):
         link.extra_fields["sensor"] = data["Sensor"]
     if "Agency" in data:
         link.extra_fields["agency"] = data["Agency"]
-    if "yAxis" in data:
-        link.extra_fields["yAxis"] = data["yAxis"]
     return link
 
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
-    collection, _ = get_or_create_collection(catalog, endpoint["CollectionId"], data, config, endpoint)
+    # ID of collection is data["Name"] instead of CollectionId to be able to 
+    # create more STAC collections from one geoDB table
+    collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     select = "?select=aoi,aoi_id,country,city,time"
     url = endpoint["EndPoint"] + endpoint["Database"] + "_%s"%endpoint["CollectionId"] + select
     if additional_query_parameters := endpoint.get("AdditionalQueryString"):
@@ -579,6 +621,7 @@ def handle_GeoDB_endpoint(config, endpoint, data, catalog):
         data['yAxis'] = yAxis
     add_collection_information(config, collection, data)
     add_example_info(collection, data, endpoint, config)
+    collection.extra_fields["geoDBID"] = endpoint["CollectionId"]
 
     collection.update_extent_from_items()    
     collection.summaries = Summaries({
@@ -836,15 +879,33 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
         media_type = "image/jpeg"
         if "MediaType" in endpoint:
             media_type = endpoint["MediaType"]
+        # special case for non-byoc SH WMS
+        EndPoint = endpoint.get("EndPoint").replace("{SH_INSTANCE_ID}", os.getenv("SH_INSTANCE_ID"))
         stac_object.add_link(
             Link(
                 rel="wms",
-                target=endpoint["EndPoint"],
+                target=EndPoint,
                 media_type=media_type,
                 title=data["Name"],
                 extra_fields=extra_fields,
             )
         )
+    elif endpoint["Name"] == "JAXA_WMTS_PALSAR":
+        target_url = "%s"%(
+            endpoint.get('EndPoint'),
+        )
+        # custom time just for this special case as a default for collection wmts
+        extra_fields={
+            "wmts:layer": endpoint.get('LayerId').replace('{time}', time or '2017')
+        }
+        stac_object.add_link(
+        Link(
+            rel="wmts",
+            target=target_url,
+            media_type="image/png",
+            title="wmts capabilities",
+            extra_fields=extra_fields,
+        ))
     elif endpoint["Name"] == "xcube":
         if endpoint["Type"] == "zarr":
             # either preset ColormapName of left as a template

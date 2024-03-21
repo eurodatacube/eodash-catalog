@@ -1,8 +1,7 @@
 Name: lakes_alos2_hh
 Title: Lakes (ALOS2-HH)
 EodashIdentifier: Lakes_ALOS2_HH
-Subtitle: Total suspended matter description
-Description: Lakes_ALOS2_lakes_alos2_hh/Lakes_ALOS2.md
+Description: Lakes_ALOS2_lakes_alos2/Lakes_ALOS2.md
 Themes:
   - water
 Tags:
@@ -34,5 +33,4 @@ Resources:
     Type: byoc
     CollectionId: aa8a9899-9df9-4ea0-b983-34360d583e17
     LayerId: JAXA_LAKES_ALOS2_HH
-Image: Lakes_ALOS2_lakes_alos2_hh/thumbnail.png
-Legend: Lakes_ALOS2_lakes_alos2_hh/cm_legend.png
+Image: Lakes_ALOS2_lakes_alos2/thumbnail.png

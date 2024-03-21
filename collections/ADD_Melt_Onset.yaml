@@ -1,0 +1,29 @@
+Name: ADD_Melt_Onset
+Title: Antarctica Melt Onset
+EodashIdentifier: ADD_Melt_Onset
+Subtitle: Antarctica Melt Onset from 4D Antarctica
+Description: ADD_Melt_Onset/ADD_Melt_Onset.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
+    Type: OverwriteTimes
+    LayerId: VIS_4D_ANTARTICA_ONSET
+    OverwriteBBox: [-100, -75, -70, -68]
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "2007-01-02T00:00:00"
+      End: "2021-12-31T00:00:00"
+Image: ADD_Melt_Onset/thumbnail.png
+Legend: ADD_Melt_Onset/legend.png

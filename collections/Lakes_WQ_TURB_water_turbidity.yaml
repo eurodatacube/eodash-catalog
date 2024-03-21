@@ -23,4 +23,4 @@ Resources:
     CollectionId: ef59d045-a0cd-4ce0-a25d-5da91e70e965
     LayerId: LAKE_WATER_QUALITY_TURBIDITY_MEAN
 Image: Lakes_WQ_TURB_water_turbidity/thumbnail.png
-Legend: Lakes_WQ_TURB_water_turbidity/cm_legend.png
+Legend: Lakes_WQ_TURB_water_turbidity/legend.png

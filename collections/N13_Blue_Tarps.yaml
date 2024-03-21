@@ -1,12 +1,11 @@
-Name: recovery_proxy
-Title: Recovery proxy Covid-19
-EodashIdentifier: N8
-Description: N8_recovery_proxy/N8.md
+Name: N13_Blue_Tarps
+Title: Blue Tarps (Planetscope)
+EodashIdentifier: N13
+Description: N13_Blue_Tarps/N13.md
 Themes:
   - economy
 Tags:
-  - covid
-  - recovery
+  - placeholder
 Satellite:
   - placeholder
 Sensor:
@@ -20,12 +19,6 @@ Locations:
     Subtitle: Recovery Proxy Maps
     Point: [116.38, 39.9]
     Bbox: [115.11, 39.45, 117.31, 40.45]
-  - Identifier: US10
-    Country: US
-    Name: Washington, D.C.
-    Subtitle: Recovery Proxy Maps
-    Point: [-77.01638, 38.90472]
-    Bbox: [-78.11, 38.46, -75.87, 39.8]
   - Identifier: FR03
     Country: FR
     Name: Port of Dunkirk
@@ -44,24 +37,12 @@ Locations:
     Subtitle: Recovery Proxy Maps
     Point: [139.78, 35.61]
     Bbox: [138.71, 35.07, 140.82, 36.41]
-  - Identifier: TG01
-    Country: TG
-    Name: Togo
-    Subtitle: Recovery Proxy Maps
-    Point: [1.21666, 6.13333]
-    Bbox: [-0.87, 5.68, 2.57, 11.53]
   - Identifier: US02
     Country: US
     Name: Los Angeles
     Subtitle: Recovery Proxy Maps
     Point: [-118.25, 34.05]
     Bbox: [-118.93, 33.51, -116.83, 34.55]
-  - Identifier: TZ01
-    Country: TZ
-    Name: Dar El Salam
-    Subtitle: Recovery Proxy Maps
-    Point: [39.28333, -6.8]
-    Bbox: [38.60, -7.33, 39.62, -6.31]
   - Identifier: US04
     Country: US
     Name: New York
@@ -84,7 +65,9 @@ Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
     Name: VEDA
-    CollectionId: recovery-proxy-maps-covid-19
-    Bidx: [1,2,3]
-Legend: N8_recovery_proxy/legend.png
-Image: N8_recovery_proxy/thumbnail.png
+    CollectionId: nightlights-hd-monthly
+    Bidx: 1
+    ColormapName: inferno
+    Rescale: [0,255]
+# Legend: N5_nightlights/cm_legend.png
+Image: N5_nightlights/thumbnail.png

@@ -12,13 +12,13 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: facebook_population_density/cm_legend.png
+Legend: facebook_population_density/legend.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
     Name: VEDA
     CollectionId: facebook_population_density
     ColormapName: ylorrd
-    Rescale: [0,70]
+    Rescale: [0, 70]
     Bidx: 1
 Image: facebook_population_density/thumbnail.png

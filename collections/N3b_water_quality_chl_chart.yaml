@@ -1,16 +1,16 @@
-Name: water_quality
-Title: Water quality
-EodashIdentifier: N3b
+Name: N3b_water_quality_chl_chart
+Title: Chlorophyll-a concentration
+EodashIdentifier: N3b_chl
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N3b_water_quality/N3b.md
+Description: N3b_water_quality_chl_chart/N3b_chl.md
 Themes:
-    - air
+    - oceans
 Tags:
     - placeholder
 Satellite:
-    - placeholder
+    - Sentinel-3
 Sensor:
-    - placeholder
+    - OLCI
 Agency:
     - ESA
 Resources:
@@ -18,3 +18,4 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: Regional_Water_quality_timeseries
+      AdditionalQueryString: 'indicator_name=eq.Chlorophyll-a concentration anomaly'

@@ -19,7 +19,7 @@ Provider:
   - Name: Ocean Productivity
     Url: http://science.oregonstate.edu/ocean.productivity/index.php
     Description: The purpose of this website is, first and foremost, to provide the science and broader communities with global, updated ocean productivity estimates. In addition, the website provides information on the models employed, access to model code and ancillary data sets, and comparisons of productivity estimates for alternative models. Field data sets relevant to ocean productivity modeling are also provided and will be continually expanded as new data become available. Educational material and background information on phytoplankton ecology and physiology will also be added in the future.
-    Roles: 
+    Roles:
       - producer
   - Name: VEDA
     Url: https://www.earthdata.nasa.gov/esds/veda
@@ -32,7 +32,7 @@ Citation:
     - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
       DOI: 10.4319/lo.1997.42.1.0001
 Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
@@ -40,7 +40,7 @@ Resources:
     Name: VEDA
     CollectionId: MO_NPP_npp_vgpm
     ColormapName: jet
-    Rescale: [0.0,1500.0]
+    Rescale: [0.0, 1500.0]
     Bidx: 1
-Legend: NPPN_net_primary_production/cm_legend.png
+Legend: NPPN_net_primary_production/legend.png
 Image: NPPN_net_primary_production/thumbnail.png

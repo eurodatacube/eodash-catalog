@@ -52,6 +52,6 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: 9fdb8c27-9000-4912-b715-1465f840a1db
-    Script: Lakes_SWT/script.js
+    Script: Lakes_SWT_surface_water_temperature/script.js
 Image: Lakes_SWT_surface_water_temperature/thumbnail.png
-Legend: Lakes_SWT_surface_water_temperature/cm_legend.png
+Legend: Lakes_SWT_surface_water_temperature/legend.png

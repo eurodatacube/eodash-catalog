@@ -1,8 +1,8 @@
-Name: OMSO2PCA-COG
+Name: N10_OMSO2PCA-COG
 Title: Sulfur Dioxide (OMI/Aura)
 EodashIdentifier: N10
 Subtitle: Sulfur Dioxide (OMI/Aura)
-Description: OMI_trno2-COG/N10.md
+Description: N10_OMSO2PCA-COG/N10.md
 Themes:
   - atmosphere
 Tags:
@@ -13,9 +13,9 @@ Sensor:
   - OMI
 Agency:
   - NASA
-Legend: OMSO2PCA-COG/cm_legend.png
+Legend: N10_OMSO2PCA-COG/cm_legend.png
 Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
@@ -23,6 +23,7 @@ Resources:
     Name: VEDA
     CollectionId: OMSO2PCA-COG
     ColormapName: viridis
-    Rescale: [0.0,1.0]
+    Rescale: [0.0, 1.0]
     Bidx: 1
-Image: OMSO2PCA-COG/thumbnail.png
+Image: N10_OMSO2PCA-COG/thumbnail.png
+yAxis: "DU"

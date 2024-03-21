@@ -13,9 +13,6 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
@@ -24,5 +21,4 @@ Resources:
     Bidx: 1
     ColormapName: magma
     Rescale: [0,1]
-# Legend: E10d_regional_cropland/cm_legend.png
-Image: E10d_regional_cropland/thumbnail.png
+Legend: E10d_regional_cropland/legend.png

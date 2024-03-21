@@ -31,5 +31,4 @@ Resources:
     Name: Sentinel Hub WMS
     CollectionId: sentinel-1-grd
     LayerId: SENTINEL_1_IW_VV
-Image: Lakes_S2L2A/thumbnail.png
-Legend: Lakes_S2L2A/cm_legend.png
+Image: Lakes_Sentinel1/thumbnail.png
