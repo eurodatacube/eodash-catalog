@@ -105,7 +105,14 @@ def process_catalog_file(file_path, options):
             catalog_type=CatalogType.RELATIVE_PUBLISHED,
         )
         for collection in process_collections:
-            process_collection_file(config, "../collections/%s.yaml"%(collection), catalog)
+            file_path = "../collections/%s.yaml"%(collection)
+            if os.path.isfile(file_path):
+                # if collection file exists process it as indicator
+                # collection will be added as single collection to indicator
+                process_indicator_file(config, file_path, catalog)
+            else:
+                # if not try to see if indicator definition available
+                process_indicator_file(config, "../indicators/%s.yaml"%(collection), catalog)
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
         catalog.normalize_hrefs("../build/%s"%config["id"], strategy=strategy)
@@ -127,6 +134,64 @@ def process_catalog_file(file_path, options):
                 validate_all(catalog.to_dict(), href=config["endpoint"])
             except Exception as e:
                 print("Issue validation collection: %s"%e)
+
+def extract_indicator_info(parent_collection):
+    to_extract = [
+        "subcode", "themes", "keywords", "satellite", "sensor",
+        "cities", "countries"
+    ]
+    summaries = {}
+    for key in to_extract:
+        summaries[key] = set()
+    
+    for collection in parent_collection.get_collections():
+        for key in to_extract:
+            if key in collection.extra_fields:
+                param = collection.extra_fields[key]
+                if isinstance(param, list):
+                    for p in param:
+                        summaries[key].add(p)
+                else:
+                    summaries[key].add(param)
+            #extract also summary information
+            if collection.summaries.lists:
+                if key in collection.summaries.lists:
+                    for p in collection.summaries.lists[key]:
+                        summaries[key].add(p)
+    
+    for key in to_extract:
+        # convert all items back to a list
+        summaries[key] = list(summaries[key])
+        # remove empty ones
+        if len(summaries[key]) == 0:
+            del summaries[key]
+    parent_collection.summaries = Summaries(summaries)
+
+def iter_len_at_least(i, n):
+    return sum(1 for _ in zip(range(n), i)) == n
+
+def process_indicator_file(config, file_path, catalog):
+    with open(file_path) as f:
+        print("Processing indicator:", file_path)
+        data = yaml.load(f, Loader=SafeLoader)
+        parent_indicator, _ = get_or_create_collection(catalog, data["Name"], data, config)
+        if "Collections" in data:
+            for collection in data["Collections"]:
+                process_collection_file(config, "../collections/%s.yaml"%(collection), parent_indicator)
+        else:
+            # we assume that collection files can also be loaded directy
+            process_collection_file(config, file_path, parent_indicator)
+        add_collection_information(config, parent_indicator, data)
+        if iter_len_at_least(parent_indicator.get_items(recursive=True),1):
+            parent_indicator.update_extent_from_items()
+        # Add bbox extents from children
+        for c_child in parent_indicator.get_children():
+            parent_indicator.extent.spatial.bboxes.append(
+                c_child.extent.spatial.bboxes[0]
+            )
+        # extract collection information and add it to summary indicator level
+        extract_indicator_info(parent_indicator)
+        add_to_catalog(parent_indicator, catalog, None, data)
 
 def process_collection_file(config, file_path, catalog):
     print("Processing collection:", file_path)
@@ -429,7 +494,8 @@ def add_to_catalog(collection, catalog, endpoint, data):
     link.extra_fields["title"] = collection.title
     link.extra_fields["code"] = data["EodashIdentifier"]
     link.extra_fields["id"] = data["Name"]
-    link.extra_fields["themes"] = data["Themes"]
+    if "Themes" in data:
+        link.extra_fields["themes"] = data["Themes"]
     # Check for summaries and bubble up info
     if collection.summaries.lists:
         for sum in collection.summaries.lists:
@@ -1145,6 +1211,8 @@ def add_collection_information(config, collection, data):
             ),
         )
     # Add extra fields to collection if available
+    if "EodashIdentifier" in data:
+        collection.extra_fields["subcode"] = data["EodashIdentifier"]
     if "yAxis" in data:
         collection.extra_fields["yAxis"] = data["yAxis"]
     if "Themes" in data:

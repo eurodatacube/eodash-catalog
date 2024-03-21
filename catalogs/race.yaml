@@ -49,9 +49,10 @@ collections:
   - N3c_ocean_colour_plankton_mediterranean
   - NASAPopulation
   - WSF_world_settlement_footprint
-  - C1_ports_shipping_aq
-  - C2_ports_cars_aq
-  - C3_ports_people_aq
+  # - C1_ports_shipping_aq
+  # - C2_ports_cars_aq
+  # - C3_ports_people_aq
+  - CAQ_ports_air_quality
   - E8_output_inventory_level
   - E10a1_agricultural_production_productive_area
   - E10a2_agricultural_production_area
