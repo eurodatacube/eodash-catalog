@@ -1,7 +1,7 @@
-Name: IS2SITMOGR4-cog
+Name: SITI_IS2SITMOGR4-cog
 Title: Sea Ice Thickness (ICESat-2)
 EodashIdentifier: SITI
-Description: IS2SITMOGR4-cog/SITI.md
+Description: SITI_IS2SITMOGR4-cog/SITI.md
 Themes:
   - cryosphere
 Tags:
@@ -12,8 +12,8 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: IS2SITMOGR4-cog/cm_legend.png
-Image: IS2SITMOGR4-cog/thumbnail.png
+Legend: SITI_IS2SITMOGR4-cog/cm_legend.png
+Image: SITI_IS2SITMOGR4-cog/thumbnail.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog

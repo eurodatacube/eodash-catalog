@@ -1,7 +1,7 @@
 Name: lakes_alos2_hv
 Title: Lakes (ALOS2-HV)
 EodashIdentifier: Lakes_ALOS2_HV
-Description: Lakes collection for ALOS2 HH
+Description: Lakes_ALOS2_lakes_alos2/Lakes_ALOS2.md
 Themes:
   - water
 Tags:
@@ -34,4 +34,3 @@ Resources:
     CollectionId: 7820f4b8-0270-438e-83da-18de27fc539c
     LayerId: JAXA_LAKES_ALOS2_HV
 Image: Lakes_ALOS2_lakes_alos2_hv/thumbnail.png
-Legend: Lakes_ALOS2_lakes_alos2_hv/cm_legend.png

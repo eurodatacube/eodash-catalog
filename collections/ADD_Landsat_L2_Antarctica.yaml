@@ -1,0 +1,39 @@
+Name: ADD_Landsat_L2_Antarctica
+Title: Landsat L2 Cloud free Antarctica
+EodashIdentifier: ADD_Landsat_L2_Antarctica
+Subtitle: Selected low-cloud-cover Landsat Collection-2 Level-2 Surface Reflectance scenes over selected area of Antarctica.
+Description: ADD_L2_Pine_Island/ADD_L2_Pine_Island.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - Landsat-7
+  - Landsat-8
+  - Landsat-9
+Sensor:
+  - OLI
+Agency:
+  - NASA
+  - USGS
+Provider:
+  - Name: VEDA
+    Url: https://www.earthdata.nasa.gov/esds/veda
+    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
+    Roles:
+      - host
+License: MIT
+Subcollections:
+  - Identifier: ADD_L2_Pine_Island
+    Collection: ADD_L2_Pine_Island
+    Country: ['AQ']
+    Name: Pine Island
+    Point: [-102, -74]
+    Bbox: [-106, -76, -97, -73]
+  - Identifier: ADD_L2_Thwaites
+    Collection: ADD_L2_Thwaites
+    Country: ['AQ']
+    Name: Thwaites Glacier
+    Point: [-107, -74]
+    Bbox: [-115, -78, -100, -73]
+Image: ADD_L2_Pine_Island/thumbnail.png

@@ -1,0 +1,20 @@
+Name: CV_Covid_19_cases_trilateral
+Title: Covid-19 Cases
+EodashIdentifier: CV
+Description: CV_Covid_19_cases/CV.md
+Themes:
+    - covid-19
+Tags:
+    - placeholder
+Satellite:
+    - placeholder
+Sensor:
+    - placeholder
+Agency:
+    - ESA
+Resources:
+    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+      Name: GeoDB
+      Database: eodash
+      CollectionId: Global_COVID_data
+      IdKey: 'aoi_id'

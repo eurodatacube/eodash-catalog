@@ -23,3 +23,6 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: E10c_tri
+Legend: E10c_rice_planting/legend.png
+Image: E10c_rice_planting/thumbnail.png
+

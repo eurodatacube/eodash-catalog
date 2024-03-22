@@ -188,4 +188,3 @@ Resources:
     CollectionId: sentinel-2-l2a
     LayerId: SENTINEL-2-L2A-TRUE-COLOR
 Image: Lakes_S2L2A/thumbnail.png
-Legend: Lakes_S2L2A/cm_legend.png

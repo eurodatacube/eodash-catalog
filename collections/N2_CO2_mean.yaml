@@ -1,8 +1,8 @@
-Name: co2-mean
+Name: N2_CO2_mean
 Title: Mean Carbon Dioxide
-EodashIdentifier: N2
+EodashIdentifier: N2_CO2_mean
 Subtitle: Mean Carbon Dioxide [ppm]
-Description: co2-mean/N2.md
+Description: N2_CO2_mean/N2.md
 Themes:
   - atmosphere
 Tags:
@@ -13,9 +13,9 @@ Sensor:
   - placeholder
 Agency:
   - NASA
-Legend: co2-mean/cm_legend.png
+Legend: N2_CO2_mean/legend.png
 Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
@@ -25,3 +25,4 @@ Resources:
     ColormapName: rdylbu_r
     Rescale: [0.000408, 0.000419]
     Bidx: 1
+Image: N2_CO2_mean/thumbnail.png

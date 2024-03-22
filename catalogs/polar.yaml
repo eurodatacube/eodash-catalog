@@ -7,7 +7,7 @@ collections:
   - CDS1_temperature
   - CDS3_wind_10m_u
   - CDS4_wind_10m_v
-  - IS2SITMOGR4-cog
+  - SITI_IS2SITMOGR4-cog
   - Polartep_S1_demo
   - Polartep_Snowgrain_diameter_demo
   - Polartep_Snow_specific_surface_area_demo
