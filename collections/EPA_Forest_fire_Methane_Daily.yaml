@@ -1,0 +1,15 @@
+Name: EPA_Forest_fire_Methane_Daily
+Title: Gridded 2012 EPA Methane Emissions - Forest Fires Daily
+EodashIdentifier: EPA_Forest_fire_Methane_Daily
+Subtitle: Emissions from sector 5 from forest fires daily.
+Description: EPA_Forest_fire_Methane_Daily/EPA_Forest_fire_Methane_Daily.md
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: EPA-daily-emissions_5_Forest_Fires
+    ColormapName: rainbow
+    Rescale: [0, 2e12]
+    Bidx: 1
+Image: EPA_Forest_fire_Methane_Daily/thumbnail.png
+Legend: EPA_Forest_fire_Methane_Daily/cm_legend.png

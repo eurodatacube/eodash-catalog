@@ -1,0 +1,33 @@
+Name: HLS_NDVI
+Title: Normalized difference vegetation index from HLS
+EodashIdentifier: HLS_NDVI
+Subtitle: NDVI calculated from Harmonized Landsat and Sentinel-2
+Description: HLS_NDVI/HLS_NDVI.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel-2
+  - Landsat
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+  - NASA
+Provider:
+  - Name: VEDA
+    Url: https://www.earthdata.nasa.gov/esds/veda
+    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
+    Roles:
+      - host
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: hls-ndvi
+    ColormapName: cfastie
+    Rescale: [-1, 1]
+    Bidx: 1
+Image: HLS_NDVI/thumbnail.png
+Legend: HLS_NDVI/cm_legend.png

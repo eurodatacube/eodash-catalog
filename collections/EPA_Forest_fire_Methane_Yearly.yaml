@@ -1,0 +1,15 @@
+Name: EPA_Forest_fire_Methane_Yearly
+Title: Gridded 2012 EPA Methane Emissions - Forest Fires
+EodashIdentifier: EPA_Forest_fire_Methane_Yearly
+Subtitle: Emissions from sector 5 from forest fires.
+Description: EPA_Forest_fire_Methane_Yearly/EPA_Forest_fire_Methane_Yearly.md
+Resources:
+  - EndPoint: https://staging-stac.delta-backend.com/
+    Type: cog
+    Name: VEDA
+    CollectionId: EPA-annual-emissions_5_Forest_Fires
+    ColormapName: rainbow
+    Rescale: [0, 2e10]
+    Bidx: 1
+Image: EPA_Forest_fire_Methane_Yearly/thumbnail.png
+Legend: EPA_Forest_fire_Methane_Yearly/cm_legend.png
