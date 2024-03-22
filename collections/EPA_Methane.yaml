@@ -1,0 +1,30 @@
+Name: Gridded_EPA_Methane
+Title: Gridded National Inventory of U.S. Methane Emissions
+EodashIdentifier: EPA_Methane
+Collections:
+  - EPA_Field_burning_Monthly
+  - EPA_Forest_fire_Methane_Daily
+  - EPA_Forest_fire_Methane_Yearly
+Description: EPA_Forest_fire_Methane_Daily/EPA_Forest_fire_Methane_Daily.md
+Themes:
+  - biomass
+Tags:
+  - methane
+Agency:
+  - EPA
+Provider:
+  - Name: VEDA
+    Url: https://www.earthdata.nasa.gov/esds/veda
+    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
+    Roles:
+      - host
+  - Name: EPA
+    Url: https://www.epa.gov/ghgemissions/gridded-2012-methane-emissions
+    Roles: 
+      - producer
+      - processor
+      - licensor
+Citation:
+  Citation: 'Maasakkers JD, Jacob DJ, Sulprizio MP, Turner AJ, Weitz M, Wirth T, Hight C, DeFigueiredo M, Desai M, Schmeltz R, Hockstad L, Bloom AA, Bowman KW, Jeong S, Fischer ML. Gridded National Inventory of U.S. Methane Emissions. Environ Sci Technol. 2016 Dec 6;50(23):13123-13133. doi: 10.1021/acs.est.6b02878. Epub 2016 Nov 16. PMID: 27934278.'
+  Publication:
+    - DOI: 10.1021/acs.est.6b02878
