@@ -2,89 +2,50 @@ Name: wind_10m_u
 Title: Wind U Field
 EodashIdentifier: CDS3
 Subtitle: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind U field
-Description: CDS3_wind_10m_u/README.MD
-Story: CDS3_wind_10m_u/CDS.md
+Description: CDS3_wind_10m_u/CDS3_wind_10m_u.md
 Themes:
   - air
 Tags:
-  - copernicus services
+  - Copernicus Services
   - C3S
-  - open data
-  - sentinel hub
-  - raster
-  - race challenges
-Satellite:
-  - METEOSAT
-Sensor:
-  - SEVIRI
+  - CDS
+  - Multi-sensors
+  - Open data
+DataSource:
+  Other:
+    - ERA5
 Agency:
-  - EUMETSAT
-  - ESA
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
 Provider: 
-    - Name: COPERNICUS
-      Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.6860a573?tab=overview)
-License: |
-  Free of charge, worldwide, non-exclusive, royalty free and perpetual ([details](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land-monthly-means?tab=overview))
+  - Name: Copernicus Climate Change Service
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+  - Name: Climate Data Store
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+Citation:
+  Citation: |
+    Muñoz Sabater, J., (2019) was downloaded from the Copernicus Climate Change Service (2021).
+    The results contain modified Copernicus Climate Change Service information 2020. 
+    Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.
+  DOI: 10.24381/cds.68d2bb30
+  Publication:
+    - Citation: Zaitchik, B.F., Sweijd, N., Shumake-Guillemot, J. et al. A framework for research linking weather, climate and COVID-19. Nat Commun 11, 5730 (2020).
+      DOI: 10.1038/s41467-020-19546-7
+Image: CDS3_wind_10m_u/CDS3_wind_10m_u.png
+Legend: CDS3_wind_10m_u/CDS3_legend.png
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
+    LayerId: AWS_VIS_WIND_U_10M
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
-    Script: CDS3_wind_10m_u/script.js
-Image: CDS3_wind_10m_u/thumbnail.png
-Legend: CDS3_wind_10m_u/cm_legend.png
-
-Resources:
-  - Group: Sentinel Hub Resources
-  - EndPoint: https://services.sentinel-hub.com
-    Name: Sentinel Hub
-    Role: processor
-    Type: byoc
-    CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
-    LayerId: AWS_VIS_WIND_U_10M
-    Primary: True
-OpenEOPID: ERA5_WIND_U
-AdditionalInfoExternal:
-  Title: Additional info
-  Path: CDS3_wind_10m_u/README.MD
-EDCBrowser: https://browser.eurodatacube.com/?zoom=1&lat=0.00005&lng=0.00001&collectionId=wind_10m_u&layerId=Wind%20U-component&type=sentinel-hub-edc&fromTime=2019-12-01T00%3A00%3A00.000Z&toTime=2020-12-01T00%3A00%3A00.000Z
-Resolution: 0.25° x 0.25°
-BandInformation: windu10m
-Contact: "[COPERNICUS SUPPORT](copernicus-support@ecmwf.int)"
-ManagedBy: "[ESA](http://www.esa.int/)"
-Configurations:
-  - href: "https://docs.sentinel-hub.com/api/latest/api/process/"
-    rel: "about"
-    type: "text/html"
-    title: "Details about running Evalscripts"
-  - href: "https://raw.githubusercontent.com/eurodatacube/public-collections/main/collections/wind_10m_u/script.js"
-    rel: "processing-expression"
-    type: "application/javascript"
-    title: "Evalscript to generate Wind U-component imagery"
-    sentinelhub:layer_name: "Wind U-component"
-    sentinelhub:mosaicking_order: "mostRecent"
-    sentinelhub:upsampling: "BICUBIC"
-CubeDimensions:
-  x:
-    type: spatial
-    axis: x
-    extent:
-      - -179.999755859375
-      - 179.99977453631897
-  y:
-    type: spatial
-    axis: y
-    extent:
-      - -90.12489004526765
-      - 90.125
-  t:
-    type: temporal
-    extent:
-      - "2019-01-01T00:00:00Z"
-      - "2022-04-01T00:00:00Z"
-  bands:
-    type: bands
-    values:
-      - windu10m
-RegistryEntryAdded: "2021-05-07"
-RegistryEntryLastModified: "2022-07-21"
+    Script: CDS3_wind_10m_u/CDS3_wind_10m_u.js
