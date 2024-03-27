@@ -2,19 +2,28 @@ Name: border_crossing_vehicles_timeseries
 Title: Border crossing vehicles time series
 EodashIdentifier: E12b
 Subtitle: Volume of highway occupancy from Sentinel-1 data
-Description: E12b_border_crossing_vehicles_timeseries/E12b.md
+Description: E12b_border_crossing_vehicles_timeseries/E12b_border_crossing_vehicles_timeseries.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-1
-Sensor:
-    - placeholder
+  - Copernicus
+  - SAR
+  - Mobility
+  - Traffic
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
 Agency:
-    - ESA
+  - ESA
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E12b
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E12b
