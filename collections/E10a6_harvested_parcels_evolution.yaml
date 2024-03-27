@@ -2,19 +2,32 @@ Name: harvested_parcels_evolution
 Title: Harvested parcels
 EodashIdentifier: E10a6
 Subtitle: Evolution of harvested parcels in percentage
-Description: E10a6_harvested_parcels_evolution/E10a6.md
+Description: E10a6_harvested_parcels_evolution/E10a6_harvested_parcels_evolution.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Copernicus
+  - Sen4CAP
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+      - Sentinel-2
+      - Landsat-8
+    Sensor:
+      - C-SAR
+      - MSI
+      - OLI
 Agency:
-    - ESA
+  - ESA
+  - NASA
+  - USGS
+Provider:
+  - Name: FEGA
+    Url: https://www.fega.gob.es/en
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E10a6
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E10a6
