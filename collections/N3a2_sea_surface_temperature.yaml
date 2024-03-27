@@ -19,24 +19,24 @@ License: MIT
 Locations:
   - Identifier: NorthAdriaticSST
     Name: North Adriatic
-    Subtitle: Chlorophyll-a concentration in North Adriatic
+    Subtitle: Sea surface temperature in North Adriatic
     Point: [13.02978, 45.19752]
-    Bbox: [11.6, 46, 15, 44]
+    Bbox: [11.6, 44, 15, 46]
   - Identifier: RhoneDeltaSST
     Name: Rhone Delta
-    Subtitle: Chlorophyll-a concentration in Rhone Delta
+    Subtitle: Sea surface temperature in Rhone Delta
     Point: [4.94, 43.4]
-    Bbox: [4, 44, 6, 42.8]
+    Bbox: [4, 42.8, 6, 44]
   - Identifier: BarcelonaSST
     Name: Barcelona
-    Subtitle: Chlorophyll-a concentration in Barcelona
+    Subtitle: Sea surface temperature in Barcelona
     Point: [1.769, 40.985]
-    Bbox: [0, 42, 3, 40]
+    Bbox: [0, 40, 3, 42]
   - Identifier: DanubeDeltaSST
     Name: Danube Delta
-    Subtitle: Chlorophyll-a concentration in Danube Delta
+    Subtitle: Sea surface temperature in Danube Delta
     Point: [29.9, 45.05]
-    Bbox: [28.5, 46, 31, 44]
+    Bbox: [28.5, 44, 31, 46]
 Resources:
   - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
@@ -52,3 +52,4 @@ Services:
     Script: N3a2_sea_surface_temperature/script.js
 Image: N3a2_sea_surface_temperature/thumbnail.png
 Legend: N3a2_sea_surface_temperature/cm_legend.png
+yAxis: "%"

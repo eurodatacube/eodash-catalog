@@ -1,4 +1,4 @@
-Name: ocean_primary_productivity
+Name: N11_ocean_primary_productivity
 Title: Ocean Primary Productivity (GCOM-C)
 EodashIdentifier: N11
 Subtitle: Ocean Primary Productivity (GCOM-C)
@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: ONPP-GCOMC-World-Monthly
 Legend: N11_ocean_primary_productivity/cm_legend.png
+Image: N11_ocean_primary_productivity/thumbnail.png

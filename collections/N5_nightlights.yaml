@@ -3,6 +3,7 @@ Title: Nightlights
 EodashIdentifier: N5
 Description: N5_nightlights/N5.md
 Themes:
+  - atmosphere
   - economy
 Tags:
   - covid
@@ -14,57 +15,136 @@ Sensor:
 Agency:
   - NASA
 Locations:
-  - Identifier: CN01
-    Country: CN
-    Name: Beijing
-    Subtitle: Recovery Proxy Maps
-    Point: [116.38, 39.9]
-    Bbox: [115.11, 39.45, 117.31, 40.45]
-  - Identifier: FR03
-    Country: FR
-    Name: Port of Dunkirk
-    Subtitle: Recovery Proxy Maps
-    Point: [2.28537, 51.03613]
-    Bbox: [1.162952178, 50.70592333959897, 3.744341067153335, 51.366756673]
-  - Identifier: BE03
-    Country: BE
-    Name: Port of Ghent
-    Subtitle: Recovery Proxy Maps
-    Point: [3.74008, 51.09155]
-    Bbox: [3.200395303, 50.76456780514585, 4.676784191065174, 51.424290027]
-  - Identifier: JP01
-    Country: JP
-    Name: Tokyo
-    Subtitle: Recovery Proxy Maps
+  - Bbox: [11.7631744, 45.06062636, 12.79039608, 45.79310055]
     Point: [139.78, 35.61]
-    Bbox: [138.71, 35.07, 140.82, 36.41]
-  - Identifier: US02
-    Country: US
-    Name: Los Angeles
-    Subtitle: Recovery Proxy Maps
-    Point: [-118.25, 34.05]
-    Bbox: [-118.93, 33.51, -116.83, 34.55]
-  - Identifier: US04
-    Country: US
-    Name: New York
-    Subtitle: Recovery Proxy Maps
-    Point: [-73.09, 41.0114]
-    Bbox: [-75.35, 40.27, -72.15, 41.28]
-  - Identifier: US03
-    Country: US
-    Name: San Francisco
-    Subtitle: Recovery Proxy Maps
-    Point: [-122.41638, 37.7775]
-    Bbox: [-122.95, 37.01, -120.96, 38.18]
-  - Identifier: US06
-    Country: US
-    Name: Sacramento
-    Subtitle: Recovery Proxy Maps
-    Point: [-121.944, 38.715]
-    Bbox: [-122.13, 38.20, -120.00, 39.23]
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: VEDA Statistics
+    Name: Venice
+    Identifier: IT01
+    Country: IT
+  - Bbox: [139.58, 35.58, 139.82, 35.74]
+    Point: [139.7, 35.66]
+    Name: Tokyo
+    Identifier: JP01
+    Country: JP
+  - Bbox: [103.63, 1.23, 104.03, 1.47]
+    Point: [103.83, 1.35]
+    Name: Singapore
+    Identifier: SG01
+    Country: SG
+  - Bbox: [12.196366, 41.602782, 12.796366, 42.202782]
+    Point: [12.496366, 41.902782]
+    Name: Rome
+    Identifier: IT02
+    Country: IT
+  - Bbox: [2.119014, 48.634716, 2.579014, 49.094716]
+    Point: [2.349014, 48.864716]
+    Name: Paris
+    Identifier: FR01
+    Country: FR
+  - Bbox: [135.35, 34.57, 135.61, 34.77]
+    Point: [135.48, 34.67]
+    Name: Osaka
+    Identifier: JP02
+    Country: JP
+  - Bbox: [8.95854, 45.234664, 9.41854, 45.694664]
+    Point: [9.18854, 45.464664]
+    Name: Milan
+    Identifier: IT02
+    Country: IT
+  - Bbox: [4.455588606, 42.9695695, 6.5320046220000005, 44.06892132]
+    Point: [5.493796614, 43.51924541]
+    Name: Marseille
+    Identifier: FR02
+    Country: FR
+  - Bbox: [-4.00379, 40.116775, -3.40379, 40.716775]
+    Point: [-3.70379, 40.416775]
+    Name: Madrid
+    Identifier: ES01
+    Country: ES
+  - Bbox: [-0.510375, 51.28676, 0.33401499999999995, 51.691874]
+    Point: [-0.088180, 51.489317]
+    Name: London
+    Identifier: GB01
+    Country: GB
+  - Bbox: [-77.18, -12.28, -76.88, -11.86]
+    Point: [-77.03, -12.07]
+    Name: Lima
+    Identifier: PE01
+    Country: PE
+  - Bbox: [135.64, 34.88, 135.84, 35.08]
+    Point: [135.74, 34.98]
+    Name: Kyoto
+    Identifier: JP03
+    Country: JP
+  - Bbox: [141.18, 42.94, 141.58, 43.23]
+    Point: [141.38, 43.085]
+    Name: Hokkaido Sapporo
+    Identifier: JP04
+    Country: JP
+  - Bbox: [8.1053, 53.3951, 10.3253, 54.0277]
+    Point: [9.2153, 53.7114]
+    Name: Hamburg
+    Identifier: DE01
+    Country: DE
+  - Bbox: [3.542912745, 50.93642727, 3.919194484, 51.16950495]
+    Point: [3.731053615, 51.05296611]
+    Name: Ghent
+    Identifier: BE01
+    Country: BE
+  - Bbox: [8.665744, 44.378471, 9.09558, 44.519842]
+    Point: [8.880662, 44.4491565]
+    Name: Genoa
+    Identifier: IT03
+    Country: IT
+  - Bbox: [18.357982, 54.422751, 18.569061, 54.584515]
+    Point: [18.4635215, 54.503633]
+    Name: Gdynia
+    Identifier: PL01
+    Country: PL
+  - Bbox: [130.28, 33.46, 130.52, 33.72]
+    Point: [130.4, 33.59]
+    Name: Fukuoka
+    Identifier: JP05
+    Country: JP
+  - Bbox: [2.062055515, 50.88721313, 2.641584324, 51.13260412]
+    Point: [2.35181992, 51.00990863]
+    Name: Dunkirk
+    Identifier: FR03
+    Country: FR
+  - Bbox: [90.31, 23.64, 90.53, 23.91]
+    Point: [90.42, 23.775]
+    Name: Dhaka
+    Identifier: BD01
+    Country: BD
+  - Bbox: [79.82, 6.74, 80.02, 7.02]
+    Point: [79.92, 6.88]
+    Name: Colombo
+    Identifier: LK01
+    Country: LK
+  - Bbox: [116.2, 39.77, 116.55, 40.0]
+    Point: [116.375, 39.885]
+    Name: Beijing
+    Identifier: CN01
+    Country: CN
+  - Bbox: [1.469171475, 41.15634032, 2.617242764, 41.84748412]
+    Point: [2.04320712, 41.50191222]
+    Name: Barcelona
+    Identifier: ES02
+    Country: ES
+  - Bbox: [174.59, -37.08, 174.96, -36.68]
+    Point: [174.775, -36.88]
+    Name: Auckland
+    Identifier: NZ01
+    Country: NZ
+  - Bbox: [4.61, 52.2, 5.1, 52.54]
+    Point: [4.855, 52.37]
+    Name: Amsterdam
+    Identifier: NL01
+    Country: NL
+  - Bbox: [136.78, 35.02, 137.04, 35.25]
+    Point: [136.91, 35.135]
+    Name: Aichi Nagoya
+    Identifier: JP06
+    Country: JP
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
@@ -72,6 +152,6 @@ Resources:
     CollectionId: nightlights-hd-monthly
     Bidx: 1
     ColormapName: inferno
-    Rescale: [0,255]
-# Legend: N5_nightlights/cm_legend.png
+    Rescale: [0, 255]
+Legend: N5_nightlights/legend.png
 Image: N5_nightlights/thumbnail.png

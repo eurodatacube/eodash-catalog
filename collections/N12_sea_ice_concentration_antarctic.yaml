@@ -32,6 +32,6 @@ Resources:
     Disable_Items: true
     DateTimeInterval:
       Start: "1978-11-01T00:00:00"
-      End: "2023-12-31T00:00:00"
-Legend: N12_sea_ice_concentration/World-SIC.png
+      End: "2024-02-29T00:00:00"
+Legend: N12_sea_ice_concentration/cm_legend.png
 Image: N12_sea_ice_concentration/Antarctic-N12.png

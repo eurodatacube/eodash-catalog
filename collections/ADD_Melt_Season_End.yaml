@@ -1,0 +1,29 @@
+Name: ADD_Melt_Season_End
+Title: Antarctica Melt Season End
+EodashIdentifier: ADD_Melt_Season_End
+Subtitle: Antarctica Melt Season End from 4D Antarctica
+Description: ADD_Melt_Season_End/ADD_Melt_Season_End.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
+    Type: OverwriteTimes
+    LayerId: VIS_4D_ANTARTICA_END
+    OverwriteBBox: [-100, -75, -70, -68]
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "2007-01-02T00:00:00"
+      End: "2021-02-01T00:00:00"
+Image: ADD_Melt_Season_End/thumbnail.png
+Legend: ADD_Melt_Season_End/legend.png

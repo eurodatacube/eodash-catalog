@@ -19,3 +19,4 @@ Resources:
     Type: Time
     LayerId: PRC-GSMaP-World-Monthly
 Legend: PRCG_precipitation/cm_legend.png
+Image: PRCG_precipitation/thumbnail.png

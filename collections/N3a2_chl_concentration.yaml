@@ -21,22 +21,22 @@ Locations:
     Name: North Adriatic
     Subtitle: Chlorophyll-a concentration in North Adriatic
     Point: [13.02978, 45.19752]
-    Bbox: [11.6, 46, 15, 44]
+    Bbox: [11.6, 44, 15, 46]
   - Identifier: RhoneDelta
     Name: Rhone Delta
     Subtitle: Chlorophyll-a concentration in Rhone Delta
     Point: [4.94, 43.4]
-    Bbox: [4, 44, 6, 42.8]
+    Bbox: [4, 42.8, 6, 44]
   - Identifier: Barcelona
     Name: Barcelona
     Subtitle: Chlorophyll-a concentration in Barcelona
     Point: [1.769, 40.985]
-    Bbox: [0, 42, 3, 40]
+    Bbox: [0, 40, 3, 42]
   - Identifier: DanubeDelta
     Name: Danube Delta
     Subtitle: Chlorophyll-a concentration in Danube Delta
     Point: [29.9, 45.05]
-    Bbox: [28.5, 46, 31, 44]
+    Bbox: [28.5, 44, 31, 46]
 Resources:
   - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
@@ -52,3 +52,4 @@ Services:
     Script: N3a2_chl_concentration/script.js
 Image: N3a2_chl_concentration/thumbnail.png
 Legend: N3a2_chl_concentration/cm_legend.png
+yAxis: "%"

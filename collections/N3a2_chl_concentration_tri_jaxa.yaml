@@ -1,0 +1,55 @@
+Name: N3a2_chl_concentration_tri_jaxa
+Title: Chlorophyll-a concentration maps JAXA
+EodashIdentifier: N3a2_chl_jaxa
+Subtitle: Chlorophyll-a concentration description
+Description: N3a2_chl_concentration_tri/N3a2.md
+Themes:
+  - water
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - JAXA
+Provider:
+  - Name: placeholder
+License: MIT
+Locations:
+  - Identifier: NorthAdriatic
+    Name: North Adriatic
+    Subtitle: Chlorophyll-a concentration in North Adriatic
+    Point: [13.02978, 45.19752]
+    Bbox: [11.6, 44, 15, 46]
+  - Identifier: JP01
+    Name: Tokyo
+    Subtitle: Chlorophyll-a concentration outside of Tokyo
+    Point: [139.78, 35.61]
+    Bbox: [139, 34.7, 140.3, 35.7]
+  - Identifier: JP04
+    Name: Nagoya
+    Subtitle: Chlorophyll-a concentration outside of Nagoya
+    Point: [136.9, 34.7]
+    Bbox: [136.4, 34.2, 137.4, 35.2]
+  - Identifier: JP02
+    Name: Kobe
+    Subtitle: Chlorophyll-a concentration outside of Kobe
+    Point: [135, 34.35]
+    Bbox: [134.5, 33.8, 135.5, 34.8]
+Resources:
+  - Group: Sentinel Hub Resources
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 198aa13a-b0c0-4b78-8f69-e08fc58551a7
+    LayerId: AWS_JAXA_CHLA
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 198aa13a-b0c0-4b78-8f69-e08fc58551a7
+    Script: N3a2_chl_concentration/script.js
+Image: N3a2_chl_concentration_tri/thumbnail.png
+Legend: N3a2_chl_concentration_tri/legend.png
+yAxis: "%"

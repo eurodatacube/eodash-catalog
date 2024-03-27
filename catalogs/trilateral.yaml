@@ -9,17 +9,16 @@ collections:
   - N1_CH4
   - N1_CO
   - N1_SO2
-  # - N2_greenhouse_gases
   - N1_NO2_monthly
   - N1_NO2_diff_monthly
   - N1_NO2_city_trilateral
-  - co2-mean
+  - N2_CO2_mean
+  - N2_CO2_diff
   - facebook_population_density
-  - OMI_trno2-COG
-  - co2-diff 
+  - N9_OMI_trno2-COG
   - NPP_ocean_primary_productivity
   - NPPN_net_primary_production
-  - IS2SITMOGR4-cog
+  - SITI_IS2SITMOGR4-cog
   - nceo_africa_2017
   - grdi-v1-built
   - grdi-v1-raster
@@ -29,14 +28,13 @@ collections:
   - grdi-filled-missing-values-count
   - grdi-imr-raster
   - grdi-cdr-raster
-  - OMSO2PCA-COG
+  - N10_OMSO2PCA-COG
   - SIE_sea_ice_thickness_envisat
   - SIC_sea_ice_thickness_cryosat
   - NASAPopulation
   - WSF_world_settlement_footprint
   - N12_sea_ice_concentration_antarctic
   - N12_1_sea_ice_concentration_arctic
-  - N12_2_sea_ice_concentration_both_hemispheres
   - E10e_ndvi
   - N11_ocean_primary_productivity
   - SMC_soil_moisture_anomaly
@@ -67,8 +65,15 @@ collections:
   - N6_geoglam
   - N7_slowdown_proxy
   - N8_recovery_proxy
-  - N3b_water_quality
-  - N3a2_chl_concentration
+  - N3b_water_quality_tsm_chart
+  - N3b_water_quality_chl_chart
+  - N3a2_chl_concentration_tri_esa
+  - N3a2_chl_concentration_tri_jaxa
+  - N3a2_chl_concentration_tri_nasa
+  - N3a2_total_suspended_matter_tri_esa
+  - N3a2_total_suspended_matter_tri_jaxa
+  - N3a2_total_suspended_matter_tri_nasa
+  - N3a2_sea_surface_temperature
   - E10d_regional_cropland
   - N1_NO2_jaxa
   - N2_CO2_jaxa_gosat
@@ -94,3 +99,13 @@ collections:
   - GG_Google_Mobility_Data_trilateral
   - E13c_shipping_activity
   - E13b_parked_airplanes
+  - CV_Covid_19_cases_trilateral
+  - OW_Covid_19_vaccinations_trilateral
+  - FNF_Palsar
+  - ADD_West_Antarctica_S1
+  - ADD_Landsat_L2_Antarctica
+  - ADD_Melt_Duration
+  - ADD_Melt_Onset
+  - ADD_Melt_Season_End
+  - ADD_Meltmap
+  - sen4ama
