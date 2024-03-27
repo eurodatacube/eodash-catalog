@@ -14,7 +14,7 @@ Agency:
   - NASA
 Legend: NLK_lake_cloud_free/cm_legend.png
 Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/

@@ -1,7 +1,6 @@
 Name: sea_ice_thickness_cryosat
 Title: Sea ice thickness (Cryosat)
 EodashIdentifier: SIC
-Subtitle: Daily Methane
 Description: SIC_sea_ice_thickness_cryosat/SIC.md
 Themes:
     - cryosphere
@@ -23,5 +22,5 @@ Resources:
       Type: zarr
       CollectionId: b6915831-0a56-424b-bcb4-781deb062f31
       LayerId: ESA-CCI-V2-CRYOSAT
-Legend: SIC_sea_ice_thickness_cryosat/cm_legend.png
+Legend: SIC_sea_ice_thickness_cryosat/legend.png
 Image: SIC_sea_ice_thickness_cryosat/thumbnail.png

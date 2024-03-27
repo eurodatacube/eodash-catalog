@@ -15,7 +15,7 @@ Here are preloaded preview links for the catalogs available through gh-pages:
 
 In order to run the catalog generation locally you can clone the repository and ideally setup a virtual environment or similar using the requirements.txt contained in the `generators` folder.
 If you are using Visual Studio Code you can use the `Python: Create environment...` tool (when pressing Ctrl+Shift+P).
-Use of python >=3.10 is recommended.
+Use of python >=3.10 is recommended. 
 
 Once venv is setup, make sure it is active and run the generator with `python generate_indicators.py`. 
 Currently there is only one optional flag `-vd` that can be used to activate validation of the catalog (Still WIP).

@@ -1,6 +1,6 @@
 Name: ADD_West_Antarctica_S1
 Title: West Antarctica (Sentinel-1)
-EodashIdentifier: ADD
+EodashIdentifier: ADD_West_Antarctica_S1
 Subtitle: West Antarctica Sentinel-1 Subset
 Description: ADD_West_Antarctica_S1/S1GRD-ADD.md
 Themes:
@@ -16,12 +16,15 @@ Agency:
 Provider:
   - Name: Sentinel-Hub
 Resources:
-  - Name: Collection-only
-    EndPoint: Collection-only
-    OverwriteBBox: [-103, -75, -102, -74]
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
     Type: OverwriteTimes
+    LayerId: SENTINEL-1-EW
+    OverwriteBBox: [-103, -75, -102, -74]
+    Disable_Items: true
     DateTimeInterval:
       Start: "2017-05-18T00:00:00"
       End: "2022-01-15T00:00:00"
       Timedelta:
         days: 7
+Image: ADD_West_Antarctica_S1/thumbnail.png

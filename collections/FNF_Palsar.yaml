@@ -1,0 +1,25 @@
+Name: FNF_Palsar
+Title: PALSAR-2/PALSAR Forest/Non-Forest Map
+EodashIdentifier: FNF
+Description: FNF_Palsar/FNF.md
+Themes:
+  - biomass
+Tags:
+  - placeholder
+Satellite:
+  - ALOS
+  - ALOS-2
+Sensor:
+  - PALSAR
+  - PALSAR-2
+Agency:
+  - JAXA
+Resources:
+  - EndPoint: https://ogcpreview1.restecmap.com/examind/api/WS/wmts/JAXA_WMTS_Preview
+    Name: JAXA_WMTS_PALSAR
+    Type: OverwriteTimes
+    OverwriteBBox: [-180, -60, 180, 85]
+    LayerId: FNF-PALSAR2-World-{time}-Yearly
+    Times: ['2017', '2018', '2019', '2020']
+Legend: FNF_Palsar/legend.png
+Image: FNF_Palsar/thumbnail.png
