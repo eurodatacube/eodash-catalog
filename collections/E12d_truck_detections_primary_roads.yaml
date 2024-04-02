@@ -10,6 +10,7 @@ Tags:
   - Mobility
   - Traffic
   - Open data
+  - Community
 DataSource:
   Spaceborne:
     Satellite:
@@ -32,6 +33,10 @@ References:
     Url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Freight_transport_statistics_-_modal_split
   - Name: Destatis
     Url: https://www.destatis.de/EN/Service/EXSTAT/_node.html
+  - Name: GitHub Repository
+    Url: https://github.com/hfisser/Truck_Detection_Sentinel2_COVID19
+  - Name: Jupyter Notebook - Euro Data Cube
+    Url: https://eurodatacube.com/notebooks/contributions/Detect_Trucks_Sentinel2.ipynb
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
