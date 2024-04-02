@@ -1,0 +1,27 @@
+Name: crude_oil_storage
+Title: Crude oil storage monitoring
+EodashIdentifier: E3
+Subtitle: Crude Oil Storage Volume as observed by ICEYE
+Description: E3_crude_oil_storage/E3_crude_oil_storage.md
+Themes:
+  - economy
+Tags:
+  - SAR
+  - Ports
+  - Maritime
+DataSource:
+  Spaceborne:
+    Satellite:
+      - ICEYE SAR
+Agency:
+  - ESA
+Image: E3_crude_oil_storage/E3_crude_oil_storage.png
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: c47fa011-e9cd-4076-9b2f-68a93d757e58
+    LayerId: AWS_ICEYE-E3
+Provider:
+  - Name: ICEYE
+    Url: https://www.iceye.com/
