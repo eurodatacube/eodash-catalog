@@ -9,11 +9,15 @@ Tags:
   - Ports
   - Maritime
   - Traffic
+  - Ships
 DataSource:
   InSitu:
     - AIS
 Agency:
   - ESA
+Provider:
+  - Name: e-GEOS
+    Url: https://www.e-geos.it/
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
