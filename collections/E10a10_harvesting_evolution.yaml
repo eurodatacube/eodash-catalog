@@ -17,10 +17,13 @@ DataSource:
 Agency:
   - ESA
 Provider:
-  - Name: Copernicus
-    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: Vista
+    Url: https://www.vista-geo.de/
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
     Database: eodash
     CollectionId: E10a10
+References:
+  - Name: Impact of COVID-19 on harvest of row crop
+    Url: https://eo4society.esa.int/projects/impact-of-covid-19-on-harvest-of-row-crop/
