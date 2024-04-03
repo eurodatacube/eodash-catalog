@@ -10,6 +10,7 @@ Tags:
   - Maritime
   - Traffic
   - Open data
+  - Community
 DataSource:
   Spaceborne:
     Satellite:
@@ -23,3 +24,10 @@ Resources:
     Name: GeoDB
     Database: eodash
     CollectionId: Sentinel_1_Vessel_Density_Europe_Timeseries
+References:
+  - Name: Jupyter Notebook Euro Data Cube
+    Key: notebook_vessel_density_cimbelli
+    Url: https://edc-jupyter.hub.eox.at/user/fd72d739-596f-4e72-a660-0d06045e4e26/lab/tree/Vessel_count_upscale.ipynb
+Citation:
+    Citation: Alessandro Cimbelli, Vessel Density based on Copernicus Sentinel-1, developed for the ESA RACE Challenges March 2021
+
