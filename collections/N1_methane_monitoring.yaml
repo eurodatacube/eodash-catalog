@@ -46,3 +46,7 @@ Provider:
     Url: https://earth.jaxa.jp/en/data/
   - Name: Caltech
     Url: https://tccondata.org/
+References:
+  - Name: TROPOMI Methane
+    Key: tropomi_methane
+    Url: http://www.tropomi.eu/data-products/methane
