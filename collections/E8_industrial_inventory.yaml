@@ -1,7 +1,7 @@
 Name: industrial_inventory
-Title: COVID-19 Lockdown effects on industrial inventory level
+Title: Automobile inventory level
 EodashIdentifier: E8
-Subtitle: The impacts of COVID-19 lockdown restrictions at finished goods production sites
+Subtitle: Inventory level in logisitc areas of production sites
 Description: E8_industrial_inventory/E8_industrial_inventory.md
 Themes:
   - economy
@@ -35,3 +35,7 @@ Provider:
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
   - Name: ICEYE
     Url: https://www.iceye.com/
+Services:
+  - Name: EOxHub Notebook
+    Title: E8 indicator
+    Url: https://collections.eurodatacube.com/e8-indicator/
