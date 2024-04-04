@@ -1,0 +1,20 @@
+Name: CROPOM
+Title: CROPOM
+EodashIdentifier: CROPOM
+Description: TEST
+Themes:
+  - agriculture
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [9, 43, 30, 50]
