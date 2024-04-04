@@ -1,0 +1,37 @@
+Name: crop_forecast
+Title: CropModel Forecast API
+EodashIdentifier: CROPOM
+Subtitle: Yield and water demand forecast under "what-if" scenarios
+Themes:
+  - agriculture
+  - economy
+Tags:
+  - Crop
+  - Yield
+  - Water
+  - Forecast
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+      - CLMS HR-VPP Vegetation Indices
+      - CLMS HR-VPP Seasonal Trajectory 
+  InSitu:
+    - Meteorological data from local Meteorological offices (HU, RO, AT)
+Agency:
+  - ESA
+Provider:
+  - Name: CropOM
+    Url: https://cropom.com
+  - Name: Danube Data Cube
+    Url: https://ddc.cropom.com
+License:
+  - Name: Commercial license
+    Url: https://cropom.com/terms_and_conditions.pdf
+References:
+  - Name: Danube Data Cube documentation
+    Url: https://doc.cropom.com
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [9, 43, 30, 50]
