@@ -4,10 +4,11 @@ description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  - CDS1_temperature
-  - CDS2_relative_humidity
-  - CDS3_wind_10m_u
-  - CDS4_wind_10m_v
+  # - CDS1_temperature
+  # - CDS2_relative_humidity
+  # - CDS3_wind_10m_u
+  # - CDS4_wind_10m_v
+  - C3S_meteorological_variables
   # - E1_S2_shipment_metallic_ores
   - E10a6_harvested_parcels_evolution
   - E11_shopping_center_activity
