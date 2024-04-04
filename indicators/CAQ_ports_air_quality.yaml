@@ -4,5 +4,5 @@ EodashIdentifier: CAQ
 Description: "C1_ports_shipping_aq/C1_ports_shipping_aq.md"
 Collections:
   - C1_ports_shipping_aq
-  - C2_ports_cars_aq
-  - C3_ports_people_aq
+  - C2_ports_people_aq
+  - C3_ports_cars_aq
