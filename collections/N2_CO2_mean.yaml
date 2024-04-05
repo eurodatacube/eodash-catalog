@@ -17,6 +17,7 @@ Legend: N2_CO2_mean/legend.png
 Services:
   - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
+    Rescale: 1e6
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
