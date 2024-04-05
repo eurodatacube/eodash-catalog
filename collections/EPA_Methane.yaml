@@ -1,6 +1,6 @@
 Name: Gridded_EPA_Methane
 Title: Gridded National Inventory of U.S. Methane Emissions
-EodashIdentifier: EPA_Methane
+EodashIdentifier: EPA
 Collections:
   - EPA_Field_burning_Monthly
   - EPA_Forest_fire_Methane_Daily

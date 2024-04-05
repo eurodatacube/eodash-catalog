@@ -1,7 +1,7 @@
 Name: EPA_Field_burning_Monthly
-Title: Gridded 2012 EPA Methane Emissions - Field Burning (monthly)
+Title: Field Burning monthly - EPA Methane Emissions 2012
 EodashIdentifier: EPA_Field_burning_Monthly
-Subtitle: Emissions from sector 4F from agricultural field burning (monthly)
+Subtitle: Emissions from sector 4F from agricultural field burning (monthly), gridded
 Description: EPA_Field_burning_Monthly/EPA_Field_burning_Monthly.md
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/

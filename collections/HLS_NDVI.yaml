@@ -1,5 +1,5 @@
 Name: HLS_NDVI
-Title: Normalized difference vegetation index from HLS
+Title: NDVI from HLS
 EodashIdentifier: HLS_NDVI
 Subtitle: NDVI calculated from Harmonized Landsat and Sentinel-2
 Description: HLS_NDVI/HLS_NDVI.md
