@@ -1,0 +1,27 @@
+Name: HLS_NDVI
+Title: Sentinel-2 Ships-detection on-the-fly
+EodashIdentifier: E13c_ship_detections
+Description: E13c_ship_detections_algorithm/E13c_ship_detections_algorithm.md
+Themes:
+  - economy
+Tags:
+  - Ports
+  - Maritime
+  - Traffic
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+Agency:
+  - ESA
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
+Image: E13c_ship_detections_algorithm/thumbnail.png
