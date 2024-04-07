@@ -1,7 +1,7 @@
 Name: NO2
-Title: Air Quality (NO2 concetrations) at global level
+Title: Air Quality (NO2 concetrations) map
 EodashIdentifier: N1b_NO2
-Subtitle: Nitrogen dioxide at global level - daily average
+Subtitle: Nitrogen dioxide in Europe - daily average
 Description: N1b_NO2/N1b_NO2.md
 Themes:
   - air
@@ -12,6 +12,7 @@ Tags:
   - CAMS
   - Multi-sensors
   - Open data
+  - Air pollution
 DataSource:
   Other:
     - EAC4
