@@ -34,3 +34,7 @@ Services:
 Provider:
   - Name: Copernicus
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+References:
+  - Name: TROPOMI CO 
+    Key: tropomi_co
+    Url: https://sentinel.esa.int/web/sentinel/data-products/-/asset_publisher/fp37fc19FN8F/content/sentinel-5-precursor-level-2-carbon-monoxide
