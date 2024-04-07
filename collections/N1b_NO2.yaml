@@ -28,6 +28,8 @@ Image: N1b_NO2/N1b_NO2.png
 References:
   - Name: European Air Quality information in support of the COVID-19 crisis
     Url: https://atmosphere.copernicus.eu/european-air-quality-information-support-covid-19-crisis
+  - Name: CAMS NO2 Maps
+    Url: https://atmosphere.copernicus.eu/charts/packages/cams_covid19/products/air-quality-europe-daily-analysis?base_time=202311280000&layer_name=composition_europe_no2_analysis_surface&projection=cams_aq_central_europe
 Resources:
   - EndPoint: https://eccharts.ecmwf.int/wms/?token=public&
     Name: WMS
