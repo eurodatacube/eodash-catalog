@@ -22,6 +22,11 @@ Legend: N1_SO2/N1_SO2_legend.png
 References:
   - Name: La Palma lava flows into the sea
     Url: https://www.esa.int/ESA_Multimedia/Images/2021/10/La_Palma_lava_flows_into_the_sea#.YiYvOOYIkkQ.link
+  - Name: TROPOMI SO2
+    Url: https://sentinel.esa.int/web/sentinel/data-products/-/asset_publisher/fp37fc19FN8F/content/sentinel-5-precursor-level-2-sulphur-dioxide
+Provider:
+  - Name: Copernicus
+    Url: https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel5P.html
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
