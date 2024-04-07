@@ -26,6 +26,8 @@ References:
     Url: https://www.esa.int/ESA_Multimedia/Videos/2020/03/Coronavirus_nitrogen_dioxide_emissions_drop_over_Italy
   - Name: Sentinel-5P Tropospheric Column NO2
     Url: https://maps.s5p-pal.com/no2-tropospheric/
+  - Name: TROPOMI NO2
+    Url: https://sentinel.esa.int/web/sentinel/data-products/-/asset_publisher/fp37fc19FN8F/content/sentinel-5-precursor-level-2-nitrogen-dioxide
 Resources:
     - EndPoint: https://services.sentinel-hub.com
       Name: Sentinel Hub
