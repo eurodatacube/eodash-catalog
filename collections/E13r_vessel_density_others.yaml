@@ -9,6 +9,10 @@ Tags:
   - Maritime
   - Traffic
   - Open data
+  - Ships
+  - Vessels
+  - Vessel Density
+  - Traffic
 DataSource:
   InSitu:
     - AIS
@@ -31,3 +35,13 @@ Services:
     Type: byoc
     CollectionId: cc0a4c72-870d-4e9f-84d0-ba4e3d785693
     Script: E13r_vessel_density_others/E13r_vessel_density_others.js
+References:
+  - Name: EU Vessel density map Detailed method
+    Key: emodnet_map_method
+    Url: https://www.emodnet-humanactivities.eu/documents/Vessel%20density%20maps_method_v1.5.pdf
+  - Name: Map data source
+    Key: emodnet_map
+    Url: https://www.emodnet-humanactivities.eu/search-results.php?dataname=Vessel+Density+
+Provider:
+    - Name: EMODNET
+      Url: https://www.emodnet-humanactivities.eu

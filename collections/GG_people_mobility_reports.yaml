@@ -1,0 +1,25 @@
+Name: people_mobility_reports
+Title: People Mobility Reports 
+EodashIdentifier: GG
+Subtitle: People mobility data showing the impact of COVID-19 lockdown restrictions
+Description: GG_people_mobility_reports/GG_people_mobility_reports.md
+Themes:
+  - economy
+Tags:
+  - Mobility
+  - Traffic
+DataSource:
+  InSitu:
+    - Mobile
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Mobility_data
+    AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR","XK")'
+    IdKey: 'aoi_id'
+Provider:
+  - Name: Google
+    Url: https://www.google.com/covid19/mobility/

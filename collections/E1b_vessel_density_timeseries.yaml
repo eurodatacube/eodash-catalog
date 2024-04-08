@@ -2,19 +2,32 @@ Name: vessel_density_timeseries
 Title: Vessel density time series
 EodashIdentifier: E1b
 Subtitle: Vessel Density based on Copernicus Sentinel-1
-Description: E1b_vessel_density_timeseries/E1b.md
+Description: E1b_vessel_density_timeseries/E1b_vessel_density_timeseries.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-1
-Sensor:
-    - placeholder
+  - Copernicus
+  - Maritime
+  - Traffic
+  - Open data
+  - Community
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
 Agency:
-    - ESA
+  - ESA
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Sentinel_1_Vessel_Density_Europe_Timeseries
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Sentinel_1_Vessel_Density_Europe_Timeseries
+References:
+  - Name: Jupyter Notebook Euro Data Cube
+    Key: notebook_vessel_density_cimbelli
+    Url: https://edc-jupyter.hub.eox.at/user/fd72d739-596f-4e72-a660-0d06045e4e26/lab/tree/Vessel_count_upscale.ipynb
+Citation:
+    Citation: Alessandro Cimbelli, Vessel Density based on Copernicus Sentinel-1, developed for the ESA RACE Challenges March 2021
+

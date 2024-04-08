@@ -755,6 +755,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         media_type="application/json",
                         extra_fields={
                             "example:language": "JSON",
+                            "rescale": float(service.get("Rescale", 1)),
                         },
                     )
                 )

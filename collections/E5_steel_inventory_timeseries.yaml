@@ -1,0 +1,28 @@
+Name: steel_inventory_timeseries
+Title: Steel inventory timeseries
+EodashIdentifier: E5
+Subtitle: Steel inventory monitoring in open warehouses from SAR (Synthetic Aperture Radar) backscatter signals based on Sentinel-1 data
+Description: E5_steel_inventory_timeseries/E5_steel_inventory_timeseries.md
+Themes:
+  - economy
+Tags:
+  - Copernicus
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E5
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: Aerospacelab
+    Url: https://www.aerospacelab.be/

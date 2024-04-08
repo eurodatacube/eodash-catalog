@@ -1,19 +1,35 @@
 Name: O3
-Title: Ozone
+Title: Air Quality (O3 concetrations) at global level
 EodashIdentifier: N1b_O3
-Subtitle: Ozone description
-Description: N1b_O3/N1_CAMS.md
+Subtitle: Ozone at global level - daily average
+Description: N1b_O3/N1b_O3.md
 Themes:
   - air
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
-Agency:
+  - Air quality
+  - Copernicus Services
+  - O3
   - CAMS
+  - Multi-sensors
+  - Open data
+  - Air pollution
+DataSource:
+  Other:
+    - EAC4
+Agency:
+  - European Commission
   - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Legend: N1b_O3/N1b_O3_legend.png
+Image: N1b_O3/N1b_O3.png
+References:
+  - Name: European Air Quality information in support of the COVID-19 crisis
+    Url: https://atmosphere.copernicus.eu/european-air-quality-information-support-covid-19-crisis
+  - Name: CAMS O3 maps
+    Url: https://atmosphere.copernicus.eu/charts/packages/cams_covid19/products/air-quality-europe-daily-analysis?base_time=202311280000&layer_name=composition_europe_o3_analysis_surface&projection=cams_aq_central_europe
 Resources:
   - EndPoint: https://eccharts.ecmwf.int/wms/?token=public
     Name: WMS
@@ -22,5 +38,6 @@ Resources:
     Styles: [sh_OrangesTransparent240_surface_concentration]
     MediaType: image/png
     OverwriteBBox: [-25, 30, 45, 72] # WMS layer description provides incorrect BBox
-Legend: N1b_O3/cm_legend.png
-Image: N1b_O3/N1b.png
+Provider: 
+  - Name: Copernicus Atmosphere Monitoring Service
+    Url: https://ads.atmosphere.copernicus.eu/#!/home
