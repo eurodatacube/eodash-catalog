@@ -35,7 +35,7 @@ Resources:
     Database: eodash
     CollectionId: Regional_Water_Quality_Europe_timeseries
 Provider: 
-  - Name: Copernicus Atmosphere Monitoring Service
-    Url: https://ads.atmosphere.copernicus.eu/#!/home
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
   - Name: EUMETSAT
     Url: https://data.eumetsat.int/search?query=
