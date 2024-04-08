@@ -17,4 +17,4 @@ Resources:
       Name: GeoDB
       Database: eodash
       CollectionId: Global_COVID_vaccination_data
-      IdKey: 'aoi_id'
+      AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR","XK")'
