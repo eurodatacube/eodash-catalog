@@ -1,0 +1,41 @@
+Name: industrial_inventory
+Title: Automobile inventory level
+EodashIdentifier: E8
+Subtitle: Inventory level in logisitc areas of production sites
+Description: E8_industrial_inventory/E8_industrial_inventory.md
+Themes:
+  - economy
+Tags:
+  - Copernicus
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+      - ICEYE SAR
+    Sensor:
+      - C-SAR
+  Other:
+    - Multi-sensors
+Agency:
+  - European Commission
+  - ESA
+References:
+  - Name: Volume of retail trade down by 2.0% in euro area
+    Url: https://ec.europa.eu/eurostat/documents/2995521/11492432/4-05112020-AP-EN.pdf/d52662ba-b163-2c48-90ab-67e6e6ba2d19
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E8
+Provider:
+  - Name: EUROSTAT
+    Url: https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Impact_of_Covid-19_crisis_on_industrial_production#Development_by_industry
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: ICEYE
+    Url: https://www.iceye.com/
+Services:
+  - Name: EOxHub Notebook
+    Title: E8 indicator
+    Url: https://collections.eurodatacube.com/e8-indicator/

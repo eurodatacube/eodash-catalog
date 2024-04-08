@@ -6,7 +6,11 @@ Description: E13p_vessel_density_cargo/E13o.md
 Themes:
   - water
 Tags:
-  - placeholder
+  - Maritime
+  - Ships
+  - Vessels
+  - Vessel Density
+  - Traffic
 Satellite:
   - Sentinel-2
 Sensor:
@@ -27,3 +31,13 @@ Services:
     Type: byoc
     CollectionId: 093a3988-6ed6-4bb0-ae37-e356f14d7daf
     Script: E13p_vessel_density_cargo/script.js
+References:
+  - Name: EU Vessel density map Detailed method
+    Key: emodnet_map_method
+    Url: https://www.emodnet-humanactivities.eu/documents/Vessel%20density%20maps_method_v1.5.pdf
+  - Name: Map data source
+    Key: emodnet_map
+    Url: https://www.emodnet-humanactivities.eu/search-results.php?dataname=Vessel+Density+
+Provider:
+    - Name: EMODNET
+      Url: https://www.emodnet-humanactivities.eu

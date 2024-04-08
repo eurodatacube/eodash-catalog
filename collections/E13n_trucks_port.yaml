@@ -1,0 +1,20 @@
+Name: trucks_port
+Title: Commercial fluxes
+EodashIdentifier: E13n
+Subtitle: Changes in the number of trucks in ports
+Description: E13n_trucks_port/E13n_trucks_port.md
+Themes:
+  - economy
+Tags:
+  - Ports
+  - Traffic
+DataSource:
+  InSitu:
+    - Mobile
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E13n
