@@ -2,19 +2,40 @@ Name: regional_water_quality_timeseries
 Title: Regional water quality time series
 EodashIdentifier: N3
 Subtitle: Regional water quality time series
-Description: N3_regional_water_quality_timeseries/N3.md
+Description: N3_regional_water_quality_timeseries/N3_regional_water_quality_timeseries.md
 Themes:
-    - water
+  - water
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Water quality
+  - Copernicus Services
+  - CHL
+  - CMEMS
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - OLCI
 Agency:
-    - ESA
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://marine.copernicus.eu/user-corner/service-commitments-and-licence
+    Type: text/html
+    Title: Licence to Use Copernicus Products
+References:
+  - Name: IMT Neural Net
+    Url: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-3-olci/level-2/imt-neural-net
+  - Name: | COVID-19 lockdown effects on a coastal marine environment: Disentangling perception versus reality
+    Url: https://www.sciencedirect.com/science/article/pii/S0048969722000912?via%3Dihub
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Regional_Water_Quality_Europe_timeseries
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Regional_Water_Quality_Europe_timeseries
+Provider: 
+  - Name: Copernicus Atmosphere Monitoring Service
+    Url: https://ads.atmosphere.copernicus.eu/#!/home
+  - Name: EUMETSAT
+    Url: https://data.eumetsat.int/search?query=
