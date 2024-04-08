@@ -1,22 +1,37 @@
 Name: pm25_cams
-Title: City level PM25 (model)
+Title: Air Quality (PM25 concetrations) at city level (model)
 EodashIdentifier: N1a
 Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N1a_pm25_cams/N1_CAMS.md
+Description: N1a_pm25_cams/N1a_pm25_cams.md
 Themes:
-    - air
+  - air
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Air quality
+  - Copernicus Services
+  - PM2.5
+  - CAMS
+  - Multi-sensors
+  - Open data
+  - Particulate matter
+  - Air pollution
+DataSource:
+  Other:
+    - EAC4
 Agency:
-    - ESA
-Provider:
-    - Name: CAMS
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+References:
+  - Name: European Air Quality information in support of the COVID-19 crisis
+    Url: https://atmosphere.copernicus.eu/european-air-quality-information-support-covid-19-crisis
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: N1a
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: N1a
+Provider: 
+  - Name: Copernicus Atmosphere Monitoring Service
+    Url: https://ads.atmosphere.copernicus.eu/#!/home

@@ -1,21 +1,37 @@
 Name: city_no2
-Title: City level NO2 (S5p)
+Title: Air Quality (tropospheric NO2 concetrations) at city level
 EodashIdentifier: N1
 Subtitle: NO2 detected at cities based on Sentinel-5P data
-Description: N1_city_no2/N1.md
+Description: N1_city_no2/N1_city_no2.md
 Themes:
-    - air
+  - air
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-5P
-Sensor:
-    - placeholder
+  - Air quality
+  - NO2
+  - Open data
+  - Nitrogen dioxide
+  - Air pollution
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-5P
+    Sensor:
+      - TROPOMI
 Agency:
-    - ESA
+  - ESA
+Legend: N1_city_no2/N1_city_no2_legend.png
+References:
+  - Name: Air pollution remains low as Europeans stay at home
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Air_pollution_remains_low_as_Europeans_stay_at_home
+  - Name: Coronavirus - nitrogen dioxide emissions drop over Italy
+    Url: https://www.esa.int/ESA_Multimedia/Videos/2020/03/Coronavirus_nitrogen_dioxide_emissions_drop_over_Italy
+  - Name: Sentinel-5P Tropospheric Column NO2
+    Url: https://maps.s5p-pal.com/no2-tropospheric/
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: N1
-Legend: N1_city_no2/cm_legend.png
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: N1
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
