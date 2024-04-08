@@ -109,3 +109,6 @@ collections:
   - ADD_Melt_Season_End
   - ADD_Meltmap
   - sen4ama
+  - EPA_Methane
+  - HLS_NDVI
+  - LIS_Global_DA_Evap
