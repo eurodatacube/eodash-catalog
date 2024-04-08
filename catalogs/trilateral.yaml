@@ -6,7 +6,7 @@ assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/m
 collections:
   - E9_car_containers
   - N1_NO2_trilateral
-  - N1_CH4
+  - N1_methane_monitoring
   - N1_CO
   - N1_SO2
   - N1_NO2_monthly
