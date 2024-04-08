@@ -27,7 +27,7 @@ License:
 References:
   - Name: IMT Neural Net
     Url: https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-3-olci/level-2/imt-neural-net
-  - Name: | COVID-19 lockdown effects on a coastal marine environment: Disentangling perception versus reality
+  - Name: COVID-19 lockdown effects on a coastal marine environment - Disentangling perception versus reality
     Url: https://www.sciencedirect.com/science/article/pii/S0048969722000912?via%3Dihub
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
