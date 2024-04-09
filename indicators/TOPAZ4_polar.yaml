@@ -1,0 +1,12 @@
+Name: topaz4
+Title: TOPAZ4b - Arctic Ocean Physics Reanalysis
+EodashIdentifier: TOPAZ4
+Description: ''
+Collections:
+  - TOPAZ4_P1D_SICONC
+  - TOPAZ4_P1D_SISNTHICK
+  - TOPAZ4_P1D_SITHICK
+  - TOPAZ4_P1D_VXO
+  - TOPAZ4_P1D_VXSI
+  - TOPAZ4_P1D_VYO
+  - TOPAZ4_P1D_VYSI
