@@ -2,35 +2,39 @@ Name: vessel_density_cargo
 Title: Vessel density for cargo
 EodashIdentifier: E13p
 Subtitle: Vessel density for cargo description
-Description: E13p_vessel_density_cargo/E13o.md
+Description: E13p_vessel_density_cargo/E13p_vessel_density_cargo.md
 Themes:
   - water
 Tags:
   - Maritime
+  - Traffic
+  - Open data
   - Ships
   - Vessels
   - Vessel Density
   - Traffic
-Satellite:
-  - Sentinel-2
-Sensor:
-  - placeholder
+DataSource:
+  InSitu:
+    - AIS
 Agency:
   - ESA
+Provider:
+  - Name: EMODnet
+    Url: https://emodnet.ec.europa.eu/en
+Image: E13p_vessel_density_cargo/E13p_vessel_density_cargo.png
+Legend: E13o_vessel_density_all/E13p_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 093a3988-6ed6-4bb0-ae37-e356f14d7daf
     LayerId: AWS_VIS_VESSELDENSITY_CARGO
-Legend: E13o_vessel_density_all/cm_legend.png
-Image: E13p_vessel_density_cargo/thumbnail.png
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
     CollectionId: 093a3988-6ed6-4bb0-ae37-e356f14d7daf
-    Script: E13p_vessel_density_cargo/script.js
+    Script: E13p_vessel_density_cargo/E13p_vessel_density_cargo.js
 References:
   - Name: EU Vessel density map Detailed method
     Key: emodnet_map_method

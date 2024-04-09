@@ -1,8 +1,8 @@
-Name: ports_shipping_aq
-Title: Shipping sources
-EodashIdentifier: C1
+Name: ports_people_aq
+Title: People sources
+EodashIdentifier: C2
 Subtitle: Port Activities, sources of pollution and NO2 levels
-Description: C1_ports_shipping_aq/C1_ports_shipping_aq.md
+Description: C2_ports_people_aq/C2_ports_people_aq.md
 Themes:
   - economy
   - air
@@ -41,4 +41,4 @@ Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
     Database: eodash
-    CollectionId: C1
+    CollectionId: C2

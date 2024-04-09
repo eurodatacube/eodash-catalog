@@ -1,0 +1,9 @@
+Name: meteorological_variables
+Title: C3S meteorological variables
+EodashIdentifier: C3S
+Description: These indicators show global variations for meteorological variables on a monthly basis from 1959 to 2023
+Collections:
+  - CDS1_temperature
+  - CDS2_relative_humidity
+  - CDS3_wind_10m_u
+  - CDS4_wind_10m_v

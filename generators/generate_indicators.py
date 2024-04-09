@@ -546,17 +546,39 @@ def add_to_catalog(collection, catalog, endpoint, data):
     if collection.summaries.lists:
         for sum in collection.summaries.lists:
             link.extra_fields[sum] = collection.summaries.lists[sum]
-    if "Locations" in data or "Subcollections" in data:
-        link.extra_fields["locations"] = True
-    if "Tags" in data:
-        link.extra_fields["tags"] = data["Tags"]
-    if "Satellite" in data:
-        link.extra_fields["satellite"] = data["Satellite"]
-    if "Sensor" in data:
-        link.extra_fields["sensor"] = data["Sensor"]
-    if "Agency" in data:
-        link.extra_fields["agency"] = data["Agency"]
+    
+    add_extra_fields(link, data)
     return link
+
+def add_extra_fields(stac_object, data):
+    if "yAxis" in data:
+        stac_object.extra_fields["yAxis"] = data["yAxis"]
+    if "Themes" in data:
+        stac_object.extra_fields["themes"] = data["Themes"]
+    if "EodashIdentifier" in data:
+        stac_object.extra_fields["subcode"] = data["EodashIdentifier"]
+    if "Locations" in data or "Subcollections" in data:
+        stac_object.extra_fields["locations"] = True
+    if "Tags" in data:
+        stac_object.extra_fields["tags"] = data["Tags"]
+    if "Satellite" in data:
+        stac_object.extra_fields["satellite"] = data["Satellite"]
+    if "Sensor" in data:
+        stac_object.extra_fields["sensor"] = data["Sensor"]
+    if "Agency" in data:
+        stac_object.extra_fields["agency"] = data["Agency"]
+    if "yAxis" in data:
+        stac_object.extra_fields["yAxis"] = data["yAxis"]
+    if "DataSource" in data:
+        if "Spaceborne" in data["DataSource"]:
+            if "Sensor" in data["DataSource"]["Spaceborne"]:
+                stac_object.extra_fields["sensor"] = data["DataSource"]["Spaceborne"]["Sensor"]
+            if "Satellite" in data["DataSource"]["Spaceborne"]:
+                stac_object.extra_fields["satellite"] = data["DataSource"]["Spaceborne"]["Satellite"]
+        if "InSitu" in data["DataSource"]:
+            stac_object.extra_fields["insituSources"] = data["DataSource"]["InSitu"]
+        if "Other" in data["DataSource"]:
+            stac_object.extra_fields["otherSources"] = data["DataSource"]["Other"]
 
 
 def handle_GeoDB_endpoint(config, endpoint, data, catalog):
@@ -715,6 +737,7 @@ def add_example_info(stac_object, data, endpoint, config):
     if "Services" in data:
         for service in data["Services"]:
             if service["Name"] == "Statistical API":
+                service_type = "byoc" if "Type" not in service else service["Type"]
                 stac_object.add_link(
                     Link(
                         rel="example",
@@ -723,7 +746,7 @@ def add_example_info(stac_object, data, endpoint, config):
                         media_type="application/javascript",
                         extra_fields={
                             "example:language": "JavaScript",
-                            "dataId": "%s-%s"%(service["Type"], service["CollectionId"]),
+                            "dataId": "%s-%s"%(service_type, service["CollectionId"]),
                         },
                     )
                 )
@@ -1277,20 +1300,7 @@ def add_collection_information(config, collection, data):
             ),
         )
     # Add extra fields to collection if available
-    if "EodashIdentifier" in data:
-        collection.extra_fields["subcode"] = data["EodashIdentifier"]
-    if "yAxis" in data:
-        collection.extra_fields["yAxis"] = data["yAxis"]
-    if "Themes" in data:
-        collection.extra_fields["themes"] = data["Themes"]
-    if "Tags" in data:
-        collection.extra_fields["keywords"] = data["Tags"]
-    if "Satellite" in data:
-        collection.extra_fields["satellite"] = data["Satellite"]
-    if "Sensor" in data:
-        collection.extra_fields["sensor"] = data["Sensor"]
-    if "Agency" in data:
-        collection.extra_fields["agency"] = data["Agency"]
+    add_extra_fields(collection, data)
 
     if "References" in data:
         generic_counter = 1
