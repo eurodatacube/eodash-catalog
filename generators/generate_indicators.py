@@ -110,9 +110,9 @@ def process_catalog_file(file_path, options):
                 # if collection file exists process it as indicator
                 # collection will be added as single collection to indicator
                 process_indicator_file(config, file_path, catalog)
-            elif file_path := os.path.isfile("../indicators/%s.yaml"%(collection)):
+            elif os.path.isfile("../indicators/%s.yaml"%(collection)):
                 # if not try to see if indicator definition available
-                process_indicator_file(config, file_path, catalog)
+                process_indicator_file(config, "../indicators/%s.yaml"%(collection), catalog)
             else:
                 raise Exception(
                     f'File {collection} in catalog {config["id"]} does not exist in collections or indicators, exiting'
