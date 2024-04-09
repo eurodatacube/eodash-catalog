@@ -2,19 +2,33 @@ Name: shopping_center_activity
 Title: Activity at shopping centers
 EodashIdentifier: E11
 Subtitle: Occupancy of customer parking
-Description: E11_shopping_center_activity/E11.md
+Description: E11_shopping_center_activity/E11_shopping_center_activity.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-1
-Sensor:
-    - placeholder
+  - Copernicus
+  - Mobility
+  - Traffic
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
+  InSitu:
+    - Mobile
 Agency:
-    - ESA
+  - ESA
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: Vodafone
+    Url: https://www.vodafone.com/
+  - Name: Sistema 
+    Url: https://sistema.at/
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E11
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E11

@@ -1,23 +1,28 @@
 Name: agricultural_production_area
 Title: Agricultural production - area
 EodashIdentifier: E10a2
-Subtitle: COVID-19 impact on agricultural production in Europe
-Description: E10a2_agricultural_production_area/E10a2.md
+Subtitle: Agricultural production in Europe
+Description: E10a2_agricultural_production_area/E10a2_agricultural_production_area.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-2
-Sensor:
-    - placeholder
+  - Copernicus
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
 Agency:
-    - ESA
+  - ESA
 Provider:
-    - Name: FAO
-    - Name: WFP
+  - Name: Université catholique de Louvain
+    Url: https://uclouvain.be/en/index.html
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E10a2_tri
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E10a2_tri

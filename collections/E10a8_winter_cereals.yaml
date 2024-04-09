@@ -1,22 +1,33 @@
 Name: winter_cereals
 Title: Winter cereals
 EodashIdentifier: E10a8
-Subtitle: Impact of COVID19 on winter cereals growth and harvest – Spain
-Description: E10a8_winter_cereals/E10a8.md
+Subtitle: Winter cereals growth and harvest – Spain
+Description: E10a8_winter_cereals/E10a8_winter_cereals.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-1
-    - Sentinel-2
-    - Landsat-8
-Sensor:
-    - placeholder
+  - Copernicus
+  - Sen4CAP
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+      - Sentinel-2
+      - Landsat-8
+    Sensor:
+      - C-SAR
+      - MSI
+      - OLI
 Agency:
-    - ESA
+  - ESA
+  - NASA
+  - USGS
+Provider:
+  - Name: FEGA
+    Url: https://www.fega.gob.es/en
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E10a8
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E10a8

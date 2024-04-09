@@ -1,20 +1,33 @@
 Name: harvesting_evolution
 Title: Harvesting evolution
 EodashIdentifier: E10a10
-Subtitle: Monitoring row crops harvesting with satellite data
-Description: E10a10_harvesting_evolution/E10a10.md
+Subtitle: Monitoring row crop harvesting with satellite data
+Description: E10a10_harvesting_evolution/E10a10_harvesting_evolution.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-1
-Sensor:
-    - placeholder
+  - Copernicus
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
 Agency:
-    - ESA
+  - ESA
+Provider:
+  - Name: Vista
+    Url: https://www.vista-geo.de/
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E10a10
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E10a10
+References:
+  - Name: Impact of COVID-19 on harvest of row crop
+    Url: https://eo4society.esa.int/projects/impact-of-covid-19-on-harvest-of-row-crop/ 
+  - Name: YPSILON
+    Url: https://ypsilon.services/#news
+  - Name: Food Security TEP
+    Url: https://foodsecurity-tep.net/node/291
