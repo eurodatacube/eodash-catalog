@@ -22,7 +22,7 @@ Resources:
     Type: OverwriteTimes
     MediaType: image/png
     Styles: [""]
-    LayerId: ID-AMAZONAS_PROJECT 8969
+    LayerId: ID-AMAZONAS_PROJECT
     OverwriteBBox: [-26.476719,-76.07,9.65,-33.593252]
     Times:
       - '2017-01-01'
