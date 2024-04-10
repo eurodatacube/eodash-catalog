@@ -39,3 +39,6 @@ Provider:
     Url: https://marine.copernicus.eu/access-data
   - Name: EUMETSAT
     Url: https://data.eumetsat.int/search?query=
+  - Name: CNR ISMAR
+    Url: https://www.ismar.cnr.it/istituto/
+    
