@@ -20,6 +20,8 @@ Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
     Name: WMS
     Type: OverwriteTimes
+    MediaType: image/png
+    Styles: ''
     LayerId: ID-AMAZONAS_PROJECT 8969,
     OverwriteBBox: [-26.476719,-76.07,9.65,-33.593252]
     Times:
