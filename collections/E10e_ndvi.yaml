@@ -18,7 +18,7 @@ Resources:
     Name: WMS
     Type: Time
     MediaType: image/png
-    Styles: ''
+    Styles: [""]
     LayerId: NDVI-GCOMC-World-Monthly
 Legend: E10e_ndvi/legend.png
 Image: E10e_ndvi/thumbnail.png
