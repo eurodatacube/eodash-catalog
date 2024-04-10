@@ -58,3 +58,5 @@ Services:
 Provider: 
   - Name: Copernicus Marine Service
     Url: https://marine.copernicus.eu/access-data
+  - Name: CNR ISMAR
+    Url: https://www.ismar.cnr.it/istituto/
