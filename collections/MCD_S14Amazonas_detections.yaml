@@ -1,8 +1,8 @@
 Name: S14Amazonas_detections
 Title: ESA Sentinel-1 for Science Amazonas
-EodashIdentifier: sen4ama
-Description: sen4ama/sen4ama.md
+EodashIdentifier: MCD
 Subtitle: Multi-temporal Change Detection
+Description: MCD_S14Amazonas_detections.yaml/MCD_S14Amazonas_detections.yaml.md
 Themes:
   - biomass
 Tags:
