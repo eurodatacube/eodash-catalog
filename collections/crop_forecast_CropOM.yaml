@@ -25,12 +25,18 @@ Provider:
     Url: https://cropom.com
   - Name: Danube Data Cube
     Url: https://ddc.cropom.com
+  - Name: Copernicus Land Monitoring Service
+    Url: https://land.copernicus.eu/en/dataset-catalog
+  - Name: FAO
+    Url: https://www.fao.org/home/en
 License:
   - Name: Commercial license
     Url: https://cropom.com/terms_and_conditions.pdf
 References:
   - Name: Danube Data Cube documentation
     Url: https://doc.cropom.com
+  - Name: AquaCrop
+    Url: https://www.fao.org/aquacrop/en/
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
