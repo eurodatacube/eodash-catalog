@@ -64,6 +64,7 @@ collections:
   - E13m_passenger_boats_port
   - E13n_trucks_port
   - SST_sea_surface_temperature
+  - E13c_ship_detections_algorithm
   - GHS_BUILT-S-R2023A
   - OX_Crude_Oil_Storage_Index
   - OX_EU_Crude_Oil_Storage_Index
