@@ -2,19 +2,42 @@ Name: OX_Crude_Oil_Storage_Index
 Title: Crude Oil Storage Index
 EodashIdentifier: OX
 Subtitle: Level of oil in tanks based on SAR and optical data
-Description: OX_Crude_Oil_Storage_Index/OX.md
+Description: OX_Crude_Oil_Storage_Index/OX_Crude_Oil_Storage_Index.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Copernicus
+  - Human activities
+  - Ports
+  - Maritime
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+      - Sentinel-2
+    Sensor:
+      - C-SAR
+      - MSI
+  InSitu:
+    - AIS
+    - Other
 Agency:
-    - ESA
+  - ESA
+References:
+  - Name: OTAM
+    Url: https://business.esa.int/projects/otam
+  - Name: U.S. Energy Information Administration
+    Url: https://www.eia.gov/international/overview/world
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Crude_Oil_Storage_Index
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Crude_Oil_Storage_Index
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: OILX
+    Url: https://www.oilx.co/
+  - Name: ARESYS
+    Url: https://www.aresys.it/
