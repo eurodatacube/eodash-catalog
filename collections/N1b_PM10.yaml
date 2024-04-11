@@ -1,25 +1,40 @@
 Name: PM10
-Title: Particulate matter 10µm
+Title: Air Quality (PM10 concetrations) map
 EodashIdentifier: N1b_PM10
-Subtitle: Particulate matter 10µm
-Description: N1b_PM10/N1_CAMS.md
+Subtitle: Particulate matter 10µm in Europe - daily average
+Description: N1b_PM10/N1b_PM10.md
 Themes:
   - air
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
-Agency:
+  - Air quality
+  - Copernicus Services
+  - PM10
   - CAMS
+  - Multi-sensors
+  - Open data
+  - Air pollution
+DataSource:
+  Other:
+    - EAC4
+Agency:
+  - European Commission
   - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Legend: N1b_PM10/N1b_PM10_legend.png
+Image: N1b_PM10/N1b_PM10.png
+References:
+  - Name: European Air Quality information in support of the COVID-19 crisis
+    Url: https://atmosphere.copernicus.eu/european-air-quality-information-support-covid-19-crisis
+  - Name: CAMS PM10 maps
+    Url: https://atmosphere.copernicus.eu/charts/packages/cams_covid19/products/air-quality-europe-daily-analysis?base_time=202311280000&layer_name=composition_europe_pm10_analysis_surface&projection=cams_aq_central_europe
 Resources:
   - EndPoint: https://eccharts.ecmwf.int/wms/?token=public
     Name: WMS
     Type: Time
     LayerId: composition_europe_pm10_analysis_surface
-    Styles: [sh_GreensTransparent40_surface_concentration]
-    OverwriteBBox: [-25, 30, 45, 72] # WMS layer description provides incorrect BBox
-Legend: N1b_PM10/cm_legend.png
-Image: N1b_PM10/N1b.png
+Provider: 
+  - Name: Copernicus Atmosphere Monitoring Service
+    Url: https://ads.atmosphere.copernicus.eu/#!/home

@@ -2,43 +2,48 @@ Name: total_suspended_matter
 Title: Total suspended matter maps
 EodashIdentifier: N3a2_TSM
 Subtitle: Total suspended matter description
-Description: N3a2_total_suspended_matter/N3a2.md
+Description: N3a2_total_suspended_matter/N3a2_total_suspended_matter.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Copernicus Services
+  - Suspended matter
+  - CMEMS
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - OLCI
 Agency:
-  - ESA
-Provider:
-  - Name: placeholder
-License: MIT
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://marine.copernicus.eu/user-corner/service-commitments-and-licence
+    Type: text/html
+    Title: Licence to Use Copernicus Products
+Image: N3a2_total_suspended_matter/N3a2_total_suspended_matter.png
+Legend: N3a2_total_suspended_matter/N3a2_TSM_legend.png
 Locations:
   - Identifier: NorthAdriaticTSM
-    Name: North Adriatic
-    Subtitle: Total suspended matter in North Adriatic
+    Name: Total suspended matter in North Adriatic
     Point: [13.02978, 45.19752]
     Bbox: [11.6, 44, 15, 46]
   - Identifier: RhoneDeltaTSM
-    Name: Rhone Delta
-    Subtitle: Total suspended matter in Rhone Delta
+    Name: Total suspended matter in Rhone Delta
     Point: [4.94, 43.4]
     Bbox: [4, 42.8, 6, 44]
   - Identifier: BarcelonaTSM
-    Name: Barcelona
-    Subtitle: Total suspended matter in Barcelona
+    Name: Total suspended matter in Barcelona
     Point: [1.769, 40.985]
     Bbox: [0, 40, 3, 42]
   - Identifier: DanubeDeltaTSM
-    Name: Danube Delta
-    Subtitle: Total suspended matter in Danube Delta
+    Name: Total suspended matter in Danube Delta
     Point: [29.9, 45.05]
     Bbox: [28.5, 44, 31, 46]
 Resources:
-  - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
@@ -49,7 +54,9 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: 698ade22-bc30-44d1-8751-159ee135f998
-    Script: N3a2_total_suspended_matter/script.js
-Image: N3a2_total_suspended_matter/thumbnail.png
-Legend: N3a2_total_suspended_matter/cm_legend.png
-yAxis: "%"
+    Script: N3a2_total_suspended_matter/N3a2_total_suspended_matter.js
+Provider: 
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
+  - Name: CNR ISMAR
+    Url: https://www.ismar.cnr.it/istituto/

@@ -2,22 +2,43 @@ Name: ocean_colour_plankton_mediterranean
 Title: Ocean colour plankton - Mediterranean
 EodashIdentifier: N3c_med
 Subtitle: Ocean colour plankton description
-Description: N3c_ocean_colour_plankton_mediterranean/N3c.md
+Description: N3c_ocean_colour_plankton_mediterranean/N3c_ocean_colour_plankton_mediterranean.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
-Agency:
+  - Water quality
+  - Copernicus Services
+  - Plankton
   - CMEMS
+  - Multisensor
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Aqua
+      - JPSS-1
+      - Suomi NPP
+      - Sentinel-3
+    Sensor:
+      - MODIS
+      - VIIRS
+      - OLCI
+Agency:
+  - European Commission
+  - ECMWF
+Legend: N3c_ocean_colour_plankton_mediterranean/N3c_med_legend.png
+Image: N3c_ocean_colour_plankton_mediterranean/N3c_ocean_colour_plankton_mediterranean.png
+References:
+  - Name: Mediterranean Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (1997-ongoing)
+    Url: https://data.marine.copernicus.eu/product/OCEANCOLOUR_MED_BGC_L3_MY_009_143/description
+  - Name: Mediterranean Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (Near Real Time)
+    Url: https://data.marine.copernicus.eu/product/OCEANCOLOUR_MED_BGC_L3_NRT_009_141/description
 Resources:
   - EndPoint: https://my.cmems-du.eu/thredds/wms/cmems_obs-oc_med_bgc-plankton_my_l4-multi-1km_P1M
     Name: WMS
     Type: Time
     LayerId: CHL
     Styles: [boxfill%2Frainbow]
-Legend: N3c_ocean_colour_plankton_mediterranean/cm_legend.png
-Image: N3c_ocean_colour_plankton_mediterranean/N3c.png
+Provider: 
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
