@@ -1,0 +1,10 @@
+Name: Polar_contributing_from_race
+Title: Contributing datasets from eodashboard
+EodashIdentifier: Polar_contributing_from_race
+Description: ''
+Collections:
+  - CDS1_temperature
+  - CDS3_wind_10m_u
+  - CDS4_wind_10m_v
+  - SITI_IS2SITMOGR4-cog
+  - N12_1_sea_ice_concentration_arctic

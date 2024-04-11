@@ -1,0 +1,13 @@
+Name: topaz5
+Title: TOPAZ5 - Arctic Ocean Physics Analysis and Forecast
+EodashIdentifier: TOPAZ5
+Description: ''
+Collections:
+  - TOPAZ5_P1D_SIAGE
+  - TOPAZ5_P1D_SICONC
+  - TOPAZ5_P1D_SISNTHICK
+  - TOPAZ5_P1D_SITHICK
+  - TOPAZ5_P1D_VXO
+  - TOPAZ5_P1D_VXSI
+  - TOPAZ5_P1D_VYO
+  - TOPAZ5_P1D_VYSI
