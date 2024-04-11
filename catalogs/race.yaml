@@ -21,7 +21,7 @@ collections:
   - E13r_vessel_density_others
   - E1b_vessel_density_timeseries
   - E200_ships_detected
-  - E3_oil_storage_volume
+  - E3_crude_oil_storage
   - E4_intermediate_goods_production
   - E5_steel_inventory_timeseries
   - N1_methane_monitoring
