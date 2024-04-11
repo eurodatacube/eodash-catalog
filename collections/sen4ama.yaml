@@ -1,21 +1,33 @@
-Name: sen4ama
-Title: Sentinel-1 for Science Amazonas
+Name: S14Amazonas_detections
+Title: ESA Sentinel-1 for Science Amazonas
 EodashIdentifier: sen4ama
 Description: sen4ama/sen4ama.md
-Subtitle: Sentinel-1 for Science Amazonas area of forest loss
+Subtitle: Multi-temporal Change Detection
 Themes:
-  - water
+  - biomass
 Tags:
-  - model
-  - photosynthesis
-  - organic material
-  - chlorophyll
-Satellite:
-  - Aqua
-Sensor:
-  - MODIS
+  - Copernicus
+  - Forest disturbance
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
 Agency:
-  - NASA
+  - ESA
+Provider:
+  - Name: GISAT s.r.o
+    Url: https://gisat.cz/
+  - Name: FGI
+    Url: https://www.maanmittauslaitos.fi/en/research
+  - Name: Agresta 
+    Url: https://agresta.org/en/
+  - Name: NMBU
+    Url: https://www.nmbu.no/en
+References:
+  - Name: ESA Sentinel-1 for Science Amazonas
+    Url: https://sen4ama.gisat.cz/
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
     Name: WMS
