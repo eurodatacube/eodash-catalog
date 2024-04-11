@@ -371,7 +371,6 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
         collection.extent.spatial =  SpatialExtent([
             endpoint["OverwriteBBox"],
         ])
-        
 
     add_visualization_info(collection, data, endpoint)
     add_collection_information(config, collection, data)
