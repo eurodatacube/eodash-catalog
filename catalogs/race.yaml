@@ -25,14 +25,14 @@ collections:
   - E4_intermediate_goods_production
   - E5_steel_inventory_timeseries
   - N1_methane_monitoring
-  - N1_city_no2
+  # - N1_city_no2
   - N1_CO
-  - N1_NO2
+  # - N1_NO2
   - N1_SO2
-  - N1b_NO2
-  - N1b_O3
-  - N1b_PM10
-  - N1b_PM25
+  # - N1b_NO2
+  # - N1b_O3
+  # - N1b_PM10
+  # - N1b_PM25
   - N3_regional_water_quality_timeseries
   - N3a2_chl_concentration
   - N3a2_sea_surface_temperature
@@ -52,10 +52,11 @@ collections:
   # - E10a9_agricultural_workers
   # - E10a10_harvesting_evolution
   - APRO_agricultural_production
-  - N1a_pm25_cams
-  - N1b_no2_cams
-  - N1c_pm10_cams
-  - N1d_o3_cams
+  # - N1a_pm25_cams
+  # - N1b_no2_cams
+  # - N1c_pm10_cams
+  # - N1d_o3_cams
+  - AQEL_air_quality_european_level
   - E13e_cargo_boats_port
   - E13f_fishing_boats_port
   - E13g_tanker_boats_port
