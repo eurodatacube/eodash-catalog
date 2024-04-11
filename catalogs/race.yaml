@@ -5,7 +5,7 @@ endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
   - C3S_meteorological_variables
-  - E10a6_harvested_parcels_evolution
+  # - E10a6_harvested_parcels_evolution
   - E11_shopping_center_activity
   - E11_shopping_center_volume
   - E12b_border_crossing_vehicles_timeseries
@@ -44,13 +44,14 @@ collections:
   - WSF_world_settlement_footprint
   - CAQ_ports_air_quality
   - E8_industrial_inventory
-  - E10a1_agricultural_production_productive_area
-  - E10a2_agricultural_production_area
-  - E10a3_agricultural_production_area_change
-  - E10a5_fruit_production
-  - E10a8_winter_cereals
-  - E10a9_agricultural_workers
-  - E10a10_harvesting_evolution
+  # - E10a1_agricultural_production_productive_area
+  # - E10a2_agricultural_production_area
+  # - E10a3_agricultural_production_area_change
+  # - E10a5_fruit_production
+  # - E10a8_winter_cereals
+  # - E10a9_agricultural_workers
+  # - E10a10_harvesting_evolution
+  - APRO_agricultural_production
   - N1a_pm25_cams
   - N1b_no2_cams
   - N1c_pm10_cams
