@@ -1,0 +1,15 @@
+Name: air_quality_european_level
+Title: Air quality in Europe
+EodashIdentifier: AQEL
+Description: Air quality parameters at European level
+Collections:
+  - N1b_NO2
+  - N1b_no2_cams
+  - N1d_o3_cams
+  - N1b_O3
+  - N1c_pm10_cams
+  - N1b_PM10
+  - N1b_PM25
+  - N1a_pm25_cams
+  - N1_NO2
+  - N1_city_no2
