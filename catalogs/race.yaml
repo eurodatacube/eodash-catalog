@@ -25,11 +25,12 @@ collections:
   - E3_crude_oil_storage
   - E4_intermediate_goods_production
   - E5_steel_inventory_timeseries
-  - N1_methane_monitoring
+  # - N1_methane_monitoring
   # - N1_city_no2
-  - N1_CO
+  # - N1_CO
   # - N1_NO2
-  - N1_SO2
+  # - N1_SO2
+  - GLP_global_parameters
   # - N1b_NO2
   # - N1b_O3
   # - N1b_PM10
