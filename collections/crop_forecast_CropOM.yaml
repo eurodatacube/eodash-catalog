@@ -2,6 +2,7 @@ Name: crop_forecast
 Title: CropModel Forecast API
 EodashIdentifier: CROPOM
 Subtitle: Yield and water demand forecast under "what-if" scenarios
+Description: crop_forecast_CropOM/crop_forecast_CropOM.md
 Themes:
   - agriculture
   - economy
