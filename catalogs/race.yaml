@@ -15,11 +15,12 @@ collections:
   - E13b_parked_planes
   - E13c_cruises_impact
   - E13d_flying_planes
-  - E13o_vessel_density_all
-  - E13p_vessel_density_cargo
-  - E13q_vessel_density_tanker
-  - E13r_vessel_density_others
-  - E1b_vessel_density_timeseries
+  # - E13o_vessel_density_all
+  # - E13p_vessel_density_cargo
+  # - E13q_vessel_density_tanker
+  # - E13r_vessel_density_others
+  # - E1b_vessel_density_timeseries
+  - VED_vessel_density
   - E200_ships_detected
   - E3_crude_oil_storage
   - E4_intermediate_goods_production
@@ -57,13 +58,14 @@ collections:
   # - N1c_pm10_cams
   # - N1d_o3_cams
   - AQEL_air_quality_european_level
-  - E13e_cargo_boats_port
-  - E13f_fishing_boats_port
-  - E13g_tanker_boats_port
-  - E13h_tug_boats_port
-  - E13i_search_rescue_port
-  - E13l_pleasure_craft_port
-  - E13m_passenger_boats_port
+  # - E13e_cargo_boats_port
+  # - E13f_fishing_boats_port
+  # - E13g_tanker_boats_port
+  # - E13h_tug_boats_port
+  # - E13i_search_rescue_port
+  # - E13l_pleasure_craft_port
+  # - E13m_passenger_boats_port
+  - BIPS_boats_in_ports
   - E13n_trucks_port
   - SST_sea_surface_temperature
   - E13c_ship_detections_algorithm
