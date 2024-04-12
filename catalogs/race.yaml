@@ -34,13 +34,15 @@ collections:
   # - N1b_O3
   # - N1b_PM10
   # - N1b_PM25
-  - N3_regional_water_quality_timeseries
-  - N3a2_chl_concentration
-  - N3a2_sea_surface_temperature
-  - N3a2_total_suspended_matter
-  - N3c_ocean_colour_plankton_atlantic
-  - N3c_ocean_colour_plankton_black_sea
-  - N3c_ocean_colour_plankton_mediterranean
+  # - N3_regional_water_quality_timeseries
+  # - N3a2_chl_concentration
+  # - N3a2_sea_surface_temperature
+  # - N3a2_total_suspended_matter
+  # - N3c_ocean_colour_plankton_atlantic
+  # - N3c_ocean_colour_plankton_black_sea
+  # - N3c_ocean_colour_plankton_mediterranean
+  - OCVA_ocean_variables
+  - WAQ_water_quality
   - NASAPopulation
   - WSF_world_settlement_footprint
   - CAQ_ports_air_quality
@@ -67,12 +69,13 @@ collections:
   # - E13m_passenger_boats_port
   - BIPS_boats_in_ports
   - E13n_trucks_port
-  - SST_sea_surface_temperature
+  # - SST_sea_surface_temperature
   - E13c_ship_detections_algorithm
   - GHS_BUILT-S-R2023A
   - OX_Crude_Oil_Storage_Index
   - OX_EU_Crude_Oil_Storage_Index
-  - OW_Covid_19_vaccinations
+  # - OW_Covid_19_vaccinations
   - GG_people_mobility_reports
-  - CV_Covid_19_cases
+  # - CV_Covid_19_cases
+  - CV19_covid_19_indicators
   - crop_forecast_CropOM
