@@ -1,0 +1,10 @@
+Name: ocean_variables
+Title: Ocean variables
+EodashIdentifier: OCVA
+Description: These indicators show some of the ocean variables
+Collections:
+  - N3c_ocean_colour_plankton_atlantic
+  - N3c_ocean_colour_plankton_black_sea
+  - N3c_ocean_colour_plankton_mediterranean
+  - SST_sea_surface_temperature
+  - N3a2_sea_surface_temperature

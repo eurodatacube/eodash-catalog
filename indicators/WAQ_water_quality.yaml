@@ -1,0 +1,8 @@
+Name: water_quality
+Title: Water quality
+EodashIdentifier: WAQ
+Description: These indicators show the water quality in several locations
+Collections:
+  - N3a2_chl_concentration
+  - N3_regional_water_quality_timeseries
+  - N3a2_total_suspended_matter
