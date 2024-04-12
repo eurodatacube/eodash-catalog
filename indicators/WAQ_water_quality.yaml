@@ -6,3 +6,5 @@ Collections:
   - N3a2_chl_concentration
   - N3_regional_water_quality_timeseries
   - N3a2_total_suspended_matter
+  - SST_sea_surface_temperature
+  - N3a2_sea_surface_temperature
