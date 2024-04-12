@@ -376,7 +376,6 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     add_collection_information(config, collection, data)
     add_to_catalog(collection, catalog, endpoint, data)
 
-
 def handle_SH_endpoint(config, endpoint, data, catalog):
     token = get_SH_token()
     headers = {"Authorization": "Bearer %s"%token}
