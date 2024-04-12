@@ -1,0 +1,10 @@
+Name: vessel_density
+Title: Vessel density in Europe
+EodashIdentifier: VED
+Description: These indicators show maps representing the number of ship presence time on a 1 km grid for every month from 2017-2021
+Collections:
+  - E13o_vessel_density_all
+  - E1b_vessel_density_timeseries
+  - E13q_vessel_density_tanker
+  - E13r_vessel_density_others
+  - E13p_vessel_density_cargo

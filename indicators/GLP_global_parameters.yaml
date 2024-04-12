@@ -1,0 +1,8 @@
+Name: global_parameters
+Title: Global parameters
+EodashIdentifier: GLP
+Description: These indicators show some global parameters
+Collections:
+  - N1_CO
+  - N1_methane_monitoring
+  - N1_SO2

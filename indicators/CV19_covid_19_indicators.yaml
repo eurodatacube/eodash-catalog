@@ -1,0 +1,7 @@
+Name: covid_19_indicators
+Title: Covid-19 indicators
+EodashIdentifier: CV19
+Description: These indicators show some paramenters related to the Covid-19 pandemic
+Collections:
+  - CV_Covid_19_cases
+  - OW_Covid_19_vaccinations

@@ -18,11 +18,8 @@ DataSource:
     - AIS
 Agency:
   - ESA
-Provider:
-  - Name: EMODnet
-    Url: https://emodnet.ec.europa.eu/en
 Image: E13p_vessel_density_cargo/E13p_vessel_density_cargo.png
-Legend: E13o_vessel_density_all/E13p_legend.png
+Legend: E13p_vessel_density_cargo/E13p_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
