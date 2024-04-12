@@ -371,7 +371,6 @@ def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
         collection.extent.spatial =  SpatialExtent([
             endpoint["OverwriteBBox"],
         ])
-        
 
     add_visualization_info(collection, data, endpoint)
     add_collection_information(config, collection, data)
@@ -954,6 +953,8 @@ def add_visualization_info(stac_object, data, endpoint, file_url=None, time=None
                 vmax,
                 cbar,
             )
+            if time is not None:
+                target_url = target_url.replace('{time}', time)
             stac_object.add_link(
             Link(
                 rel="xyz",
@@ -1190,6 +1191,7 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
         else:
             link.extra_fields["start_datetime"] = item.properties["start_datetime"]
             link.extra_fields["end_datetime"] = item.properties["end_datetime"]
+        add_visualization_info(item, data, endpoint, time=t)
     unit = variables.get(endpoint.get("Variable")).get('unit')
     if unit and "yAxis" not in data:
         data["yAxis"] = unit

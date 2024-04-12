@@ -2,21 +2,49 @@ Name: sea_surface_temperature_time_series
 Title: Sea surface temperature time series
 EodashIdentifier: SST
 Subtitle: Key ocean monitoring indicator
-Description: SST_sea_surface_temperature/SST.md
+Description: SST_sea_surface_temperature/SST_sea_surface_temperature.md
 Themes:
-    - water
+  - water
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-3
-    - MODIS-Aqua
-    - VIIRS-NPP
-Sensor:
-    - placeholder
+  - Water quality
+  - Copernicus Services
+  - Surface temperature
+  - CMEMS
+  - Multisensor
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Metop-B
+      - JPSS-1
+      - Suomi NPP
+      - Sentinel-3
+      - Other
+    Sensor:
+      - AVHRR
+      - VIIRS
+      - SLSTR
 Agency:
-    - ESA
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://marine.copernicus.eu/user-corner/service-commitments-and-licence
+    Type: text/html
+    Title: Licence to Use Copernicus Products
+References:
+  - Name: Mediterranean Sea High Resolution and Ultra High Resolution Sea Surface Temperature Analysis
+    Url: https://data.marine.copernicus.eu/product/SST_MED_SST_L4_NRT_OBSERVATIONS_010_004/description
+  - Name: Black Sea High Resolution and Ultra High Resolution Sea Surface Temperature Analysis
+    Url: https://data.marine.copernicus.eu/product/SST_BS_SST_L4_NRT_OBSERVATIONS_010_006/description
+  - Name: Mediterranean Sea - High Resolution L4 Sea Surface Temperature Reprocessed
+    Url: https://data.marine.copernicus.eu/product/SST_MED_SST_L4_REP_OBSERVATIONS_010_021/description
+  - Name: Black Sea - High Resolution L4 Sea Surface Temperature Reprocessed
+    Url: https://data.marine.copernicus.eu/product/SST_BS_SST_L4_REP_OBSERVATIONS_010_022/description
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Sea_Surface_Temperature_Timeseries
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Sea_Surface_Temperature_Timeseries
+Provider: 
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
