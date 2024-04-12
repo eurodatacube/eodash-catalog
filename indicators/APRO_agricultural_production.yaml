@@ -1,0 +1,13 @@
+Name: agricultural_production
+Title: Agricultural production in Europe
+EodashIdentifier: APRO
+Description: These indicators show some agrucultural production parameters in various European locations
+Collections:
+  - E10a2_agricultural_production_area
+  - E10a3_agricultural_production_area_change
+  - E10a1_agricultural_production_productive_area
+  - E10a9_agricultural_workers
+  - E10a5_fruit_production
+  - E10a6_harvested_parcels_evolution
+  - E10a10_harvesting_evolution
+  - E10a8_winter_cereals

@@ -5,7 +5,7 @@ endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
   - C3S_meteorological_variables
-  - E10a6_harvested_parcels_evolution
+  # - E10a6_harvested_parcels_evolution
   - E11_shopping_center_activity
   - E11_shopping_center_volume
   - E12b_border_crossing_vehicles_timeseries
@@ -21,18 +21,18 @@ collections:
   - E13r_vessel_density_others
   - E1b_vessel_density_timeseries
   - E200_ships_detected
-  - E3_oil_storage_volume
+  - E3_crude_oil_storage
   - E4_intermediate_goods_production
   - E5_steel_inventory_timeseries
   - N1_methane_monitoring
-  - N1_city_no2
+  # - N1_city_no2
   - N1_CO
-  - N1_NO2
+  # - N1_NO2
   - N1_SO2
-  - N1b_NO2
-  - N1b_O3
-  - N1b_PM10
-  - N1b_PM25
+  # - N1b_NO2
+  # - N1b_O3
+  # - N1b_PM10
+  # - N1b_PM25
   - N3_regional_water_quality_timeseries
   - N3a2_chl_concentration
   - N3a2_sea_surface_temperature
@@ -44,17 +44,19 @@ collections:
   - WSF_world_settlement_footprint
   - CAQ_ports_air_quality
   - E8_industrial_inventory
-  - E10a1_agricultural_production_productive_area
-  - E10a2_agricultural_production_area
-  - E10a3_agricultural_production_area_change
-  - E10a5_fruit_production
-  - E10a8_winter_cereals
-  - E10a9_agricultural_workers
-  - E10a10_harvesting_evolution
-  - N1a_pm25_cams
-  - N1b_no2_cams
-  - N1c_pm10_cams
-  - N1d_o3_cams
+  # - E10a1_agricultural_production_productive_area
+  # - E10a2_agricultural_production_area
+  # - E10a3_agricultural_production_area_change
+  # - E10a5_fruit_production
+  # - E10a8_winter_cereals
+  # - E10a9_agricultural_workers
+  # - E10a10_harvesting_evolution
+  - APRO_agricultural_production
+  # - N1a_pm25_cams
+  # - N1b_no2_cams
+  # - N1c_pm10_cams
+  # - N1d_o3_cams
+  - AQEL_air_quality_european_level
   - E13e_cargo_boats_port
   - E13f_fishing_boats_port
   - E13g_tanker_boats_port
