@@ -3,6 +3,8 @@ Title: Forest Fires daily - EPA Methane Emissions 2012
 EodashIdentifier: EPA_Forest_fire_Methane_Daily
 Subtitle: Daily emissions from sector 5 from forest fires for 2012, gridded.
 Description: EPA_Forest_fire_Methane_Daily/EPA_Forest_fire_Methane_Daily.md
+Themes:
+  - biomass
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
