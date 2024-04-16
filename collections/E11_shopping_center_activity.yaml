@@ -13,9 +13,9 @@ Tags:
 DataSource:
   Spaceborne:
     Satellite:
-      - Sentinel-2
+      - Sentinel-1
     Sensor:
-      - MSI
+      - C-SAR
   InSitu:
     - Mobile
 Agency:
@@ -25,8 +25,6 @@ Provider:
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
   - Name: Vodafone
     Url: https://www.vodafone.com/
-  - Name: Sistema 
-    Url: https://sistema.at/
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
