@@ -1,7 +1,6 @@
 Name: N2_CO2_jaxa_gosat
-Title: CO2 JAXA GOSAT
+Title: "GOSAT - Carbon Dioxide"
 EodashIdentifier: N2_CO2_jaxa_gosat
-Subtitle: XCO2 JAXA GOSAT Cairo
 Description: N2_CO2_jaxa_gosat/N2.md
 Themes:
   - atmosphere
