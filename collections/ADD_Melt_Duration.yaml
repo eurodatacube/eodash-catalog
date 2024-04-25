@@ -17,13 +17,10 @@ Provider:
   - Name: Sentinel-Hub
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
-    Name: WMS
-    Type: OverwriteTimes
     LayerId: VIS_4D_ANTARTICA_DAYS
     OverwriteBBox: [-100, -75, -70, -68]
-    Disable_Items: true
-    DateTimeInterval:
-      Start: "2007-01-02T00:00:00"
-      End: "2021-06-30T00:00:00"
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 187112e0-de59-46f1-af76-86d7aec33c9e
 Image: ADD_Melt_Duration/thumbnail.png
 Legend: ADD_Melt_Duration/legend.png

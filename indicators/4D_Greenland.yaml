@@ -1,0 +1,9 @@
+Name: 4D_Greenland
+Title: 4D_Greenland Datasets
+EodashIdentifier: 4D_Greenland
+Description: ''
+Collections:
+  - 4D_Greenland_Duration
+  - 4D_Greenland_Melt_Onset
+  - 4D_Greenland_Melt_Season_End
+  - 4D_Greenland_Meltmap

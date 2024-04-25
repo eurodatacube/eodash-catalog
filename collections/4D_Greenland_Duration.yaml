@@ -1,0 +1,25 @@
+Name: 4D_Greenland_Melt_Duration
+Title: Greenland Melt Duration
+EodashIdentifier: 4D_Greenland_Melt_Duration
+Subtitle: Greenland Melt Duration from 4D Greenland
+Description: 4D_Greenland_Melt_Duration/4D_Greenland_Melt_Duration.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    LayerId: VIS_4D_GREENLAND_DAYS
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 6868b841-2c93-4a7d-bf0b-2f11c24bf9dd
+Image: 4D_Greenland_Melt_Duration/thumbnail.png
+Legend: 4D_Greenland_Melt_Duration/legend.png

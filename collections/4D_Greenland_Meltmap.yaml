@@ -1,0 +1,29 @@
+Name: 4D_Greenland_Meltmap
+Title: Greenland Meltmap
+EodashIdentifier: 4D_Greenland_Meltmap
+Subtitle: Greenland Meltmap from 4D Greenland
+Description: 4D_Greenland_Meltmap/4D_Greenland_Meltmap.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
+    Type: OverwriteTimes
+    LayerId: VIS_GREENLAND_MELTMAP
+    OverwriteBBox: [-89.314518, 58.787273, 7.554587, 83.946756]
+    Disable_Items: true
+    DateTimeInterval:
+      Start: "2007-01-02T00:00:00"
+      End: "2021-12-28T00:00:00"
+Image: 4D_Greenland_Meltmap/thumbnail.png
+Legend: 4D_Greenland_Meltmap/legend.png

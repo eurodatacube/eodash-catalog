@@ -17,13 +17,10 @@ Provider:
   - Name: Sentinel-Hub
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
-    Name: WMS
-    Type: OverwriteTimes
     LayerId: VIS_4D_ANTARTICA_END
     OverwriteBBox: [-100, -75, -70, -68]
-    Disable_Items: true
-    DateTimeInterval:
-      Start: "2007-01-02T00:00:00"
-      End: "2021-02-01T00:00:00"
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: c46a325b-9509-40d2-b0bd-50d73ef86f68
 Image: ADD_Melt_Season_End/thumbnail.png
 Legend: ADD_Melt_Season_End/legend.png

@@ -1,0 +1,25 @@
+Name: 4D_Greenland_Melt_Season_End
+Title: Greenland Melt Season End
+EodashIdentifier: 4D_Greenland_Melt_Season_End
+Subtitle: Greenland Melt Season End from 4D Greenland
+Description: 4D_Greenland_Melt_Season_End/4D_Greenland_Melt_Season_End.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    LayerId: VIS_4D_GREENLAND_END
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 7bbcfb29-3260-466d-bdb6-da517019edd9
+Image: 4D_Greenland_Melt_Season_End/thumbnail.png
+Legend: 4D_Greenland_Melt_Season_End/legend.png
