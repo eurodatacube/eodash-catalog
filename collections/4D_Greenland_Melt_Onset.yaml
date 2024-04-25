@@ -1,0 +1,25 @@
+Name: 4D_Greenland_Melt_Onset
+Title: Greenland Melt Onset
+EodashIdentifier: 4D_Greenland_Melt_Onset
+Subtitle: Greenland Melt Onset from 4D Greenland
+Description: 4D_Greenland_Melt_Onset/4D_Greenland_Melt_Onset.md
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - ASCAT
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: Sentinel-Hub
+Resources:
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    LayerId: VIS_4D_GREENLAND_ONSET
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: b110e14f-fb03-4143-ba57-587bd91a40be
+Image: 4D_Greenland_Melt_Onset/thumbnail.png
+Legend: 4D_Greenland_Melt_Onset/legend.png
