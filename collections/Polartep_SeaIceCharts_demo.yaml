@@ -1,0 +1,25 @@
+Name: Polartep_SeaIceCharts_demo
+Title: Sea Ice Charts Geometries
+EodashIdentifier: Polartep_SeaIceCharts_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Legend: Polartep_SeaIceCharts_demo/legend.png
+Image: Polartep_SeaIceCharts_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-50, 59, -39, 65]
+    Type: OverwriteTimes
+    Times:
+      - "2024-01-16"
+      - "2024-01-18"
+      - "2024-01-19"
