@@ -1,0 +1,20 @@
+Name: Polartep_S1_dedl_demo
+Title: Destination Earth Data Lake Sentinel 1 GRD
+EodashIdentifier: Polartep_S1_dedl_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - Sentinel-1
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+# Legend: Polartep_S1_dedl_demo/cm_legend.png
+Image: Polartep_S1_dedl_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-4, 59.5, 0.5, 61.3]

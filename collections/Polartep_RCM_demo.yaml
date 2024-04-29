@@ -1,0 +1,37 @@
+Name: Polartep_RCM_demo
+Title: Radarsat Constellation Mission Sigma0
+EodashIdentifier: Polartep_RCM_demo
+Description: ''
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - RADARSAT
+Sensor:
+  - placeholder
+Agency:
+  - CSA
+# Legend: Polartep_RCM_demo/legend.png
+Image: Polartep_RCM_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-112, 45, -11, 75]
+    Type: OverwriteTimes
+    Times:
+      - '2021-05-01'
+      - '2021-05-04'
+      - '2021-05-05'
+      - '2021-05-06'
+      - '2021-05-08'
+      - '2021-05-09'
+      - '2021-05-10'
+      - '2021-05-11'
+      - '2021-05-12'
+      - '2021-05-13'
+      - '2021-05-17'
+      - '2021-05-18'
+      - '2021-05-22'
+      - '2021-05-23'
+      - '2021-05-25'
