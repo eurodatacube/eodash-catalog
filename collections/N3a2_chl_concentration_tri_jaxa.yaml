@@ -49,7 +49,7 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: 198aa13a-b0c0-4b78-8f69-e08fc58551a7
-    Script: N3a2_chl_concentration/script.js
+    Script: N3a2_chl_concentration_tri_jaxa/script.js
 Image: N3a2_chl_concentration_tri/thumbnail.png
 Legend: N3a2_chl_concentration_tri/legend.png
 yAxis: "%"

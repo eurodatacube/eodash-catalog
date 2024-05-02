@@ -49,7 +49,7 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: 925b4bf6-ca1b-45df-a523-88f30823ab07
-    Script: N3a2_total_suspended_matter_tri/script.js
+    Script: N3a2_total_suspended_matter_tri_jaxa/script.js
 Image: N3a2_total_suspended_matter_tri/thumbnail.png
 Legend: N3a2_total_suspended_matter_tri/legend.png
 yAxis: "%"
