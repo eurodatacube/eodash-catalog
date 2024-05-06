@@ -1,14 +1,15 @@
-Name: search_rescue_port
-Title: Search and Rescue boats in ports
-EodashIdentifier: E13i
+Name: passenger_boats_port
+Title: Passenger boats in ports
+EodashIdentifier: E13m
 Subtitle: Changes in the number of boats in ports
-Description: E13i_search_rescue_port/E13i_search_rescue_port.md
+Description: E13m_maritime_traffic_passenger/E13m_maritime_traffic_passenger.md
 Themes:
   - economy
 Tags:
   - Ports
   - Maritime
   - Traffic
+  - Ships
 DataSource:
   InSitu:
     - AIS
@@ -21,7 +22,7 @@ Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
     Database: eodash
-    CollectionId: E13i
+    CollectionId: E13m
 References:
   - Name: AIS data
     Url: https://www.imo.org/en/OurWork/Safety/Pages/AIS.aspx
