@@ -43,6 +43,16 @@ Locations:
     Name: Sea surface temperature in Danube Delta
     Point: [29.9, 45.05]
     Bbox: [28.5, 44, 31, 46]
+  - Identifier: TagusDelta
+    Name: Tagus Delta
+    Subtitle: Sea surface temperature in Tagus Delta
+    Point: [-9.32, 38.66]
+    Bbox: [-10.45, 37.5, -8.75, 39.51]
+  - Identifier: ElbeDelta
+    Name: Elbe Delta
+    Subtitle: Sea surface temperature in Tagus Delta
+    Point: [8.408, 53.94]
+    Bbox: [ 6.99, 53.35, 9.25, 54.41]
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
