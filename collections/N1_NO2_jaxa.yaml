@@ -2,7 +2,7 @@ Name: N1_NO2_jaxa
 Title: NO2 JAXA
 EodashIdentifier: N1_NO2_jaxa
 Subtitle: NO2 TROPOMI JAXA Cairo
-Description: N1_NO2/N1.md
+Description: N1_NO2_trilateral/N1.md
 Themes:
   - atmosphere
 Tags:

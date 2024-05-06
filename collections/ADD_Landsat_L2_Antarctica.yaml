@@ -2,7 +2,7 @@ Name: ADD_Landsat_L2_Antarctica
 Title: Landsat L2 Cloud free Antarctica
 EodashIdentifier: ADD_Landsat_L2_Antarctica
 Subtitle: Selected low-cloud-cover Landsat Collection-2 Level-2 Surface Reflectance scenes over selected area of Antarctica.
-Description: ADD_L2_Pine_Island/ADD_L2_Pine_Island.md
+Description: ADD_Pine_Island_Landsat_L2/ADD_Pine_Island_Landsat_L2.md
 Themes:
   - cryosphere
 Tags:

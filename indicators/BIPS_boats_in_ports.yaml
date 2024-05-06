@@ -4,9 +4,9 @@ EodashIdentifier: BIPS
 Description: These indicators show the changes in the number of boats in ports
 Collections:
   - E13f_fishing_boats_port
-  - E13h_tug_boats_port
+  - E13h_maritime_traffic_tug
   - E13e_cargo_boats_port
   - E13g_tanker_boats_port
-  - E13m_passenger_boats_port
-  - E13l_pleasure_craft_port
-  - E13i_search_rescue_port
+  - E13m_maritime_traffic_passenger
+  - E13l_maritime_traffic_pleasure_craft
+  - E13i_maritime_traffic_search_rescue

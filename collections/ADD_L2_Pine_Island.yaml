@@ -2,7 +2,7 @@ Name: ADD_L2_Pine_Island
 Title: Pine Island Landsat L2
 EodashIdentifier: ADD_L2_Pine_Island
 Subtitle: Pine Island Landsat L2 low-cloud scenes
-Description: ADD_L2_Pine_Island/ADD_L2_Pine_Island.md
+Description: ADD_Pine_Island_Landsat_L2/ADD_Pine_Island_Landsat_L2.md
 Themes:
   - cryosphere
 Tags:
