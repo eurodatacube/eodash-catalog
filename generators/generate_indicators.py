@@ -684,7 +684,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             # TODO: should we use the name as id? it provides much more
             # information in the clients
             collection.id = location["Identifier"]
-            collection.title = location["Name"],
+            collection.title = location["Name"]
             # See if description should be overwritten
             if "Description" in location:
                 collection.description = location["Description"]
