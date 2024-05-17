@@ -1,19 +1,30 @@
 Name: FNF_Palsar
 Title: PALSAR-2/PALSAR Forest/Non-Forest Map
 EodashIdentifier: FNF
-Description: FNF_Palsar/FNF.md
+Description: FNF_Palsar/FNF_Palsar.md
 Themes:
   - biomass
 Tags:
-  - placeholder
-Satellite:
-  - ALOS
-  - ALOS-2
-Sensor:
-  - PALSAR
-  - PALSAR-2
+  - Multi-sensors
+  - Forests
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+    - ALOS
+    - ALOS-2
+    Sensor:
+    - PALSAR
+    - PALSAR-2
 Agency:
   - JAXA
+Legend: FNF_Palsar/FNF_legend.png
+Image: FNF_Palsar/FNF_Palsar.png
+References:
+  - Name: Dataset page
+    Url: https://www.eorc.jaxa.jp/ALOS/en/dataset/fnf_e.htm
+  - Name: Global 25m Resolution PALSAR-2 Global Forest/Non-forest Map Ver.2.0.0 Dataset Description
+    Url: https://www.eorc.jaxa.jp/ALOS/en/dataset/pdf/DatasetDescription_PALSAR2_FNF_V200.pdf
 Resources:
   - EndPoint: https://ogcpreview1.restecmap.com/examind/api/WS/wmts/JAXA_WMTS_Preview
     Name: JAXA_WMTS_PALSAR
@@ -21,5 +32,6 @@ Resources:
     OverwriteBBox: [-180, -60, 180, 85]
     LayerId: FNF-PALSAR2-World-{time}-Yearly
     Times: ['2017', '2018', '2019', '2020']
-Legend: FNF_Palsar/legend.png
-Image: FNF_Palsar/thumbnail.png
+Provider:
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
