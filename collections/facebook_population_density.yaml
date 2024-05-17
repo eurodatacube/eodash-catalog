@@ -1,24 +1,31 @@
 Name: facebook_population_density
 Title: Population Density (Meta)
 EodashIdentifier: FB
-Description: facebook_population_density/FB.md
+Description: facebook_population_density/facebook_population_density.md
 Themes:
   - economy
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Human settlement
+  - Human activities
+  - Open data
+DataSource:
+  Other:
+    - Multi-sensors
 Agency:
   - NASA
-Legend: facebook_population_density/legend.png
+Legend: facebook_population_density/FB_legend.png
+Image: facebook_population_density/facebook_population_density.png
+References:
+  - Name: High Resolution Population Density Maps + Demographic Estimates
+    Url: https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
-    Type: cog
     Name: VEDA
+    Type: cog
     CollectionId: facebook_population_density
     ColormapName: ylorrd
     Rescale: [0, 70]
     Bidx: 1
-Image: facebook_population_density/thumbnail.png
+Provider:
+  - Name: Meta
+    Url: https://dataforgood.facebook.com/dfg/about
