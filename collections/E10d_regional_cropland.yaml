@@ -1,24 +1,40 @@
 Name: regional_cropland
 Title: Regional cropland
 EodashIdentifier: E10d
-Description: E10d_regional_cropland/E10d.md
+Description: E10d_regional_cropland/E10d_regional_cropland.md
 Themes:
   - agriculture
 Tags:
-  - covid
-  - slowdown
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+    - Sentinel-2
+    - Dove
+    - Landsat
+    Sensor:
+    - MSI
+    - PlanetScope
+    - OLI
 Agency:
   - NASA
+  - USGS
+  - ESA
+Legend: E10d_regional_cropland/E10d_legend.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
     Name: VEDA
     CollectionId: togo-agriculture-covid-19
-    Bidx: 1
     ColormapName: magma
     Rescale: [0,1]
-Legend: E10d_regional_cropland/legend.png
+    Bidx: 1
+Provider:
+  - Name: Planet Inc.
+    Url: https://www.planet.com/
+  - Name: ESA
+    Url: https://www.esa.int/
+  - Name: NASA
+    Url: https://www.nasa.gov/
+  - Name: USGS
+    Url: https://www.usgs.gov/
