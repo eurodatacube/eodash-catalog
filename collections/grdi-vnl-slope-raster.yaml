@@ -2,24 +2,36 @@ Name: grdi-vnl-slope-raster
 Title: GRDI VNL Slope Constituent Raster
 EodashIdentifier: GRDI4
 Subtitle: GRDI VNL Slope Constituent Raster
-Description: grdi-vnl-slope-raster/GRDI4.md
+Description: grdi-vnl-slope-raster/grdi-vnl-slope-raster.md
 Themes:
   - economy
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - MODIS
+  - Human activities
+  - Open data
+DataSource:
+  Other:
+    - Multi-sensors
 Agency:
   - NASA
+Citation:
+  Citation: |
+    Center for International Earth Science Information Network - CIESIN - Columbia University. 2022. Global Gridded Relative Deprivation Index (GRDI), v1. Palisades, NY. NASA Socioeconomic Data and Applications Center (SEDAC).
+  DOI: 10.7927/3xxe-ap97
+Legend: grdi-v1-built/GRDI4_legend.png
+Image: grdi-vnl-slope-raster/grdi-vnl-slope-raster.png
+References:
+  - Name: Data access
+    Url: https://sedac.ciesin.columbia.edu/data/set/povmap-grdi-v1
+  - Name: Dataset Description and documentation
+    Url: https://doi.org/10.7927/xwf1-k532
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
+    Name: VEDA  
     Type: cog
-    Name: VEDA
     CollectionId: grdi-vnl-slope-raster
     ColormapName: viridis
     Rescale: [0.0,100.0]
     Bidx: 1
-Legend: grdi-v1-built/cm_legend.png
-Image: grdi-vnl-slope-raster/thumbnail.png
+Provider:
+  - Name: NASA
+    Url: https://www.nasa.gov/
