@@ -379,6 +379,10 @@ def handle_geojson_source(config, endpoint, data, catalog):
                 }
             )
             item.add_link(style_link)
+            # TODO: having the style at collection level can be nice, but it
+            # makes only sense if it is a constant style for all items, should 
+            # we keep this?
+            collection.add_link(style_link)
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t["Time"]
             link.extra_fields["vector_data"] = "%s%s"%(endpoint["EndPoint"], t["File"])
