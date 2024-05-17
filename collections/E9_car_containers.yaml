@@ -2,22 +2,31 @@ Name: car_containers
 Title: Car containers
 EodashIdentifier: E9
 Subtitle: Change in the number of new car at automobile factory
-Description: E9_car_containers/E9.md
+Description: E9_car_containers/E9_car_containers.md
 Themes:
-    - economy
+  - economy
 Tags:
-    - placeholder
-Satellite:
+  - Mobility
+  - SAR
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+    - ALOS-2
     - Sentinel-1
-Sensor:
-    - placeholder
+    Sensor:
+    - PALSAR-2
+    - C-SAR
 Agency:
-    - ESA
-Provider:
-    - Name: placeholder
+  - JAXA  
+  - ESA
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E9_tri
-
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E9_tri
+Provider:
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
+  - Name: ESA
+    Url: https://www.esa.int/
