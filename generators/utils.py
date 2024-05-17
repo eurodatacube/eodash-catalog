@@ -43,6 +43,30 @@ def create_geojson_point(lon, lat):
 
     return feature_collection
 
+def create_geojson_from_bbox(bbox):
+    coordinates = [
+        [bbox[0], bbox[1]],
+        [bbox[2], bbox[1]],
+        [bbox[2], bbox[3]],
+        [bbox[0], bbox[3]],
+        [bbox[0], bbox[1]],
+    ]
+    polygon = {
+        "type": "Polygon",
+        "coordinates": [coordinates]
+    }
+
+    feature = {
+        "type": "Feature",
+        "geometry": polygon,
+        "properties": {}
+    }
+    feature_collection = {
+        "type": "FeatureCollection",
+        "features": [feature]
+    }
+    return feature_collection
+
 
 def retrieveExtentFromWMSWMTS(capabilties_url, layer, wmts=False):
     times = []

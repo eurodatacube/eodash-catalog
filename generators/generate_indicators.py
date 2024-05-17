@@ -20,6 +20,7 @@ from dateutil import parser
 from sh_endpoint import get_SH_token
 from utils import (
     create_geojson_point,
+    create_geojson_from_bbox,
     retrieveExtentFromWMSWMTS,
     generateDateIsostringsFromInterval,
     RaisingThread,
@@ -226,6 +227,8 @@ def process_collection_file(config, file_path, catalog):
                         handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
+                    elif resource["Name"] == "GeoJSON source":
+                        handle_geojson_source(config, resource, data, catalog)
                     else:
                         raise ValueError("Type of Resource is not supported")
         elif "Subcollections" in data:
@@ -342,6 +345,36 @@ def handle_collection_only(config, endpoint, data, catalog):
                 link.extra_fields["datetime"] = t
         add_collection_information(config, collection, data)
         add_to_catalog(collection, catalog, None, data)
+
+def handle_geojson_source(config, endpoint, data, catalog):
+    collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
+    if ("TimeEntries" in endpoint) and len(endpoint["TimeEntries"]) > 0:
+        for t in endpoint["TimeEntries"]:
+            item = Item(
+                id = t["Time"],
+                bbox=endpoint.get("Bbox"),
+                properties={},
+                geometry = create_geojson_from_bbox(endpoint.get("Bbox")),
+                datetime = parser.isoparse(t["Time"]),
+                assets={
+                    "vector_data": Asset(
+                        href="%s/%s"%(endpoint["EndPoint"], t["File"]),
+                        roles=["data"],
+                        extra_fields={
+                            "style": "%s/%s"%(
+                                config["assets_endpoint"],
+                                endpoint["Style"]
+                            )
+                        }
+                    ) 
+                }
+            )
+            link = collection.add_item(item)
+            link.extra_fields["datetime"] = t["Time"]
+    add_collection_information(config, collection, data)
+    collection.update_extent_from_items()
+    add_to_catalog(collection, catalog, None, data)
+
 
 def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
     collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
