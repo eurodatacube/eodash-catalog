@@ -358,8 +358,9 @@ def handle_geojson_source(config, endpoint, data, catalog):
                 datetime = parser.isoparse(t["Time"]),
                 assets={
                     "vector_data": Asset(
-                        href="%s/%s"%(endpoint["EndPoint"], t["File"]),
+                        href="%s%s"%(endpoint["EndPoint"], t["File"]),
                         roles=["data"],
+                        media_type="application/geo+json",
                         extra_fields={
                             "style": "%s/%s"%(
                                 config["assets_endpoint"],
@@ -369,11 +370,21 @@ def handle_geojson_source(config, endpoint, data, catalog):
                     ) 
                 }
             )
+            style_link = Link(
+                rel="style",
+                target="%s/%s"%(config["assets_endpoint"], endpoint["Style"]),
+                media_type="text/vector-styles",
+                extra_fields={
+                    "asset:keys": ["vector_data"]
+                }
+            )
+            item.add_link(style_link)
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t["Time"]
+            link.extra_fields["vector_data"] = "%s%s"%(endpoint["EndPoint"], t["File"])
     add_collection_information(config, collection, data)
     collection.update_extent_from_items()
-    add_to_catalog(collection, catalog, None, data)
+    add_to_catalog(collection, catalog, endpoint, data)
 
 
 def handle_WMS_endpoint(config, endpoint, data, catalog, wmts=False):
