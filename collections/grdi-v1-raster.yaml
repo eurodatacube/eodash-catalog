@@ -17,7 +17,7 @@ Citation:
   Citation: |
     Center for International Earth Science Information Network - CIESIN - Columbia University. 2022. Global Gridded Relative Deprivation Index (GRDI), v1. Palisades, NY. NASA Socioeconomic Data and Applications Center (SEDAC).
   DOI: 10.7927/3xxe-ap97
-Legend: grdi-v1-built/GRDI2_legend.png
+Legend: grdi-v1-built/cm_legend.png
 Image: grdi-v1-raster/grdi-v1-raster.png
 References:
   - Name: Data access
