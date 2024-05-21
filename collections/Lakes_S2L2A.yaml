@@ -5,16 +5,33 @@ Description: Lakes_S2L2A/Lakes_S2L2A.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel 2
-Sensor:
-  - placeholder
+  - Sentinel
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+    - Sentinel-2
+    Sensor:
+    - MSI
 Agency:
+  - European Commission
   - ESA
-Provider:
-    - Name: placeholder
-License: MIT
+Image: Lakes_S2L2A/thumbnail.png
+References:
+  - Name: Copernicus Sentinel-2 mission
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-2
+  - Name: ESA Sentinel-2 Mission Guide
+    Url: https://sentiwiki.copernicus.eu/web/s2-mission
+  - Name: ESA Sentinel-2 Data Products
+    Url: https://sentinel.esa.int/web/sentinel/missions/sentinel-2/data-products
+  - Name: Sentinel-Hub API and data Documentation
+    Url: https://docs.sentinel-hub.com/api/latest/data/sentinel-2-l2a/
+  - Name: Sentinel-2 L2A Collection documentation on Euro Data Cube
+    Url: https://collections.eurodatacube.com/sentinel-2-l2a/
+  - Name: Jupyter Notebook - accessing data with xcube
+    Url: https://eurodatacube.com/notebooks/curated/EDC_Sentinel_Hub-Data-access.ipynb
+  - Name: Collection of custom scripts on Sentinel-Hub
+    Url: https://custom-scripts.sentinel-hub.com/#sentinel-2
 Locations:
   - Identifier: Tulare
     Country: US
@@ -187,4 +204,6 @@ Resources:
     Name: Sentinel Hub WMS
     CollectionId: sentinel-2-l2a
     LayerId: SENTINEL-2-L2A-TRUE-COLOR
-Image: Lakes_S2L2A/thumbnail.png
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
