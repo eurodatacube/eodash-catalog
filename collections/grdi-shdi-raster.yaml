@@ -1,13 +1,15 @@
 Name: grdi-shdi-raster
-Title: GRDI SHDI Constituent Raster
+Title: Subnational Human Development Index (SHDI)
 EodashIdentifier: GRDI3
-Subtitle: GRDI SHDI Constituent Raster
+Subtitle: Global Grided Relative Deprivation Index - SHDI
 Description: grdi-shdi-raster/grdi-shdi-raster.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Rural
+  - Urban
 DataSource:
   Other:
     - Multi-sensors
