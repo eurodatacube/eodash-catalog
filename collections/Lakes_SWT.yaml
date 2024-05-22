@@ -1,20 +1,42 @@
 Name: Lakes_SWT_surface_water_temperature
 Title: Surface water temperature of lakes
 EodashIdentifier: Lakes_SWT
-Description: Lakes_SWT_surface_water_temperature/Lakes_SWT.md
+Description: Lakes_SWT_surface_water_temperature/Lakes_SWT_surface_water_temperature.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel 2
-Sensor:
-  - placeholder
+  - Climate Change Initiative
+  - Water quality
+  - Multi-sensors
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+    - Other
 Agency:
   - ESA
-Provider:
-    - Name: placeholder
-License: MIT
+Image: Lakes_SWT_surface_water_temperature/Lakes_SWT_surface_water_temperature.png
+Legend: Lakes_SWT_surface_water_temperature/SWT_legend.png
+License: CC-BY-4.0
+Citation:
+  Publication:
+    - Citation: Carrea, L., Crétaux, JF., Liu, X. et al. Satellite-derived multivariate world-wide lake physical variable timeseries for climate studies. Sci Data 10, 30 (2023).
+      DOI: 10.1038/s41597-022-01889-z
+References:
+  - Name: Data Documentation
+    Url: https://climate.esa.int/en/projects/lakes/key-documents-lakes/
+  - Name: CCI Lakes project website
+    Url: https://climate.esa.int/en/projects/lakes/about/
+  - Name: Data Source
+    Url: https://catalogue.ceda.ac.uk/uuid/a07deacaffb8453e93d57ee214676304
+  - Name: DeepESDL (Earth System Data Lab)
+    Url: https://www.earthsystemdatalab.net/
+  - Name: Lexcube - visualise datasets in a 3D cube
+    Url: https://viewer.earthsystemdatalab.net/
+  - Name: xcube viewer - visualise DeepESDL datacubes (zarr) on the web
+    Url: https://viewer.earthsystemdatalab.net/
+  - Name: Euro Data Cube CCI Essential Climate Variables collection
+    Url: https://collections.eurodatacube.com/climate-change-initiative/
 Locations:
   - Identifier: Aral
     Country: ['UZ', 'KZ']
@@ -52,6 +74,10 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: 9fdb8c27-9000-4912-b715-1465f840a1db
-    Script: Lakes_SWT_surface_water_temperature/script.js
-Image: Lakes_SWT_surface_water_temperature/thumbnail.png
-Legend: Lakes_SWT_surface_water_temperature/legend.png
+    Script: Lakes_SWT_surface_water_temperature/Lakes_SWT_surface_water_temperature.js
+  - Name: EOxHub Notebook
+    Title: Accessing CCI data with xcube
+    Url: https://eurodatacube.com/notebooks/curated/EDC_Access_CCI_data.ipynb
+Provider:
+  - Name: ESA
+    Url: https://www.esa.int/
