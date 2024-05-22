@@ -1,13 +1,15 @@
 Name: grdi-v1-built
-Title: GRDI V1 Raster
+Title: Builtup Area (BUILT)
 EodashIdentifier: GRDI1
-Subtitle: GRDI V1 Raster
+Subtitle: Global Gridded Relative Deprivation Index - BUILT 
 Description: grdi-v1-built/grdi-v1-built.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Urban
+  - Rural
 DataSource:
   Other:
     - Multi-sensors
