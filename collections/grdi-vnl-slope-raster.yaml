@@ -1,13 +1,17 @@
 Name: grdi-vnl-slope-raster
-Title: GRDI VNL Slope Constituent Raster
+Title: VIIRS Nighttime Lights (VNL) Slope Component
 EodashIdentifier: GRDI4
-Subtitle: GRDI VNL Slope Constituent Raster
+Subtitle: Global Gridded Relative Deprivation Index - VIIRS VNL Slope
 Description: grdi-vnl-slope-raster/grdi-vnl-slope-raster.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Urban
+  - Rural
+  - poverty
+  - wellbeing
 DataSource:
   Other:
     - Multi-sensors
