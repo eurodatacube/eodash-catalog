@@ -1,13 +1,17 @@
 Name: grdi-v1-raster
-Title: GRDI SHDI Constituent Raster
+Title: Global Gridded Relative Deprivation Index version 1
 EodashIdentifier: GRDI2
-Subtitle: GRDI SHDI Constituent Raster
+Subtitle: Global Gridded Relative Deprivation Index - GRDIv1
 Description: grdi-v1-raster/grdi-v1-raster.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - poverty
+  - urban
+  - rural
+  - wellbeing
 DataSource:
   Other:
     - Multi-sensors
