@@ -1,13 +1,18 @@
 Name: grdi-imr-raster
-Title: GRDI IMR Constituent Raster
+Title: Infant Mortality Rates (IMR)
 EodashIdentifier: GRDI7
-Subtitle: GRDI IMR Constituent Raster
+Subtitle: Global Gridded Relative Deprivation Index - IMR Constituent Raster
 Description: grdi-imr-raster/grdi-imr-raster.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Poverty
+  - Wellbeing
+  - Health
+  - Urban
+  - Rural
 DataSource:
   Other:
     - Multi-sensors
