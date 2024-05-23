@@ -1,13 +1,15 @@
 Name: grdi-cdr-raster
-Title: GRDI CDR Constituent Raster
+Title: Child Dependency Ratio (CDR)
 EodashIdentifier: GRDI8
-Subtitle: GRDI CDR Constituent Raster
+Subtitle: Global Gridded Relative Deprivation Index - CDR Constituent Raster
 Description: grdi-cdr-raster/grdi-cdr-raster.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Poverty
+  - Wellbeing
 DataSource:
   Other:
     - Multi-sensors
