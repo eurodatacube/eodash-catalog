@@ -1,13 +1,17 @@
 Name: grdi-vnl-raster
-Title: GRDI VNL Constituent Raster
+Title: VIIRS Nighttime Lights (VNL) Constituent Raster
 EodashIdentifier: GRDI5
-Subtitle: GRDI VNL Constituent Raster
+Subtitle: Global Gridded Relative Deprivation Index - VNL Constituent Raster
 Description: grdi-vnl-raster/grdi-vnl-raster.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Urban
+  - Rural
+  - Poverty
+  - Wellbeing
 DataSource:
   Other:
     - Multi-sensors
