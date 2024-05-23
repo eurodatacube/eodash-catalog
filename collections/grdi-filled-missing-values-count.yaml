@@ -1,13 +1,15 @@
 Name: grdi-filled-missing-values-count
 Title: GRDI Filled Missing Values Count
 EodashIdentifier: GRDI6
-Subtitle: GRDI Filled Missing Values Count
+Subtitle: Global Gridded Relative Deprivation Index - Filled Missing Values Count
 Description: grdi-filled-missing-values-count/grdi-filled-missing-values-count.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - Poverty
+  - Wellbeing
 DataSource:
   Other:
     - Multi-sensors
