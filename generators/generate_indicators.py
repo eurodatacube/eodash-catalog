@@ -350,6 +350,9 @@ def handle_geojson_source(config, endpoint, data, catalog):
     collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     if ("TimeEntries" in endpoint) and len(endpoint["TimeEntries"]) > 0:
         for t in endpoint["TimeEntries"]:
+            extra_fields = {}
+            if "DataProjection" in endpoint:
+                extra_fields["proj:epsg"] = endpoint["DataProjection"]
             item = Item(
                 id = t["Time"],
                 bbox=endpoint.get("Bbox"),
@@ -361,12 +364,7 @@ def handle_geojson_source(config, endpoint, data, catalog):
                         href="%s%s"%(endpoint["EndPoint"], t["File"]),
                         roles=["data"],
                         media_type="application/geo+json",
-                        extra_fields={
-                            "style": "%s/%s"%(
-                                config["assets_endpoint"],
-                                endpoint["Style"]
-                            )
-                        }
+                        extra_fields=extra_fields
                     ) 
                 }
             )
@@ -384,6 +382,8 @@ def handle_geojson_source(config, endpoint, data, catalog):
             # makes only sense if it is a constant style for all items, should 
             # we keep this?
             collection.add_link(style_link)
+            if "DataProjection" in endpoint:
+                collection.extra_fields["proj:epsg"] = endpoint["DataProjection"]
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t["Time"]
             link.extra_fields["vector_data"] = "%s%s"%(endpoint["EndPoint"], t["File"])
