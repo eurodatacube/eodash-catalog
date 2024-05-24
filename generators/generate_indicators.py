@@ -370,9 +370,10 @@ def handle_geojson_source(config, endpoint, data, catalog):
                     ) 
                 }
             )
+            ep_st = endpoint["Style"]
             style_link = Link(
                 rel="style",
-                target="%s/%s"%(config["assets_endpoint"], endpoint["Style"]),
+                target=ep_st if ep_st.startswith("http") else "%s/%s"%(config["assets_endpoint"], ep_st),
                 media_type="text/vector-styles",
                 extra_fields={
                     "asset:keys": ["vector_data"]
