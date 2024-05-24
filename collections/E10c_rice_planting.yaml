@@ -2,27 +2,52 @@ Name: rice_planting
 Title: Rice planting
 EodashIdentifier: E10c
 Subtitle: Early Rice Planting in Sacramento, California, USA
-Description: E10c_rice_planting/E10c.md
+Description: E10c_rice_planting/E10c_rice_planting.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - ALOS-2 PALSAR-2
+  - Multi-sensors
+  - Food security
+  - Cereals
+DataSource:
+  Spaceborne:
+    Satellite:
+    - ALOS-2
     - GCOM-C
     - Sentinel-2
     - Landsat-8
-Sensor:
-    - placeholder
+    Sensor:
+    - PALSAR-2
+    - SGLI
+    - MSI
+    - OLI
 Agency:
-    - NASA
-    - JAXA
-    - ESA
+  - NASA
+  - USGS
+  - JAXA
+  - ESA
+Legend: E10c_rice_planting/E10c_legend.png
+Image: E10c_rice_planting/E10c_rice_planting.png
+References:
+  - Name: Rice Outlook - July 2021
+    Url: https://www.ers.usda.gov/publications/pub-details/?pubid=101645
+  - Name: U.S. Drought Monitor
+    Url: https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?West
+  - Name: Statistics by USDA
+    Url: https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=CALIFORNIA
+  - Name: Foreign Food Supply and Demand Report (October 2020, in Japanese)
+    Url: https://www.maff.go.jp/j/zyukyu/jki/j_rep/monthly/attach/pdf/r2index-28.pdf
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: E10c_tri
-Legend: E10c_rice_planting/legend.png
-Image: E10c_rice_planting/thumbnail.png
-
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: E10c_tri
+Provider:
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
+  - Name: ESA
+    Url: https://www.esa.int/
+  - Name: NASA
+    Url: https://www.nasa.gov/
+  - Name: USGS
+    Url: https://www.usgs.gov/

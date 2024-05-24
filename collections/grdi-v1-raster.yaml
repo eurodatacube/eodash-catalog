@@ -1,25 +1,41 @@
 Name: grdi-v1-raster
-Title: GRDI SHDI Constituent Raster
+Title: Global Gridded Relative Deprivation Index version 1
 EodashIdentifier: GRDI2
-Subtitle: GRDI SHDI Constituent Raster
-Description: grdi-v1-raster/GRDI2.md
+Subtitle: Global Gridded Relative Deprivation Index - GRDIv1
+Description: grdi-v1-raster/grdi-v1-raster.md
 Themes:
   - economy
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - MODIS
+  - Human activities
+  - Open data
+  - poverty
+  - urban
+  - rural
+  - wellbeing
+DataSource:
+  Other:
+    - Multi-sensors
 Agency:
   - NASA
+Citation:
+  Citation: |
+    Center for International Earth Science Information Network - CIESIN - Columbia University. 2022. Global Gridded Relative Deprivation Index (GRDI), v1. Palisades, NY. NASA Socioeconomic Data and Applications Center (SEDAC).
+  DOI: 10.7927/3xxe-ap97
+Legend: grdi-v1-built/cm_legend.png
+Image: grdi-v1-raster/grdi-v1-raster.png
+References:
+  - Name: Data access
+    Url: https://sedac.ciesin.columbia.edu/data/set/povmap-grdi-v1
+  - Name: Dataset Description and documentation
+    Url: https://doi.org/10.7927/xwf1-k532
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
-    Type: cog
     Name: VEDA
+    Type: cog
     CollectionId: grdi-v1-raster
     ColormapName: viridis
     Rescale: [0.0,100.0]
     Bidx: 1
-Legend: grdi-v1-built/cm_legend.png
-Image: grdi-v1-raster/thumbnail.png
+Provider:
+  - Name: NASA
+    Url: https://www.nasa.gov/
