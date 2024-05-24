@@ -39,6 +39,11 @@ References:
   - Name: AquaCrop
     Url: https://www.fao.org/aquacrop/en/
 Resources:
-  - Name: Collection-only
-    EndPoint: Collection-only
-    OverwriteBBox: [9, 43, 30, 50]
+    - EndPoint: https://api.cropom-dev.com/crop_model/regional_forecast
+      Name: GeoJSON source
+      Style: crop_forecast_CropOM/style.json
+      Bbox: [9, 43, 30, 50]
+      DataProjection: 3035 
+      TimeEntries:
+        - Time: "20240309"
+          File: "?country_code=HU"
