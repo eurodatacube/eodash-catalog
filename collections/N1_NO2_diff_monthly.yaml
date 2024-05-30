@@ -2,18 +2,37 @@ Name: N1_NO2_diff_monthly
 Title: Nitrogen Dioxide (Monthly difference)
 EodashIdentifier: N1_NO2_diff_monthly
 Subtitle: Monthly difference of Nitrogen Dioxide (NO2) from NASA [10^15 molecules/cm²]
-Description: N1_NO2_trilateral/N1.md
+Description: N1_NO2_trilateral/N1_NO2_trilateral.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Air quality
+  - NO2
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-5P
+      - Aura
+    Sensor:
+      - TROPOMI
+      - OMI
 Agency:
+  - ESA
   - NASA
-Legend: N1_NO2_diff_monthly/cm_legend.png
+Image: N1_NO2_diff_monthly/N1_NO2_diff_monthly.png
+Legend: N1_NO2_diff_monthly/N1_NO2_diff_monthly_legend.png
+References:
+  - Name: Tropomi
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Tropomi
+  - Name: Aura satellite
+    Url: https://aura.gsfc.nasa.gov/index.html
+  - Name: Air pollution remains low as Europeans stay at home
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Air_pollution_remains_low_as_Europeans_stay_at_home
+  - Name: NO2 concentrations over India
+    Url: https://www.esa.int/ESA_Multimedia/Images/2020/04/NO2_concentrations_over_India
+  - Name: Nitrogen Dioxide Levels Rebound in China
+    Url: https://earthobservatory.nasa.gov/images/146741/nitrogen-dioxide-levels-rebound-in-china
 Services:
   - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
     Name: VEDA Statistics
@@ -26,4 +45,13 @@ Resources:
     ColormapName: rdbu_r
     Rescale: [-3e15, 3e15]
     Bidx: 1
-Image: N1_NO2_diff_monthly/thumbnail.png
+Provider:
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: ESA
+    Roles: processor
+    Url: https://www.esa.int/
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
