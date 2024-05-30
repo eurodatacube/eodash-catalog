@@ -2,21 +2,53 @@ Name: N1_NO2_jaxa
 Title: NO2 JAXA
 EodashIdentifier: N1_NO2_jaxa
 Subtitle: NO2 TROPOMI JAXA Cairo
-Description: N1_NO2_trilateral/N1.md
+Description: N1_NO2_trilateral/N1_NO2_trilateral.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
+  - Air quality
   - NO2
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-5P
+      - Aura
+    Sensor:
+      - TROPOMI
+      - OMI
 Agency:
+  - ESA
+  - NASA
   - JAXA
+Legend: N1_NO2_jaxa/N1_NO2_jaxa_legend.png
+References:
+  - Name: Tropomi
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Tropomi
+  - Name: Aura satellite
+    Url: https://aura.gsfc.nasa.gov/index.html
+  - Name: Air pollution remains low as Europeans stay at home
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Air_pollution_remains_low_as_Europeans_stay_at_home
+  - Name: NO2 concentrations over India
+    Url: https://www.esa.int/ESA_Multimedia/Images/2020/04/NO2_concentrations_over_India
+  - Name: Nitrogen Dioxide Levels Rebound in China
+    Url: https://earthobservatory.nasa.gov/images/146741/nitrogen-dioxide-levels-rebound-in-china
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: NO2-TROPOMI-Cairo-Daily
     OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
-Legend: N1_NO2_jaxa/cm_legend.png
+Provider:
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: ESA
+    Roles: processor
+    Url: https://www.esa.int/
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
+  - Name: JAXA
+    Roles: processor
+    Url: https://global.jaxa.jp/
