@@ -4,7 +4,7 @@ EodashIdentifier: N1_NO2_city_trilateral
 Subtitle: NO2 detected at cities based on Sentinel-5P data
 Description: N1_NO2_trilateral/N1_NO2_trilateral.md
 Themes:
-  - air
+  - atmosphere
 Tags:
   - Air quality
   - NO2
