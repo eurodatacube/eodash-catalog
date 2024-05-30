@@ -38,6 +38,11 @@ Resources:
     CollectionId: N1_tri
 Provider:
   - Name: Copernicus
+    Roles: licensor, producer
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: ESA
+    Roles: processor
+    Url: https://www.esa.int/
   - Name: NASA
+    Roles: licensor, producer, processor
     Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
