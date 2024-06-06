@@ -1,22 +1,41 @@
 Name: N2_CO2_jaxa_gosat
 Title: "GOSAT - Carbon Dioxide"
 EodashIdentifier: N2_CO2_jaxa_gosat
-Description: N2_CO2_jaxa_gosat/N2.md
+Description: N2_CO2_jaxa_gosat/N2_CO2_jaxa_gosat.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - GOSAT
-Sensor:
-  - GOSAT-CO2
+  - Air quality
+  - CO2
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - GOSAT
+    Sensor:
+      - TANSO-FTS
+      - TANSO-CAI
 Agency:
   - JAXA
+Legend: N2_CO2_jaxa_gosat/N2_CO2_jaxa_gosat_legend.png
+Image: N2_CO2_jaxa_gosat/N2_CO2_jaxa_gosat.png
+Citation:
+  Publication:
+    - Citation: |
+       Le Quéré, C., Jackson, R.B., Jones, M.W. et al. Temporary reduction in daily global CO2 emissions during the COVID-19 forced confinement. Nat. Clim. Chang. 10, 647–653 (2020).
+      DOI: 10.1038/s41558-020-0797-x
+References:
+  - Name: Scientific Consensus on global climate change
+    Url: https://science.nasa.gov/climate-change/scientific-consensus/
+  - Name: GOSAT
+    Url: https://www.eorc.jaxa.jp/GOSAT/index.html
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: XCO2-GOSAT-Cairo
     OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
-Legend: N2_CO2_jaxa_gosat/cm_legend.png
-Image: N2_CO2_jaxa_gosat/thumbnail.png
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://data2.gosat.nies.go.jp/index_en.html
