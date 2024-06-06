@@ -1,17 +1,18 @@
 Name: nightlights
 Title: Nightlights
 EodashIdentifier: N5
-Description: N5_nightlights/N5.md
+Description: N5_nightlights/N5_nightlights.md
 Themes:
-  - atmosphere
   - economy
 Tags:
-  - covid
-  - slowdown
-Satellite:
-  - Suomi
-Sensor:
-  - VIIRS
+  - Human activities
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Suomi
+    Sensor:
+      - VIIRS
 Agency:
   - NASA
 Locations:
@@ -145,6 +146,8 @@ Locations:
     Name: Aichi Nagoya
     Identifier: JP06
     Country: JP
+Legend: N5_nightlights/N5_legend.png
+Image: N5_nightlights/N5_nightlights.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
     Type: cog
@@ -153,5 +156,7 @@ Resources:
     Bidx: 1
     ColormapName: inferno
     Rescale: [0, 255]
-Legend: N5_nightlights/legend.png
-Image: N5_nightlights/thumbnail.png
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://search.earthdata.nasa.gov/search?portal=idn&fi=VIIRS
