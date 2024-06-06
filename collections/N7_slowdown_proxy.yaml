@@ -1,18 +1,26 @@
 Name: slowdown_proxy
 Title: Slowdown proxy Covid-19
 EodashIdentifier: N7
-Description: N7_slowdown_proxy/N7.md
+Description: N7_slowdown_proxy/N7_slowdown_proxy.md
 Themes:
   - economy
 Tags:
-  - covid
-  - slowdown
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Covid-19
+  - Human activities
+  - Mobility
+  - Open Data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+      - ALOS-2
+    Sensor:
+      - C-SAR
+      - PALSAR-2
 Agency:
-  - NASA
+  - ESA
+  - JAXA
+  - European Commission
 Locations:
   - Identifier: CN01
     Country: CN
@@ -50,11 +58,36 @@ Locations:
     Subtitle: Slowdown Proxy Maps
     Point: [-122.41638, 37.7775]
     Bbox: [-122.95, 37.01, -120.96, 38.18]
+Legend: N7_slowdown_proxy/N7_legend.png
+Image: N7_slowdown_proxy/N7_slowdown_proxy.png
+References:
+  - Name: Damage Proxy Maps
+    Url: https://appliedsciences.nasa.gov/our-impact/news/aria-damage-proxy-map-lombok-indonesia-earthquake
+  - Name: What is Synthetic Aperture Radar?
+    Url: https://earthdata.nasa.gov/learn/what-is-sar
+  - Name: Disasters program area of NASA's Earth Science Applied Sciences Program
+    Url: https://appliedsciences.nasa.gov/what-we-do/disasters
+  - Name: Disaster monitoring with Earth Observation Satellites
+    Url: https://www.esa.int/ESA_Multimedia/Keywords/Description/Disasters/(result_type)/videos
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
-    Type: cog
     Name: VEDA
+    Type: cog
     CollectionId: slowdown-proxy-covid-19-changing-landscapes
     Bidx: [1,2,3]
-Legend: N7_slowdown_proxy/legend.png
-Image: N7_slowdown_proxy/thumbnail.png
+Provider:
+  - Name: NASA-JPL
+    Roles: processor
+    Url: https://aria-share.jpl.nasa.gov/
+  - Name: EOS
+    Roles: processor
+    Url: https://earthobservatory.sg/
+  - Name: ESA
+    Roles: producer
+    Url: https://www.esa.int/Applications/Observing_the_Earth
+  - Name: JAXA
+    Roles: licensor, producer
+    Url: https://global.jaxa.jp/projects/sat/alos2/index.html
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://scihub.copernicus.eu/
