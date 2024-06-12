@@ -1,5 +1,5 @@
-Name: harvesting_evolution
-Title: Harvesting evolution
+Name: E10a10_harvesting_evolution_winter_cereal
+Title: Harvesting evolution winter cereal
 EodashIdentifier: E10a10
 Subtitle: Monitoring row crop harvesting with satellite data
 Description: E10a10_harvesting_evolution/E10a10_harvesting_evolution.md
@@ -24,6 +24,7 @@ Resources:
     Name: GeoDB
     Database: eodash
     CollectionId: E10a10
+    AdditionalQueryString: aoi_id=in.("SEa","ATa","BGa","CZa","DEa","DKa","ESa","EEa","FRa","UKa","HRa","HUa","ITa","LTa","LVa","PLa","RSa","SKa","ROa")
 References:
   - Name: Impact of COVID-19 on harvest of row crop
     Url: https://eo4society.esa.int/projects/impact-of-covid-19-on-harvest-of-row-crop/ 
