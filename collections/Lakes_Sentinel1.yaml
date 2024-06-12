@@ -5,16 +5,20 @@ Description: Lakes_Sentinel1/Lakes_Sentinel1.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel 2
-Sensor:
-  - placeholder
+  - Sentinel
+  - Open data
+  - Water quality
+  - Water extent
+DataSource:
+  Spaceborne:
+    Satellite:
+    - Sentinel-1
+    Sensor:
+    - C-SAR
 Agency:
+  - European Commission
   - ESA
-Provider:
-    - Name: placeholder
-License: MIT
+Image: Lakes_Sentinel1/thumbnail.png
 Locations:
   - Identifier: TonleSap_VV
     Country: ['KH']
@@ -31,4 +35,6 @@ Resources:
     Name: Sentinel Hub WMS
     CollectionId: sentinel-1-grd
     LayerId: SENTINEL_1_IW_VV
-Image: Lakes_Sentinel1/thumbnail.png
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs

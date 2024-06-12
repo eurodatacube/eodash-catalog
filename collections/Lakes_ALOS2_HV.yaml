@@ -5,16 +5,23 @@ Description: Lakes_ALOS2_lakes_alos2/Lakes_ALOS2.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Open data
+  - Water extent
+DataSource:
+  Spaceborne:
+    Satellite:
+    - ALOS-2
+    Sensor:
+    - PALSAR-2
 Agency:
-  - ESA
-Provider:
-    - Name: placeholder
-License: MIT
+  - JAXA
+Image: Lakes_ALOS2_lakes_alos2_hv/thumbnail.png
+References:
+  - Name: JAXA ALOS-2 PALSAR-2
+    Url: https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm
+  - Name: Use data
+    Url: https://www.eorc.jaxa.jp/ALOS/en/alos-2/a2_data_e.htm
 Locations:
   - Identifier: TonleSap_HV
     Country: ['KH']
@@ -27,10 +34,11 @@ Locations:
       '2022-07-13T00:00:00', '2022-08-24T00:00:00', '2022-09-21T00:00:00', '2022-12-14T00:00:00'
     ]
 Resources:
-  - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 7820f4b8-0270-438e-83da-18de27fc539c
     LayerId: JAXA_LAKES_ALOS2_HV
-Image: Lakes_ALOS2_lakes_alos2_hv/thumbnail.png
+Provider:
+  - Name: JAXA
+    Url: https://global.jaxa.jp/

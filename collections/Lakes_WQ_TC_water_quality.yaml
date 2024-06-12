@@ -1,25 +1,45 @@
 Name: Lakes_WQ_TC_water_quality
 Title: Lake water quality (true color)
 EodashIdentifier: Lakes_WQ_TC
-Description: Lakes_WQ_TC_water_quality/Lakes_WQ_TC.md
+Description: Lakes_WQ_TC_water_quality/Lakes_WQ_TC_water_quality.md
 Themes:
   - water
 Tags:
-  - placeholder
-Satellite:
-  - Sentinel-3
-Sensor:
-  - OLCI
+  - Sentinel
+  - CLMS
+  - Water quality
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+    - Sentinel-3
+    Sensor:
+    - OLCI
 Agency:
+  - European Commission
   - ESA
-Provider:
-    - Name: placeholder
-License: MIT
+License:
+  - Url: https://land.copernicus.eu/en/data-policy
+    Type: text/html
+    Title: Data policy
+Citation:
+  Citation: |
+    European Commission Directorate-General Joint Research Centre. Lake Water Quality 2016-present (raster 300 m), global, 10-daily - version 1. 
+    https://land.copernicus.vgt.vito.be/geonetwork/srv/api/records/clms_global_lwq_300m_v1_10daily-nrt
+Image: Lakes_WQ_TC_water_quality/Lakes_WQ_TC_water_quality.png
+References:
+  - Name: Contact
+    Url: https://forum.sentinel-hub.com/c/euro-data-cube/25
+  - Name: Lake Water Quality 2016-present (raster 300 m), global, 10-daily – version 1
+    Url: https://land.copernicus.eu/en/products/water-bodies/lake-water-quality-near-real-time-v1-0-300m
+  - Name: Lake Water Quality 300m
+    Url: https://collections.eurodatacube.com/clms-lake-water-quality/
 Resources:
-  - Group: Sentinel Hub Resources
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: zarr
     CollectionId: ef59d045-a0cd-4ce0-a25d-5da91e70e965
     LayerId: LAKE_WATE_QUALITY_TRUECOLOR
-Image: Lakes_WQ_TC_water_quality/thumbnail.png
+Provider: 
+  - Name: Copernicus Land Monitoring Service
+    Url: https://land.copernicus.eu/
