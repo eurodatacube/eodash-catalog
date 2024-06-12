@@ -120,7 +120,7 @@ def process_catalog_file(file_path, options):
                 )
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
-        catalog.normalize_hrefs("../build/%s"%config["id"], strategy=strategy)
+        catalog.normalize_hrefs(config["endpoint"], strategy=strategy)
         
         print("Started creation of collection files")
         start = time.time()
