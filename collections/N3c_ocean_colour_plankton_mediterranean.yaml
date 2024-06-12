@@ -34,10 +34,10 @@ References:
   - Name: Mediterranean Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (Near Real Time)
     Url: https://data.marine.copernicus.eu/product/OCEANCOLOUR_MED_BGC_L3_NRT_009_141/description
 Resources:
-  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/OCEANCOLOUR_MED_BGC_L3_NRT_009_141/cmems_obs-oc_med_bgc-optics_nrt_l3-multi-1km_P1D_202207
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/OCEANCOLOUR_MED_BGC_L3_NRT_009_141/cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D_202211
     Type: WMTSCapabilities
     Name: marinedatastore
-    LayerId: OCEANCOLOUR_MED_BGC_L3_NRT_009_141/cmems_obs-oc_med_bgc-optics_nrt_l3-multi-1km_P1D_202207/CHL
+    LayerId: OCEANCOLOUR_MED_BGC_L3_NRT_009_141/cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D_202211/CHL
     Dimensions:
       style: 'cmap:rainbow,range:0.06/50,noClamp,logScale'
 Provider: 
