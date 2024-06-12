@@ -1083,6 +1083,7 @@ def process_STACAPI_Endpoint(
         catalog, endpoint["CollectionId"], data, config, endpoint
     )
     add_visualization_info(collection, data, endpoint)
+
     api = Client.open(endpoint["EndPoint"], headers=headers)
     if bbox == None:
         bbox = "-180,-90,180,90"
@@ -1094,7 +1095,6 @@ def process_STACAPI_Endpoint(
     # We keep track of potential duplicate times in this list
     added_times = {}
     for item in results.items():
-        breakpoint()
         item_datetime = item.get_datetime()
         if item_datetime != None:
             iso_date = item_datetime.isoformat()[:10]
