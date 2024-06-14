@@ -2,21 +2,34 @@ Name: precipitation_anomaly
 Title: Precipitation Anomaly
 EodashIdentifier: PRC
 Subtitle: Precipitation Anomaly
-Description: PRC_precipitation_anomaly/PRC.md
+Description: PRC_precipitation_anomaly/PRC_precipitation_anomaly.md
 Themes:
-  - agriculture
+  - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - GSMaP
+  - Precipitation
+  - Rainfall
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Other
 Agency:
   - JAXA
+Legend: PRC_precipitation_anomaly/PRC_legend.png
+Image: PRC_precipitation_anomaly/PRC_precipitation_anomaly.png
+References:
+  - Name: Jaxa Public-health Monitor and Analysis Platform
+    Url: https://www.jpmap-jaxa.jp/jpmap/en/user_guide/
+  - Name: Jaxa Global Satellite Mapping of Precipitation
+    Url: https://sharaku.eorc.jaxa.jp/GSMaP/
+  - Name: GSMaP Documentation
+    Url: https://www.eorc.jaxa.jp/GPM/doc/algorithm/GSMaPforGPM_20140902_E.pdf
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: PRC-Anomaly-GSMaP-World-Monthly
-Legend: PRC_precipitation_anomaly/legend.png
-Image: PRC_precipitation_anomaly/thumbnail.png
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://global.jaxa.jp/
