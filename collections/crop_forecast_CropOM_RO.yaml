@@ -1,6 +1,6 @@
-Name: crop_forecast
-Title: CropModel Forecast API
-EodashIdentifier: CROPOM
+Name: crop_forecast_ro
+Title: CropModel Forecast API Romania
+EodashIdentifier: CROPOM_RO
 Subtitle: Yield and water demand forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
 Themes:
@@ -18,7 +18,7 @@ DataSource:
       - CLMS HR-VPP Vegetation Indices
       - CLMS HR-VPP Seasonal Trajectory 
   InSitu:
-    - Meteorological data from local Meteorological offices (HU, RO, AT)
+    - Meteorological data from local Meteorological offices (RO)
 Agency:
   - ESA
 Provider:
@@ -41,10 +41,10 @@ References:
 Resources:
     - Name: GeoJSON source
       Style: crop_forecast_CropOM/style.json
-      Bbox: [9, 43, 30, 50]
+      Bbox: [20, 43.5, 30.2, 48.5]
       DataProjection: 3035 
       TimeEntries:
         - Time: "20240309"
           Assets:
             - Identifier: vector_data
-              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=HU
+              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=RO
