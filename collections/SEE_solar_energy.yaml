@@ -20,6 +20,6 @@ Resources:
         - Time: "2023"
           Assets: 
             - Identifier: solar_power
-              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/SolarPowerPotential_Annual_COG_clipped_3857_fixed.tif
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/v2/SolarPowerPotential_Annual_COG_clipped_3857_fixed.tif
             - Identifier: wsf
               File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/DHI/WSF_EucDist_Austria_3857_COG_fix.tif
