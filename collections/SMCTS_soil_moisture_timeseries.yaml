@@ -2,19 +2,43 @@ Name: soil_moisture_timeseries
 Title: Soil moisture
 EodashIdentifier: SMCTS
 Subtitle: Soil moisture
-Description: SMCTS_soil_moisture_timeseries/SMCTS.md
+Description: SMCTS_soil_moisture_timeseries/SMCTS_soil_moisture_timeseries.md
 Themes:
-    - agriculture
+  - agriculture
 Tags:
-    - placeholder
-Satellite:
-    - JASMAI
-Sensor:
-    - GCOM
+  - Precipitation
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Other
 Agency:
-    - JAXA
+  - JAXA
+References:
+  - Name: JAXA's Satellite based MonItoring Network system for FAO AMIS Market Monitor
+    Url: https://suzaku.eorc.jaxa.jp/JASMIN/index.html
+  - Name: JASMAI
+    Url: https://jasmai.maff.go.jp/
+  - Name: JASMAI user guide
+    Url: https://jasmai.maff.go.jp/user_guide/#item_2_7
+  - Name: JAXA Earth Observation Research Center (EORC)
+    Url: http://www.eorc.jaxa.jp/
+  - Name: Earth observation satellite data provision system (G-Portal)
+    Url: https://gportal.jaxa.jp/gpr/?lang=en
+  - Name: AMSR/AMSR-E
+    Url: https://sharaku.eorc.jaxa.jp/AMSR/index_j.html
+  - Name: GCOM-W
+    Url: https://suzaku.eorc.jaxa.jp/GCOM_W/index_j.html
+  - Name: Satellite Global Precipitation Map (GSMaP)
+    Url: https://sharaku.eorc.jaxa.jp/GSMaP/index_j.htm
+  - Name: Climate Formation Physical Quantity Dataset (JASMES)
+    Url: https://kuroshio.eorc.jaxa.jp/JASMES/index_j.html
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: SMCTS_Soil_Moisture_Timeseries
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: SMCTS_Soil_Moisture_Timeseries
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://global.jaxa.jp/
