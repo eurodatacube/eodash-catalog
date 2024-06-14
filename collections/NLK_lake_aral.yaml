@@ -1,26 +1,31 @@
 Name: NLK_lake_aral
 Title: Aral Lake cloud free
 EodashIdentifier: NLK_lake_aral
-Description: Aral lake Landsat-8
+Description: Landsat-8 images of the Aral Lake
 Themes:
   - oceans
 Tags:
-  - lake
-Satellite:
-  - Landsat-8
-Sensor:
-  - OLI
+  - Lake
+  - Optical
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Landsat-8
+    Sensor:
+      - OLI
 Agency:
   - NASA
-Legend: NLK_lake_cloud_free/cm_legend.png
 Resources:
   - EndPoint: https://staging-stac.delta-backend.com/
-    Type: tiles
     Name: VEDA
+    Type: tiles
     CollectionId: landsat-c2l2-sr-lakes-aral-sea
     Assets: 
       - red
       - green
       - blue
     ColorFormula: gamma+RGB+2.7%2C+saturation+1.5%2C+sigmoidal+RGB+15+0.55
-    NoData: 0
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://landsat.gsfc.nasa.gov/data/data-access/
