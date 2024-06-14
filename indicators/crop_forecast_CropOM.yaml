@@ -1,0 +1,10 @@
+Name: CropModel_Forecast_Ind
+Title: CropModel Forecast
+EodashIdentifier: CROPOM_Ind
+Description: crop_forecast_CropOM/crop_forecast_CropOM.md
+Collections:
+  # - crop_forecast_CropOM_RO
+  - crop_forecast_CropOM_HU
+  - crop_forecast_CropOM_AT
+  - crop_forecast_CropOM_HU_subcounty
+  - crop_forecast_CropOM_HU_microregion
