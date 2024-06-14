@@ -2,21 +2,34 @@ Name: precipitation
 Title: Precipitation
 EodashIdentifier: PRCG
 Subtitle: Precipitation
-Description: PRCG_precipitation/PRCG.md
+Description: PRCG_precipitation/PRCG_precipitation.md
 Themes:
-  - agriculture
+  - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - GSMaP
+  - Precipitation
+  - Rainfall
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Other
 Agency:
   - JAXA
+Legend: PRCG_precipitation/PRCG_legend.png
+Image: PRCG_precipitation/PRCG_precipitation.png
+References:
+  - Name: Jaxa Public-health Monitor and Analysis Platform
+    Url: https://www.jpmap-jaxa.jp/jpmap/en/user_guide/
+  - Name: Jaxa Global Satellite Mapping of Precipitation
+    Url: https://sharaku.eorc.jaxa.jp/GSMaP/
+  - Name: GSMaP Documentation
+    Url: https://www.eorc.jaxa.jp/GPM/doc/algorithm/GSMaPforGPM_20140902_E.pdf
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: PRC-GSMaP-World-Monthly
-Legend: PRCG_precipitation/cm_legend.png
-Image: PRCG_precipitation/thumbnail.png
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://global.jaxa.jp/
