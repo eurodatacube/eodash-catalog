@@ -31,6 +31,7 @@ Resources:
     Name: WMS
     Type: Time
     LayerId: ONPP-GCOMC-World-Monthly
+Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
