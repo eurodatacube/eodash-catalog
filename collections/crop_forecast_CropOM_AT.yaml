@@ -39,11 +39,12 @@ References:
   - Name: AquaCrop
     Url: https://www.fao.org/aquacrop/en/
 Resources:
-    - EndPoint: https://api.cropom-dev.com/crop_model/regional_forecast
-      Name: GeoJSON source
+    - Name: GeoJSON source
       Style: crop_forecast_CropOM/style.json
       Bbox: [9.27, 46.2, 17.3, 49.2]
       DataProjection: 3035
       TimeEntries:
         - Time: "20240309"
-          File: "?country_code=AT"
+          Assets:
+            - Identifier: vector_data
+              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=AT
