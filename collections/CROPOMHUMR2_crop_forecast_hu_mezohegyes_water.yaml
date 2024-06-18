@@ -1,7 +1,7 @@
-Name: crop_forecast_ro
-Title: CropModel Forecast API Romania
-EodashIdentifier: CROPOM_RO
-Subtitle: Yield and water demand forecast under "what-if" scenarios
+Name: crop_forecast_hu_mezohegyes_water
+Title: CropModel water demand forecast Mezőhegyes microregion
+EodashIdentifier: CROPOMHUMR2
+Subtitle: Water demand forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
 Themes:
   - agriculture
@@ -18,7 +18,7 @@ DataSource:
       - CLMS HR-VPP Vegetation Indices
       - CLMS HR-VPP Seasonal Trajectory 
   InSitu:
-    - Meteorological data from local Meteorological offices (RO)
+    - Meteorological data from local Meteorological offices (HU)
 Agency:
   - ESA
 Provider:
@@ -40,11 +40,11 @@ References:
     Url: https://www.fao.org/aquacrop/en/
 Resources:
     - Name: GeoJSON source
-      Style: crop_forecast_CropOM/style.json
-      Bbox: [20, 43.5, 30.2, 48.5]
+      Style: crop_forecast_CropOM/style_water_needed.json
+      Bbox: [20.7, 46.23, 21.24, 46.6]
       DataProjection: 3035 
       TimeEntries:
         - Time: "20240309"
           Assets:
             - Identifier: vector_data
-              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=RO
+              File: https://api.cropom-dev.com/crop_model/regional_forecast?region_code=HU3321

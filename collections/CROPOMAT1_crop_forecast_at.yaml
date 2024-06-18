@@ -1,7 +1,7 @@
-Name: crop_forecast_hu
-Title: CropModel Forecast API Hungary
-EodashIdentifier: CROPOM_HU
-Subtitle: Yield and water demand forecast under "what-if" scenarios
+Name: crop_forecast_at
+Title: CropModel yield forecast Austria
+EodashIdentifier: CROPOMAT1
+Subtitle: Yield forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
 Themes:
   - agriculture
@@ -18,7 +18,7 @@ DataSource:
       - CLMS HR-VPP Vegetation Indices
       - CLMS HR-VPP Seasonal Trajectory 
   InSitu:
-    - Meteorological data from local Meteorological offices (HU)
+    - Meteorological data from local Meteorological offices (AT)
 Agency:
   - ESA
 Provider:
@@ -40,11 +40,11 @@ References:
     Url: https://www.fao.org/aquacrop/en/
 Resources:
     - Name: GeoJSON source
-      Style: crop_forecast_CropOM/style.json
-      Bbox: [16, 45.5, 23.4, 48.7]
-      DataProjection: 3035 
+      Style: crop_forecast_CropOM/style_yield.json
+      Bbox: [9.27, 46.2, 17.3, 49.2]
+      DataProjection: 3035
       TimeEntries:
         - Time: "20240309"
           Assets:
             - Identifier: vector_data
-              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=HU
+              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=AT

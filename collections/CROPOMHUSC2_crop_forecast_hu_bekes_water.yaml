@@ -1,6 +1,6 @@
-Name: crop_forecast_hu_bekes
-Title: CropModel Forecast API Békés Subcounty
-EodashIdentifier: CROPOM_HU_Subcounty_Bekes
+Name: crop_forecast_hu_bekes_water
+Title: CropModel water demand forecast Békés subcounty
+EodashIdentifier: CROPOMHUSC2
 Subtitle: Yield and water demand forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
 Themes:
@@ -40,7 +40,7 @@ References:
     Url: https://www.fao.org/aquacrop/en/
 Resources:
     - Name: GeoJSON source
-      Style: crop_forecast_CropOM/style.json
+      Style: crop_forecast_CropOM/style_water_needed.json
       Bbox: [20.4, 46.2, 21.7, 47.37]
       DataProjection: 3035 
       TimeEntries:

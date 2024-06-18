@@ -1,7 +1,7 @@
-Name: crop_forecast_hu_mezohegyes
-Title: CropModel Forecast API Mezőhegyes Microregion
-EodashIdentifier: CROPOM_HU_Microregion_Mezohegyes
-Subtitle: Yield and water demand forecast under "what-if" scenarios
+Name: crop_forecast_hu
+Title: CropModel yield forecast Hungary
+EodashIdentifier: CROPOMHU1
+Subtitle: Yield forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
 Themes:
   - agriculture
@@ -40,11 +40,11 @@ References:
     Url: https://www.fao.org/aquacrop/en/
 Resources:
     - Name: GeoJSON source
-      Style: crop_forecast_CropOM/style.json
-      Bbox: [20.7, 46.23, 21.24, 46.6]
+      Style: crop_forecast_CropOM/style_yield.json
+      Bbox: [16, 45.5, 23.4, 48.7]
       DataProjection: 3035 
       TimeEntries:
         - Time: "20240309"
           Assets:
             - Identifier: vector_data
-              File: https://api.cropom-dev.com/crop_model/regional_forecast?region_code=HU3321
+              File: https://api.cropom-dev.com/crop_model/regional_forecast?country_code=HU
