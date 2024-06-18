@@ -2,7 +2,7 @@ Name: N10_OMSO2PCA-COG
 Title: Sulfur Dioxide (OMI/Aura)
 EodashIdentifier: N10
 Subtitle: Sulfur Dioxide (OMI/Aura)
-Description: N10_OMSO2PCA-COG/N10.md
+Description: N10_OMSO2PCA-COG/N10_OMSO2PCA-COG.md
 Themes:
   - atmosphere
 Tags:
