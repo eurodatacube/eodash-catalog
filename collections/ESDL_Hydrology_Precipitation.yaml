@@ -1,0 +1,38 @@
+Name: ESDL_Hydrology_Precipitation
+Title: RT1 Surface Precipitatoin
+EodashIdentifier: ESDL_Hydrology_Precipitation
+Description: "ESDL_Hydrology_Precipitation/ESDL_Hydrology_Precipitation.md"
+Themes:
+  - agriculture
+Tags:
+  - Copernicus
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
+Agency:
+  - ESA
+Provider:
+  - Name: Copernicus
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: Copernicus Land Monitoring Service 
+    Url: https://land.copernicus.eu/
+  - Name: Deep Earth System Data Lab
+    Url: https://www.earthsystemdatalab.net/
+    Roles:
+      - host
+      - producer
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'hydrology'
+    Variable: precip
+    ColormapName: viridis
+    Rescale: [0,100]
+Legend: ESDL_Hydrology_Precipitation/cm_legend.png
+Image: ESDL_Hydrology_Precipitation/image.png

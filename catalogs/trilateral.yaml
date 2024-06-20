@@ -109,6 +109,7 @@ collections:
   - ADD_Melt_Season_End
   - ADD_Meltmap
   - ESDL_Hydrology_SM
+  - ESDL_Hydrology_Precipitation
   - MCD_S14Amazonas_detections
   - EPA_Methane
   - HLS_NDVI
