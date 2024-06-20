@@ -33,6 +33,6 @@ Resources:
     DatacubeId: 'hydrology'
     Variable: precip
     ColormapName: viridis_alpha
-    Rescale: [0,100]
+    Rescale: [0,30]
 Legend: ESDL_Hydrology_Precipitation/cm_legend.png
 Image: ESDL_Hydrology_Precipitation/image.png
