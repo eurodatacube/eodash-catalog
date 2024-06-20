@@ -34,11 +34,12 @@ References:
   - Name: Mediterranean Sea, Bio-Geo-Chemical, L3, daily Satellite Observations (Near Real Time)
     Url: https://data.marine.copernicus.eu/product/OCEANCOLOUR_MED_BGC_L3_NRT_009_141/description
 Resources:
-  - EndPoint: https://my.cmems-du.eu/thredds/wms/cmems_obs-oc_med_bgc-plankton_my_l4-multi-1km_P1M
-    Name: WMS
-    Type: Time
-    LayerId: CHL
-    Styles: [boxfill%2Frainbow]
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/OCEANCOLOUR_MED_BGC_L3_NRT_009_141/cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D_202211
+    Type: WMTSCapabilities
+    Name: marinedatastore
+    LayerId: OCEANCOLOUR_MED_BGC_L3_NRT_009_141/cmems_obs-oc_med_bgc-plankton_nrt_l3-multi-1km_P1D_202211/CHL
+    Dimensions:
+      style: 'cmap:rainbow,range:0.06/50,noClamp,logScale'
 Provider: 
   - Name: Copernicus Marine Service
     Url: https://marine.copernicus.eu/access-data

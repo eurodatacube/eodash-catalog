@@ -28,12 +28,16 @@ Agency:
   - ECMWF
 Legend: N3c_ocean_colour_plankton_atlantic/N3c_atlantic_legend.png
 Image: N3c_ocean_colour_plankton_atlantic/N3c_ocean_colour_plankton_atlantic.png
+References:
+  - Name: Atlantic Ocean, Bio-Geo-Chemical, L4, daily interpolated Satellite Observations (Near Real Time)
+    Url: https://data.marine.copernicus.eu/product/OCEANCOLOUR_ATL_BGC_L4_NRT_009_116/description
 Resources:
-  - EndPoint: https://my.cmems-du.eu/thredds/wms/cmems_obs-oc_atl_bgc-plankton_my_l4-multi-1km_P1M
-    Name: WMS
-    Type: Time
-    LayerId: CHL
-    Styles: [boxfill%2Frainbow]
+  - EndPoint: https://wmts.marine.copernicus.eu/teroWmts/OCEANCOLOUR_ATL_BGC_L4_NRT_009_116/cmems_obs-oc_atl_bgc-plankton_nrt_l4-gapfree-multi-1km_P1D_202311
+    Type: WMTSCapabilities
+    Name: marinedatastore
+    LayerId: OCEANCOLOUR_ATL_BGC_L4_NRT_009_116/cmems_obs-oc_atl_bgc-plankton_nrt_l4-gapfree-multi-1km_P1D_202311/CHL
+    Dimensions:
+      style: 'cmap:rainbow,range:0.03/50,noClamp,logScale'
 Provider: 
   - Name: Copernicus Marine Service
     Url: https://marine.copernicus.eu/access-data
