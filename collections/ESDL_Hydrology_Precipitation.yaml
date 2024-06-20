@@ -1,5 +1,5 @@
 Name: ESDL_Hydrology_Precipitation
-Title: RT1 Surface Precipitatoin
+Title: RT1 Surface Precipitation
 EodashIdentifier: ESDL_Hydrology_Precipitation
 Description: "ESDL_Hydrology_Precipitation/ESDL_Hydrology_Precipitation.md"
 Themes:
@@ -33,6 +33,6 @@ Resources:
     DatacubeId: 'hydrology'
     Variable: precip
     ColormapName: viridis_alpha
-    Rescale: [0,30]
+    Rescale: [0,50]
 Legend: ESDL_Hydrology_Precipitation/cm_legend.png
 Image: ESDL_Hydrology_Precipitation/image.png
