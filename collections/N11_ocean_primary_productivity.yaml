@@ -1,13 +1,16 @@
 Name: N11_ocean_primary_productivity
 Title: Ocean Primary Productivity (GCOM-C)
 EodashIdentifier: N11
-Subtitle: Ocean Primary Productivity (GCOM-C)
+Subtitle: Net primary productivity [mgC/m2/day]
 Description: N11_ocean_primary_productivity/N11_ocean_primary_productivity.md
 Themes:
   - oceans
 Tags:
   - Primary production
   - Open data
+  - Water
+  - Carbon
+  - Global Change Observation Mission - Climate
 DataSource:
   Spaceborne:
     Satellite:
