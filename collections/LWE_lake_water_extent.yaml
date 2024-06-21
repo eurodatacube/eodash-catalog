@@ -1,15 +1,17 @@
 Name: lake_water_extent
 Title: Lakes water extent
 EodashIdentifier: LWE
-Subtitle: Lake water extent
+Subtitle: Lake water extent (CCI LWE)
 Description: LWE_lake_water_extent/LWE_lake_water_extent.md
 Themes:
   - water
 Tags:
   - Climate Change Initiative
+  - CCI
   - Water quality
   - Multi-sensors
   - Open data
+  - Lakes
 DataSource:
   Spaceborne:
     Satellite:
@@ -43,3 +45,4 @@ Resources:
 Provider:
   - Name: ESA
     Url: https://www.esa.int/
+    
