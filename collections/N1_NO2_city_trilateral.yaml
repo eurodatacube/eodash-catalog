@@ -1,7 +1,7 @@
 Name: N1_NO2_city_trilateral
-Title: City level NO2 (S5P)
+Title: Nitrogen Dioxide at City level
 EodashIdentifier: N1_NO2_city_trilateral
-Subtitle: NO2 detected at cities based on Sentinel-5P data
+Subtitle: Total Column NO2 averaged over a 50x50 sqkm area
 Description: N1_NO2_trilateral/N1_NO2_trilateral.md
 Themes:
   - atmosphere
@@ -9,28 +9,22 @@ Tags:
   - Air quality
   - NO2
   - Open data
+  - Tropospheric
 DataSource:
   Spaceborne:
     Satellite:
       - Sentinel-5P
-      - Aura
     Sensor:
       - TROPOMI
-      - OMI
 Agency:
   - ESA
-  - NASA
 References:
   - Name: Tropomi
     Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Tropomi
-  - Name: Aura satellite
-    Url: https://aura.gsfc.nasa.gov/index.html
   - Name: Air pollution remains low as Europeans stay at home
     Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Air_pollution_remains_low_as_Europeans_stay_at_home
   - Name: NO2 concentrations over India
     Url: https://www.esa.int/ESA_Multimedia/Images/2020/04/NO2_concentrations_over_India
-  - Name: Nitrogen Dioxide Levels Rebound in China
-    Url: https://earthobservatory.nasa.gov/images/146741/nitrogen-dioxide-levels-rebound-in-china
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
@@ -43,6 +37,3 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://www.esa.int/
-  - Name: NASA
-    Roles: licensor, producer, processor
-    Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
