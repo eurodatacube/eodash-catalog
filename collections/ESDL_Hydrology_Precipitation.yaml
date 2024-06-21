@@ -36,3 +36,4 @@ Resources:
     Rescale: [0,50]
 Legend: ESDL_Hydrology_Precipitation/cm_legend.png
 Image: ESDL_Hydrology_Precipitation/image.png
+yAxis: "mm/day"
