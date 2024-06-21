@@ -1,12 +1,14 @@
 Name: lake_water_level
 Title: Lakes water level
 EodashIdentifier: LWL
-Subtitle: Lake water level
+Subtitle: Lake water level (CCI LWL)
 Description: LWL_lake_water_level/LWL_lake_water_level.md
 Themes:
   - water
 Tags:
   - Climate Change Initiative
+  - CCI
+  - Lakes
   - Water quality
   - Multi-sensors
   - Open data
