@@ -1,5 +1,6 @@
 Name: N12_1_sea_ice_concentration_arctic
 Title: Sea ice concentration GCOM-W - Arctic
+Subtitle: Percentage of sea ice coverage [%]
 EodashIdentifier: N12_1_sea_ice_concentration_arctic
 Description: N12_sea_ice_concentration/N12.md
 Themes:
@@ -8,6 +9,7 @@ Tags:
   - Arctic 
   - Sea ice
   - Open data
+  - Global Change Observation Mission - Water
 DataSource:
   Spaceborne:
     Satellite:
