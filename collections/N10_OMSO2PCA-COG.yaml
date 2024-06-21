@@ -1,7 +1,7 @@
 Name: N10_OMSO2PCA-COG
 Title: Sulfur Dioxide (OMI/Aura)
 EodashIdentifier: N10
-Subtitle: Sulfur Dioxide (OMI/Aura)
+Subtitle: SO2 Total Column L3 1-day
 Description: N10_OMSO2PCA-COG/N10_OMSO2PCA-COG.md
 Themes:
   - atmosphere
@@ -9,6 +9,8 @@ Tags:
   - Air quality
   - SO2
   - Open data
+  - Sulfur Dioxide
+  - Ozone Monitoring Instrument
 DataSource:
   Spaceborne:
     Satellite:
