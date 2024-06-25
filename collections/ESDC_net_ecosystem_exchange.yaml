@@ -5,13 +5,29 @@ Description: ESDC_net_ecosystem_exchange/ESDC_net_ecosystem_exchange.md
 Themes:
   - biomass
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - CO2
+  - Atmosphere
+  - Photosynthesis
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Terra
+    Sensor:
+      - MODIS
 Agency:
-  - placeholder
+  - NASA
+Citation:
+  Publication:
+    - Citation: |
+        Tramontana, G., Jung, M., Schwalm, C. R., Ichii, K., Camps-Valls, G., Ráduly, B., Reichstein, M., Arain, M. A., Cescatti, A., Kiely, G., Merbold, L., Serrano-Ortiz, P., Sickert, S., Wolf, S., and Papale, D. 
+        Predicting carbon dioxide and energy fluxes across global FLUXNET sites with regression algorithms, Biogeosciences, 13, 4291–4313.
+      DOI: 10.5194/bg-13-4291-2016, 2016
+Legend: ESDC_net_ecosystem_exchange/ESDC_net_ecosystem_exchange_legend.png
+Image: ESDC_net_ecosystem_exchange/ESDC_net_ecosystem_exchange.png
+References:
+  - Name: Data served from the Earth System Data Lab xcube server
+    Url: https://viewer.earthsystemdatalab.net/
 Resources:
   - EndPoint: https://api.earthsystemdatalab.net/api
     Type: zarr
@@ -21,5 +37,7 @@ Resources:
     Variable: net_ecosystem_exchange
     ColormapName: bwr
     Rescale: [-7,2]
-Legend: ESDC_net_ecosystem_exchange/cm_legend.png
-Image: ESDC_net_ecosystem_exchange/World-ESDC_net_ecosystem_exchange.png
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://terra.nasa.gov/data/modis-data
