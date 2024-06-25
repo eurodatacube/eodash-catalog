@@ -5,13 +5,30 @@ Description: ESDC_gross_primary_productivity/ESDC_gross_primary_productivity.md
 Themes:
   - biomass
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - CO2
+  - Photosynthesis
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Terra
+    Sensor:
+      - MODIS
 Agency:
-  - placeholder
+  - NASA
+Citation:
+  Publication:
+    - Citation: |
+        Tramontana, G., Jung, M., Schwalm, C. R., Ichii, K., Camps-Valls, G., Ráduly, B., Reichstein, M., Arain, M. A., Cescatti, A., Kiely, G., Merbold, L., Serrano-Ortiz, P., Sickert, S., Wolf, S., and Papale, D. 
+        Predicting carbon dioxide and energy fluxes across global FLUXNET sites with regression algorithms, Biogeosciences, 13, 4291–4313.
+      DOI: 10.5194/bg-13-4291-2016
+Legend: ESDC_gross_primary_productivity/ESDC_gross_primary_productivity_legend.png
+Image: ESDC_gross_primary_productivity/ESDC_gross_primary_productivity.png
+References:
+  - Name: Data served from the Earth System Data Lab xcube server
+    Url: https://viewer.earthsystemdatalab.net/
+  - Name: What is the Global Carbon Budget
+    Url: https://www.esa.int/ESA_Multimedia/Images/2021/11/Global_carbon_budget
 Resources:
   - EndPoint: https://api.earthsystemdatalab.net/api
     Type: zarr
@@ -21,5 +38,7 @@ Resources:
     Variable: gross_primary_productivity
     ColormapName: jet
     Rescale: [-1,15]
-Legend: ESDC_gross_primary_productivity/cm_legend.png
-Image: ESDC_gross_primary_productivity/World-ESDC_gross_primary_productivity.png
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://terra.nasa.gov/data/modis-data
