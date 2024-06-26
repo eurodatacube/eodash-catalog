@@ -873,7 +873,7 @@ def generate_veda_cog_link(endpoint, file_url):
     else:
         file_url = ""
 
-    target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+    target_url = "https://openveda.cloud/api/raster/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
         file_url,
         bidx,
         colormap,
@@ -897,7 +897,7 @@ def generate_veda_tiles_link(endpoint, item):
         item = "&item=%s"%(item)
     else:
         item = ""
-    target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s%s"%(
+    target_url = "https://openveda.cloud/api/raster/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s%s"%(
         collection,
         item,
         assets,
