@@ -32,10 +32,10 @@ Citation:
     - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
       DOI: 10.4319/lo.1997.42.1.0001
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: MO_NPP_npp_vgpm

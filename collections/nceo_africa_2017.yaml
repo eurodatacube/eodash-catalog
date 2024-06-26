@@ -15,7 +15,7 @@ Sensor:
 Agency:
   - NASA
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: nceo_africa_2017

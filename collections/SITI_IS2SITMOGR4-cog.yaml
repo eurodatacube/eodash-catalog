@@ -15,7 +15,7 @@ Agency:
 Legend: SITI_IS2SITMOGR4-cog/cm_legend.png
 Image: SITI_IS2SITMOGR4-cog/thumbnail.png
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: IS2SITMOGR4-cog
