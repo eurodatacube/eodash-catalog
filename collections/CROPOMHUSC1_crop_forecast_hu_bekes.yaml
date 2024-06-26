@@ -1,5 +1,5 @@
 Name: crop_forecast_hu_bekes
-Title: CropModel yield forecast Békés subcounty
+Title: Hungary Békés subcounty yield
 EodashIdentifier: CROPOMHUSC1
 Subtitle: Yield forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
@@ -48,3 +48,4 @@ Resources:
           Assets:
             - Identifier: vector_data
               File: https://api.cropom-dev.com/crop_model/regional_forecast?region_code=HU332
+Legend: crop_forecast_CropOM/cm_legend.png

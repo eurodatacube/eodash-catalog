@@ -1,5 +1,5 @@
 Name: crop_forecast_hu_bekes_water
-Title: CropModel water demand forecast Békés subcounty
+Title: Hungary Békés subcounty water demand
 EodashIdentifier: CROPOMHUSC2
 Subtitle: Yield and water demand forecast under "what-if" scenarios
 Description: crop_forecast_CropOM/crop_forecast_CropOM.md
@@ -48,3 +48,4 @@ Resources:
           Assets:
             - Identifier: vector_data
               File: https://api.cropom-dev.com/crop_model/regional_forecast?region_code=HU332
+Legend: crop_forecast_CropOM/cm_legend.png
