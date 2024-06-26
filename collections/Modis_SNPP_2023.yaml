@@ -1,8 +1,8 @@
-Name: VIIRS_SNPP_2023
-Title: VIIRs Fire Detections
-EodashIdentifier: VIIRS_SNPP_2023
-# Description: "VIIRS_SNPP_2023/VIIRS_SNPP_2023.md"
-Description: "VIIRs detections that inform the most recent time-step’s fire perimeter and active fire line calculation for 2023"
+Name: Modis_SNPP_2023
+Title: Modis Fire Detections
+EodashIdentifier: Modis_SNPP_2023
+# Description: "Modis_SNPP_2023/Modis_SNPP_2023.md"
+Description: "Modis detections that inform the most recent time-step’s fire perimeter and active fire line calculation for 2023"
 Themes:
   - "extreme-events"
 Tags:
@@ -32,4 +32,5 @@ Resources:
     DateTimeInterval:
       Start: "2023-01-01T00:00:00"
       End: "2023-12-31T00:00:00"
-Image: VIIRS_SNPP_2023/image.png
+Image: Modis_SNPP_2023/image.png
+yAxis: "detections"
