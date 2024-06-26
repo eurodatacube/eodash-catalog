@@ -1,0 +1,35 @@
+Name: VIIRS_SNPP_2023
+Title: VIIRs Fire Detections
+EodashIdentifier: VIIRS_SNPP_2023
+# Description: "VIIRS_SNPP_2023/VIIRS_SNPP_2023.md"
+Description: "VIIRs detections that inform the most recent time-step’s fire perimeter and active fire line calculation for 2023"
+Themes:
+  - "extreme-events"
+Tags:
+  - Optical
+  - Open data
+  - Fire
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Aqua
+    Sensor:
+      - MODIS
+Agency:
+  - ESA
+Provider:
+  - Name: NASA National Oceanic and Atmospheric Administration
+    Url: https://www.nasa.gov/directorates/smd/joint-agency-satellite-division/noaa/
+  - Name: NASA Earth Information System
+    Url: https://www.earthdata.nasa.gov/eis
+    Roles:
+      - processor
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-180, -85, 180, 85]
+    Type: OverwriteTimes
+    DateTimeInterval:
+      Start: "2023-01-01T00:00:00"
+      End: "2023-12-31T00:00:00"
+Image: VIIRS_SNPP_2023/image.png

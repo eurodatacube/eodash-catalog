@@ -102,6 +102,7 @@ collections:
   - CV_Covid_19_cases_trilateral
   - OW_Covid_19_vaccinations_trilateral
   - FNF_Palsar
+  - VIIRS_SNPP_2023
   - ADD_West_Antarctica_S1
   - ADD_Landsat_L2_Antarctica
   - ADD_Melt_Duration
