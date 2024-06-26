@@ -6,7 +6,7 @@ Description: EPA_Forest_fire_Methane_Daily/EPA_Forest_fire_Methane_Daily.md
 Themes:
   - biomass
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: EPA-daily-emissions_5_Forest_Fires
@@ -14,7 +14,7 @@ Resources:
     Rescale: [0, 2e12]
     Bidx: 1
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e-12
 Image: EPA_Forest_fire_Methane_Daily/thumbnail.png

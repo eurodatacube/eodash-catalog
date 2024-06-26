@@ -146,7 +146,7 @@ Locations:
     Identifier: JP06
     Country: JP
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: nightlights-hd-monthly

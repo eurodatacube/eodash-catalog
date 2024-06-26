@@ -15,10 +15,10 @@ Agency:
   - NASA
 Legend: N10_OMSO2PCA-COG/cm_legend.png
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: OMSO2PCA-COG

@@ -23,7 +23,7 @@ Provider:
     Roles:
       - host
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: tiles
     Name: VEDA
     CollectionId: landsat-c2l2-sr-antarctic-glaciers-thwaites

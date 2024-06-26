@@ -51,7 +51,7 @@ Locations:
     Point: [-122.41638, 37.7775]
     Bbox: [-122.95, 37.01, -120.96, 38.18]
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: slowdown-proxy-covid-19-changing-landscapes
