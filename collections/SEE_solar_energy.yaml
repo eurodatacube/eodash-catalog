@@ -14,7 +14,7 @@ Agency:
   - ESA
 Resources:
     - Name: COG source
-      Style: http://localhost:9000/cog_style.json
+      Style: test_assets/cog_style.json
       Bbox: [11, 46.5, 15.5, 48.9]
       TimeEntries:
         - Time: "2023"
