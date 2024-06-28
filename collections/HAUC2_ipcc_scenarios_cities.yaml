@@ -1,0 +1,29 @@
+Name: ipcc_scenarios_cities
+Title: Emission Scenarios
+EodashIdentifier: HAUC2
+Description: HAUC2_ipcc_scenarios_cities/HAUC2.md
+Themes:
+  - eo-adaptation-services
+Tags:
+  - "HeatAdapt"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Locations:
+  - Identifier: Graz
+    Country: ['AT']
+    Name: Graz
+    Point: [15.444, 47.028]
+    Bbox: [15.357, 46.972, 15.528, 47.085]
+    Times: ['2015-05-15']
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub WMS
+    CollectionId: placeholder
+    LayerId: placeholder
+Legend: HAUC2_ipcc_scenarios_cities/cm_legend.png
