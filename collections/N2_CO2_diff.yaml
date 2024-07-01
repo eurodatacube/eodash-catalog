@@ -1,7 +1,7 @@
 Name: N2_CO2_diff
-Title: Difference of Carbon Dioxide
+Title: Carbon Dioxide from OCO-2 (daily difference)
 EodashIdentifier: N2_diff
-Subtitle: Difference of Carbon Dioxide [ppm]
+Subtitle: CO2 difference compared to 2015-2019 baseline [ppm]
 Description: N2_CO2_diff/N2_CO2_diff.md
 Themes:
   - atmosphere
