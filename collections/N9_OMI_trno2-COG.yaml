@@ -1,7 +1,7 @@
 Name: N9_OMI_trno2-COG
-Title: Nitrogen Dioxide (Yearly)
+Title: Nitrogen Dioxide from OMI (Yearly)
 EodashIdentifier: N9
-Subtitle: Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura 0.10 x 0.10
+Subtitle: Yearly NO2 from NASA's OMI Aura [10^14 molecules/cm^2]
 Description: N9_OMI_trno2-COG/N9_OMI_trno2-COG.md
 Themes:
   - atmosphere
@@ -9,6 +9,8 @@ Tags:
   - Air quality
   - NO2
   - Open data
+  - Air quality
+  - Air pollution
 DataSource:
   Spaceborne:
     Satellite:
@@ -38,3 +40,8 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://search.earthdata.nasa.gov/search?q=OMNO2d_003
+References:
+  - Name: NASA Covid Dashboard 
+    Key: covid_dashboard
+    Url: https://www.earthdata.nasa.gov/covid19/indicators/no2
+    
