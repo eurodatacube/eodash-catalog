@@ -1,5 +1,6 @@
 Name: sea_ice_thickness_envisat
 Title: Sea ice thickness (Envisat)
+Subtitle: Arctic sea ice thickness from CCI
 EodashIdentifier: SIE
 Description: SIE_sea_ice_thickness_envisat/SIE_sea_ice_thickness_envisat.md
 Themes:
@@ -9,6 +10,7 @@ Tags:
   - Polar
   - ESA Climate Change Initiative
   - Open data
+  - Arctic
 DataSource:
   Spaceborne:
     Satellite:
