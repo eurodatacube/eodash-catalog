@@ -1,11 +1,12 @@
 Name: solar_induced_chlorophyll_fluorescence
 Title: Solar induced chlorophyll fluorescence
+Subtitle: SIF monthly average from Sentinel-5p TROPOMI [mW/m2/sr/nm]
 EodashIdentifier: SIF
 Description: SIF_solar_induced_chlorophyll_fluorescence/SIF_solar_induced_chlorophyll_fluorescence.md
 Themes:
   - agriculture
 Tags:
-  - placeholder
+  - photosynthesis
 DataSource:
   Spaceborne:
     Satellite:
