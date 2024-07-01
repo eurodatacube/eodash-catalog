@@ -1,7 +1,7 @@
 Name: soil_moisture_anomaly
-Title: Soil Moisture Anomaly
+Title: Soil Moisture Anomaly from GSMaP
 EodashIdentifier: SMC
-Subtitle: Soil Moisture Anomaly
+Subtitle: Global Soil Moisture Anomaly
 Description: SMC_soil_moisture_anomaly/SMC_soil_moisture_anomaly.md
 Themes:
   - agriculture
