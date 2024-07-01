@@ -1,13 +1,14 @@
 Name: Greenhouse_gas_reconsiliation_CO2
-Title: Greenhouse gas reconciliation CO2 (CCI RECCAP2)
+Title: Carbon Dioxide from CCI RECCAP2
 EodashIdentifier: GGI_CO2
-Subtitle: National greenhouse gas inventories (NGHGI), atmospheric inversion models
+Subtitle: CO2 from National greenhouse gas inventories (NGHGI) database
 Description: GGI_CO2/GGI_CO2.md
 Themes:
   - atmosphere
 Tags:
   - CO2
   - Open data
+  - Greenhouse gases
 DataSource:
   Spaceborne:
     Satellite:
