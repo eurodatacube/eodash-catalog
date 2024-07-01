@@ -1,8 +1,8 @@
 Name: N1_NO2_jaxa
-Title: NO2 JAXA
+Title: Nitrogen dioxide daily (Cairo) [mol/m3]
 EodashIdentifier: N1_NO2_jaxa
-Subtitle: NO2 TROPOMI JAXA Cairo
-Description: N1_NO2_trilateral/N1_NO2_trilateral.md
+Subtitle: NO2 daily column density in Cairo based on Sentinel-5P data
+Description: N1_NO2_trilateral/N1_NO2_jaxa.md
 Themes:
   - atmosphere
 Tags:
@@ -13,26 +13,18 @@ DataSource:
   Spaceborne:
     Satellite:
       - Sentinel-5P
-      - Aura
     Sensor:
       - TROPOMI
-      - OMI
 Agency:
   - ESA
-  - NASA
-  - JAXA
 Legend: N1_NO2_jaxa/N1_NO2_jaxa_legend.png
 References:
   - Name: Tropomi
     Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Tropomi
-  - Name: Aura satellite
-    Url: https://aura.gsfc.nasa.gov/index.html
   - Name: Air pollution remains low as Europeans stay at home
     Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Air_pollution_remains_low_as_Europeans_stay_at_home
   - Name: NO2 concentrations over India
     Url: https://www.esa.int/ESA_Multimedia/Images/2020/04/NO2_concentrations_over_India
-  - Name: Nitrogen Dioxide Levels Rebound in China
-    Url: https://earthobservatory.nasa.gov/images/146741/nitrogen-dioxide-levels-rebound-in-china
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
@@ -46,9 +38,3 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://www.esa.int/
-  - Name: NASA
-    Roles: licensor, producer, processor
-    Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
-  - Name: JAXA
-    Roles: processor
-    Url: https://global.jaxa.jp/
