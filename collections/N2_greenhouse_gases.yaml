@@ -1,7 +1,7 @@
 Name: greenhouse_gases
-Title: Greenhouse gases
+Title: Carbon Dioxide at city level from GOSAT
 EodashIdentifier: N2_greenhouse_gases
-Subtitle: The Impact of the COVID-19 Pandemic on Atmospheric CO2
+Subtitle: CO2 emissions over large cities [ppmv]
 Description: N2_greenhouse_gases/N2_greenhouse_gases.md
 Themes:
   - atmosphere
@@ -9,6 +9,8 @@ Tags:
   - Air quality
   - CO2
   - Open data
+  - GHG
+  - Greenhouse gases
 DataSource:
   Spaceborne:
     Satellite:
