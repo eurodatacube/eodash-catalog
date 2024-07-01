@@ -1,7 +1,7 @@
 Name: vegetation_index_timeseries
-Title: Vegetation index
+Title: Local NDVI from GSMaP
 EodashIdentifier: VITS
-Subtitle: Vegetation index
+Subtitle: Normalized Difference Vegetation Index Timeseries 
 Description: VITS_vegetation_index_timeseries/VITS_vegetation_index_timeseries.md
 Themes:
   - agriculture
