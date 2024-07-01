@@ -4,7 +4,7 @@ EodashIdentifier: PRCG
 Subtitle: Monthly precipitation product
 Description: PRCG_precipitation/PRCG_precipitation.md
 Themes:
-  - atmosphere
+  - agriculture
 Tags:
   - Precipitation
   - Rainfall
