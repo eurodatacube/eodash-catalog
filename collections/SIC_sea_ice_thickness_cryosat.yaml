@@ -1,5 +1,6 @@
 Name: sea_ice_thickness_cryosat
-Title: Sea ice thickness (Cryosat)
+Title: Sea ice thickness (Cryosat-2)
+Subtitle: Daily Arctic sea ice thickness
 EodashIdentifier: SIC
 Description: SIC_sea_ice_thickness_cryosat/SIC_sea_ice_thickness_cryosat.md
 Themes:
@@ -9,6 +10,8 @@ Tags:
   - Polar
   - ESA Climate Change Initiative
   - Open data
+  - Polar
+  - Arctic
 DataSource:
   Spaceborne:
     Satellite:
