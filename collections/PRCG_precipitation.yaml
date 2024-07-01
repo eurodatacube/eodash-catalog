@@ -1,7 +1,7 @@
 Name: precipitation
-Title: Precipitation
+Title: Precipitation from GSMaP
 EodashIdentifier: PRCG
-Subtitle: Precipitation
+Subtitle: Monthly precipitation product
 Description: PRCG_precipitation/PRCG_precipitation.md
 Themes:
   - atmosphere
@@ -12,9 +12,54 @@ Tags:
 DataSource:
   Spaceborne:
     Satellite:
-      - Other
+      - TRMM
+      - Aqua
+      - ADEOS-II
+      - DMSP-F11
+      - DMSP-F13
+      - DMSP-F14
+      - DMSP-F15
+      - Megha-Tropiques
+      - GCOM-W1
+      - GPM Core Observatory
+      - DWSS-1
+      - NOAA-N15
+      - NOAA-N16
+      - NOAA-N17
+      - NOAA-N18
+      - NOAA-N19
+      - MetOp-A
+      - MetOp-B
+      - NPP
+      - JPSS-1
+    Sensor:  
+      - TMI
+      - AMSR-E
+      - AMSR
+      - SSM/I
+      - SSM/I
+      - SSM/I
+      - SSM/I
+      - MADRAS
+      - AMSR2
+      - GMI
+      - TBD
+      - AMSU-A/AMSU-B
+      - AMSU-A/AMSU-B
+      - AMSU-A/AMSU-B
+      - AMSU-A/MHS
+      - AMSU-A/MHS
+      - AMSU-A/MHS
+      - AMSU-A/MHS
+      - ATMS
+      - ATMS
 Agency:
   - JAXA
+  - NOAA
+  - EUMETSAT
+  - CNES
+  - ISRO
+  - DoD
 Legend: PRCG_precipitation/PRCG_legend.png
 Image: PRCG_precipitation/PRCG_precipitation.png
 References:
