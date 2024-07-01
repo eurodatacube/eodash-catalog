@@ -1,5 +1,6 @@
 Name: ESDC_kndvi
-Title: KNDVI
+Title: Kernel NDVI (daily)
+Subtitle: BRDF-Adjusted Reflectance Daily L3 Global 0.05 Deg
 EodashIdentifier: ESDC_kndvi
 Description: ESDC_kndvi/ESDC_kndvi.md
 Themes:
@@ -9,6 +10,8 @@ Tags:
   - Atmosphere
   - Photosynthesis
   - Open data
+  - Vegetation Index
+  - Carbon
 DataSource:
   Spaceborne:
     Satellite:
