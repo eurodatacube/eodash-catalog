@@ -1,5 +1,5 @@
 Name: net_primary_production
-Title: Net primary production
+Title: Ocean net primary production (MODIS)
 EodashIdentifier: NPPN
 Description: NPPN_net_primary_production/NPPN_net_primary_production.md
 Themes:
@@ -11,6 +11,8 @@ Tags:
   - Photosynthesis
   - Organic material
   - Chlorophyll
+  - Carbon
+  - Water
 DataSource:
   Spaceborne:
     Satellite:
