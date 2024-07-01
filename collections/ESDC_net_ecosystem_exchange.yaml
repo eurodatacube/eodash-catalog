@@ -1,5 +1,6 @@
 Name: ESDC_net_ecosystem_exchange
-Title: Net Ecosystem Exchange
+Title: Land Net Ecosystem Exchange
+Subtitle: Net carbon exchange between the ecosystem and the atmosphere
 EodashIdentifier: ESDC_net_ecosystem_exchange
 Description: ESDC_net_ecosystem_exchange/ESDC_net_ecosystem_exchange.md
 Themes:
@@ -9,6 +10,7 @@ Tags:
   - Atmosphere
   - Photosynthesis
   - Open data
+  - Carbon
 DataSource:
   Spaceborne:
     Satellite:
