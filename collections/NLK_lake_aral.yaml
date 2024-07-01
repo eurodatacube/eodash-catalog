@@ -1,5 +1,5 @@
 Name: NLK_lake_aral
-Title: Aral Lake cloud free
+Title: Aral Lake Landsat-8 cloud free
 EodashIdentifier: NLK_lake_aral
 Description: Landsat-8 images of the Aral Lake
 Themes:
@@ -7,6 +7,8 @@ Themes:
 Tags:
   - Lake
   - Optical
+  - Water
+  - Open Data
 DataSource:
   Spaceborne:
     Satellite:
