@@ -1,10 +1,10 @@
 Name: precipitation_timeseries
-Title: Precipitation Timeseries
+Title: Local Precipitation from GCOM-W
 EodashIdentifier: PRCTS
 Subtitle: Precipitation Timeseries
 Description: PRCTS_precipitation_timeseries/PRCTS_precipitation_timeseries.md
 Themes:
-  - atmosphere
+  - agriculture
 Tags:
   - Precipitation
   - Rainfall
