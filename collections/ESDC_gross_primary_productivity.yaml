@@ -1,5 +1,6 @@
 Name: ESDC_gross_primary_productivity
-Title: Gross Primary Productivity
+Title: Land Gross Primary Productivity
+Subtitle: Global land GPP
 EodashIdentifier: ESDC_gross_primary_productivity
 Description: ESDC_gross_primary_productivity/ESDC_gross_primary_productivity.md
 Themes:
@@ -8,6 +9,7 @@ Tags:
   - CO2
   - Photosynthesis
   - Open data
+  - Carbon
 DataSource:
   Spaceborne:
     Satellite:
