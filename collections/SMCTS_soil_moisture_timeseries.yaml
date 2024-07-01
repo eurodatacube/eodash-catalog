@@ -1,7 +1,7 @@
 Name: soil_moisture_timeseries
-Title: Soil moisture
+Title: Local Soil Moisture from GSMaP
 EodashIdentifier: SMCTS
-Subtitle: Soil moisture
+Subtitle: Soil Moisture Timeseries
 Description: SMCTS_soil_moisture_timeseries/SMCTS_soil_moisture_timeseries.md
 Themes:
   - agriculture
