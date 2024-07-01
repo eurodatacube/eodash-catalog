@@ -1,13 +1,14 @@
 Name: Greenhouse_gas_reconsiliation_N2O
-Title: Greenhouse gas reconciliation N2O (CCI RECCAP2)
+Title: Nitrous oxide from CCI RECCAP2
 EodashIdentifier: GGI_N2O
-Subtitle: National greenhouse gas inventories (NGHGI), atmospheric inversion models
+Subtitle: N2O from National greenhouse gas inventories (NGHGI) database
 Description: GGI_N2O/GGI_N2O.md
 Themes:
   - atmosphere
 Tags:
   - NO2
   - Open data
+  - Greenhouse gases
 DataSource:
   Spaceborne:
     Satellite:
