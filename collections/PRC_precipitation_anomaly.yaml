@@ -1,10 +1,10 @@
 Name: precipitation_anomaly
-Title: Precipitation Anomaly
+Title: Precipitation Anomaly from GSMap
 EodashIdentifier: PRC
-Subtitle: Precipitation Anomaly
+Subtitle: Global Precipitation Anomaly
 Description: PRC_precipitation_anomaly/PRC_precipitation_anomaly.md
 Themes:
-  - atmosphere
+  - agriculture
 Tags:
   - Precipitation
   - Rainfall
