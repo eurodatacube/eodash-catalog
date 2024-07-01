@@ -1,12 +1,14 @@
 Name: nightlights
-Title: Nightlights
+Title: Nightlights from SUOMI-NPP
 EodashIdentifier: N5
+Subtitle: 30-meter Black Marble High Definition (HD) nighttime lights
 Description: N5_nightlights/N5_nightlights.md
 Themes:
   - economy
 Tags:
   - Human activities
   - Open data
+  - SUOMI-NPP
 DataSource:
   Spaceborne:
     Satellite:
@@ -160,3 +162,15 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://search.earthdata.nasa.gov/search?portal=idn&fi=VIIRS
+References:
+  - Name: NASA's Black Marble 
+    Key: black_marble
+    Url: https://blackmarble.gsfc.nasa.gov/
+  - Name: Suomi National Polar-orbiting Partnership (Suomi NPP) 
+    Key: suomi_npp
+    Url: https://www.nasa.gov/mission_pages/NPP/main/index.html
+  - Name: NASA Covid Dashboard 
+    Key: covid_dashboard
+    Url: https://www.earthdata.nasa.gov/covid19/indicators/bm
+    
+    
