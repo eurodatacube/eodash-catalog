@@ -1,7 +1,7 @@
 Name: nceo_africa_2017
-Title: Aboveground Biomass
+Title: Aboveground Woody Biomass
 EodashIdentifier: NCEO
-Subtitle: Aboveground Biomass subtitle
+Subtitle: NCEO Africa AGB map for 2017 at 100 m spatial resolution
 Description: nceo_africa_2017/nceo_africa_2017.md
 Themes:
   - biomass
@@ -10,6 +10,8 @@ Tags:
   - Wood
   - Open data
   - Multi-sensors
+  - Carbon
+  - Forest
 DataSource:
   Spaceborne:
     Satellite:
