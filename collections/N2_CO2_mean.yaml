@@ -1,7 +1,7 @@
 Name: N2_CO2_mean
-Title: Mean Carbon Dioxide
+Title: Carbon Dioxide from OMI (daily)
 EodashIdentifier: N2_CO2_mean
-Subtitle: Mean Carbon Dioxide [ppm]
+Subtitle: Mean daily Carbon Dioxide [ppm]
 Description: N2_CO2_mean/N2_CO2_mean.md
 Themes:
   - atmosphere
@@ -9,6 +9,8 @@ Tags:
   - Air quality
   - CO2
   - Open data
+  - GHG
+  - Greenhouse gases
 DataSource:
   Spaceborne:
     Satellite:
