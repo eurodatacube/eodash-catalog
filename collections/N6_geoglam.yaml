@@ -1,13 +1,16 @@
 Name: N6_geoglam
 Title: Crop Conditions (GEOGLAM)
 EodashIdentifier: N6
+Subtitle: Estimates from GEOGLAM Crop Monitor
 Description: N6_geoglam/N6_geoglam.md
 Themes:
-  - economy
+  - agriculture
 Tags:
   - Agriculture
   - Human activities
   - Open data
+  - Global crop conditions
+  - Crop monitor
 DataSource:
   Spaceborne:
     Satellite:
