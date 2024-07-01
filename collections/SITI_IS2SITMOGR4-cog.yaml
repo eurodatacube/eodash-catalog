@@ -1,5 +1,6 @@
 Name: SITI_IS2SITMOGR4-cog
 Title: Sea Ice Thickness (ICESat-2)
+Subtitle: Monthly Arctic sea ice thickness 
 EodashIdentifier: SITI
 Description: SITI_IS2SITMOGR4-cog/SITI_IS2SITMOGR4-cog.md
 Themes:
@@ -8,6 +9,8 @@ Tags:
   - Sea ice
   - Arctic
   - Open data
+  - Polar
+  - Arctic
 DataSource:
   Spaceborne:
     Satellite:
