@@ -1,6 +1,7 @@
 Name: N2_CO2_jaxa_gosat
-Title: "GOSAT - Carbon Dioxide"
+Title: Carbon Dioxide from GOSAT
 EodashIdentifier: N2_CO2_jaxa_gosat
+Subtitle: GOSAT lower tropospheric CO2 [ppm]
 Description: N2_CO2_jaxa_gosat/N2_CO2_jaxa_gosat.md
 Themes:
   - atmosphere
@@ -8,6 +9,8 @@ Tags:
   - Air quality
   - CO2
   - Open data
+  - GHG
+  - Greenhouse gases
 DataSource:
   Spaceborne:
     Satellite:
