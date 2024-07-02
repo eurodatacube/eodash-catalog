@@ -1,7 +1,7 @@
 Name: Modis_SNPP_2023
 Title: Modis Fire Detections
 EodashIdentifier: Modis_SNPP_2023
-# Description: "Modis_SNPP_2023/Modis_SNPP_2023.md"
+Description: "Modis_SNPP_2023/Modis_SNPP_2023.md"
 Description: "Modis detections that inform the most recent time-step’s fire perimeter and active fire line calculation for 2023"
 Themes:
   - "extreme-events"
