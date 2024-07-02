@@ -1,7 +1,7 @@
 Name: wind_100m_v_newDeli
 Title: Wind V Field Over Deli 2023 at 100m
 EodashIdentifier: CDS6
-Subtitle: Gridded ERA5 is the fifth generation ECMWF reanalysis for the global climate and weather for the past 4 to 7 decades. This parameter is the wind V field at 100 m
+Subtitle: Gridded ERA5 reanalysis wind V field at 100 m
 Description: CDS6_wind_100m_v_newDeli/CDS6_wind_100m_v_newDeli.md
 Themes:
   - air
@@ -11,6 +11,7 @@ Tags:
   - CDS
   - Multi-sensors
   - Open data
+  - Climate change service
 DataSource:
   Other:
     - ERA5
