@@ -63,6 +63,8 @@ collections:
   - SIF_solar_induced_chlorophyll_fluorescence
   - N5_nightlights
   - N6_geoglam
+  - CDS5_wind_100m_u_newDeli
+  - CDS6_wind_100m_v_newDeli
   # - N7_slowdown_proxy # removed in new VEDA endpoint
   # - N8_recovery_proxy # removed in new VEDA endpoint
   - N3b_water_quality_tsm_chart
