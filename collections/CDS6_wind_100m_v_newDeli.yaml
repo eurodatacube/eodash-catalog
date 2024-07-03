@@ -1,0 +1,46 @@
+Name: wind_100m_v_newDeli
+Title: Wind V Field Over Deli 2023 at 100m
+EodashIdentifier: CDS6
+Subtitle: Gridded ERA5 reanalysis wind V field at 100 m
+Description: CDS6_wind_100m_v_newDeli/CDS6_wind_100m_v_newDeli.md
+Themes:
+  - air
+Tags:
+  - Copernicus Services
+  - C3S
+  - CDS
+  - Multi-sensors
+  - Open data
+  - Climate change service
+DataSource:
+  Other:
+    - ERA5
+Agency:
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Provider: 
+  - Name: Copernicus Climate Change Service
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+  - Name: Climate Data Store
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+Citation:
+  Citation: |
+    Citing the data:
+    Hersbach, H., Bell, B., Berrisford, P., Biavati, G., Horányi, A., Muñoz Sabater, J., Nicolas, J., Peubey, C., Radu, R., Rozum, I., Schepers, D., Simmons, A., Soci, C., Dee, D., Thépaut, J-N. (2023): ERA5 hourly data on single levels from 1940 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (Accessed on 02-M07-2024)
+  DOI: 10.24381/cds.adbb2d47
+Legend: placeholder
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: b0418c9e-e0d2-46df-9431-ec1d6c44514f
+    LayerId: VIS_ERA5_SINGLELEVEL_WIND_V_100M
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: b0418c9e-e0d2-46df-9431-ec1d6c44514f

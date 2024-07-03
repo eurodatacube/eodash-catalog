@@ -25,7 +25,7 @@ Agency:
   - ESA
 Legend: E10d_regional_cropland/E10d_legend.png
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: togo-agriculture-covid-19

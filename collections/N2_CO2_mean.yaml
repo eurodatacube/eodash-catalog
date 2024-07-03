@@ -32,11 +32,11 @@ References:
   - Name: Orbiting Carbon Observatory-2
     Url: https://ocov2.jpl.nasa.gov/
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e6
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: co2-mean

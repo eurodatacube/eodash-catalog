@@ -1,25 +1,39 @@
 Name: grdi-filled-missing-values-count
 Title: GRDI Filled Missing Values Count
 EodashIdentifier: GRDI6
-Subtitle: GRDI Filled Missing Values Count
-Description: grdi-filled-missing-values-count/GRDI6.md
+Subtitle: Global Gridded Relative Deprivation Index - Filled Missing Values Count
+Description: grdi-filled-missing-values-count/grdi-filled-missing-values-count.md
 Themes:
   - economy
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - MODIS
+  - Human activities
+  - Open data
+  - Poverty
+  - Wellbeing
+DataSource:
+  Other:
+    - Multi-sensors
 Agency:
   - NASA
+Citation:
+  Citation: |
+    Center for International Earth Science Information Network - CIESIN - Columbia University. 2022. Global Gridded Relative Deprivation Index (GRDI), v1. Palisades, NY. NASA Socioeconomic Data and Applications Center (SEDAC).
+  DOI: 10.7927/3xxe-ap97
+Legend: grdi-v1-built/cm_legend.png
+Image: grdi-filled-missing-values-count/grdi-filled-missing-values-count.png
+References:
+  - Name: Data access
+    Url: https://sedac.ciesin.columbia.edu/data/set/povmap-grdi-v1
+  - Name: Dataset Description and documentation
+    Url: https://doi.org/10.7927/xwf1-k532
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
-    Type: cog
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
+    Type: cog
     CollectionId: grdi-filled-missing-values-count
     ColormapName: viridis
     Rescale: [0.0,100.0]
     Bidx: 1
-Legend: grdi-v1-built/cm_legend.png
-Image: grdi-filled-missing-values-count/thumbnail.png
+Provider:
+  - Name: NASA
+    Url: https://www.nasa.gov/

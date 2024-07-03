@@ -25,11 +25,11 @@ References:
   - Name: OMI/Aura NO2 Cloud-Screened Total and Tropospheric Column L3 Global Gridded
     Url: https://disc.gsfc.nasa.gov/datasets/OMNO2d_003/summary
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e-14
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: OMI_trno2-COG

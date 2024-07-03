@@ -151,7 +151,7 @@ Locations:
 Legend: N5_nightlights/N5_legend.png
 Image: N5_nightlights/N5_nightlights.png
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: nightlights-hd-monthly

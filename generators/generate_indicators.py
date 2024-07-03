@@ -120,7 +120,7 @@ def process_catalog_file(file_path, options):
                 )
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
-        catalog.normalize_hrefs("../build/%s"%config["id"], strategy=strategy)
+        catalog.normalize_hrefs(config["endpoint"], strategy=strategy)
         
         print("Started creation of collection files")
         start = time.time()
@@ -227,10 +227,14 @@ def process_collection_file(config, file_path, catalog):
                         handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
-                    elif resource["Name"] == "GeoJSON source":
-                        handle_geojson_source(config, resource, data, catalog)
                     else:
                         raise ValueError("Type of Resource is not supported")
+                else:
+                    if resource["Name"] == "GeoJSON source" or resource["Name"] == "COG source":
+                        handle_raw_source(config, resource, data, catalog)
+                    else:
+                        raise ValueError("Type of Resource is not supported")
+
         elif "Subcollections" in data:
             # if no endpoint is specified we check for definition of subcollections
             parent_collection, _ = get_or_create_collection(catalog, data["Name"], data, config)
@@ -346,36 +350,41 @@ def handle_collection_only(config, endpoint, data, catalog):
         add_collection_information(config, collection, data)
         add_to_catalog(collection, catalog, None, data)
 
-def handle_geojson_source(config, endpoint, data, catalog):
+def handle_raw_source(config, endpoint, data, catalog):
     collection, _ = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
     if ("TimeEntries" in endpoint) and len(endpoint["TimeEntries"]) > 0:
         for t in endpoint["TimeEntries"]:
+            extra_fields = {}
+            if "DataProjection" in endpoint:
+                extra_fields["proj:epsg"] = endpoint["DataProjection"]
+            assets = {}
+            media_type = "application/geo+json"
+            style_type = "text/vector-styles"
+            if endpoint["Name"] == "COG source":
+                style_type = "text/cog-styles"
+                media_type = "image/tiff"
+            for a in t["Assets"]:
+                assets[a["Identifier"]] = Asset(
+                    href=a["File"],
+                    roles=["data"],
+                    media_type=media_type,
+                    extra_fields=extra_fields
+                )
             item = Item(
                 id = t["Time"],
                 bbox=endpoint.get("Bbox"),
                 properties={},
                 geometry = create_geojson_from_bbox(endpoint.get("Bbox")),
                 datetime = parser.isoparse(t["Time"]),
-                assets={
-                    "vector_data": Asset(
-                        href="%s%s"%(endpoint["EndPoint"], t["File"]),
-                        roles=["data"],
-                        media_type="application/geo+json",
-                        extra_fields={
-                            "style": "%s/%s"%(
-                                config["assets_endpoint"],
-                                endpoint["Style"]
-                            )
-                        }
-                    ) 
-                }
+                assets=assets
             )
+            ep_st = endpoint["Style"]
             style_link = Link(
                 rel="style",
-                target="%s/%s"%(config["assets_endpoint"], endpoint["Style"]),
-                media_type="text/vector-styles",
+                target=ep_st if ep_st.startswith("http") else "%s/%s"%(config["assets_endpoint"], ep_st),
+                media_type=style_type,
                 extra_fields={
-                    "asset:keys": ["vector_data"]
+                    "asset:keys": [k for k in assets.keys()],
                 }
             )
             item.add_link(style_link)
@@ -383,9 +392,11 @@ def handle_geojson_source(config, endpoint, data, catalog):
             # makes only sense if it is a constant style for all items, should 
             # we keep this?
             collection.add_link(style_link)
+            if "DataProjection" in endpoint:
+                collection.extra_fields["proj:epsg"] = endpoint["DataProjection"]
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t["Time"]
-            link.extra_fields["vector_data"] = "%s%s"%(endpoint["EndPoint"], t["File"])
+            link.extra_fields["assets"] = [a["File"] for a in t["Assets"]]
     add_collection_information(config, collection, data)
     collection.update_extent_from_items()
     add_to_catalog(collection, catalog, endpoint, data)
@@ -873,7 +884,7 @@ def generate_veda_cog_link(endpoint, file_url):
     else:
         file_url = ""
 
-    target_url = "https://staging-raster.delta-backend.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
+    target_url = "https://openveda.cloud/api/raster/cog/tiles/WebMercatorQuad/{z}/{x}/{y}?%sresampling_method=nearest%s%s%s%s"%(
         file_url,
         bidx,
         colormap,
@@ -897,7 +908,7 @@ def generate_veda_tiles_link(endpoint, item):
         item = "&item=%s"%(item)
     else:
         item = ""
-    target_url = "https://staging-raster.delta-backend.com/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s%s"%(
+    target_url = "https://openveda.cloud/api/raster/stac/tiles/WebMercatorQuad/{z}/{x}/{y}?%s%s%s%s%s"%(
         collection,
         item,
         assets,

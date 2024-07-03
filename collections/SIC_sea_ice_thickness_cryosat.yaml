@@ -1,26 +1,45 @@
 Name: sea_ice_thickness_cryosat
-Title: Sea ice thickness (Cryosat)
+Title: Sea ice thickness (Cryosat-2)
+Subtitle: Daily Arctic sea ice thickness
 EodashIdentifier: SIC
-Description: SIC_sea_ice_thickness_cryosat/SIC.md
+Description: SIC_sea_ice_thickness_cryosat/SIC_sea_ice_thickness_cryosat.md
 Themes:
-    - cryosphere
+  - cryosphere
 Tags:
-    - placeholder
-Satellite:
-    - cryosat
-Sensor:
-    - placeholder
+  - Sea ice
+  - Polar
+  - ESA Climate Change Initiative
+  - Open data
+  - Polar
+  - Arctic
+DataSource:
+  Spaceborne:
+    Satellite:
+      - CryoSat-2
+    Sensor:
+      - SIRAL
 Agency:
-    - ESA
-Provider: 
-    - Name: CCI
-License: MIT
+  - ESA
+Citation:
+  Publication:
+    - Citation: |
+        Hendricks, S.; Paul, S.; Rinne, E. (2018). ESA Sea Ice Climate Change Initiative (Sea_Ice_cci). 
+        Northern hemisphere sea ice thickness from CryoSat-2 on the satellite swath (L2P), v2.0. Centre for Environmental Data Analysis, date of citation.
+      DOI: 10.5285/5b6033bfb7f241e89132a83fdc3d5364
+Legend: SIC_sea_ice_thickness_cryosat/SIC_legend.png
+Image: SIC_sea_ice_thickness_cryosat/SIC_sea_ice_thickness_cryosat.png
+References:
+  - Name: The CCI sea-ice thickness data set
+    Url: https://climate.esa.int/en/projects/cmug/studies/new-dimension-cci-sea-ice-thickness-data-set/
+  - Name: Data access
+    Url: https://catalogue.ceda.ac.uk/uuid/5b6033bfb7f241e89132a83fdc3d5364
 Resources:
-    - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
-      Name: Sentinel Hub
-      Type: zarr
-      CollectionId: b6915831-0a56-424b-bcb4-781deb062f31
-      LayerId: ESA-CCI-V2-CRYOSAT
-Legend: SIC_sea_ice_thickness_cryosat/legend.png
-Image: SIC_sea_ice_thickness_cryosat/thumbnail.png
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: zarr
+    CollectionId: b6915831-0a56-424b-bcb4-781deb062f31
+    LayerId: ESA-CCI-V2-CRYOSAT
+Provider:
+  - Name: ESA
+    Roles: licensor, producer, processor
+    Url: https://climate.esa.int/en/data/#/dashboard
