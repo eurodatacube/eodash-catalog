@@ -1,29 +1,49 @@
 Name: N2_CO2_mean
-Title: Mean Carbon Dioxide
+Title: Carbon Dioxide from OMI (daily)
 EodashIdentifier: N2_CO2_mean
-Subtitle: Mean Carbon Dioxide [ppm]
-Description: N2_CO2_mean/N2.md
+Subtitle: Mean daily Carbon Dioxide [ppm]
+Description: N2_CO2_mean/N2_CO2_mean.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Air quality
+  - CO2
+  - Open data
+  - GHG
+  - Greenhouse gases
+DataSource:
+  Spaceborne:
+    Satellite:
+      - OCO-2
+    Sensor:
+      - OCO-2
 Agency:
   - NASA
-Legend: N2_CO2_mean/legend.png
+Legend: N2_CO2_mean/N2_CO2_mean_legend.png
+Image: N2_CO2_mean/N2_CO2_mean.png
+Citation:
+  Publication:
+    - Citation: |
+       Le Quéré, C., Jackson, R.B., Jones, M.W. et al. Temporary reduction in daily global CO2 emissions during the COVID-19 forced confinement. Nat. Clim. Chang. 10, 647–653 (2020).
+      DOI: 10.1038/s41558-020-0797-x
+References:
+  - Name: Scientific Consensus on global climate change
+    Url: https://science.nasa.gov/climate-change/scientific-consensus/
+  - Name: Orbiting Carbon Observatory-2
+    Url: https://ocov2.jpl.nasa.gov/
 Services:
   - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e6
 Resources:
   - EndPoint: https://openveda.cloud/api/stac/
-    Type: cog
     Name: VEDA
+    Type: cog
     CollectionId: co2-mean
     ColormapName: rdylbu_r
     Rescale: [0.000408, 0.000419]
     Bidx: 1
-Image: N2_CO2_mean/thumbnail.png
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://ocov2.jpl.nasa.gov/science/oco-2-data-center/
