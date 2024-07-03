@@ -1,22 +1,34 @@
 Name: soil_moisture_anomaly
-Title: Soil Moisture Anomaly
+Title: Soil Moisture Anomaly from GSMaP
 EodashIdentifier: SMC
-Subtitle: Soil Moisture Anomaly
-Description: SMC_soil_moisture_anomaly/SMC.md
+Subtitle: Global Soil Moisture Anomaly
+Description: SMC_soil_moisture_anomaly/SMC_soil_moisture_anomaly.md
 Themes:
   - agriculture
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - GCOM-W
+  - Precipitation
+  - Multi-sensors
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Other
 Agency:
   - JAXA
+Legend: SMC_soil_moisture_anomaly/SMC_legend.png
+Image: SMC_soil_moisture_anomaly/SMC_soil_moisture_anomaly.png
+References:
+  - Name: Jaxa Public-health Monitor and Analysis Platform
+    Url: https://www.jpmap-jaxa.jp/jpmap/en/user_guide/
+  - Name: Jaxa Global Satellite Mapping of Precipitation
+    Url: https://sharaku.eorc.jaxa.jp/GSMaP/
+  - Name: GSMaP Documentation
+    Url: https://www.eorc.jaxa.jp/GPM/doc/algorithm/GSMaPforGPM_20140902_E.pdf
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: SMC-Anomaly-GCOMW-World-Monthly
-Legend: SMC_soil_moisture_anomaly/cm_legend.png
-Image: SMC_soil_moisture_anomaly/thumbnail.png
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://global.jaxa.jp/
