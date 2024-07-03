@@ -1,5 +1,5 @@
 Name: ESDL_Hydrology_SM
-Title: RT1 Surface Soil Moisture
+Title: Surface Soil Moisture
 EodashIdentifier: ESDL_Hydrology_SM
 Description: "ESDL_Hydrology_SM/ESDL_Hydrology_SM.md"
 Themes:
@@ -28,12 +28,11 @@ Provider:
       - producer
 Citation:
   Publication:
-    Citation: Raphael Quast, Wolfgang Wagner, Bernhard Bauer-Marschallinger, Mariette Vreugdenhil Soil moisture retrieval from Sentinel-1 using a first-order radiative transfer model—A case-study over the Po-Valley, Remote Sensing of Environment
-Volume 295, 1 September 2023, 113651
-    DOI: https://doi.org/10.1016/j.rse.2023.113651
+    - Citation: Raphael Quast, Wolfgang Wagner, Bernhard Bauer-Marschallinger, Mariette Vreugdenhil Soil moisture retrieval from Sentinel-1 using a first-order radiative transfer model—A case-study over the Po-Valley, Remote Sensing of Environment Volume 295, 1 September 2023, 113651
+      DOI: https://doi.org/10.1016/j.rse.2023.113651
 References:
   - Name: RT1 Surface Soil Moisture
-    Url: https://stac.eurac.edu:8080/collections/SM_RT?.language=en
+    Url: https://stac.eurac.edu:8080/collections/SM_RT
 Resources:
   - EndPoint: https://api.earthsystemdatalab.net/api
     Type: zarr
