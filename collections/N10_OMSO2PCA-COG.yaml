@@ -1,29 +1,45 @@
 Name: N10_OMSO2PCA-COG
 Title: Sulfur Dioxide (OMI/Aura)
 EodashIdentifier: N10
-Subtitle: Sulfur Dioxide (OMI/Aura)
-Description: N10_OMSO2PCA-COG/N10.md
+Subtitle: SO2 Total Column L3 1-day
+Description: N10_OMSO2PCA-COG/N10_OMSO2PCA-COG.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - Aura
-Sensor:
-  - OMI
+  - Air quality
+  - SO2
+  - Open data
+  - Sulfur Dioxide
+  - Ozone Monitoring Instrument
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Aura
+    Sensor:
+      - OMI
 Agency:
   - NASA
-Legend: N10_OMSO2PCA-COG/cm_legend.png
+Image: N10_OMSO2PCA-COG/N10_OMSO2PCA-COG.png
+Legend: N10_OMSO2PCA-COG/N10_legend.png
+References:
+  - Name: Dataset access
+    Url: https://disc.gsfc.nasa.gov/datasets/OMSO2e_003/summary
+  - Name: SO2 Monitoring Home Page
+    Url: https://so2.gsfc.nasa.gov/
+  - Name: Aura Project Home Page
+    Url: https://aura.gsfc.nasa.gov/
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: OMSO2PCA-COG
     ColormapName: viridis
     Rescale: [0.0, 1.0]
     Bidx: 1
-Image: N10_OMSO2PCA-COG/thumbnail.png
-yAxis: "DU"
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data

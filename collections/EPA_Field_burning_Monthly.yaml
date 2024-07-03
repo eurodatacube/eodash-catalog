@@ -6,7 +6,7 @@ Description: EPA_Field_burning_Monthly/EPA_Field_burning_Monthly.md
 Themes:
   - biomass
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: EPA-monthly-emissions_4F_Field_Burning
@@ -14,7 +14,7 @@ Resources:
     Rescale: [0, 4.5e9]
     Bidx: 1
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e-9
 Image: EPA_Field_burning_Monthly/thumbnail.png

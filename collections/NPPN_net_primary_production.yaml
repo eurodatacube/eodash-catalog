@@ -32,11 +32,11 @@ References:
   - Name: Ocean productivity
     Url: https://sites.science.oregonstate.edu/ocean.productivity/index.php
 Services:
-  - Endpoint: https://staging-raster.delta-backend.com/cog/statistics
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
-    Name: VEDA 
+  - Name: VEDA 
+    EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     CollectionId: MO_NPP_npp_vgpm
     ColormapName: jet

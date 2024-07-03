@@ -1,22 +1,40 @@
 Name: N1_NO2_jaxa
-Title: NO2 JAXA
+Title: Nitrogen dioxide daily (Cairo) [mol/m3]
 EodashIdentifier: N1_NO2_jaxa
-Subtitle: NO2 TROPOMI JAXA Cairo
-Description: N1_NO2_trilateral/N1.md
+Subtitle: NO2 daily column density in Cairo based on Sentinel-5P data
+Description: N1_NO2_trilateral/N1_NO2_jaxa.md
 Themes:
   - atmosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
+  - Air quality
   - NO2
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-5P
+    Sensor:
+      - TROPOMI
 Agency:
-  - JAXA
+  - ESA
+Legend: N1_NO2_jaxa/N1_NO2_jaxa_legend.png
+References:
+  - Name: Tropomi
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Tropomi
+  - Name: Air pollution remains low as Europeans stay at home
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-5P/Air_pollution_remains_low_as_Europeans_stay_at_home
+  - Name: NO2 concentrations over India
+    Url: https://www.esa.int/ESA_Multimedia/Images/2020/04/NO2_concentrations_over_India
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: NO2-TROPOMI-Cairo-Daily
     OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
-Legend: N1_NO2_jaxa/cm_legend.png
+Provider:
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: ESA
+    Roles: processor
+    Url: https://www.esa.int/

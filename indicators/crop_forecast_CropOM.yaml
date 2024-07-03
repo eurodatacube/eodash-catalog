@@ -1,0 +1,15 @@
+Name: CropModel_Forecast_Ind
+Title: CropModel Forecast
+EodashIdentifier: CROPOM_Ind
+Description: crop_forecast_CropOM/crop_forecast_CropOM.md
+Collections:
+  - CROPOMAT1_crop_forecast_at
+  - CROPOMAT2_crop_forecast_at_water
+  - CROPOMHU1_crop_forecast_hu
+  - CROPOMHU2_crop_forecast_hu_water
+  - CROPOMHUMR1_crop_forecast_hu_mezohegyes
+  - CROPOMHUMR2_crop_forecast_hu_mezohegyes_water
+  - CROPOMHUSC1_crop_forecast_hu_bekes
+  - CROPOMHUSC2_crop_forecast_hu_bekes_water
+  # - CROPOMRO1_crop_forecast_ro
+  # - CROPOMRO2_crop_forecast_ro_water

@@ -1,17 +1,33 @@
 Name: ESDC_kndvi
-Title: KNDVI
+Title: Kernel NDVI (daily)
+Subtitle: BRDF-Adjusted Reflectance Daily L3 Global 0.05 Deg
 EodashIdentifier: ESDC_kndvi
 Description: ESDC_kndvi/ESDC_kndvi.md
 Themes:
   - biomass
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - CO2
+  - Atmosphere
+  - Photosynthesis
+  - Open data
+  - Vegetation Index
+  - Carbon
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Other
 Agency:
-  - placeholder
+  - NASA
+Citation:
+  Publication:
+    - Citation: |
+        Gustau Camps-Valls et al., A unified vegetation index for quantifying the terrestrial biosphere.Sci. Adv.7,eabc7447(2021).
+      DOI: 10.1126/sciadv.abc7447
+Legend: ESDC_kndvi/ESDC_kndvi_legend.png
+Image: ESDC_kndvi/ESDC_kndvi.png
+References:
+  - Name: Data served from the Earth System Data Lab xcube server
+    Url: https://viewer.earthsystemdatalab.net/
 Resources:
   - EndPoint: https://api.earthsystemdatalab.net/api
     Type: zarr
@@ -21,5 +37,7 @@ Resources:
     Variable: kndvi
     ColormapName: RdYlGn
     Rescale: [0,1]
-Legend: ESDC_kndvi/cm_legend.png
-Image: ESDC_kndvi/World-ESDC_kndvi.png
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://terra.nasa.gov/data/modis-data

@@ -81,7 +81,7 @@ Locations:
     Point: [-121.944, 38.715]
     Bbox: [-122.13, 38.20, -120.00, 39.23]
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: recovery-proxy-maps-covid-19

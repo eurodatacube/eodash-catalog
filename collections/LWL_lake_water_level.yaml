@@ -1,22 +1,47 @@
 Name: lake_water_level
-Title: Lake water level
+Title: Lakes water level
 EodashIdentifier: LWL
-Subtitle: Lake water level
-Description: LWL_lake_water_level/LWL.md
+Subtitle: Lake water level (CCI LWL)
+Description: LWL_lake_water_level/LWL_lake_water_level.md
 Themes:
-    - oceans
+  - water
 Tags:
-    - placeholder
-Satellite:
-    - multiple
-Sensor:
-    - CCI
+  - Climate Change Initiative
+  - CCI
+  - Lakes
+  - Water quality
+  - Multi-sensors
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+    - Other
 Agency:
-    - ESA
-Provider:
-    - Name: PLES
+  - ESA
+Citation:
+  Publication:
+    - Citation: Carrea, L., Crétaux, JF., Liu, X. et al. Satellite-derived multivariate world-wide lake physical variable timeseries for climate studies. Sci Data 10, 30 (2023).
+      DOI: 10.1038/s41597-022-01889-z
+References:
+  - Name: Data Documentation
+    Url: https://climate.esa.int/en/projects/lakes/key-documents-lakes/
+  - Name: CCI Lakes project website
+    Url: https://climate.esa.int/en/projects/lakes/about/
+  - Name: Data Source
+    Url: https://catalogue.ceda.ac.uk/uuid/a07deacaffb8453e93d57ee214676304
+  - Name: DeepESDL (Earth System Data Lab)
+    Url: https://www.earthsystemdatalab.net/
+  - Name: Lexcube - visualise datasets in a 3D cube
+    Url: https://viewer.earthsystemdatalab.net/
+  - Name: xcube viewer - visualise DeepESDL datacubes (zarr) on the web
+    Url: https://viewer.earthsystemdatalab.net/
+  - Name: Euro Data Cube CCI Essential Climate Variables collection
+    Url: https://collections.eurodatacube.com/climate-change-initiative/
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Lake_water_level_tri_timeseries
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Lake_water_level_tri_timeseries
+Provider:
+  - Name: ESA
+    Url: https://www.esa.int/

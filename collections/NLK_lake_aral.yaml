@@ -18,7 +18,7 @@ DataSource:
 Agency:
   - NASA
 Resources:
-  - EndPoint: https://staging-stac.delta-backend.com/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: tiles
     CollectionId: landsat-c2l2-sr-lakes-aral-sea
