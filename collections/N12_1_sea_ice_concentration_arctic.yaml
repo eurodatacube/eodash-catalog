@@ -32,6 +32,7 @@ Resources:
     Name: WMS
     Type: OverwriteTimes
     LayerId: SIC_N
+Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
