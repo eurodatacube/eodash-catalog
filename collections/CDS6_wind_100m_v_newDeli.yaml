@@ -44,3 +44,4 @@ Services:
     Name: Statistical API
     Type: byoc
     CollectionId: b0418c9e-e0d2-46df-9431-ec1d6c44514f
+    Script: CDS6_wind_100m_v_newDeli/CDS6_wind_100m_v_newDeli.js
