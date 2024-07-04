@@ -32,7 +32,7 @@ Citation:
     Citing the data:
     Hersbach, H., Bell, B., Berrisford, P., Biavati, G., Horányi, A., Muñoz Sabater, J., Nicolas, J., Peubey, C., Radu, R., Rozum, I., Schepers, D., Simmons, A., Soci, C., Dee, D., Thépaut, J-N. (2023): ERA5 hourly data on single levels from 1940 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (Accessed on 02-M07-2024)
   DOI: 10.24381/cds.adbb2d47
-Legend: placeholder
+Legend: CDS5_wind_100m_u_newDeli/cm_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
