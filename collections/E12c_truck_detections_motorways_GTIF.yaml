@@ -18,7 +18,7 @@ Provider:
 License: MIT
 Resources:
     - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
+      EndPoint: https://services.sentinel-hub.com
       Name: Sentinel Hub
       Type: byoc
       CollectionId: 34fbfb05-c3e5-4885-9840-830ee85dddd4
