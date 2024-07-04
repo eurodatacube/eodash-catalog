@@ -16,7 +16,6 @@ Resources:
   - Name: COG source
     Style: test_assets/cog_style.json
     Bbox: [11, 46.5, 15.5, 48.9]
-    EndPoint: "test"
     TimeEntries:
       - Time: "2023"
         Assets: 

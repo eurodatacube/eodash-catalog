@@ -227,10 +227,12 @@ def process_collection_file(config, file_path, catalog):
                         handle_WMS_endpoint(config, resource, data, catalog, wmts=True)
                     elif resource["Name"] == "Collection-only":
                         handle_collection_only(config, resource, data, catalog)
-                    elif resource.get("Name") == "GeoJSON source" or resource.get("Name") == "COG source":
-                        handle_raw_source(config, resource, data, catalog)
                     else:
                         raise ValueError("Type of Resource is not supported")
+                elif resource.get("Name") == "GeoJSON source" or resource.get("Name") == "COG source":
+                    handle_raw_source(config, resource, data, catalog)
+                else:
+                    raise ValueError("Type of Resource is not supported")
 
         elif "Subcollections" in data:
             # if no endpoint is specified we check for definition of subcollections
