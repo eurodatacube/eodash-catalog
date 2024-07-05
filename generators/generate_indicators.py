@@ -89,7 +89,6 @@ def process_catalog_file(file_path, options):
     print("Processing catalog:", file_path)
     with open(file_path) as f:
         config = yaml.load(f, Loader=SafeLoader)
-        
         if len(options.collections) > 0:
             # create only catalogs containing the passed collections
             process_collections = [c for c in config["collections"] if c in options.collections]
@@ -105,19 +104,24 @@ def process_catalog_file(file_path, options):
             title = config["title"],
             catalog_type=CatalogType.RELATIVE_PUBLISHED,
         )
+        tasks = []
         for collection in process_collections:
             file_path = "../collections/%s.yaml"%(collection)
             if os.path.isfile(file_path):
                 # if collection file exists process it as indicator
                 # collection will be added as single collection to indicator
-                process_indicator_file(config, file_path, catalog)
+                pass
             elif os.path.isfile("../indicators/%s.yaml"%(collection)):
                 # if not try to see if indicator definition available
-                process_indicator_file(config, "../indicators/%s.yaml"%(collection), catalog)
+                file_path = "../indicators/%s.yaml"%(collection)
             else:
                 raise Exception(
                     f'File {collection} in catalog {config["id"]} does not exist in collections or indicators, exiting'
                 )
+            tasks.append(RaisingThread(target=process_indicator_file, args=(config, file_path, catalog)))
+            tasks[-1].start()
+        for task in tasks:
+            task.join()
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
         catalog.normalize_hrefs(config["endpoint"], strategy=strategy)
@@ -543,7 +547,7 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
                 if response.status_code == 200:
                     description = response.text
                 elif "Subtitle" in data:
-                    print("WARNING: Markdown file could not be fetched")
+                    print(f"WARNING: Markdown file could not be fetched for {data['Name']}")
                     description = data["Subtitle"]
             else:
                 # relative path to assets was given
@@ -553,7 +557,7 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
                 if response.status_code == 200:
                     description = response.text
                 elif "Subtitle" in data:
-                    print("WARNING: Markdown file could not be fetched")
+                    print(f"WARNING: Markdown file could not be fetched for {data['Name']}")
                     description = data["Subtitle"]
     elif "Subtitle" in data:
         # Try to use at least subtitle to fill some information
