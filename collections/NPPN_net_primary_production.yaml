@@ -1,46 +1,51 @@
 Name: net_primary_production
-Title: Net primary production
+Title: Ocean net primary production (MODIS)
 EodashIdentifier: NPPN
-Description: NPPN_net_primary_production/NPPN.md
+Description: NPPN_net_primary_production/NPPN_net_primary_production.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - model
-  - photosynthesis
-  - organic material
-  - chlorophyll
-Satellite:
-  - Aqua
-Sensor:
-  - MODIS
+  - Model
+  - Primary production
+  - Open data
+  - Photosynthesis
+  - Organic material
+  - Chlorophyll
+  - Carbon
+  - Water
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Aqua
+    Sensor:
+      - MODIS
 Agency:
   - NASA
-Provider:
-  - Name: Ocean Productivity
-    Url: http://science.oregonstate.edu/ocean.productivity/index.php
-    Description: The purpose of this website is, first and foremost, to provide the science and broader communities with global, updated ocean productivity estimates. In addition, the website provides information on the models employed, access to model code and ancillary data sets, and comparisons of productivity estimates for alternative models. Field data sets relevant to ocean productivity modeling are also provided and will be continually expanded as new data become available. Educational material and background information on phytoplankton ecology and physiology will also be added in the future.
-    Roles:
-      - producer
-  - Name: VEDA
-    Url: https://www.earthdata.nasa.gov/esds/veda
-    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
-    Roles:
-      - host
 Citation:
-  Citation: Data from Ocean Productivity site (http://science.oregonstate.edu/ocean.productivity/index.php)
   Publication:
-    - Citation: "Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42: 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration;"
+    - Citation: |
+        Behrenfeld, MJ, PG Falkowski - Limnology and Oceanography (1997a, Volume 42 1-20); Photosynthetic rates derived from satellite-based chlorophyll concentration
       DOI: 10.4319/lo.1997.42.1.0001
+Legend: NPPN_net_primary_production/NPPN_legend.png
+Image: NPPN_net_primary_production/NPPN_net_primary_production.png
+References:
+  - Name: Ocean productivity
+    Url: https://sites.science.oregonstate.edu/ocean.productivity/index.php
 Services:
   - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
 Resources:
-  - EndPoint: https://openveda.cloud/api/stac/
+  - Name: VEDA 
+    EndPoint: https://openveda.cloud/api/stac/
     Type: cog
-    Name: VEDA
     CollectionId: MO_NPP_npp_vgpm
     ColormapName: jet
     Rescale: [0.0, 1500.0]
     Bidx: 1
-Legend: NPPN_net_primary_production/legend.png
-Image: NPPN_net_primary_production/thumbnail.png
+Provider:
+  - Name: Ocean Productivity
+    Roles: processor
+    Url: http://orca.science.oregonstate.edu/npp_products.php
+  - Name: NASA
+    Roles: licensor, producer
+    Url: https://www.earthdata.nasa.gov/esds/veda

@@ -63,6 +63,8 @@ collections:
   - SIF_solar_induced_chlorophyll_fluorescence
   - N5_nightlights
   - N6_geoglam
+  - CDS5_wind_100m_u_newDeli
+  - CDS6_wind_100m_v_newDeli
   # - N7_slowdown_proxy # removed in new VEDA endpoint
   # - N8_recovery_proxy # removed in new VEDA endpoint
   - N3b_water_quality_tsm_chart
@@ -102,12 +104,15 @@ collections:
   - CV_Covid_19_cases_trilateral
   - OW_Covid_19_vaccinations_trilateral
   - FNF_Palsar
+  - Modis_SNPP_2023
   - ADD_West_Antarctica_S1
   - ADD_Landsat_L2_Antarctica
   - ADD_Melt_Duration
   - ADD_Melt_Onset
   - ADD_Melt_Season_End
   - ADD_Meltmap
+  - ESDL_Hydrology_SM
+  - ESDL_Hydrology_Precipitation
   - MCD_S14Amazonas_detections
   - EPA_Methane
   - HLS_NDVI

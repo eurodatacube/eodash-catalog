@@ -25,7 +25,7 @@ Locations:
       Bbox: [-180, -90, 180, 90]
 Resources:
     - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
+      EndPoint: https://services.sentinel-hub.com
       Name: Sentinel Hub
       Type: byoc
       CollectionId: c5a44d46-0032-4c86-81b0-933ed573c64e

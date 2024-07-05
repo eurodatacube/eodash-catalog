@@ -1,26 +1,46 @@
 Name: sea_ice_thickness_envisat
 Title: Sea ice thickness (Envisat)
+Subtitle: Arctic sea ice thickness from CCI
 EodashIdentifier: SIE
-Description: SIE_sea_ice_thickness_envisat/SIE.md
+Description: SIE_sea_ice_thickness_envisat/SIE_sea_ice_thickness_envisat.md
 Themes:
-    - cryosphere
+  - cryosphere
 Tags:
-    - placeholder
-Satellite:
-    - Envisat
-Sensor:
-    - placeholder
+  - Sea ice
+  - Polar
+  - ESA Climate Change Initiative
+  - Open data
+  - Arctic
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Envisat
+    Sensor:
+      - RA-2
 Agency:
-    - ESA
-Provider: 
-    - Name: CCI
-License: MIT
+  - ESA
+Citation:
+  Publication:
+    - Citation: |
+        Hendricks, S.; Paul, S.; Rinne, E. (2018). ESA Sea Ice Climate Change Initiative (Sea_Ice_cci).
+        Northern hemisphere sea ice thickness from Envisat on the satellite swath (L2P), v2.0. Centre for Environmental Data Analysis, date of citation.
+      DOI: 10.5285/54e2ee0803764b4e84c906da3f16d81b
+Legend: SIE_sea_ice_thickness_envisat/SIE_legend.png
+Image: SIE_sea_ice_thickness_envisat/SIE_sea_ice_thickness_envisat.png
+References:
+  - Name: The CCI sea-ice thickness data set
+    Url: https://climate.esa.int/en/projects/cmug/studies/new-dimension-cci-sea-ice-thickness-data-set/
+  - Name: Data access
+    Url: https://catalogue.ceda.ac.uk/uuid/54e2ee0803764b4e84c906da3f16d81b
+  - Name: ESA Climate Office
+    Url: https://climate.esa.int/en/
 Resources:
-    - Group: Sentinel Hub Resources
-    - EndPoint: https://services.sentinel-hub.com
-      Name: Sentinel Hub
-      Type: zarr
-      CollectionId: a71a2cf1-f336-4baa-93b2-0b2ae1fd512d
-      LayerId: ESA-CCI-V2-ENVISAT
-Legend: SIE_sea_ice_thickness_envisat/legend.png
-Image: SIE_sea_ice_thickness_envisat/thumbnail.png
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: zarr
+    CollectionId: a71a2cf1-f336-4baa-93b2-0b2ae1fd512d
+    LayerId: ESA-CCI-V2-ENVISAT
+Provider:
+  - Name: ESA
+    Roles: licensor, producer, processor
+    Url: https://climate.esa.int/en/data/#/dashboard

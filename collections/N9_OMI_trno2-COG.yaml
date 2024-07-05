@@ -1,39 +1,47 @@
 Name: N9_OMI_trno2-COG
-Title: Nitrogen Dioxide (Yearly)
+Title: Nitrogen Dioxide from OMI (Yearly)
 EodashIdentifier: N9
-Subtitle: Yearly Nitrogen Dioxide (NO2) from NASA's OMI Aura 0.10 x 0.10
-Description: N9_OMI_trno2-COG/N9.md
+Subtitle: Yearly NO2 from NASA's OMI Aura [10^14 molecules/cm^2]
+Description: N9_OMI_trno2-COG/N9_OMI_trno2-COG.md
 Themes:
   - atmosphere
 Tags:
-  - air quality
-  - no2
-Satellite:
-  - AURA
-Sensor:
-  - OMI
+  - Air quality
+  - NO2
+  - Open data
+  - Air quality
+  - Air pollution
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Aura
+    Sensor:
+      - OMI
 Agency:
   - NASA
-Provider:
-  - Name: VEDA
-    Url: https://www.earthdata.nasa.gov/esds/veda
-    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
-    Roles:
-      - host
+Image: N9_OMI_trno2-COG/N9_OMI_trno2-COG.png
+Legend: N9_OMI_trno2-COG/N9_legend.png
+References:
+  - Name: OMI/Aura NO2 Cloud-Screened Total and Tropospheric Column L3 Global Gridded
+    Url: https://disc.gsfc.nasa.gov/datasets/OMNO2d_003/summary
 Services:
   - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e-14
 Resources:
   - EndPoint: https://openveda.cloud/api/stac/
-    Type: cog
     Name: VEDA
+    Type: cog
     CollectionId: OMI_trno2-COG
-    # TODO: There seems to be some issues with the colormap encoding
-    # Colormap: {"1": [120, 120, 120, 255],"2": [130, 65, 0, 255],"3": [66, 207, 56, 255],"4": [245, 239, 0, 255],"5": [241, 89, 32, 255],"6": [168, 0, 0, 255],"7": [0, 143, 201, 255]}
-    # Complete colormap or colormap name can be defined
     ColormapName: reds
     Rescale: [0, 37e14]
     Bidx: 1
-Image: N9_OMI_trno2-COG/thumbnail.png
-Legend: N9_OMI_trno2-COG/cm_legend.png
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://search.earthdata.nasa.gov/search?q=OMNO2d_003
+References:
+  - Name: NASA Covid Dashboard 
+    Key: covid_dashboard
+    Url: https://www.earthdata.nasa.gov/covid19/indicators/no2
+    

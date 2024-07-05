@@ -1,26 +1,37 @@
 Name: nceo_africa_2017
-Title: Aboveground Biomass
+Title: Aboveground Woody Biomass
 EodashIdentifier: NCEO
-Subtitle: Aboveground Biomass subtitle
-Description: nceo_africa_2017/NCEO.md
+Subtitle: NCEO Africa AGB map for 2017 at 100 m spatial resolution
+Description: nceo_africa_2017/nceo_africa_2017.md
 Themes:
-  - agriculture
   - biomass
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - MODIS
+  - Africa
+  - Wood
+  - Open data
+  - Multi-sensors
+  - Carbon
+  - Forest
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Other
 Agency:
   - NASA
+Legend: nceo_africa_2017/NCEO_legend.png
+Image: nceo_africa_2017/nceo_africa_2017.png
+References:
+  - Name: Above Ground Biomass
+    Url: https://ceos.org/gst/biomass.html
 Resources:
   - EndPoint: https://openveda.cloud/api/stac/
-    Type: cog
     Name: VEDA
+    Type: cog
     CollectionId: nceo_africa_2017
     ColormapName: gist_earth_r
     Rescale: [0.0,400.0]
     Bidx: 1
-Legend: nceo_africa_2017/cm_legend.png
-Image: nceo_africa_2017/thumbnail.png
+Provider:
+  - Name: NCEO
+    Roles: licensor, processor
+    Url: https://www.nceo.ac.uk/data-tools/datasets/

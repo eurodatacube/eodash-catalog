@@ -1,24 +1,33 @@
 Name: greenhouse_gases
-Title: Greenhouse gases
+Title: Carbon Dioxide at city level from GOSAT
 EodashIdentifier: N2_greenhouse_gases
-Subtitle: The Impact of the COVID-19 Pandemic on Atmospheric CO2
-Description: N2_greenhouse_gases/N2.md
+Subtitle: CO2 emissions over large cities [ppmv]
+Description: N2_greenhouse_gases/N2_greenhouse_gases.md
 Themes:
-    - atmosphere
+  - atmosphere
 Tags:
-    - placeholder
-Satellite:
-    - GOSAT_XCO2
-Sensor:
-    - GOSAT
+  - Air quality
+  - CO2
+  - Open data
+  - GHG
+  - Greenhouse gases
+DataSource:
+  Spaceborne:
+    Satellite:
+      - GOSAT
+    Sensor:
+      - TANSO-FTS
+      - TANSO-CAI
 Agency:
-    - NASA
-    - JAXA
-    - ESA
+  - JAXA
+Image: N2_greenhouse_gases/N2_greenhouse_gases.png
+Legend: N2_greenhouse_gases/N2_greenhouse_gases_legend.png
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: N2_tri
-Image: N2_greenhouse_gases/thumbnail.png
-Legend: N2_greenhouse_gases/legend.png
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: N2_tri
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://data2.gosat.nies.go.jp/index_en.html

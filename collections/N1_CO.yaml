@@ -5,6 +5,7 @@ Subtitle: Global 3-daily Carbon monoxide
 Description: N1_CO/N1_CO.md
 Themes:
   - air
+  - "extreme-events"
 Tags:
   - Air quality
   - CO
@@ -26,9 +27,6 @@ Resources:
     Type: byoc
     CollectionId: 57a07405-8ec2-4b9c-a273-23e287c173f8
     LayerId: AWS_VIS_CO_3DAILY_DATA
-Provider:
-  - Name: Copernicus
-    Url: https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel5P.html
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
@@ -38,6 +36,8 @@ Services:
 Provider:
   - Name: Copernicus
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+  - Name: Copernicus Data Space
+    Url: https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel5P.html
 References:
   - Name: TROPOMI CO 
     Key: tropomi_co
