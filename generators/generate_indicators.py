@@ -89,7 +89,6 @@ def process_catalog_file(file_path, options):
     print("Processing catalog:", file_path)
     with open(file_path) as f:
         config = yaml.load(f, Loader=SafeLoader)
-        
         if len(options.collections) > 0:
             # create only catalogs containing the passed collections
             process_collections = [c for c in config["collections"] if c in options.collections]
