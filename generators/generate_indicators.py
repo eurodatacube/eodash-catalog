@@ -105,19 +105,24 @@ def process_catalog_file(file_path, options):
             title = config["title"],
             catalog_type=CatalogType.RELATIVE_PUBLISHED,
         )
+        tasks = []
         for collection in process_collections:
             file_path = "../collections/%s.yaml"%(collection)
             if os.path.isfile(file_path):
                 # if collection file exists process it as indicator
                 # collection will be added as single collection to indicator
-                process_indicator_file(config, file_path, catalog)
+                pass
             elif os.path.isfile("../indicators/%s.yaml"%(collection)):
                 # if not try to see if indicator definition available
-                process_indicator_file(config, "../indicators/%s.yaml"%(collection), catalog)
+                file_path = "../indicators/%s.yaml"%(collection)
             else:
                 raise Exception(
                     f'File {collection} in catalog {config["id"]} does not exist in collections or indicators, exiting'
                 )
+            tasks.append(RaisingThread(target=process_indicator_file, args=(config, file_path, catalog)))
+            tasks[-1].start()
+        for task in tasks:
+            task.join()
 
         strategy = TemplateLayoutStrategy(item_template="${collection}/${year}")
         catalog.normalize_hrefs(config["endpoint"], strategy=strategy)
