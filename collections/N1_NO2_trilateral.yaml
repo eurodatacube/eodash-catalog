@@ -2,7 +2,7 @@ Name: N1_NO2_trilateral
 Title: Nitrogen dioxide
 EodashIdentifier: N1_NO2
 Subtitle: Weekly Nitrogen Dioxide
-Description: N1_NO2_trilateral/N1.md # just a story is different from the RACE version
+Description: N1_NO2_trilateral/N1_NO2_trilateral.md
 Themes:
     - air
 Tags:

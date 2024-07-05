@@ -543,7 +543,7 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
                 if response.status_code == 200:
                     description = response.text
                 elif "Subtitle" in data:
-                    print("WARNING: Markdown file could not be fetched")
+                    print(f"WARNING: Markdown file could not be fetched for {data['Name']}")
                     description = data["Subtitle"]
             else:
                 # relative path to assets was given
@@ -553,7 +553,7 @@ def get_or_create_collection(catalog, collection_id, data, config, endpoint=None
                 if response.status_code == 200:
                     description = response.text
                 elif "Subtitle" in data:
-                    print("WARNING: Markdown file could not be fetched")
+                    print(f"WARNING: Markdown file could not be fetched for {data['Name']}")
                     description = data["Subtitle"]
     elif "Subtitle" in data:
         # Try to use at least subtitle to fill some information
