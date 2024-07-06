@@ -31,11 +31,10 @@ Resources:
     Name: VEDA
     CollectionId: EPA-monthly-emissions_4B_Manure_Management
     ColormapName: rainbow
-    Rescale: [0, 4.5e9]
+    Rescale: [0, 4.5e10]
     Bidx: 1
 Services:
   - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
     Rescale: 1e-9
 Image: EPA_Field_burning_Monthly/thumbnail.png
-Legend: EPA_Field_burning_Monthly/cm_legend.png
