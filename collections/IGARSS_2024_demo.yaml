@@ -1,10 +1,10 @@
-Name: Gridded 2012 EPA Methane - Manure 
-Title: Methane Emissions, Manure Management 2012 EPA demo
+Name: Gridded 2012 Monthly EPA Methane - Manure
+Title: Methane Emissions, Manure Management 2012 EPA demo monthly
 EodashIdentifier: IGARSS_2024_demo
 Subtitle: Emissions from sector 4F from agricultural field burning (monthly), gridded
 # Description: IGARSS_2024_demo/description.md
 Description: | 
-  "## Gridded 2012 EPA Methane - Manure Management
+  "## Gridded 2012 monthly EPA Methane - Manure Management
   ### Additional description example"
 Themes:
   - biomass
@@ -29,7 +29,7 @@ Resources:
   - EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
-    CollectionId: EPA-annual-emissions_4B_Manure_Management
+    CollectionId: EPA-monthly-emissions_4B_Manure_Management
     ColormapName: rainbow
     Rescale: [0, 4.5e9]
     Bidx: 1
