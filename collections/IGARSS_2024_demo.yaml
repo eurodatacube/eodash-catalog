@@ -1,0 +1,41 @@
+Name: Gridded 2012 EPA Methane - Manure 
+Title: Methane Emissions, Manure Management 2012 EPA demo
+EodashIdentifier: IGARSS_2024_demo
+Subtitle: Emissions from sector 4F from agricultural field burning (monthly), gridded
+# Description: IGARSS_2024_demo/description.md
+Description: | 
+  "## Gridded 2012 EPA Methane - Manure Management
+  ### Additional description example"
+Themes:
+  - biomass
+  - atmosphere
+Tags:
+  - Air quality
+  - CH4
+  - Open data
+  - Air pollution
+Provider: 
+  - Name: U.S. EPA Inventory of U.S. Greenhouse Gas Emissions and Sinks (U.S. GHGI).
+    Url: https://www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks
+  - Name: VEDA
+    Url: https://www.earthdata.nasa.gov/esds/veda
+    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
+    Roles:
+      - host
+DataSource:
+  Other:
+    - EPA
+Resources:
+  - EndPoint: https://openveda.cloud/api/stac/
+    Type: cog
+    Name: VEDA
+    CollectionId: EPA-annual-emissions_4B_Manure_Management
+    ColormapName: rainbow
+    Rescale: [0, 4.5e9]
+    Bidx: 1
+Services:
+  - Endpoint: https://openveda.cloud/api/raster/cog/statistics
+    Name: VEDA Statistics
+    Rescale: 1e-9
+Image: EPA_Field_burning_Monthly/thumbnail.png
+Legend: EPA_Field_burning_Monthly/cm_legend.png

@@ -118,5 +118,6 @@ collections:
   - HLS_NDVI
   - LIS_Global_DA_Evap
   - 4D_Greenland
+  - IGARSS_2024_demo
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
