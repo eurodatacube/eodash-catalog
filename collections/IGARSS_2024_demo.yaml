@@ -3,12 +3,14 @@ Title: Methane Emissions, Manure Management 2012 EPA demo monthly
 EodashIdentifier: IGARSS_2024_demo
 Subtitle: Emissions from sector 4F from agricultural field burning (monthly), gridded
 # Description: IGARSS_2024_demo/description.md
-Description: | 
-  "## Gridded 2012 monthly EPA Methane - Manure Management
-  ### Additional description example"
+Description: |
+  ## Gridded 2012 monthly EPA Methane - Manure Management
+  ### Additional description example
 Themes:
   - biomass
   - atmosphere
+Agency:
+  - EPA
 Tags:
   - Air quality
   - CH4
@@ -38,3 +40,7 @@ Services:
     Name: VEDA Statistics
     Rescale: 1e-9
 Image: EPA_Field_burning_Monthly/thumbnail.png
+Citation:
+  Citation: |
+    A Gridded Inventory of Annual 2012–2018 U.S. Anthropogenic Methane Emissions; Joannes D. Maasakkers, Erin E. McDuffie, Melissa P. Sulprizio, Candice Chen, Maggie Schultz, Lily Brunelle, Ryan Thrush, John Steller, Christopher Sherry, Daniel J. Jacob, Seongeun Jeong, Bill Irving, and Melissa Weitz;Environmental Science & Technology 2023 57 (43), 16276-16288
+  DOI: 10.1021/acs.est.3c05138
