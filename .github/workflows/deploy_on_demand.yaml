@@ -34,7 +34,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: install requirements
-        run: apt-get update && apt-get install -y curl unzip
+        run: sudo apt-get update && sudo apt-get install -y curl unzip
       - name: Download and unzip
         run: |
           curl ${{ inputs.url }} -o catalogs.zip 
