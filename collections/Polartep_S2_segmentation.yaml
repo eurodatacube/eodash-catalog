@@ -1,0 +1,20 @@
+Name: Polartep_S2_segmentation
+Title: Binary S2 Segmentation results
+EodashIdentifier: Polartep_S2_segmentation
+Description: "Results from segmentation model using Sentinel 2 RGB images for coastline detection in Sturgeon Banks"
+Themes:
+  - cryosphere
+Tags:
+  - placeholder
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+# Legend: Polartep_SeaIce_demo/cm_legend.png
+# Image: Polartep_SeaIce_demo/thumbnail.png
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-125.0, 48.0, -120.0, 50.0]
