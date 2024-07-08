@@ -21,6 +21,12 @@ Locations:
     Point: [15.444, 47.028]
     Bbox: [15.357, 46.972, 15.528, 47.085]
     Times: ['2015-05-15']
+  - Identifier: Innsbruck
+    Country: ['AT']
+    Name: Innsbruck
+    Point: [11.370, 47.260]
+    Bbox: [11.288, 47.320, 11.441, 47.193]
+    Times: ['2015-05-15']
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub WMS
