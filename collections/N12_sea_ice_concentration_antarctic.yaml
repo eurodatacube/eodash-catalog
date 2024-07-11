@@ -31,6 +31,11 @@ Resources:
     Name: WMS
     Type: OverwriteTimes
     LayerId: SIC_S
+      Disable_Items: true
+    DateTimeInterval:
+      Start: "1978-11-01T00:00:00"
+      End: "2024-06-30T00:00:00"
+    OverwriteBBox: [-100, -80, -70, -60]
 Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
