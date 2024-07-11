@@ -5,33 +5,38 @@ Description: N12_sea_ice_concentration/N12.md
 Themes:
   - cryosphere
 Tags:
-  - sea ice
-Satellite:
-  - GCOM-W
-Sensor:
-  - GCOM-W
+  - Antarctic 
+  - Sea ice
+  - Open data
+  - Southern ocean
+DataSource:
+  Spaceborne:
+    Satellite:
+      - GCOM-W
+    Sensor:
+      - AMSR2
 Agency:
   - JAXA
-Provider:
-  - Name: "Global Change Observation Mission – Water SHIZUKU (GCOM-W)"
-    Url: https://global.jaxa.jp/projects/sat/gcom_w/
-    Description: The purpose of this website is, first and foremost, to provide the science and broader communities with global, updated ocean productivity estimates. In addition, the website provides information on the models employed, access to model code and ancillary data sets, and comparisons of productivity estimates for alternative models. Field data sets relevant to ocean productivity modeling are also provided and will be continually expanded as new data become available. Educational material and background information on phytoplankton ecology and physiology will also be added in the future.
-    Roles: 
-      - producer
-  - Name: GCOM-W Research Product Distribution Service
+Legend: N12_sea_ice_concentration/N12_legend.png
+Image: N12_sea_ice_concentration/Antarctic-N12.png
+References:
+  - Name: Dataset access
     Url: https://suzaku.eorc.jaxa.jp/GCOM_W/research/resdist.html
-    Description: The GCOM-W Research Product Distribution Service provides GCOM-W/AMSR2 and Aqua/AMSR-E research products with free of charge.
-    Roles:
-      - host
+  - Name: About Global Change Observation Mission - Water
+    Url: https://global.jaxa.jp/projects/sat/gcom_w/
+  - Name: Earth-graphy sea ice
+    Url: https://earth.jaxa.jp/en/data/products/sea-ice/index.html
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: OverwriteTimes
     LayerId: SIC_S
-    OverwriteBBox: [-107, -84, 125, -64]
     Disable_Items: true
     DateTimeInterval:
       Start: "1978-11-01T00:00:00"
-      End: "2024-02-29T00:00:00"
-Legend: N12_sea_ice_concentration/cm_legend.png
-Image: N12_sea_ice_concentration/Antarctic-N12.png
+      End: "2024-06-30T00:00:00"
+    OverwriteBBox: [-100, -80, -70, -60]
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://global.jaxa.jp/

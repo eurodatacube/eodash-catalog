@@ -5,13 +5,47 @@ Description: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/RECCAP2_1.md
 Themes:
   - biomass
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Amazon rainforest
+  - Open data
+  - Carbon
+  - Forest
+DataSource:
+  Spaceborne:
+    Satellite:
+      - SMOS
+    Sensor:
+      - MIRAS
 Agency:
-  - placeholder
+  - ESA
+Citation:
+  Publication:
+    - Citation: |
+        SMOS-IC passive microwave satellite images L-VOD product (version 2.0), Wigneron, J.-P., Li, X., Frappart F., Fan L., Al-Yaari A., De Lannoy G., Liu X., Wang M., Le Masson E., Moisy C. (2021). 
+        SMOS-IC data record of soil moisture and L-VOD. Historical development, applications and perspectives, Remote Sens. Env., 254, 112238.
+      DOI: 10.1016/j.rse.2020.112238
+    - Citation: |
+        Fawcett, Dominic, Sitch, Stephen, Ciais, Philippe, Wigneron, Jean Pierre, Silva-Junior, Celso H. L., Heinrich, Viola, Vancutsem, Christelle, Achard, Frédéric, Bastos, Ana, Yang, Hui, Li, Xiaojun, Albergel, Clément, Friedlingstein, Pierre, & Aragão, Luiz E. O. C. (2022). 
+        Processed Data for Figures of 'Declining Amazon biomass due to deforestation and subsequent degradation losses exceeding gains' (Version v1) [Data set]. Zenodo.
+      DOI: 10.5281/zenodo.7245450
+Legend: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/RECCAP2_1_legend.png
+Image: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/World-RECCAP2_1.png
+References:
+  - Name: RECCAP-2
+    Url: https://climate.esa.int/en/projects/reccap-2/
+  - Name: CCI RECCAP2 xcube Viewer
+    Url: https://reccap2.viewer.brockmann-consult.de/
+  - Name: Amazon biomass in decline due to deforestation and degradation
+    Url: https://climate.esa.int/en/news-events/amazon-biomass-in-decline-due-to-deforestation-and-degradation/
+  - Name: Younger trees champion carbon capture
+    Url: https://www.esa.int/Applications/Observing_the_Earth/FutureEO/SMOS/Younger_trees_champion_carbon_capture
+  - Name: ESA results on display at COP27
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Space_for_our_climate/ESA_results_on_display_at_COP27
+  - Name: Satellites improve national reporting of greenhouse gases
+    Url: https://www.esa.int/Applications/Observing_the_Earth/Space_for_our_climate/Satellites_improve_national_reporting_of_greenhouse_gases
+  - Name: Counting carbon
+    Url: https://www.esa.int/ESA_Multimedia/Videos/2021/07/Counting_carbon
+  - Name: Growth A toolkit for analyzing secondary forest aboveground carbon dynamics in the Brazilian Amazon
+    Url: https://www.frontiersin.org/articles/10.3389/ffgc.2023.1230734
 Resources:
   - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
     Type: zarr
@@ -21,5 +55,7 @@ Resources:
     Variable: AGC_LVOD_amazonia_trend_mean_crop
     ColormapName: rain
     Rescale: [0,150]
-Legend: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/cm_legend.png
-Image: RECCAP2_1_AGC_LVOD_amazonia_methods_mean_crop/World-RECCAP2_1.png
+Provider:
+  - Name: ESA
+    Roles: licensor, producer, processor
+    Url: https://climate.esa.int/en/projects/reccap-2/

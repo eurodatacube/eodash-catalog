@@ -1,0 +1,49 @@
+Name: ESDL_Hydrology_SM
+Title: Surface Soil Moisture
+EodashIdentifier: ESDL_Hydrology_SM
+Description: "ESDL_Hydrology_SM/ESDL_Hydrology_SM.md"
+Themes:
+  - agriculture
+  - water
+Tags:
+  - Open data
+  - surface soil moisture
+  - radiative transfer
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
+Agency:
+  - EURAC
+Licence:
+  - Url: https://creativecommons.org/licenses/by/4.0/
+    Type: text/html
+    Title: Creative Commons Attribution 4.0 International
+Provider:
+  - Name: TU Wien
+    Url: https://www.tuwien.at/mg/geo/rs
+    Roles:
+      - producer
+Citation:
+  Publication:
+    - Citation: Raphael Quast, Wolfgang Wagner, Bernhard Bauer-Marschallinger, Mariette Vreugdenhil Soil moisture retrieval from Sentinel-1 using a first-order radiative transfer model—A case-study over the Po-Valley, Remote Sensing of Environment Volume 295, 1 September 2023, 113651
+      DOI: https://doi.org/10.1016/j.rse.2023.113651
+References:
+  - Name: RT1 Surface Soil Moisture
+    Url: https://stac.eurac.edu:8080/collections/SM_RT
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'hydrology'
+    Variable: SM
+    ColormapName: plasma_r
+    Rescale: [0,1]
+    DateTimeInterval:
+      Start: "2017-01-01T00:00:00"
+      End: "2022-06-30T00:00:00"
+Legend: ESDL_Hydrology_SM/cm_legend.png
+Image: ESDL_Hydrology_SM/image.png

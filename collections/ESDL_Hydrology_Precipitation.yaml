@@ -1,0 +1,68 @@
+Name: ESDL_Hydrology_Precipitation
+Title: Daily precipitation product
+EodashIdentifier: ESDL_Hydrology_Precipitation
+Description: "ESDL_Hydrology_Precipitation/ESDL_Hydrology_Precipitation.md"
+Themes:
+  - agriculture
+  - water
+Tags:
+  - Open data
+  - precipitation
+  - CPC
+  - GPM
+  - CHELSA Climatology
+DataSource:
+  Other:
+      - GPM
+      - CPC
+      - model
+      - ERA5
+Agency:
+  - EURAC
+Licence:
+  - Url: https://creativecommons.org/licenses/by/4.0/
+    Type: text/html
+    Title: Creative Commons Attribution 4.0 International
+Provider:
+  - Name: NOAA
+    Url: https://psl.noaa.gov/data/gridded/data.cpc.globalprecip.html
+    Roles:
+      - producer
+  - Name: NASA
+    Url: https://gpm.nasa.gov/taxonomy/term/1415
+    Roles:
+      - producer
+  - Name: ECMWF
+    Url: https://www.ecmwf.int/
+    Roles:
+      - producer
+  - Name: WLS
+    Url: https://www.wsl.ch/en/index.html
+    Roles:
+      - producer
+  - Name: CNR IRPI
+    Url: http://hydrology.irpi.cnr.it/
+    Roles:
+      - processor
+  - Name: EURAC
+    Url: http://www.eurac.edu/
+    Roles:
+      - host
+References:
+  - Name: Daily precipitation product
+    Url: https://stac.eurac.edu:8080/collections/rainfall_all_domain
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'hydrology'
+    Variable: precip
+    ColormapName: viridis_alpha
+    Rescale: [0,50]
+    DateTimeInterval:
+      Start: "2000-01-01T00:00:00"
+      End: "2022-02-28T00:00:00"
+Legend: ESDL_Hydrology_Precipitation/cm_legend.png
+Image: ESDL_Hydrology_Precipitation/image.png
+yAxis: "mm/day"

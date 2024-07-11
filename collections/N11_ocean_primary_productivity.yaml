@@ -1,22 +1,40 @@
 Name: N11_ocean_primary_productivity
 Title: Ocean Primary Productivity (GCOM-C)
 EodashIdentifier: N11
-Subtitle: Ocean Primary Productivity (GCOM-C)
-Description: N11_ocean_primary_productivity/N11.md
+Subtitle: Net primary productivity [mgC/m2/day]
+Description: N11_ocean_primary_productivity/N11_ocean_primary_productivity.md
 Themes:
-  - cryosphere
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - GCOM-C
+  - Primary production
+  - Open data
+  - Water
+  - Carbon
+  - Global Change Observation Mission - Climate
+DataSource:
+  Spaceborne:
+    Satellite:
+      - GCOM-C
+    Sensor:
+      - SGLI
 Agency:
   - JAXA
+Citation:
+  Publication:
+    - Citation: |
+        Kameda, T., Ishizaka, J. Size-Fractionated Primary Production Estimated by a Two-Phytoplankton Community Model Applicable to Ocean Color Remote Sensing. J Oceanogr 61, 663–672 (2005).
+      DOI: 10.1007/s10872-005-0074-7
+Legend: N11_ocean_primary_productivity/N11_legend.png
+Image: N11_ocean_primary_productivity/N11_ocean_primary_productivity.png
+References:
+  - Name: Dataset access
+    Url: https://suzaku.eorc.jaxa.jp/GCOM_C/index.html
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
     Type: Time
     LayerId: ONPP-GCOMC-World-Monthly
-Legend: N11_ocean_primary_productivity/cm_legend.png
-Image: N11_ocean_primary_productivity/thumbnail.png
+Provider:
+  - Name: JAXA
+    Roles: licensor, producer, processor
+    Url: https://global.jaxa.jp/
