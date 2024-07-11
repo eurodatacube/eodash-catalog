@@ -1,20 +1,22 @@
-Name: Polartep_S2_segmentation
+Name: Polartep_S2_segmentation_demo
 Title: Binary S2 Segmentation results
-EodashIdentifier: Polartep_S2_segmentation
-Description: "Results from segmentation model using Sentinel 2 RGB images for coastline detection in Sturgeon Banks"
+EodashIdentifier: Polartep_S2_segmentation_demo
+Description: "Identification of the land, water interface (shoreline) using Sentinel 2 L2A 10m RGB imagery pulled from the SentinelHub API. A deep learning segmentation model based on an U-Net backbone architecture with pretrained weights is utilized. White pixels indicates water; whereas black indicates land."
 Themes:
   - cryosphere
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Copernicus
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
 Agency:
   - ESA
-# Legend: Polartep_SeaIce_demo/cm_legend.png
-# Image: Polartep_SeaIce_demo/thumbnail.png
+Legend: Polartep_S2_segmentation_demo/cm_legend.png
+Image: Polartep_S2_segmentation_demo/Polartep_S2_segmentation.jpeg
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
-    OverwriteBBox: [-125.0, 48.0, -120.0, 50.0]
+    OverwriteBBox: [-123.4, 49.1, -123.2, 49.25]
