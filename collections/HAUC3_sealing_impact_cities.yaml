@@ -31,19 +31,19 @@ Locations:
     Country: ['AT']
     Name: Klagenfurt
     Point: [14.32, 46.62]
-    Bbox: [14.22, 46.579, 14.43, 46.66]
+    Bbox: [14.218, 46.576, 14.409, 46.706]
     Times: ['2015-05-15']
   - Identifier: Salzburg
     Country: ['AT']
     Name: Salzburg
     Point: [13.05, 47.8]
-    Bbox: [12.9776, 47.750405, 13.122, 47.837]
+    Bbox: [12.943, 47.735, 13.128, 47.833]
     Times: ['2015-05-15']
   - Identifier: Linz
     Country: ['AT']
     Name: Linz
     Point: [14.3, 48.28]
-    Bbox: [14.22, 48.24, 14.39, 48.33]
+    Bbox: [14.218, 48.24, 14.401, 48.343]
     Times: ['2015-05-15']
 Resources:
   - EndPoint: https://services.sentinel-hub.com
