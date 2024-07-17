@@ -1,0 +1,22 @@
+Name: Polartep_S2_segmentation_demo
+Title: Binary S2 Segmentation results
+EodashIdentifier: Polartep_S2_segmentation_demo
+Description: "Identification of the land, water interface (shoreline) using Sentinel 2 L2A 10m RGB imagery pulled from the SentinelHub API. A deep learning segmentation model based on an U-Net backbone architecture with pretrained weights is utilized. White pixels indicates land; whereas transparent indicates water."
+Themes:
+  - cryosphere
+Tags:
+  - Copernicus
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
+Agency:
+  - ESA
+Legend: Polartep_S2_segmentation_demo/cm_legend.png
+Image: Polartep_S2_segmentation_demo/Polartep_S2_segmentation.jpeg
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-123.4, 49.1, -123.2, 49.25]
