@@ -35,7 +35,7 @@ Resources:
     OverwriteBBox: [-20, 77, 50, 83]
     Disable_Items: true
     DateTimeInterval:
-      Start: "1978-11-01T00:00:00"
+      Start: "2000-01-01T00:00:00"
       End: "2024-06-30T00:00:00"
 Provider:
   - Name: JAXA
