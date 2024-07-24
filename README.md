@@ -13,12 +13,19 @@ Here are preloaded preview links for the catalogs available through gh-pages:
 * [Trilateral Instance](https://radiantearth.github.io/stac-browser/#/external/eurodatacube.github.io/eodash-catalog/trilateral/catalog.json)
 * [GTIF Instance](https://radiantearth.github.io/stac-browser/#/external/eurodatacube.github.io/eodash-catalog/GTIF/catalog.json)
 
-In order to run the catalog generation locally you can clone the repository and ideally setup a virtual environment or similar using the requirements.txt contained in the `generators` folder.
-If you are using Visual Studio Code you can use the `Python: Create environment...` tool (when pressing Ctrl+Shift+P).
-Use of python >=3.10 is recommended. 
+## Development
 
-Once venv is setup, make sure it is active and run the generator with `python generate_indicators.py`. 
-Currently there is only one optional flag `-vd` that can be used to activate validation of the catalog (Still WIP).
+In order to run the catalog generation locally, install the [eodash_catalog tool](https://github.com/eodash/eodash_catalog) and run the generation locally via 
+
+```bash
+pip install eodash_catalog
+eodash_catalog
+```
+Optionally you can generate only a subset of collections using the command line arguments:
+
+```bash
+eodash_catalog <collection1_file_name> <collection2_file_name>
+```
 
 The catalogs are saved in the `build` folder. If you want to test the generated catalog locally (either in the Stac Browser or with the eodash client) we recommend using npm [http-server](https://www.npmjs.com/package/http-server), especially to avoid possible CORS issues you can run it for example with following command:
 `npx http-server -p 8000 --cors`  
