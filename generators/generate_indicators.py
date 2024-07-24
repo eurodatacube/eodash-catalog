@@ -1223,8 +1223,8 @@ def process_STAC_Datacube_Endpoint(config, endpoint, data, catalog):
         stac_endpoint_url = stac_endpoint_url + endpoint.get('StacEndpoint','')
     # assuming /search not implemented
     api = Client.open(stac_endpoint_url)
-    coll = api.get_collection(endpoint.get('CollectionId', 'datacubes'))
-    item = coll.get_item(endpoint.get('DatacubeId'))
+    coll = api.get_collection(endpoint.get('DatacubeId', ''))
+    item = coll.get_item(endpoint.get('CollectionId', 'datacube'))
     # slice a datacube along temporal axis to individual items, selectively adding properties
     dimensions = item.properties.get('cube:dimensions', {})
     variables = item.properties.get('cube:variables')
