@@ -336,6 +336,7 @@ def handle_collection_only(config, endpoint, data, catalog):
             root_collection.extent.spatial.bboxes.append(
                 c_child.extent.spatial.bboxes[0]
             )
+        add_collection_information(config, root_collection, data)
         add_to_catalog(root_collection, catalog, None, data)
     else:
         collection, times = get_or_create_collection(catalog, data["Name"], data, config, endpoint)
@@ -395,8 +396,7 @@ def handle_raw_source(config, endpoint, data, catalog):
             # makes only sense if it is a constant style for all items, should 
             # we keep this?
             collection.add_link(style_link)
-            if "DataProjection" in endpoint:
-                collection.extra_fields["proj:epsg"] = endpoint["DataProjection"]
+
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t["Time"]
             link.extra_fields["assets"] = [a["File"] for a in t["Assets"]]
@@ -491,6 +491,7 @@ def handle_SH_WMS_endpoint(config, endpoint, data, catalog):
             root_collection.extent.spatial.bboxes.append(
                 c_child.extent.spatial.bboxes[0]
             )
+        add_collection_information(config, root_collection, data)
         add_to_catalog(root_collection, catalog, endpoint, data)
     return root_collection
 
@@ -770,6 +771,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
             root_collection.extent.spatial.bboxes.append(
                 c_child.extent.spatial.bboxes[0]
             )
+        add_collection_information(config, root_collection, data)
     else:
         if "Bbox" in endpoint:
             root_collection = process_STACAPI_Endpoint(
@@ -788,7 +790,7 @@ def handle_STAC_based_endpoint(config, endpoint, data, catalog, headers=None):
                 catalog=catalog,
                 headers=headers,
             )
-
+    add_collection_information(config, root_collection, data)
     add_example_info(root_collection, data, endpoint, config)
     add_to_catalog(root_collection, catalog, endpoint, data)
 
