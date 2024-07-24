@@ -28,5 +28,5 @@ eodash_catalog <collection1_file_name> <collection2_file_name>
 ```
 
 The catalogs are saved in the `build` folder. If you want to test the generated catalog locally (either in the Stac Browser or with the eodash client) we recommend using npm [http-server](https://www.npmjs.com/package/http-server), especially to avoid possible CORS issues you can run it for example with following command:
-`npx http-server -p 8000 --cors`  
+`npx http-server -p 8000 --cors` 
 when located in the build folder. 
