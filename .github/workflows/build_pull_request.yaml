@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -U pip
-          pip install eodash_catalog==0.0.23
+          pip install eodash_catalog==0.0.24
       - if: github.event.pull_request.body == ''
         name: Build all - no items
         env:
