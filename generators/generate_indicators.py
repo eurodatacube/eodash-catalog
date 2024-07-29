@@ -396,10 +396,11 @@ def handle_raw_source(config, endpoint, data, catalog):
             # makes only sense if it is a constant style for all items, should 
             # we keep this?
             collection.add_link(style_link)
-
             link = collection.add_item(item)
             link.extra_fields["datetime"] = t["Time"]
             link.extra_fields["assets"] = [a["File"] for a in t["Assets"]]
+    if "DataProjection" in endpoint:
+        collection.extra_fields["proj:epsg"] = endpoint["DataProjection"]
     add_collection_information(config, collection, data)
     collection.update_extent_from_items()
     add_to_catalog(collection, catalog, endpoint, data)
