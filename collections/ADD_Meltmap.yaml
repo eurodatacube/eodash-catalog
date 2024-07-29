@@ -21,9 +21,10 @@ Resources:
     Type: OverwriteTimes
     LayerId: VIS_ANTARTICA_MELTMAP
     OverwriteBBox: [-100, -75, -70, -68]
-    Disable_Items: true
     DateTimeInterval:
       Start: "2007-01-02T00:00:00"
-      End: "2021-12-31T00:00:00"
+      End: "2021-12-28T00:00:00"
+      Timedelta:
+        days: 7
 Image: ADD_Meltmap/thumbnail.png
 Legend: ADD_Meltmap/legend.png
