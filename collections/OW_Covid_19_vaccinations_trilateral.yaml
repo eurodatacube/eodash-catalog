@@ -1,20 +1,27 @@
 Name: OW_Covid_19_vaccinations_trilateral
 Title: Covid-19 Vaccinations
 EodashIdentifier: OW
-Description: OW_Covid_19_vaccinations/OW.md
+Description: OW_Covid_19_vaccinations/OW_Covid_19_vaccinations.md
 Themes:
-    - covid-19
+  - health
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Covid-19
+  - Human activities
+  - Open data
+DataSource:
+  InSitu:
+    - Other
 Agency:
-    - ESA
+  - ESA
+Citation:
+  Citation: |
+    Edouard Mathieu, Hannah Ritchie, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". 
+    Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/coronavirus' [Online Resource]
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Global_COVID_vaccination_data
-      IdKey: 'aoi_id'
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Global_COVID_vaccination_data
+Provider:
+  - Name: Our World in Data
+    Url: https://ourworldindata.org/covid-vaccinations
