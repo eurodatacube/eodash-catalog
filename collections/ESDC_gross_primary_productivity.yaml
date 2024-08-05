@@ -40,6 +40,9 @@ Resources:
     Variable: gross_primary_productivity
     ColormapName: jet
     Rescale: [-1,15]
+    Query:
+      Start: "2014-01-01T00:00:00"
+      End: "2018-12-23T00:00:00"
 Provider:
   - Name: NASA
     Roles: licensor, producer, processor
