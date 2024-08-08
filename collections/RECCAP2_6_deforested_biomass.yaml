@@ -45,7 +45,7 @@ References:
   - Name: Project MapBiomas
     Url: https://mapbiomas.org/
 Resources:
-  - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
+  - EndPoint: https://reccap2.api.brockmann-consult.de/api
     Type: zarr
     Name: xcube
     StacEndpoint: "/ogc"
