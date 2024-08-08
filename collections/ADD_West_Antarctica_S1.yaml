@@ -21,7 +21,6 @@ Resources:
     Type: OverwriteTimes
     LayerId: SENTINEL-1-EW
     OverwriteBBox: [-103, -75, -102, -74]
-    Disable_Items: true
     DateTimeInterval:
       Start: "2017-05-18T00:00:00"
       End: "2022-01-15T00:00:00"

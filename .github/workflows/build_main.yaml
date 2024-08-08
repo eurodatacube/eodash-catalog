@@ -38,15 +38,13 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -U pip
-          pip install -r generators/requirements.txt
+          pip install eodash_catalog==0.0.29
       - name: Build
         env:
           SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
           SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
           SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
-        run: |
-          cd generators/
-          python generate_indicators.py
+        run: eodash_catalog
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -55,4 +53,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-

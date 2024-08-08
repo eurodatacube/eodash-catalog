@@ -29,12 +29,10 @@ References:
 Resources:
   - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
     Name: WMS
-    Type: OverwriteTimes
+    Type: Time
     LayerId: SIC_S
-    Disable_Items: true
-    DateTimeInterval:
-      Start: "2000-01-01T00:00:00"
-      End: "2024-06-30T00:00:00"
+    Query:
+      Start: "2012-07-04T00:00:00"  # GCOM-W data collection date start
     OverwriteBBox: [-100, -80, -70, -60]
 Provider:
   - Name: JAXA
