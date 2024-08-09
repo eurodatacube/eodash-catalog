@@ -1,0 +1,54 @@
+Name: Seasonal_S1_COH12_hh_interferometric_coherence
+Title: Multi-seasonal land masses and ice sheets - COH12
+EodashIdentifier: SSLC2
+Subtitle: Median seasonal repeat-pass coherences C-band SAR dataset - 12-days
+Description: "SSLC2_Seasonal_S1_COH12_hh_interferometric_coherence/SSLC2_Seasonal_S1_COH12_hh_interferometric_coherence.md"
+Themes:
+  - cryosphere
+Tags:
+  - SAR
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
+Agency:
+  - European Commission
+  - ESA
+  - NASA
+License: CC-BY-4.0
+Citation:
+  Citation: |
+    Kellndorfer, J. , O. Cartus, M. Lavalle,  C. Magnard, P. Milillo, S. Oveisgharan, B. Osmanoglu, P. Rosen, and U. Wegmüller. 2022. 
+    Global seasonal Sentinel-1 interferometric coherence and backscatter data set. 
+    Fairbanks, Alaska USA. NASA Alaska Satellite Facility Synthetic Aperture Radar Distributed Active Archive Center.
+  DOI: 10.5067/8W33RRS6S2RV
+  Publication:
+    - Citation: |
+        Kellndorfer, J. , O. Cartus, M. Lavalle,  C. Magnard, P. Milillo, S. Oveisgharan, B. Osmanoglu, P. Rosen, and U. Wegmüller. 2022. 
+        Global seasonal Sentinel-1 interferometric coherence and backscatter data set., Scientific Data.
+      DOI: 10.1038/s41597-022-01189-6
+References:
+  - Name: Data access
+    Url: https://asf.alaska.edu/datasets/daac/global-seasonal-sentinel-1-interferometric-coherence-and-backscatter-dataset/
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: d4dae328-3f6a-4a86-9374-7af252aa240d
+    LayerId: Seasonal_S1_COH12_hh_interferometric_coherence
+Provider:
+  - Name: Copernicus
+    Roles: licensor
+    Url: https://www.copernicus.eu/en
+  - Name: NASA
+    Roles: producer
+    Url: https://jpl.nasa.gov/?_ga=2.243049538.1322991491.1723040890-976169570.1722866809
+  - Name: Earth Big Data
+    Roles: processor
+    Url: https://earthbigdata.com/
+  - Name: Gamma Remote Sensing
+    Roles: processor
+    Url: https://www.gamma-rs.ch/
