@@ -124,3 +124,4 @@ collections:
   # - SEE_solar_energy
   - SSLC1_Seasonal_S1_AMP_hv_interferometric_coherence
   - SSLC2_Seasonal_S1_COH12_hh_interferometric_coherence
+  - OHC300_Ocean_Heat_Content_upper_300m
