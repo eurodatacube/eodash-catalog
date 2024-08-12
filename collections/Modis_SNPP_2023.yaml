@@ -16,8 +16,6 @@ DataSource:
       - MODIS
 Agency:
   - NASA
-Agency:
-  - ESA
 Image: Modis_SNPP_2023/Modis_SNPP_2023.png
 References:
   - Name: User's Guides
@@ -34,10 +32,10 @@ Resources:
     DateTimeInterval:
       Start: "2023-01-01T00:00:00"
       End: "2023-12-31T00:00:00"
-  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-    Name: GeoDB
-    Database: eodash
-    CollectionId: MODIS_timeseries
+  # - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+  #   Name: GeoDB
+  #   Database: eodash
+  #   CollectionId: MODIS_timeseries
 Provider:
   - Name: NASA
     Roles: licensor, producer, processor
