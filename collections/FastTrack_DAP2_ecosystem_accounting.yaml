@@ -14,7 +14,7 @@ DataSource:
       - MODIS
 Resources:
     - Name: GeoJSON source
-      Style: http://localhost:8989/FastTrack_DAP2_ecosystem_accounting/style.json
+      Style: FastTrack_DAP2_ecosystem_accounting/style.json
       Bbox: [2.06, 41.273, 2.145, 41.31]
       DataProjection: 32631
       TimeEntries:

@@ -25,7 +25,7 @@ DataSource:
       - ERA5
 Resources:
     - Name: GeoJSON source
-      Style: http://localhost:8989/FastTrack_DAP1_crop_yield/style.json
+      Style: FastTrack_DAP1_crop_yield/style.json
       Bbox: [-8, 35, 4, 43]
       DataProjection: 4326
       TimeEntries:
