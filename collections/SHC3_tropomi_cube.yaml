@@ -1,0 +1,24 @@
+Name: tropomi_cube_co
+Title: Science Hub Challenge - CO
+EodashIdentifier: SHC3
+Description: Tropomi cube Science Hub Data Challenge
+Themes:
+  - "extreme-events"
+Tags:
+  - Science Hub Challenge
+DataSource:
+  Other: "Science Hub Challenge"
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://xcube.deepesdl.brockmann-consult.de/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: cube_TROPOMI_202220230912_daily_001x001
+    Variable: CO
+    ColormapName: viridis
+    Rescale: [0,0.1]
+    Query:
+      Start: "2021-10-01T12:00:00"
+      End: "2023-11-30T12:00:00"

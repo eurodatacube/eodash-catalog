@@ -1,0 +1,24 @@
+Name: era5_v_winds
+Title: Science Hub Challenge - ERA5 Winds V
+EodashIdentifier: SHC2
+Description: ERA5 Winds Science Hub Data Challenge
+Themes:
+  - "extreme-events"
+Tags:
+  - Science Hub Challenge
+DataSource:
+  Other: "Science Hub Challenge"
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://xcube.deepesdl.brockmann-consult.de/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: ERA5_uvwinds_20231011_hourly_025x025
+    Variable: v100
+    ColormapName: viridis
+    Rescale: [0,5]
+    Query:
+      Start: "2023-10-01T01:00:00"
+      End: "2023-11-30T23:00:00"

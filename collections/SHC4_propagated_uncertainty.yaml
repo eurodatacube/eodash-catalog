@@ -1,6 +1,6 @@
-Name: athens_cube
-Title: Athens Cube
-EodashIdentifier: SHC3
+Name: propagated_uncertainty
+Title: Science Hub Challenge - Propagated uncertainty
+EodashIdentifier: SHC4
 Description: Athens Cube Science Hub Data Challenge
 Themes:
   - "extreme-events"
@@ -15,10 +15,10 @@ Resources:
     Type: zarr
     Name: xcube
     StacEndpoint: "/ogc"
-    DatacubeId: hub-deepesdl29~s2l2a_athens_cube.levels/0.zarr
-    Variable: hub-deepesdl29~s2l2a_athens_cube.levels/0.zarr.B02
+    DatacubeId: scienhub-netcdf-cubes~202001-C3S-L3_AEROSOL-AER_PRODUCTS-SLSTR-SENTINEL3B-SDV-MONTHLY-v2.10.nc
+    Variable: AOD550_uncertainty_mean
     ColormapName: plasma
     Rescale: [0,0.006]
     Query:
-      Start: "2019-04-01T12:00:00"
-      End: "2023-08-31T12:00:00"
+      Start: "2000-01-01T00:00:00"
+      End: "2000-01-01T00:00:00"
