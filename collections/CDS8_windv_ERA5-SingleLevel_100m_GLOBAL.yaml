@@ -38,7 +38,7 @@ Resources:
     Name: Sentinel Hub
     Type: byoc
     CollectionId: f70007f3-da80-4c23-b3ae-adc8634ca7c7
-    LayerId: VIS_ERA5_SINGLELEVEL_WIND_V_100M
+    LayerId: VIS_ERA5_SINGLELEVEL_WIND_V_100M_GLOBAL
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
