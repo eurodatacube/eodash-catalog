@@ -1,15 +1,35 @@
 Name: era5_v_winds
 Title: Science Hub Challenge - ERA5 Winds V
 EodashIdentifier: SHC2
-Description: ERA5 Winds Science Hub Data Challenge
+Description: ERA5 Winds V component used for the Science Hub Data Challenge to track pollution episodes occured in northern India and Pakistan.
 Themes:
-  - "extreme-events"
+  - extreme-events
 Tags:
   - Science Hub Challenge
+  - Copernicus Services
+  - C3S
+  - CDS
+  - Multi-sensors
+  - Open data
+  - Climate change service
 DataSource:
-  Other: "Science Hub Challenge"
+  Other:
+    - Science Hub Challenge
+    - ERA5
 Agency:
   - ESA
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Citation:
+  Citation: |
+    Citing the data:
+    Hersbach, H., Bell, B., Berrisford, P., Biavati, G., Horányi, A., Muñoz Sabater, J., Nicolas, J., Peubey, C., Radu, R., Rozum, I., Schepers, D., Simmons, A., Soci, C., Dee, D., Thépaut, J-N. (2023): ERA5 hourly data on single levels from 1940 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (Accessed on 02-M07-2024)
+  DOI: 10.24381/cds.adbb2d47
+References:
+  - Name: ERA5 data access
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form
 Resources:
   - EndPoint: https://xcube.deepesdl.brockmann-consult.de/api
     Type: zarr
@@ -22,3 +42,10 @@ Resources:
     Query:
       Start: "2023-10-01T01:00:00"
       End: "2023-11-30T23:00:00"
+Provider: 
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en
+  - Name: ESA
+    Roles: processor
+    Url: https://www.ecmwf.int/
