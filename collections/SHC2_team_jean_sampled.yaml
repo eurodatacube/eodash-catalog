@@ -1,0 +1,24 @@
+Name: team_jean_sampled
+Title: team jean sampled
+EodashIdentifier: SHC2
+Description: Team Jean sampled Science Hub Data Challenge
+Themes:
+  - "extreme-events"
+Tags:
+  - Science Hub Challenge
+DataSource:
+  Other: "Science Hub Challenge"
+Agency:
+  - ESA
+Resources:
+  - EndPoint: https://xcube.deepesdl.brockmann-consult.de/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: hub-deepesdl29~jeanlaclmd/cube_teamJean_sampled.zarr
+    Variable: hub-deepesdl29~jeanlaclmd/cube_teamJean_sampled.zarr.SO2
+    ColormapName: plasma
+    Rescale: [0,0.006]
+    Query:
+      Start: "2019-04-01T12:00:00"
+      End: "2023-08-31T12:00:00"
