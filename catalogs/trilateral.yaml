@@ -121,3 +121,8 @@ collections:
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
   - SHC1_team_jean
+  - SHC2_team_jean_sampled
+  - SHC3_athens_cube
+  - SHC4_athens_cube_spectral_indices
+  - SHC5_era5_uv_winds
+  - SHC6_tropomi_cube
