@@ -1,0 +1,40 @@
+Name: Sentinel-3-SLSTR-L2-WST
+Title: Sea surface temperature
+EodashIdentifier: SLSTR2
+Description: "SLSTR2_Sentinel-3-SLSTR-L2-WST/SLSTR2_Sentinel-3-SLSTR-L2-WST.md"
+Themes:
+  - oceans
+Tags:
+  - Copernicus Data Space Ecosystem
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - SLSTR
+Agency:
+  - European Commission  
+  - EUMETSAT
+  - ESA
+References:
+  - Name: Data access
+    Url: https://dataspace.copernicus.eu/
+  - Name: Monitoring the temperature of the sea and sea ice
+    Url: https://www.eumetsat.int/sea-surface-temperature-services
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: c7fa984b-76f8-430a-8d57-2b8c4abe4e80
+    LayerId: SENTINEL-3-SLSTR-L2-WST
+Provider: 
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en
+  - Name: ESA
+    Roles: host
+    Url: https://sentinels.copernicus.eu/web/sentinel/home
+  - Name: EUMETSAT
+    Roles: processor
+    Url: https://www.eumetsat.int/

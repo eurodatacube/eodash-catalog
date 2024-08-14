@@ -1,0 +1,34 @@
+Name: Sentinel-3-SLSTR-L2-LST
+Title: Land Surface Temperature
+EodashIdentifier: SLSTR1
+Description: "SLSTR1_Sentinel-3-SLSTR-L2-LST/SLSTR1_Sentinel-3-SLSTR-L2-LST.md"
+Themes:
+  - atmosphere
+Tags:
+  - Copernicus Data Space Ecosystem
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - SLSTR
+Agency:
+  - European Commission  
+  - ESA
+References:
+  - Name: Data access
+    Url: https://dataspace.copernicus.eu/
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 3410e78a-0258-43e5-ae50-0a634665adc0
+    LayerId: SENTINEL-3-SLSTR-L2-LST
+Provider: 
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en
+  - Name: ESA
+    Roles: processor
+    Url: https://sentinels.copernicus.eu/web/sentinel/home
