@@ -120,6 +120,7 @@ collections:
   - HLS_NDVI
   - LIS_Global_DA_Evap
   - 4D_Greenland
+  - ENSST_by_GCOM-W-AMSR_JAXA
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
   - SSLC1_Seasonal_S1_AMP_hv_interferometric_coherence
