@@ -22,6 +22,8 @@ References:
     Url: https://earth.jaxa.jp/en/earthview/2023/08/31/7718/
   - Name: Dataset
     Url: https://data.earth.jaxa.jp/ja/datasets/#/id/JAXA.G-Portal_GCOM-W.AMSR2_standard.L3-SST.daytime.v4_global_daily
+  - Name: Sea Surface Temperature
+    Url: https://earth.jaxa.jp/en/data/products/sea-surface-temperature/index.html
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
