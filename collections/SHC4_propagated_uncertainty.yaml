@@ -1,15 +1,31 @@
 Name: propagated_uncertainty
 Title: Science Hub Challenge - Propagated uncertainty
 EodashIdentifier: SHC4
-Description: Athens Cube Science Hub Data Challenge
+Description: Data cube used for the Science Hub Data Challenge to track the plume of the eruption of the Hunga Tonga volcano in January 2022.
 Themes:
-  - "extreme-events"
+  - extreme-events
 Tags:
   - Science Hub Challenge
+  - SO2
+  - Aerosols
+  - Volcabo eruption
+  - Open data
 DataSource:
-  Other: "Science Hub Challenge"
+  Spaceborne:
+    Satellite:
+      - MetOp-B
+    Sensor:
+      - IASI
+      - AMSU
+      - MHS
+  Other:
+    - Science Hub Challenge
 Agency:
   - ESA
+  - EUMETSAT
+References:
+  - Name: Data access
+    Url: https://zenodo.org/records/7102472
 Resources:
   - EndPoint: https://xcube.deepesdl.brockmann-consult.de/api
     Type: zarr
@@ -22,3 +38,10 @@ Resources:
     Query:
       Start: "2000-01-01T00:00:00"
       End: "2000-01-01T00:00:00"
+Provider: 
+  - Name: EUMETSAT
+    Roles: licensor, producer
+    Url: https://www.eumetsat.int/
+  - Name: ESA
+    Roles: processor
+    Url: https://www.esa.int/
