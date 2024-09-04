@@ -31,7 +31,7 @@ Resources:
     Type: zarr
     Name: xcube
     StacEndpoint: "/ogc"
-    DatacubeId: scienhub-netcdf-cubes~202001-C3S-L3_AEROSOL-AER_PRODUCTS-SLSTR-SENTINEL3B-SDV-MONTHLY-v2.10.nc
+    DatacubeId: scienhub-netcdf-cubes~202001-C3S-L3_AEROSOL-AER_PRODUCTS-SLSTR-SENTINEL3B-SDV-MONTHLY-v2.10.zarr
     Variable: AOD550_uncertainty_mean
     ColormapName: plasma
     Rescale: [0,0.006]
