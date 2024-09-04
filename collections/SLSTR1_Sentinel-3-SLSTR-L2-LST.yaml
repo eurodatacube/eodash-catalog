@@ -23,7 +23,7 @@ Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
-    CollectionId: 3410e78a-0258-43e5-ae50-0a634665adc0
+    CollectionId: 7adabe9f-955c-4c84-adfb-a58dea3c7520
     LayerId: SENTINEL-3-SLSTR-L2-LST
 Provider: 
   - Name: Copernicus
