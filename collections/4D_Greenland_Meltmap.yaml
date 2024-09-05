@@ -22,8 +22,8 @@ Resources:
     LayerId: VIS_GREENLAND_MELTMAP
     OverwriteBBox: [-89.314518, 58.787273, 7.554587, 83.946756]
     DateTimeInterval:
-      Start: "2007-01-02T00:00:00"
-      End: "2021-12-28T00:00:00"
+      Start: "2007-01-02T00:00:00Z"
+      End: "2021-12-28T00:00:00Z"
       Timedelta:
         days: 7
 Image: 4D_Greenland_Meltmap/thumbnail.png

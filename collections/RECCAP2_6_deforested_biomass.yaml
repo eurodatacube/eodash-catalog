@@ -54,8 +54,8 @@ Resources:
     ColormapName: YlOrRd
     Rescale: [0,5]
     Query:
-      Start: "2011-01-01T00:00:00"
-      End: "2018-12-31T00:00:00"
+      Start: "2011-01-01T00:00:00Z"
+      End: "2018-12-31T00:00:00Z"
 Provider:
   - Name: ESA
     Roles: licensor, producer, processor

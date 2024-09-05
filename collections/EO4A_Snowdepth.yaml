@@ -22,8 +22,8 @@ Resources:
     OverwriteBBox: [11, 46.5, 15.5, 48.9]
     Type: OverwriteTimes
     DateTimeInterval:
-      Start: "2020-10-01T00:00:00"
-      End: "2022-06-30T00:00:00"
+      Start: "2020-10-01T00:00:00Z"
+      End: "2022-06-30T00:00:00Z"
       Timedelta:
         days: 1
 Legend: EO4A_Snowdepth/cm_legend.png

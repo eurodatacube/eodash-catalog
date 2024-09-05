@@ -22,8 +22,8 @@ Resources:
     LayerId: SENTINEL-1-EW
     OverwriteBBox: [-103, -75, -102, -74]
     DateTimeInterval:
-      Start: "2017-05-18T00:00:00"
-      End: "2022-01-15T00:00:00"
+      Start: "2017-05-18T00:00:00Z"
+      End: "2022-01-15T00:00:00Z"
       Timedelta:
         days: 7
 Image: ADD_West_Antarctica_S1/thumbnail.png
