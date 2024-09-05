@@ -123,4 +123,4 @@ collections:
   - SHC1_era5_u_winds
   - SHC2_era5_v_winds
   - SHC3_tropomi_cube
-  - SHC4_propagated_uncertainty
+  # - SHC4_propagated_uncertainty
