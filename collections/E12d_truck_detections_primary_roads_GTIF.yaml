@@ -17,12 +17,12 @@ Provider:
     - Name: placeholder
 License: MIT
 Resources:
-    - Group: Sentinel Hub Resources
-      EndPoint: https://services.sentinel-hub.com
-      Name: Sentinel Hub
-      Type: byoc
-      CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
-      LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
-      OverwriteBBox: [11, 46.5, 15.5, 48.9]
+  - Group: Sentinel Hub Resources
+    EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
+    LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
 Image: E12d_truck_detections_primary_roads_GTIF/thumbnail.png
 Legend: E12d_truck_detections_primary_roads_GTIF/cm_legend.png
