@@ -4,7 +4,7 @@ EodashIdentifier: ENSST
 Description: "ENSST_by_GCOM-W-AMSR_JAXA/ENSST_by_GCOM-W-AMSR_JAXA.md"
 Themes:
   - oceans
-  - extremes
+  - extreme-events
 Tags:
   - SST
   - El Nino
