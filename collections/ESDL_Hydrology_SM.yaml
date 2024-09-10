@@ -42,8 +42,8 @@ Resources:
     Variable: SM
     ColormapName: plasma_r
     Rescale: [0,1]
-    DateTimeInterval:
-      Start: "2017-01-01T00:00:00"
-      End: "2022-06-30T00:00:00"
+    Query:
+      Start: "2017-01-01T00:00:00Z"
+      End: "2022-06-30T00:00:00Z"
 Legend: ESDL_Hydrology_SM/cm_legend.png
 Image: ESDL_Hydrology_SM/image.png

@@ -1,7 +1,7 @@
 Name: Polartep_SeaIceDetection_tif_demo
 Title: Sea Ice Concentration Detection Model
 EodashIdentifier: Polartep_SeaIceDetection_tif_demo
-Description: ''
+Description: Polartep_SeaIceDetection_tif_demo/Polartep_SeaIceDetection_tif_demo.md
 Themes:
   - cryosphere
 Tags:
