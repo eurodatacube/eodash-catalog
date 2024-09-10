@@ -34,7 +34,7 @@ Resources:
     LayerId: SIC_N
     OverwriteBBox: [-20, 77, 50, 83]
     Query:
-      Start: "2012-07-04T00:00:00" # GCOM-W data collection date start
+      Start: "2012-07-04T00:00:00Z" # GCOM-W data collection date start
 Provider:
   - Name: JAXA
     Roles: licensor, producer, processor

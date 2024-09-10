@@ -22,8 +22,8 @@ Resources:
     LayerId: VIS_ANTARTICA_MELTMAP
     OverwriteBBox: [-100, -75, -70, -68]
     DateTimeInterval:
-      Start: "2007-01-02T00:00:00"
-      End: "2021-12-28T00:00:00"
+      Start: "2007-01-02T00:00:00Z"
+      End: "2021-12-28T00:00:00Z"
       Timedelta:
         days: 7
 Image: ADD_Meltmap/thumbnail.png
