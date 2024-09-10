@@ -39,6 +39,9 @@ Resources:
     Variable: net_ecosystem_exchange
     ColormapName: bwr
     Rescale: [-7,2]
+    Query:
+      Start: "2014-01-01T00:00:00Z"
+      End: "2018-12-23T00:00:00Z"
 Provider:
   - Name: NASA
     Roles: licensor, producer, processor

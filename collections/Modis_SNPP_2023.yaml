@@ -30,7 +30,7 @@ Resources:
     OverwriteBBox: [-180, -85, 180, 85]
     Type: OverwriteTimes
     DateTimeInterval:
-      Start: "2023-01-01T00:00:00"
-      End: "2023-12-31T00:00:00"
+      Start: "2023-01-01T00:00:00Z"
+      End: "2023-12-31T00:00:00Z"
 Image: Modis_SNPP_2023/image.png
 yAxis: "detections"
