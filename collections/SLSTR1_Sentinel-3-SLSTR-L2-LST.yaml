@@ -3,7 +3,7 @@ Title: Land Surface Temperature (Sentinel-3 SLSTR L2)
 EodashIdentifier: SLSTR1
 Description: "SLSTR1_Sentinel-3-SLSTR-L2-LST/SLSTR1_Sentinel-3-SLSTR-L2-LST.md"
 Themes:
-  - atmosphere
+  - extreme-events
 Tags:
   - Copernicus Data Space Ecosystem
   - Open data
