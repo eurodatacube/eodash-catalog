@@ -49,3 +49,4 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://www.esa.int/
+Legend: SHC1_era5_u_winds/cm_legend.png

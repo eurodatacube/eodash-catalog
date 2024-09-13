@@ -45,3 +45,4 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://www.esa.int/
+Legend: SHC4_propagated_uncertainty/cm_legend.png

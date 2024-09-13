@@ -46,3 +46,4 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://sentinels.copernicus.eu/web/sentinel/home
+Legend: SHC3_tropomi_cube/cm_legend.png
