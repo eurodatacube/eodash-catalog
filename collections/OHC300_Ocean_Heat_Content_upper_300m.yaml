@@ -43,3 +43,10 @@ Provider:
   - Name: ECMWF
     Roles: processor
     Url: https://www.ecmwf.int/
+Legend: OHC300_Ocean_Heat_Content_upper_300m/cm_legend.png
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 97577173-d4ef-4425-bd29-d367fe50475d
+    Script: OHC300_Ocean_Heat_Content_upper_300m/OHC300_Ocean_Heat_Content_upper_300m.js
