@@ -1,0 +1,12 @@
+id: "ideas"
+title: "IDEAS"
+description: "ESA_IDEAS - Indicator Development for Economy and Society"
+endpoint: "https://eurodatacube.github.io/eodash-catalog/ideas/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
+collections:
+  - IDEAS1_hopi_minesweeper
+  - IDEAS1_hopi
+  - IDEAS2_wildlife_minesweeper
+  - IDEAS2_wildlife
+  - IDEAS3_locust
+  - IDEAS4_flood_risk

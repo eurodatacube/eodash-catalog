@@ -1,0 +1,28 @@
+Name: IDEAS2_wildlife
+Title: Wildlife Biodiversity
+EodashIdentifier: IND2_1
+Subtitle: "Indicator 2: Wildlife Diversity"
+Description: IDEAS2_wildlife/IDEAS2_wildlife.md
+Themes:
+  - economy
+Tags:
+  - "placeholder"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: COG source
+    # Style: IDEAS2_wildlife/cog_style.json # TODO convert from JS getColorStops to JSON
+    Bbox: [-24, 33, 42, 71]
+    TimeEntries:
+      - Time: "20230101"
+        Assets:
+          - Identifier: "Wildlife Biodiversity indicator"
+            File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator2/AR3_wildlife.tif
+Legend: IDEAS2_wildlife/cm_legend.png
+Image: IDEAS2_wildlife/IDEAS2_wildlife.png

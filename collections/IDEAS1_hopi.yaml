@@ -1,0 +1,23 @@
+Name: IDEAS1_hopi
+Title: "HOUHPI Health-Oriented Urban Heat and Pollution Index"
+EodashIdentifier: IND1_1
+Subtitle: "Indicator 1: HOUHPI"
+Description: IDEAS1_hopi/IDEAS1_hopi.md
+Themes:
+  - economy
+Tags:
+  - "placeholder"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-24, 33, 42, 71]
+Legend: IDEAS1_hopi_b1/cm_legend.png
+Image: IDEAS1_hopi/IDEAS1_hopi.png

@@ -1,0 +1,23 @@
+Name: IDEAS1_hopi_minesweeper
+Title: HOUHPI Minesweeper
+EodashIdentifier: IND1_1_minesweeper
+Subtitle: "Indicator 1: HOUHPI Game mode"
+Description: IDEAS1_hopi/IDEAS1_hopi.md
+Themes:
+  - economy
+Tags:
+  - "placeholder"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-24, 33, 42, 71]
+# Legend: IDEAS1_hopi/cm_legend.png
+Image: IDEAS1_hopi/IDEAS1_hopi_minesweeper.png

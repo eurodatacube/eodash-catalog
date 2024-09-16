@@ -1,0 +1,23 @@
+Name: IDEAS4_flood_risk
+Title: Flood Risk Indicator
+EodashIdentifier: IND4_1
+Subtitle: "Indicator 4: Flood Risk"
+Description: IDEAS4_flood_risk/IDEAS4_flood_risk.md
+Themes:
+  - economy
+Tags:
+  - "placeholder"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [180, -85, 180, 85]
+Legend: IDEAS4_flood_risk/cm_legend.png
+Image: IDEAS4_flood_risk/IDEAS4_flood_risk.png

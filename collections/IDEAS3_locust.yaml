@@ -1,0 +1,23 @@
+Name: IDEAS3_locust
+Title: Locust and Food Security Indicator
+EodashIdentifier: IND3_1
+Subtitle: "Indicator 3: Locust and Food security"
+Description: IDEAS3_locust/IDEAS3_locust.md
+Themes:
+  - economy
+Tags:
+  - "placeholder"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-26, -3, 76, 37]
+Legend: IDEAS3_locust/cm_legend.png
+Image: IDEAS3_locust/IDEAS3_locust.png
