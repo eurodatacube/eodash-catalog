@@ -36,4 +36,9 @@ collections:
   - crop_forecast_CropOM
   - ESDL_Hydrology_SM
   - ESDL_Hydrology_Precipitation
-  
+  - IDEAS1_hopi_minesweeper
+  - IDEAS1_hopi
+  - IDEAS2_wildlife_minesweeper
+  - IDEAS2_wildlife
+  - IDEAS3_locust
+  - IDEAS4_flood_risk
