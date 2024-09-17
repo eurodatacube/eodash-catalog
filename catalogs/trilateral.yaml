@@ -118,5 +118,8 @@ collections:
   - HLS_NDVI
   - LIS_Global_DA_Evap
   - 4D_Greenland
+  - IDEAS1_hopi
+  - IDEAS3_locust
+  - IDEAS4_flood_risk
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
