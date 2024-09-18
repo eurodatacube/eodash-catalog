@@ -1,0 +1,34 @@
+Name: NASA_ECOSTRESS_LST
+Title: NASA ECOSTRESS land surface temperature
+EodashIdentifier: NELST
+Description: "NELST_ECOSTRESS_LST/NELST_ECOSTRESS_LST.md"
+Themes:
+  - extreme-events
+Tags:
+  - Temperature
+  - Open data
+DataSource:
+  Other:
+    - ECOSTRESS
+Agency:
+  - NASA
+Citation:
+  Citation: |
+    Hook, S., Hulley, G. (2019). ECOSTRESS Land Surface Temperature and Emissivity Daily L2 Global 70 m V001 [Data set]. NASA EOSDIS Land Processes Distributed Active Archive Center
+  DOI: 10.5067/ECOSTRESS/ECO2LSTE.001
+References:
+  - Name: Data access
+    Url: https://search.earthdata.nasa.gov/search/granules/collection-details?p=C1534729776-LPDAAC_ECS&pg[0][v]=f&pg[0][qt]=2023-07-15T00%3A00%3A00.000Z%2C2023-07-16T23%3A59%3A59.999Z&pg[0][gsk]=-start_date&g=G2734741231-LPDAAC_ECS&q=ecostress&sb[0]=12.0498%2C42.35287%2C12.05859%2C42.36165&ac=true&tl=1724937696!3!!&lat=40.89111328125&long=11.988281250000002&zoom=6
+  - Name: ECOSTRESS Land Surface Temperature and Emissivity Daily L2 Global 70 m
+    Url: https://cmr.earthdata.nasa.gov/search/concepts/C1534729776-LPDAAC_ECS.html
+  - Name: 
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: ded2ac82-a4f8-4873-b725-60b9ac908c8d
+    LayerId: NASA-ECOSTRESS-LST
+Provider:
+  - Name: NASA/JPL/ECOSTRESS
+    Roles: processor
+    Url: https://ecostress.jpl.nasa.gov/
