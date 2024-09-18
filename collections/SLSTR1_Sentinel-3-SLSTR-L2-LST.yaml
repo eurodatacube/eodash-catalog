@@ -16,6 +16,7 @@ DataSource:
 Agency:
   - European Commission  
   - ESA
+Legend: SLSTR1_Sentinel-3-SLSTR-L2-LST/SLSTR1_legend.png
 References:
   - Name: Data access
     Url: https://dataspace.copernicus.eu/
