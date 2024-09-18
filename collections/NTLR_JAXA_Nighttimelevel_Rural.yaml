@@ -27,6 +27,7 @@ Resources:
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 4d6c4519-42e5-4b07-8127-ba28241ce95e
+    OverwriteBBox: [-180,-60,180,75]
     LayerId: JAXA-NIGHTTIMELEVEL-RURAL
 Provider:
   - Name: NASA
