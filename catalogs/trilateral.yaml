@@ -117,6 +117,8 @@ collections:
   - EPA_Methane
   - HLS_NDVI
   - LIS_Global_DA_Evap
+  - NTLU_JAXA_Nighttimelevel_Urban
+  - NTLR_JAXA_Nighttimelevel_Rural
   - 4D_Greenland
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
