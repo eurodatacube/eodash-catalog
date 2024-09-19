@@ -16,7 +16,7 @@ DataSource:
     Sensor:
       - MODIS
 Agency:
-  - ESA
+  - NASA
 Provider:
   - Name: NASA National Oceanic and Atmospheric Administration
     Url: https://www.nasa.gov/directorates/smd/joint-agency-satellite-division/noaa/
