@@ -1,7 +1,7 @@
 Name: Sentinel-3-SLSTR-L2-LST
 Title: Land Surface Temperature (Sentinel-3 SLSTR L2)
 EodashIdentifier: SLSTR1
-Description: "SLSTR1_Sentinel-3-SLSTR-L2-LST/SLSTR1_Sentinel-3-SLSTR-L2-LST.md"
+Description: SLSTR1_Sentinel-3-SLSTR-L2-LST/SLSTR1_Sentinel-3-SLSTR-L2-LST.md
 Themes:
   - extreme-events
 Tags:
