@@ -38,7 +38,7 @@ Resources:
     Name: Sentinel Hub
     Type: byoc
     CollectionId: d4dae328-3f6a-4a86-9374-7af252aa240d
-    LayerId: Seasonal_S1_COH12_hh_interferometric_coherence
+    LayerId: S1_COH12_HH
 Provider:
   - Name: Copernicus
     Roles: licensor
