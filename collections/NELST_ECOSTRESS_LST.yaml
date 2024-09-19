@@ -1,7 +1,7 @@
 Name: NASA_ECOSTRESS_LST
 Title: NASA ECOSTRESS land surface temperature
 EodashIdentifier: NELST
-Description: "NELST_ECOSTRESS_LST/NELST_ECOSTRESS_LST.md"
+Description: NELST_ECOSTRESS_LST/NELST_ECOSTRESS_LST.md
 Themes:
   - extreme-events
 Tags:
