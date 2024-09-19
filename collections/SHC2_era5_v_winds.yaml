@@ -1,7 +1,7 @@
 Name: era5_v_winds
 Title: Science Hub Challenge - ERA5 Winds V
 EodashIdentifier: SHC2
-Description: ERA5 Winds V component used for the Science Hub Data Challenge to track pollution episodes occured in northern India and Pakistan.
+Description: SHC2_era5_v_winds/SHC2_era5_v_winds.md
 Themes:
   - extreme-events
 Tags:
