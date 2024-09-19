@@ -1,7 +1,7 @@
 Name: ENSST_by_GCOM-W-AMSR_JAXA
 Title: Sea Surface Temperature (GCOM-W) 
 EodashIdentifier: ENSST
-Description: "ENSST_by_GCOM-W-AMSR_JAXA/ENSST_by_GCOM-W-AMSR_JAXA.md"
+Description: ENSST_by_GCOM-W-AMSR_JAXA/ENSST_by_GCOM-W-AMSR_JAXA.md
 Themes:
   - oceans
   - extreme-events
