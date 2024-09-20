@@ -1,0 +1,41 @@
+Name: JAXA_Nighttimelevel_Urban
+Title: Night lights in urban areas
+Subtitle: Global map of night lights aggregated for years 2019-2022
+EodashIdentifier: NTLU
+Description: "NTLU_JAXA_Nighttimelevel_Urban/NTLU_JAXA_Nighttimelevel_Urban.md"
+Themes:
+  - Covid-19
+Tags:
+  - Human activities
+  - Night lights
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Suomi NPP
+    Sensor:
+      - VIIRS
+  Other:
+    - Other
+Agency:
+  - JAXA
+References:
+  - Name: Level-1 data access
+    Url: https://ladsweb.modaps.eosdis.nasa.gov/
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 603511b6-4316-4275-bf65-6c18a7813248
+    OverwriteBBox: [-180,-60,180,75]
+    LayerId: JAXA-NIGHTTIMELEVEL-URBAN
+Provider:
+  - Name: NASA
+    Roles: licensor, producer
+    Url: https://www.nasa.gov/
+  - Name: JAXA
+    Roles: processor
+    Url: https://earth.jaxa.jp/
+  - Name: Tokyo University of Foreign Studies
+    Roles: processor
+    Url: https://www.tufs.ac.jp/english/education/ia/

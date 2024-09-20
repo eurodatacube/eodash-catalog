@@ -121,6 +121,8 @@ collections:
   - EPA_Methane
   - HLS_NDVI
   - LIS_Global_DA_Evap
+  - NTLU_JAXA_Nighttimelevel_Urban
+  - NTLR_JAXA_Nighttimelevel_Rural
   - 4D_Greenland
   - ENSST_by_GCOM-W-AMSR_JAXA
   - SLSTR1_Sentinel-3-SLSTR-L2-LST
