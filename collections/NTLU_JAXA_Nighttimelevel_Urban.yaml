@@ -2,7 +2,7 @@ Name: JAXA_Nighttimelevel_Urban
 Title: Night lights in urban areas
 Subtitle: Global map of night lights aggregated for years 2019-2022
 EodashIdentifier: NTLU
-Description: "NTLU_JAXA_Nighttimelevel_Urban/NTLU_JAXA_Nighttimelevel_Urban.md"
+Description: NTLU_JAXA_Nighttimelevel_Urban/NTLU_JAXA_Nighttimelevel_Urban.md
 Themes:
   - Covid-19
 Tags:
