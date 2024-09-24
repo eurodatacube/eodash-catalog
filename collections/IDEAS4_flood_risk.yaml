@@ -1,20 +1,36 @@
 Name: IDEAS4_flood_risk
 Title: Flood Risk Indicator
 EodashIdentifier: IND4_1
-Subtitle: "Indicator 4: Flood Risk"
+Subtitle: "Flood Risk from Global Sealevel Rise and StromSurge, Projektions until 2150 with different SSPs. Flooded Areas shown in Red and potenical proteced Areas in Green"
 Description: IDEAS4_flood_risk/IDEAS4_flood_risk.md
 Themes:
-  - economy
+  - oceans
 Tags:
-  - "placeholder"
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Sealevel
+  - Climate Change
+  - Flood
+  - Storm Surge
+DataSource:
+  Other:
+    - Copernicus Global DEM
+    - NASA/IPCC 6th Sea level projections
 Agency:
   - ESA
+  - NASA
+License:
+  - Url: https://doi.org/10.5270/ESA-c5d3d65
+    Type: text/html
+    Title: Free license to Use Copernicus Products
+  - Url:  https://doi.org/10.5281/zenodo.6382554
+    Type: text/html
+    Title: Creative Commons Attribution 4.0 International License on Zenodo for IPCC AR6 Sea Level Projections
 Provider:
-  - Name: placeholder
+  - Name: Adamplatform by Sistema GmbH
+    Url: https://adamplatform.eu/
+  - Name: Sinergise on AWS
+    Url: https://registry.opendata.aws/copernicus-dem/
+  - Name: NASA/IPCC AR6 Sea Level Projections
+    Url: https://zenodo.org/records/6382554
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only

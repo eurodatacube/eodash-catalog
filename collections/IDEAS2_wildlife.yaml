@@ -1,20 +1,28 @@
 Name: IDEAS2_wildlife
-Title: Wildlife Biodiversity
+Title: Wildlife Biodiversity Indicator
 EodashIdentifier: IND2_1
-Subtitle: "Indicator 2: Wildlife Diversity"
+Subtitle: "Identify areas of high biodiversity"
 Description: IDEAS2_wildlife/IDEAS2_wildlife.md
 Themes:
-  - economy
+  - agriculture
 Tags:
-  - "placeholder"
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - GBIF
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - MODIS
+      - Sentinel-3
+  InSitu:
+    - GBIF
+  Other:
+    - Open Data Soft
 Agency:
   - ESA
 Provider:
-  - Name: placeholder
+  - Name: Murmuration Vegetation Indicator
+    Description: Vegetation health dataset
+    Url: https://murmuration-sas.com/indicateurs
 Resources:
   - Name: COG source
     # Style: IDEAS2_wildlife/cog_style.json # TODO convert from JS getColorStops to JSON
@@ -26,3 +34,15 @@ Resources:
             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator2/AR3_wildlife.tif
 Legend: IDEAS2_wildlife/cm_legend.png
 Image: IDEAS2_wildlife/IDEAS2_wildlife.png
+# References:
+#   - Name: Data access
+#     Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-oras5?tab=form
+# License:
+#   - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+#     Type: application/pdf
+#     Title: Licence to Use Copernicus Products
+# Citation:
+#   Citation: |
+#     Copernicus Climate Change Service, Climate Data Store, (2021).
+#     ORAS5 global ocean reanalysis monthly data from 1958 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS).
+#   DOI: 10.24381/cds.67e8eeb7
