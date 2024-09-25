@@ -1,0 +1,49 @@
+Name: IDEAS5_real_estate
+Title: Real Estate Indicator
+EodashIdentifier: IND5_1
+Subtitle: ""
+Description: IDEAS5_real_estate/IDEAS5_real_estate.md
+Themes:
+  - health
+# Tags:
+#   - Sealevel
+#   - Climate Change
+#   - Flood
+#   - Storm Surge
+# DataSource:
+#   Other:
+#     - Copernicus Global DEM
+#     - NASA/IPCC 6th Sea level projections
+# Agency:
+#   - ESA
+#   - NASA
+# License:
+#   - Url: https://doi.org/10.5270/ESA-c5d3d65
+#     Type: text/html
+#     Title: Free license to Use Copernicus Products
+#   - Url:  https://doi.org/10.5281/zenodo.6382554
+#     Type: text/html
+#     Title: Creative Commons Attribution 4.0 International License on Zenodo for IPCC AR6 Sea Level Projections
+Provider:
+  - Name: Murmuration Real Estate Indicator
+    Description: Real Estate Indicator
+    Url: https://murmuration-sas.com/indicateurs
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-24, 33, 42, 71]
+# Resources:
+#   - Name: COG source
+#     # Style: IDEAS5_real_estate/cog_style.json
+#     Bbox: [-4, 41, 11, 51]
+#     TimeEntries:
+#       - Time: "20230101"
+#         Assets:
+#           - Identifier: Real Estate Indicator
+#             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_Real-Estate_output_France_4326.tif
+#           - Identifier: "Population age, social status, and building insulation Indicator"
+#             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_dpe_output_France_4326.tif
+#           - Identifier: LST Indicator
+#             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_lst_output_France_4326.tif
+Legend: IDEAS5_real_estate/cm_legend.png
+Image: IDEAS5_real_estate/IDEAS5_real_estate.png
