@@ -32,6 +32,7 @@ Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [-24, 33, 42, 71]
+# commented out because config done in client
 # Resources:
 #   - Name: COG source
 #     # Style: IDEAS5_real_estate/cog_style.json
