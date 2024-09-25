@@ -120,5 +120,8 @@ collections:
   - NTLU_JAXA_Nighttimelevel_Urban
   - NTLR_JAXA_Nighttimelevel_Rural
   - 4D_Greenland
+  - IDEAS1_hopi
+  - IDEAS3_locust
+  - IDEAS4_flood_risk
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy

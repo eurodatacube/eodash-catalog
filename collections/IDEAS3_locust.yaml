@@ -1,0 +1,43 @@
+Name: IDEAS3_locust
+Title: Food Security Indicator
+EodashIdentifier: IND3_1
+Subtitle: "Estimated distribution of Desert Locusts' hoppers and bands with 7 days of advance. Every pixel represents the probability of presence, from 0 to 1."
+Description: IDEAS3_locust/IDEAS3_locust.md
+Themes:
+  - agriculture
+Tags:
+  - Desert Locust
+  - Food security
+  - Agriculture
+  - Pest control
+DataSource:
+  Other:
+    - ERA5-Land
+  InSitu:
+    - Locust hub (https://locust-hub-hqfao.hub.arcgis.com/)
+Agency:
+  - FAO
+  - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Provider: 
+  - Name: SISTEMA
+    Url: https://sistema.at/
+    Roles: 
+      - producer
+  - Name: Climate Data Store
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-land
+    Roles: 
+      - data provider
+Citation:
+  Citation: |
+    Muñoz Sabater, J. (2019): ERA5-Land hourly data from 1950 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS).
+  DOI: 10.24381/cds.e2161bac
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-26, -3, 76, 37]
+Legend: IDEAS3_locust/cm_legend.png
+Image: IDEAS3_locust/IDEAS3_locust.png
