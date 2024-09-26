@@ -1,21 +1,28 @@
 Name: CV_Covid_19_cases
 Title: Covid-19 Cases
 EodashIdentifier: CV
-Description: CV_Covid_19_cases/CV.md
+Description: CV_Covid_19_cases/CV_Covid_19_cases.md
 Themes:
-    - health
+  - health
 Tags:
-    - placeholder
-Satellite:
-    - placeholder
-Sensor:
-    - placeholder
+  - Covid-19
+  - Human activities
+  - Open data
+DataSource:
+  InSitu:
+    - Other
 Agency:
-    - ESA
+  - ESA
+Citation:
+  Citation: |
+    Hasell, J., Mathieu, E., Beltekian, D. et al. A cross-country database of COVID-19 testing. Sci Data 7, 345 (2020).
+  DOI: 10.1038/s41597-020-00688-8
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Global_COVID_data
-      AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR","XK")'
-      IdKey: 'aoi_id'
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Global_COVID_data
+    AdditionalQueryString: 'aoi_id=in.("AL","AT","BA","BE","BG","CH","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IT","LT","LU","LV","MK","MT","NL","NO","PL","PT","RO","RS","SE","SI","SK","TR","XK")'
+Provider:
+  - Name: Our World in Data
+    Url: https://ourworldindata.org/covid-cases

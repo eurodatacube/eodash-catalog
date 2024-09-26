@@ -63,8 +63,8 @@ collections:
   - SIF_solar_induced_chlorophyll_fluorescence
   - N5_nightlights
   - N6_geoglam
-  - CDS5_wind_100m_u_newDeli
-  - CDS6_wind_100m_v_newDeli
+  - CDS7_windu_ERA5-SingleLevel_100m_GLOBAL
+  - CDS8_windv_ERA5-SingleLevel_100m_GLOBAL
   # - N7_slowdown_proxy # removed in new VEDA endpoint
   # - N8_recovery_proxy # removed in new VEDA endpoint
   - N3b_water_quality_tsm_chart
@@ -117,10 +117,19 @@ collections:
   - EPA_Methane
   - HLS_NDVI
   - LIS_Global_DA_Evap
+  - NTLU_JAXA_Nighttimelevel_Urban
+  - NTLR_JAXA_Nighttimelevel_Rural
   - 4D_Greenland
+  - ENSST_by_GCOM-W-AMSR_JAXA
+  - SLSTR1_Sentinel-3-SLSTR-L2-LST
+  # - SLSTR2_Sentinel-3-SLSTR-L2-WST
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
   - SHC1_era5_u_winds
   - SHC2_era5_v_winds
   - SHC3_tropomi_cube
   - SHC4_propagated_uncertainty
+  - SSLC1_Seasonal_S1_AMP_hv_interferometric_coherence
+  - SSLC2_Seasonal_S1_COH12_hh_interferometric_coherence
+  - OHC300_Ocean_Heat_Content_upper_300m
+  - NELST_ECOSTRESS_LST
