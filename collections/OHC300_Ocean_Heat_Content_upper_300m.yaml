@@ -1,0 +1,52 @@
+Name: Ocean_Heat_Content_upper_300m
+Title: Ocean heat content for the upper 300m
+EodashIdentifier: OHC300
+Subtitle: ORAS5 global ocean reanalysis monthly data from 1958 to present
+Description: OHC300_Ocean_Heat_Content_upper_300m/OHC300_Ocean_Heat_Content_upper_300m.md
+Themes:
+  - oceans
+Tags:
+  - Copernicus Services
+  - C3S
+  - CDS
+  - Multi-sensors
+  - Open data
+  - Climate change service
+DataSource:
+  Other:
+    - ORAS5
+Agency:
+  - European Commission
+  - ECMWF
+License:
+  - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
+    Type: application/pdf
+    Title: Licence to Use Copernicus Products
+Citation:
+  Citation: |
+    Copernicus Climate Change Service, Climate Data Store, (2021).
+    ORAS5 global ocean reanalysis monthly data from 1958 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS).
+  DOI: 10.24381/cds.67e8eeb7
+References:
+  - Name: Data access
+    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-oras5?tab=form
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: 97577173-d4ef-4425-bd29-d367fe50475d
+    LayerId: OCEAN_HEAT_CONTENT_UPPER_300M
+Provider: 
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en
+  - Name: ECMWF
+    Roles: processor
+    Url: https://www.ecmwf.int/
+Legend: OHC300_Ocean_Heat_Content_upper_300m/cm_legend.png
+Services:
+  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
+    Name: Statistical API
+    Type: byoc
+    CollectionId: 97577173-d4ef-4425-bd29-d367fe50475d
+    Script: OHC300_Ocean_Heat_Content_upper_300m/OHC300_Ocean_Heat_Content_upper_300m.js

@@ -1,36 +1,42 @@
 Name: Modis_SNPP_2023
-Title: Modis Fire Detections
+Title: Active Fires (MODIS)
 EodashIdentifier: Modis_SNPP_2023
-Description: "Modis_SNPP_2023/Modis_SNPP_2023.md"
-Description: "Modis detections that inform the most recent time-step’s fire perimeter and active fire line calculation for 2023"
+Description: Modis_SNPP_2023/Modis_SNPP_2023.md
 Themes:
-  - "extreme-events"
+  - extreme-events
 Tags:
-  - Optical
-  - Open data
   - Fire
+  - Open data
 DataSource:
   Spaceborne:
     Satellite:
+      - Terra
       - Aqua
     Sensor:
       - MODIS
 Agency:
   - NASA
-Provider:
-  - Name: NASA National Oceanic and Atmospheric Administration
-    Url: https://www.nasa.gov/directorates/smd/joint-agency-satellite-division/noaa/
-  - Name: NASA Earth Information System
-    Url: https://www.earthdata.nasa.gov/eis
-    Roles:
-      - processor
+Image: Modis_SNPP_2023/Modis_SNPP_2023.png
+References:
+  - Name: User's Guides
+    Url: https://modis-fire.umd.edu/guides.html
+  - Name: Burned Area Products
+    Url: https://modis-fire.umd.edu/ba.html
+  - Name: Data access
+    Url: https://firms.modaps.eosdis.nasa.gov/download/
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [-180, -85, 180, 85]
     Type: OverwriteTimes
     DateTimeInterval:
-      Start: "2023-01-01T00:00:00Z"
-      End: "2023-12-31T00:00:00Z"
-Image: Modis_SNPP_2023/image.png
-yAxis: "detections"
+      Start: "2023-01-01T00:00:00"
+      End: "2023-12-31T00:00:00"
+  # - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+  #   Name: GeoDB
+  #   Database: eodash
+  #   CollectionId: MODIS_timeseries
+Provider:
+  - Name: NASA
+    Roles: licensor, producer, processor
+    Url: https://firms.modaps.eosdis.nasa.gov/
