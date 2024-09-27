@@ -21,11 +21,14 @@ References:
   - Name: Data access
     Url: https://dataspace.copernicus.eu/
 Resources:
-  - EndPoint: https://services.sentinel-hub.com
-    Name: Sentinel Hub
-    Type: byoc
-    CollectionId: 7adabe9f-955c-4c84-adfb-a58dea3c7520
+  - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
+    Name: WMS
+    Type: OverwriteTimes
     LayerId: SENTINEL-3-SLSTR-L2-LST
+    OverwriteBBox: [-180, -85, 180, 85]
+    DateTimeInterval:
+      Start: "2023-06-01T00:00:00Z"
+      End: "2023-08-31T00:00:00Z"
 Provider: 
   - Name: Copernicus
     Roles: licensor, producer
