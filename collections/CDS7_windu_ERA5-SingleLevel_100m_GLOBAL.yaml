@@ -1,8 +1,8 @@
-Name: wind_100m_v_newDeli
-Title: Wind V Field Over Deli 2023 at 100m
-EodashIdentifier: CDS6
-Subtitle: Gridded ERA5 reanalysis wind V field at 100 m
-Description: CDS6_wind_100m_v_newDeli/CDS6_wind_100m_v_newDeli.md
+Name: windu_ERA5-SingleLevel_100m_GLOBAL
+Title: Wind U Field at 100m
+EodashIdentifier: CDS7
+Subtitle: Gridded ERA5 reanalysis wind U field at 100 m at global level
+Description: CDS7_windu_ERA5-SingleLevel_100m_GLOBAL/CDS7_windu_ERA5-SingleLevel_100m_GLOBAL.md
 Themes:
   - air
 Tags:
@@ -32,16 +32,16 @@ Citation:
     Citing the data:
     Hersbach, H., Bell, B., Berrisford, P., Biavati, G., Horányi, A., Muñoz Sabater, J., Nicolas, J., Peubey, C., Radu, R., Rozum, I., Schepers, D., Simmons, A., Soci, C., Dee, D., Thépaut, J-N. (2023): ERA5 hourly data on single levels from 1940 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (Accessed on 02-M07-2024)
   DOI: 10.24381/cds.adbb2d47
-Legend: placeholder
+Legend: CDS7_windu_ERA5-SingleLevel_100m_GLOBAL/cm_legend.png
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
-    CollectionId: b0418c9e-e0d2-46df-9431-ec1d6c44514f
-    LayerId: VIS_ERA5_SINGLELEVEL_WIND_V_100M
+    CollectionId: ac99bb32-a94d-4f4f-b8dd-c0098ca07665
+    LayerId: VIS_ERA5_SINGLELEVEL_WIND_U_100M_GLOBAL
 Services:
   - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
     Name: Statistical API
     Type: byoc
-    CollectionId: b0418c9e-e0d2-46df-9431-ec1d6c44514f
-    Script: CDS6_wind_100m_v_newDeli/CDS6_wind_100m_v_newDeli.js
+    CollectionId: ac99bb32-a94d-4f4f-b8dd-c0098ca07665
+    Script: CDS7_windu_ERA5-SingleLevel_100m_GLOBAL/CDS7_windu_ERA5-SingleLevel_100m_GLOBAL.js

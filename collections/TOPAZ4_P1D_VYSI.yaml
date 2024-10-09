@@ -17,10 +17,10 @@ Resources:
     Type: WMTSCapabilities
     Name: marinedatastore
     LayerId: ARCTIC_MULTIYEAR_PHY_002_003/cmems_mod_arc_phy_my_topaz4_P1D-m_202211/vysi
-    Disable_Items: true
-    DateTimeInterval:
-      Start: "1991-01-01T00:00:00"
-      End: "2022-12-31T00:00:00"
+    Query:
+      # original dataset goes from 1.1.1991 but we manually only show last 5 years
+      Start: "2018-01-01T00:00:00Z"
+      End: "2022-12-31T00:00:00Z"
     Dimensions:
       elevation: 0
       style: 'cmap:delta,range:-0.3/0.3,noClamp'

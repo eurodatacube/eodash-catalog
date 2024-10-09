@@ -1,17 +1,15 @@
-# This is a basic workflow takes care of building and deploying
-# catalog when pushing to main branch
-
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# This is a basic workflow takes care of deploying zipped built catalog to GitHub Pages
+name: Deploy externally built catalog content to Pages on demand
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+    inputs:
+      url:
+        description: "url of the zipped catalog"
+        required: true
+        default: "https://eox-gtif-public.s3.eu-central-1.amazonaws.com/test_data_polartep/eodash-catalog-build-2024-07-06.zip"
+        type: string
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -35,16 +33,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Install dependencies
+      - name: install requirements
+        run: sudo apt-get update && sudo apt-get install -y curl unzip
+      - name: Download and unzip
         run: |
-          pip install -U pip
-          pip install eodash_catalog==0.0.37
-      - name: Build
-        env:
-          SH_INSTANCE_ID: ${{ secrets.SH_INSTANCE_ID }}
-          SH_CLIENT_ID: ${{ secrets.SH_CLIENT_ID }}
-          SH_CLIENT_SECRET: ${{ secrets.SH_CLIENT_SECRET }}
-        run: eodash_catalog
+          curl ${{ inputs.url }} -o catalogs.zip 
+          unzip -q -o catalogs.zip -d build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -53,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+

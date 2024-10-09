@@ -1,0 +1,49 @@
+Name: tropomi_cube_co
+Title: Science Hub Challenge - CO
+EodashIdentifier: SHC3
+Description: Tropomi cube used for the Science Hub Data Challenge to track pollution episodes occured in northern India and Pakistan.
+Themes:
+  - extreme-events
+Tags:
+  - Science Hub Challenge
+  - Copernicus Services
+  - Copernicus Data Space Ecosystem
+  - CO
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-5P
+    Sensor:
+      - TROPOMI
+  Other:
+    - Science Hub Challenge
+Agency:
+  - ESA
+Citation:
+  Citation: |
+    Copernicus Sentinel-5P (processed by ESA), 2021, TROPOMI Level 2 Carbon Monoxide total column products. Version 02. European Space Agency.
+  DOI: 10.5270/S5P-bj3nry0
+References:
+  - Name: Data access
+    Url: http://dataspace.copernicus.eu/
+Resources:
+  - EndPoint: https://xcube.deepesdl.brockmann-consult.de/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: cube_TROPOMI_202220230912_daily_001x001
+    Variable: CO
+    ColormapName: viridis
+    Rescale: [0,0.1]
+    Query:
+      Start: "2021-10-01T12:00:00"
+      End: "2023-11-30T12:00:00"
+Provider: 
+  - Name: Copernicus
+    Roles: licensor, producer
+    Url: https://www.copernicus.eu/en
+  - Name: ESA
+    Roles: processor
+    Url: https://sentinels.copernicus.eu/web/sentinel/home
+Legend: SHC3_tropomi_cube/cm_legend.png

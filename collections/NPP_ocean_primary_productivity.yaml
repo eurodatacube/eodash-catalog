@@ -50,8 +50,8 @@ Resources:
     LayerId: BICEP_NPP_VIS_PP2
     OverwriteBBox: [-180, -85, 180, 85]
     DateTimeInterval:
-      Start: "1998-01-28T00:00:00"
-      End: "2020-12-28T00:00:00"
+      Start: "1998-01-28T00:00:00Z"
+      End: "2020-12-28T00:00:00Z"
       Timedelta: # creating monthly dates as timedelta does not allow jumping by 1 month
         days: 30
         hours: 9

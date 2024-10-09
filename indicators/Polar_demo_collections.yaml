@@ -1,13 +1,14 @@
 Name: Polartep_demo
 Title: Polar TEP demo datasets
 EodashIdentifier: Polartep_demo
-Description: ''
+Description: ""
 Collections:
   - Polartep_S1_demo
   - Polartep_Snowgrain_diameter_demo
   - Polartep_Snow_specific_surface_area_demo
   - Polartep_SeaIce_demo
   - Polartep_SeaIceDetection_tif_demo
+  - Polartep_S2_segmentation
   - Polartep_SeaIceCharts_demo
   - Polartep_RCM_demo
   - Polartep_S1_dedl_demo
