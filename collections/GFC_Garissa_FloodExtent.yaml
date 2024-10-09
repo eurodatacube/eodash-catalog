@@ -18,8 +18,8 @@ Colorlegend:
   title: "Flooding"
   range: ["#ff0000"]
   domain: ["Flooding area"]
-  scaletype: "categorical"
-  marktype: "circle"
+  scaleType: "categorical"
+  markType: "circle"
 Resources:
     - Name: GeoJSON source
       Style: GFC_Garissa_FloodExtent/style.json
