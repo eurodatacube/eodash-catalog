@@ -1,0 +1,24 @@
+Name: land_surface_temperature_analysis
+Title: Land surface temperature analysis
+EodashIdentifier: HAUC1
+Description: HAUC1_land_surface_temperature_analysis/HAUC1.md
+Themes:
+  - eo-adaptation-services
+Tags:
+  - "HeatAdapt"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy
+Legend: HAUC1_land_surface_temperature_analysis/cm_legend.png
