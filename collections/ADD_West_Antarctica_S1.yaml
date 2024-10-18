@@ -2,13 +2,14 @@ Name: ADD_West_Antarctica_S1
 Title: West Antarctica (Sentinel-1)
 EodashIdentifier: ADD_West_Antarctica_S1
 Subtitle: West Antarctica Sentinel-1 Subset
-Description: ADD_West_Antarctica_S1/S1GRD-ADD.md
+Description: ADD_West_Antarctica_S1/ADD_West_Antarctica_S1.md
 Themes:
   - cryosphere
 Tags:
   - Copernicus
   - Open data
   - SAR
+  - Antarctida
 Satellite:
   - Sentinel-1
 Sensor:
