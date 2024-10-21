@@ -2,15 +2,17 @@ Name: E13b_parked_airplanes
 Title: Parked Airplanes
 EodashIdentifier: E13b
 Subtitle: Grounded airplanes during the novel coronavirus pandemic
-Description: E13b_parked_airplanes/E13b.md
+Description: E13b_parked_airplanes/E13b_parked_airplanes.md
 Themes:
     - economy
 Tags:
-    - placeholder
+  - Copernicus Services
+  - Open data
+  - COVID-19
 Satellite:
     - Sentinel-2
 Sensor:
-    - placeholder
+    - MSI
 Agency:
     - ESA
 Resources:
