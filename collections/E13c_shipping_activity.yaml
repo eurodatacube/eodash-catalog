@@ -2,15 +2,20 @@ Name: E13c_shipping_activity
 Title: Shipping Activity at Major Ports
 EodashIdentifier: E13c
 Subtitle: Ship detections in EO data at major international harbours
-Description: E13c_shipping_activity/E13c.md
+Description: E13c_shipping_activity/E13c_shipping_activity.md
 Themes:
     - economy
 Tags:
-    - placeholder
+    - Economy
+    - Open data
+    - Maritime 
+    - Copernicus
+    - Shipping activity
+    - Optical sensor
 Satellite:
     - Sentinel-2
 Sensor:
-    - placeholder
+    - MSI
 Agency:
     - ESA
 Resources:
