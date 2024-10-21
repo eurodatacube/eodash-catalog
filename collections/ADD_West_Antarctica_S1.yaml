@@ -10,10 +10,12 @@ Tags:
   - Open data
   - SAR
   - Antarctida
-Satellite:
-  - Sentinel-1
-Sensor:
-  - Synthetic Aperture Radar (SAR)
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-1
+    Sensor:
+      - C-SAR
 Agency:
   - ESA
 Provider:
