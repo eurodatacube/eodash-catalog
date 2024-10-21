@@ -69,6 +69,7 @@ collections:
   # - N8_recovery_proxy # removed in new VEDA endpoint
   - N3b_water_quality_tsm_chart
   - N3b_water_quality_chl_chart
+  - N3a2_chl_concentration
   - N3a2_chl_concentration_tri_esa
   - N3a2_chl_concentration_tri_jaxa
   - N3a2_chl_concentration_tri_nasa
