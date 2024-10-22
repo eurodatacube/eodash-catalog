@@ -15,15 +15,33 @@ Tags:
     - Marine monitoring
     - Chlorophyll-a
     - COVID-19
-Satellite:
+DataSource:
+  Spaceborne:
+    Satellite:
     - Sentinel-3
-Sensor:
+    - GCOM-C
+    - Acqua
+    Sensor:
     - OLCI
+    - SGLI
+    - MODIS
 Agency:
     - ESA
+    - JAXA
+    - NASA
+Provider:
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+    Roles: producer, processor
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
+    Roles: producer
+  - Name: NASA
+    Url: https://www.nasa.gov/
+    Roles: producer
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Regional_Water_quality_timeseries
-      AdditionalQueryString: 'indicator_name=eq.Total Suspended Matter concentration anomaly'
+   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Regional_Water_quality_timeseries
+    AdditionalQueryString: 'indicator_name=eq.Total Suspended Matter concentration anomaly'
