@@ -11,9 +11,14 @@ Tags:
     - Copernicus Services
     - CAMS
     - Sentinel-3
+    - Acqua
+    - GCOM-C
+    - OLCI
+    - SGLI
+    - MODIS
     - Open data
     - Marine monitoring
-    - Chlorophyll-a
+    - Total Suspended Matter
     - COVID-19
 DataSource:
   Spaceborne:
@@ -40,7 +45,7 @@ Provider:
     Url: https://www.nasa.gov/
     Roles: producer
 Resources:
-   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
     Database: eodash
     CollectionId: Regional_Water_quality_timeseries
