@@ -9,12 +9,38 @@ Tags:
   - Copernicus Services
   - Open data
   - COVID-19
-Satellite:
+  - Mobility
+  - Community
+  - Air traffic
+DataSource:
+  Spaceborne:
+    Satellite:
+    - ALOS-2
+    - Sentinel-1
     - Sentinel-2
-Sensor:
+    - PlanetScope
+    Sensor:
+    - PALSAR-2
+    - C-SAR
     - MSI
+    - PSB.SD
 Agency:
     - ESA
+    - NASA
+    - JAXA
+Provider:
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
+    Roles: producer
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+    Roles: producer, processor
+  - Name: NASA
+    Url: https://www.nasa.gov/
+    Roles: processor
+  - Name: planet
+    Url: https://www.planet.com/
+    Roles: producer
 Resources:
     - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
       Name: GeoDB
