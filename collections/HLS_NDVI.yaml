@@ -6,12 +6,22 @@ Description: HLS_NDVI/HLS_NDVI.md
 Themes:
   - biomass
 Tags:
-  - placeholder
-Satellite:
+  - Biomass
+  - NDVI
+  - Vegetation index
   - Sentinel-2
+  - MSI
   - Landsat
-Sensor:
-  - placeholder
+  - Ecosystem
+  Monitoring
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+      - Landsat
+    Sensor:
+      - MSI
+      - OLI
 Agency:
   - ESA
   - NASA
