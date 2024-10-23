@@ -16,9 +16,9 @@ Tags:
 DataSource:
   Spaceborne:
     Satellite:
-    - Acqua
+      - Acqua
     Sensor:
-    - MODIS
+      - MODIS
 Agency:
   - NASA
 Provider:
