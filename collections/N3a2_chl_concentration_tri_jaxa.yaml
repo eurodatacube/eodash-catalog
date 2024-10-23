@@ -16,9 +16,9 @@ Tags:
 DataSource:
   Spaceborne:
     Satellite:
-    - GCOM-C
+      - GCOM-C
     Sensor:
-    - SGLI
+      - SGLI
 Agency:
   - JAXA
 Provider:
