@@ -2,26 +2,48 @@ Name: ADD_L2_Pine_Island
 Title: Pine Island Landsat L2
 EodashIdentifier: ADD_L2_Pine_Island
 Subtitle: Pine Island Landsat L2 low-cloud scenes
-Description: ADD_Pine_Island_Landsat_L2/ADD_Pine_Island_Landsat_L2.md
+Description: ADD_L2_Pine_Island/ADD_L2_Pine_Island.md
 Themes:
   - cryosphere
 Tags:
-  - placeholder
-Satellite:
-  - Landsat-7
-  - Landsat-8
-  - Landsat-9
-Sensor:
+  - Antarctida
+  - Climate change
+  - Polar regions
+  - Open data
+  - Open Science
+  - Cryosphere
+  - Glaciers
+  - Ice cap
+  - Melt
+  - Landsat
   - OLI
+  - Glacier
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Landsat-7
+      - Landsat-8
+      - Landsat-9
+    Sensor:
+      - OLI
 Agency:
   - NASA
   - USGS
+License:
+  - Url: https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/Landsat_Data_Policy.pdf
+    Type: application/pdf
+    Title: Landsat Data Distribution Policy
 Provider:
-  - Name: VEDA
+  - Name: NASA
     Url: https://www.earthdata.nasa.gov/esds/veda
     Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
-    Roles:
-      - host
+  - Name: USGS
+    Url: https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products
+Citation:
+  Citation: |
+    Citing the data:
+    REMA: Howat, I. M., Porter, C., Smith, B. E., Noh, M.-J., and Morin, P. (2019): The Reference Elevation Model of Antarctica, The Cryosphere, 13, 665-674.
+  DOI: 10.5285/836f016a-33be-6ddc-e053-6c86abc0788e    
 Resources:
   - EndPoint: https://openveda.cloud/api/stac/
     Type: tiles
