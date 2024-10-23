@@ -1,19 +1,22 @@
 Name: NLK_lakes
 Title: Lakes collection (Landsat-8)
 EodashIdentifier: NLK
-Description: NLK_lakes/NLK.md
+Description: NLK_lakes/NLK_lakes.md
 Themes:
-  - water
+  - oceans
 Tags:
   - placeholder
-Satellite:
-  - Landsat-8
-Sensor:
-  - OLI
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Landsat-8
+    Sensor:
+      - OLI
 Agency:
   - NASA
 Provider:
   - Name: NASA
+    Url: https://www.nasa.gov/
 License: MIT
 Subcollections:
   - Identifier: NLK_lake_aral
