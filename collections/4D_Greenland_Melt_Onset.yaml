@@ -6,20 +6,41 @@ Description: 4D_Greenland_Melt_Onset/4D_Greenland_Melt_Onset.md
 Themes:
   - cryosphere
 Tags:
-  - placeholder
-Satellite:
-  - ASCAT
-Sensor:
-  - placeholder
+  - Greenland
+  - Arctic
+  - Climate change
+  - Polar regions
+  - Open data
+  - Open Science
+  - Cryosphere
+  - Glaciers
+  - Ice cap
+  - Melt
+  - Scatterometer
+  - C-SAR
+DataSource:
+  Spaceborne:
+    Satellite:
+      - MetOp
+    Sensor:
+      - ASCAT
 Agency:
   - ESA
+  - EUMETSAT 
 Provider:
-  - Name: Sentinel-Hub
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: EUMETSAT
+    Url: https://www.eumetsat.int/
 Citation:
   Citation: |
     Citing the data:
-    REMA: Howat, I. M., Porter, C., Smith, B. E., Noh, M.-J., and Morin, P. (2019): The Reference Elevation Model of Antarctica, The Cryosphere, 13, 665-674.
-  DOI: 10.5285/836f016a-33be-6ddc-e053-6c86abc0788e
+    Lindsley, R. D. and Long, D. G. (2010): Standard BYU ASCAT land/ice image products. Microwave Earth Remote Sensing Laboratory, 3
+References:
+  - Name: 4D Greenland Project Page
+    Url: https://4dgreenland.eo4cryo.dk/
+  - Name: ESA Open Science Data Catalogue
+    Url: https://opensciencedata.esa.int/projects/4d-Antarctica/collection
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
     LayerId: VIS_4D_GREENLAND_ONSET
