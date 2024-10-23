@@ -2,19 +2,32 @@ Name: N3a2_total_suspended_matter_tri_esa
 Title: Total suspended matter maps ESA
 EodashIdentifier: N3a2_TSM_esa
 Subtitle: Total suspended matter description
-Description: N3a2_total_suspended_matter_tri/N3a2.md
+Description: N3a2_total_suspended_matter_tri_esa/N3a2_total_suspended_matter_tri_esa.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Copernicus Services
+  - CHL
+  - CMEMS
+  - Marine monitoring
+  - Total Suspended Matter
+  - Marine
+  - CAMS
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - OLCI
 Agency:
   - ESA
-Provider:
-  - Name: placeholder
+Provider: 
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+    Roles: producer, processor
 License: MIT
 Locations:
   - Identifier: NorthAdriaticTSM
