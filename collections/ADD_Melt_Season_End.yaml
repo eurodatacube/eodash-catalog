@@ -30,7 +30,7 @@ Provider:
   - Name: ESA
     Url: https://sentinel.esa.int/web/sentinel/
   - Name: EUMETSAT
-    Url: https://global.jaxa.jp/
+    Url: https://www.eumetsat.int/
 Citation:
   Citation: |
     Citing the data:
