@@ -20,8 +20,6 @@ DataSource:
 Agency:
   - ESA
 Provider:
-  - Name: Sentinel-Hub
-Provider:
   - Name: ESA
     Url: https://sentinel.esa.int/web/sentinel/
     Roles: producer, processor

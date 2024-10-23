@@ -39,7 +39,7 @@ Citation:
 References:
   - Name: 4D Greenland Project Page
     Url: https://4dgreenland.eo4cryo.dk/
-  - Name: ESA Open Science Data Catalogue: 4D-Greenland
+  - Name: "ESA Open Science Data Catalogue: 4D-Greenland"
     Url: https://opensciencedata.esa.int/projects/4d-greenland/collection
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}

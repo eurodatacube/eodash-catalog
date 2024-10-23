@@ -39,7 +39,7 @@ Citation:
 References:
   - Name: 4D Antarctica Project Page
     Url: https://4d-antarctica.org/
-  - Name: ESA Open Science Data Catalogue: 4D-Antarctica
+  - Name: "ESA Open Science Data Catalogue: 4D-Antarctica"
     Url: https://opensciencedata.esa.int/projects/4d-Antarctica/collection
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
