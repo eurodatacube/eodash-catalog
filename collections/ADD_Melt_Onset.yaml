@@ -6,15 +6,40 @@ Description: ADD_Melt_Onset/ADD_Melt_Onset.md
 Themes:
   - cryosphere
 Tags:
-  - placeholder
-Satellite:
-  - ASCAT
-Sensor:
-  - placeholder
+  - Antarctida
+  - Climate change
+  - Polar regions
+  - Open data
+  - Open Science
+  - Cryosphere
+  - Glaciers
+  - Ice cap
+  - Melt
+  - Scatterometer
+  - C-SAR
+DataSource:
+  Spaceborne:
+    Satellite:
+      - MetOp
+    Sensor:
+      - ASCAT
 Agency:
   - ESA
+  - EUMETSAT 
 Provider:
-  - Name: Sentinel-Hub
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: EUMETSAT
+    Url: https://global.jaxa.jp/
+Citation:
+  Citation: |
+    Citing the data:
+    Lindsley, R. D. and Long, D. G. (2010): Standard BYU ASCAT land/ice image products. Microwave Earth Remote Sensing Laboratory, 3
+References:
+  - Name: 4D Antarctica Project Page
+    Url: https://4d-antarctica.org/
+  - Name: ESA Open Science Data Catalogue
+    Url: https://opensciencedata.esa.int/projects/4d-Antarctica/collection
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     LayerId: VIS_4D_ANTARTICA_ONSET
