@@ -6,13 +6,13 @@ Description: N3a2_total_suspended_matter_tri_jaxa/N3a2_total_suspended_matter_tr
 Themes:
   - oceans
 Tags:
-    - Water quality
-    - Marine
-    - GCOM-C
-    - SGLI
-    - Open data
-    - Marine monitoring
-    - Total suspended matter
+  - Water quality
+  - Marine
+  - GCOM-C
+  - SGLI
+  - Open data
+  - Marine monitoring
+  - Total suspended matter
 DataSource:
   Spaceborne:
     Satellite:
