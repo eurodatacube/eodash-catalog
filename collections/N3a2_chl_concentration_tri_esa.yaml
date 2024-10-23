@@ -2,19 +2,32 @@ Name: N3a2_chl_concentration_tri_esa
 Title: Chlorophyll-a concentration maps ESA
 EodashIdentifier: N3a2_chl_esa
 Subtitle: Chlorophyll-a concentration description
-Description: N3a2_chl_concentration_tri/N3a2.md
+Description: N3a2_chl_concentration_tri_esa/N3a2_chl_concentration_tri_esa.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Copernicus Services
+  - CHL
+  - CMEMS
+  - Marine monitoring
+  - Chlorophyll-a
+  - Marine
+  - CAMS
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - OLCI
 Agency:
   - ESA
-Provider:
-  - Name: placeholder
+Provider: 
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+    Roles: producer, processor
 License: MIT
 Locations:
   - Identifier: NorthAdriatic
