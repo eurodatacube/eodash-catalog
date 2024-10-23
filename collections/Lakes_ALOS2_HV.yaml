@@ -1,7 +1,7 @@
 Name: lakes_alos2_hv
 Title: Lakes (ALOS2-HV)
 EodashIdentifier: Lakes_ALOS2_HV
-Description: Lakes_ALOS2_lakes_alos2/Lakes_ALOS2.md
+Description: lakes_alos2_hv/lakes_alos2_hv.md
 Themes:
   - water
 Tags:
