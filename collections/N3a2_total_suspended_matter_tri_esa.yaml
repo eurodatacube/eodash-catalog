@@ -1,3 +1,4 @@
+---
 Name: N3a2_total_suspended_matter_tri_esa
 Title: Total suspended matter maps ESA
 EodashIdentifier: N3a2_TSM_esa
@@ -22,7 +23,7 @@ DataSource:
       - OLCI
 Agency:
   - ESA
-Provider: 
+Provider:
   - Name: Copernicus Marine Service
     Url: https://marine.copernicus.eu/access-data
   - Name: ESA
@@ -33,31 +34,67 @@ Locations:
   - Identifier: NorthAdriaticTSM
     Name: North Adriatic
     Subtitle: Total suspended matter in North Adriatic
-    Point: [13.02978, 45.19752]
-    Bbox: [11.6, 44, 15, 46]
+    Point:
+      - 13.02978
+      - 45.19752
+    Bbox:
+      - 11.6
+      - 44
+      - 15
+      - 46
   - Identifier: RhoneDeltaTSM
     Name: Rhone Delta
     Subtitle: Total suspended matter in Rhone Delta
-    Point: [4.94, 43.4]
-    Bbox: [4, 42.8, 6, 44]
+    Point:
+      - 4.94
+      - 43.4
+    Bbox:
+      - 4
+      - 42.8
+      - 6
+      - 44
   - Identifier: BarcelonaTSM
     Name: Barcelona
     Subtitle: Total suspended matter in Barcelona
-    Point: [1.769, 40.985]
-    Bbox: [0, 40, 3, 42]
+    Point:
+      - 1.769
+      - 40.985
+    Bbox:
+      - 0
+      - 40
+      - 3
+      - 42
   - Identifier: DanubeDeltaTSM
     Name: Danube Delta
     Subtitle: Total suspended matter in Danube Delta
-    Point: [29.9, 45.05]
-    Bbox: [28.5, 44, 31, 46]
+    Point:
+      - 29.9
+      - 45.05
+    Bbox:
+      - 28.5
+      - 44
+      - 31
+      - 46
   - Identifier: TagusDelta
     Name: Sea surface temperature in Tagus Delta
-    Point: [-9.32, 38.66]
-    Bbox: [-10.45, 37.5, -8.75, 39.51]
+    Point:
+      - -9.32
+      - 38.66
+    Bbox:
+      - -10.45
+      - 37.5
+      - -8.75
+      - 39.51
   - Identifier: ElbeDelta
     Name: Sea surface temperature in Elbe Delta
-    Point: [8.408, 53.94]
-    Bbox: [ 6.99, 53.35, 9.25, 54.41]
+    Point:
+      - 8.408
+      - 53.94
+    Bbox:
+      - 6.99
+      - 53.35
+      - 9.25
+      - 54.41
 Resources:
   - Group: Sentinel Hub Resources
     EndPoint: https://services.sentinel-hub.com
@@ -74,3 +111,4 @@ Services:
 Image: N3a2_total_suspended_matter_tri/thumbnail.png
 Legend: N3a2_total_suspended_matter_tri/legend.png
 yAxis: "%"
+
