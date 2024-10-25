@@ -1,3 +1,4 @@
+---
 Name: NLK_lakes
 Title: Lakes collection (Landsat-8)
 EodashIdentifier: NLK
@@ -6,7 +7,7 @@ Themes:
   - oceans
 Tags:
   - Water quality
-  - Lakes 
+  - Lakes
   - Lake
   - Landsat
   - OLI
@@ -30,31 +31,68 @@ License: MIT
 Subcollections:
   - Identifier: NLK_lake_aral
     Collection: NLK_lake_aral
-    Country: ['UZ', 'KZ']
+    Country:
+      - UZ
+      - KZ
     Name: Aral Lake
-    Point: [58.581, 45.303]
-    Bbox: [57, 43.24, 62.29, 47.72]
+    Point:
+      - 58.581
+      - 45.303
+    Bbox:
+      - 57
+      - 43.24
+      - 62.29
+      - 47.72
   - Identifier: NLK_lake_biwa
     Collection: NLK_lake_biwa
-    Country: ['JP']
+    Country:
+      - JP
     Name: Biwa Lake
-    Point: [136.095, 35.284]
-    Bbox: [135.133, 33.535, 138.1728, 35.7509]
+    Point:
+      - 136.095
+      - 35.284
+    Bbox:
+      - 135.133
+      - 33.535
+      - 138.1728
+      - 35.7509
   - Identifier: NLK_lake_tonle_sap
     Collection: NLK_lake_tonle_sap
-    Country: ['KH']
+    Country:
+      - KH
     Name: Tonlé Sap Lake
-    Point: [104.2, 12.7]
-    Bbox: [101.938, 11.945, 106.37, 14.0674]
+    Point:
+      - 104.2
+      - 12.7
+    Bbox:
+      - 101.938
+      - 11.945
+      - 106.37
+      - 14.0674
   - Identifier: NLK_lake_vanern
     Collection: NLK_lake_vanern
-    Country: ['SW']
+    Country:
+      - SW
     Name: Vänern Lake
-    Point: [13.535, 59.07]
-    Bbox: [10.6994, 57.353, 15.9848, 59.83119]
+    Point:
+      - 13.535
+      - 59.07
+    Bbox:
+      - 10.6994
+      - 57.353
+      - 15.9848
+      - 59.83119
   - Identifier: NLK_lake_balaton
     Collection: NLK_lake_balaton
-    Country: ['HU']
+    Country:
+      - HU
     Name: Balaton Lake
-    Point: [17.77, 46.825]
-    Bbox: [17.08, 46.55, 18.24, 47.12]
+    Point:
+      - 17.77
+      - 46.825
+    Bbox:
+      - 17.08
+      - 46.55
+      - 18.24
+      - 47.12
+
