@@ -32,7 +32,7 @@ Services:
   - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
 Resources:
-  - EndPoint: https://openveda.cloud/api/stac/
+  - EndPoint: https://staging.openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: OMSO2PCA-COG

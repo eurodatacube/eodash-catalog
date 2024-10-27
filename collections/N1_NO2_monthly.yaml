@@ -30,7 +30,7 @@ Services:
     Name: VEDA Statistics
     Rescale: 1e-14
 Resources:
-  - EndPoint: https://openveda.cloud/api/stac/
+  - EndPoint: https://staging.openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: no2-monthly
