@@ -100,7 +100,7 @@ References:
   - Name: Disaster monitoring with Earth Observation Satellites
     Url: https://www.esa.int/ESA_Multimedia/Keywords/Description/Disasters/(result_type)/videos
 Resources:
-  - EndPoint: https://openveda.cloud/api/stac/
+  - EndPoint: https://staging.openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: recovery-proxy-maps-covid-19
