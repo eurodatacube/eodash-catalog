@@ -6,7 +6,7 @@ Description: EPA_Forest_fire_Methane_Daily/EPA_Forest_fire_Methane_Daily.md
 Themes:
   - biomass
 Resources:
-  - EndPoint: https://openveda.cloud/api/stac/
+  - EndPoint: https://staging.openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: EPA-daily-emissions_5_Forest_Fires

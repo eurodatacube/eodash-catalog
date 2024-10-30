@@ -32,7 +32,7 @@ Provider:
     Roles:
       - host
 Resources:
-  - EndPoint: https://openveda.cloud/api/stac/
+  - EndPoint: https://staging.openveda.cloud/api/stac/
     Type: cog
     Name: VEDA
     CollectionId: hls-ndvi
