@@ -26,9 +26,12 @@ Agency:
   - ESA
   - NASA
 Provider:
+  - Name: ESA
+    Url: https://www.esa.int/
+  - Name: NASA
+    Url: https://www.nasa.gov/
   - Name: VEDA
     Url: https://www.earthdata.nasa.gov/esds/veda
-    Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
 Resources:
   - EndPoint: https://staging.openveda.cloud/api/stac/
     Type: cog
