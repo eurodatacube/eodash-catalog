@@ -27,7 +27,6 @@ Agency:
 Provider:
   - Name: ESA
     Url: https://sentinel.esa.int/web/sentinel/
-    Roles: producer, processor
   - Name: NASA’s Interagency Implementation and Advanced Concepts Team (IMPACT)
     Url: https://www.earthdata.nasa.gov/esds/impact
   - Name: planet
