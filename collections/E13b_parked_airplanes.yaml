@@ -36,7 +36,6 @@ Provider:
     Url: https://sentinel.esa.int/web/sentinel/
   - Name: NASA
     Url: https://www.nasa.gov/
-    Roles: processor
   - Name: planet
     Url: https://www.planet.com/
 Resources:
