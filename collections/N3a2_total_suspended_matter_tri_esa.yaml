@@ -27,7 +27,6 @@ Provider:
     Url: https://marine.copernicus.eu/access-data
   - Name: ESA
     Url: https://sentinel.esa.int/web/sentinel/
-    Roles: producer, processor
 License: MIT
 Locations:
   - Identifier: NorthAdriaticTSM
