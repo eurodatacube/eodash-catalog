@@ -1,7 +1,7 @@
-Name: lakes_alos2
+Name: lakes_ALOS2
 Title: Lakes collection (ALOS2-HH/HV)
 EodashIdentifier: Lakes_ALOS2
-Description: lakes_alos2/lakes_alos2.md
+Description: lakes_ALOS2/lakes_ALOS2.md
 Themes:
   - oceans
 Tags:
