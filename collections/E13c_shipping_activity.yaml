@@ -30,10 +30,8 @@ Provider:
     Roles: producer, processor
   - Name: NASA’s Interagency Implementation and Advanced Concepts Team (IMPACT)
     Url: https://www.earthdata.nasa.gov/esds/impact
-    Roles: processor
   - Name: planet
     Url: https://www.planet.com/
-    Roles: producer
 Resources:
   - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
     Name: GeoDB
