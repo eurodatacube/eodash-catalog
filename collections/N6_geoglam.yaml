@@ -27,7 +27,7 @@ References:
   - Name: NASA Harvest Mission
     Url: https://nasaharvest.org/
 Resources:
-  - EndPoint: https://staging.openveda.cloud/api/stac/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: geoglam

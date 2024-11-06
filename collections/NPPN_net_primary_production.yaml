@@ -36,7 +36,7 @@ Services:
     Name: VEDA Statistics
 Resources:
   - Name: VEDA 
-    EndPoint: https://staging.openveda.cloud/api/stac/
+    EndPoint: https://openveda.cloud/api/stac/
     Type: cog
     CollectionId: MO_NPP_npp_vgpm
     ColormapName: jet

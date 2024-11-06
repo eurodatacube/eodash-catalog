@@ -27,7 +27,7 @@ References:
   - Name: Dataset Description and documentation
     Url: https://doi.org/10.7927/xwf1-k532
 Resources:
-  - EndPoint: https://staging.openveda.cloud/api/stac/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: grdi-v1-built

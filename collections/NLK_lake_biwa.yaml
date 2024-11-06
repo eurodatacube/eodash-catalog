@@ -14,7 +14,7 @@ Agency:
   - NASA
 Legend: NLK_lake_cloud_free/cm_legend.png
 Resources:
-  - EndPoint: https://staging.openveda.cloud/api/stac/
+  - EndPoint: https://openveda.cloud/api/stac/
     Type: tiles
     Name: VEDA
     CollectionId: landsat-c2l2-sr-lakes-lake-biwa

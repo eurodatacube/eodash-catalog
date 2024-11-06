@@ -24,7 +24,7 @@ References:
   - Name: Above Ground Biomass
     Url: https://ceos.org/gst/biomass.html
 Resources:
-  - EndPoint: https://staging.openveda.cloud/api/stac/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: nceo_africa_2017
