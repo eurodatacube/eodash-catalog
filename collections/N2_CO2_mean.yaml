@@ -36,7 +36,7 @@ Services:
     Name: VEDA Statistics
     Rescale: 1e6
 Resources:
-  - EndPoint: https://staging.openveda.cloud/api/stac/
+  - EndPoint: https://openveda.cloud/api/stac/
     Name: VEDA
     Type: cog
     CollectionId: co2-mean
