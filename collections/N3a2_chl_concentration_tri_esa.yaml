@@ -1,7 +1,7 @@
 Name: N3a2_chl_concentration_tri_esa
-Title: Chlorophyll-a concentration maps ESA
+Title: Chlorophyll-a concentration from Sentinel-3
 EodashIdentifier: N3a2_chl_esa
-Subtitle: Chlorophyll-a concentration description
+Subtitle: Chlorophyll-a concentration maps
 Description: N3a2_chl_concentration_tri_esa/N3a2_chl_concentration_tri_esa.md
 Themes:
   - oceans
