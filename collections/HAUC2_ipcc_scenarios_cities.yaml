@@ -1,5 +1,5 @@
 Name: ipcc_scenarios_cities
-Title: HAUC2 Emission Scenarios
+Title: Land Surface Temperature Analysis
 EodashIdentifier: HAUC2
 Description: HAUC2_ipcc_scenarios_cities/HAUC2.md
 Themes:
@@ -14,40 +14,11 @@ Agency:
   - ESA
 Provider:
   - Name: placeholder
-Locations:
-  - Identifier: Graz
-    Country: ['AT']
-    Name: Graz
-    Point: [15.444, 47.028]
-    Bbox: [15.357, 46.972, 15.528, 47.085]
-    Times: ['2015-05-15']
-  - Identifier: Innsbruck
-    Country: ['AT']
-    Name: Innsbruck
-    Point: [11.370, 47.260]
-    Bbox: [11.288, 47.320, 11.441, 47.193]
-    Times: ['2015-05-15']
-  - Identifier: Klagenfurt
-    Country: ['AT']
-    Name: Klagenfurt
-    Point: [14.32, 46.62]
-    Bbox: [14.218, 46.576, 14.409, 46.706]
-    Times: ['2015-05-15']
-  - Identifier: Salzburg
-    Country: ['AT']
-    Name: Salzburg
-    Point: [13.05, 47.8]
-    Bbox: [12.943, 47.735, 13.128, 47.833]
-    Times: ['2015-05-15']
-  - Identifier: Linz
-    Country: ['AT']
-    Name: Linz
-    Point: [14.3, 48.28]
-    Bbox: [14.218, 48.24, 14.401, 48.343]
-    Times: ['2015-05-15']
 Resources:
-  - EndPoint: https://services.sentinel-hub.com
-    Name: Sentinel Hub WMS
-    CollectionId: placeholder
-    LayerId: placeholder
-Legend: HAUC2_ipcc_scenarios_cities/cm_legend.png
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy
+Legend: HAUC1_land_surface_temperature_analysis/cm_legend.png
