@@ -1,7 +1,7 @@
 Name: N3a2_chl_concentration_tri_jaxa
-Title: Chlorophyll-a concentration maps JAXA
+Title: Chlorophyll-a concentration from GCOM-C
 EodashIdentifier: N3a2_chl_jaxa
-Subtitle: Chlorophyll-a concentration description
+Subtitle: Chlorophyll-a concentration maps
 Description: N3a2_chl_concentration_tri_jaxa/N3a2_chl_concentration_tri_jaxa.md
 Themes:
   - oceans
