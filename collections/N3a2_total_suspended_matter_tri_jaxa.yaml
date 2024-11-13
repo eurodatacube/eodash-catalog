@@ -1,8 +1,8 @@
 ---
 Name: N3a2_total_suspended_matter_tri_jaxa
-Title: Total suspended matter maps JAXA
+Title: Total suspended matter from GCOM-C
 EodashIdentifier: N3a2_TSM_jaxa
-Subtitle: Total suspended matter description
+Subtitle: Total suspended matter maps
 Description: N3a2_total_suspended_matter_tri_jaxa/N3a2_total_suspended_matter_tri_jaxa.md
 Themes:
   - oceans
