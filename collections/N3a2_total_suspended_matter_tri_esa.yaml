@@ -1,7 +1,7 @@
 Name: N3a2_total_suspended_matter_tri_esa
 Title: Total suspended matter from Sentinel-3
 EodashIdentifier: N3a2_TSM_esa
-Subtitle: Total suspended matter description
+Subtitle: Total suspended matter maps
 Description: N3a2_total_suspended_matter_tri_esa/N3a2_total_suspended_matter_tri_esa.md
 Themes:
   - oceans
