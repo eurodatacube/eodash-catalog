@@ -1,42 +1,75 @@
 Name: N3a2_chl_concentration_tri_jaxa
-Title: Chlorophyll-a concentration maps JAXA
+Title: Chlorophyll-a concentration from GCOM-C
 EodashIdentifier: N3a2_chl_jaxa
-Subtitle: Chlorophyll-a concentration description
-Description: N3a2_chl_concentration_tri/N3a2.md
+Subtitle: Chlorophyll-a concentration maps
+Description: N3a2_chl_concentration_tri_jaxa/N3a2_chl_concentration_tri_jaxa.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Marine
+  - GCOM-C
+  - SGLI
+  - Open data
+  - Marine monitoring
+  - Chlorophyll-a
+DataSource:
+  Spaceborne:
+    Satellite:
+      - GCOM-C
+    Sensor:
+      - SGLI
 Agency:
   - JAXA
 Provider:
-  - Name: placeholder
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
 License: MIT
 Locations:
   - Identifier: NorthAdriatic
     Name: North Adriatic
     Subtitle: Chlorophyll-a concentration in North Adriatic
-    Point: [13.02978, 45.19752]
-    Bbox: [11.6, 44, 15, 46]
+    Point:
+      - 13.02978
+      - 45.19752
+    Bbox:
+      - 11.6
+      - 44
+      - 15
+      - 46
   - Identifier: JP01
     Name: Tokyo
     Subtitle: Chlorophyll-a concentration outside of Tokyo
-    Point: [139.78, 35.61]
-    Bbox: [139, 34.7, 140.3, 35.7]
+    Point:
+      - 139.78
+      - 35.61
+    Bbox:
+      - 139
+      - 34.7
+      - 140.3
+      - 35.7
   - Identifier: JP04
     Name: Nagoya
     Subtitle: Chlorophyll-a concentration outside of Nagoya
-    Point: [136.9, 34.7]
-    Bbox: [136.4, 34.2, 137.4, 35.2]
+    Point:
+      - 136.9
+      - 34.7
+    Bbox:
+      - 136.4
+      - 34.2
+      - 137.4
+      - 35.2
   - Identifier: JP02
     Name: Kobe
     Subtitle: Chlorophyll-a concentration outside of Kobe
-    Point: [135, 34.35]
-    Bbox: [134.5, 33.8, 135.5, 34.8]
+    Point:
+      - 135
+      - 34.35
+    Bbox:
+      - 134.5
+      - 33.8
+      - 135.5
+      - 34.8
 Resources:
   - Group: Sentinel Hub Resources
     EndPoint: https://services.sentinel-hub.com

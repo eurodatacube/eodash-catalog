@@ -2,27 +2,49 @@ Name: ADD_Landsat_L2_Antarctica
 Title: Landsat L2 Cloud free Antarctica
 EodashIdentifier: ADD_Landsat_L2_Antarctica
 Subtitle: Selected low-cloud-cover Landsat Collection-2 Level-2 Surface Reflectance scenes over selected area of Antarctica.
-Description: ADD_Pine_Island_Landsat_L2/ADD_Pine_Island_Landsat_L2.md
+Description: ADD_Landsat_L2_Antarctica/ADD_Landsat_L2_Antarctica.md
 Themes:
   - cryosphere
 Tags:
-  - placeholder
-Satellite:
-  - Landsat-7
-  - Landsat-8
-  - Landsat-9
-Sensor:
+  - Antarctica
+  - Climate change
+  - Polar regions
+  - Open data
+  - Open Science
+  - Cryosphere
+  - Glaciers
+  - Ice cap
+  - Melt
+  - Landsat
   - OLI
+  - Glacier
+  - Ice monitoring
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Landsat-7
+      - Landsat-8
+      - Landsat-9
+    Sensor:
+      - OLI
 Agency:
   - NASA
   - USGS
+License:
+  - Url: https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/Landsat_Data_Policy.pdf
+    Type: application/pdf
+    Title: Landsat Data Distribution Policy
 Provider:
-  - Name: VEDA
+  - Name: NASA
     Url: https://www.earthdata.nasa.gov/esds/veda
     Description: NASA's Visualization, Exploration, and Data Analysis (VEDA) project is an open-source science cyberinfrastructure for data processing, visualization, exploration, and geographic information systems (GIS) capabilities.
-    Roles:
-      - host
-License: MIT
+  - Name: USGS
+    Url: https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products
+Citation:
+  Citation: |
+    Citing the data:
+    REMA: Howat, I. M., Porter, C., Smith, B. E., Noh, M.-J., and Morin, P. (2019): The Reference Elevation Model of Antarctica, The Cryosphere, 13, 665-674.
+  DOI: 10.5285/836f016a-33be-6ddc-e053-6c86abc0788e    
 Subcollections:
   - Identifier: ADD_L2_Pine_Island
     Collection: ADD_L2_Pine_Island

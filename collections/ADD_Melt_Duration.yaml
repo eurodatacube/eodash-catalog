@@ -6,15 +6,45 @@ Description: ADD_Melt_Duration/ADD_Melt_Duration.md
 Themes:
   - cryosphere
 Tags:
-  - placeholder
-Satellite:
-  - ASCAT
-Sensor:
-  - placeholder
+  - Antarctica
+  - Climate change
+  - Polar regions
+  - Open data
+  - Open Science
+  - Cryosphere
+  - Glaciers
+  - Ice cap
+  - Melt
+  - Scatterometer
+  - C-SAR
+  - Melt
+  - Radar
+  - SAR
+  - Ice monitoring
+DataSource:
+  Spaceborne:
+    Satellite:
+      - MetOp
+    Sensor:
+      - ASCAT
 Agency:
   - ESA
+  - EUMETSAT 
 Provider:
-  - Name: Sentinel-Hub
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: EUMETSAT
+    Url: https://www.eumetsat.int/
+Citation:
+  Publication:
+    - Citation: |
+        REMA: Howat, I. M., Porter, C., Smith, B. E., Noh, M.-J., and Morin, P. (2019): The Reference Elevation Model of Antarctica, The Cryosphere, 13, 665-674.
+      DOI: 10.5285/836f016a-33be-6ddc-e053-6c86abc0788e
+References:
+  - Name: 4D Antarctica Project Page
+    Url: https://4d-antarctica.org/
+  - Name: "ESA Open Science Data Catalogue: 4D-Antarctica"
+    Url: https://opensciencedata.esa.int/projects/4d-Antarctica/collection
 Resources:
   - EndPoint: https://services.sentinel-hub.com/ogc/wms/{SH_INSTANCE_ID}
     LayerId: VIS_4D_ANTARTICA_DAYS

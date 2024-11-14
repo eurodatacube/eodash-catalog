@@ -1,42 +1,78 @@
 Name: N3a2_total_suspended_matter_tri_esa
-Title: Total suspended matter maps ESA
+Title: Total suspended matter from Sentinel-3
 EodashIdentifier: N3a2_TSM_esa
-Subtitle: Total suspended matter description
-Description: N3a2_total_suspended_matter_tri/N3a2.md
+Subtitle: Total suspended matter maps
+Description: N3a2_total_suspended_matter_tri_esa/N3a2_total_suspended_matter_tri_esa.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Copernicus Services
+  - CHL
+  - CMEMS
+  - Marine monitoring
+  - Total Suspended Matter
+  - Marine
+  - CAMS
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+    Sensor:
+      - OLCI
 Agency:
   - ESA
 Provider:
-  - Name: placeholder
+  - Name: Copernicus Marine Service
+    Url: https://marine.copernicus.eu/access-data
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
 License: MIT
 Locations:
   - Identifier: NorthAdriaticTSM
     Name: North Adriatic
     Subtitle: Total suspended matter in North Adriatic
-    Point: [13.02978, 45.19752]
-    Bbox: [11.6, 44, 15, 46]
+    Point:
+      - 13.02978
+      - 45.19752
+    Bbox:
+      - 11.6
+      - 44
+      - 15
+      - 46
   - Identifier: RhoneDeltaTSM
     Name: Rhone Delta
     Subtitle: Total suspended matter in Rhone Delta
-    Point: [4.94, 43.4]
-    Bbox: [4, 42.8, 6, 44]
+    Point:
+      - 4.94
+      - 43.4
+    Bbox:
+      - 4
+      - 42.8
+      - 6
+      - 44
   - Identifier: BarcelonaTSM
     Name: Barcelona
     Subtitle: Total suspended matter in Barcelona
-    Point: [1.769, 40.985]
-    Bbox: [0, 40, 3, 42]
+    Point:
+      - 1.769
+      - 40.985
+    Bbox:
+      - 0
+      - 40
+      - 3
+      - 42
   - Identifier: DanubeDeltaTSM
     Name: Danube Delta
     Subtitle: Total suspended matter in Danube Delta
-    Point: [29.9, 45.05]
-    Bbox: [28.5, 44, 31, 46]
+    Point:
+      - 29.9
+      - 45.05
+    Bbox:
+      - 28.5
+      - 44
+      - 31
+      - 46
 Resources:
   - Group: Sentinel Hub Resources
     EndPoint: https://services.sentinel-hub.com
