@@ -2,7 +2,7 @@
 Name: N3b_water_quality_tsm_chart
 Title: Total Suspended Matter concentration anomaly
 EodashIdentifier: N3b_tsm
-Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
+Subtitle: Total Suspended Matter anomaly time series
 Description: N3b_water_quality_tsm_chart/N3b_water_quality_tsm_chart.md
 Themes:
   - oceans
@@ -10,7 +10,6 @@ Tags:
   - Water quality
   - Marine
   - Copernicus Services
-  - CAMS
   - Sentinel-3
   - Acqua
   - GCOM-C
@@ -19,7 +18,7 @@ Tags:
   - MODIS
   - Open data
   - Marine monitoring
-  - Total Suspended Matter
+  - Total Suspended Sediments
   - COVID-19
 DataSource:
   Spaceborne:
