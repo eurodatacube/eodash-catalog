@@ -2,7 +2,7 @@
 Name: N3b_water_quality_chl_chart
 Title: Chlorophyll-a concentration
 EodashIdentifier: N3b_chl
-Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
+Subtitle: Chlorophyll-a concentration time series
 Description: N3b_water_quality_chl_chart/N3b_water_quality_chl_chart.md
 Themes:
   - oceans
@@ -10,7 +10,6 @@ Tags:
   - Water quality
   - Marine
   - Copernicus Services
-  - CAMS
   - Sentinel-3
   - Acqua
   - GCOM-C
