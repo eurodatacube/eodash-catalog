@@ -1,27 +1,26 @@
 Name: IDEAS1_hopi_minesweeper
-Title: HOUHPI Minesweeper
+Title: HOUHPI Minesweeper Game
 EodashIdentifier: IND1_1_minesweeper
 Subtitle: "Indicator 1: HOUHPI Game mode"
-Description: IDEAS1_hopi/IDEAS1_hopi.md
+Description: IDEAS1_hopi/IDEAS1_hopi_minesweeper.md
 Themes:
   - health
-  - atmosphere
 Tags:
-  - "placeholder"
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - game
 Agency:
   - ESA
 Provider:
-  - Name: Murmuration Vegetation Indicator
-    Description: Vegetation health dataset
-    Url: https://murmuration-sas.com/indicateurs
+  - Name: Murmuration
+    Url: https://murmuration-sas.com/
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [-24, 33, 42, 71]
+    DateTimeInterval:
+      Start: "2021-01-01T00:00:00Z"
+      End: "2023-12-31T00:00:00Z"
+      Timedelta:
+        days: 1094
 # Legend: IDEAS1_hopi/cm_legend.png
 Image: IDEAS1_hopi/IDEAS1_hopi_minesweeper.png
 # References:
