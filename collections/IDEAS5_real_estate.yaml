@@ -4,12 +4,16 @@ EodashIdentifier: IND5_1
 Subtitle: ""
 Description: IDEAS5_real_estate/IDEAS5_real_estate.md
 Themes:
-  - health
+  - economy
 Satellite:
   - Landsat 8
   - Landsat 9
+Others:
+  - French National Database of Buildings
 Tags:
   - real estate
+Agency:
+  - ESA
 Provider:
   - Name: Murmuration
     Url: https://murmuration-sas.com/
