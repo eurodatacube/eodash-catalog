@@ -1,0 +1,44 @@
+Name: ENSST_by_GCOM-W-AMSR_JAXA
+Title: Sea Surface Temperature (GCOM-W) 
+EodashIdentifier: ENSST
+Description: ENSST_by_GCOM-W-AMSR_JAXA/ENSST_by_GCOM-W-AMSR_JAXA.md
+Themes:
+  - oceans
+  - extreme-events
+Tags:
+  - SST
+  - El Nino
+  - Climate Change
+  - Open data
+DataSource:
+  Spaceborne:
+    Satellite:
+      - GCOM-W
+    Sensor:
+      - AMSR2
+Agency:
+  - JAXA
+Legend: ENSST_by_GCOM-W-AMSR_JAXA/ENSST_legend.png
+References:
+  - Name: Climate Change 2023. Sea Surface Temperature Rise and El Nino Event
+    Url: https://earth.jaxa.jp/en/earthview/2023/08/31/7718/
+  - Name: Dataset
+    Url: https://data.earth.jaxa.jp/ja/datasets/#/id/JAXA.G-Portal_GCOM-W.AMSR2_standard.L3-SST.daytime.v4_global_daily
+  - Name: Sea Surface Temperature
+    Url: https://earth.jaxa.jp/en/data/products/sea-surface-temperature/index.html
+Resources:
+  - EndPoint: https://services.sentinel-hub.com
+    Name: Sentinel Hub
+    Type: byoc
+    CollectionId: cb154978-c54f-4e15-a39e-5da7e601194d
+    LayerId: SST_BY_GCOM-W-AMSR_JAXA
+Provider:
+  - Name: JAXA
+    Roles: licensor
+    Url: https://global.jaxa.jp/
+  - Name: JAXA GCOM project
+    Roles: producer
+    Url: https://suzaku.eorc.jaxa.jp/GCOM/index.html
+  - Name: JAXA EORC
+    Roles: processor
+    Url: https://earth.jaxa.jp/
