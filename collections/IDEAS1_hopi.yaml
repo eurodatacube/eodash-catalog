@@ -1,5 +1,5 @@
 Name: IDEAS1_hopi
-Title: "HOUHPI Health-Oriented Urban Heat and Pollution Index"
+Title: "Health-Oriented Urban Heat and Pollution Index"
 EodashIdentifier: IND1_1
 Subtitle: "Indicator 1: HOUHPI"
 Description: IDEAS1_hopi/IDEAS1_hopi.md
@@ -7,11 +7,12 @@ Themes:
   - health
   - atmosphere
 Tags:
-  - "placeholder"
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - heat
+  - pollution
+Other:
+  - multiple
+  - HDX
+  - CAMS
 Agency:
   - ESA
 Provider:
