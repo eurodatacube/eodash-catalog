@@ -25,7 +25,7 @@ Resources:
       Start: "2021-01-01T00:00:00Z"
       End: "2023-12-31T00:00:00Z"
       Timedelta:
-        days: 1095
+        days: 1000
 Legend: IDEAS1_hopi_b1/cm_legend.png
 Image: IDEAS1_hopi/IDEAS1_hopi.png
 # References:
