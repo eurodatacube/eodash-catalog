@@ -18,7 +18,7 @@ Resources:
     EndPoint: Collection-only
     OverwriteBBox: [-24, 33, 42, 71]
     Times:
-      - 2022
+      - "2022"
 # commented out because config done in client
 # Resources:
 #   - Name: COG source
