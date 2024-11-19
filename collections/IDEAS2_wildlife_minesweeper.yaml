@@ -8,9 +8,8 @@ Themes:
 Agency:
   - ESA
 Provider:
-  - Name: Murmuration Vegetation Indicator
-    Description: Vegetation health dataset
-    Url: https://murmuration-sas.com/indicateurs
+  - Name: Murmuration
+    Url: https://murmuration-sas.com/
 Resources:
   - Name: COG source
     # Style: IDEAS2_wildlife/cog_style.json # TODO convert from JS getColorStops to JSON
