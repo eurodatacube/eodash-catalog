@@ -5,33 +5,20 @@ Subtitle: ""
 Description: IDEAS5_real_estate/IDEAS5_real_estate.md
 Themes:
   - health
-# Tags:
-#   - Sealevel
-#   - Climate Change
-#   - Flood
-#   - Storm Surge
-# DataSource:
-#   Other:
-#     - Copernicus Global DEM
-#     - NASA/IPCC 6th Sea level projections
-# Agency:
-#   - ESA
-#   - NASA
-# License:
-#   - Url: https://doi.org/10.5270/ESA-c5d3d65
-#     Type: text/html
-#     Title: Free license to Use Copernicus Products
-#   - Url:  https://doi.org/10.5281/zenodo.6382554
-#     Type: text/html
-#     Title: Creative Commons Attribution 4.0 International License on Zenodo for IPCC AR6 Sea Level Projections
+Satellite:
+  - Landsat 8
+  - Landsat 9
+Tags:
+  - real estate
 Provider:
-  - Name: Murmuration Real Estate Indicator
-    Description: Real Estate Indicator
-    Url: https://murmuration-sas.com/indicateurs
+  - Name: Murmuration
+    Url: https://murmuration-sas.com/
 Resources:
   - Name: Collection-only
     EndPoint: Collection-only
     OverwriteBBox: [-24, 33, 42, 71]
+    Times:
+      - 2022
 # commented out because config done in client
 # Resources:
 #   - Name: COG source
