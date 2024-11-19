@@ -23,15 +23,4 @@ Resources:
         days: 1094
 # Legend: IDEAS1_hopi/cm_legend.png
 Image: IDEAS1_hopi/IDEAS1_hopi_minesweeper.png
-# References:
-#   - Name: Data access
-#     Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-oras5?tab=form
-# License:
-#   - Url: https://cds.climate.copernicus.eu/api/v2/terms/static/licence-to-use-copernicus-products.pdf
-#     Type: application/pdf
-#     Title: Licence to Use Copernicus Products
-# Citation:
-#   Citation: |
-#     Copernicus Climate Change Service, Climate Data Store, (2021).
-#     ORAS5 global ocean reanalysis monthly data from 1958 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS).
-#   DOI: 10.24381/cds.67e8eeb7
+
