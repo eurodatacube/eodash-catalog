@@ -66,3 +66,5 @@ collections:
   - SOL2_2_Solar_Roofs_regular_performance
   - SOL2_3_Solar_Roofs_low_performance
   - VTT_Forest_explorer
+  - EEPOT_solar
+  - EEPOT_wind
