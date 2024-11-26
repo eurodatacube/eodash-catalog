@@ -1,0 +1,23 @@
+Name: water_discharge
+Title: Water discharge
+EodashIdentifier: RCM_TUR_1
+Description: testing 
+Themes:
+  - placeholder
+Tags:
+  - placeholder
+DataSource:
+  Spaceborne:
+    Satellite:
+      - placeholder
+Agency:
+  - ESA
+Resources:
+    - Name: COG source
+      Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/RCM_TUR_water_discharge/cog_style.json
+      Bbox: [11.54, 45.113, 12.744, 44.73]
+      TimeEntries:
+        - Time: "2023"
+          Assets: 
+            - Identifier: solar_power
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_2019_02_08_10_18_25_T32TQQ_L2W_TUR_3857_COG.tif
