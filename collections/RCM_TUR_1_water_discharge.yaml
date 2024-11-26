@@ -15,7 +15,7 @@ Agency:
 Resources:
     - Name: COG source
       Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/RCM_TUR_water_discharge/cog_style.json
-      Bbox: [11.54, 45.113, 12.744, 44.73]
+      Bbox: [45.113, 11.54, 44.73, 12.744]
       TimeEntries:
         - Time: "2023"
           Assets: 
