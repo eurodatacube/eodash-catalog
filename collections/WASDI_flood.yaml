@@ -44,9 +44,3 @@ Resources:
     Type: byoc
     CollectionId: 47774144-7a51-4156-a55c-ef2cff8913ce
     LayerId: WASDI_flood
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: Statistical API
-    Type: byoc
-    CollectionId: ac99bb32-a94d-4f4f-b8dd-c0098ca07665
-    Script: CDS7_windu_ERA5-SingleLevel_100m_GLOBAL/CDS7_windu_ERA5-SingleLevel_100m_GLOBAL.js
