@@ -1,8 +1,8 @@
-Name: WASDI_flood
+Name: WASDI_FLOOD
 Title: Flood mapping
-EodashIdentifier: WASDI_flood
+EodashIdentifier: WASDI_FLOOD
 Subtitle: Automated flood map  
-Description: WASDI_flood/WASDI_flood.md
+Description: WASDI_FLOOD/WASDI_FLOOD.md
 Themes:
   - extremes
 Tags:
@@ -44,4 +44,4 @@ Resources:
     Name: Sentinel Hub
     Type: byoc
     CollectionId: 47774144-7a51-4156-a55c-ef2cff8913ce
-    LayerId: WASDI_flood
+    LayerId: WASDI_FLOOD
