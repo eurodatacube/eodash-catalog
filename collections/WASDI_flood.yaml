@@ -1,7 +1,7 @@
 Name: WASDI_flood
-Title: Flood maps
+Title: Flood mapping
 EodashIdentifier: WASDI_flood
-Subtitle: Automated fllod map with 
+Subtitle: Automated flood map  
 Description: WASDI_flood/WASDI_flood.md
 Themes:
   - extremes
@@ -38,6 +38,7 @@ Provider:
 Citation:
   Citation: |
     Chini, R. Hostache, L. Giustarini and P. Matgen, “A Hierarchical Split-Based Approach for Parametric Thresholding of SAR Images: Flood Inundation as a Test Case,” in IEEE Transactions on Geoscience and Remote Sensing, vol. 55, no. 12, pp. 6975-6988, Dec. 2017
+  DOI: 10.1109/TGRS.2017.2737664
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
