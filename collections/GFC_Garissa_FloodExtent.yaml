@@ -14,23 +14,40 @@ DataSource:
       - MSI
 Agency:
   - ESA
+Colorlegend:
+  title: "Flooding"
+  range: ["#ff0000"]
+  domain: ["Flooding area"]
+  scaleType: "categorical"
+  markType: "circle"
 Resources:
-    - EndPoint: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/
-      Name: GeoJSON source
+    - Name: GeoJSON source
       Style: GFC_Garissa_FloodExtent/style.json
       Bbox: [38.5, -0.8, 40.0, 0.55]
       TimeEntries:
         - Time: "20240309"
-          File: "GARISSA_WATEREXTENT_20240309_VH_24_simplified.geojson"
+          Assets:
+            - Identifier: vector_data
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/GARISSA_WATEREXTENT_20240309_VH_24_simplified.geojson
         - Time: "20240321"
-          File: "GARISSA_WATEREXTENT_20240321_VH_18_simplified.geojson"
+          Assets:
+            - Identifier: vector_data
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/GARISSA_WATEREXTENT_20240321_VH_18_simplified.geojson
         - Time: "20240402"
-          File: "GARISSA_WATEREXTENT_20240402_VH_18_simplified.geojson"
+          Assets:
+            - Identifier: vector_data
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/GARISSA_WATEREXTENT_20240402_VH_18_simplified.geojson
         - Time: "20240414"
-          File: "GARISSA_WATEREXTENT_20240414_VH_17_simplified.geojson"
+          Assets:
+            - Identifier: vector_data
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/GARISSA_WATEREXTENT_20240414_VH_17_simplified.geojson
         - Time: "20240426"
-          File: "GARISSA_WATEREXTENT_20240426_VH_24_simplified.geojson"
+          Assets:
+            - Identifier: vector_data
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/GARISSA_WATEREXTENT_20240426_VH_24_simplified.geojson
         - Time: "20240508"
-          File: "GARISSA_WATEREXTENT_20240508_VH_24_simplified.geojson"
+          Assets:
+            - Identifier: vector_data
+              File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/GARISSA_WATEREXTENT_SAR_TIMESERIES/GARISSA_WATEREXTENT_20240508_VH_24_simplified.geojson
 Provider:
   - Name: placeholder
