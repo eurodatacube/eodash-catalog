@@ -36,4 +36,6 @@ collections:
   - crop_forecast_CropOM
   - ESDL_Hydrology_SM
   - ESDL_Hydrology_Precipitation
+  - FastTrack_DAP1_crop_yield
+  - FastTrack_DAP2_ecosystem_accounting
   

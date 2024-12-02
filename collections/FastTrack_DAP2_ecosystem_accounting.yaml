@@ -1,0 +1,24 @@
+Name: ecosystem_accounting
+Title: Shoreline evolution
+Description: This file contains the shorelines evolution
+EodashIdentifier: FastTrack_DAP2
+Tags:
+  - shoreline
+  - sea
+  - costal erosion
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Aqua
+    Sensor:
+      - MODIS
+Resources:
+    - Name: GeoJSON source
+      Style: FastTrack_DAP2_ecosystem_accounting/style.json
+      Bbox: [2.06, 41.273, 2.145, 41.31]
+      DataProjection: 32631
+      TimeEntries:
+        - Time: "20240309"
+          Assets:
+            - Identifier: vector_data
+              File: https://raw.githubusercontent.com/ARGANS/FastTrack_DAP2/d04431cc656c2515c96839281934fed4b419347a/ecosystem-accounting.geojson

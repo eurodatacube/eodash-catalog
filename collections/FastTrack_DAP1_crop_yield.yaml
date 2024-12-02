@@ -1,0 +1,35 @@
+Name: crop_yield
+Title: Predicted crop yield
+Description: Predicted crop yield values for wheat in Spain per NUTS3 region, derived from an LSTM model using season long timeseries of Leaf Area Index, Gross Primary Production and Temperature. The model was trained with wheat yields at NUTS level 3 regions as collected and published by the Spanish Ministry of Agriculture, Fish and Food, and biophysical/atmospheric data from MODIS and ECMWF. Provided by ARGANS Ltd.
+EodashIdentifier: FastTrack_DAP1
+Themes:
+  - agriculture
+  - economy
+Tags:
+  - agriculture
+  - crop yield
+  - fast track
+  - dap1
+  - modis
+  - ecmwf
+DataSource:
+  - Spaceborne: 
+    - Satellite: 
+       - Aqua
+       - Terra
+    - Sensor: 
+       - MODIS
+  - InSitu: 
+    - MAPA (Ministry of Agriculture, Fish and Food)
+  - Other: 
+      - ERA5
+Resources:
+    - Name: GeoJSON source
+      Style: FastTrack_DAP1_crop_yield/style.json
+      Bbox: [-8, 35, 4, 43]
+      DataProjection: 4326
+      TimeEntries:
+        - Time: "20240309"
+          Assets:
+            - Identifier: vector_data
+              File: https://raw.githubusercontent.com/ARGANS/FastTrack_DAP1/main/SPAIN_WHEAT_LSTM.geojson
