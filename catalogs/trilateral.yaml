@@ -123,9 +123,9 @@ collections:
   - 4D_Greenland
   - ENSST_by_GCOM-W-AMSR_JAXA
   - SLSTR1_Sentinel-3-SLSTR-L2-LST
-  - IDEAS1_hopi
-  - IDEAS3_locust
-  - IDEAS4_flood_risk
+  # - IDEAS1_hopi
+  # - IDEAS3_locust
+  # - IDEAS4_flood_risk
   # - SLSTR2_Sentinel-3-SLSTR-L2-WST
   # - GFC_Garissa_FloodExtent
   # - SEE_solar_energy
