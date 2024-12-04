@@ -14,7 +14,7 @@ Agency:
   - ESA
 Resources:
     - Name: COG source
-      Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/RCM_TUR_water_discharge/cog_style.json
+      Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/CNR_TUR_water_discharge/cog_style.json
       Bbox: [11.54, 45.113, 12.744, 44.73]
       TimeEntries:
         - Time: "2023"
