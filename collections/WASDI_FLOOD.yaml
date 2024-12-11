@@ -26,12 +26,10 @@ DataSource:
 Agency:
   - ESA
 References:
-  - Name: EWASDI Support Automated Mapping
+  - Name: WASDI Support Automated Mapping
     Url: https://wasdi.readthedocs.io/en/latest/WasdiApplications/FloodMapping.html
   - Name: Sentinel-1
-    Url: https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-1
-  - Name: Sentinel-2
-    Url: https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2   
+    Url: https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-1 
 Provider: 
   - Name: WASDI Market Place
     Url: https://www.wasdi.cloud/earth-observation-application-marketplace
@@ -39,6 +37,9 @@ Citation:
   Citation: |
     Chini, R. Hostache, L. Giustarini and P. Matgen, “A Hierarchical Split-Based Approach for Parametric Thresholding of SAR Images: Flood Inundation as a Test Case,” in IEEE Transactions on Geoscience and Remote Sensing, vol. 55, no. 12, pp. 6975-6988, Dec. 2017
   DOI: 10.1109/TGRS.2017.2737664
+  Citation: |
+    Chini, M., Pelich, R., Pulvirenti, L., Pierdicca, N., Hostache, R., Matgen, P., 2019. Sentinel-1 InSAR coherence to detect floodwater in urban areas: Houston and Hurricane Harvey as a test case. Remote Sensing, 11(2), p.107.
+  DOI: 10.3390/rs11020107  
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
