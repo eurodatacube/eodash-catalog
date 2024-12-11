@@ -1,19 +1,33 @@
-Name: lakes_alos2
+Name: Lakes_ALOS2
 Title: Lakes collection (ALOS2-HH/HV)
 EodashIdentifier: Lakes_ALOS2
-Description: Lakes_ALOS2_lakes_alos2/Lakes_ALOS2.md
+Description: Lakes_ALOS2/Lakes_ALOS2.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Lakes 
+  - Lake
+  - SAR
+  - ALOS-2
+  - PALSAR-2
+  - Lake monitoring
+  - Surface Reflectance
+  - Hydrological changes
+  - Ecosystems
+  - Resources
+  - Water extent
+DataSource:
+  Spaceborne:
+    Satellite:
+      - ALOS-2
+    Sensor:
+      - PALSAR-2
 Agency:
-  - ESA
+  - JAXA
 Provider:
-    - Name: placeholder
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
 License: MIT
 Subcollections:
   - Identifier: lakes_alos2_hh
