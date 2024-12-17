@@ -1,0 +1,20 @@
+id: "samples"
+title: "SAMPLES"
+description: "Samples catalog"
+endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
+assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
+geodb_default_form: "https://santilland.github.io/process_example/definitions/geodbform.json"
+geodb_default_vega: "https://santilland.github.io/process_example/definitions/geodbvega.json"
+collections:
+  - WSF_world_settlement_footprint
+  - N1b_NO2
+  - N1b_no2_cams
+  - N1c_pm10_cams
+  - N1b_PM10
+  - N1_NO2
+  - N1_city_no2
+  - E10a10_harvesting_evolution_winter_cereal
+  - E10a8_winter_cereals
+  - N3a2_chl_concentration
+  - N3a2_total_suspended_matter
+  - N3a2_sea_surface_temperature
