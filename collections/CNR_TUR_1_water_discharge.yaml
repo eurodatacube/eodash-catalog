@@ -15,7 +15,8 @@ Agency:
 Resources:
     - Name: COG source
       Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/CNR_TUR_water_discharge/cog_style.json
-      Bbox: [11.54, 45.113, 12.744, 44.73]
+      # Bbox: [11.54, 45.113, 12.744, 44.73]
+      Bbox: [11, 46.5, 15.5, 48.9]
       TimeEntries:
         - Time: "20190205T100828"
           Assets: 
