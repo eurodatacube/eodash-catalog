@@ -37,5 +37,4 @@ Resources:
     Name: GeoDB
     Database: eodash
     CollectionId: Water_Discharge_timeseries
-    AdditionalQueryString: indicator_name=eq.Total Suspended Matter concentration anomaly
-
+    AdditionalQueryString: indicator_name=eq.Po River Water Discharge
