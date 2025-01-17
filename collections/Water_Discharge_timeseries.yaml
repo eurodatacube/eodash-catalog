@@ -1,1 +1,41 @@
+---
+Name: Water_Discharge_timeseries
+Title: Water Discharge Timeseries
+EodashIdentifier: Water_Discharge_timeseries
+Subtitle: Variability of coastal and inland waters 
+Description: Water_Discharge_timeseries/Water_Discharge_timeseries.md
+Themes:
+  - oceans
+Tags:
+  - Water quality
+  - Marine
+  - Copernicus Services
+  - Sentinel-2
+  - Acqua
+  - Water turbidity
+  - Adriactic Sea
+  - Open data
+  - Marine monitoring
+  - Total Suspended Sediments
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
+Agency:
+  - ESA
+Provider:
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: Copernicus Data Space Ecosystem
+    Url: https://dataspace.copernicus.eu/
+  - Name: ONDA 
+    Url: https://www.onda-dias.eu/cms/
+Resources:
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Water_Discharge_timeseries
+    AdditionalQueryString: indicator_name=eq.Total Suspended Matter concentration anomaly
 
