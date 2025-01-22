@@ -1,27 +1,37 @@
+---
 Name: N3a2_chl_concentration_tri_nasa
-Title: Chlorophyll-a concentration maps NASA
+Title: Chlorophyll-a concentration from MODIS
 EodashIdentifier: N3a2_chl_nasa
-Subtitle: Chlorophyll-a concentration description
-Description: N3a2_chl_concentration_tri/N3a2.md
+Subtitle: Chlorophyll-a concentration maps
+Description: N3a2_chl_concentration_tri_nasa/N3a2_chl_concentration_tri_nasa.md
 Themes:
-  - water
+  - oceans
 Tags:
-  - placeholder
-Satellite:
-  - placeholder
-Sensor:
-  - placeholder
+  - Water quality
+  - Marine
+  - Acqua
+  - MODIS
+  - Open data
+  - Marine monitoring
+  - Chlorophyll-a
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Acqua
+    Sensor:
+      - MODIS
 Agency:
   - NASA
 Provider:
-  - Name: placeholder
+  - Name: NASA
+    Url: https://www.nasa.gov/
 License: MIT
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: N3a2_nasa_tri
-      AdditionalQueryString: 'indicator_code=eq.N3a2_chl_nasa'
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: N3a2_nasa_tri
+    AdditionalQueryString: indicator_code=eq.N3a2_chl_nasa
 Image: N3a2_chl_concentration_tri/thumbnail.png
 Legend: N3a2_chl_concentration_tri/legend.png
 yAxis: "%"
