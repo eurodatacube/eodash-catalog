@@ -33,6 +33,7 @@ References:
 Provider: 
   - Name: WASDI Market Place
     Url: https://www.wasdi.cloud/earth-observation-application-marketplace
+Legend: WASDI_FLOOD/cm_legend.png
 Citation:
   Citation: |
     Chini, R. Hostache, L. Giustarini and P. Matgen, “A Hierarchical Split-Based Approach for Parametric Thresholding of SAR Images: Flood Inundation as a Test Case,” in IEEE Transactions on Geoscience and Remote Sensing, vol. 55, no. 12, pp. 6975-6988, Dec. 2017
