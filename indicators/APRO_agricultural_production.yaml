@@ -1,7 +1,15 @@
 Name: agricultural_production
 Title: Agricultural production in Europe
 EodashIdentifier: APRO
-Description: These indicators show some agrucultural production parameters in various European locations
+Description: These indicators show some agricultural production parameters in various European locations
+Process:
+  Name: combined_geodb
+  JsonForm: https://santilland.github.io/process_example/definitions/geodb_form_full.json
+  VegaDefinition: https://santilland.github.io/process_example/definitions/geodbvega.json
+  EndPoints:
+    - Identifier: combined_geodb
+      Url: "https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/eodash_{{feature.values_.geoDBID}}?aoi_id=eq.{{feature.values_.id}}&select=site_name,city,color_code,time,aoi,measurement_value,indicator_value,reference_time,eo_sensor,reference_value,input_data"
+      Type: application/json
 Collections:
   - E10a2_agricultural_production_area
   - E10a3_agricultural_production_area_change
