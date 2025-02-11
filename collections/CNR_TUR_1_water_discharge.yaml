@@ -1,17 +1,35 @@
 Name: water_discharge
 Title: Water turbidity
 EodashIdentifier: CNR_TUR_1
-Description: testing 
+Description: CNR_TUR_1/CNR_TUR_1.md 
 Themes:
   - water
 Tags:
-  - placeholder
+  - Water quality
+  - Marine
+  - Copernicus Services
+  - Sentinel-2
+  - MSI
+  - Water turbidity
+  - Adriactic Sea
+  - Open data
+  - Marine monitoring
+  - Total Suspended Sediments
 DataSource:
   Spaceborne:
     Satellite:
-      - placeholder
+      - Sentinel-2
+    Sensor:
+      - MSI
 Agency:
   - ESA
+Provider:
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: Copernicus Data Space Ecosystem
+    Url: https://dataspace.copernicus.eu/
+  - Name: ONDA 
+    Url: https://www.onda-dias.eu/cms/
 Resources:
     - Name: COG source
       Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/CNR_TUR_water_discharge/cog_style.json
