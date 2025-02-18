@@ -4,42 +4,6 @@ description: "Rapid Action for Citizens with Earth Observation"
 endpoint: "https://eurodatacube.github.io/eodash-catalog/RACE/"
 assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/main/collections"
 collections:
-  - C3S_meteorological_variables
-  - E11_shopping_center_activity
-  - E12b_border_crossing_vehicles_timeseries
-  - E12c_truck_detections_motorways
-  - E12d_truck_detections_primary_roads
-  - E13b_parked_planes
-  - E13d_flying_planes
-  - VED_vessel_density
-  - E200_ships_detected
-  - E3_crude_oil_storage
-  - E4_intermediate_goods_production
-  - E5_steel_inventory_timeseries
-  - GLP_global_parameters
-  - OCVA_ocean_variables
-  - WAQ_water_quality
-  - NASAPopulation
-  - WSF_world_settlement_footprint
-  - CAQ_ports_air_quality
-  - E8_industrial_inventory
-  - APRO_agricultural_production
-  - AQEL_air_quality_european_level
-  - BIPS_boats_in_ports
-  - E13n_trucks_port
-  - E13c_ship_detections_algorithm
-  - GHS_BUILT-S-R2023A
-  - OX_Crude_Oil_Storage_Index
-  - OX_EU_Crude_Oil_Storage_Index
-  - GG_people_mobility_reports
-  - CV19_covid_19_indicators
   - crop_forecast_CropOM
-  - ESDL_Hydrology_SM
-  - ESDL_Hydrology_Precipitation
-  - IDEAS1_hopi_minesweeper
-  - IDEAS1_hopi
-  - IDEAS2_wildlife_minesweeper
-  - IDEAS2_wildlife
-  - IDEAS5_real_estate
-  - WASDI_FLOOD
+
   
