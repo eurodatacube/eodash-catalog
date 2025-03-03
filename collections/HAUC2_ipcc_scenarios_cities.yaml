@@ -21,4 +21,3 @@ Resources:
     Type: OverwriteTimes
     Times:
       - "2023-01-01" # dummy
-Legend: HAUC1_land_surface_temperature_analysis/cm_legend.png
