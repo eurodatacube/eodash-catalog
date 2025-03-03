@@ -1,7 +1,7 @@
 Name: ipcc_scenarios_cities
 Title: Land Surface Temperature Analysis
 EodashIdentifier: HAUC2
-Description: HAUC2_ipcc_scenarios_cities/HAUC2.md
+Description: HAUC3_sealing_impact/HAUC3.md
 Themes:
   - eo-adaptation-services
 Tags:
