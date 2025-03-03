@@ -47,7 +47,7 @@ References:
   - Name: Growth A toolkit for analyzing secondary forest aboveground carbon dynamics in the Brazilian Amazon
     Url: https://www.frontiersin.org/articles/10.3389/ffgc.2023.1230734
 Resources:
-  - EndPoint: https://reccap2.api.dev.brockmann-consult.de/api
+  - EndPoint: https://reccap2.api.brockmann-consult.de/api
     Type: zarr
     Name: xcube
     StacEndpoint: "/ogc"

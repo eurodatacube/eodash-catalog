@@ -6,13 +6,10 @@ assets_endpoint: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/m
 collections:
   - C3S_meteorological_variables
   - E11_shopping_center_activity
-  # - E11_shopping_center_volume
   - E12b_border_crossing_vehicles_timeseries
   - E12c_truck_detections_motorways
   - E12d_truck_detections_primary_roads
-  # - E13b_airport_throughput
   - E13b_parked_planes
-  # - E13c_cruises_impact
   - E13d_flying_planes
   - VED_vessel_density
   - E200_ships_detected
@@ -39,4 +36,10 @@ collections:
   - crop_forecast_CropOM
   - ESDL_Hydrology_SM
   - ESDL_Hydrology_Precipitation
+  - IDEAS1_hopi_minesweeper
+  - IDEAS1_hopi
+  - IDEAS2_wildlife_minesweeper
+  - IDEAS2_wildlife
+  - IDEAS5_real_estate
+  - WASDI_FLOOD
   

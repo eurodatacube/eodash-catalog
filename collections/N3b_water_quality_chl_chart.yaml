@@ -1,21 +1,49 @@
+---
 Name: N3b_water_quality_chl_chart
 Title: Chlorophyll-a concentration
 EodashIdentifier: N3b_chl
-Subtitle: Copernicus Atmosphere Monitoring Service (CAMS) time series
-Description: N3b_water_quality_chl_chart/N3b_chl.md
+Subtitle: Chlorophyll-a concentration time series
+Description: N3b_water_quality_chl_chart/N3b_water_quality_chl_chart.md
 Themes:
-    - oceans
+  - oceans
 Tags:
-    - placeholder
-Satellite:
-    - Sentinel-3
-Sensor:
-    - OLCI
+  - Water quality
+  - Marine
+  - Copernicus Services
+  - Sentinel-3
+  - Acqua
+  - GCOM-C
+  - OLCI
+  - SGLI
+  - MODIS
+  - Open data
+  - Marine monitoring
+  - Chlorophyll-a
+  - COVID-19
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-3
+      - GCOM-C
+      - Acqua
+    Sensor:
+      - OLCI
+      - SGLI
+      - MODIS
 Agency:
-    - ESA
+  - ESA
+  - JAXA
+  - NASA
+Provider:
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
+  - Name: NASA
+    Url: https://www.nasa.gov/
 Resources:
-    - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
-      Name: GeoDB
-      Database: eodash
-      CollectionId: Regional_Water_quality_timeseries
-      AdditionalQueryString: 'indicator_name=eq.Chlorophyll-a concentration anomaly'
+  - EndPoint: https://xcube-geodb.brockmann-consult.de/eodash/6bf15325-f6a0-4b6a-bf80-a2491753f8f2/
+    Name: GeoDB
+    Database: eodash
+    CollectionId: Regional_Water_quality_timeseries
+    AdditionalQueryString: indicator_name=eq.Chlorophyll-a concentration anomaly

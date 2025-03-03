@@ -1,0 +1,41 @@
+Name: IDEAS5_real_estate
+Title: Heat Risk Indicator
+EodashIdentifier: IND5_1
+Subtitle: ""
+Description: IDEAS5_real_estate/IDEAS5_real_estate.md
+Themes:
+  - economy
+Satellite:
+  - Landsat 8
+  - Landsat 9
+Others:
+  - French National Database of Buildings
+Tags:
+  - real estate
+Agency:
+  - ESA
+Provider:
+  - Name: Murmuration
+    Url: https://murmuration-sas.com/
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [-24, 33, 42, 71]
+    Times:
+      - "2022"
+# commented out because config done in client
+# Resources:
+#   - Name: COG source
+#     # Style: IDEAS5_real_estate/cog_style.json
+#     Bbox: [-4, 41, 11, 51]
+#     TimeEntries:
+#       - Time: "20230101"
+#         Assets:
+#           - Identifier: Real Estate Indicator
+#             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_Real-Estate_output_France_4326.tif
+#           - Identifier: "Population age, social status, and building insulation Indicator"
+#             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_dpe_output_France_4326.tif
+#           - Identifier: LST Indicator
+#             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_lst_output_France_4326.tif
+Legend: IDEAS5_real_estate/cm_legend.png
+Image: IDEAS5_real_estate/IDEAS5_real_estate.png
