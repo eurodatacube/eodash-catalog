@@ -66,4 +66,6 @@ collections:
   - SOL2_2_Solar_Roofs_regular_performance
   - SOL2_3_Solar_Roofs_low_performance
   - VTT_Forest_explorer
+  - HAUC1_land_surface_temperature_analysis
+  - HAUC2_ipcc_scenarios_cities
   # - IDEAS1_hopi

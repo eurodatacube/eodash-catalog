@@ -1,0 +1,23 @@
+Name: ipcc_scenarios_cities
+Title: Land Surface Temperature Analysis
+EodashIdentifier: HAUC2
+Description: HAUC3_sealing_impact/HAUC3.md
+Themes:
+  - eo-adaptation-services
+Tags:
+  - "HeatAdapt"
+Satellite:
+  - placeholder
+Sensor:
+  - placeholder
+Agency:
+  - ESA
+Provider:
+  - Name: placeholder
+Resources:
+  - Name: Collection-only
+    EndPoint: Collection-only
+    OverwriteBBox: [11, 46.5, 15.5, 48.9]
+    Type: OverwriteTimes
+    Times:
+      - "2023-01-01" # dummy
