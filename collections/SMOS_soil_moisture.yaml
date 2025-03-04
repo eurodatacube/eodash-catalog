@@ -1,0 +1,47 @@
+Name: smos_soil_moisture
+Title: SMOS Soil Moisture
+EodashIdentifier: SMOS_SM
+Description: TBD
+Themes:
+  - biomass
+Tags:
+  - CO2
+  - Photosynthesis
+  - Open data
+  - Carbon
+DataSource:
+  Spaceborne:
+    Satellite:
+      - placeholder
+    Sensor:
+      - placeholder
+Agency:
+  - ESA
+Citation:
+  Publication:
+    - Citation: |
+        placeholder
+# Image: CDS2_relative_humidity/CDS2_relative_humidity.png
+Colorlegend:
+  title: "Soil moisture [mg m-3]"
+  range: [
+    "rgb(0, 0, 131)",
+    "rgb(0, 60, 170)",
+    "rgb(5, 255, 255)",
+    "rgb(255, 255, 0)",
+    "rgb(250, 0, 0)",
+    "rgb(128, 0, 0)"
+  ]
+  domain: [0, 1]
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'smos-sm'
+    Variable: Soil_Moisture
+    ColormapName: jet
+    Rescale: [0,1]
+    Query:
+      Start: "2023-01-04T00:00:00Z"
+      End: "2024-01-03T00:00:00Z"
