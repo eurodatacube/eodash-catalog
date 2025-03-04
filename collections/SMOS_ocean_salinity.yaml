@@ -1,0 +1,43 @@
+Name: smos_ocean_salinity
+Title: SMOS Ocean Salinity
+EodashIdentifier: SMOS_OS
+Description: TBD
+Themes:
+  - oceans
+Tags:
+  - placeholder
+DataSource:
+  Spaceborne:
+    Satellite:
+      - placeholder
+    Sensor:
+      - placeholder
+Agency:
+  - ESA
+Citation:
+  Publication:
+    - Citation: |
+        placeholder
+Colorlegend:
+  title: "Sea Surface Salinity [psu]"
+  range: [
+    "rgb(0, 0, 131)",
+    "rgb(0, 60, 170)",
+    "rgb(5, 255, 255)",
+    "rgb(255, 255, 0)",
+    "rgb(250, 0, 0)",
+    "rgb(128, 0, 0)"
+  ]
+  domain: [0, 50]
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'smos-os'
+    Variable: SSS_corr
+    ColormapName: jet
+    Rescale: [0,50]
+    Query:
+      Start: "2023-01-04T00:00:00Z"
+      End: "2024-01-03T00:00:00Z"
