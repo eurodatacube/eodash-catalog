@@ -34,6 +34,15 @@ Provider:
   - Name: WASDI Market Place
     Url: https://www.wasdi.cloud/earth-observation-application-marketplace
 Legend: WASDI_FLOOD/cm_legend.png
+Locations:
+  - Identifier: Valencia (Spain)
+    Name: Flooding in Valencia
+    Point: [-0.327193, 39.309451]
+    Bbox: [-0.39,39.17,-0.18,39.32]
+  - Identifier: St Pölten (Vienna)
+    Name: Flooding in St Pölten
+    Point: [15.7, 48.2]
+    Bbox: [15.74, 48.28, 16.35, 48.48]
 Citation:
   Citation: |
     Chini, R. Hostache, L. Giustarini and P. Matgen, “A Hierarchical Split-Based Approach for Parametric Thresholding of SAR Images: Flood Inundation as a Test Case,” in IEEE Transactions on Geoscience and Remote Sensing, vol. 55, no. 12, pp. 6975-6988, Dec. 2017
