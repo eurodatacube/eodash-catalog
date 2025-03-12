@@ -19,10 +19,27 @@ Agency:
   - ESA
 Citation:
   Publication:
-    - Citation: |
-        Fawcett, Dominic, Sitch, Stephen, Ciais, Philippe, Wigneron, Jean Pierre, Silva-Junior, Celso H. L., Heinrich, Viola, Vancutsem, Christelle, Achard, Frédéric, Bastos, Ana, Yang, Hui, Li, Xiaojun, Albergel, Clément, Friedlingstein, Pierre, & Aragão, Luiz E. O. C. (2022). 
+    - Citation: >
+        Fawcett, Dominic, Sitch, Stephen, Ciais, Philippe, Wigneron, Jean
+        Pierre, Silva-Junior, Celso H. L., Heinrich, Viola, Vancutsem,
+        Christelle, Achard, Frédéric, Bastos, Ana, Yang, Hui, Li, Xiaojun,
+        Albergel, Clément, Friedlingstein, Pierre, & Aragão, Luiz E. O. C.
+        (2022). 
+
         Processed Data for Figures of 'Declining Amazon biomass due to deforestation and subsequent degradation losses exceeding gains' (Version v1) [Data set]. Zenodo.
       DOI: 10.5281/zenodo.7245450
+    - Citation: >
+        Deng, Z., Ciais, P., Tzompa-Sosa, Z. A., Saunois, M., Qiu, C., Tan,
+        C., Sun, T., Ke, P., Cui, Y., Tanaka, K., Lin, X., Thompson, R. L.,
+        Tian, H., Yao, Y., Huang, Y., Lauerwald, R., Jain, A. K., Xu, X.,
+        Bastos, A., Sitch, S., Palmer, P. I., Lauvaux, T., d'Aspremont, A.,
+        Giron, C., Benoit, A., Poulter, B., Chang, J., Petrescu, A. M. R.,
+        Davis, S. J., Liu, Z., Grassi, G., Albergel, C., Tubiello, F. N.,
+        Perugini, L., Peters, W., and Chevallier, F.: Comparing national
+        greenhouse gas budgets reported in UNFCCC inventories against
+        atmospheric inversions, Earth Syst. Sci. Data, 14, 1639–1675, 2002. 
+      DOI: doi.org/10.5194/essd-14-1639-2022
+      
 Legend: RECCAP2_9_intact_biomass_change_methods_mean/RECCAP2_9_legend.png
 Image: RECCAP2_9_intact_biomass_change_methods_mean/World-RECCAP2_9.png
 References:
