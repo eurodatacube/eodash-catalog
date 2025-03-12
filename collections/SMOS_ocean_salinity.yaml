@@ -1,23 +1,36 @@
 Name: smos_ocean_salinity
 Title: SMOS Ocean Salinity
 EodashIdentifier: SMOS_OS
-Description: TBD
+Description: smos_ocean_salinity/smos_ocean_salinity.md
 Themes:
   - oceans
 Tags:
-  - placeholder
+  - L-band
+  - Ocean salinity
+  - Water density
+  - water salinity
+  - Water cycle
+  - carbon cycle
+  - CO2
+  - CO2 cycle
+  - Climate change
+  - Temperature
+  - Microwave radiation
+  - Sewater
+  - SMOS
+  - Soil Moisture and Ocean Salinity
+  - Weather forecasting
+  - MIRAS
+  - Microwave Imaging Radiometer using Aperture Synthesis
+  - Microwave Imaging Radiometer 
 DataSource:
   Spaceborne:
     Satellite:
-      - placeholder
+      - SMOS
     Sensor:
-      - placeholder
+      - MIRAS
 Agency:
   - ESA
-Citation:
-  Publication:
-    - Citation: |
-        placeholder
 Colorlegend:
   title: "Sea Surface Salinity [psu]"
   range: [
