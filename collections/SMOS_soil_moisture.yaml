@@ -1,26 +1,39 @@
 Name: smos_soil_moisture
 Title: SMOS Soil Moisture
 EodashIdentifier: SMOS_SM
-Description: TBD
+Description: smos_soil_moisture/smos_soil_moisture.md
 Themes:
-  - biomass
+  - agriculture
 Tags:
   - CO2
   - Photosynthesis
   - Open data
   - Carbon
+  - Agriculture
+  - Farming
+  - L-band
+  - Carbon cycle
+  - Evaporation
+  - Forecast
+  - Water cycle
+  - Atmosphere
+  - Atmospheric humidity
+  - Plants
+  - Vegetation
+  - SMOS
+  - Soil Moisture and Ocean Salinity
+  - Weather forecasting
+  - MIRAS
+  - Microwave Imaging Radiometer using Aperture Synthesis
+  - Microwave Imaging Radiometer 
 DataSource:
   Spaceborne:
     Satellite:
-      - placeholder
+      - SMOS
     Sensor:
-      - placeholder
+      - MIRAS
 Agency:
   - ESA
-Citation:
-  Publication:
-    - Citation: |
-        placeholder
 # Image: CDS2_relative_humidity/CDS2_relative_humidity.png
 Colorlegend:
   title: "Soil moisture [mg m-3]"
