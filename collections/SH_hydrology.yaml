@@ -1,0 +1,39 @@
+Name: SH_hydrology
+Title: Hydrology (ScienceHub)
+EodashIdentifier: SH_hydrology
+Description: TBD
+Themes:
+  - oceans
+Tags:
+  - placeholder
+DataSource:
+  Spaceborne:
+    Satellite:
+      - placeholder
+    Sensor:
+      - placeholder
+Agency:
+  - ESA
+Colorlegend:
+  title: "Precipitation [mm d^-1]"
+  range: [
+    "rgb(0, 0, 131)",
+    "rgb(0, 60, 170)",
+    "rgb(5, 255, 255)",
+    "rgb(255, 255, 0)",
+    "rgb(250, 0, 0)",
+    "rgb(128, 0, 0)"
+  ]
+  domain: [0, 50]
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'hydrology'
+    Variable: precip
+    ColormapName: jet
+    Rescale: [0,50]
+    Query:
+      Start: "2015-01-04T00:00:00Z"
+      End: "2022-10-03T00:00:00Z"

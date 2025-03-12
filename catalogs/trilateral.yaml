@@ -127,6 +127,7 @@ collections:
   - SSLC2_Seasonal_S1_COH12_hh_interferometric_coherence
   - OHC300_Ocean_Heat_Content_upper_300m
   - NELST_ECOSTRESS_LST
+  - SH_hydrology
   # - IDEAS1_hopi
   # - IDEAS3_locust
   # - IDEAS4_flood_risk
