@@ -1,0 +1,177 @@
+Name: water_discharge
+Title: Water turbidity
+EodashIdentifier: CNR_TUR_1
+Description: CNR_TUR_1_water_discharge/CNR_TUR_1_water_discharge.md 
+Themes:
+  - water
+Tags:
+  - Water quality
+  - Marine
+  - Copernicus Services
+  - Sentinel-2
+  - MSI
+  - Water turbidity
+  - Adriactic Sea
+  - Open data
+  - Marine monitoring
+  - Total Suspended Sediments
+DataSource:
+  Spaceborne:
+    Satellite:
+      - Sentinel-2
+    Sensor:
+      - MSI
+Agency:
+  - ESA
+Provider:
+  - Name: ESA
+    Url: https://sentinel.esa.int/web/sentinel/
+  - Name: Copernicus Data Space Ecosystem
+    Url: https://dataspace.copernicus.eu/
+  - Name: ONDA 
+    Url: https://www.onda-dias.eu/cms/
+Resources:
+    - Name: COG source
+      Style: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/collections/CNR_TUR_water_discharge/cog_style.json
+      Bbox: [11.54, 44.73, 12.744, 45.113]
+      TimeEntries:
+        - Time: "20190205T100828"
+          Assets: 
+          - Identifier: 20190205T100828
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190205T100828_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20190208T101825"
+          Assets: 
+          - Identifier: 20190208T101825
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190208T101825_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20190218T101824"
+          Assets: 
+          - Identifier: 20190218T101824
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190218T101824_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20190225T100826"
+          Assets: 
+          - Identifier: 20190225T100826
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190225T100826_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20190330T101826"
+          Assets: 
+          - Identifier: 20190330T101826
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190330T101826_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20190625T100836"
+          Assets: 
+          - Identifier: 20190625T100836
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190625T100836_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20190916T101824"
+          Assets: 
+          - Identifier: 20190916T101824
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20190916T101824_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20191026T101826"
+          Assets: 
+          - Identifier: 20191026T101826
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20191026T101826_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20191210T101821"
+          Assets: 
+          - Identifier: 20191210T101821
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20191210T101821_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20200220T100824"
+          Assets: 
+          - Identifier: 20200220T100824
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20200220T100824_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20200319T101821"
+          Assets: 
+          - Identifier: 20200319T101821
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20200319T101821_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20200403T101822"
+          Assets: 
+          - Identifier: 20200403T101822
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20200403T101822_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20200408T101822"
+          Assets: 
+          - Identifier: 20200408T101822
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20200408T101822_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20200525T100834"
+          Assets: 
+          - Identifier: 20200525T100834
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20200525T100834_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20200629T100830"
+          Assets: 
+          - Identifier: 20200629T100830
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20200629T100830_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20201106T100830"
+          Assets: 
+          - Identifier: 20201106T100830
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20201106T100830_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210113T101825"
+          Assets: 
+          - Identifier: 20210113T101825
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20210113T101825_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210214T100826"
+          Assets: 
+          - Identifier: 20210214T100826
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20210214T100826_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210324T101823"
+          Assets: 
+          - Identifier: 20210324T101823
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20210324T101823_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210518T101824"
+          Assets: 
+          - Identifier: 20210518T101824
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20210518T101824_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210811T101827"
+          Assets: 
+          - Identifier: 20210811T101827
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20210811T101827_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210816T101824"
+          Assets: 
+          - Identifier: 20210816T101824
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20210816T101824_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210821T101827"
+          Assets: 
+          - Identifier: 20210821T101827
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20210821T101827_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20210905T101821"
+          Assets: 
+          - Identifier: 20210905T101821
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20210905T101821_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220108T101826"
+          Assets: 
+          - Identifier: 20220108T101826
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20220108T101826_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220202T101819"
+          Assets: 
+          - Identifier: 20220202T101819
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20220202T101819_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220309T101829"
+          Assets: 
+          - Identifier: 20220309T101829
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20220309T101829_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220324T101822"
+          Assets: 
+          - Identifier: 20220324T101822
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20220324T101822_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220418T101828"
+          Assets: 
+          - Identifier: 20220418T101828
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20220418T101828_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220428T101830"
+          Assets: 
+          - Identifier: 20220428T101830
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20220428T101830_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220612T101827"
+          Assets: 
+          - Identifier: 20220612T101827
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20220612T101827_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220722T101830"
+          Assets: 
+          - Identifier: 20220722T101830
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20220722T101830_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220816T101837"
+          Assets: 
+          - Identifier: 20220816T101837
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2A_MSI_20220816T101837_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220821T101826"
+          Assets: 
+          - Identifier: 20220821T101826
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20220821T101826_T32TQQ_L2W_turbidity_map.tiff
+        - Time: "20220910T101827"
+          Assets: 
+          - Identifier: 20220910T101827
+            File: https://eox-gtif-public.s3.eu-central-1.amazonaws.com/EOX/S2B_MSI_20220910T101827_T32TQQ_L2W_turbidity_map.tiff
