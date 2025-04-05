@@ -1,0 +1,56 @@
+Name: smos_ocean_salinity
+Title: SMOS Ocean Salinity
+EodashIdentifier: SMOS_OS
+Description: smos_ocean_salinity/smos_ocean_salinity.md
+Themes:
+  - oceans
+Tags:
+  - L-band
+  - Ocean salinity
+  - Water density
+  - water salinity
+  - Water cycle
+  - carbon cycle
+  - CO2
+  - CO2 cycle
+  - Climate change
+  - Temperature
+  - Microwave radiation
+  - Sewater
+  - SMOS
+  - Soil Moisture and Ocean Salinity
+  - Weather forecasting
+  - MIRAS
+  - Microwave Imaging Radiometer using Aperture Synthesis
+  - Microwave Imaging Radiometer 
+DataSource:
+  Spaceborne:
+    Satellite:
+      - SMOS
+    Sensor:
+      - MIRAS
+Agency:
+  - ESA
+Colorlegend:
+  title: "Sea Surface Salinity [psu]"
+  range: [
+    "rgb(0, 0, 131)",
+    "rgb(0, 60, 170)",
+    "rgb(5, 255, 255)",
+    "rgb(255, 255, 0)",
+    "rgb(250, 0, 0)",
+    "rgb(128, 0, 0)"
+  ]
+  domain: [0, 50]
+Resources:
+  - EndPoint: https://api.earthsystemdatalab.net/api
+    Type: zarr
+    Name: xcube
+    StacEndpoint: "/ogc"
+    DatacubeId: 'smos-os'
+    Variable: SSS_corr
+    ColormapName: jet
+    Rescale: [0,50]
+    Query:
+      Start: "2023-01-04T00:00:00Z"
+      End: "2024-01-03T00:00:00Z"
