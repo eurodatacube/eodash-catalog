@@ -39,10 +39,10 @@ References:
   - Name: ESA – TROPOSIF documentation
     Url: https://s5p-troposif.noveltis.fr/wp-content/uploads/2021/05/NOV-FE-0956-MU-019_v2.0.pdf
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: SIF-TROPOMI-Cairo-Monthly
+    LayerId: EODASH:SIF-TROPOMI-Cairo-Monthly
 Provider:
   - Name: Copernicus
     Roles: licensor

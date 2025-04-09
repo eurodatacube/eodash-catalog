@@ -30,10 +30,10 @@ References:
   - Name: Dataset access
     Url: https://suzaku.eorc.jaxa.jp/GCOM_C/index.html
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: ONPP-GCOMC-World-Monthly
+    LayerId: EODASH:ONPP-GCOMC-World-Monthly
 Provider:
   - Name: JAXA
     Roles: licensor, producer, processor

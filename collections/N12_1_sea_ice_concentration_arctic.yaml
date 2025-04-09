@@ -28,10 +28,10 @@ References:
   - Name: Earth-graphy sea ice
     Url: https://earth.jaxa.jp/en/data/products/sea-ice/index.html
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: SIC_N
+    LayerId: EODASH:SIC_N
     OverwriteBBox: [-20, 77, 50, 83]
     Query:
       Start: "2012-07-04T00:00:00Z" # GCOM-W data collection date start
