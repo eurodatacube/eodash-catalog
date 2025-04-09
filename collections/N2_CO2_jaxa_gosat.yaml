@@ -33,10 +33,10 @@ References:
   - Name: GOSAT
     Url: https://www.eorc.jaxa.jp/GOSAT/index.html
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: XCO2-GOSAT-Cairo
+    LayerId: EODASH:XCO2-GOSAT-Cairo
     OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
 Provider:
   - Name: JAXA

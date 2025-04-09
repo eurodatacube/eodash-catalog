@@ -22,10 +22,10 @@ References:
   - Name: G-Portal
     Url: https://gportal.jaxa.jp/
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: NDVI-GCOMC-World-Monthly
+    LayerId: EODASH:NDVI-GCOMC-World-Monthly
     Styles: [""]
 Provider:
   - Name: JAXA
