@@ -24,6 +24,9 @@ Legend: N9_OMI_trno2-COG/N9_legend.png
 References:
   - Name: OMI/Aura NO2 Cloud-Screened Total and Tropospheric Column L3 Global Gridded
     Url: https://disc.gsfc.nasa.gov/datasets/OMNO2d_003/summary
+  - Name: NASA Covid Dashboard 
+    Key: covid_dashboard
+    Url: https://www.earthdata.nasa.gov/covid19/indicators/no2 
 Services:
   - Endpoint: https://openveda.cloud/api/raster/cog/statistics
     Name: VEDA Statistics
@@ -40,8 +43,13 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://search.earthdata.nasa.gov/search?q=OMNO2d_003
-References:
-  - Name: NASA Covid Dashboard 
-    Key: covid_dashboard
-    Url: https://www.earthdata.nasa.gov/covid19/indicators/no2
-    
+Process:
+  Name: VEDA Statistics
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/veda_vega_definition.json
+  EndPoints:
+    - Identifier: veda_statistics
+      Url: https://openveda.cloud/api/raster/cog/statistics
+      Method: POST
+      EndPoint: veda
+      Type: application/json

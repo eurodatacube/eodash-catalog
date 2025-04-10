@@ -19,3 +19,13 @@ Services:
     Rescale: 1e-9
 Image: EPA_Field_burning_Monthly/thumbnail.png
 Legend: EPA_Field_burning_Monthly/cm_legend.png
+Process:
+  Name: VEDA Statistics
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/veda_vega_definition.json
+  EndPoints:
+    - Identifier: veda_statistics
+      Url: https://openveda.cloud/api/raster/cog/statistics
+      Method: POST
+      EndPoint: veda
+      Type: application/json

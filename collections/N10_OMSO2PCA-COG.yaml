@@ -43,3 +43,13 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
+Process:
+  Name: VEDA Statistics
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/veda_vega_definition.json
+  EndPoints:
+    - Identifier: veda_statistics
+      Url: https://openveda.cloud/api/raster/cog/statistics
+      Method: POST
+      EndPoint: veda
+      Type: application/json
