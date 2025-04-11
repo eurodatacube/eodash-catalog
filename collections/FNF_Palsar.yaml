@@ -38,3 +38,18 @@ Resources:
 Provider:
   - Name: JAXA
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - No data
+  - Forest (>90% canopy cover)
+  - Forest (10-90% canopy cover)
+  - Non-forest
+  - Water
+  range:
+  - '#000000'
+  - '#00c700'
+  - '#4fff5c'
+  - '#f6ff90'
+  - '#6100ff'
+  scaleType: categorical
+  title: Global 25m resolution PALSAR-2 Forest/Non-Forest Map

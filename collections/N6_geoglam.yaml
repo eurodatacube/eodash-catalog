@@ -37,3 +37,22 @@ Provider:
   - Name: GEOGLAM
     Roles: licensor, processor
     Url: https://www.cropmonitor.org/eo-data
+Colorlegend:
+  domain:
+  - Exceptional
+  - Favourable
+  - Watch
+  - Poor
+  - Failure
+  - Out-of-season
+  - "No data"
+  range:
+  - '#447fca'
+  - '#0be840'
+  - '#f1ff00'
+  - '#f34a00'
+  - '#8e0000'
+  - '#787878'
+  - '#834100'
+  scaleType: categorical
+  title: Crop conditions
