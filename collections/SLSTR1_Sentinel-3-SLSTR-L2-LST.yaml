@@ -35,3 +35,18 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://sentinels.copernicus.eu/web/sentinel/home
+Colorlegend:
+  domain:
+  - 0
+  - 200
+  range:
+  - '#fefce7'
+  - '#fde191'
+  - '#f69855'
+  - '#ec6927'
+  - '#aa2d1d'
+  - '#650401'
+  - '#3d0200'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "Temperature [\xB0C]"

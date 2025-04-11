@@ -45,3 +45,25 @@ References:
     Key: covid_dashboard
     Url: https://www.earthdata.nasa.gov/covid19/indicators/no2
     
+Colorlegend:
+  domain:
+  - 0
+  - 37
+  range:
+  - '#fff5f0'
+  - '#fee8de'
+  - '#fed7c7'
+  - '#fcc1a9'
+  - '#fca88b'
+  - '#fc8f6f'
+  - '#fb7656'
+  - '#f75c41'
+  - '#f03f2e'
+  - '#dc2824'
+  - '#c5171c'
+  - '#ae1117'
+  - '#8d0912'
+  - '#67000d'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "NO2 [10^14 molecules/cm\xB2]"

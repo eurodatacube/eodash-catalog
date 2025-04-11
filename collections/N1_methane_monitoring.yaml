@@ -50,3 +50,20 @@ References:
   - Name: TROPOMI Methane
     Key: tropomi_methane
     Url: http://www.tropomi.eu/data-products/methane
+Colorlegend:
+  domain:
+  - 1680
+  - 1980
+  range:
+  - '#000103'
+  - '#006cd3'
+  - '#00d2ff'
+  - '#00ffff'
+  - '#46ff96'
+  - '#fffd00'
+  - '#ffc100'
+  - '#ff4900'
+  - '#ff0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: CH4 volume mixing ratio [ppbv]

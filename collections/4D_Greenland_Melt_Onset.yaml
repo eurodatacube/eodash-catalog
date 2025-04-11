@@ -50,3 +50,26 @@ Resources:
     CollectionId: b110e14f-fb03-4143-ba57-587bd91a40be
 Image: 4D_Greenland_Melt_Onset/thumbnail.png
 Legend: 4D_Greenland_Melt_Onset/legend.png
+Colorlegend:
+  domain:
+  - 1
+  - 365
+  range:
+  - '#306bff'
+  - '#488eff'
+  - '#5ca5ff'
+  - '#6fb4ff'
+  - '#82beff'
+  - '#94c7ff'
+  - '#a3d0ff'
+  - '#b2d8ff'
+  - '#c2deff'
+  - '#cee5ff'
+  - '#d8ecff'
+  - '#e1f2ff'
+  - '#e9f6ff'
+  - '#f2fbff'
+  - '#fbffff'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Ice melting onset [day of year]

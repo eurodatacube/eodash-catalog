@@ -32,3 +32,19 @@ Provider:
   - Name: NASA/JPL/ECOSTRESS
     Roles: processor
     Url: https://ecostress.jpl.nasa.gov/
+Colorlegend:
+  domain:
+  - 281
+  - 309
+  range:
+  - '#ffffff'
+  - '#dbeef5'
+  - '#bbdeed'
+  - '#6800fd'
+  - '#e4ff00'
+  - '#ff9400'
+  - '#ff0000'
+  - '#ff0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "Temperature [\xB0K]"

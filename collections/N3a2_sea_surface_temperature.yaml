@@ -68,3 +68,16 @@ Provider:
     Url: https://marine.copernicus.eu/access-data
   - Name: CNR ISMAR
     Url: https://www.ismar.cnr.it/istituto/
+Colorlegend:
+  domain:
+  - -70
+  - 70
+  range:
+  - '#0000ff'
+  - '#0096c8'
+  - '#009a5a'
+  - '#fab478'
+  - '#ff0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Sea Surface Temperature Anomaly [%]

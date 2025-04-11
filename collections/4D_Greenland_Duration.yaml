@@ -51,3 +51,26 @@ Resources:
 Image: 4D_Greenland_Melt_Duration/thumbnail.png
 Legend: 4D_Greenland_Melt_Duration/legend.png
 
+Colorlegend:
+  domain:
+  - 3
+  - 210
+  range:
+  - '#306bff'
+  - '#488eff'
+  - '#5ca5ff'
+  - '#6fb4ff'
+  - '#82beff'
+  - '#94c7ff'
+  - '#a3d0ff'
+  - '#b2d8ff'
+  - '#c2deff'
+  - '#cee5ff'
+  - '#d8ecff'
+  - '#e1f2ff'
+  - '#e9f6ff'
+  - '#f2fbff'
+  - '#fbffff'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Ice melting [days]

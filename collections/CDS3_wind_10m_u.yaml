@@ -49,3 +49,20 @@ Services:
     Type: byoc
     CollectionId: 067fbb53-b1c3-4a57-9c81-adf2488a47ee
     Script: CDS3_wind_10m_u/CDS3_wind_10m_u.js
+Colorlegend:
+  domain:
+  - -12
+  - 12
+  range:
+  - '#0b3587'
+  - '#0b74c5'
+  - '#4eb5fa'
+  - '#abeaf3'
+  - '#f4fced'
+  - '#fbd45f'
+  - '#f78500'
+  - '#dd1800'
+  - '#a30100'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Wind field [m/s]

@@ -54,3 +54,26 @@ Resources:
     CollectionId: 187112e0-de59-46f1-af76-86d7aec33c9e
 Image: ADD_Melt_Duration/thumbnail.png
 Legend: ADD_Melt_Duration/legend.png
+Colorlegend:
+  domain:
+  - 3
+  - 210
+  range:
+  - '#306bff'
+  - '#488eff'
+  - '#5ca5ff'
+  - '#6fb4ff'
+  - '#82beff'
+  - '#94c7ff'
+  - '#a3d0ff'
+  - '#b2d8ff'
+  - '#c2deff'
+  - '#cee5ff'
+  - '#d8ecff'
+  - '#e1f2ff'
+  - '#e9f6ff'
+  - '#f2fbff'
+  - '#fbffff'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Ice melting [days]

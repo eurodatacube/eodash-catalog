@@ -62,3 +62,25 @@ Provider:
   - Name: ESA
     Roles: licensor, producer, processor
     Url: https://climate.esa.int/en/projects/reccap-2/
+Colorlegend:
+  domain:
+  - 0
+  - 2
+  range:
+  - '#ffffe5'
+  - '#fafdca'
+  - '#f0f9b4'
+  - '#def2a6'
+  - '#c5e799'
+  - '#a9db8c'
+  - '#88cd7f'
+  - '#67be70'
+  - '#45ad5f'
+  - '#31964f'
+  - '#1e8041'
+  - '#086e3a'
+  - '#005b32'
+  - '#004529'
+  scaleType: continuous
+  tickFormat: .0f
+  title: '[Mg C/ha/year]'

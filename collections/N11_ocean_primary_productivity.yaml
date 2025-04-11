@@ -38,3 +38,19 @@ Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - NaN
+  - 1500
+  range:
+  - '#ffffff'
+  - '#9f409f'
+  - '#2187f9'
+  - '#76f6ff'
+  - '#99e599'
+  - '#f6fc81'
+  - '#ff8a7f'
+  - '#8b0b0b'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "mgC/m\xB2/day"

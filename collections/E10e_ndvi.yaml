@@ -30,3 +30,14 @@ Resources:
 Provider:
   - Name: JAXA
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - 0 (Water)
+  - 1 (Non-crop)
+  - 2 (Crop)
+  range:
+  - '#000004'
+  - '#a6317d'
+  - '#fcfdbf'
+  scaleType: categorical
+  title: Land Cover Class

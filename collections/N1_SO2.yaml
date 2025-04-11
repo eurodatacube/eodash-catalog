@@ -40,3 +40,20 @@ Services:
     Type: byoc
     CollectionId: 4ad9663f-d173-411d-8d28-3081d4d9e3aa
     Script: N1_SO2/N1_SO2.js
+Colorlegend:
+  domain:
+  - 0
+  - 20
+  range:
+  - '#f8f6f4'
+  - '#9e61a8'
+  - '#5366b6'
+  - '#3c8cc6'
+  - '#51aca2'
+  - '#e3a625'
+  - '#eb490e'
+  - '#ba0006'
+  - '#74120d'
+  scaleType: continuous
+  tickFormat: .0f
+  title: SO2 column number density [DU]

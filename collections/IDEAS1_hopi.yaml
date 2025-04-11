@@ -29,3 +29,25 @@ Resources:
 Legend: IDEAS1_hopi_b1/cm_legend.png
 Image: IDEAS1_hopi/IDEAS1_hopi.png
 
+Colorlegend:
+  domain:
+  - 0
+  - 1
+  range:
+  - '#ffffff'
+  - '#ffffb2'
+  - '#ffff65'
+  - '#ffff17'
+  - '#ffdb00'
+  - '#ffa800'
+  - '#ff7400'
+  - '#ff4100'
+  - '#ff0d00'
+  - '#d90000'
+  - '#a50000'
+  - '#720000'
+  - '#3e0000'
+  - '#0b0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: '[index]'

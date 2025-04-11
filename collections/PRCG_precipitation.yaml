@@ -78,3 +78,18 @@ Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - 0
+  - 300
+  range:
+  - '#ffffff'
+  - '#4040da'
+  - '#1ccb9a'
+  - '#bdff0c'
+  - '#ffe01c'
+  - '#ff5100'
+  - '#b10600'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Precipitation

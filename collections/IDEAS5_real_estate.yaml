@@ -39,3 +39,25 @@ Resources:
 #             File: https://eox-ideas.s3.eu-central-1.amazonaws.com/indicator5/final_lst_output_France_4326.tif
 Legend: IDEAS5_real_estate/cm_legend.png
 Image: IDEAS5_real_estate/IDEAS5_real_estate.png
+Colorlegend:
+  domain:
+  - 0
+  - 6
+  range:
+  - '#ffffff'
+  - '#ffffb2'
+  - '#ffff65'
+  - '#ffff17'
+  - '#ffdb00'
+  - '#ffa800'
+  - '#ff7400'
+  - '#ff4100'
+  - '#ff0d00'
+  - '#d90000'
+  - '#a50000'
+  - '#720000'
+  - '#3e0000'
+  - '#0b0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: '[0 is best, 6 is worst]'

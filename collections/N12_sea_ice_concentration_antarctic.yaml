@@ -38,3 +38,18 @@ Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - NaN
+  - 100
+  range:
+  - '#ffffff'
+  - '#4040ff'
+  - '#4646ff'
+  - '#6262ff'
+  - '#9999ff'
+  - '#d1d1ff'
+  - '#ffffff'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Percentage

@@ -32,3 +32,19 @@ Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - NaN
+  - 50
+  range:
+  - '#ffffff'
+  - '#ffffff'
+  - '#2727d5'
+  - '#00b330'
+  - '#1ccb9a'
+  - '#ffe01c'
+  - '#ff5100'
+  - '#b10600'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Soil moisture content

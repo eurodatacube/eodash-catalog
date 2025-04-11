@@ -41,3 +41,18 @@ Resources:
 Provider: 
   - Name: Copernicus Atmosphere Monitoring Service
     Url: https://ads.atmosphere.copernicus.eu/#!/home
+Colorlegend:
+  domain:
+  - 0
+  - 240
+  range:
+  - '#ffffff'
+  - '#fffbf7'
+  - '#feeedf'
+  - '#fed6b7'
+  - '#fab181'
+  - '#e9834d'
+  - '#b85426'
+  - '#7f2704'
+  scaleType: discrete
+  title: "O3 [\xB5g/m\xB3]"

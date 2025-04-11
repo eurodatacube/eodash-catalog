@@ -32,3 +32,25 @@ Resources:
 Provider:
   - Name: Meta
     Url: https://dataforgood.facebook.com/dfg/about
+Colorlegend:
+  domain:
+  - 0
+  - 80
+  range:
+  - '#ffffcc'
+  - '#fff4b1'
+  - '#ffe896'
+  - '#fedc7c'
+  - '#fec763'
+  - '#feaf4b'
+  - '#fd9841'
+  - '#fd7a36'
+  - '#fc532b'
+  - '#ef3222'
+  - '#dd161e'
+  - '#c60624'
+  - '#a60026'
+  - '#800026'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "Population density [People/m\xB2]"

@@ -43,3 +43,16 @@ Resources:
     Type: byoc
     CollectionId: 81201dac-c408-4cf8-b9a5-ca8349e4ab6c
     LayerId: VIS_TRUCK_DETECTION_PRIMARY_NEW
+Colorlegend:
+  domain:
+  - 0
+  - 90
+  range:
+  - '#000000'
+  - '#9acd32'
+  - '#32cd32'
+  - '#ffa500'
+  - '#ff0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Monthly average count of trucks

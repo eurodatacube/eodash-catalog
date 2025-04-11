@@ -45,3 +45,20 @@ Services:
     Type: byoc
     CollectionId: f70007f3-da80-4c23-b3ae-adc8634ca7c7
     Script: CDS8_windv_ERA5-SingleLevel_100m_GLOBAL/CDS8_windv_ERA5-SingleLevel_100m_GLOBAL.js
+Colorlegend:
+  domain:
+  - -4
+  - 4
+  range:
+  - '#0b3587'
+  - '#0b74c5'
+  - '#4eb5fa'
+  - '#abeaf3'
+  - '#f4fced'
+  - '#fbd45f'
+  - '#f78500'
+  - '#dd1800'
+  - '#a30100'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Wind field [m/s]

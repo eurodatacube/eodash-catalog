@@ -50,3 +50,15 @@ Services:
     Type: byoc
     CollectionId: 97577173-d4ef-4425-bd29-d367fe50475d
     Script: OHC300_Ocean_Heat_Content_upper_300m/OHC300_Ocean_Heat_Content_upper_300m.js
+Colorlegend:
+  domain:
+  - -2
+  - 30
+  range:
+  - '#0000FF'
+  - '#00FFFF'
+  - '#FFFF00'
+  - '#FF0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: '[GJ/m2]'

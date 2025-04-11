@@ -47,3 +47,12 @@ Resources:
     Type: byoc
     CollectionId: 47774144-7a51-4156-a55c-ef2cff8913ce
     LayerId: WASDI_FLOOD
+Colorlegend:
+  domain:
+  - Permanent water
+  - Flooding
+  range:
+  - '#0000ff'
+  - '#ff0000'
+  scaleType: categorical
+  title: Flood events

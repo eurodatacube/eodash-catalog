@@ -38,3 +38,18 @@ Resources:
 Provider: 
   - Name: Copernicus Atmosphere Monitoring Service
     Url: https://ads.atmosphere.copernicus.eu/#!/home
+Colorlegend:
+  domain:
+  - 0
+  - 40
+  range:
+  - '#ffffff'
+  - '#fcfcfd'
+  - '#f2f2f8'
+  - '#dddded'
+  - '#bdbbdb'
+  - '#998cc2'
+  - '#6e4aa1'
+  - '#3f007d'
+  scaleType: discrete
+  title: "PM2.5 [\xB5g/m\xB3]"

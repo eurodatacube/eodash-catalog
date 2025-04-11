@@ -47,3 +47,16 @@ References:
     Url: https://github.com/hfisser/Truck_Detection_Sentinel2_COVID19
   - Name: Jupyter Notebook - Euro Data Cube
     Url: https://eurodatacube.com/notebooks/contributions/Detect_Trucks_Sentinel2.ipynb
+Colorlegend:
+  domain:
+  - 0
+  - 90
+  range:
+  - '#000000'
+  - '#9acd32'
+  - '#32cd32'
+  - '#ffa500'
+  - '#ff0000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Monthly average count of trucks

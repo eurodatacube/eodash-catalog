@@ -56,3 +56,16 @@ Resources:
         days: 7
 Image: 4D_Greenland_Meltmap/thumbnail.png
 Legend: 4D_Greenland_Meltmap/legend.png
+Colorlegend:
+  domain:
+  - no melt l.
+  - surface melt l.
+  - wet snow l.
+  - new top frozen l.
+  range:
+  - '#AFABAB'
+  - '#B4C7E7'
+  - '#66A2D8'
+  - '#FFF3CC'
+  scaleType: categorical
+  title: Ice melting status

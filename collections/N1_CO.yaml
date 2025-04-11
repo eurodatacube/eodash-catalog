@@ -42,3 +42,20 @@ References:
   - Name: TROPOMI CO 
     Key: tropomi_co
     Url: https://sentinel.esa.int/web/sentinel/data-products/-/asset_publisher/fp37fc19FN8F/content/sentinel-5-precursor-level-2-carbon-monoxide
+Colorlegend:
+  domain:
+  - 0
+  - 175
+  range:
+  - '#f8f6f4'
+  - '#9e61a8'
+  - '#5366b6'
+  - '#3c8cc6'
+  - '#51aca2'
+  - '#e3a625'
+  - '#eb490e'
+  - '#ba0006'
+  - '#74120d'
+  scaleType: continuous
+  tickFormat: .0f
+  title: CO [ppbv]

@@ -47,3 +47,25 @@ Resources:
       End: "2022-06-30T00:00:00Z"
 Legend: ESDL_Hydrology_SM/cm_legend.png
 Image: ESDL_Hydrology_SM/image.png
+Colorlegend:
+  domain:
+  - 0
+  - 1
+  range:
+  - '#f0f921'
+  - '#fad824'
+  - '#feb82c'
+  - '#fa9b3d'
+  - '#f1814d'
+  - '#e4695e'
+  - '#d45270'
+  - '#c23c81'
+  - '#ac2694'
+  - '#920fa3'
+  - '#7701a8'
+  - '#5801a4'
+  - '#370499'
+  - '#0d0887'
+  scaleType: continuous
+  tickFormat: .0f
+  title: '[% relative saturation]'

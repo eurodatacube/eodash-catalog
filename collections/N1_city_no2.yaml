@@ -35,3 +35,18 @@ Resources:
 Provider:
   - Name: Copernicus
     Url: https://www.copernicus.eu/en/access-data/conventional-data-access-hubs
+Colorlegend:
+  domain:
+  - 0
+  - 40
+  range:
+  - '#ffffff'
+  - '#fffbf7'
+  - '#feeedf'
+  - '#fed6b7'
+  - '#fab181'
+  - '#e9834d'
+  - '#b85426'
+  - '#7f2704'
+  scaleType: discrete
+  title: "Tropospheric NO2 [\xB5g/m\xB3]"

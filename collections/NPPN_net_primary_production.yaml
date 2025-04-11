@@ -49,3 +49,25 @@ Provider:
   - Name: NASA
     Roles: licensor, producer
     Url: https://www.earthdata.nasa.gov/esds/veda
+Colorlegend:
+  domain:
+  - 0
+  - 1500
+  range:
+  - '#000080'
+  - '#0000d9'
+  - '#001dff'
+  - '#006cff'
+  - '#00baff'
+  - '#1cffda'
+  - '#5cff9b'
+  - '#9bff5c'
+  - '#daff1c'
+  - '#ffce00'
+  - '#ff8500'
+  - '#ff3c00'
+  - '#d90000'
+  - '#800000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "[mgC/m\xB2/day]"

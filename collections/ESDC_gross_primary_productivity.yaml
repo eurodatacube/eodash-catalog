@@ -47,3 +47,25 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://terra.nasa.gov/data/modis-data
+Colorlegend:
+  domain:
+  - -1
+  - 15
+  range:
+  - '#000080'
+  - '#0000d9'
+  - '#001dff'
+  - '#006cff'
+  - '#00baff'
+  - '#1cffda'
+  - '#5cff9b'
+  - '#9bff5c'
+  - '#daff1c'
+  - '#ffce00'
+  - '#ff8500'
+  - '#ff3c00'
+  - '#d90000'
+  - '#800000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "[gC/m\xB2/day]"

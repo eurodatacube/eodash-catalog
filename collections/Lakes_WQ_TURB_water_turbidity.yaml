@@ -46,3 +46,17 @@ Resources:
 Provider: 
   - Name: Copernicus Land Monitoring Service
     Url: https://land.copernicus.eu/
+Colorlegend:
+  domain:
+  - 0
+  - 10
+  range:
+  - '#383894'
+  - '#52858c'
+  - '#6fd584'
+  - '#88d26f'
+  - '#9b744e'
+  - '#af1c2f'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Turbidity [NTU]

@@ -42,3 +42,25 @@ Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://data2.gosat.nies.go.jp/index_en.html
+Colorlegend:
+  domain:
+  - -10
+  - 10
+  range:
+  - '#053061'
+  - '#1b5a9b'
+  - '#337eb8'
+  - '#5ba2cb'
+  - '#97c7df'
+  - '#c7e0ed'
+  - '#e8f0f4'
+  - '#f9ece5'
+  - '#fcd3bc'
+  - '#f5a987'
+  - '#df755d'
+  - '#c53f3d'
+  - '#a11228'
+  - '#67001f'
+  scaleType: continuous
+  tickFormat: .0f
+  title: diff XCO2 [ppmv]

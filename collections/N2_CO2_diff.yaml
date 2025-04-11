@@ -47,3 +47,25 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://ocov2.jpl.nasa.gov/science/oco-2-data-center/
+Colorlegend:
+  domain:
+  - -1
+  - 1
+  range:
+  - '#053061'
+  - '#1b5a9b'
+  - '#337eb8'
+  - '#5ba2cb'
+  - '#97c7df'
+  - '#c7e0ed'
+  - '#e8f0f4'
+  - '#f9ece5'
+  - '#fcd3bc'
+  - '#f5a987'
+  - '#df755d'
+  - '#c53f3d'
+  - '#a11228'
+  - '#67001f'
+  scaleType: continuous
+  tickFormat: .0f
+  title: CO2 difference [ppm]

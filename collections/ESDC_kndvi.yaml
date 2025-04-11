@@ -44,3 +44,25 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://terra.nasa.gov/data/modis-data
+Colorlegend:
+  domain:
+  - 0
+  - 1
+  range:
+  - '#a50026'
+  - '#cb2527'
+  - '#e75136'
+  - '#f7814c'
+  - '#fdb264'
+  - '#fed885'
+  - '#fff3ab'
+  - '#f0f9ab'
+  - '#d1ec86'
+  - '#aadb6d'
+  - '#7ac665'
+  - '#43ac5a'
+  - '#148d4a'
+  - '#006837'
+  scaleType: continuous
+  tickFormat: .0f
+  title: KNDVI

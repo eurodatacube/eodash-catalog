@@ -47,3 +47,25 @@ Provider:
   - Name: NASA
     Roles: licensor, producer, processor
     Url: https://ocov2.jpl.nasa.gov/science/oco-2-data-center/
+Colorlegend:
+  domain:
+  - 408
+  - 419
+  range:
+  - '#313695'
+  - '#4066ad'
+  - '#5e93c4'
+  - '#85bbd8'
+  - '#afdbea'
+  - '#d8eff6'
+  - '#f3fad5'
+  - '#fff3ad'
+  - '#fed889'
+  - '#fdb265'
+  - '#f7814c'
+  - '#e75136'
+  - '#cb2527'
+  - '#a50026'
+  scaleType: continuous
+  tickFormat: .0f
+  title: CO2 mean concentration [ppm]

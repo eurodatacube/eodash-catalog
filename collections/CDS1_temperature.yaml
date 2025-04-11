@@ -49,3 +49,18 @@ Services:
     Type: byoc
     CollectionId: 0b3eebec-30de-4fa6-9cd3-4b252d45d847
     Script: CDS1_temperature/CDS1_temperature.js
+Colorlegend:
+  domain:
+  - 210
+  - 330
+  range:
+  - '#2c5996'
+  - '#619ac3'
+  - '#bcd6e6'
+  - '#f6f6f6'
+  - '#f2c8b0'
+  - '#cc6e5a'
+  - '#92242d'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Air Temperature at 2m [K]

@@ -33,3 +33,21 @@ Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
     Url: https://global.jaxa.jp/
+Colorlegend:
+  domain:
+  - NaN
+  - 200
+  range:
+  - '#ffffff'
+  - '#3e3eff'
+  - '#3737ff'
+  - '#7777ff'
+  - '#b6b6ff'
+  - '#fafaff'
+  - '#ffc6c6'
+  - '#ff8484'
+  - '#ff4545'
+  - '#ff0606'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Precipitation anomaly

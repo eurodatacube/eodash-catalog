@@ -45,3 +45,12 @@ Image: IDEAS2_wildlife/IDEAS2_wildlife.png
 #     Copernicus Climate Change Service, Climate Data Store, (2021).
 #     ORAS5 global ocean reanalysis monthly data from 1958 to present. Copernicus Climate Change Service (C3S) Climate Data Store (CDS).
 #   DOI: 10.24381/cds.67e8eeb7
+Colorlegend:
+  domain:
+  - low
+  - high
+  range:
+  - '#fde725'
+  - '#440154'
+  scaleType: categorical
+  title: '[index]'

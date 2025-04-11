@@ -174,3 +174,12 @@ References:
     Url: https://www.earthdata.nasa.gov/covid19/indicators/bm
     
     
+Colorlegend:
+  domain:
+  - Less light
+  - More light
+  range:
+  - '#000004'
+  - '#fcffa4'
+  scaleType: categorical
+  title: ''

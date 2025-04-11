@@ -50,3 +50,15 @@ Provider:
   - Name: ESA
     Roles: producer, processor
     Url: https://s5p-troposif.noveltis.fr/data-access/
+Colorlegend:
+  domain:
+  - 0
+  - 3
+  range:
+  - '#F0F0E5'
+  - '#D5E5C6'
+  - '#A0C9AC'
+  - '#8AA69A'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "[mW/m\xB2/sr/nm]"

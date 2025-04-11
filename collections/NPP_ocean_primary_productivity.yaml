@@ -71,3 +71,22 @@ Provider:
   - Name: GeoEye
     Roles: licensor, producer
     Url: https://www.maxar.com/
+Colorlegend:
+  domain:
+  - -1
+  - 1
+  range:
+  - '#ffffff'
+  - '#7600f0'
+  - '#0ec5ff'
+  - '#05ffc2'
+  - '#98ff8a'
+  - '#f3ff3e'
+  - '#fcc700'
+  - '#ff7700'
+  - '#e93100'
+  - '#b50000'
+  - '#900000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "PP [g C/y m\xB2]"

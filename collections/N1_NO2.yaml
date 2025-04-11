@@ -44,3 +44,25 @@ Services:
       Type: byoc
       CollectionId: 972e67a7-2ca8-4bf6-964a-11fe772e3ac2
       Script: N1_NO2/N1_NO2.js
+Colorlegend:
+  domain:
+  - 0
+  - 180
+  range:
+  - '#fff5f0'
+  - '#fee8de'
+  - '#fed7c7'
+  - '#fcc1a9'
+  - '#fca88b'
+  - '#fc8f6f'
+  - '#fb7656'
+  - '#f75c41'
+  - '#f03f2e'
+  - '#dc2824'
+  - '#c5171c'
+  - '#ae1117'
+  - '#8d0912'
+  - '#67000d'
+  scaleType: continuous
+  tickFormat: .0f
+  title: "Tropospheric NO2 [\xB5mol/m\xB2]"

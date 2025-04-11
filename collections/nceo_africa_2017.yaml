@@ -35,3 +35,25 @@ Provider:
   - Name: NCEO
     Roles: licensor, processor
     Url: https://www.nceo.ac.uk/data-tools/datasets/
+Colorlegend:
+  domain:
+  - 0
+  - 400
+  range:
+  - '#fdfbfb'
+  - '#e7cac0'
+  - '#d1ae8c'
+  - '#bfa764'
+  - '#b5b65e'
+  - '#94ae57'
+  - '#72a551'
+  - '#479a48'
+  - '#3c8f60'
+  - '#338478'
+  - '#276b7d'
+  - '#1a487a'
+  - '#0d1d76'
+  - '#000000'
+  scaleType: continuous
+  tickFormat: .0f
+  title: mg/ha

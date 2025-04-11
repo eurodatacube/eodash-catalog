@@ -37,3 +37,25 @@ Resources:
 Provider:
   - Name: NASA
     Url: https://www.nasa.gov/
+Colorlegend:
+  domain:
+  - 0
+  - 100
+  range:
+  - '#440154'
+  - '#481c6e'
+  - '#453581'
+  - '#3d4d8a'
+  - '#34618d'
+  - '#2b748e'
+  - '#24878e'
+  - '#1f998a'
+  - '#25ac82'
+  - '#40bd72'
+  - '#67cc5c'
+  - '#98d83e'
+  - '#cde11d'
+  - '#fde725'
+  scaleType: continuous
+  tickFormat: .0f
+  title: index

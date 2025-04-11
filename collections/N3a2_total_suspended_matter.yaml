@@ -60,3 +60,16 @@ Provider:
     Url: https://marine.copernicus.eu/access-data
   - Name: CNR ISMAR
     Url: https://www.ismar.cnr.it/istituto/
+Colorlegend:
+  domain:
+  - -100
+  - 100
+  range:
+  - '#000000'
+  - '#0000ff'
+  - '#009a57'
+  - '#fbd063'
+  - '#d68231'
+  scaleType: continuous
+  tickFormat: .0f
+  title: Total suspended matter anomaly [%]

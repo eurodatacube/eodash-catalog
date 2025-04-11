@@ -38,3 +38,19 @@ Provider:
   - Name: ESA
     Roles: processor
     Url: https://www.esa.int/
+Colorlegend:
+  domain:
+  - 0
+  - 360
+  range:
+  - '#0000C8'
+  - '#0041FF'
+  - '#00C1FF'
+  - '#49FFAD'
+  - '#B1FF46'
+  - '#FFD000'
+  - '#FF5900'
+  - '#C40000'
+  - '#800000'
+  scaleType: discrete
+  title: "NO2 (\xB5mol/m\xB2)"
