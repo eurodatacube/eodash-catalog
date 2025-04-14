@@ -49,3 +49,13 @@ Services:
     Type: byoc
     CollectionId: 3043d07f-3c20-410c-9a87-7da720942ab8
     Script: CDS4_wind_10m_v/CDS4_wind_10m_v.js
+Process:
+  Name: Sentinel Hub Statistics
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/statistical_api_vega_definition.json
+  EndPoints:
+    - Identifier: sentinelhub-statistics
+      Url: https://services.sentinel-hub.com/api/v1/statistics
+      Method: POST
+      EndPoint: sentinelhub
+      Type: application/json

@@ -42,3 +42,13 @@ References:
   - Name: TROPOMI CO 
     Key: tropomi_co
     Url: https://sentinel.esa.int/web/sentinel/data-products/-/asset_publisher/fp37fc19FN8F/content/sentinel-5-precursor-level-2-carbon-monoxide
+Process:
+  Name: Sentinel Hub Statistics
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/statistical_api_vega_definition.json
+  EndPoints:
+    - Identifier: sentinelhub-statistics
+      Url: https://services.sentinel-hub.com/api/v1/statistics
+      Method: POST
+      EndPoint: sentinelhub
+      Type: application/json

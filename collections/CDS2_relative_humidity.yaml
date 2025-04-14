@@ -49,3 +49,13 @@ Services:
     Type: byoc
     CollectionId: c3f87cba-4fdd-46c5-ab45-e6889d506f93
     Script: CDS2_relative_humidity/CDS2_relative_humidity.js
+Process:
+  Name: Sentinel Hub Statistics
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/statistical_api_vega_definition.json
+  EndPoints:
+    - Identifier: sentinelhub-statistics
+      Url: https://services.sentinel-hub.com/api/v1/statistics
+      Method: POST
+      EndPoint: sentinelhub
+      Type: application/json
