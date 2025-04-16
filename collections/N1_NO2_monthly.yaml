@@ -43,7 +43,7 @@ Provider:
     Url: https://www.earthdata.nasa.gov/learn/articles/find-no2-data
 Process:
   Name: VEDA Statistics
-  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/veda_form.json
   EndPoints:
     - Identifier: veda_statistics
       Url: https://openveda.cloud/api/raster/cog/statistics

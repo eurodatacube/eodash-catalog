@@ -49,7 +49,7 @@ Provider:
     Url: https://ocov2.jpl.nasa.gov/science/oco-2-data-center/
 Process:
   Name: VEDA Statistics
-  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/bbox_form.json
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/veda_form.json
   VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/veda_vega_definition.json
   EndPoints:
     - Identifier: veda_statistics
