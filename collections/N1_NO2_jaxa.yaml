@@ -26,10 +26,10 @@ References:
   - Name: NO2 concentrations over India
     Url: https://www.esa.int/ESA_Multimedia/Images/2020/04/NO2_concentrations_over_India
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: NO2-TROPOMI-Cairo-Daily
+    LayerId: EODASH:NO2-TROPOMI-Cairo-Daily
     OverwriteBBox: [30, 29, 32, 31] # WMS layer description provides incorrect BBox
 Provider:
   - Name: Copernicus

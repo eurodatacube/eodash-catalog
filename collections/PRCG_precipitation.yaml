@@ -70,10 +70,10 @@ References:
   - Name: GSMaP Documentation
     Url: https://www.eorc.jaxa.jp/GPM/doc/algorithm/GSMaPforGPM_20140902_E.pdf
 Resources:
-  - EndPoint: https://ogcpreview2.restecmap.com/examind/api/WS/wms/default
+  - EndPoint: https://gpwmap.jaxa.jp/wms
     Name: WMS
     Type: Time
-    LayerId: PRC-GSMaP-World-Monthly
+    LayerId: EODASH:PRC-GSMaP-World-Monthly
 Provider:
   - Name: JAXA
     Roles: licensor, producer, processor
