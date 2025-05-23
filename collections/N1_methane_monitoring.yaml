@@ -52,8 +52,8 @@ References:
     Url: http://www.tropomi.eu/data-products/methane
 Process:
   Name: Sentinel Hub Statistics
-  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/sh_form.json
-  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/veda-sentinelhub-processing/defaults/statistical_api_vega_definition.json
+  JsonForm: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/defaults/sh_form.json
+  VegaDefinition: https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/defaults/statistical_api_vega_definition.json
   EndPoints:
     - Identifier: sentinelhub-statistics
       Url: https://services.sentinel-hub.com/api/v1/statistics
