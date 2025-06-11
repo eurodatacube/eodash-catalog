@@ -1,10 +1,10 @@
 Name: alos2_floods
-Title: Chlorophyll-a concentration maps
-EodashIdentifier: N3a2
-Subtitle: Chlorophyll-a concentration description
+Title: Floods maps in East Africa
+EodashIdentifier: ????????????????
+Subtitle: 
 Description: alos2_floods/alos2_floods.md
 Themes:
-  - oceans
+  - extremes
 Tags:
   - Water quality
   - Copernicus Services
@@ -14,57 +14,30 @@ Tags:
 DataSource:
   Spaceborne:
     Satellite:
-      - Sentinel-3
+      - ALOS-2
     Sensor:
-      - OLCI
+      - PALSAR-2
 Agency:
-  - European Commission
-  - ECMWF
-License:
-  - Url: https://marine.copernicus.eu/user-corner/service-commitments-and-licence
-    Type: text/html
-    Title: Licence to Use Copernicus Products
-Image: N3a2_chl_concentration/N3a2_chl_concentration.png
-Legend: N3a2_chl_concentration/N3a2_chl_concentration_legend.png
+  - JAXA
+References:
+  - Name: JAXA ALOS-2 PALSAR-2
+    Url: https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm
+  - Name: Use data
+    Url: https://www.eorc.jaxa.jp/ALOS/en/alos-2/a2_data_e.htm
 Locations:
-  - Identifier: NorthAdriatic
-    Name: Chlorophyll-a concentration in North Adriatic
-    Point: [13.02978, 45.19752]
-    Bbox: [11.6, 44, 15, 46]
-  - Identifier: RhoneDelta
-    Name: Chlorophyll-a concentration in Rhone Delta
-    Point: [4.94, 43.4]
-    Bbox: [4, 42.8, 6, 44]
-  - Identifier: Barcelona
-    Name: Chlorophyll-a concentration in Barcelona
-    Point: [1.769, 40.985]
-    Bbox: [0, 40, 3, 42]
-  - Identifier: DanubeDelta
-    Name: Chlorophyll-a concentration in Danube Delta
-    Point: [29.9, 45.05]
-    Bbox: [28.5, 44, 31, 46]
-  - Identifier: TagusDelta
-    Name: Sea surface temperature in Tagus Delta
-    Point: [-9.32, 38.66]
-    Bbox: [-10.45, 37.5, -8.75, 39.51]
-  - Identifier: ElbeDelta
-    Name: Sea surface temperature in Elbe Delta
-    Point: [8.408, 53.94]
-    Bbox: [ 6.99, 53.35, 9.25, 54.41]
+  - Identifier: ???????????
+    Name: ??????????????????
+    Point:??????????????????
+    Bbox: ??????????????????
+    Times: [
+   ?????????
+    ]
 Resources:
   - EndPoint: https://services.sentinel-hub.com
     Name: Sentinel Hub
     Type: byoc
-    CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
-    LayerId: AWS_N3_CUSTOM
-Services:
-  - Endpoint: https://services.sentinel-hub.com/api/v1/statistics
-    Name: Statistical API
-    Type: byoc
-    CollectionId: 7db8e19e-bf12-4203-bdd1-673455647354
-    Script: N3a2_chl_concentration/N3a2_chl_concentration.js
-Provider: 
-  - Name: Copernicus Marine Service
-    Url: https://marine.copernicus.eu/access-data
-  - Name: CNR ISMAR
-    Url: https://www.ismar.cnr.it/istituto/
+    CollectionId: ?????????????????????????????
+    LayerId: ?????????????????????????????
+Provider:
+  - Name: JAXA
+    Url: https://global.jaxa.jp/
