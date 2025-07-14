@@ -1,6 +1,6 @@
 Name: alos2_floods
 Title: Floods maps in East Africa
-EodashIdentifier: Floods_ALOS2
+EodashIdentifier: JAXA_ALOS2_Floodmap
 Subtitle: 
 Description: alos2_floods/alos2_floods.md
 Themes:
