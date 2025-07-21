@@ -1,3 +1,8 @@
+```diff
+! Warning !  This repository is considered deprecated as it targets eodash v4.
+```
+please go to [https://github.com/ESA-eodashboards/RACE-catalog](https://github.com/ESA-eodashboards/RACE-catalog) or [https://github.com/ESA-eodashboards/eodashboard-catalog](https://github.com/ESA-eodashboards/eodashboard-catalog) for latest updates!
+
 # eodash-catalog
 
 This repository allows generation of STAC catalogs based on the configuration yaml files provided in the repository.
