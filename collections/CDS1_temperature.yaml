@@ -23,9 +23,9 @@ License:
     Title: Licence to Use Copernicus Products
 Provider: 
   - Name: Copernicus Climate Change Service
-    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+    Url: https://climate.copernicus.eu/
   - Name: Climate Data Store
-    Url: https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.68d2bb30
+    Url: https://cds.climate.copernicus.eu/
 Citation:
   Citation: |
     Muñoz Sabater, J., (2019) was downloaded from the Copernicus Climate Change Service (2021).
